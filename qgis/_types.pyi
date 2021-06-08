@@ -20,3 +20,15 @@ class sip:
 
     class simplewrapper:
         """Mock for sip-handled wrapper subclasses."""
+
+
+class Qsci:
+    """Mock object for the QScintilla portion of PyQt5.
+
+    This can be installed via pip as "qscintilla", but the
+    "PyQt5-stubs" package does not define stubs for it, so we have to
+    use dummy objects.
+    """
+
+    class QsciScintilla:
+        """Mock for QsciScintilla base class."""
