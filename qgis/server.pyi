@@ -26,12 +26,12 @@ from typing import (Any, Callable, Dict, Iterable, List, Optional, Union,
 
 from PyQt5 import QtCore, QtGui, QtXml
 
-from ._core import (Qgis, QgsCoordinateReferenceSystem, QgsDateRange,
-                    QgsDateTimeRange, QgsExpression, QgsFeature,
-                    QgsFeatureFilterProvider, QgsFeatureRequest, QgsGeometry,
-                    QgsMapLayer, QgsMessageLogConsole, QgsProject,
-                    QgsProjectBadLayerHandler, QgsRectangle, QgsVectorLayer,
-                    QgsVectorLayerServerProperties)
+from .core import (Qgis, QgsCoordinateReferenceSystem, QgsDateRange,
+                   QgsDateTimeRange, QgsExpression, QgsFeature,
+                   QgsFeatureFilterProvider, QgsFeatureRequest, QgsGeometry,
+                   QgsMapLayer, QgsMessageLogConsole, QgsProject,
+                   QgsProjectBadLayerHandler, QgsRectangle, QgsVectorLayer,
+                   QgsVectorLayerServerProperties)
 from ._types import sip
 
 # Convenient type aliases.
