@@ -22,7 +22,7 @@ __date__ = 'May 2014'
 __copyright__ = '(C) 2014, Nathan Woodrow'
 
 import typing
-import sip
+from .types import sip
 
 from PyQt5 import Qsci
 from PyQt5 import QtXml
