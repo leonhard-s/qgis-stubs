@@ -26,7 +26,7 @@ $ python -m pip install git+https://github.com/leonhard-s/qgis-stubs.git
 
 ## Limitations
 
-This project is in early stages and does not yet cover the full interface. This is largely due to QGIS doing a lot of monkey-patching that are not automatically replicated in the stub files.
+This project is in early stages and does not yet cover the full interface. This is largely due to QGIS doing a lot of monkey-patching that is not yet automatically replicated in the stub files.
 
 Here is a likely incomplete list of known limitations/omissions:
 
