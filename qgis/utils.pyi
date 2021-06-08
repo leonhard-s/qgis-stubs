@@ -32,24 +32,11 @@ from .gui import QgisInterface
 from .server import QgsServerInterface
 
 
-def showWarning(message: Union[Warning, str], category: Type[Warning], filename: str, lineno: int, file: Any = ..., line: Optional[str] = ...) -> None:
-    ...
-
-
-def showException(type: Optional[Type[BaseException]], value: Optional[BaseException], tb: Optional[TracebackType], msg: Optional[str], messagebar: bool = ..., level: Qgis.MessageLevel = ...) -> None:
-    ...
-
-
-def show_message_log(pop_error: bool = ...) -> None:
-    ...
-
-
-def open_stack_dialog(type: Optional[Type[BaseException]], value: Optional[BaseException], tb: Optional[TracebackType], msg: Optional[str], pop_error: bool = ...) -> None:
-    ...
-
-
-def qgis_excepthook(type: Optional[Type[BaseException]], value: Optional[BaseException], tb: Optional[TracebackType]) -> None:
-    ...
+def showWarning(message: Union[Warning, str], category: Type[Warning], filename: str, lineno: int, file: Any = ..., line: Optional[str] = ...) -> None: ...
+def showException(type: Optional[Type[BaseException]], value: Optional[BaseException], tb: Optional[TracebackType], msg: Optional[str], messagebar: bool = ..., level: Qgis.MessageLevel = ...) -> None: ...
+def show_message_log(pop_error: bool = ...) -> None: ...
+def open_stack_dialog(type: Optional[Type[BaseException]], value: Optional[BaseException], tb: Optional[TracebackType], msg: Optional[str], pop_error: bool = ...) -> None: ...
+def qgis_excepthook(type: Optional[Type[BaseException]], value: Optional[BaseException], tb: Optional[TracebackType]) -> None: ...
 
 
 def installErrorHook() -> None:
@@ -63,43 +50,21 @@ def installErrorHook() -> None:
     """
 
 
-def uninstallErrorHook() -> None:
-    ...
+def uninstallErrorHook() -> None: ...
 
 
-# initialize 'iface' object
 iface: Optional[QgisInterface] = None
 
 
-def initInterface(pointer: Any) -> None:
-    ...
+def initInterface(pointer: Any) -> None: ...
 
 
-#######################
-# PLUGINS
-
-# list of plugin paths. it gets filled in by the QGIS python library
 plugin_paths: List[str]
-
-# dictionary of plugins
 plugins: Dict[str, str]
-
 plugin_times: Dict[str, datetime.datetime]
-
-# list of active (started) plugins
 active_plugins: List[str]
-
-# list of plugins in plugin directory and home plugin directory
 available_plugins: List[str]
-
-# dictionary of plugins providing metadata in a text file (metadata.txt)
-# key = plugin package name, value = config parser instance
 plugins_metadata_parser: Dict[str, configparser.ConfigParser]
-
-# NOTE: Manually removed as it is described as "internal use" in the docstring.
-# def findPlugins(path: str) -> Iterator[Tuple[str, Optional[configparser.ConfigParser]]]:
-#     """ for internal use: return list of plugins in given path """
-#     ...
 
 
 def metadataParser() -> Dict[str, configparser.ConfigParser]:
@@ -155,51 +120,24 @@ def pluginDirectory(packageName: str) -> str:
     """ return directory where the plugin resides. Plugin must be loaded already """
 
 
-def reloadProjectMacros() -> None:
-    ...
+def reloadProjectMacros() -> None: ...
+def unloadProjectMacros() -> None: ...
+def openProjectMacro() -> None: ...
+def saveProjectMacro() -> None: ...
+def closeProjectMacro() -> None: ...
 
 
-def unloadProjectMacros() -> None:
-    ...
-
-
-def openProjectMacro() -> None:
-    ...
-
-
-def saveProjectMacro() -> None:
-    ...
-
-
-def closeProjectMacro() -> None:
-    ...
-
-#######################
-# SERVER PLUGINS
-#
-# TODO: move into server_utils.py ?
-
-
-# list of plugin paths. it gets filled in by the QGIS python library
 server_plugin_paths: List[str]
-
-# dictionary of plugins
 server_plugins: Dict[str, str]
-
-# list of active (started) plugins
 server_active_plugins: List[str]
-
-# initialize 'serverIface' object
 serverIface: Optional[QgsServerInterface] = None
 
 
-def initServerInterface(pointer: Any) -> None:
-    ...
+def initServerInterface(pointer: Any) -> None: ...
 
 
 def startServerPlugin(packageName: str) -> None:
     """ initialize the plugin """
-    ...
 
 
 def spatialite_connect(*args: Any, **kwargs: Any) -> sqlite3.Connection:
@@ -220,14 +158,9 @@ class OverrideCursor():
     ```
     """
 
-    def __init__(self, cursor: sqlite3.Cursor) -> None:
-        ...
-
-    def __enter__(self) -> None:
-        ...
-
-    def __exit__(self, exc_type: Optional[Type[BaseException]], exc_val: Optional[BaseException], exc_tb: Optional[TracebackType]) -> bool:
-        ...
+    def __init__(self, cursor: sqlite3.Cursor) -> None: ...
+    def __enter__(self) -> None: ...
+    def __exit__(self, exc_type: Optional[Type[BaseException]], exc_val: Optional[BaseException], exc_tb: Optional[TracebackType]) -> bool: ...
 
 
 def run_script_from_file(filepath: str) -> None:
@@ -235,4 +168,3 @@ def run_script_from_file(filepath: str) -> None:
     Runs a Python script from a given file. Supports loading processing scripts.
     :param filepath: The .py file to load.
     """
-    ...
