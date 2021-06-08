@@ -21,6 +21,18 @@ __author__ = 'Martin Dobias'
 __date__ = 'January 2007'
 __copyright__ = '(C) 2007, Martin Dobias'
 
+from . import analysis, core, gui, processing, server, user, utils
+
+__all__ = [
+    'analysis',
+    'core',
+    'gui',
+    'processing',
+    'server',
+    'user',
+    'utils'
+]
+
 
 def setupenv() -> None:
     """
