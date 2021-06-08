@@ -13,6 +13,10 @@ from PyQt5 import (QtCore, QtGui, QtNetwork, QtPrintSupport, QtSql, QtWidgets,
 from ._types import sip
 
 
+class QgsProcessingException(Exception):
+    ...
+
+
 # NOTE: Unknown external widgets - probably more monkey-patching involved?
 class QgsCalloutWidget(QtWidgets.QWidget):
     ...
