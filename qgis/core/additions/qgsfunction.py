@@ -21,7 +21,7 @@
 import inspect
 import string
 from builtins import str
-from qgis.PyQt.QtCore import QCoreApplication
+from PyQt5.QtCore import QCoreApplication
 from qgis._core import QgsExpressionFunction, QgsExpression, QgsMessageLog, QgsFeatureRequest, Qgis
 
 

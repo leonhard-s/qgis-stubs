@@ -21,7 +21,7 @@ __author__ = 'Nathan Woodrow'
 __date__ = 'May 2014'
 __copyright__ = '(C) 2014, Nathan Woodrow'
 
-from qgis.PyQt.QtCore import NULL
+from PyQt5.QtCore import NULL
 from qgis._core import *
 
 from .additions.edit import edit, QgsEditError

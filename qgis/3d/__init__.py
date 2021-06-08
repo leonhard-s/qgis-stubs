@@ -21,7 +21,7 @@ __author__ = 'Nathan Woodrow'
 __date__ = 'May 2014'
 __copyright__ = '(C) 2014, Nathan Woodrow'
 
-from qgis.PyQt import QtCore
+from PyQt5 import QtCore
 from qgis._3d import *
 """
 This folder is completed using sipify.pl script
