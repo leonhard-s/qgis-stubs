@@ -1,5 +1,7 @@
 """A helper module for typing unknown runtime types."""
 
+from typing import Any
+
 
 class sip:
     """Mock object containing key objects of the sip namespace.
@@ -7,6 +9,8 @@ class sip:
     This only servers to appease the type checking system; this class
     and its members are dummies with no functionality whatsoever.
     """
+
+    voidptr: Any
 
     class Buffer:
         """Mock for sip-handled IO buffers."""
