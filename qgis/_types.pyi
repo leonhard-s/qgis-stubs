@@ -17,3 +17,6 @@ class sip:
         These wrap C++ entities. Refer to the subclasses' type stubs
         for member information.
         """
+
+    class simplewrapper:
+        """Mock for sip-handled wrapper subclasses."""
