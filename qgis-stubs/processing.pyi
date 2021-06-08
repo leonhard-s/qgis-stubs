@@ -305,3 +305,6 @@ input_type_mapping: Dict[_ProcessingInput, QgsProcessingParameterDefinition]
 output_type_mapping: Dict[_ProcessingOutput, QgsProcessingOutputDefinition]
 
 alg = ProcessingAlgFactory()
+
+
+def run(name: str, parameters: Dict[str, Any], context: QgsProcessingContext, feedback: QgsProcessingFeedback, is_child_algorithm: bool = ...) -> Dict[str, Any]: ...
