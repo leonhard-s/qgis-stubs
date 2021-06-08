@@ -21,88 +21,78 @@ __author__ = 'Nathan Woodrow'
 __date__ = 'November 2018'
 __copyright__ = '(C) 2018, Nathan Woodrow'
 
-from collections import OrderedDict
-from functools import partial
+from typing import Any, Callable, Dict, List, Literal, Optional, Union
 
-from PyQt5.QtCore import QCoreApplication
 from PyQt5.QtGui import QIcon
 
-from .core import (QgsProcessingParameterDefinition,
+from .core import (QgsProcessingContext,
+                   QgsProcessingFeedback,
+                   QgsProcessingParameterDefinition,
                    QgsProcessingAlgorithm,
-                   QgsProcessingParameterString,
-                   QgsProcessingParameterAuthConfig,
-                   QgsProcessingParameterNumber,
-                   QgsProcessingParameterDistance,
-                   QgsProcessingParameterFeatureSource,
-                   QgsProcessingParameterFeatureSink,
-                   QgsProcessingParameterFileDestination,
-                   QgsProcessingParameterFolderDestination,
-                   QgsProcessingParameterRasterDestination,
-                   QgsProcessingParameterVectorDestination,
-                   QgsProcessingParameterBand,
-                   QgsProcessingParameterBoolean,
-                   QgsProcessingParameterCrs,
-                   QgsProcessingParameterEnum,
-                   QgsProcessingParameterExpression,
-                   QgsProcessingParameterExtent,
-                   QgsProcessingParameterField,
-                   QgsProcessingParameterFile,
-                   QgsProcessingParameterMapLayer,
-                   QgsProcessingParameterMatrix,
-                   QgsProcessingParameterMultipleLayers,
-                   QgsProcessingParameterPoint,
-                   QgsProcessingParameterGeometry,
-                   QgsProcessingParameterRange,
-                   QgsProcessingParameterRasterLayer,
-                   QgsProcessingParameterVectorLayer,
-                   QgsProcessingParameterMeshLayer,
-                   QgsProcessingParameterColor,
-                   QgsProcessingParameterScale,
-                   QgsProcessingParameterLayout,
-                   QgsProcessingParameterLayoutItem,
-                   QgsProcessingParameterDateTime,
-                   QgsProcessingParameterMapTheme,
-                   QgsProcessingParameterProviderConnection,
-                   QgsProcessingParameterDatabaseSchema,
-                   QgsProcessingParameterDatabaseTable,
-                   QgsProcessingParameterCoordinateOperation,
-                   QgsProcessingOutputString,
-                   QgsProcessingOutputBoolean,
-                   QgsProcessingOutputFile,
-                   QgsProcessingOutputFolder,
-                   QgsProcessingOutputHtml,
-                   QgsProcessingOutputLayerDefinition,
-                   QgsProcessingOutputMapLayer,
-                   QgsProcessingOutputMultipleLayers,
-                   QgsProcessingOutputNumber,
-                   QgsProcessingOutputRasterLayer,
-                   QgsProcessingOutputVectorLayer,
-                   QgsMessageLog,
-                   QgsApplication)
+                   QgsProcessingOutputDefinition,
+                   QgsProcessingParameters)
 
+_ProcessingInput = Union[
+    str,
+    int,
+    float,
+    bool,
+    Literal['NUMBER'],
+    Literal['INT'],
+    Literal['STRING'],
+    Literal['DISTANCE'],
+    Literal['SINK'],
+    Literal['SOURCE'],
+    Literal['FILE_DEST'],
+    Literal['FOLDER_DEST'],
+    Literal['RASTER_LAYER'],
+    Literal['RASTER_LAYER_DEST'],
+    Literal['VECTOR_LAYER_DEST'],
+    Literal['BAND'],
+    Literal['BOOL'],
+    Literal['CRS'],
+    Literal['ENUM'],
+    Literal['EXPRESSION'],
+    Literal['EXTENT'],
+    Literal['FIELD'],
+    Literal['FILE'],
+    Literal['MAPLAYER'],
+    Literal['MATRIX'],
+    Literal['MULTILAYER'],
+    Literal['POINT'],
+    Literal['GEOMETRY'],
+    Literal['RANGE'],
+    Literal['VECTOR_LAYER'],
+    Literal['AUTH_CFG'],
+    Literal['MESH_LAYER'],
+    Literal['SCALE'],
+    Literal['LAYOUT'],
+    Literal['LAYOUT_ITEM'],
+    Literal['COLOR'],
+    Literal['DATETIME'],
+    Literal['MAP_THEME'],
+    Literal['PROVIDER_CONNECTION'],
+    Literal['DATABASE_SCHEMA'],
+    Literal['DATABASE_TABLE'],
+    Literal['COORDINATE_OPERATION']]
 
-def _log(*args, **kw):
-    """
-    Log messages to the QgsMessageLog viewer
-    """
-    QgsMessageLog.logMessage(" ".join(map(str, args)), "Factory")
-
-
-def _make_output(**args):
-    """
-    Create a processing output class type.
-    :param args: 'cls' The class object type.
-                 'name' the name of the output
-                 'description' The description used on the output
-    :return:
-    """
-    cls = args['cls']
-    del args['cls']
-    newargs = {
-        "name": args['name'],
-        "description": args['description'],
-    }
-    return cls(**newargs)
+_ProcessingOutput = Union[
+    str,
+    int,
+    float,
+    Literal['NUMBER'],
+    Literal['DISTANCE'],
+    Literal['INT'],
+    Literal['STRING'],
+    Literal['FILE'],
+    Literal['FOLDER'],
+    Literal['HTML'],
+    Literal['LAYERDEF'],
+    Literal['MAPLAYER'],
+    Literal['MULTILAYER'],
+    Literal['RASTER_LAYER'],
+    Literal['VECTOR_LAYER'],
+    Literal['BOOL']]
 
 
 class ProcessingAlgFactoryException(Exception):
@@ -110,8 +100,7 @@ class ProcessingAlgFactoryException(Exception):
     Exception raised when using @alg on a function.
     """
 
-    def __init__(self, message):
-        super(ProcessingAlgFactoryException, self).__init__(message)
+    def __init__(self, message: Any) -> None: ...
 
 
 class AlgWrapper(QgsProcessingAlgorithm):
@@ -119,187 +108,46 @@ class AlgWrapper(QgsProcessingAlgorithm):
     Wrapper object used to create new processing algorithms from @alg.
     """
 
-    def __init__(self, name=None, display=None,
-                 group=None, group_id=None, inputs=None,
-                 outputs=None, func=None, help=None, icon=None):
-        super(AlgWrapper, self).__init__()
-        self._inputs = OrderedDict(inputs or {})
-        self._outputs = OrderedDict(outputs or {})
-        self._icon = icon
-        self._name = name
-        self._group = group
-        self._group_id = group_id
-        self._display = display
-        self._func = func
-        self._help = help
+    def __init__(self, name: Optional[str] = ..., display: Optional[str] = ..., group: Optional[str] = ..., group_id: Optional[str] = ..., inputs: Optional[Dict[Any, Any]] = ..., outputs: Optional[Dict[Any, Any]] = ..., func: Optional[Callable[..., None]] = ..., help: Optional[str] = ..., icon: Optional[str] = ...) -> None: ...
 
-    def _get_parent_id(self, parent):
-        """
-        Return the id of the parent object.
-        """
-        if isinstance(parent, str):
-            return parent
-        else:
-            raise NotImplementedError()
+    def define(self, name: str, label: str, group: Optional[str], group_label: Optional[str], help: Optional[str] = ..., icon: str = ...) -> None: ...
 
-    # Wrapper logic
-    def define(self, name, label, group, group_label, help=None, icon=QgsApplication.iconPath("processingScript.svg")):
-        self._name = name
-        self._display = label
-        self._group = group_label
-        self._group_id = group
-        self._help = help
-        self._icon = icon
-
-    def end(self):
+    def end(self) -> None:
         """
         Finalize the wrapper logic and check for any invalid config.
         """
-        if not self.has_outputs:
-            raise ProcessingAlgFactoryException("No outputs defined for '{}' alg"
-                                                "At least one must be defined. Use @alg.output")
 
-    def add_output(self, type, **kwargs):
-        parm = self._create_param(type, output=True, **kwargs)
-        self._outputs[parm.name()] = parm
-
-    def add_help(self, helpstring, *args, **kwargs):
-        self._help = helpstring
-
-    def add_input(self, type, **kwargs):
-        parm = self._create_param(type, **kwargs)
-        self._inputs[parm.name()] = parm
+    def add_output(self, type: QgsProcessingOutputDefinition, **kwargs: Any) -> None: ...
+    def add_help(self, helpstring: str, *args: Any, **kwargs: Any) -> None: ...
+    def add_input(self, type: QgsProcessingParameterDefinition, **kwargs: Any) -> None: ...
+    @property
+    def inputs(self) -> Dict[str, QgsProcessingParameterDefinition]: ...
+    @property
+    def outputs(self) -> Dict[str, QgsProcessingOutputDefinition]: ...
+    def set_func(self, func: Callable[..., Any]) -> None: ...
 
     @property
-    def inputs(self):
-        return self._inputs
-
-    @property
-    def outputs(self):
-        return self._outputs
-
-    def _create_param(self, type, output=False, **kwargs):
-        name = kwargs['name']
-        if name in self._inputs or name in self._outputs:
-            raise ProcessingAlgFactoryException("{} already defined".format(name))
-
-        parent = kwargs.get("parent")
-        if parent:
-            parentname = self._get_parent_id(parent)
-            if parentname == name:
-                raise ProcessingAlgFactoryException("{} can't depend on itself. "
-                                                    "We know QGIS is smart but it's not that smart".format(name))
-            if parentname not in self._inputs and parentname not in self._outputs:
-                raise ProcessingAlgFactoryException("Can't find parent named {}".format(parentname))
-
-        kwargs['description'] = kwargs.pop("label", "")
-        kwargs['defaultValue'] = kwargs.pop("default", None)
-        advanced = kwargs.pop("advanced", False)
-        help_str = kwargs.pop("help", "")
-        try:
-            if output:
-                try:
-                    make_func = output_type_mapping[type]
-                except KeyError:
-                    raise ProcessingAlgFactoryException("{} is a invalid output type".format(type))
-            else:
-                try:
-                    make_func = input_type_mapping[type]
-                except KeyError:
-                    raise ProcessingAlgFactoryException("{} is a invalid input type".format(type))
-            parm = make_func(**kwargs)
-            if advanced:
-                parm.setFlags(parm.flags() | QgsProcessingParameterDefinition.FlagAdvanced)
-            if not output:
-                parm.setHelp(help_str)
-            return parm
-        except KeyError as ex:
-            raise NotImplementedError("{} not supported".format(str(type)))
-
-    def set_func(self, func):
-        self._func = func
-        # Only take the help from the function if it hasn't already been set.
-        if self._func and not self._help:
-            self._help = self._func.__doc__.strip()
-
-    @property
-    def has_outputs(self):
+    def has_outputs(self) -> bool:
         """
         True if this alg wrapper has outputs defined.
         """
-        dests = [p for p in self._inputs.values() if p.isDestination()]
-        return bool(self._outputs) or bool(dests)
 
     @property
-    def has_inputs(self):
+    def has_inputs(self) -> bool:
         """
         True if this alg wrapper has outputs defined.
         """
-        return bool(self._inputs)
-
-    def _get_parameter_value(self, parm, parameters, name, context):
-        """
-        Extract the real value from the parameter.
-        """
-        if isinstance(parm, (QgsProcessingParameterString, QgsProcessingParameterAuthConfig)):
-            value = self.parameterAsString(parameters, name, context)
-            return value
-        elif isinstance(parm, QgsProcessingParameterNumber):
-            if parm.dataType() == QgsProcessingParameterNumber.Integer:
-                value = self.parameterAsInt(parameters, name, context)
-                return value
-            if parm.dataType() == QgsProcessingParameterNumber.Double:
-                value = self.parameterAsDouble(parameters, name, context)
-                return value
 
     # Overloads
-    def name(self):
-        return self._name
-
-    def displayName(self):
-        return self._display
-
-    def group(self):
-        return self._group
-
-    def groupId(self):
-        return self._group_id
-
-    def processAlgorithm(self, parameters, context, feedback):
-        values = {}
-        for parm in self._inputs.values():
-            name = parm.name()
-            values[name] = self._get_parameter_value(parm, parameters, name, context)
-
-        output = self._func(self, parameters, context, feedback, values)
-        if output is None:
-            return {}
-        return output
-
-    def createInstance(self):
-        return AlgWrapper(self._name, self._display,
-                          self._group, self._group_id,
-                          inputs=self._inputs,
-                          outputs=self._outputs,
-                          func=self._func,
-                          help=self._help,
-                          icon=self._icon)
-
-    def initAlgorithm(self, configuration=None, p_str=None, Any=None, *args, **kwargs):
-        for parm in self._inputs.values():
-            self.addParameter(parm.clone())
-
-        for parm in self._outputs.values():
-            clsname = parm.__class__.__name__
-            klass = globals()[clsname]
-            clone = klass(parm.name(), parm.description())
-            self.addOutput(clone)
-
-    def shortHelpString(self):
-        return self._help
-
-    def icon(self):
-        return QIcon(self._icon)
+    def name(self) -> str: ...
+    def displayName(self) -> str: ...
+    def group(self) -> str: ...
+    def groupId(self) -> str: ...
+    def processAlgorithm(self, parameters: QgsProcessingParameters, context: QgsProcessingContext, feedback: QgsProcessingFeedback) -> Dict[str, Any]: ...
+    def createInstance(self) -> AlgWrapper: ...
+    def initAlgorithm(self, configuration: Optional[Dict[str, Any]] = ..., p_str: Optional[str] = ..., Any: Any = ..., *args: Any, **kwargs: Any) -> None: ...
+    def shortHelpString(self) -> str: ...
+    def icon(self) -> QIcon: ...
 
 
 class ProcessingAlgFactory():
@@ -345,47 +193,22 @@ class ProcessingAlgFactory():
     DATABASE_TABLE = "DATABASE_TABLE"
     COORDINATE_OPERATION = "COORDINATE_OPERATION"
 
-    def __init__(self):
-        self._current = None
-        self.instances = []
+    instances: List[QgsProcessingAlgorithm]
 
-    def tr(self, string):
+    def __init__(self) -> None: ...
+
+    def tr(self, string: str) -> str:
         """
         Returns a translatable string with the self.tr() function.
         """
-        return QCoreApplication.translate('Processing', string)
 
     @property
-    def current(self):
-        return self._current
-
+    def current(self) -> AlgWrapper: ...
     @property
-    def current_defined(self):
-        return self._current is not None
+    def current_defined(self) -> bool: ...
+    def __call__(self, *args: Any, **kwargs: Any) -> Any: ...
 
-    def __call__(self, *args, **kwargs):
-        return self._define(*args, **kwargs)
-
-    def _initnew(self):
-        self._current = AlgWrapper()
-
-    def _pop(self):
-        self.instances.append(self.current)
-        self._current = None
-
-    def _define(self, *args, **kwargs):
-        self._initnew()
-        self.current.define(*args, **kwargs)
-
-        def dec(f):
-            self.current.set_func(f)
-            self.current.end()
-            self._pop()
-            return f
-
-        return dec
-
-    def output(self, type, *args, **kwargs):
+    def output(self, type: _ProcessingInput, *args: Any, **kwargs: Any) -> Callable[..., Any]:
         """
         Define a output parameter for this algorithm using @alg.output.
         Apart from `type` this method will take all arguments and pass them though to the correct `QgsProcessingOutputDefinition ` type.
@@ -413,13 +236,7 @@ class ProcessingAlgFactory():
         :keyword parent: The string ID of the parent parameter. Parent parameter must be defined before its here.
         """
 
-        def dec(f):
-            return f
-
-        self.current.add_output(type, *args, **kwargs)
-        return dec
-
-    def help(self, helpstring, *args, **kwargs):
+    def help(self, helpstring: str, *args: Any, **kwargs: Any) -> Callable[..., Any]:
         """
         Define the help for the algorithm using @alg.help. This method will
         be used instead of the doc string on the function as the help in the processing dialogs.
@@ -427,14 +244,7 @@ class ProcessingAlgFactory():
         :param helpstring: The help text. Use alg.tr() for translation support.
         """
 
-        def dec(f):
-            return f
-
-        self.current.add_help(helpstring, *args, **kwargs)
-
-        return dec
-
-    def input(self, type, *args, **kwargs):
+    def input(self, type: _ProcessingInput, *args: Any, **kwargs: Any) -> Callable[..., Any]:
         """
         Define a input parameter for this algorithm using @alg.input.
         Apart from `type` this method will take all arguments and pass them though to the correct `QgsProcessingParameterDefinition` type.
@@ -490,76 +300,8 @@ class ProcessingAlgFactory():
         :keyword default: The default value set for that parameter. Translates into `defaultValue` arg.
         """
 
-        def dec(f):
-            return f
 
-        self.current.add_input(type, *args, **kwargs)
-
-        return dec
-
-
-input_type_mapping = {
-    str: QgsProcessingParameterString,
-    int: partial(QgsProcessingParameterNumber, type=QgsProcessingParameterNumber.Integer),
-    float: partial(QgsProcessingParameterNumber, type=QgsProcessingParameterNumber.Double),
-    bool: QgsProcessingParameterBoolean,
-    ProcessingAlgFactory.NUMBER: partial(QgsProcessingParameterNumber, type=QgsProcessingParameterNumber.Double),
-    ProcessingAlgFactory.INT: partial(QgsProcessingParameterNumber, type=QgsProcessingParameterNumber.Integer),
-    ProcessingAlgFactory.STRING: QgsProcessingParameterString,
-    ProcessingAlgFactory.DISTANCE: QgsProcessingParameterDistance,
-    ProcessingAlgFactory.SINK: QgsProcessingParameterFeatureSink,
-    ProcessingAlgFactory.SOURCE: QgsProcessingParameterFeatureSource,
-    ProcessingAlgFactory.FILE_DEST: QgsProcessingParameterFileDestination,
-    ProcessingAlgFactory.FOLDER_DEST: QgsProcessingParameterFolderDestination,
-    ProcessingAlgFactory.RASTER_LAYER: QgsProcessingParameterRasterLayer,
-    ProcessingAlgFactory.RASTER_LAYER_DEST: QgsProcessingParameterRasterDestination,
-    ProcessingAlgFactory.VECTOR_LAYER_DEST: QgsProcessingParameterVectorDestination,
-    ProcessingAlgFactory.BAND: QgsProcessingParameterBand,
-    ProcessingAlgFactory.BOOL: QgsProcessingParameterBoolean,
-    ProcessingAlgFactory.CRS: QgsProcessingParameterCrs,
-    ProcessingAlgFactory.ENUM: QgsProcessingParameterEnum,
-    ProcessingAlgFactory.EXPRESSION: QgsProcessingParameterExpression,
-    ProcessingAlgFactory.EXTENT: QgsProcessingParameterExtent,
-    ProcessingAlgFactory.FIELD: QgsProcessingParameterField,
-    ProcessingAlgFactory.FILE: QgsProcessingParameterFile,
-    ProcessingAlgFactory.MAPLAYER: QgsProcessingParameterMapLayer,
-    ProcessingAlgFactory.MATRIX: QgsProcessingParameterMatrix,
-    ProcessingAlgFactory.MULTILAYER: QgsProcessingParameterMultipleLayers,
-    ProcessingAlgFactory.POINT: QgsProcessingParameterPoint,
-    ProcessingAlgFactory.GEOMETRY: QgsProcessingParameterGeometry,
-    ProcessingAlgFactory.RANGE: QgsProcessingParameterRange,
-    ProcessingAlgFactory.VECTOR_LAYER: QgsProcessingParameterVectorLayer,
-    ProcessingAlgFactory.AUTH_CFG: QgsProcessingParameterAuthConfig,
-    ProcessingAlgFactory.MESH_LAYER: QgsProcessingParameterMeshLayer,
-    ProcessingAlgFactory.SCALE: QgsProcessingParameterScale,
-    ProcessingAlgFactory.LAYOUT: QgsProcessingParameterLayout,
-    ProcessingAlgFactory.LAYOUT_ITEM: QgsProcessingParameterLayoutItem,
-    ProcessingAlgFactory.COLOR: QgsProcessingParameterColor,
-    ProcessingAlgFactory.DATETIME: QgsProcessingParameterDateTime,
-    ProcessingAlgFactory.MAP_THEME: QgsProcessingParameterMapTheme,
-    ProcessingAlgFactory.PROVIDER_CONNECTION: QgsProcessingParameterProviderConnection,
-    ProcessingAlgFactory.DATABASE_SCHEMA: QgsProcessingParameterDatabaseSchema,
-    ProcessingAlgFactory.DATABASE_TABLE: QgsProcessingParameterDatabaseTable,
-    ProcessingAlgFactory.COORDINATE_OPERATION: QgsProcessingParameterCoordinateOperation
-}
-
-output_type_mapping = {
-    str: partial(_make_output, cls=QgsProcessingOutputString),
-    int: partial(_make_output, cls=QgsProcessingOutputNumber),
-    float: partial(_make_output, cls=QgsProcessingOutputNumber),
-    ProcessingAlgFactory.NUMBER: partial(_make_output, cls=QgsProcessingOutputNumber),
-    ProcessingAlgFactory.DISTANCE: partial(_make_output, cls=QgsProcessingOutputNumber),
-    ProcessingAlgFactory.INT: partial(_make_output, cls=QgsProcessingOutputNumber),
-    ProcessingAlgFactory.STRING: partial(_make_output, cls=QgsProcessingOutputString),
-    ProcessingAlgFactory.FILE: partial(_make_output, cls=QgsProcessingOutputFile),
-    ProcessingAlgFactory.FOLDER: partial(_make_output, cls=QgsProcessingOutputFolder),
-    ProcessingAlgFactory.HTML: partial(_make_output, cls=QgsProcessingOutputHtml),
-    ProcessingAlgFactory.LAYERDEF: partial(_make_output, cls=QgsProcessingOutputLayerDefinition),
-    ProcessingAlgFactory.MAPLAYER: partial(_make_output, cls=QgsProcessingOutputMapLayer),
-    ProcessingAlgFactory.MULTILAYER: partial(_make_output, cls=QgsProcessingOutputMultipleLayers),
-    ProcessingAlgFactory.RASTER_LAYER: partial(_make_output, cls=QgsProcessingOutputRasterLayer),
-    ProcessingAlgFactory.VECTOR_LAYER: partial(_make_output, cls=QgsProcessingOutputVectorLayer),
-    ProcessingAlgFactory.BOOL: partial(_make_output, cls=QgsProcessingOutputBoolean),
-}
+input_type_mapping: Dict[_ProcessingInput, QgsProcessingParameterDefinition]
+output_type_mapping: Dict[_ProcessingOutput, QgsProcessingOutputDefinition]
 
 alg = ProcessingAlgFactory()
