@@ -22,15 +22,12 @@ __date__ = 'May 2014'
 __copyright__ = '(C) 2014, Nathan Woodrow'
 
 import typing
-import sip
 
-from PyQt5 import QtXml
-from PyQt5 import QtGui
-from PyQt5 import QtCore
+from PyQt5 import QtCore, QtGui, QtXml
 from qgis import _core
 
-# Support for QDate, QDateTime and QTime.
-import datetime
+from ._types import sip
+
 
 # Convenient type aliases.
 PYQT_SIGNAL = typing.Union[QtCore.pyqtSignal, QtCore.pyqtBoundSignal]

@@ -22,7 +22,7 @@ __date__ = 'October 2014'
 __copyright__ = '(C) 2014, Alessandro Pasotti'
 
 import typing
-import sip
+from .types import sip
 
 from qgis import _core
 from PyQt5 import QtXml

@@ -4,7 +4,7 @@
 
 
 import typing
-import sip
+from .types import sip
 
 from PyQt5 import QtWidgets
 from PyQt5 import QtPrintSupport
