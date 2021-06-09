@@ -6,9 +6,7 @@ This package defines Python stub files (.pyi) for the PyQGIS wrapper module avai
 
 The bulk of the `qgis` module is a [SIP](https://www.riverbankcomputing.com/software/sip/)-generated wrapper over a C++ source, which cannot be introspected by the user or development utilities.
 
-Python type stubs are a declaration-only replication of the C/C++ endpoints that can be parsed by IDEs, linters, or static type checkers to provide the same functionality available for regular Python sources.
-
-While type stubs are primarily intended for use with static type checkers like [Mypy](http://mypy-lang.org/) or [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance), they are also used by some linters like [pylint](https://pylint.org/) and will silence error messages like `import-error` or `no-name-in-module`.
+Python type stubs are a declaration-only replication of the C/C++ interface that can be parsed by IDEs, linters, or static type checkers like [Mypy](http://mypy-lang.org/) or [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance) to provide the same functionality available for regular Python sources.
 
 ## Installation
 
