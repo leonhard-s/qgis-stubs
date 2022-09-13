@@ -1,0 +1,11 @@
+{
+    // Have pylance run in full pedant mode
+    "python.analysis.typeCheckingMode": "strict",
+    "python.analysis.diagnosticMode": "workspace",
+    // Disable specific warnings that make no sense for type stubs
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportTypeCommentUsage": "none",
+        "reportMissingModuleSource": "none",
+        "reportUnusedImport": "information",
+    },
+}
