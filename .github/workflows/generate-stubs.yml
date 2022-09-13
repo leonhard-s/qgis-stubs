@@ -59,7 +59,7 @@ jobs:
 
       - name: Remove non-Python files
         run: |
-          python scripts/remove-non-python.py
+          python scripts/delete-non-python.py
 
       - name: Configure git
         run: |
