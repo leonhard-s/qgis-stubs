@@ -6,6 +6,11 @@
     "python.analysis.diagnosticSeverityOverrides": {
         "reportTypeCommentUsage": "none",
         "reportMissingModuleSource": "none",
-        "reportUnusedImport": "information",
+        "reportUnusedImport": "none",
+        "reportOptionalMemberAccess": "none",
+        "reportOverlappingOverload": "none",
+        "reportIncompatibleMethodOverride": "none",
     },
+    // Disable formatting
+    "editor.formatOnSave": false,
 }
