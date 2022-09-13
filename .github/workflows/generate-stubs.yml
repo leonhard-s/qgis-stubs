@@ -10,6 +10,9 @@ name: Generate type stubs
 # Only manual trigger supported for now
 on:
   workflow_dispatch: {}
+  push:
+    branches:
+      - stubgen-ci
 
 jobs:
   # Create the branch used for the PR
