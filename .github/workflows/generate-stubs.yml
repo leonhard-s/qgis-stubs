@@ -9,7 +9,7 @@ name: Generate type stubs
 
 # Only manual trigger supported for now
 on:
-  - workflow_dispatch
+  workflow_dispatch: {}
 
 jobs:
   # Create the branch used for the PR
@@ -20,6 +20,11 @@ jobs:
         with:
           ref: master
           fetch-depth: 0
+
+      - name: Configure git
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
 
       - name: Create branch
         run: |
@@ -48,3 +53,18 @@ jobs:
       - name: Extract Python modules
         run: |
           docker cp qgis-stubgen:/QGIS/build/output/python/qgis .
+
+      - name: Remove non-Python files
+        run: |
+          python scripts/remove-non-python.py
+
+      - name: Configure git
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+      - name: Commit changes
+        run: |
+          git add qgis
+          git commit -m "Extracted Python modules from QGIS build"
+          git push origin stubgen/${{ github.run_id }}
