@@ -33,4 +33,4 @@ if __name__ == '__main__':
         help="File extensions to keep (default: .py .pyi)")
     args = parser.parse_args()
 
-    filter_recursive(pathlib.Path(args.dir), args.extensions)
+    filter_recursive(pathlib.Path(args.dir), *args.extensions)
