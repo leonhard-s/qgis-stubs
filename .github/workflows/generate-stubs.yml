@@ -71,3 +71,33 @@ jobs:
           git add qgis
           git commit -m "Extracted Python modules from QGIS build"
           git push origin stubgen/${{ github.run_id }}
+
+  # Perform automated replacements and tidy-up on the new stubs
+  clean-stubs:
+    runs-on: ubuntu-latest
+    needs: build-qgis
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: stubgen/${{ github.run_id }}
+          fetch-depth: 0
+
+      - name: Configure git
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+      - name: Step 1 - Replace PyQt with PyQt5
+        run: |
+          python scripts/search-and-replace.py qgis "from qgis.PyQt" "from PyQt5"
+          rm -rf qgis/PyQt
+          git add -A
+          git commit -m "Replace qgis.PyQt references with PyQt5"
+
+      - name: Step 2 - Replace sip imports with dummy
+        run: |
+          python scripts/search-and-replace.py qgis "import sip" "sip: typing.Any = ..."
+
+      - name: Push changes
+        run: |
+          git push origin stubgen/${{ github.run_id }}
