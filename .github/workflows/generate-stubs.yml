@@ -1,0 +1,50 @@
+# This action fetches the latest version of QGIS, builds it, and extracts the
+# Python components into a new branch.
+# It then performs basic cleanup and automated fixes in additional commits and
+# finally creates a PR with the updated type stubs.
+#
+# Manual review and tidying up is usually required before merging.
+
+name: Generate type stubs
+
+# Only manual trigger supported for now
+on:
+  - workflow_dispatch
+
+jobs:
+  # Create the branch used for the PR
+  create-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: master
+          fetch-depth: 0
+
+      - name: Create branch
+        run: |
+          git checkout -b stubgen/${{ github.run_id }}
+          git push --set-upstream origin stubgen/${{ github.run_id }}
+
+  # Build QGIS in a docker container and extract the Python components to the
+  # new branch
+  build-qgis:
+    runs-on: ubuntu-latest
+    needs: create-branch
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: stubgen/${{ github.run_id }}
+          fetch-depth: 0
+
+      - name: Fetch latest QGIS
+        run: |
+          docker image pull qgis/qgis:latest
+
+      - name: Build QGIS
+        run: |
+          docker run --name qgis-stubgen qgis/qgis:latest sh -c "cd /QGIS/build && cmake . && ninja"
+
+      - name: Extract Python modules
+        run: |
+          docker cp qgis-stubgen:/QGIS/build/output/python/qgis .
