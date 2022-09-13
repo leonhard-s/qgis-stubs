@@ -86,5 +86,7 @@ if __name__ == '__main__':
     path = pathlib.Path(args.path)
     if path.is_dir():
         _search_and_replace_dir(path, args.old, args.new)
-    else:
+    elif path.exists():
         search_and_replace(path, args.old, args.new)
+    else:
+        raise ValueError(f"{path} does not exist")
