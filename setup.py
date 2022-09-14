@@ -8,7 +8,7 @@ with open('README.md', encoding='utf-8') as readme:
 
 setuptools.setup(
     name='qgis-stubs',
-    version='0.2.0',
+    version='0.2.0post1',
     url='https://github.com/leonhard-s/qgis-stubs',
     author='Leonhard S.',
     maintainer_email='leonhard-sei@outlook.com',
