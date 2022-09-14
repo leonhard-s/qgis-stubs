@@ -139,3 +139,29 @@ jobs:
       - name: Push changes
         run: |
           git push origin ${{ env.TARGET_BRANCH }}
+
+  # Create a PR with the updated stubs
+  create-pr:
+    runs-on: ubuntu-latest
+    needs: clean-stubs
+    if: ${{ always() }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ env.TARGET_BRANCH }}
+          fetch-depth: 0
+
+      - name: Configure git
+        run: |
+          git config --local user.email "${{ env.GIT_EMAIL }}"
+          git config --local user.name "${{ env.GIT_USER }}"
+
+      - name: GitHub Pull Request Action
+        uses: repo-sync/pull-request@v2.6.2
+        with:
+          source_branch: ${{ env.TARGET_BRANCH }}
+          destination_branch: "main"
+          pr_title: Update stubs using ${{ env.TARGET_BRANCH }}
+          pr_template: .github/PULL_REQUEST_TEMPLATE/stubgen-pr.md
+          pr_draft: true                                    # Creates pull request as draft
+          github_token: ${{ secrets.GITHUB_TOKEN }}
