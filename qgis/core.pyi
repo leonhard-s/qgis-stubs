@@ -39,890 +39,890 @@ PYQT_OPENGL_BOUND_ARRAY = typing.Union[typing.Sequence[int],
         typing.Sequence[float], sip.Buffer, int, None]
 
 
-class SmartgroupTable(int): ...
-SmartgroupId = ... # type: SmartgroupTable
-SmartgroupName = ... # type: SmartgroupTable
-SmartgroupXML = ... # type: SmartgroupTable
+class SmartgroupTable(int):
+    SmartgroupId: 'SmartgroupTable'
+    SmartgroupName: 'SmartgroupTable'
+    SmartgroupXML: 'SmartgroupTable'
 
 
-class LabelSettingsTable(int): ...
-LabelSettingsId = ... # type: LabelSettingsTable
-LabelSettingsName = ... # type: LabelSettingsTable
-LabelSettingsXML = ... # type: LabelSettingsTable
-LabelSettingsFavoriteId = ... # type: LabelSettingsTable
+class LabelSettingsTable(int):
+    LabelSettingsId: 'LabelSettingsTable'
+    LabelSettingsName: 'LabelSettingsTable'
+    LabelSettingsXML: 'LabelSettingsTable'
+    LabelSettingsFavoriteId: 'LabelSettingsTable'
 
 
-class TextFormatTable(int): ...
-TextFormatId = ... # type: TextFormatTable
-TextFormatName = ... # type: TextFormatTable
-TextFormatXML = ... # type: TextFormatTable
-TextFormatFavoriteId = ... # type: TextFormatTable
+class TextFormatTable(int):
+    TextFormatId: 'TextFormatTable'
+    TextFormatName: 'TextFormatTable'
+    TextFormatXML: 'TextFormatTable'
+    TextFormatFavoriteId: 'TextFormatTable'
 
 
-class ColorrampTable(int): ...
-ColorrampId = ... # type: ColorrampTable
-ColorrampName = ... # type: ColorrampTable
-ColorrampXML = ... # type: ColorrampTable
-ColorrampFavoriteId = ... # type: ColorrampTable
+class ColorrampTable(int):
+    ColorrampId: 'ColorrampTable'
+    ColorrampName: 'ColorrampTable'
+    ColorrampXML: 'ColorrampTable'
+    ColorrampFavoriteId: 'ColorrampTable'
 
 
-class TagmapTable(int): ...
-TagmapTagId = ... # type: TagmapTable
-TagmapSymbolId = ... # type: TagmapTable
+class TagmapTable(int):
+    TagmapTagId: 'TagmapTable'
+    TagmapSymbolId: 'TagmapTable'
 
 
-class TagTable(int): ...
-TagId = ... # type: TagTable
-TagName = ... # type: TagTable
+class TagTable(int):
+    TagId: 'TagTable'
+    TagName: 'TagTable'
 
 
-class SymbolTable(int): ...
-SymbolId = ... # type: SymbolTable
-SymbolName = ... # type: SymbolTable
-SymbolXML = ... # type: SymbolTable
-SymbolFavoriteId = ... # type: SymbolTable
+class SymbolTable(int):
+    SymbolId: 'SymbolTable'
+    SymbolName: 'SymbolTable'
+    SymbolXML: 'SymbolTable'
+    SymbolFavoriteId: 'SymbolTable'
 
 
-class QgsMapLayerType(int): ...
-VectorLayer = ... # type: QgsMapLayerType
-RasterLayer = ... # type: QgsMapLayerType
-PluginLayer = ... # type: QgsMapLayerType
-MeshLayer = ... # type: QgsMapLayerType
-VectorTileLayer = ... # type: QgsMapLayerType
-AnnotationLayer = ... # type: QgsMapLayerType
-PointCloudLayer = ... # type: QgsMapLayerType
-GroupLayer = ... # type: QgsMapLayerType
+class QgsMapLayerType(int):
+    VectorLayer: 'QgsMapLayerType'
+    RasterLayer: 'QgsMapLayerType'
+    PluginLayer: 'QgsMapLayerType'
+    MeshLayer: 'QgsMapLayerType'
+    VectorTileLayer: 'QgsMapLayerType'
+    AnnotationLayer: 'QgsMapLayerType'
+    PointCloudLayer: 'QgsMapLayerType'
+    GroupLayer: 'QgsMapLayerType'
 
 
 class Qgis(sip.wrapper):
 
-    class RelationshipCardinality(int): ...
-    OneToOne = ... # type: 'Qgis.RelationshipCardinality'
-    OneToMany = ... # type: 'Qgis.RelationshipCardinality'
-    ManyToOne = ... # type: 'Qgis.RelationshipCardinality'
-    ManyToMany = ... # type: 'Qgis.RelationshipCardinality'
-
-    class RelationshipStrength(int): ...
-    Association = ... # type: 'Qgis.RelationshipStrength'
-    Composition = ... # type: 'Qgis.RelationshipStrength'
-
-    class RelationshipType(int): ...
-    Normal = ... # type: 'Qgis.RelationshipType'
-    Generated = ... # type: 'Qgis.RelationshipType'
-
-    class ArcGisRestServiceType(int): ...
-    FeatureServer = ... # type: 'Qgis.ArcGisRestServiceType'
-    MapServer = ... # type: 'Qgis.ArcGisRestServiceType'
-    ImageServer = ... # type: 'Qgis.ArcGisRestServiceType'
-    GlobeServer = ... # type: 'Qgis.ArcGisRestServiceType'
-    GPServer = ... # type: 'Qgis.ArcGisRestServiceType'
-    GeocodeServer = ... # type: 'Qgis.ArcGisRestServiceType'
-    Unknown = ... # type: 'Qgis.ArcGisRestServiceType'
-
-    class MapBoxGlStyleSourceType(int): ...
-    Vector = ... # type: 'Qgis.MapBoxGlStyleSourceType'
-    Raster = ... # type: 'Qgis.MapBoxGlStyleSourceType'
-    RasterDem = ... # type: 'Qgis.MapBoxGlStyleSourceType'
-    GeoJson = ... # type: 'Qgis.MapBoxGlStyleSourceType'
-    Image = ... # type: 'Qgis.MapBoxGlStyleSourceType'
-    Video = ... # type: 'Qgis.MapBoxGlStyleSourceType'
-    Unknown = ... # type: 'Qgis.MapBoxGlStyleSourceType'
-
-    class ProjectCapability(int): ...
-    ProjectStyles = ... # type: 'Qgis.ProjectCapability'
-
-    class ProjectReadFlag(int): ...
-    DontResolveLayers = ... # type: 'Qgis.ProjectReadFlag'
-    DontLoadLayouts = ... # type: 'Qgis.ProjectReadFlag'
-    TrustLayerMetadata = ... # type: 'Qgis.ProjectReadFlag'
-    DontStoreOriginalStyles = ... # type: 'Qgis.ProjectReadFlag'
-    DontLoad3DViews = ... # type: 'Qgis.ProjectReadFlag'
-    DontLoadProjectStyles = ... # type: 'Qgis.ProjectReadFlag'
-
-    class ProjectFileFormat(int): ...
-    Qgz = ... # type: 'Qgis.ProjectFileFormat'
-    Qgs = ... # type: 'Qgis.ProjectFileFormat'
-
-    class AvoidIntersectionsMode(int): ...
-    AllowIntersections = ... # type: 'Qgis.AvoidIntersectionsMode'
-    AvoidIntersectionsCurrentLayer = ... # type: 'Qgis.AvoidIntersectionsMode'
-    AvoidIntersectionsLayers = ... # type: 'Qgis.AvoidIntersectionsMode'
-
-    class PointCloudDrawOrder(int): ...
-    Default = ... # type: 'Qgis.PointCloudDrawOrder'
-    BottomToTop = ... # type: 'Qgis.PointCloudDrawOrder'
-    TopToBottom = ... # type: 'Qgis.PointCloudDrawOrder'
-
-    class PointCloudSymbol(int): ...
-    Square = ... # type: 'Qgis.PointCloudSymbol'
-    Circle = ... # type: 'Qgis.PointCloudSymbol'
-
-    class ProfileGeneratorFlag(int): ...
-    RespectsMaximumErrorMapUnit = ... # type: 'Qgis.ProfileGeneratorFlag'
-    RespectsDistanceRange = ... # type: 'Qgis.ProfileGeneratorFlag'
-    RespectsElevationRange = ... # type: 'Qgis.ProfileGeneratorFlag'
-
-    class VectorProfileType(int): ...
-    IndividualFeatures = ... # type: 'Qgis.VectorProfileType'
-    ContinuousSurface = ... # type: 'Qgis.VectorProfileType'
-
-    class ProfileSurfaceSymbology(int): ...
-    Line = ... # type: 'Qgis.ProfileSurfaceSymbology'
-    FillBelow = ... # type: 'Qgis.ProfileSurfaceSymbology'
-
-    class LightSourceType(int): ...
-    Point = ... # type: 'Qgis.LightSourceType'
-    Directional = ... # type: 'Qgis.LightSourceType'
-
-    class PlotToolFlag(int): ...
-    ShowContextMenu = ... # type: 'Qgis.PlotToolFlag'
-
-    class ProjectFlag(int): ...
-    EvaluateDefaultValuesOnProviderSide = ... # type: 'Qgis.ProjectFlag'
-    TrustStoredLayerStatistics = ... # type: 'Qgis.ProjectFlag'
-    RememberLayerEditStatusBetweenSessions = ... # type: 'Qgis.ProjectFlag'
-    RememberAttributeTableWindowsBetweenSessions = ... # type: 'Qgis.ProjectFlag'
-
-    class LineExtensionSide(int): ...
-    BeforeVertex = ... # type: 'Qgis.LineExtensionSide'
-    AfterVertex = ... # type: 'Qgis.LineExtensionSide'
-    NoVertex = ... # type: 'Qgis.LineExtensionSide'
-
-    class BetweenLineConstraint(int): ...
-    NoConstraint = ... # type: 'Qgis.BetweenLineConstraint'
-    Perpendicular = ... # type: 'Qgis.BetweenLineConstraint'
-    Parallel = ... # type: 'Qgis.BetweenLineConstraint'
-
-    class AltitudeBinding(int): ...
-    Vertex = ... # type: 'Qgis.AltitudeBinding'
-    Centroid = ... # type: 'Qgis.AltitudeBinding'
-
-    class AltitudeClamping(int): ...
-    Absolute = ... # type: 'Qgis.AltitudeClamping'
-    Relative = ... # type: 'Qgis.AltitudeClamping'
-    Terrain = ... # type: 'Qgis.AltitudeClamping'
-
-    class TransactionMode(int): ...
-    Disabled = ... # type: 'Qgis.TransactionMode'
-    AutomaticGroups = ... # type: 'Qgis.TransactionMode'
-    BufferedGroups = ... # type: 'Qgis.TransactionMode'
-
-    class FieldDomainType(int): ...
-    Coded = ... # type: 'Qgis.FieldDomainType'
-    Range = ... # type: 'Qgis.FieldDomainType'
-    Glob = ... # type: 'Qgis.FieldDomainType'
-
-    class FieldDomainMergePolicy(int): ...
-    DefaultValue = ... # type: 'Qgis.FieldDomainMergePolicy'
-    Sum = ... # type: 'Qgis.FieldDomainMergePolicy'
-    GeometryWeighted = ... # type: 'Qgis.FieldDomainMergePolicy'
-
-    class FieldDomainSplitPolicy(int): ...
-    DefaultValue = ... # type: 'Qgis.FieldDomainSplitPolicy'
-    Duplicate = ... # type: 'Qgis.FieldDomainSplitPolicy'
-    GeometryRatio = ... # type: 'Qgis.FieldDomainSplitPolicy'
-
-    class CrsDefinitionFormat(int): ...
-    Wkt = ... # type: 'Qgis.CrsDefinitionFormat'
-    Proj = ... # type: 'Qgis.CrsDefinitionFormat'
-
-    class HistoryProviderBackend(int): ...
-    LocalProfile = ... # type: 'Qgis.HistoryProviderBackend'
-
-    class ViewSyncModeFlag(int): ...
-    Sync3DTo2D = ... # type: 'Qgis.ViewSyncModeFlag'
-    Sync2DTo3D = ... # type: 'Qgis.ViewSyncModeFlag'
-
-    class RendererUsage(int): ...
-    View = ... # type: 'Qgis.RendererUsage'
-    Export = ... # type: 'Qgis.RendererUsage'
-    Unknown = ... # type: 'Qgis.RendererUsage'
-
-    class AngularDirection(int): ...
-    Clockwise = ... # type: 'Qgis.AngularDirection'
-    CounterClockwise = ... # type: 'Qgis.AngularDirection'
-
-    class ScaleToTileZoomLevelMethod(int): ...
-    MapBox = ... # type: 'Qgis.ScaleToTileZoomLevelMethod'
-    Esri = ... # type: 'Qgis.ScaleToTileZoomLevelMethod'
-
-    class TextRendererFlag(int): ...
-    WrapLines = ... # type: 'Qgis.TextRendererFlag'
-
-    class Capitalization(int): ...
-    MixedCase = ... # type: 'Qgis.Capitalization'
-    AllUppercase = ... # type: 'Qgis.Capitalization'
-    AllLowercase = ... # type: 'Qgis.Capitalization'
-    ForceFirstLetterToCapital = ... # type: 'Qgis.Capitalization'
-    SmallCaps = ... # type: 'Qgis.Capitalization'
-    TitleCase = ... # type: 'Qgis.Capitalization'
-    UpperCamelCase = ... # type: 'Qgis.Capitalization'
-    AllSmallCaps = ... # type: 'Qgis.Capitalization'
-
-    class DpiMode(int): ...
-    All = ... # type: 'Qgis.DpiMode'
-    Off = ... # type: 'Qgis.DpiMode'
-    QGIS = ... # type: 'Qgis.DpiMode'
-    UMN = ... # type: 'Qgis.DpiMode'
-    GeoServer = ... # type: 'Qgis.DpiMode'
-
-    class GraduatedMethod(int): ...
-    Color = ... # type: 'Qgis.GraduatedMethod'
-    Size = ... # type: 'Qgis.GraduatedMethod'
-
-    class DashPatternSizeAdjustment(int): ...
-    ScaleBothDashAndGap = ... # type: 'Qgis.DashPatternSizeAdjustment'
-    ScaleDashOnly = ... # type: 'Qgis.DashPatternSizeAdjustment'
-    ScaleGapOnly = ... # type: 'Qgis.DashPatternSizeAdjustment'
-
-    class DashPatternLineEndingRule(int): ...
-    NoRule = ... # type: 'Qgis.DashPatternLineEndingRule'
-    FullDash = ... # type: 'Qgis.DashPatternLineEndingRule'
-    HalfDash = ... # type: 'Qgis.DashPatternLineEndingRule'
-    FullGap = ... # type: 'Qgis.DashPatternLineEndingRule'
-    HalfGap = ... # type: 'Qgis.DashPatternLineEndingRule'
-
-    class LineClipMode(int): ...
-    ClipPainterOnly = ... # type: 'Qgis.LineClipMode'
-    ClipToIntersection = ... # type: 'Qgis.LineClipMode'
-    NoClipping = ... # type: 'Qgis.LineClipMode'
-
-    class MarkerClipMode(int): ...
-    NoClipping = ... # type: 'Qgis.MarkerClipMode'
-    Shape = ... # type: 'Qgis.MarkerClipMode'
-    CentroidWithin = ... # type: 'Qgis.MarkerClipMode'
-    CompletelyWithin = ... # type: 'Qgis.MarkerClipMode'
-
-    class PointCountMethod(int): ...
-    Absolute = ... # type: 'Qgis.PointCountMethod'
-    DensityBased = ... # type: 'Qgis.PointCountMethod'
-
-    class GradientSpread(int): ...
-    Pad = ... # type: 'Qgis.GradientSpread'
-    Reflect = ... # type: 'Qgis.GradientSpread'
-    Repeat = ... # type: 'Qgis.GradientSpread'
-
-    class SymbolCoordinateReference(int): ...
-    Feature = ... # type: 'Qgis.SymbolCoordinateReference'
-    Viewport = ... # type: 'Qgis.SymbolCoordinateReference'
-
-    class GradientType(int): ...
-    Linear = ... # type: 'Qgis.GradientType'
-    Radial = ... # type: 'Qgis.GradientType'
-    Conical = ... # type: 'Qgis.GradientType'
-
-    class GradientColorSource(int): ...
-    SimpleTwoColor = ... # type: 'Qgis.GradientColorSource'
-    ColorRamp = ... # type: 'Qgis.GradientColorSource'
-
-    class MarkerLinePlacement(int): ...
-    Interval = ... # type: 'Qgis.MarkerLinePlacement'
-    Vertex = ... # type: 'Qgis.MarkerLinePlacement'
-    LastVertex = ... # type: 'Qgis.MarkerLinePlacement'
-    FirstVertex = ... # type: 'Qgis.MarkerLinePlacement'
-    CentralPoint = ... # type: 'Qgis.MarkerLinePlacement'
-    CurvePoint = ... # type: 'Qgis.MarkerLinePlacement'
-    SegmentCenter = ... # type: 'Qgis.MarkerLinePlacement'
-    InnerVertices = ... # type: 'Qgis.MarkerLinePlacement'
-
-    class MarkerShape(int): ...
-    Square = ... # type: 'Qgis.MarkerShape'
-    Diamond = ... # type: 'Qgis.MarkerShape'
-    Pentagon = ... # type: 'Qgis.MarkerShape'
-    Hexagon = ... # type: 'Qgis.MarkerShape'
-    Triangle = ... # type: 'Qgis.MarkerShape'
-    EquilateralTriangle = ... # type: 'Qgis.MarkerShape'
-    Star = ... # type: 'Qgis.MarkerShape'
-    Arrow = ... # type: 'Qgis.MarkerShape'
-    Circle = ... # type: 'Qgis.MarkerShape'
-    Cross = ... # type: 'Qgis.MarkerShape'
-    CrossFill = ... # type: 'Qgis.MarkerShape'
-    Cross2 = ... # type: 'Qgis.MarkerShape'
-    Line = ... # type: 'Qgis.MarkerShape'
-    ArrowHead = ... # type: 'Qgis.MarkerShape'
-    ArrowHeadFilled = ... # type: 'Qgis.MarkerShape'
-    SemiCircle = ... # type: 'Qgis.MarkerShape'
-    ThirdCircle = ... # type: 'Qgis.MarkerShape'
-    QuarterCircle = ... # type: 'Qgis.MarkerShape'
-    QuarterSquare = ... # type: 'Qgis.MarkerShape'
-    HalfSquare = ... # type: 'Qgis.MarkerShape'
-    DiagonalHalfSquare = ... # type: 'Qgis.MarkerShape'
-    RightHalfTriangle = ... # type: 'Qgis.MarkerShape'
-    LeftHalfTriangle = ... # type: 'Qgis.MarkerShape'
-    Octagon = ... # type: 'Qgis.MarkerShape'
-    SquareWithCorners = ... # type: 'Qgis.MarkerShape'
-    AsteriskFill = ... # type: 'Qgis.MarkerShape'
-    HalfArc = ... # type: 'Qgis.MarkerShape'
-    ThirdArc = ... # type: 'Qgis.MarkerShape'
-    QuarterArc = ... # type: 'Qgis.MarkerShape'
-    ParallelogramRight = ... # type: 'Qgis.MarkerShape'
-    ParallelogramLeft = ... # type: 'Qgis.MarkerShape'
-    Trapezoid = ... # type: 'Qgis.MarkerShape'
-    Shield = ... # type: 'Qgis.MarkerShape'
-    DiamondStar = ... # type: 'Qgis.MarkerShape'
-    Heart = ... # type: 'Qgis.MarkerShape'
-    Decagon = ... # type: 'Qgis.MarkerShape'
-    RoundedSquare = ... # type: 'Qgis.MarkerShape'
-
-    class VertexType(int): ...
-    Segment = ... # type: 'Qgis.VertexType'
-    Curve = ... # type: 'Qgis.VertexType'
-
-    class RenderSubcomponentProperty(int): ...
-    Generic = ... # type: 'Qgis.RenderSubcomponentProperty'
-    ShadowOffset = ... # type: 'Qgis.RenderSubcomponentProperty'
-    BlurSize = ... # type: 'Qgis.RenderSubcomponentProperty'
-    GlowSpread = ... # type: 'Qgis.RenderSubcomponentProperty'
-
-    class TextRenderFormat(int): ...
-    AlwaysOutlines = ... # type: 'Qgis.TextRenderFormat'
-    AlwaysText = ... # type: 'Qgis.TextRenderFormat'
-
-    class RenderContextFlag(int): ...
-    DrawEditingInfo = ... # type: 'Qgis.RenderContextFlag'
-    ForceVectorOutput = ... # type: 'Qgis.RenderContextFlag'
-    UseAdvancedEffects = ... # type: 'Qgis.RenderContextFlag'
-    UseRenderingOptimization = ... # type: 'Qgis.RenderContextFlag'
-    DrawSelection = ... # type: 'Qgis.RenderContextFlag'
-    DrawSymbolBounds = ... # type: 'Qgis.RenderContextFlag'
-    RenderMapTile = ... # type: 'Qgis.RenderContextFlag'
-    Antialiasing = ... # type: 'Qgis.RenderContextFlag'
-    RenderPartialOutput = ... # type: 'Qgis.RenderContextFlag'
-    RenderPreviewJob = ... # type: 'Qgis.RenderContextFlag'
-    RenderBlocking = ... # type: 'Qgis.RenderContextFlag'
-    RenderSymbolPreview = ... # type: 'Qgis.RenderContextFlag'
-    LosslessImageRendering = ... # type: 'Qgis.RenderContextFlag'
-    ApplyScalingWorkaroundForTextRendering = ... # type: 'Qgis.RenderContextFlag'
-    Render3DMap = ... # type: 'Qgis.RenderContextFlag'
-    ApplyClipAfterReprojection = ... # type: 'Qgis.RenderContextFlag'
-    RenderingSubSymbol = ... # type: 'Qgis.RenderContextFlag'
-    HighQualityImageTransforms = ... # type: 'Qgis.RenderContextFlag'
-    SkipSymbolRendering = ... # type: 'Qgis.RenderContextFlag'
-
-    class MapSettingsFlag(int): ...
-    Antialiasing = ... # type: 'Qgis.MapSettingsFlag'
-    DrawEditingInfo = ... # type: 'Qgis.MapSettingsFlag'
-    ForceVectorOutput = ... # type: 'Qgis.MapSettingsFlag'
-    UseAdvancedEffects = ... # type: 'Qgis.MapSettingsFlag'
-    DrawLabeling = ... # type: 'Qgis.MapSettingsFlag'
-    UseRenderingOptimization = ... # type: 'Qgis.MapSettingsFlag'
-    DrawSelection = ... # type: 'Qgis.MapSettingsFlag'
-    DrawSymbolBounds = ... # type: 'Qgis.MapSettingsFlag'
-    RenderMapTile = ... # type: 'Qgis.MapSettingsFlag'
-    RenderPartialOutput = ... # type: 'Qgis.MapSettingsFlag'
-    RenderPreviewJob = ... # type: 'Qgis.MapSettingsFlag'
-    RenderBlocking = ... # type: 'Qgis.MapSettingsFlag'
-    LosslessImageRendering = ... # type: 'Qgis.MapSettingsFlag'
-    Render3DMap = ... # type: 'Qgis.MapSettingsFlag'
-    HighQualityImageTransforms = ... # type: 'Qgis.MapSettingsFlag'
-    SkipSymbolRendering = ... # type: 'Qgis.MapSettingsFlag'
-    ForceRasterMasks = ... # type: 'Qgis.MapSettingsFlag'
-
-    class CoordinateTransformationFlag(int): ...
-    BallparkTransformsAreAppropriate = ... # type: 'Qgis.CoordinateTransformationFlag'
-    IgnoreImpossibleTransformations = ... # type: 'Qgis.CoordinateTransformationFlag'
-
-    class TransformDirection(int): ...
-    Forward = ... # type: 'Qgis.TransformDirection'
-    Reverse = ... # type: 'Qgis.TransformDirection'
-
-    class RasterTemporalCapabilityFlag(int): ...
-    RequestedTimesMustExactlyMatchAllAvailableTemporalRanges = ... # type: 'Qgis.RasterTemporalCapabilityFlag'
-
-    class TemporalIntervalMatchMethod(int): ...
-    MatchUsingWholeRange = ... # type: 'Qgis.TemporalIntervalMatchMethod'
-    MatchExactUsingStartOfRange = ... # type: 'Qgis.TemporalIntervalMatchMethod'
-    MatchExactUsingEndOfRange = ... # type: 'Qgis.TemporalIntervalMatchMethod'
-    FindClosestMatchToStartOfRange = ... # type: 'Qgis.TemporalIntervalMatchMethod'
-    FindClosestMatchToEndOfRange = ... # type: 'Qgis.TemporalIntervalMatchMethod'
-
-    class RasterTemporalMode(int): ...
-    FixedTemporalRange = ... # type: 'Qgis.RasterTemporalMode'
-    TemporalRangeFromDataProvider = ... # type: 'Qgis.RasterTemporalMode'
-    RedrawLayerOnly = ... # type: 'Qgis.RasterTemporalMode'
-
-    class VectorDataProviderTemporalMode(int): ...
-    HasFixedTemporalRange = ... # type: 'Qgis.VectorDataProviderTemporalMode'
-    StoresFeatureDateTimeInstantInField = ... # type: 'Qgis.VectorDataProviderTemporalMode'
-    StoresFeatureDateTimeStartAndEndInSeparateFields = ... # type: 'Qgis.VectorDataProviderTemporalMode'
-
-    class VectorTemporalLimitMode(int): ...
-    IncludeBeginExcludeEnd = ... # type: 'Qgis.VectorTemporalLimitMode'
-    IncludeBeginIncludeEnd = ... # type: 'Qgis.VectorTemporalLimitMode'
-
-    class VectorTemporalMode(int): ...
-    FixedTemporalRange = ... # type: 'Qgis.VectorTemporalMode'
-    FeatureDateTimeInstantFromField = ... # type: 'Qgis.VectorTemporalMode'
-    FeatureDateTimeStartAndEndFromFields = ... # type: 'Qgis.VectorTemporalMode'
-    FeatureDateTimeStartAndDurationFromFields = ... # type: 'Qgis.VectorTemporalMode'
-    FeatureDateTimeStartAndEndFromExpressions = ... # type: 'Qgis.VectorTemporalMode'
-    RedrawLayerOnly = ... # type: 'Qgis.VectorTemporalMode'
-
-    class AnnotationItemEditOperationResult(int): ...
-    Success = ... # type: 'Qgis.AnnotationItemEditOperationResult'
-    Invalid = ... # type: 'Qgis.AnnotationItemEditOperationResult'
-    ItemCleared = ... # type: 'Qgis.AnnotationItemEditOperationResult'
-
-    class AnnotationItemNodeType(int): ...
-    VertexHandle = ... # type: 'Qgis.AnnotationItemNodeType'
-
-    class AnnotationItemGuiFlag(int): ...
-    FlagNoCreationTools = ... # type: 'Qgis.AnnotationItemGuiFlag'
-
-    class AnnotationItemFlag(int): ...
-    ScaleDependentBoundingBox = ... # type: 'Qgis.AnnotationItemFlag'
-
-    class CoordinateOrder(int): ...
-    Default = ... # type: 'Qgis.CoordinateOrder'
-    XY = ... # type: 'Qgis.CoordinateOrder'
-    YX = ... # type: 'Qgis.CoordinateOrder'
-
-    class CrsAxisDirection(int): ...
-    North = ... # type: 'Qgis.CrsAxisDirection'
-    NorthNorthEast = ... # type: 'Qgis.CrsAxisDirection'
-    NorthEast = ... # type: 'Qgis.CrsAxisDirection'
-    EastNorthEast = ... # type: 'Qgis.CrsAxisDirection'
-    East = ... # type: 'Qgis.CrsAxisDirection'
-    EastSouthEast = ... # type: 'Qgis.CrsAxisDirection'
-    SouthEast = ... # type: 'Qgis.CrsAxisDirection'
-    SouthSouthEast = ... # type: 'Qgis.CrsAxisDirection'
-    South = ... # type: 'Qgis.CrsAxisDirection'
-    SouthSouthWest = ... # type: 'Qgis.CrsAxisDirection'
-    SouthWest = ... # type: 'Qgis.CrsAxisDirection'
-    WestSouthWest = ... # type: 'Qgis.CrsAxisDirection'
-    West = ... # type: 'Qgis.CrsAxisDirection'
-    WestNorthWest = ... # type: 'Qgis.CrsAxisDirection'
-    NorthWest = ... # type: 'Qgis.CrsAxisDirection'
-    NorthNorthWest = ... # type: 'Qgis.CrsAxisDirection'
-    GeocentricX = ... # type: 'Qgis.CrsAxisDirection'
-    GeocentricY = ... # type: 'Qgis.CrsAxisDirection'
-    GeocentricZ = ... # type: 'Qgis.CrsAxisDirection'
-    Up = ... # type: 'Qgis.CrsAxisDirection'
-    Down = ... # type: 'Qgis.CrsAxisDirection'
-    Forward = ... # type: 'Qgis.CrsAxisDirection'
-    Aft = ... # type: 'Qgis.CrsAxisDirection'
-    Port = ... # type: 'Qgis.CrsAxisDirection'
-    Starboard = ... # type: 'Qgis.CrsAxisDirection'
-    Clockwise = ... # type: 'Qgis.CrsAxisDirection'
-    CounterClockwise = ... # type: 'Qgis.CrsAxisDirection'
-    ColumnPositive = ... # type: 'Qgis.CrsAxisDirection'
-    ColumnNegative = ... # type: 'Qgis.CrsAxisDirection'
-    RowPositive = ... # type: 'Qgis.CrsAxisDirection'
-    RowNegative = ... # type: 'Qgis.CrsAxisDirection'
-    DisplayRight = ... # type: 'Qgis.CrsAxisDirection'
-    DisplayLeft = ... # type: 'Qgis.CrsAxisDirection'
-    DisplayUp = ... # type: 'Qgis.CrsAxisDirection'
-    DisplayDown = ... # type: 'Qgis.CrsAxisDirection'
-    Future = ... # type: 'Qgis.CrsAxisDirection'
-    Past = ... # type: 'Qgis.CrsAxisDirection'
-    Towards = ... # type: 'Qgis.CrsAxisDirection'
-    AwayFrom = ... # type: 'Qgis.CrsAxisDirection'
-    Unspecified = ... # type: 'Qgis.CrsAxisDirection'
-
-    class DataProviderFlag(int): ...
-    IsBasemapSource = ... # type: 'Qgis.DataProviderFlag'
-
-    class MapLayerProperty(int): ...
-    UsersCannotToggleEditing = ... # type: 'Qgis.MapLayerProperty'
-    IsBasemapLayer = ... # type: 'Qgis.MapLayerProperty'
-
-    class FileOperationFlag(int): ...
-    IncludeMetadataFile = ... # type: 'Qgis.FileOperationFlag'
-    IncludeStyleFile = ... # type: 'Qgis.FileOperationFlag'
-
-    class SpatialFilterType(int): ...
-    NoFilter = ... # type: 'Qgis.SpatialFilterType'
-    BoundingBox = ... # type: 'Qgis.SpatialFilterType'
-    DistanceWithin = ... # type: 'Qgis.SpatialFilterType'
-
-    class JoinStyle(int): ...
-    Round = ... # type: 'Qgis.JoinStyle'
-    Miter = ... # type: 'Qgis.JoinStyle'
-    Bevel = ... # type: 'Qgis.JoinStyle'
-
-    class EndCapStyle(int): ...
-    Round = ... # type: 'Qgis.EndCapStyle'
-    Flat = ... # type: 'Qgis.EndCapStyle'
-    Square = ... # type: 'Qgis.EndCapStyle'
-
-    class BufferSide(int): ...
-    Left = ... # type: 'Qgis.BufferSide'
-    Right = ... # type: 'Qgis.BufferSide'
-
-    class GeometryValidationEngine(int): ...
-    QgisInternal = ... # type: 'Qgis.GeometryValidationEngine'
-    Geos = ... # type: 'Qgis.GeometryValidationEngine'
-
-    class GeometryValidityFlag(int): ...
-    AllowSelfTouchingHoles = ... # type: 'Qgis.GeometryValidityFlag'
-
-    class GeometryOperationResult(int): ...
-    Success = ... # type: 'Qgis.GeometryOperationResult'
-    NothingHappened = ... # type: 'Qgis.GeometryOperationResult'
-    InvalidBaseGeometry = ... # type: 'Qgis.GeometryOperationResult'
-    InvalidInputGeometryType = ... # type: 'Qgis.GeometryOperationResult'
-    SelectionIsEmpty = ... # type: 'Qgis.GeometryOperationResult'
-    SelectionIsGreaterThanOne = ... # type: 'Qgis.GeometryOperationResult'
-    GeometryEngineError = ... # type: 'Qgis.GeometryOperationResult'
-    LayerNotEditable = ... # type: 'Qgis.GeometryOperationResult'
-    AddPartSelectedGeometryNotFound = ... # type: 'Qgis.GeometryOperationResult'
-    AddPartNotMultiGeometry = ... # type: 'Qgis.GeometryOperationResult'
-    AddRingNotClosed = ... # type: 'Qgis.GeometryOperationResult'
-    AddRingNotValid = ... # type: 'Qgis.GeometryOperationResult'
-    AddRingCrossesExistingRings = ... # type: 'Qgis.GeometryOperationResult'
-    AddRingNotInExistingFeature = ... # type: 'Qgis.GeometryOperationResult'
-    SplitCannotSplitPoint = ... # type: 'Qgis.GeometryOperationResult'
-
-    class GpsFeatureType(int): ...
-    Waypoint = ... # type: 'Qgis.GpsFeatureType'
-    Route = ... # type: 'Qgis.GpsFeatureType'
-    Track = ... # type: 'Qgis.GpsFeatureType'
-
-    class BabelCommandFlag(int): ...
-    QuoteFilePaths = ... # type: 'Qgis.BabelCommandFlag'
-
-    class BabelFormatCapability(int): ...
-    Import = ... # type: 'Qgis.BabelFormatCapability'
-    Export = ... # type: 'Qgis.BabelFormatCapability'
-    Waypoints = ... # type: 'Qgis.BabelFormatCapability'
-    Routes = ... # type: 'Qgis.BabelFormatCapability'
-    Tracks = ... # type: 'Qgis.BabelFormatCapability'
-
-    class GpsQualityIndicator(int): ...
-    Unknown = ... # type: 'Qgis.GpsQualityIndicator'
-    Invalid = ... # type: 'Qgis.GpsQualityIndicator'
-    GPS = ... # type: 'Qgis.GpsQualityIndicator'
-    DGPS = ... # type: 'Qgis.GpsQualityIndicator'
-    PPS = ... # type: 'Qgis.GpsQualityIndicator'
-    RTK = ... # type: 'Qgis.GpsQualityIndicator'
-    FloatRTK = ... # type: 'Qgis.GpsQualityIndicator'
-    Estimated = ... # type: 'Qgis.GpsQualityIndicator'
-    Manual = ... # type: 'Qgis.GpsQualityIndicator'
-    Simulation = ... # type: 'Qgis.GpsQualityIndicator'
-
-    class ContentStatus(int): ...
-    NotStarted = ... # type: 'Qgis.ContentStatus'
-    Running = ... # type: 'Qgis.ContentStatus'
-    Finished = ... # type: 'Qgis.ContentStatus'
-    Failed = ... # type: 'Qgis.ContentStatus'
-    Canceled = ... # type: 'Qgis.ContentStatus'
-
-    class VertexMarkerType(int): ...
-    SemiTransparentCircle = ... # type: 'Qgis.VertexMarkerType'
-    Cross = ... # type: 'Qgis.VertexMarkerType'
-    NoMarker = ... # type: 'Qgis.VertexMarkerType'
-
-    class VectorEditResult(int): ...
-    Success = ... # type: 'Qgis.VectorEditResult'
-    EmptyGeometry = ... # type: 'Qgis.VectorEditResult'
-    EditFailed = ... # type: 'Qgis.VectorEditResult'
-    FetchFeatureFailed = ... # type: 'Qgis.VectorEditResult'
-    InvalidLayer = ... # type: 'Qgis.VectorEditResult'
-
-    class SelectionFlag(int): ...
-    SingleFeatureSelection = ... # type: 'Qgis.SelectionFlag'
-    ToggleSelection = ... # type: 'Qgis.SelectionFlag'
-
-    class SelectGeometryRelationship(int): ...
-    Intersect = ... # type: 'Qgis.SelectGeometryRelationship'
-    Within = ... # type: 'Qgis.SelectGeometryRelationship'
-
-    class SelectBehavior(int): ...
-    SetSelection = ... # type: 'Qgis.SelectBehavior'
-    AddToSelection = ... # type: 'Qgis.SelectBehavior'
-    IntersectSelection = ... # type: 'Qgis.SelectBehavior'
-    RemoveFromSelection = ... # type: 'Qgis.SelectBehavior'
-
-    class SublayerPromptMode(int): ...
-    AlwaysAsk = ... # type: 'Qgis.SublayerPromptMode'
-    AskExcludingRasterBands = ... # type: 'Qgis.SublayerPromptMode'
-    NeverAskSkip = ... # type: 'Qgis.SublayerPromptMode'
-    NeverAskLoadAll = ... # type: 'Qgis.SublayerPromptMode'
-
-    class FilePathType(int): ...
-    Absolute = ... # type: 'Qgis.FilePathType'
-    Relative = ... # type: 'Qgis.FilePathType'
-
-    class MeshEditingErrorType(int): ...
-    NoError = ... # type: 'Qgis.MeshEditingErrorType'
-    InvalidFace = ... # type: 'Qgis.MeshEditingErrorType'
-    TooManyVerticesInFace = ... # type: 'Qgis.MeshEditingErrorType'
-    FlatFace = ... # type: 'Qgis.MeshEditingErrorType'
-    UniqueSharedVertex = ... # type: 'Qgis.MeshEditingErrorType'
-    InvalidVertex = ... # type: 'Qgis.MeshEditingErrorType'
-    ManifoldFace = ... # type: 'Qgis.MeshEditingErrorType'
-
-    class RasterResamplingStage(int): ...
-    ResampleFilter = ... # type: 'Qgis.RasterResamplingStage'
-    Provider = ... # type: 'Qgis.RasterResamplingStage'
-
-    class RasterPipeInterfaceRole(int): ...
-    Unknown = ... # type: 'Qgis.RasterPipeInterfaceRole'
-    Provider = ... # type: 'Qgis.RasterPipeInterfaceRole'
-    Renderer = ... # type: 'Qgis.RasterPipeInterfaceRole'
-    Brightness = ... # type: 'Qgis.RasterPipeInterfaceRole'
-    Resampler = ... # type: 'Qgis.RasterPipeInterfaceRole'
-    Projector = ... # type: 'Qgis.RasterPipeInterfaceRole'
-    Nuller = ... # type: 'Qgis.RasterPipeInterfaceRole'
-    HueSaturation = ... # type: 'Qgis.RasterPipeInterfaceRole'
-
-    class SublayerFlag(int): ...
-    SystemTable = ... # type: 'Qgis.SublayerFlag'
-
-    class SublayerQueryFlag(int): ...
-    FastScan = ... # type: 'Qgis.SublayerQueryFlag'
-    ResolveGeometryType = ... # type: 'Qgis.SublayerQueryFlag'
-    CountFeatures = ... # type: 'Qgis.SublayerQueryFlag'
-    IncludeSystemTables = ... # type: 'Qgis.SublayerQueryFlag'
-
-    class LabelMultiLineAlignment(int): ...
-    Left = ... # type: 'Qgis.LabelMultiLineAlignment'
-    Center = ... # type: 'Qgis.LabelMultiLineAlignment'
-    Right = ... # type: 'Qgis.LabelMultiLineAlignment'
-    FollowPlacement = ... # type: 'Qgis.LabelMultiLineAlignment'
-    Justify = ... # type: 'Qgis.LabelMultiLineAlignment'
-
-    class UpsideDownLabelHandling(int): ...
-    FlipUpsideDownLabels = ... # type: 'Qgis.UpsideDownLabelHandling'
-    AllowUpsideDownWhenRotationIsDefined = ... # type: 'Qgis.UpsideDownLabelHandling'
-    AlwaysAllowUpsideDown = ... # type: 'Qgis.UpsideDownLabelHandling'
-
-    class LabelQuadrantPosition(int): ...
-    AboveLeft = ... # type: 'Qgis.LabelQuadrantPosition'
-    Above = ... # type: 'Qgis.LabelQuadrantPosition'
-    AboveRight = ... # type: 'Qgis.LabelQuadrantPosition'
-    Left = ... # type: 'Qgis.LabelQuadrantPosition'
-    Over = ... # type: 'Qgis.LabelQuadrantPosition'
-    Right = ... # type: 'Qgis.LabelQuadrantPosition'
-    BelowLeft = ... # type: 'Qgis.LabelQuadrantPosition'
-    Below = ... # type: 'Qgis.LabelQuadrantPosition'
-    BelowRight = ... # type: 'Qgis.LabelQuadrantPosition'
-
-    class LabelOffsetType(int): ...
-    FromPoint = ... # type: 'Qgis.LabelOffsetType'
-    FromSymbolBounds = ... # type: 'Qgis.LabelOffsetType'
-
-    class LabelPredefinedPointPosition(int): ...
-    TopLeft = ... # type: 'Qgis.LabelPredefinedPointPosition'
-    TopSlightlyLeft = ... # type: 'Qgis.LabelPredefinedPointPosition'
-    TopMiddle = ... # type: 'Qgis.LabelPredefinedPointPosition'
-    TopSlightlyRight = ... # type: 'Qgis.LabelPredefinedPointPosition'
-    TopRight = ... # type: 'Qgis.LabelPredefinedPointPosition'
-    MiddleLeft = ... # type: 'Qgis.LabelPredefinedPointPosition'
-    MiddleRight = ... # type: 'Qgis.LabelPredefinedPointPosition'
-    BottomLeft = ... # type: 'Qgis.LabelPredefinedPointPosition'
-    BottomSlightlyLeft = ... # type: 'Qgis.LabelPredefinedPointPosition'
-    BottomMiddle = ... # type: 'Qgis.LabelPredefinedPointPosition'
-    BottomSlightlyRight = ... # type: 'Qgis.LabelPredefinedPointPosition'
-    BottomRight = ... # type: 'Qgis.LabelPredefinedPointPosition'
-
-    class LabelPlacement(int): ...
-    AroundPoint = ... # type: 'Qgis.LabelPlacement'
-    OverPoint = ... # type: 'Qgis.LabelPlacement'
-    Line = ... # type: 'Qgis.LabelPlacement'
-    Curved = ... # type: 'Qgis.LabelPlacement'
-    Horizontal = ... # type: 'Qgis.LabelPlacement'
-    Free = ... # type: 'Qgis.LabelPlacement'
-    OrderedPositionsAroundPoint = ... # type: 'Qgis.LabelPlacement'
-    PerimeterCurved = ... # type: 'Qgis.LabelPlacement'
-    OutsidePolygons = ... # type: 'Qgis.LabelPlacement'
-
-    class LabelOverlapHandling(int): ...
-    PreventOverlap = ... # type: 'Qgis.LabelOverlapHandling'
-    AllowOverlapIfRequired = ... # type: 'Qgis.LabelOverlapHandling'
-    AllowOverlapAtNoCost = ... # type: 'Qgis.LabelOverlapHandling'
-
-    class UnplacedLabelVisibility(int): ...
-    FollowEngineSetting = ... # type: 'Qgis.UnplacedLabelVisibility'
-    NeverShow = ... # type: 'Qgis.UnplacedLabelVisibility'
-
-    class ActionStart(int): ...
-    Deferred = ... # type: 'Qgis.ActionStart'
-    Immediate = ... # type: 'Qgis.ActionStart'
-
-    class DriveType(int): ...
-    Unknown = ... # type: 'Qgis.DriveType'
-    Invalid = ... # type: 'Qgis.DriveType'
-    Removable = ... # type: 'Qgis.DriveType'
-    Fixed = ... # type: 'Qgis.DriveType'
-    Remote = ... # type: 'Qgis.DriveType'
-    CdRom = ... # type: 'Qgis.DriveType'
-    RamDisk = ... # type: 'Qgis.DriveType'
-
-    class SqlKeywordCategory(int): ...
-    Keyword = ... # type: 'Qgis.SqlKeywordCategory'
-    Constant = ... # type: 'Qgis.SqlKeywordCategory'
-    Function = ... # type: 'Qgis.SqlKeywordCategory'
-    Geospatial = ... # type: 'Qgis.SqlKeywordCategory'
-    Operator = ... # type: 'Qgis.SqlKeywordCategory'
-    Math = ... # type: 'Qgis.SqlKeywordCategory'
-    Aggregate = ... # type: 'Qgis.SqlKeywordCategory'
-    String = ... # type: 'Qgis.SqlKeywordCategory'
-    Identifier = ... # type: 'Qgis.SqlKeywordCategory'
-
-    class SqlLayerDefinitionCapability(int): ...
-    SubsetStringFilter = ... # type: 'Qgis.SqlLayerDefinitionCapability'
-    GeometryColumn = ... # type: 'Qgis.SqlLayerDefinitionCapability'
-    PrimaryKeys = ... # type: 'Qgis.SqlLayerDefinitionCapability'
-    UnstableFeatureIds = ... # type: 'Qgis.SqlLayerDefinitionCapability'
-
-    class VectorExportResult(int): ...
-    Success = ... # type: 'Qgis.VectorExportResult'
-    ErrorCreatingDataSource = ... # type: 'Qgis.VectorExportResult'
-    ErrorCreatingLayer = ... # type: 'Qgis.VectorExportResult'
-    ErrorAttributeTypeUnsupported = ... # type: 'Qgis.VectorExportResult'
-    ErrorAttributeCreationFailed = ... # type: 'Qgis.VectorExportResult'
-    ErrorProjectingFeatures = ... # type: 'Qgis.VectorExportResult'
-    ErrorFeatureWriteFailed = ... # type: 'Qgis.VectorExportResult'
-    ErrorInvalidLayer = ... # type: 'Qgis.VectorExportResult'
-    ErrorInvalidProvider = ... # type: 'Qgis.VectorExportResult'
-    ErrorProviderUnsupportedFeature = ... # type: 'Qgis.VectorExportResult'
-    ErrorConnectionFailed = ... # type: 'Qgis.VectorExportResult'
-    UserCanceled = ... # type: 'Qgis.VectorExportResult'
-
-    class HttpMethod(int): ...
-    Get = ... # type: 'Qgis.HttpMethod'
-    Post = ... # type: 'Qgis.HttpMethod'
-
-    class BrowserDirectoryMonitoring(int): ...
-    Default = ... # type: 'Qgis.BrowserDirectoryMonitoring'
-    NeverMonitor = ... # type: 'Qgis.BrowserDirectoryMonitoring'
-    AlwaysMonitor = ... # type: 'Qgis.BrowserDirectoryMonitoring'
-
-    class BrowserLayerType(int): ...
-    NoType = ... # type: 'Qgis.BrowserLayerType'
-    Vector = ... # type: 'Qgis.BrowserLayerType'
-    Raster = ... # type: 'Qgis.BrowserLayerType'
-    Point = ... # type: 'Qgis.BrowserLayerType'
-    Line = ... # type: 'Qgis.BrowserLayerType'
-    Polygon = ... # type: 'Qgis.BrowserLayerType'
-    TableLayer = ... # type: 'Qgis.BrowserLayerType'
-    Database = ... # type: 'Qgis.BrowserLayerType'
-    Table = ... # type: 'Qgis.BrowserLayerType'
-    Plugin = ... # type: 'Qgis.BrowserLayerType'
-    Mesh = ... # type: 'Qgis.BrowserLayerType'
-    VectorTile = ... # type: 'Qgis.BrowserLayerType'
-    PointCloud = ... # type: 'Qgis.BrowserLayerType'
-
-    class BrowserItemCapability(int): ...
-    NoCapabilities = ... # type: 'Qgis.BrowserItemCapability'
-    SetCrs = ... # type: 'Qgis.BrowserItemCapability'
-    Fertile = ... # type: 'Qgis.BrowserItemCapability'
-    Fast = ... # type: 'Qgis.BrowserItemCapability'
-    Collapse = ... # type: 'Qgis.BrowserItemCapability'
-    Rename = ... # type: 'Qgis.BrowserItemCapability'
-    Delete = ... # type: 'Qgis.BrowserItemCapability'
-    ItemRepresentsFile = ... # type: 'Qgis.BrowserItemCapability'
-    RefreshChildrenWhenItemIsRefreshed = ... # type: 'Qgis.BrowserItemCapability'
-
-    class BrowserItemState(int): ...
-    NotPopulated = ... # type: 'Qgis.BrowserItemState'
-    Populating = ... # type: 'Qgis.BrowserItemState'
-    Populated = ... # type: 'Qgis.BrowserItemState'
-
-    class BrowserItemType(int): ...
-    Collection = ... # type: 'Qgis.BrowserItemType'
-    Directory = ... # type: 'Qgis.BrowserItemType'
-    Layer = ... # type: 'Qgis.BrowserItemType'
-    Error = ... # type: 'Qgis.BrowserItemType'
-    Favorites = ... # type: 'Qgis.BrowserItemType'
-    Project = ... # type: 'Qgis.BrowserItemType'
-    Custom = ... # type: 'Qgis.BrowserItemType'
-    Fields = ... # type: 'Qgis.BrowserItemType'
-    Field = ... # type: 'Qgis.BrowserItemType'
-
-    class SymbolLayerFlag(int): ...
-    DisableFeatureClipping = ... # type: 'Qgis.SymbolLayerFlag'
-
-    class SymbolPreviewFlag(int): ...
-    FlagIncludeCrosshairsForMarkerSymbols = ... # type: 'Qgis.SymbolPreviewFlag'
-
-    class SymbolFlag(int): ...
-    RendererShouldUseSymbolLevels = ... # type: 'Qgis.SymbolFlag'
-
-    class SymbolRenderHint(int): ...
-    DynamicRotation = ... # type: 'Qgis.SymbolRenderHint'
-
-    class SnappingType(int): ...
-    NoSnap = ... # type: 'Qgis.SnappingType'
-    Vertex = ... # type: 'Qgis.SnappingType'
-    Segment = ... # type: 'Qgis.SnappingType'
-    Area = ... # type: 'Qgis.SnappingType'
-    Centroid = ... # type: 'Qgis.SnappingType'
-    MiddleOfSegment = ... # type: 'Qgis.SnappingType'
-    LineEndpoint = ... # type: 'Qgis.SnappingType'
-
-    class SnappingMode(int): ...
-    ActiveLayer = ... # type: 'Qgis.SnappingMode'
-    AllLayers = ... # type: 'Qgis.SnappingMode'
-    AdvancedConfiguration = ... # type: 'Qgis.SnappingMode'
-
-    class SettingsOption(int): ...
-    SaveFormerValue = ... # type: 'Qgis.SettingsOption'
-    SaveEnumFlagAsInt = ... # type: 'Qgis.SettingsOption'
-
-    class SettingsType(int): ...
-    Variant = ... # type: 'Qgis.SettingsType'
-    String = ... # type: 'Qgis.SettingsType'
-    StringList = ... # type: 'Qgis.SettingsType'
-    Bool = ... # type: 'Qgis.SettingsType'
-    Integer = ... # type: 'Qgis.SettingsType'
-    Double = ... # type: 'Qgis.SettingsType'
-    EnumFlag = ... # type: 'Qgis.SettingsType'
-    Color = ... # type: 'Qgis.SettingsType'
-
-    class ScaleMethod(int): ...
-    ScaleArea = ... # type: 'Qgis.ScaleMethod'
-    ScaleDiameter = ... # type: 'Qgis.ScaleMethod'
-
-    class SymbolType(int): ...
-    Marker = ... # type: 'Qgis.SymbolType'
-    Line = ... # type: 'Qgis.SymbolType'
-    Fill = ... # type: 'Qgis.SymbolType'
-    Hybrid = ... # type: 'Qgis.SymbolType'
-
-    class FeatureCountState(int): ...
-    Uncounted = ... # type: 'Qgis.FeatureCountState'
-    UnknownCount = ... # type: 'Qgis.FeatureCountState'
-
-    class PythonMacroMode(int): ...
-    Never = ... # type: 'Qgis.PythonMacroMode'
-    Ask = ... # type: 'Qgis.PythonMacroMode'
-    SessionOnly = ... # type: 'Qgis.PythonMacroMode'
-    Always = ... # type: 'Qgis.PythonMacroMode'
-    NotForThisSession = ... # type: 'Qgis.PythonMacroMode'
-
-    class VectorLayerTypeFlag(int): ...
-    SqlQuery = ... # type: 'Qgis.VectorLayerTypeFlag'
-
-    class CaptureTechnique(int): ...
-    StraightSegments = ... # type: 'Qgis.CaptureTechnique'
-    CircularString = ... # type: 'Qgis.CaptureTechnique'
-    Streaming = ... # type: 'Qgis.CaptureTechnique'
-    Shape = ... # type: 'Qgis.CaptureTechnique'
-
-    class DataType(int): ...
-    UnknownDataType = ... # type: 'Qgis.DataType'
-    Byte = ... # type: 'Qgis.DataType'
-    UInt16 = ... # type: 'Qgis.DataType'
-    Int16 = ... # type: 'Qgis.DataType'
-    UInt32 = ... # type: 'Qgis.DataType'
-    Int32 = ... # type: 'Qgis.DataType'
-    Float32 = ... # type: 'Qgis.DataType'
-    Float64 = ... # type: 'Qgis.DataType'
-    CInt16 = ... # type: 'Qgis.DataType'
-    CInt32 = ... # type: 'Qgis.DataType'
-    CFloat32 = ... # type: 'Qgis.DataType'
-    CFloat64 = ... # type: 'Qgis.DataType'
-    ARGB32 = ... # type: 'Qgis.DataType'
-    ARGB32_Premultiplied = ... # type: 'Qgis.DataType'
-
-    class MessageLevel(int): ...
-    Info = ... # type: 'Qgis.MessageLevel'
-    Warning = ... # type: 'Qgis.MessageLevel'
-    Critical = ... # type: 'Qgis.MessageLevel'
-    Success = ... # type: 'Qgis.MessageLevel'
-    NoLevel = ... # type: 'Qgis.MessageLevel'
+    class RelationshipCardinality(int):
+        OneToOne: 'Qgis.RelationshipCardinality'
+        OneToMany: 'Qgis.RelationshipCardinality'
+        ManyToOne: 'Qgis.RelationshipCardinality'
+        ManyToMany: 'Qgis.RelationshipCardinality'
+
+    class RelationshipStrength(int):
+        Association: 'Qgis.RelationshipStrength'
+        Composition: 'Qgis.RelationshipStrength'
+
+    class RelationshipType(int):
+        Normal: 'Qgis.RelationshipType'
+        Generated: 'Qgis.RelationshipType'
+
+    class ArcGisRestServiceType(int):
+        FeatureServer: 'Qgis.ArcGisRestServiceType'
+        MapServer: 'Qgis.ArcGisRestServiceType'
+        ImageServer: 'Qgis.ArcGisRestServiceType'
+        GlobeServer: 'Qgis.ArcGisRestServiceType'
+        GPServer: 'Qgis.ArcGisRestServiceType'
+        GeocodeServer: 'Qgis.ArcGisRestServiceType'
+        Unknown: 'Qgis.ArcGisRestServiceType'
+
+    class MapBoxGlStyleSourceType(int):
+        Vector: 'Qgis.MapBoxGlStyleSourceType'
+        Raster: 'Qgis.MapBoxGlStyleSourceType'
+        RasterDem: 'Qgis.MapBoxGlStyleSourceType'
+        GeoJson: 'Qgis.MapBoxGlStyleSourceType'
+        Image: 'Qgis.MapBoxGlStyleSourceType'
+        Video: 'Qgis.MapBoxGlStyleSourceType'
+        Unknown: 'Qgis.MapBoxGlStyleSourceType'
+
+    class ProjectCapability(int):
+        ProjectStyles: 'Qgis.ProjectCapability'
+
+    class ProjectReadFlag(int):
+        DontResolveLayers: 'Qgis.ProjectReadFlag'
+        DontLoadLayouts: 'Qgis.ProjectReadFlag'
+        TrustLayerMetadata: 'Qgis.ProjectReadFlag'
+        DontStoreOriginalStyles: 'Qgis.ProjectReadFlag'
+        DontLoad3DViews: 'Qgis.ProjectReadFlag'
+        DontLoadProjectStyles: 'Qgis.ProjectReadFlag'
+
+    class ProjectFileFormat(int):
+        Qgz: 'Qgis.ProjectFileFormat'
+        Qgs: 'Qgis.ProjectFileFormat'
+
+    class AvoidIntersectionsMode(int):
+        AllowIntersections: 'Qgis.AvoidIntersectionsMode'
+        AvoidIntersectionsCurrentLayer: 'Qgis.AvoidIntersectionsMode'
+        AvoidIntersectionsLayers: 'Qgis.AvoidIntersectionsMode'
+
+    class PointCloudDrawOrder(int):
+        Default: 'Qgis.PointCloudDrawOrder'
+        BottomToTop: 'Qgis.PointCloudDrawOrder'
+        TopToBottom: 'Qgis.PointCloudDrawOrder'
+
+    class PointCloudSymbol(int):
+        Square: 'Qgis.PointCloudSymbol'
+        Circle: 'Qgis.PointCloudSymbol'
+
+    class ProfileGeneratorFlag(int):
+        RespectsMaximumErrorMapUnit: 'Qgis.ProfileGeneratorFlag'
+        RespectsDistanceRange: 'Qgis.ProfileGeneratorFlag'
+        RespectsElevationRange: 'Qgis.ProfileGeneratorFlag'
+
+    class VectorProfileType(int):
+        IndividualFeatures: 'Qgis.VectorProfileType'
+        ContinuousSurface: 'Qgis.VectorProfileType'
+
+    class ProfileSurfaceSymbology(int):
+        Line: 'Qgis.ProfileSurfaceSymbology'
+        FillBelow: 'Qgis.ProfileSurfaceSymbology'
+
+    class LightSourceType(int):
+        Point: 'Qgis.LightSourceType'
+        Directional: 'Qgis.LightSourceType'
+
+    class PlotToolFlag(int):
+        ShowContextMenu: 'Qgis.PlotToolFlag'
+
+    class ProjectFlag(int):
+        EvaluateDefaultValuesOnProviderSide: 'Qgis.ProjectFlag'
+        TrustStoredLayerStatistics: 'Qgis.ProjectFlag'
+        RememberLayerEditStatusBetweenSessions: 'Qgis.ProjectFlag'
+        RememberAttributeTableWindowsBetweenSessions: 'Qgis.ProjectFlag'
+
+    class LineExtensionSide(int):
+        BeforeVertex: 'Qgis.LineExtensionSide'
+        AfterVertex: 'Qgis.LineExtensionSide'
+        NoVertex: 'Qgis.LineExtensionSide'
+
+    class BetweenLineConstraint(int):
+        NoConstraint: 'Qgis.BetweenLineConstraint'
+        Perpendicular: 'Qgis.BetweenLineConstraint'
+        Parallel: 'Qgis.BetweenLineConstraint'
+
+    class AltitudeBinding(int):
+        Vertex: 'Qgis.AltitudeBinding'
+        Centroid: 'Qgis.AltitudeBinding'
+
+    class AltitudeClamping(int):
+        Absolute: 'Qgis.AltitudeClamping'
+        Relative: 'Qgis.AltitudeClamping'
+        Terrain: 'Qgis.AltitudeClamping'
+
+    class TransactionMode(int):
+        Disabled: 'Qgis.TransactionMode'
+        AutomaticGroups: 'Qgis.TransactionMode'
+        BufferedGroups: 'Qgis.TransactionMode'
+
+    class FieldDomainType(int):
+        Coded: 'Qgis.FieldDomainType'
+        Range: 'Qgis.FieldDomainType'
+        Glob: 'Qgis.FieldDomainType'
+
+    class FieldDomainMergePolicy(int):
+        DefaultValue: 'Qgis.FieldDomainMergePolicy'
+        Sum: 'Qgis.FieldDomainMergePolicy'
+        GeometryWeighted: 'Qgis.FieldDomainMergePolicy'
+
+    class FieldDomainSplitPolicy(int):
+        DefaultValue: 'Qgis.FieldDomainSplitPolicy'
+        Duplicate: 'Qgis.FieldDomainSplitPolicy'
+        GeometryRatio: 'Qgis.FieldDomainSplitPolicy'
+
+    class CrsDefinitionFormat(int):
+        Wkt: 'Qgis.CrsDefinitionFormat'
+        Proj: 'Qgis.CrsDefinitionFormat'
+
+    class HistoryProviderBackend(int):
+        LocalProfile: 'Qgis.HistoryProviderBackend'
+
+    class ViewSyncModeFlag(int):
+        Sync3DTo2D: 'Qgis.ViewSyncModeFlag'
+        Sync2DTo3D: 'Qgis.ViewSyncModeFlag'
+
+    class RendererUsage(int):
+        View: 'Qgis.RendererUsage'
+        Export: 'Qgis.RendererUsage'
+        Unknown: 'Qgis.RendererUsage'
+
+    class AngularDirection(int):
+        Clockwise: 'Qgis.AngularDirection'
+        CounterClockwise: 'Qgis.AngularDirection'
+
+    class ScaleToTileZoomLevelMethod(int):
+        MapBox: 'Qgis.ScaleToTileZoomLevelMethod'
+        Esri: 'Qgis.ScaleToTileZoomLevelMethod'
+
+    class TextRendererFlag(int):
+        WrapLines: 'Qgis.TextRendererFlag'
+
+    class Capitalization(int):
+        MixedCase: 'Qgis.Capitalization'
+        AllUppercase: 'Qgis.Capitalization'
+        AllLowercase: 'Qgis.Capitalization'
+        ForceFirstLetterToCapital: 'Qgis.Capitalization'
+        SmallCaps: 'Qgis.Capitalization'
+        TitleCase: 'Qgis.Capitalization'
+        UpperCamelCase: 'Qgis.Capitalization'
+        AllSmallCaps: 'Qgis.Capitalization'
+
+    class DpiMode(int):
+        All: 'Qgis.DpiMode'
+        Off: 'Qgis.DpiMode'
+        QGIS: 'Qgis.DpiMode'
+        UMN: 'Qgis.DpiMode'
+        GeoServer: 'Qgis.DpiMode'
+
+    class GraduatedMethod(int):
+        Color: 'Qgis.GraduatedMethod'
+        Size: 'Qgis.GraduatedMethod'
+
+    class DashPatternSizeAdjustment(int):
+        ScaleBothDashAndGap: 'Qgis.DashPatternSizeAdjustment'
+        ScaleDashOnly: 'Qgis.DashPatternSizeAdjustment'
+        ScaleGapOnly: 'Qgis.DashPatternSizeAdjustment'
+
+    class DashPatternLineEndingRule(int):
+        NoRule: 'Qgis.DashPatternLineEndingRule'
+        FullDash: 'Qgis.DashPatternLineEndingRule'
+        HalfDash: 'Qgis.DashPatternLineEndingRule'
+        FullGap: 'Qgis.DashPatternLineEndingRule'
+        HalfGap: 'Qgis.DashPatternLineEndingRule'
+
+    class LineClipMode(int):
+        ClipPainterOnly: 'Qgis.LineClipMode'
+        ClipToIntersection: 'Qgis.LineClipMode'
+        NoClipping: 'Qgis.LineClipMode'
+
+    class MarkerClipMode(int):
+        NoClipping: 'Qgis.MarkerClipMode'
+        Shape: 'Qgis.MarkerClipMode'
+        CentroidWithin: 'Qgis.MarkerClipMode'
+        CompletelyWithin: 'Qgis.MarkerClipMode'
+
+    class PointCountMethod(int):
+        Absolute: 'Qgis.PointCountMethod'
+        DensityBased: 'Qgis.PointCountMethod'
+
+    class GradientSpread(int):
+        Pad: 'Qgis.GradientSpread'
+        Reflect: 'Qgis.GradientSpread'
+        Repeat: 'Qgis.GradientSpread'
+
+    class SymbolCoordinateReference(int):
+        Feature: 'Qgis.SymbolCoordinateReference'
+        Viewport: 'Qgis.SymbolCoordinateReference'
+
+    class GradientType(int):
+        Linear: 'Qgis.GradientType'
+        Radial: 'Qgis.GradientType'
+        Conical: 'Qgis.GradientType'
+
+    class GradientColorSource(int):
+        SimpleTwoColor: 'Qgis.GradientColorSource'
+        ColorRamp: 'Qgis.GradientColorSource'
+
+    class MarkerLinePlacement(int):
+        Interval: 'Qgis.MarkerLinePlacement'
+        Vertex: 'Qgis.MarkerLinePlacement'
+        LastVertex: 'Qgis.MarkerLinePlacement'
+        FirstVertex: 'Qgis.MarkerLinePlacement'
+        CentralPoint: 'Qgis.MarkerLinePlacement'
+        CurvePoint: 'Qgis.MarkerLinePlacement'
+        SegmentCenter: 'Qgis.MarkerLinePlacement'
+        InnerVertices: 'Qgis.MarkerLinePlacement'
+
+    class MarkerShape(int):
+        Square: 'Qgis.MarkerShape'
+        Diamond: 'Qgis.MarkerShape'
+        Pentagon: 'Qgis.MarkerShape'
+        Hexagon: 'Qgis.MarkerShape'
+        Triangle: 'Qgis.MarkerShape'
+        EquilateralTriangle: 'Qgis.MarkerShape'
+        Star: 'Qgis.MarkerShape'
+        Arrow: 'Qgis.MarkerShape'
+        Circle: 'Qgis.MarkerShape'
+        Cross: 'Qgis.MarkerShape'
+        CrossFill: 'Qgis.MarkerShape'
+        Cross2: 'Qgis.MarkerShape'
+        Line: 'Qgis.MarkerShape'
+        ArrowHead: 'Qgis.MarkerShape'
+        ArrowHeadFilled: 'Qgis.MarkerShape'
+        SemiCircle: 'Qgis.MarkerShape'
+        ThirdCircle: 'Qgis.MarkerShape'
+        QuarterCircle: 'Qgis.MarkerShape'
+        QuarterSquare: 'Qgis.MarkerShape'
+        HalfSquare: 'Qgis.MarkerShape'
+        DiagonalHalfSquare: 'Qgis.MarkerShape'
+        RightHalfTriangle: 'Qgis.MarkerShape'
+        LeftHalfTriangle: 'Qgis.MarkerShape'
+        Octagon: 'Qgis.MarkerShape'
+        SquareWithCorners: 'Qgis.MarkerShape'
+        AsteriskFill: 'Qgis.MarkerShape'
+        HalfArc: 'Qgis.MarkerShape'
+        ThirdArc: 'Qgis.MarkerShape'
+        QuarterArc: 'Qgis.MarkerShape'
+        ParallelogramRight: 'Qgis.MarkerShape'
+        ParallelogramLeft: 'Qgis.MarkerShape'
+        Trapezoid: 'Qgis.MarkerShape'
+        Shield: 'Qgis.MarkerShape'
+        DiamondStar: 'Qgis.MarkerShape'
+        Heart: 'Qgis.MarkerShape'
+        Decagon: 'Qgis.MarkerShape'
+        RoundedSquare: 'Qgis.MarkerShape'
+
+    class VertexType(int):
+        Segment: 'Qgis.VertexType'
+        Curve: 'Qgis.VertexType'
+
+    class RenderSubcomponentProperty(int):
+        Generic: 'Qgis.RenderSubcomponentProperty'
+        ShadowOffset: 'Qgis.RenderSubcomponentProperty'
+        BlurSize: 'Qgis.RenderSubcomponentProperty'
+        GlowSpread: 'Qgis.RenderSubcomponentProperty'
+
+    class TextRenderFormat(int):
+        AlwaysOutlines: 'Qgis.TextRenderFormat'
+        AlwaysText: 'Qgis.TextRenderFormat'
+
+    class RenderContextFlag(int):
+        DrawEditingInfo: 'Qgis.RenderContextFlag'
+        ForceVectorOutput: 'Qgis.RenderContextFlag'
+        UseAdvancedEffects: 'Qgis.RenderContextFlag'
+        UseRenderingOptimization: 'Qgis.RenderContextFlag'
+        DrawSelection: 'Qgis.RenderContextFlag'
+        DrawSymbolBounds: 'Qgis.RenderContextFlag'
+        RenderMapTile: 'Qgis.RenderContextFlag'
+        Antialiasing: 'Qgis.RenderContextFlag'
+        RenderPartialOutput: 'Qgis.RenderContextFlag'
+        RenderPreviewJob: 'Qgis.RenderContextFlag'
+        RenderBlocking: 'Qgis.RenderContextFlag'
+        RenderSymbolPreview: 'Qgis.RenderContextFlag'
+        LosslessImageRendering: 'Qgis.RenderContextFlag'
+        ApplyScalingWorkaroundForTextRendering: 'Qgis.RenderContextFlag'
+        Render3DMap: 'Qgis.RenderContextFlag'
+        ApplyClipAfterReprojection: 'Qgis.RenderContextFlag'
+        RenderingSubSymbol: 'Qgis.RenderContextFlag'
+        HighQualityImageTransforms: 'Qgis.RenderContextFlag'
+        SkipSymbolRendering: 'Qgis.RenderContextFlag'
+
+    class MapSettingsFlag(int):
+        Antialiasing: 'Qgis.MapSettingsFlag'
+        DrawEditingInfo: 'Qgis.MapSettingsFlag'
+        ForceVectorOutput: 'Qgis.MapSettingsFlag'
+        UseAdvancedEffects: 'Qgis.MapSettingsFlag'
+        DrawLabeling: 'Qgis.MapSettingsFlag'
+        UseRenderingOptimization: 'Qgis.MapSettingsFlag'
+        DrawSelection: 'Qgis.MapSettingsFlag'
+        DrawSymbolBounds: 'Qgis.MapSettingsFlag'
+        RenderMapTile: 'Qgis.MapSettingsFlag'
+        RenderPartialOutput: 'Qgis.MapSettingsFlag'
+        RenderPreviewJob: 'Qgis.MapSettingsFlag'
+        RenderBlocking: 'Qgis.MapSettingsFlag'
+        LosslessImageRendering: 'Qgis.MapSettingsFlag'
+        Render3DMap: 'Qgis.MapSettingsFlag'
+        HighQualityImageTransforms: 'Qgis.MapSettingsFlag'
+        SkipSymbolRendering: 'Qgis.MapSettingsFlag'
+        ForceRasterMasks: 'Qgis.MapSettingsFlag'
+
+    class CoordinateTransformationFlag(int):
+        BallparkTransformsAreAppropriate: 'Qgis.CoordinateTransformationFlag'
+        IgnoreImpossibleTransformations: 'Qgis.CoordinateTransformationFlag'
+
+    class TransformDirection(int):
+        Forward: 'Qgis.TransformDirection'
+        Reverse: 'Qgis.TransformDirection'
+
+    class RasterTemporalCapabilityFlag(int):
+        RequestedTimesMustExactlyMatchAllAvailableTemporalRanges: 'Qgis.RasterTemporalCapabilityFlag'
+
+    class TemporalIntervalMatchMethod(int):
+        MatchUsingWholeRange: 'Qgis.TemporalIntervalMatchMethod'
+        MatchExactUsingStartOfRange: 'Qgis.TemporalIntervalMatchMethod'
+        MatchExactUsingEndOfRange: 'Qgis.TemporalIntervalMatchMethod'
+        FindClosestMatchToStartOfRange: 'Qgis.TemporalIntervalMatchMethod'
+        FindClosestMatchToEndOfRange: 'Qgis.TemporalIntervalMatchMethod'
+
+    class RasterTemporalMode(int):
+        FixedTemporalRange: 'Qgis.RasterTemporalMode'
+        TemporalRangeFromDataProvider: 'Qgis.RasterTemporalMode'
+        RedrawLayerOnly: 'Qgis.RasterTemporalMode'
+
+    class VectorDataProviderTemporalMode(int):
+        HasFixedTemporalRange: 'Qgis.VectorDataProviderTemporalMode'
+        StoresFeatureDateTimeInstantInField: 'Qgis.VectorDataProviderTemporalMode'
+        StoresFeatureDateTimeStartAndEndInSeparateFields: 'Qgis.VectorDataProviderTemporalMode'
+
+    class VectorTemporalLimitMode(int):
+        IncludeBeginExcludeEnd: 'Qgis.VectorTemporalLimitMode'
+        IncludeBeginIncludeEnd: 'Qgis.VectorTemporalLimitMode'
+
+    class VectorTemporalMode(int):
+        FixedTemporalRange: 'Qgis.VectorTemporalMode'
+        FeatureDateTimeInstantFromField: 'Qgis.VectorTemporalMode'
+        FeatureDateTimeStartAndEndFromFields: 'Qgis.VectorTemporalMode'
+        FeatureDateTimeStartAndDurationFromFields: 'Qgis.VectorTemporalMode'
+        FeatureDateTimeStartAndEndFromExpressions: 'Qgis.VectorTemporalMode'
+        RedrawLayerOnly: 'Qgis.VectorTemporalMode'
+
+    class AnnotationItemEditOperationResult(int):
+        Success: 'Qgis.AnnotationItemEditOperationResult'
+        Invalid: 'Qgis.AnnotationItemEditOperationResult'
+        ItemCleared: 'Qgis.AnnotationItemEditOperationResult'
+
+    class AnnotationItemNodeType(int):
+        VertexHandle: 'Qgis.AnnotationItemNodeType'
+
+    class AnnotationItemGuiFlag(int):
+        FlagNoCreationTools: 'Qgis.AnnotationItemGuiFlag'
+
+    class AnnotationItemFlag(int):
+        ScaleDependentBoundingBox: 'Qgis.AnnotationItemFlag'
+
+    class CoordinateOrder(int):
+        Default: 'Qgis.CoordinateOrder'
+        XY: 'Qgis.CoordinateOrder'
+        YX: 'Qgis.CoordinateOrder'
+
+    class CrsAxisDirection(int):
+        North: 'Qgis.CrsAxisDirection'
+        NorthNorthEast: 'Qgis.CrsAxisDirection'
+        NorthEast: 'Qgis.CrsAxisDirection'
+        EastNorthEast: 'Qgis.CrsAxisDirection'
+        East: 'Qgis.CrsAxisDirection'
+        EastSouthEast: 'Qgis.CrsAxisDirection'
+        SouthEast: 'Qgis.CrsAxisDirection'
+        SouthSouthEast: 'Qgis.CrsAxisDirection'
+        South: 'Qgis.CrsAxisDirection'
+        SouthSouthWest: 'Qgis.CrsAxisDirection'
+        SouthWest: 'Qgis.CrsAxisDirection'
+        WestSouthWest: 'Qgis.CrsAxisDirection'
+        West: 'Qgis.CrsAxisDirection'
+        WestNorthWest: 'Qgis.CrsAxisDirection'
+        NorthWest: 'Qgis.CrsAxisDirection'
+        NorthNorthWest: 'Qgis.CrsAxisDirection'
+        GeocentricX: 'Qgis.CrsAxisDirection'
+        GeocentricY: 'Qgis.CrsAxisDirection'
+        GeocentricZ: 'Qgis.CrsAxisDirection'
+        Up: 'Qgis.CrsAxisDirection'
+        Down: 'Qgis.CrsAxisDirection'
+        Forward: 'Qgis.CrsAxisDirection'
+        Aft: 'Qgis.CrsAxisDirection'
+        Port: 'Qgis.CrsAxisDirection'
+        Starboard: 'Qgis.CrsAxisDirection'
+        Clockwise: 'Qgis.CrsAxisDirection'
+        CounterClockwise: 'Qgis.CrsAxisDirection'
+        ColumnPositive: 'Qgis.CrsAxisDirection'
+        ColumnNegative: 'Qgis.CrsAxisDirection'
+        RowPositive: 'Qgis.CrsAxisDirection'
+        RowNegative: 'Qgis.CrsAxisDirection'
+        DisplayRight: 'Qgis.CrsAxisDirection'
+        DisplayLeft: 'Qgis.CrsAxisDirection'
+        DisplayUp: 'Qgis.CrsAxisDirection'
+        DisplayDown: 'Qgis.CrsAxisDirection'
+        Future: 'Qgis.CrsAxisDirection'
+        Past: 'Qgis.CrsAxisDirection'
+        Towards: 'Qgis.CrsAxisDirection'
+        AwayFrom: 'Qgis.CrsAxisDirection'
+        Unspecified: 'Qgis.CrsAxisDirection'
+
+    class DataProviderFlag(int):
+        IsBasemapSource: 'Qgis.DataProviderFlag'
+
+    class MapLayerProperty(int):
+        UsersCannotToggleEditing: 'Qgis.MapLayerProperty'
+        IsBasemapLayer: 'Qgis.MapLayerProperty'
+
+    class FileOperationFlag(int):
+        IncludeMetadataFile: 'Qgis.FileOperationFlag'
+        IncludeStyleFile: 'Qgis.FileOperationFlag'
+
+    class SpatialFilterType(int):
+        NoFilter: 'Qgis.SpatialFilterType'
+        BoundingBox: 'Qgis.SpatialFilterType'
+        DistanceWithin: 'Qgis.SpatialFilterType'
+
+    class JoinStyle(int):
+        Round: 'Qgis.JoinStyle'
+        Miter: 'Qgis.JoinStyle'
+        Bevel: 'Qgis.JoinStyle'
+
+    class EndCapStyle(int):
+        Round: 'Qgis.EndCapStyle'
+        Flat: 'Qgis.EndCapStyle'
+        Square: 'Qgis.EndCapStyle'
+
+    class BufferSide(int):
+        Left: 'Qgis.BufferSide'
+        Right: 'Qgis.BufferSide'
+
+    class GeometryValidationEngine(int):
+        QgisInternal: 'Qgis.GeometryValidationEngine'
+        Geos: 'Qgis.GeometryValidationEngine'
+
+    class GeometryValidityFlag(int):
+        AllowSelfTouchingHoles: 'Qgis.GeometryValidityFlag'
+
+    class GeometryOperationResult(int):
+        Success: 'Qgis.GeometryOperationResult'
+        NothingHappened: 'Qgis.GeometryOperationResult'
+        InvalidBaseGeometry: 'Qgis.GeometryOperationResult'
+        InvalidInputGeometryType: 'Qgis.GeometryOperationResult'
+        SelectionIsEmpty: 'Qgis.GeometryOperationResult'
+        SelectionIsGreaterThanOne: 'Qgis.GeometryOperationResult'
+        GeometryEngineError: 'Qgis.GeometryOperationResult'
+        LayerNotEditable: 'Qgis.GeometryOperationResult'
+        AddPartSelectedGeometryNotFound: 'Qgis.GeometryOperationResult'
+        AddPartNotMultiGeometry: 'Qgis.GeometryOperationResult'
+        AddRingNotClosed: 'Qgis.GeometryOperationResult'
+        AddRingNotValid: 'Qgis.GeometryOperationResult'
+        AddRingCrossesExistingRings: 'Qgis.GeometryOperationResult'
+        AddRingNotInExistingFeature: 'Qgis.GeometryOperationResult'
+        SplitCannotSplitPoint: 'Qgis.GeometryOperationResult'
+
+    class GpsFeatureType(int):
+        Waypoint: 'Qgis.GpsFeatureType'
+        Route: 'Qgis.GpsFeatureType'
+        Track: 'Qgis.GpsFeatureType'
+
+    class BabelCommandFlag(int):
+        QuoteFilePaths: 'Qgis.BabelCommandFlag'
+
+    class BabelFormatCapability(int):
+        Import: 'Qgis.BabelFormatCapability'
+        Export: 'Qgis.BabelFormatCapability'
+        Waypoints: 'Qgis.BabelFormatCapability'
+        Routes: 'Qgis.BabelFormatCapability'
+        Tracks: 'Qgis.BabelFormatCapability'
+
+    class GpsQualityIndicator(int):
+        Unknown: 'Qgis.GpsQualityIndicator'
+        Invalid: 'Qgis.GpsQualityIndicator'
+        GPS: 'Qgis.GpsQualityIndicator'
+        DGPS: 'Qgis.GpsQualityIndicator'
+        PPS: 'Qgis.GpsQualityIndicator'
+        RTK: 'Qgis.GpsQualityIndicator'
+        FloatRTK: 'Qgis.GpsQualityIndicator'
+        Estimated: 'Qgis.GpsQualityIndicator'
+        Manual: 'Qgis.GpsQualityIndicator'
+        Simulation: 'Qgis.GpsQualityIndicator'
+
+    class ContentStatus(int):
+        NotStarted: 'Qgis.ContentStatus'
+        Running: 'Qgis.ContentStatus'
+        Finished: 'Qgis.ContentStatus'
+        Failed: 'Qgis.ContentStatus'
+        Canceled: 'Qgis.ContentStatus'
+
+    class VertexMarkerType(int):
+        SemiTransparentCircle: 'Qgis.VertexMarkerType'
+        Cross: 'Qgis.VertexMarkerType'
+        NoMarker: 'Qgis.VertexMarkerType'
+
+    class VectorEditResult(int):
+        Success: 'Qgis.VectorEditResult'
+        EmptyGeometry: 'Qgis.VectorEditResult'
+        EditFailed: 'Qgis.VectorEditResult'
+        FetchFeatureFailed: 'Qgis.VectorEditResult'
+        InvalidLayer: 'Qgis.VectorEditResult'
+
+    class SelectionFlag(int):
+        SingleFeatureSelection: 'Qgis.SelectionFlag'
+        ToggleSelection: 'Qgis.SelectionFlag'
+
+    class SelectGeometryRelationship(int):
+        Intersect: 'Qgis.SelectGeometryRelationship'
+        Within: 'Qgis.SelectGeometryRelationship'
+
+    class SelectBehavior(int):
+        SetSelection: 'Qgis.SelectBehavior'
+        AddToSelection: 'Qgis.SelectBehavior'
+        IntersectSelection: 'Qgis.SelectBehavior'
+        RemoveFromSelection: 'Qgis.SelectBehavior'
+
+    class SublayerPromptMode(int):
+        AlwaysAsk: 'Qgis.SublayerPromptMode'
+        AskExcludingRasterBands: 'Qgis.SublayerPromptMode'
+        NeverAskSkip: 'Qgis.SublayerPromptMode'
+        NeverAskLoadAll: 'Qgis.SublayerPromptMode'
+
+    class FilePathType(int):
+        Absolute: 'Qgis.FilePathType'
+        Relative: 'Qgis.FilePathType'
+
+    class MeshEditingErrorType(int):
+        NoError: 'Qgis.MeshEditingErrorType'
+        InvalidFace: 'Qgis.MeshEditingErrorType'
+        TooManyVerticesInFace: 'Qgis.MeshEditingErrorType'
+        FlatFace: 'Qgis.MeshEditingErrorType'
+        UniqueSharedVertex: 'Qgis.MeshEditingErrorType'
+        InvalidVertex: 'Qgis.MeshEditingErrorType'
+        ManifoldFace: 'Qgis.MeshEditingErrorType'
+
+    class RasterResamplingStage(int):
+        ResampleFilter: 'Qgis.RasterResamplingStage'
+        Provider: 'Qgis.RasterResamplingStage'
+
+    class RasterPipeInterfaceRole(int):
+        Unknown: 'Qgis.RasterPipeInterfaceRole'
+        Provider: 'Qgis.RasterPipeInterfaceRole'
+        Renderer: 'Qgis.RasterPipeInterfaceRole'
+        Brightness: 'Qgis.RasterPipeInterfaceRole'
+        Resampler: 'Qgis.RasterPipeInterfaceRole'
+        Projector: 'Qgis.RasterPipeInterfaceRole'
+        Nuller: 'Qgis.RasterPipeInterfaceRole'
+        HueSaturation: 'Qgis.RasterPipeInterfaceRole'
+
+    class SublayerFlag(int):
+        SystemTable: 'Qgis.SublayerFlag'
+
+    class SublayerQueryFlag(int):
+        FastScan: 'Qgis.SublayerQueryFlag'
+        ResolveGeometryType: 'Qgis.SublayerQueryFlag'
+        CountFeatures: 'Qgis.SublayerQueryFlag'
+        IncludeSystemTables: 'Qgis.SublayerQueryFlag'
+
+    class LabelMultiLineAlignment(int):
+        Left: 'Qgis.LabelMultiLineAlignment'
+        Center: 'Qgis.LabelMultiLineAlignment'
+        Right: 'Qgis.LabelMultiLineAlignment'
+        FollowPlacement: 'Qgis.LabelMultiLineAlignment'
+        Justify: 'Qgis.LabelMultiLineAlignment'
+
+    class UpsideDownLabelHandling(int):
+        FlipUpsideDownLabels: 'Qgis.UpsideDownLabelHandling'
+        AllowUpsideDownWhenRotationIsDefined: 'Qgis.UpsideDownLabelHandling'
+        AlwaysAllowUpsideDown: 'Qgis.UpsideDownLabelHandling'
+
+    class LabelQuadrantPosition(int):
+        AboveLeft: 'Qgis.LabelQuadrantPosition'
+        Above: 'Qgis.LabelQuadrantPosition'
+        AboveRight: 'Qgis.LabelQuadrantPosition'
+        Left: 'Qgis.LabelQuadrantPosition'
+        Over: 'Qgis.LabelQuadrantPosition'
+        Right: 'Qgis.LabelQuadrantPosition'
+        BelowLeft: 'Qgis.LabelQuadrantPosition'
+        Below: 'Qgis.LabelQuadrantPosition'
+        BelowRight: 'Qgis.LabelQuadrantPosition'
+
+    class LabelOffsetType(int):
+        FromPoint: 'Qgis.LabelOffsetType'
+        FromSymbolBounds: 'Qgis.LabelOffsetType'
+
+    class LabelPredefinedPointPosition(int):
+        TopLeft: 'Qgis.LabelPredefinedPointPosition'
+        TopSlightlyLeft: 'Qgis.LabelPredefinedPointPosition'
+        TopMiddle: 'Qgis.LabelPredefinedPointPosition'
+        TopSlightlyRight: 'Qgis.LabelPredefinedPointPosition'
+        TopRight: 'Qgis.LabelPredefinedPointPosition'
+        MiddleLeft: 'Qgis.LabelPredefinedPointPosition'
+        MiddleRight: 'Qgis.LabelPredefinedPointPosition'
+        BottomLeft: 'Qgis.LabelPredefinedPointPosition'
+        BottomSlightlyLeft: 'Qgis.LabelPredefinedPointPosition'
+        BottomMiddle: 'Qgis.LabelPredefinedPointPosition'
+        BottomSlightlyRight: 'Qgis.LabelPredefinedPointPosition'
+        BottomRight: 'Qgis.LabelPredefinedPointPosition'
+
+    class LabelPlacement(int):
+        AroundPoint: 'Qgis.LabelPlacement'
+        OverPoint: 'Qgis.LabelPlacement'
+        Line: 'Qgis.LabelPlacement'
+        Curved: 'Qgis.LabelPlacement'
+        Horizontal: 'Qgis.LabelPlacement'
+        Free: 'Qgis.LabelPlacement'
+        OrderedPositionsAroundPoint: 'Qgis.LabelPlacement'
+        PerimeterCurved: 'Qgis.LabelPlacement'
+        OutsidePolygons: 'Qgis.LabelPlacement'
+
+    class LabelOverlapHandling(int):
+        PreventOverlap: 'Qgis.LabelOverlapHandling'
+        AllowOverlapIfRequired: 'Qgis.LabelOverlapHandling'
+        AllowOverlapAtNoCost: 'Qgis.LabelOverlapHandling'
+
+    class UnplacedLabelVisibility(int):
+        FollowEngineSetting: 'Qgis.UnplacedLabelVisibility'
+        NeverShow: 'Qgis.UnplacedLabelVisibility'
+
+    class ActionStart(int):
+        Deferred: 'Qgis.ActionStart'
+        Immediate: 'Qgis.ActionStart'
+
+    class DriveType(int):
+        Unknown: 'Qgis.DriveType'
+        Invalid: 'Qgis.DriveType'
+        Removable: 'Qgis.DriveType'
+        Fixed: 'Qgis.DriveType'
+        Remote: 'Qgis.DriveType'
+        CdRom: 'Qgis.DriveType'
+        RamDisk: 'Qgis.DriveType'
+
+    class SqlKeywordCategory(int):
+        Keyword: 'Qgis.SqlKeywordCategory'
+        Constant: 'Qgis.SqlKeywordCategory'
+        Function: 'Qgis.SqlKeywordCategory'
+        Geospatial: 'Qgis.SqlKeywordCategory'
+        Operator: 'Qgis.SqlKeywordCategory'
+        Math: 'Qgis.SqlKeywordCategory'
+        Aggregate: 'Qgis.SqlKeywordCategory'
+        String: 'Qgis.SqlKeywordCategory'
+        Identifier: 'Qgis.SqlKeywordCategory'
+
+    class SqlLayerDefinitionCapability(int):
+        SubsetStringFilter: 'Qgis.SqlLayerDefinitionCapability'
+        GeometryColumn: 'Qgis.SqlLayerDefinitionCapability'
+        PrimaryKeys: 'Qgis.SqlLayerDefinitionCapability'
+        UnstableFeatureIds: 'Qgis.SqlLayerDefinitionCapability'
+
+    class VectorExportResult(int):
+        Success: 'Qgis.VectorExportResult'
+        ErrorCreatingDataSource: 'Qgis.VectorExportResult'
+        ErrorCreatingLayer: 'Qgis.VectorExportResult'
+        ErrorAttributeTypeUnsupported: 'Qgis.VectorExportResult'
+        ErrorAttributeCreationFailed: 'Qgis.VectorExportResult'
+        ErrorProjectingFeatures: 'Qgis.VectorExportResult'
+        ErrorFeatureWriteFailed: 'Qgis.VectorExportResult'
+        ErrorInvalidLayer: 'Qgis.VectorExportResult'
+        ErrorInvalidProvider: 'Qgis.VectorExportResult'
+        ErrorProviderUnsupportedFeature: 'Qgis.VectorExportResult'
+        ErrorConnectionFailed: 'Qgis.VectorExportResult'
+        UserCanceled: 'Qgis.VectorExportResult'
+
+    class HttpMethod(int):
+        Get: 'Qgis.HttpMethod'
+        Post: 'Qgis.HttpMethod'
+
+    class BrowserDirectoryMonitoring(int):
+        Default: 'Qgis.BrowserDirectoryMonitoring'
+        NeverMonitor: 'Qgis.BrowserDirectoryMonitoring'
+        AlwaysMonitor: 'Qgis.BrowserDirectoryMonitoring'
+
+    class BrowserLayerType(int):
+        NoType: 'Qgis.BrowserLayerType'
+        Vector: 'Qgis.BrowserLayerType'
+        Raster: 'Qgis.BrowserLayerType'
+        Point: 'Qgis.BrowserLayerType'
+        Line: 'Qgis.BrowserLayerType'
+        Polygon: 'Qgis.BrowserLayerType'
+        TableLayer: 'Qgis.BrowserLayerType'
+        Database: 'Qgis.BrowserLayerType'
+        Table: 'Qgis.BrowserLayerType'
+        Plugin: 'Qgis.BrowserLayerType'
+        Mesh: 'Qgis.BrowserLayerType'
+        VectorTile: 'Qgis.BrowserLayerType'
+        PointCloud: 'Qgis.BrowserLayerType'
+
+    class BrowserItemCapability(int):
+        NoCapabilities: 'Qgis.BrowserItemCapability'
+        SetCrs: 'Qgis.BrowserItemCapability'
+        Fertile: 'Qgis.BrowserItemCapability'
+        Fast: 'Qgis.BrowserItemCapability'
+        Collapse: 'Qgis.BrowserItemCapability'
+        Rename: 'Qgis.BrowserItemCapability'
+        Delete: 'Qgis.BrowserItemCapability'
+        ItemRepresentsFile: 'Qgis.BrowserItemCapability'
+        RefreshChildrenWhenItemIsRefreshed: 'Qgis.BrowserItemCapability'
+
+    class BrowserItemState(int):
+        NotPopulated: 'Qgis.BrowserItemState'
+        Populating: 'Qgis.BrowserItemState'
+        Populated: 'Qgis.BrowserItemState'
+
+    class BrowserItemType(int):
+        Collection: 'Qgis.BrowserItemType'
+        Directory: 'Qgis.BrowserItemType'
+        Layer: 'Qgis.BrowserItemType'
+        Error: 'Qgis.BrowserItemType'
+        Favorites: 'Qgis.BrowserItemType'
+        Project: 'Qgis.BrowserItemType'
+        Custom: 'Qgis.BrowserItemType'
+        Fields: 'Qgis.BrowserItemType'
+        Field: 'Qgis.BrowserItemType'
+
+    class SymbolLayerFlag(int):
+        DisableFeatureClipping: 'Qgis.SymbolLayerFlag'
+
+    class SymbolPreviewFlag(int):
+        FlagIncludeCrosshairsForMarkerSymbols: 'Qgis.SymbolPreviewFlag'
+
+    class SymbolFlag(int):
+        RendererShouldUseSymbolLevels: 'Qgis.SymbolFlag'
+
+    class SymbolRenderHint(int):
+        DynamicRotation: 'Qgis.SymbolRenderHint'
+
+    class SnappingType(int):
+        NoSnap: 'Qgis.SnappingType'
+        Vertex: 'Qgis.SnappingType'
+        Segment: 'Qgis.SnappingType'
+        Area: 'Qgis.SnappingType'
+        Centroid: 'Qgis.SnappingType'
+        MiddleOfSegment: 'Qgis.SnappingType'
+        LineEndpoint: 'Qgis.SnappingType'
+
+    class SnappingMode(int):
+        ActiveLayer: 'Qgis.SnappingMode'
+        AllLayers: 'Qgis.SnappingMode'
+        AdvancedConfiguration: 'Qgis.SnappingMode'
+
+    class SettingsOption(int):
+        SaveFormerValue: 'Qgis.SettingsOption'
+        SaveEnumFlagAsInt: 'Qgis.SettingsOption'
+
+    class SettingsType(int):
+        Variant: 'Qgis.SettingsType'
+        String: 'Qgis.SettingsType'
+        StringList: 'Qgis.SettingsType'
+        Bool: 'Qgis.SettingsType'
+        Integer: 'Qgis.SettingsType'
+        Double: 'Qgis.SettingsType'
+        EnumFlag: 'Qgis.SettingsType'
+        Color: 'Qgis.SettingsType'
+
+    class ScaleMethod(int):
+        ScaleArea: 'Qgis.ScaleMethod'
+        ScaleDiameter: 'Qgis.ScaleMethod'
+
+    class SymbolType(int):
+        Marker: 'Qgis.SymbolType'
+        Line: 'Qgis.SymbolType'
+        Fill: 'Qgis.SymbolType'
+        Hybrid: 'Qgis.SymbolType'
+
+    class FeatureCountState(int):
+        Uncounted: 'Qgis.FeatureCountState'
+        UnknownCount: 'Qgis.FeatureCountState'
+
+    class PythonMacroMode(int):
+        Never: 'Qgis.PythonMacroMode'
+        Ask: 'Qgis.PythonMacroMode'
+        SessionOnly: 'Qgis.PythonMacroMode'
+        Always: 'Qgis.PythonMacroMode'
+        NotForThisSession: 'Qgis.PythonMacroMode'
+
+    class VectorLayerTypeFlag(int):
+        SqlQuery: 'Qgis.VectorLayerTypeFlag'
+
+    class CaptureTechnique(int):
+        StraightSegments: 'Qgis.CaptureTechnique'
+        CircularString: 'Qgis.CaptureTechnique'
+        Streaming: 'Qgis.CaptureTechnique'
+        Shape: 'Qgis.CaptureTechnique'
+
+    class DataType(int):
+        UnknownDataType: 'Qgis.DataType'
+        Byte: 'Qgis.DataType'
+        UInt16: 'Qgis.DataType'
+        Int16: 'Qgis.DataType'
+        UInt32: 'Qgis.DataType'
+        Int32: 'Qgis.DataType'
+        Float32: 'Qgis.DataType'
+        Float64: 'Qgis.DataType'
+        CInt16: 'Qgis.DataType'
+        CInt32: 'Qgis.DataType'
+        CFloat32: 'Qgis.DataType'
+        CFloat64: 'Qgis.DataType'
+        ARGB32: 'Qgis.DataType'
+        ARGB32_Premultiplied: 'Qgis.DataType'
+
+    class MessageLevel(int):
+        Info: 'Qgis.MessageLevel'
+        Warning: 'Qgis.MessageLevel'
+        Critical: 'Qgis.MessageLevel'
+        Success: 'Qgis.MessageLevel'
+        NoLevel: 'Qgis.MessageLevel'
 
     class VectorLayerTypeFlags(sip.wrapper):
 
@@ -1454,15 +1454,15 @@ class QgsAbstractContentCacheBase(QtCore.QObject):
 
 class QgsAction(sip.wrapper):
 
-    class ActionType(int): ...
-    Generic = ... # type: 'QgsAction.ActionType'
-    GenericPython = ... # type: 'QgsAction.ActionType'
-    Mac = ... # type: 'QgsAction.ActionType'
-    Windows = ... # type: 'QgsAction.ActionType'
-    Unix = ... # type: 'QgsAction.ActionType'
-    OpenUrl = ... # type: 'QgsAction.ActionType'
-    SubmitUrlEncoded = ... # type: 'QgsAction.ActionType'
-    SubmitUrlMultipart = ... # type: 'QgsAction.ActionType'
+    class ActionType(int):
+        Generic: 'QgsAction.ActionType'
+        GenericPython: 'QgsAction.ActionType'
+        Mac: 'QgsAction.ActionType'
+        Windows: 'QgsAction.ActionType'
+        Unix: 'QgsAction.ActionType'
+        OpenUrl: 'QgsAction.ActionType'
+        SubmitUrlEncoded: 'QgsAction.ActionType'
+        SubmitUrlMultipart: 'QgsAction.ActionType'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -1559,29 +1559,29 @@ class QgsActionScopeRegistry(QtCore.QObject):
 
 class QgsAggregateCalculator(sip.wrapper):
 
-    class Aggregate(int): ...
-    Count = ... # type: 'QgsAggregateCalculator.Aggregate'
-    CountDistinct = ... # type: 'QgsAggregateCalculator.Aggregate'
-    CountMissing = ... # type: 'QgsAggregateCalculator.Aggregate'
-    Min = ... # type: 'QgsAggregateCalculator.Aggregate'
-    Max = ... # type: 'QgsAggregateCalculator.Aggregate'
-    Sum = ... # type: 'QgsAggregateCalculator.Aggregate'
-    Mean = ... # type: 'QgsAggregateCalculator.Aggregate'
-    Median = ... # type: 'QgsAggregateCalculator.Aggregate'
-    StDev = ... # type: 'QgsAggregateCalculator.Aggregate'
-    StDevSample = ... # type: 'QgsAggregateCalculator.Aggregate'
-    Range = ... # type: 'QgsAggregateCalculator.Aggregate'
-    Minority = ... # type: 'QgsAggregateCalculator.Aggregate'
-    Majority = ... # type: 'QgsAggregateCalculator.Aggregate'
-    FirstQuartile = ... # type: 'QgsAggregateCalculator.Aggregate'
-    ThirdQuartile = ... # type: 'QgsAggregateCalculator.Aggregate'
-    InterQuartileRange = ... # type: 'QgsAggregateCalculator.Aggregate'
-    StringMinimumLength = ... # type: 'QgsAggregateCalculator.Aggregate'
-    StringMaximumLength = ... # type: 'QgsAggregateCalculator.Aggregate'
-    StringConcatenate = ... # type: 'QgsAggregateCalculator.Aggregate'
-    GeometryCollect = ... # type: 'QgsAggregateCalculator.Aggregate'
-    ArrayAggregate = ... # type: 'QgsAggregateCalculator.Aggregate'
-    StringConcatenateUnique = ... # type: 'QgsAggregateCalculator.Aggregate'
+    class Aggregate(int):
+        Count: 'QgsAggregateCalculator.Aggregate'
+        CountDistinct: 'QgsAggregateCalculator.Aggregate'
+        CountMissing: 'QgsAggregateCalculator.Aggregate'
+        Min: 'QgsAggregateCalculator.Aggregate'
+        Max: 'QgsAggregateCalculator.Aggregate'
+        Sum: 'QgsAggregateCalculator.Aggregate'
+        Mean: 'QgsAggregateCalculator.Aggregate'
+        Median: 'QgsAggregateCalculator.Aggregate'
+        StDev: 'QgsAggregateCalculator.Aggregate'
+        StDevSample: 'QgsAggregateCalculator.Aggregate'
+        Range: 'QgsAggregateCalculator.Aggregate'
+        Minority: 'QgsAggregateCalculator.Aggregate'
+        Majority: 'QgsAggregateCalculator.Aggregate'
+        FirstQuartile: 'QgsAggregateCalculator.Aggregate'
+        ThirdQuartile: 'QgsAggregateCalculator.Aggregate'
+        InterQuartileRange: 'QgsAggregateCalculator.Aggregate'
+        StringMinimumLength: 'QgsAggregateCalculator.Aggregate'
+        StringMaximumLength: 'QgsAggregateCalculator.Aggregate'
+        StringConcatenate: 'QgsAggregateCalculator.Aggregate'
+        GeometryCollect: 'QgsAggregateCalculator.Aggregate'
+        ArrayAggregate: 'QgsAggregateCalculator.Aggregate'
+        StringConcatenateUnique: 'QgsAggregateCalculator.Aggregate'
 
     class AggregateInfo(sip.wrapper):
 
@@ -1643,22 +1643,22 @@ class QgsAnimatedIcon(QtCore.QObject):
 
 class QgsApplication(QtWidgets.QApplication):
 
-    class endian_t(int): ...
-    XDR = ... # type: 'QgsApplication.endian_t'
-    NDR = ... # type: 'QgsApplication.endian_t'
+    class endian_t(int):
+        XDR: 'QgsApplication.endian_t'
+        NDR: 'QgsApplication.endian_t'
 
-    class Cursor(int): ...
-    ZoomIn = ... # type: 'QgsApplication.Cursor'
-    ZoomOut = ... # type: 'QgsApplication.Cursor'
-    Identify = ... # type: 'QgsApplication.Cursor'
-    CrossHair = ... # type: 'QgsApplication.Cursor'
-    CapturePoint = ... # type: 'QgsApplication.Cursor'
-    Select = ... # type: 'QgsApplication.Cursor'
-    Sampler = ... # type: 'QgsApplication.Cursor'
+    class Cursor(int):
+        ZoomIn: 'QgsApplication.Cursor'
+        ZoomOut: 'QgsApplication.Cursor'
+        Identify: 'QgsApplication.Cursor'
+        CrossHair: 'QgsApplication.Cursor'
+        CapturePoint: 'QgsApplication.Cursor'
+        Select: 'QgsApplication.Cursor'
+        Sampler: 'QgsApplication.Cursor'
 
-    class StyleSheetType(int): ...
-    Qt = ... # type: 'QgsApplication.StyleSheetType'
-    WebBrowser = ... # type: 'QgsApplication.StyleSheetType'
+    class StyleSheetType(int):
+        Qt: 'QgsApplication.StyleSheetType'
+        WebBrowser: 'QgsApplication.StyleSheetType'
 
     QGIS_APPLICATION_NAME = ... # type: str
     QGIS_ORGANIZATION_DOMAIN = ... # type: str
@@ -1965,13 +1965,13 @@ class QgsProjectArchive(QgsArchive):
 
 class QgsAttributeTableConfig(sip.wrapper):
 
-    class ActionWidgetStyle(int): ...
-    ButtonList = ... # type: 'QgsAttributeTableConfig.ActionWidgetStyle'
-    DropDown = ... # type: 'QgsAttributeTableConfig.ActionWidgetStyle'
+    class ActionWidgetStyle(int):
+        ButtonList: 'QgsAttributeTableConfig.ActionWidgetStyle'
+        DropDown: 'QgsAttributeTableConfig.ActionWidgetStyle'
 
-    class Type(int): ...
-    Field = ... # type: 'QgsAttributeTableConfig.Type'
-    Action = ... # type: 'QgsAttributeTableConfig.Type'
+    class Type(int):
+        Field: 'QgsAttributeTableConfig.Type'
+        Action: 'QgsAttributeTableConfig.Type'
 
     class ColumnConfig(sip.wrapper):
 
@@ -2016,41 +2016,41 @@ class QgsAttributeTableConfig(sip.wrapper):
 
 class QgsMapLayer(QtCore.QObject):
 
-    class ReadFlag(int): ...
-    FlagDontResolveLayers = ... # type: 'QgsMapLayer.ReadFlag'
-    FlagTrustLayerMetadata = ... # type: 'QgsMapLayer.ReadFlag'
-    FlagReadExtentFromXml = ... # type: 'QgsMapLayer.ReadFlag'
+    class ReadFlag(int):
+        FlagDontResolveLayers: 'QgsMapLayer.ReadFlag'
+        FlagTrustLayerMetadata: 'QgsMapLayer.ReadFlag'
+        FlagReadExtentFromXml: 'QgsMapLayer.ReadFlag'
 
-    class StyleCategory(int): ...
-    LayerConfiguration = ... # type: 'QgsMapLayer.StyleCategory'
-    Symbology = ... # type: 'QgsMapLayer.StyleCategory'
-    Symbology3D = ... # type: 'QgsMapLayer.StyleCategory'
-    Labeling = ... # type: 'QgsMapLayer.StyleCategory'
-    Fields = ... # type: 'QgsMapLayer.StyleCategory'
-    Forms = ... # type: 'QgsMapLayer.StyleCategory'
-    Actions = ... # type: 'QgsMapLayer.StyleCategory'
-    MapTips = ... # type: 'QgsMapLayer.StyleCategory'
-    Diagrams = ... # type: 'QgsMapLayer.StyleCategory'
-    AttributeTable = ... # type: 'QgsMapLayer.StyleCategory'
-    Rendering = ... # type: 'QgsMapLayer.StyleCategory'
-    CustomProperties = ... # type: 'QgsMapLayer.StyleCategory'
-    GeometryOptions = ... # type: 'QgsMapLayer.StyleCategory'
-    Relations = ... # type: 'QgsMapLayer.StyleCategory'
-    Temporal = ... # type: 'QgsMapLayer.StyleCategory'
-    Legend = ... # type: 'QgsMapLayer.StyleCategory'
-    Elevation = ... # type: 'QgsMapLayer.StyleCategory'
-    Notes = ... # type: 'QgsMapLayer.StyleCategory'
-    AllStyleCategories = ... # type: 'QgsMapLayer.StyleCategory'
+    class StyleCategory(int):
+        LayerConfiguration: 'QgsMapLayer.StyleCategory'
+        Symbology: 'QgsMapLayer.StyleCategory'
+        Symbology3D: 'QgsMapLayer.StyleCategory'
+        Labeling: 'QgsMapLayer.StyleCategory'
+        Fields: 'QgsMapLayer.StyleCategory'
+        Forms: 'QgsMapLayer.StyleCategory'
+        Actions: 'QgsMapLayer.StyleCategory'
+        MapTips: 'QgsMapLayer.StyleCategory'
+        Diagrams: 'QgsMapLayer.StyleCategory'
+        AttributeTable: 'QgsMapLayer.StyleCategory'
+        Rendering: 'QgsMapLayer.StyleCategory'
+        CustomProperties: 'QgsMapLayer.StyleCategory'
+        GeometryOptions: 'QgsMapLayer.StyleCategory'
+        Relations: 'QgsMapLayer.StyleCategory'
+        Temporal: 'QgsMapLayer.StyleCategory'
+        Legend: 'QgsMapLayer.StyleCategory'
+        Elevation: 'QgsMapLayer.StyleCategory'
+        Notes: 'QgsMapLayer.StyleCategory'
+        AllStyleCategories: 'QgsMapLayer.StyleCategory'
 
-    class LayerFlag(int): ...
-    Identifiable = ... # type: 'QgsMapLayer.LayerFlag'
-    Removable = ... # type: 'QgsMapLayer.LayerFlag'
-    Searchable = ... # type: 'QgsMapLayer.LayerFlag'
-    Private = ... # type: 'QgsMapLayer.LayerFlag'
+    class LayerFlag(int):
+        Identifiable: 'QgsMapLayer.LayerFlag'
+        Removable: 'QgsMapLayer.LayerFlag'
+        Searchable: 'QgsMapLayer.LayerFlag'
+        Private: 'QgsMapLayer.LayerFlag'
 
-    class PropertyType(int): ...
-    Style = ... # type: 'QgsMapLayer.PropertyType'
-    Metadata = ... # type: 'QgsMapLayer.PropertyType'
+    class PropertyType(int):
+        Style: 'QgsMapLayer.PropertyType'
+        Metadata: 'QgsMapLayer.PropertyType'
 
     class LayerFlags(sip.wrapper):
 
@@ -2317,12 +2317,12 @@ class QgsExpressionContextScopeGenerator(sip.wrapper):
 
 class QgsFeatureSink(sip.wrapper):
 
-    class Flag(int): ...
-    FastInsert = ... # type: 'QgsFeatureSink.Flag'
-    RollBackOnErrors = ... # type: 'QgsFeatureSink.Flag'
+    class Flag(int):
+        FastInsert: 'QgsFeatureSink.Flag'
+        RollBackOnErrors: 'QgsFeatureSink.Flag'
 
-    class SinkFlag(int): ...
-    RegeneratePrimaryKey = ... # type: 'QgsFeatureSink.SinkFlag'
+    class SinkFlag(int):
+        RegeneratePrimaryKey: 'QgsFeatureSink.SinkFlag'
 
     class SinkFlags(sip.wrapper):
 
@@ -2368,15 +2368,15 @@ class QgsFeatureSink(sip.wrapper):
 
 class QgsFeatureSource(sip.wrapper):
 
-    class SpatialIndexPresence(int): ...
-    SpatialIndexUnknown = ... # type: 'QgsFeatureSource.SpatialIndexPresence'
-    SpatialIndexNotPresent = ... # type: 'QgsFeatureSource.SpatialIndexPresence'
-    SpatialIndexPresent = ... # type: 'QgsFeatureSource.SpatialIndexPresence'
+    class SpatialIndexPresence(int):
+        SpatialIndexUnknown: 'QgsFeatureSource.SpatialIndexPresence'
+        SpatialIndexNotPresent: 'QgsFeatureSource.SpatialIndexPresence'
+        SpatialIndexPresent: 'QgsFeatureSource.SpatialIndexPresence'
 
-    class FeatureAvailability(int): ...
-    NoFeaturesAvailable = ... # type: 'QgsFeatureSource.FeatureAvailability'
-    FeaturesAvailable = ... # type: 'QgsFeatureSource.FeatureAvailability'
-    FeaturesMaybeAvailable = ... # type: 'QgsFeatureSource.FeatureAvailability'
+    class FeatureAvailability(int):
+        NoFeaturesAvailable: 'QgsFeatureSource.FeatureAvailability'
+        FeaturesAvailable: 'QgsFeatureSource.FeatureAvailability'
+        FeaturesMaybeAvailable: 'QgsFeatureSource.FeatureAvailability'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -2854,21 +2854,21 @@ class QgsBookmarkManager(QtCore.QObject):
 
 class QgsBookmarkManagerModel(QtCore.QAbstractTableModel):
 
-    class Columns(int): ...
-    ColumnName = ... # type: 'QgsBookmarkManagerModel.Columns'
-    ColumnGroup = ... # type: 'QgsBookmarkManagerModel.Columns'
-    ColumnXMin = ... # type: 'QgsBookmarkManagerModel.Columns'
-    ColumnYMin = ... # type: 'QgsBookmarkManagerModel.Columns'
-    ColumnXMax = ... # type: 'QgsBookmarkManagerModel.Columns'
-    ColumnYMax = ... # type: 'QgsBookmarkManagerModel.Columns'
-    ColumnCrs = ... # type: 'QgsBookmarkManagerModel.Columns'
-    ColumnStore = ... # type: 'QgsBookmarkManagerModel.Columns'
+    class Columns(int):
+        ColumnName: 'QgsBookmarkManagerModel.Columns'
+        ColumnGroup: 'QgsBookmarkManagerModel.Columns'
+        ColumnXMin: 'QgsBookmarkManagerModel.Columns'
+        ColumnYMin: 'QgsBookmarkManagerModel.Columns'
+        ColumnXMax: 'QgsBookmarkManagerModel.Columns'
+        ColumnYMax: 'QgsBookmarkManagerModel.Columns'
+        ColumnCrs: 'QgsBookmarkManagerModel.Columns'
+        ColumnStore: 'QgsBookmarkManagerModel.Columns'
 
-    class CustomRoles(int): ...
-    RoleExtent = ... # type: 'QgsBookmarkManagerModel.CustomRoles'
-    RoleName = ... # type: 'QgsBookmarkManagerModel.CustomRoles'
-    RoleId = ... # type: 'QgsBookmarkManagerModel.CustomRoles'
-    RoleGroup = ... # type: 'QgsBookmarkManagerModel.CustomRoles'
+    class CustomRoles(int):
+        RoleExtent: 'QgsBookmarkManagerModel.CustomRoles'
+        RoleName: 'QgsBookmarkManagerModel.CustomRoles'
+        RoleId: 'QgsBookmarkManagerModel.CustomRoles'
+        RoleGroup: 'QgsBookmarkManagerModel.CustomRoles'
 
     def __init__(self, manager: QgsBookmarkManager, projectManager: typing.Optional[QgsBookmarkManager] = ..., parent: typing.Optional[QtCore.QObject] = ...) -> None: ...
 
@@ -2889,14 +2889,14 @@ class QgsBookmarkManagerProxyModel(QtCore.QSortFilterProxyModel):
 
 class QgsAbstractFeatureIterator(sip.wrapper):
 
-    class RequestToSourceCrsResult(int): ...
-    Success = ... # type: 'QgsAbstractFeatureIterator.RequestToSourceCrsResult'
-    DistanceWithinMustBeCheckedManually = ... # type: 'QgsAbstractFeatureIterator.RequestToSourceCrsResult'
+    class RequestToSourceCrsResult(int):
+        Success: 'QgsAbstractFeatureIterator.RequestToSourceCrsResult'
+        DistanceWithinMustBeCheckedManually: 'QgsAbstractFeatureIterator.RequestToSourceCrsResult'
 
-    class CompileStatus(int): ...
-    NoCompilation = ... # type: 'QgsAbstractFeatureIterator.CompileStatus'
-    PartiallyCompiled = ... # type: 'QgsAbstractFeatureIterator.CompileStatus'
-    Compiled = ... # type: 'QgsAbstractFeatureIterator.CompileStatus'
+    class CompileStatus(int):
+        NoCompilation: 'QgsAbstractFeatureIterator.CompileStatus'
+        PartiallyCompiled: 'QgsAbstractFeatureIterator.CompileStatus'
+        Compiled: 'QgsAbstractFeatureIterator.CompileStatus'
 
     @typing.overload
     def __init__(self, request: 'QgsFeatureRequest') -> None: ...
@@ -3038,13 +3038,13 @@ class QgsCadUtils(sip.wrapper):
 
 class QgsClipper(sip.wrapper):
 
-    class Boundary(int): ...
-    XMax = ... # type: 'QgsClipper.Boundary'
-    XMin = ... # type: 'QgsClipper.Boundary'
-    YMax = ... # type: 'QgsClipper.Boundary'
-    YMin = ... # type: 'QgsClipper.Boundary'
-    ZMax = ... # type: 'QgsClipper.Boundary'
-    ZMin = ... # type: 'QgsClipper.Boundary'
+    class Boundary(int):
+        XMax: 'QgsClipper.Boundary'
+        XMin: 'QgsClipper.Boundary'
+        YMax: 'QgsClipper.Boundary'
+        YMin: 'QgsClipper.Boundary'
+        ZMax: 'QgsClipper.Boundary'
+        ZMin: 'QgsClipper.Boundary'
 
     MAX_X = ... # type: float
     MAX_Y = ... # type: float
@@ -3206,10 +3206,10 @@ class QgsRandomColorRamp(QgsColorRamp):
 
 class QgsColorScheme(sip.wrapper):
 
-    class SchemeFlag(int): ...
-    ShowInColorDialog = ... # type: 'QgsColorScheme.SchemeFlag'
-    ShowInColorButtonMenu = ... # type: 'QgsColorScheme.SchemeFlag'
-    ShowInAllContexts = ... # type: 'QgsColorScheme.SchemeFlag'
+    class SchemeFlag(int):
+        ShowInColorDialog: 'QgsColorScheme.SchemeFlag'
+        ShowInColorButtonMenu: 'QgsColorScheme.SchemeFlag'
+        ShowInAllContexts: 'QgsColorScheme.SchemeFlag'
 
     class SchemeFlags(sip.wrapper):
 
@@ -3506,15 +3506,15 @@ class QgsConnectionRegistry(QtCore.QObject):
 
 class QgsCoordinateFormatter(sip.wrapper):
 
-    class FormatFlag(int): ...
-    FlagDegreesUseStringSuffix = ... # type: 'QgsCoordinateFormatter.FormatFlag'
-    FlagDegreesPadMinutesSeconds = ... # type: 'QgsCoordinateFormatter.FormatFlag'
+    class FormatFlag(int):
+        FlagDegreesUseStringSuffix: 'QgsCoordinateFormatter.FormatFlag'
+        FlagDegreesPadMinutesSeconds: 'QgsCoordinateFormatter.FormatFlag'
 
-    class Format(int): ...
-    FormatPair = ... # type: 'QgsCoordinateFormatter.Format'
-    FormatDegreesMinutesSeconds = ... # type: 'QgsCoordinateFormatter.Format'
-    FormatDegreesMinutes = ... # type: 'QgsCoordinateFormatter.Format'
-    FormatDecimalDegrees = ... # type: 'QgsCoordinateFormatter.Format'
+    class Format(int):
+        FormatPair: 'QgsCoordinateFormatter.Format'
+        FormatDegreesMinutesSeconds: 'QgsCoordinateFormatter.Format'
+        FormatDegreesMinutes: 'QgsCoordinateFormatter.Format'
+        FormatDecimalDegrees: 'QgsCoordinateFormatter.Format'
 
     class FormatFlags(sip.wrapper):
 
@@ -3549,23 +3549,23 @@ class QgsCoordinateFormatter(sip.wrapper):
 
 class QgsTask(QtCore.QObject):
 
-    class SubTaskDependency(int): ...
-    SubTaskIndependent = ... # type: 'QgsTask.SubTaskDependency'
-    ParentDependsOnSubTask = ... # type: 'QgsTask.SubTaskDependency'
+    class SubTaskDependency(int):
+        SubTaskIndependent: 'QgsTask.SubTaskDependency'
+        ParentDependsOnSubTask: 'QgsTask.SubTaskDependency'
 
-    class Flag(int): ...
-    CanCancel = ... # type: 'QgsTask.Flag'
-    CancelWithoutPrompt = ... # type: 'QgsTask.Flag'
-    Hidden = ... # type: 'QgsTask.Flag'
-    Silent = ... # type: 'QgsTask.Flag'
-    AllFlags = ... # type: 'QgsTask.Flag'
+    class Flag(int):
+        CanCancel: 'QgsTask.Flag'
+        CancelWithoutPrompt: 'QgsTask.Flag'
+        Hidden: 'QgsTask.Flag'
+        Silent: 'QgsTask.Flag'
+        AllFlags: 'QgsTask.Flag'
 
-    class TaskStatus(int): ...
-    Queued = ... # type: 'QgsTask.TaskStatus'
-    OnHold = ... # type: 'QgsTask.TaskStatus'
-    Running = ... # type: 'QgsTask.TaskStatus'
-    Complete = ... # type: 'QgsTask.TaskStatus'
-    Terminated = ... # type: 'QgsTask.TaskStatus'
+    class TaskStatus(int):
+        Queued: 'QgsTask.TaskStatus'
+        OnHold: 'QgsTask.TaskStatus'
+        Running: 'QgsTask.TaskStatus'
+        Complete: 'QgsTask.TaskStatus'
+        Terminated: 'QgsTask.TaskStatus'
 
     class Flags(sip.wrapper):
 
@@ -3655,10 +3655,10 @@ class QgsCredentialsConsole(QtCore.QObject, QgsCredentials):
 
 class QgsDartMeasurement(sip.wrapper):
 
-    class Type(int): ...
-    Text = ... # type: 'QgsDartMeasurement.Type'
-    ImagePng = ... # type: 'QgsDartMeasurement.Type'
-    Integer = ... # type: 'QgsDartMeasurement.Type'
+    class Type(int):
+        Text: 'QgsDartMeasurement.Type'
+        ImagePng: 'QgsDartMeasurement.Type'
+        Integer: 'QgsDartMeasurement.Type'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -3675,8 +3675,8 @@ class QgsDartMeasurement(sip.wrapper):
 
 class QgsDatabaseSchemaModel(QtCore.QAbstractItemModel):
 
-    class Role(int): ...
-    RoleEmpty = ... # type: 'QgsDatabaseSchemaModel.Role'
+    class Role(int):
+        RoleEmpty: 'QgsDatabaseSchemaModel.Role'
 
     @typing.overload
     def __init__(self, provider: str, connection: str, parent: typing.Optional[QtCore.QObject] = ...) -> None: ...
@@ -3695,15 +3695,15 @@ class QgsDatabaseSchemaModel(QtCore.QAbstractItemModel):
 
 class QgsDatabaseTableModel(QtCore.QAbstractItemModel):
 
-    class Role(int): ...
-    RoleTableName = ... # type: 'QgsDatabaseTableModel.Role'
-    RoleSchema = ... # type: 'QgsDatabaseTableModel.Role'
-    RoleTableFlags = ... # type: 'QgsDatabaseTableModel.Role'
-    RoleComment = ... # type: 'QgsDatabaseTableModel.Role'
-    RoleCustomInfo = ... # type: 'QgsDatabaseTableModel.Role'
-    RoleWkbType = ... # type: 'QgsDatabaseTableModel.Role'
-    RoleCrs = ... # type: 'QgsDatabaseTableModel.Role'
-    RoleEmpty = ... # type: 'QgsDatabaseTableModel.Role'
+    class Role(int):
+        RoleTableName: 'QgsDatabaseTableModel.Role'
+        RoleSchema: 'QgsDatabaseTableModel.Role'
+        RoleTableFlags: 'QgsDatabaseTableModel.Role'
+        RoleComment: 'QgsDatabaseTableModel.Role'
+        RoleCustomInfo: 'QgsDatabaseTableModel.Role'
+        RoleWkbType: 'QgsDatabaseTableModel.Role'
+        RoleCrs: 'QgsDatabaseTableModel.Role'
+        RoleEmpty: 'QgsDatabaseTableModel.Role'
 
     @typing.overload
     def __init__(self, provider: str, connection: str, schema: str = ..., parent: typing.Optional[QtCore.QObject] = ...) -> None: ...
@@ -3722,13 +3722,13 @@ class QgsDatabaseTableModel(QtCore.QAbstractItemModel):
 
 class QgsDataDefinedSizeLegend(sip.wrapper):
 
-    class VerticalAlignment(int): ...
-    AlignCenter = ... # type: 'QgsDataDefinedSizeLegend.VerticalAlignment'
-    AlignBottom = ... # type: 'QgsDataDefinedSizeLegend.VerticalAlignment'
+    class VerticalAlignment(int):
+        AlignCenter: 'QgsDataDefinedSizeLegend.VerticalAlignment'
+        AlignBottom: 'QgsDataDefinedSizeLegend.VerticalAlignment'
 
-    class LegendType(int): ...
-    LegendSeparated = ... # type: 'QgsDataDefinedSizeLegend.LegendType'
-    LegendCollapsed = ... # type: 'QgsDataDefinedSizeLegend.LegendType'
+    class LegendType(int):
+        LegendSeparated: 'QgsDataDefinedSizeLegend.LegendType'
+        LegendCollapsed: 'QgsDataDefinedSizeLegend.LegendType'
 
     class SizeClass(sip.wrapper):
 
@@ -3787,13 +3787,13 @@ class QgsDataProviderTemporalCapabilities(sip.wrapper):
 
 class QgsDataSourceUri(sip.wrapper):
 
-    class SslMode(int): ...
-    SslPrefer = ... # type: 'QgsDataSourceUri.SslMode'
-    SslDisable = ... # type: 'QgsDataSourceUri.SslMode'
-    SslAllow = ... # type: 'QgsDataSourceUri.SslMode'
-    SslRequire = ... # type: 'QgsDataSourceUri.SslMode'
-    SslVerifyCa = ... # type: 'QgsDataSourceUri.SslMode'
-    SslVerifyFull = ... # type: 'QgsDataSourceUri.SslMode'
+    class SslMode(int):
+        SslPrefer: 'QgsDataSourceUri.SslMode'
+        SslDisable: 'QgsDataSourceUri.SslMode'
+        SslAllow: 'QgsDataSourceUri.SslMode'
+        SslRequire: 'QgsDataSourceUri.SslMode'
+        SslVerifyCa: 'QgsDataSourceUri.SslMode'
+        SslVerifyFull: 'QgsDataSourceUri.SslMode'
 
     staticMetaObject = ... # type: QtCore.QMetaObject
 
@@ -3868,14 +3868,14 @@ class QgsDataSourceUri(sip.wrapper):
 
 class QgsDateTimeStatisticalSummary(sip.wrapper):
 
-    class Statistic(int): ...
-    Count = ... # type: 'QgsDateTimeStatisticalSummary.Statistic'
-    CountDistinct = ... # type: 'QgsDateTimeStatisticalSummary.Statistic'
-    CountMissing = ... # type: 'QgsDateTimeStatisticalSummary.Statistic'
-    Min = ... # type: 'QgsDateTimeStatisticalSummary.Statistic'
-    Max = ... # type: 'QgsDateTimeStatisticalSummary.Statistic'
-    Range = ... # type: 'QgsDateTimeStatisticalSummary.Statistic'
-    All = ... # type: 'QgsDateTimeStatisticalSummary.Statistic'
+    class Statistic(int):
+        Count: 'QgsDateTimeStatisticalSummary.Statistic'
+        CountDistinct: 'QgsDateTimeStatisticalSummary.Statistic'
+        CountMissing: 'QgsDateTimeStatisticalSummary.Statistic'
+        Min: 'QgsDateTimeStatisticalSummary.Statistic'
+        Max: 'QgsDateTimeStatisticalSummary.Statistic'
+        Range: 'QgsDateTimeStatisticalSummary.Statistic'
+        All: 'QgsDateTimeStatisticalSummary.Statistic'
 
     class Statistics(sip.wrapper):
 
@@ -3972,33 +3972,33 @@ class QgsDefaultValue(sip.wrapper):
 
 class QgsDiagramLayerSettings(sip.wrapper):
 
-    class Property(int): ...
-    BackgroundColor = ... # type: 'QgsDiagramLayerSettings.Property'
-    StrokeColor = ... # type: 'QgsDiagramLayerSettings.Property'
-    StrokeWidth = ... # type: 'QgsDiagramLayerSettings.Property'
-    PositionX = ... # type: 'QgsDiagramLayerSettings.Property'
-    PositionY = ... # type: 'QgsDiagramLayerSettings.Property'
-    Distance = ... # type: 'QgsDiagramLayerSettings.Property'
-    Priority = ... # type: 'QgsDiagramLayerSettings.Property'
-    ZIndex = ... # type: 'QgsDiagramLayerSettings.Property'
-    IsObstacle = ... # type: 'QgsDiagramLayerSettings.Property'
-    Show = ... # type: 'QgsDiagramLayerSettings.Property'
-    AlwaysShow = ... # type: 'QgsDiagramLayerSettings.Property'
-    StartAngle = ... # type: 'QgsDiagramLayerSettings.Property'
+    class Property(int):
+        BackgroundColor: 'QgsDiagramLayerSettings.Property'
+        StrokeColor: 'QgsDiagramLayerSettings.Property'
+        StrokeWidth: 'QgsDiagramLayerSettings.Property'
+        PositionX: 'QgsDiagramLayerSettings.Property'
+        PositionY: 'QgsDiagramLayerSettings.Property'
+        Distance: 'QgsDiagramLayerSettings.Property'
+        Priority: 'QgsDiagramLayerSettings.Property'
+        ZIndex: 'QgsDiagramLayerSettings.Property'
+        IsObstacle: 'QgsDiagramLayerSettings.Property'
+        Show: 'QgsDiagramLayerSettings.Property'
+        AlwaysShow: 'QgsDiagramLayerSettings.Property'
+        StartAngle: 'QgsDiagramLayerSettings.Property'
 
-    class LinePlacementFlag(int): ...
-    OnLine = ... # type: 'QgsDiagramLayerSettings.LinePlacementFlag'
-    AboveLine = ... # type: 'QgsDiagramLayerSettings.LinePlacementFlag'
-    BelowLine = ... # type: 'QgsDiagramLayerSettings.LinePlacementFlag'
-    MapOrientation = ... # type: 'QgsDiagramLayerSettings.LinePlacementFlag'
+    class LinePlacementFlag(int):
+        OnLine: 'QgsDiagramLayerSettings.LinePlacementFlag'
+        AboveLine: 'QgsDiagramLayerSettings.LinePlacementFlag'
+        BelowLine: 'QgsDiagramLayerSettings.LinePlacementFlag'
+        MapOrientation: 'QgsDiagramLayerSettings.LinePlacementFlag'
 
-    class Placement(int): ...
-    AroundPoint = ... # type: 'QgsDiagramLayerSettings.Placement'
-    OverPoint = ... # type: 'QgsDiagramLayerSettings.Placement'
-    Line = ... # type: 'QgsDiagramLayerSettings.Placement'
-    Curved = ... # type: 'QgsDiagramLayerSettings.Placement'
-    Horizontal = ... # type: 'QgsDiagramLayerSettings.Placement'
-    Free = ... # type: 'QgsDiagramLayerSettings.Placement'
+    class Placement(int):
+        AroundPoint: 'QgsDiagramLayerSettings.Placement'
+        OverPoint: 'QgsDiagramLayerSettings.Placement'
+        Line: 'QgsDiagramLayerSettings.Placement'
+        Curved: 'QgsDiagramLayerSettings.Placement'
+        Horizontal: 'QgsDiagramLayerSettings.Placement'
+        Free: 'QgsDiagramLayerSettings.Placement'
 
     class LinePlacementFlags(sip.wrapper):
 
@@ -4049,19 +4049,19 @@ class QgsDiagramLayerSettings(sip.wrapper):
 
 class QgsDiagramSettings(sip.wrapper):
 
-    class Direction(int): ...
-    Clockwise = ... # type: 'QgsDiagramSettings.Direction'
-    Counterclockwise = ... # type: 'QgsDiagramSettings.Direction'
+    class Direction(int):
+        Clockwise: 'QgsDiagramSettings.Direction'
+        Counterclockwise: 'QgsDiagramSettings.Direction'
 
-    class DiagramOrientation(int): ...
-    Up = ... # type: 'QgsDiagramSettings.DiagramOrientation'
-    Down = ... # type: 'QgsDiagramSettings.DiagramOrientation'
-    Left = ... # type: 'QgsDiagramSettings.DiagramOrientation'
-    Right = ... # type: 'QgsDiagramSettings.DiagramOrientation'
+    class DiagramOrientation(int):
+        Up: 'QgsDiagramSettings.DiagramOrientation'
+        Down: 'QgsDiagramSettings.DiagramOrientation'
+        Left: 'QgsDiagramSettings.DiagramOrientation'
+        Right: 'QgsDiagramSettings.DiagramOrientation'
 
-    class LabelPlacementMethod(int): ...
-    Height = ... # type: 'QgsDiagramSettings.LabelPlacementMethod'
-    XHeight = ... # type: 'QgsDiagramSettings.LabelPlacementMethod'
+    class LabelPlacementMethod(int):
+        Height: 'QgsDiagramSettings.LabelPlacementMethod'
+        XHeight: 'QgsDiagramSettings.LabelPlacementMethod'
 
     backgroundColor = ... # type: typing.Union[QtGui.QColor, QtCore.Qt.GlobalColor, QtGui.QGradient]
     barWidth = ... # type: float
@@ -4288,9 +4288,9 @@ class QgsElevationUtils(sip.wrapper):
 
 class QgsErrorMessage(sip.wrapper):
 
-    class Format(int): ...
-    Text = ... # type: 'QgsErrorMessage.Format'
-    Html = ... # type: 'QgsErrorMessage.Format'
+    class Format(int):
+        Text: 'QgsErrorMessage.Format'
+        Html: 'QgsErrorMessage.Format'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -4596,12 +4596,12 @@ class QgsFeature(sip.wrapper):
 
 class QgsFeaturePickerModelBase(QtCore.QAbstractItemModel):
 
-    class Role(int): ...
-    IdentifierValueRole = ... # type: 'QgsFeaturePickerModelBase.Role'
-    IdentifierValuesRole = ... # type: 'QgsFeaturePickerModelBase.Role'
-    ValueRole = ... # type: 'QgsFeaturePickerModelBase.Role'
-    FeatureRole = ... # type: 'QgsFeaturePickerModelBase.Role'
-    FeatureIdRole = ... # type: 'QgsFeaturePickerModelBase.Role'
+    class Role(int):
+        IdentifierValueRole: 'QgsFeaturePickerModelBase.Role'
+        IdentifierValuesRole: 'QgsFeaturePickerModelBase.Role'
+        ValueRole: 'QgsFeaturePickerModelBase.Role'
+        FeatureRole: 'QgsFeaturePickerModelBase.Role'
+        FeatureIdRole: 'QgsFeaturePickerModelBase.Role'
 
     def __init__(self, parent: typing.Optional[QtCore.QObject] = ...) -> None: ...
 
@@ -4707,24 +4707,24 @@ class QgsFeatureIterator(sip.wrapper):
 
 class QgsFeatureRequest(sip.wrapper):
 
-    class InvalidGeometryCheck(int): ...
-    GeometryNoCheck = ... # type: 'QgsFeatureRequest.InvalidGeometryCheck'
-    GeometrySkipInvalid = ... # type: 'QgsFeatureRequest.InvalidGeometryCheck'
-    GeometryAbortOnInvalid = ... # type: 'QgsFeatureRequest.InvalidGeometryCheck'
+    class InvalidGeometryCheck(int):
+        GeometryNoCheck: 'QgsFeatureRequest.InvalidGeometryCheck'
+        GeometrySkipInvalid: 'QgsFeatureRequest.InvalidGeometryCheck'
+        GeometryAbortOnInvalid: 'QgsFeatureRequest.InvalidGeometryCheck'
 
-    class FilterType(int): ...
-    FilterNone = ... # type: 'QgsFeatureRequest.FilterType'
-    FilterFid = ... # type: 'QgsFeatureRequest.FilterType'
-    FilterExpression = ... # type: 'QgsFeatureRequest.FilterType'
-    FilterFids = ... # type: 'QgsFeatureRequest.FilterType'
+    class FilterType(int):
+        FilterNone: 'QgsFeatureRequest.FilterType'
+        FilterFid: 'QgsFeatureRequest.FilterType'
+        FilterExpression: 'QgsFeatureRequest.FilterType'
+        FilterFids: 'QgsFeatureRequest.FilterType'
 
-    class Flag(int): ...
-    NoFlags = ... # type: 'QgsFeatureRequest.Flag'
-    NoGeometry = ... # type: 'QgsFeatureRequest.Flag'
-    SubsetOfAttributes = ... # type: 'QgsFeatureRequest.Flag'
-    ExactIntersect = ... # type: 'QgsFeatureRequest.Flag'
-    IgnoreStaticNodesDuringExpressionCompilation = ... # type: 'QgsFeatureRequest.Flag'
-    EmbeddedSymbols = ... # type: 'QgsFeatureRequest.Flag'
+    class Flag(int):
+        NoFlags: 'QgsFeatureRequest.Flag'
+        NoGeometry: 'QgsFeatureRequest.Flag'
+        SubsetOfAttributes: 'QgsFeatureRequest.Flag'
+        ExactIntersect: 'QgsFeatureRequest.Flag'
+        IgnoreStaticNodesDuringExpressionCompilation: 'QgsFeatureRequest.Flag'
+        EmbeddedSymbols: 'QgsFeatureRequest.Flag'
 
     class Flags(sip.wrapper):
 
@@ -4942,20 +4942,20 @@ class QgsField(sip.wrapper):
 
 class QgsFieldConstraints(sip.wrapper):
 
-    class ConstraintStrength(int): ...
-    ConstraintStrengthNotSet = ... # type: 'QgsFieldConstraints.ConstraintStrength'
-    ConstraintStrengthHard = ... # type: 'QgsFieldConstraints.ConstraintStrength'
-    ConstraintStrengthSoft = ... # type: 'QgsFieldConstraints.ConstraintStrength'
+    class ConstraintStrength(int):
+        ConstraintStrengthNotSet: 'QgsFieldConstraints.ConstraintStrength'
+        ConstraintStrengthHard: 'QgsFieldConstraints.ConstraintStrength'
+        ConstraintStrengthSoft: 'QgsFieldConstraints.ConstraintStrength'
 
-    class ConstraintOrigin(int): ...
-    ConstraintOriginNotSet = ... # type: 'QgsFieldConstraints.ConstraintOrigin'
-    ConstraintOriginProvider = ... # type: 'QgsFieldConstraints.ConstraintOrigin'
-    ConstraintOriginLayer = ... # type: 'QgsFieldConstraints.ConstraintOrigin'
+    class ConstraintOrigin(int):
+        ConstraintOriginNotSet: 'QgsFieldConstraints.ConstraintOrigin'
+        ConstraintOriginProvider: 'QgsFieldConstraints.ConstraintOrigin'
+        ConstraintOriginLayer: 'QgsFieldConstraints.ConstraintOrigin'
 
-    class Constraint(int): ...
-    ConstraintNotNull = ... # type: 'QgsFieldConstraints.Constraint'
-    ConstraintUnique = ... # type: 'QgsFieldConstraints.Constraint'
-    ConstraintExpression = ... # type: 'QgsFieldConstraints.Constraint'
+    class Constraint(int):
+        ConstraintNotNull: 'QgsFieldConstraints.Constraint'
+        ConstraintUnique: 'QgsFieldConstraints.Constraint'
+        ConstraintExpression: 'QgsFieldConstraints.Constraint'
 
     class Constraints(sip.wrapper):
 
@@ -5004,8 +5004,8 @@ class QgsFieldFormatterContext(sip.wrapper):
 
 class QgsFieldFormatter(sip.wrapper):
 
-    class Flag(int): ...
-    CanProvideAvailableValues = ... # type: 'QgsFieldFormatter.Flag'
+    class Flag(int):
+        CanProvideAvailableValues: 'QgsFieldFormatter.Flag'
 
     class Flags(sip.wrapper):
 
@@ -5053,18 +5053,18 @@ class QgsFieldFormatterRegistry(QtCore.QObject):
 
 class QgsFieldModel(QtCore.QAbstractItemModel):
 
-    class FieldRoles(int): ...
-    FieldNameRole = ... # type: 'QgsFieldModel.FieldRoles'
-    FieldIndexRole = ... # type: 'QgsFieldModel.FieldRoles'
-    ExpressionRole = ... # type: 'QgsFieldModel.FieldRoles'
-    IsExpressionRole = ... # type: 'QgsFieldModel.FieldRoles'
-    ExpressionValidityRole = ... # type: 'QgsFieldModel.FieldRoles'
-    FieldTypeRole = ... # type: 'QgsFieldModel.FieldRoles'
-    FieldOriginRole = ... # type: 'QgsFieldModel.FieldRoles'
-    IsEmptyRole = ... # type: 'QgsFieldModel.FieldRoles'
-    EditorWidgetType = ... # type: 'QgsFieldModel.FieldRoles'
-    JoinedFieldIsEditable = ... # type: 'QgsFieldModel.FieldRoles'
-    FieldIsWidgetEditable = ... # type: 'QgsFieldModel.FieldRoles'
+    class FieldRoles(int):
+        FieldNameRole: 'QgsFieldModel.FieldRoles'
+        FieldIndexRole: 'QgsFieldModel.FieldRoles'
+        ExpressionRole: 'QgsFieldModel.FieldRoles'
+        IsExpressionRole: 'QgsFieldModel.FieldRoles'
+        ExpressionValidityRole: 'QgsFieldModel.FieldRoles'
+        FieldTypeRole: 'QgsFieldModel.FieldRoles'
+        FieldOriginRole: 'QgsFieldModel.FieldRoles'
+        IsEmptyRole: 'QgsFieldModel.FieldRoles'
+        EditorWidgetType: 'QgsFieldModel.FieldRoles'
+        JoinedFieldIsEditable: 'QgsFieldModel.FieldRoles'
+        FieldIsWidgetEditable: 'QgsFieldModel.FieldRoles'
 
     def __init__(self, parent: typing.Optional[QtCore.QObject] = ...) -> None: ...
 
@@ -5094,17 +5094,17 @@ class QgsFieldModel(QtCore.QAbstractItemModel):
 
 class QgsFieldProxyModel(QtCore.QSortFilterProxyModel):
 
-    class Filter(int): ...
-    String = ... # type: 'QgsFieldProxyModel.Filter'
-    Int = ... # type: 'QgsFieldProxyModel.Filter'
-    LongLong = ... # type: 'QgsFieldProxyModel.Filter'
-    Double = ... # type: 'QgsFieldProxyModel.Filter'
-    Numeric = ... # type: 'QgsFieldProxyModel.Filter'
-    Date = ... # type: 'QgsFieldProxyModel.Filter'
-    Time = ... # type: 'QgsFieldProxyModel.Filter'
-    HideReadOnly = ... # type: 'QgsFieldProxyModel.Filter'
-    DateTime = ... # type: 'QgsFieldProxyModel.Filter'
-    AllTypes = ... # type: 'QgsFieldProxyModel.Filter'
+    class Filter(int):
+        String: 'QgsFieldProxyModel.Filter'
+        Int: 'QgsFieldProxyModel.Filter'
+        LongLong: 'QgsFieldProxyModel.Filter'
+        Double: 'QgsFieldProxyModel.Filter'
+        Numeric: 'QgsFieldProxyModel.Filter'
+        Date: 'QgsFieldProxyModel.Filter'
+        Time: 'QgsFieldProxyModel.Filter'
+        HideReadOnly: 'QgsFieldProxyModel.Filter'
+        DateTime: 'QgsFieldProxyModel.Filter'
+        AllTypes: 'QgsFieldProxyModel.Filter'
 
     class Filters(sip.wrapper):
 
@@ -5131,12 +5131,12 @@ class QgsFieldProxyModel(QtCore.QSortFilterProxyModel):
 
 class QgsFields(sip.wrapper):
 
-    class FieldOrigin(int): ...
-    OriginUnknown = ... # type: 'QgsFields.FieldOrigin'
-    OriginProvider = ... # type: 'QgsFields.FieldOrigin'
-    OriginJoin = ... # type: 'QgsFields.FieldOrigin'
-    OriginEdit = ... # type: 'QgsFields.FieldOrigin'
-    OriginExpression = ... # type: 'QgsFields.FieldOrigin'
+    class FieldOrigin(int):
+        OriginUnknown: 'QgsFields.FieldOrigin'
+        OriginProvider: 'QgsFields.FieldOrigin'
+        OriginJoin: 'QgsFields.FieldOrigin'
+        OriginEdit: 'QgsFields.FieldOrigin'
+        OriginExpression: 'QgsFields.FieldOrigin'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -5755,20 +5755,20 @@ class QgsLegendSettings(sip.wrapper):
 
 class QgsLegendStyle(sip.wrapper):
 
-    class Side(int): ...
-    Top = ... # type: 'QgsLegendStyle.Side'
-    Bottom = ... # type: 'QgsLegendStyle.Side'
-    Left = ... # type: 'QgsLegendStyle.Side'
-    Right = ... # type: 'QgsLegendStyle.Side'
+    class Side(int):
+        Top: 'QgsLegendStyle.Side'
+        Bottom: 'QgsLegendStyle.Side'
+        Left: 'QgsLegendStyle.Side'
+        Right: 'QgsLegendStyle.Side'
 
-    class Style(int): ...
-    Undefined = ... # type: 'QgsLegendStyle.Style'
-    Hidden = ... # type: 'QgsLegendStyle.Style'
-    Title = ... # type: 'QgsLegendStyle.Style'
-    Group = ... # type: 'QgsLegendStyle.Style'
-    Subgroup = ... # type: 'QgsLegendStyle.Style'
-    Symbol = ... # type: 'QgsLegendStyle.Style'
-    SymbolLabel = ... # type: 'QgsLegendStyle.Style'
+    class Style(int):
+        Undefined: 'QgsLegendStyle.Style'
+        Hidden: 'QgsLegendStyle.Style'
+        Title: 'QgsLegendStyle.Style'
+        Group: 'QgsLegendStyle.Style'
+        Subgroup: 'QgsLegendStyle.Style'
+        Symbol: 'QgsLegendStyle.Style'
+        SymbolLabel: 'QgsLegendStyle.Style'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -5861,10 +5861,10 @@ class QgsScopeLogger(sip.wrapper):
 
 class QgsMapClippingRegion(sip.wrapper):
 
-    class FeatureClippingType(int): ...
-    ClipToIntersection = ... # type: 'QgsMapClippingRegion.FeatureClippingType'
-    ClipPainterOnly = ... # type: 'QgsMapClippingRegion.FeatureClippingType'
-    NoClipping = ... # type: 'QgsMapClippingRegion.FeatureClippingType'
+    class FeatureClippingType(int):
+        ClipToIntersection: 'QgsMapClippingRegion.FeatureClippingType'
+        ClipPainterOnly: 'QgsMapClippingRegion.FeatureClippingType'
+        NoClipping: 'QgsMapClippingRegion.FeatureClippingType'
 
     @typing.overload
     def __init__(self, geometry: 'QgsGeometry') -> None: ...
@@ -5929,13 +5929,13 @@ class QgsMapHitTest(sip.wrapper):
 
 class QgsMapLayerDependency(sip.wrapper):
 
-    class Origin(int): ...
-    FromProvider = ... # type: 'QgsMapLayerDependency.Origin'
-    FromUser = ... # type: 'QgsMapLayerDependency.Origin'
+    class Origin(int):
+        FromProvider: 'QgsMapLayerDependency.Origin'
+        FromUser: 'QgsMapLayerDependency.Origin'
 
-    class Type(int): ...
-    PresenceDependency = ... # type: 'QgsMapLayerDependency.Type'
-    DataDependency = ... # type: 'QgsMapLayerDependency.Type'
+    class Type(int):
+        PresenceDependency: 'QgsMapLayerDependency.Type'
+        DataDependency: 'QgsMapLayerDependency.Type'
 
     @typing.overload
     def __init__(self, layerId: str, type: 'QgsMapLayerDependency.Type' = ..., origin: 'QgsMapLayerDependency.Origin' = ...) -> None: ...
@@ -6074,11 +6074,11 @@ class QgsDefaultPointCloudLayerLegend(QgsMapLayerLegend):
 
 class QgsMapLayerModel(QtCore.QAbstractItemModel):
 
-    class ItemDataRole(int): ...
-    LayerIdRole = ... # type: 'QgsMapLayerModel.ItemDataRole'
-    LayerRole = ... # type: 'QgsMapLayerModel.ItemDataRole'
-    EmptyRole = ... # type: 'QgsMapLayerModel.ItemDataRole'
-    AdditionalRole = ... # type: 'QgsMapLayerModel.ItemDataRole'
+    class ItemDataRole(int):
+        LayerIdRole: 'QgsMapLayerModel.ItemDataRole'
+        LayerRole: 'QgsMapLayerModel.ItemDataRole'
+        EmptyRole: 'QgsMapLayerModel.ItemDataRole'
+        AdditionalRole: 'QgsMapLayerModel.ItemDataRole'
 
     @typing.overload
     def __init__(self, parent: typing.Optional[QtCore.QObject] = ..., project: typing.Optional['QgsProject'] = ...) -> None: ...
@@ -6125,22 +6125,22 @@ class QgsMapLayerModel(QtCore.QAbstractItemModel):
 
 class QgsMapLayerProxyModel(QtCore.QSortFilterProxyModel):
 
-    class Filter(int): ...
-    RasterLayer = ... # type: 'QgsMapLayerProxyModel.Filter'
-    NoGeometry = ... # type: 'QgsMapLayerProxyModel.Filter'
-    PointLayer = ... # type: 'QgsMapLayerProxyModel.Filter'
-    LineLayer = ... # type: 'QgsMapLayerProxyModel.Filter'
-    PolygonLayer = ... # type: 'QgsMapLayerProxyModel.Filter'
-    HasGeometry = ... # type: 'QgsMapLayerProxyModel.Filter'
-    VectorLayer = ... # type: 'QgsMapLayerProxyModel.Filter'
-    PluginLayer = ... # type: 'QgsMapLayerProxyModel.Filter'
-    WritableLayer = ... # type: 'QgsMapLayerProxyModel.Filter'
-    MeshLayer = ... # type: 'QgsMapLayerProxyModel.Filter'
-    VectorTileLayer = ... # type: 'QgsMapLayerProxyModel.Filter'
-    PointCloudLayer = ... # type: 'QgsMapLayerProxyModel.Filter'
-    AnnotationLayer = ... # type: 'QgsMapLayerProxyModel.Filter'
-    All = ... # type: 'QgsMapLayerProxyModel.Filter'
-    SpatialLayer = ... # type: 'QgsMapLayerProxyModel.Filter'
+    class Filter(int):
+        RasterLayer: 'QgsMapLayerProxyModel.Filter'
+        NoGeometry: 'QgsMapLayerProxyModel.Filter'
+        PointLayer: 'QgsMapLayerProxyModel.Filter'
+        LineLayer: 'QgsMapLayerProxyModel.Filter'
+        PolygonLayer: 'QgsMapLayerProxyModel.Filter'
+        HasGeometry: 'QgsMapLayerProxyModel.Filter'
+        VectorLayer: 'QgsMapLayerProxyModel.Filter'
+        PluginLayer: 'QgsMapLayerProxyModel.Filter'
+        WritableLayer: 'QgsMapLayerProxyModel.Filter'
+        MeshLayer: 'QgsMapLayerProxyModel.Filter'
+        VectorTileLayer: 'QgsMapLayerProxyModel.Filter'
+        PointCloudLayer: 'QgsMapLayerProxyModel.Filter'
+        AnnotationLayer: 'QgsMapLayerProxyModel.Filter'
+        All: 'QgsMapLayerProxyModel.Filter'
+        SpatialLayer: 'QgsMapLayerProxyModel.Filter'
 
     class Filters(sip.wrapper):
 
@@ -6227,18 +6227,18 @@ class QgsServerMetadataUrlProperties(sip.wrapper):
 
 class QgsServerWmsDimensionProperties(sip.wrapper):
 
-    class PredefinedWmsDimensionName(int): ...
-    TIME = ... # type: 'QgsServerWmsDimensionProperties.PredefinedWmsDimensionName'
-    DATE = ... # type: 'QgsServerWmsDimensionProperties.PredefinedWmsDimensionName'
-    ELEVATION = ... # type: 'QgsServerWmsDimensionProperties.PredefinedWmsDimensionName'
+    class PredefinedWmsDimensionName(int):
+        TIME: 'QgsServerWmsDimensionProperties.PredefinedWmsDimensionName'
+        DATE: 'QgsServerWmsDimensionProperties.PredefinedWmsDimensionName'
+        ELEVATION: 'QgsServerWmsDimensionProperties.PredefinedWmsDimensionName'
 
     class WmsDimensionInfo(sip.wrapper):
 
-        class DefaultDisplay(int): ...
-        AllValues = ... # type: 'QgsServerWmsDimensionProperties.WmsDimensionInfo.DefaultDisplay'
-        MinValue = ... # type: 'QgsServerWmsDimensionProperties.WmsDimensionInfo.DefaultDisplay'
-        MaxValue = ... # type: 'QgsServerWmsDimensionProperties.WmsDimensionInfo.DefaultDisplay'
-        ReferenceValue = ... # type: 'QgsServerWmsDimensionProperties.WmsDimensionInfo.DefaultDisplay'
+        class DefaultDisplay(int):
+            AllValues: 'QgsServerWmsDimensionProperties.WmsDimensionInfo.DefaultDisplay'
+            MinValue: 'QgsServerWmsDimensionProperties.WmsDimensionInfo.DefaultDisplay'
+            MaxValue: 'QgsServerWmsDimensionProperties.WmsDimensionInfo.DefaultDisplay'
+            ReferenceValue: 'QgsServerWmsDimensionProperties.WmsDimensionInfo.DefaultDisplay'
 
         defaultDisplayType = ... # type: int
         endFieldName = ... # type: str
@@ -6391,12 +6391,12 @@ class QgsMapLayerStyleManager(QtCore.QObject):
 
 class QgsMapLayerElevationProperties(QtCore.QObject):
 
-    class Flag(int): ...
-    FlagDontInvalidateCachedRendersWhenRangeChanges = ... # type: 'QgsMapLayerElevationProperties.Flag'
+    class Flag(int):
+        FlagDontInvalidateCachedRendersWhenRangeChanges: 'QgsMapLayerElevationProperties.Flag'
 
-    class Property(int): ...
-    ZOffset = ... # type: 'QgsMapLayerElevationProperties.Property'
-    ExtrusionHeight = ... # type: 'QgsMapLayerElevationProperties.Property'
+    class Property(int):
+        ZOffset: 'QgsMapLayerElevationProperties.Property'
+        ExtrusionHeight: 'QgsMapLayerElevationProperties.Property'
 
     class Flags(sip.wrapper):
 
@@ -6444,8 +6444,8 @@ class QgsMapLayerElevationProperties(QtCore.QObject):
 
 class QgsTemporalProperty(QtCore.QObject):
 
-    class Flag(int): ...
-    FlagDontInvalidateCachedRendersWhenRangeChanges = ... # type: 'QgsTemporalProperty.Flag'
+    class Flag(int):
+        FlagDontInvalidateCachedRendersWhenRangeChanges: 'QgsTemporalProperty.Flag'
 
     class Flags(sip.wrapper):
 
@@ -6639,8 +6639,8 @@ class QgsMapSettings(QgsTemporalRangeObject):
 
 class QgsMapSettingsUtils(sip.wrapper):
 
-    class EffectsCheckFlag(int): ...
-    IgnoreGeoPdfSupportedEffects = ... # type: 'QgsMapSettingsUtils.EffectsCheckFlag'
+    class EffectsCheckFlag(int):
+        IgnoreGeoPdfSupportedEffects: 'QgsMapSettingsUtils.EffectsCheckFlag'
 
     class EffectsCheckFlags(sip.wrapper):
 
@@ -6778,16 +6778,16 @@ class QgsMapToPixel(sip.wrapper):
 
 class QgsMapToPixelSimplifier(QgsAbstractGeometrySimplifier):
 
-    class SimplifyFlag(int): ...
-    NoFlags = ... # type: 'QgsMapToPixelSimplifier.SimplifyFlag'
-    SimplifyGeometry = ... # type: 'QgsMapToPixelSimplifier.SimplifyFlag'
-    SimplifyEnvelope = ... # type: 'QgsMapToPixelSimplifier.SimplifyFlag'
+    class SimplifyFlag(int):
+        NoFlags: 'QgsMapToPixelSimplifier.SimplifyFlag'
+        SimplifyGeometry: 'QgsMapToPixelSimplifier.SimplifyFlag'
+        SimplifyEnvelope: 'QgsMapToPixelSimplifier.SimplifyFlag'
 
-    class SimplifyAlgorithm(int): ...
-    Distance = ... # type: 'QgsMapToPixelSimplifier.SimplifyAlgorithm'
-    SnapToGrid = ... # type: 'QgsMapToPixelSimplifier.SimplifyAlgorithm'
-    Visvalingam = ... # type: 'QgsMapToPixelSimplifier.SimplifyAlgorithm'
-    SnappedToGridGlobal = ... # type: 'QgsMapToPixelSimplifier.SimplifyAlgorithm'
+    class SimplifyAlgorithm(int):
+        Distance: 'QgsMapToPixelSimplifier.SimplifyAlgorithm'
+        SnapToGrid: 'QgsMapToPixelSimplifier.SimplifyAlgorithm'
+        Visvalingam: 'QgsMapToPixelSimplifier.SimplifyAlgorithm'
+        SnappedToGridGlobal: 'QgsMapToPixelSimplifier.SimplifyAlgorithm'
 
     @typing.overload
     def __init__(self, simplifyFlags: int, tolerance: float, simplifyAlgorithm: 'QgsMapToPixelSimplifier.SimplifyAlgorithm' = ...) -> None: ...
@@ -6904,9 +6904,9 @@ class QgsMessageLogConsole(QtCore.QObject):
 
 class QgsMessageOutput(sip.wrapper):
 
-    class MessageType(int): ...
-    MessageText = ... # type: 'QgsMessageOutput.MessageType'
-    MessageHtml = ... # type: 'QgsMessageOutput.MessageType'
+    class MessageType(int):
+        MessageText: 'QgsMessageOutput.MessageType'
+        MessageHtml: 'QgsMessageOutput.MessageType'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -7034,18 +7034,18 @@ class QgsObjectCustomProperties(sip.wrapper):
 
 class QgsOfflineEditing(QtCore.QObject):
 
-    class ContainerType(int): ...
-    SpatiaLite = ... # type: 'QgsOfflineEditing.ContainerType'
-    GPKG = ... # type: 'QgsOfflineEditing.ContainerType'
+    class ContainerType(int):
+        SpatiaLite: 'QgsOfflineEditing.ContainerType'
+        GPKG: 'QgsOfflineEditing.ContainerType'
 
-    class ProgressMode(int): ...
-    CopyFeatures = ... # type: 'QgsOfflineEditing.ProgressMode'
-    ProcessFeatures = ... # type: 'QgsOfflineEditing.ProgressMode'
-    AddFields = ... # type: 'QgsOfflineEditing.ProgressMode'
-    AddFeatures = ... # type: 'QgsOfflineEditing.ProgressMode'
-    RemoveFeatures = ... # type: 'QgsOfflineEditing.ProgressMode'
-    UpdateFeatures = ... # type: 'QgsOfflineEditing.ProgressMode'
-    UpdateGeometries = ... # type: 'QgsOfflineEditing.ProgressMode'
+    class ProgressMode(int):
+        CopyFeatures: 'QgsOfflineEditing.ProgressMode'
+        ProcessFeatures: 'QgsOfflineEditing.ProgressMode'
+        AddFields: 'QgsOfflineEditing.ProgressMode'
+        AddFeatures: 'QgsOfflineEditing.ProgressMode'
+        RemoveFeatures: 'QgsOfflineEditing.ProgressMode'
+        UpdateFeatures: 'QgsOfflineEditing.ProgressMode'
+        UpdateGeometries: 'QgsOfflineEditing.ProgressMode'
 
     def __init__(self) -> None: ...
 
@@ -7062,15 +7062,15 @@ class QgsOfflineEditing(QtCore.QObject):
 
 class QgsOgcUtils(sip.wrapper):
 
-    class FilterVersion(int): ...
-    FILTER_OGC_1_0 = ... # type: 'QgsOgcUtils.FilterVersion'
-    FILTER_OGC_1_1 = ... # type: 'QgsOgcUtils.FilterVersion'
-    FILTER_FES_2_0 = ... # type: 'QgsOgcUtils.FilterVersion'
+    class FilterVersion(int):
+        FILTER_OGC_1_0: 'QgsOgcUtils.FilterVersion'
+        FILTER_OGC_1_1: 'QgsOgcUtils.FilterVersion'
+        FILTER_FES_2_0: 'QgsOgcUtils.FilterVersion'
 
-    class GMLVersion(int): ...
-    GML_2_1_2 = ... # type: 'QgsOgcUtils.GMLVersion'
-    GML_3_1_0 = ... # type: 'QgsOgcUtils.GMLVersion'
-    GML_3_2_1 = ... # type: 'QgsOgcUtils.GMLVersion'
+    class GMLVersion(int):
+        GML_2_1_2: 'QgsOgcUtils.GMLVersion'
+        GML_3_1_0: 'QgsOgcUtils.GMLVersion'
+        GML_3_2_1: 'QgsOgcUtils.GMLVersion'
 
     class Context(sip.wrapper):
 
@@ -7213,31 +7213,31 @@ class QgsPaintEngineHack(QtGui.QPaintEngine):
 
 class QgsPainting(sip.wrapper):
 
-    class BlendMode(int): ...
-    BlendNormal = ... # type: 'QgsPainting.BlendMode'
-    BlendLighten = ... # type: 'QgsPainting.BlendMode'
-    BlendScreen = ... # type: 'QgsPainting.BlendMode'
-    BlendDodge = ... # type: 'QgsPainting.BlendMode'
-    BlendAddition = ... # type: 'QgsPainting.BlendMode'
-    BlendDarken = ... # type: 'QgsPainting.BlendMode'
-    BlendMultiply = ... # type: 'QgsPainting.BlendMode'
-    BlendBurn = ... # type: 'QgsPainting.BlendMode'
-    BlendOverlay = ... # type: 'QgsPainting.BlendMode'
-    BlendSoftLight = ... # type: 'QgsPainting.BlendMode'
-    BlendHardLight = ... # type: 'QgsPainting.BlendMode'
-    BlendDifference = ... # type: 'QgsPainting.BlendMode'
-    BlendSubtract = ... # type: 'QgsPainting.BlendMode'
-    BlendSource = ... # type: 'QgsPainting.BlendMode'
-    BlendDestinationOver = ... # type: 'QgsPainting.BlendMode'
-    BlendClear = ... # type: 'QgsPainting.BlendMode'
-    BlendDestination = ... # type: 'QgsPainting.BlendMode'
-    BlendSourceIn = ... # type: 'QgsPainting.BlendMode'
-    BlendDestinationIn = ... # type: 'QgsPainting.BlendMode'
-    BlendSourceOut = ... # type: 'QgsPainting.BlendMode'
-    BlendDestinationOut = ... # type: 'QgsPainting.BlendMode'
-    BlendSourceAtop = ... # type: 'QgsPainting.BlendMode'
-    BlendDestinationAtop = ... # type: 'QgsPainting.BlendMode'
-    BlendXor = ... # type: 'QgsPainting.BlendMode'
+    class BlendMode(int):
+        BlendNormal: 'QgsPainting.BlendMode'
+        BlendLighten: 'QgsPainting.BlendMode'
+        BlendScreen: 'QgsPainting.BlendMode'
+        BlendDodge: 'QgsPainting.BlendMode'
+        BlendAddition: 'QgsPainting.BlendMode'
+        BlendDarken: 'QgsPainting.BlendMode'
+        BlendMultiply: 'QgsPainting.BlendMode'
+        BlendBurn: 'QgsPainting.BlendMode'
+        BlendOverlay: 'QgsPainting.BlendMode'
+        BlendSoftLight: 'QgsPainting.BlendMode'
+        BlendHardLight: 'QgsPainting.BlendMode'
+        BlendDifference: 'QgsPainting.BlendMode'
+        BlendSubtract: 'QgsPainting.BlendMode'
+        BlendSource: 'QgsPainting.BlendMode'
+        BlendDestinationOver: 'QgsPainting.BlendMode'
+        BlendClear: 'QgsPainting.BlendMode'
+        BlendDestination: 'QgsPainting.BlendMode'
+        BlendSourceIn: 'QgsPainting.BlendMode'
+        BlendDestinationIn: 'QgsPainting.BlendMode'
+        BlendSourceOut: 'QgsPainting.BlendMode'
+        BlendDestinationOut: 'QgsPainting.BlendMode'
+        BlendSourceAtop: 'QgsPainting.BlendMode'
+        BlendDestinationAtop: 'QgsPainting.BlendMode'
+        BlendXor: 'QgsPainting.BlendMode'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -7309,15 +7309,15 @@ class QgsPluginLayerRegistry(sip.wrapper):
 
 class QgsPointLocator(QtCore.QObject):
 
-    class Type(int): ...
-    Invalid = ... # type: 'QgsPointLocator.Type'
-    Vertex = ... # type: 'QgsPointLocator.Type'
-    Edge = ... # type: 'QgsPointLocator.Type'
-    Area = ... # type: 'QgsPointLocator.Type'
-    Centroid = ... # type: 'QgsPointLocator.Type'
-    MiddleOfSegment = ... # type: 'QgsPointLocator.Type'
-    LineEndpoint = ... # type: 'QgsPointLocator.Type'
-    All = ... # type: 'QgsPointLocator.Type'
+    class Type(int):
+        Invalid: 'QgsPointLocator.Type'
+        Vertex: 'QgsPointLocator.Type'
+        Edge: 'QgsPointLocator.Type'
+        Area: 'QgsPointLocator.Type'
+        Centroid: 'QgsPointLocator.Type'
+        MiddleOfSegment: 'QgsPointLocator.Type'
+        LineEndpoint: 'QgsPointLocator.Type'
+        All: 'QgsPointLocator.Type'
 
     class Types(sip.wrapper):
 
@@ -7459,40 +7459,40 @@ class QgsPostgresStringUtils(sip.wrapper):
 
 class QgsPropertyDefinition(sip.wrapper):
 
-    class DataType(int): ...
-    DataTypeString = ... # type: 'QgsPropertyDefinition.DataType'
-    DataTypeNumeric = ... # type: 'QgsPropertyDefinition.DataType'
-    DataTypeBoolean = ... # type: 'QgsPropertyDefinition.DataType'
+    class DataType(int):
+        DataTypeString: 'QgsPropertyDefinition.DataType'
+        DataTypeNumeric: 'QgsPropertyDefinition.DataType'
+        DataTypeBoolean: 'QgsPropertyDefinition.DataType'
 
-    class StandardPropertyTemplate(int): ...
-    Boolean = ... # type: 'QgsPropertyDefinition.StandardPropertyTemplate'
-    Integer = ... # type: 'QgsPropertyDefinition.StandardPropertyTemplate'
-    IntegerPositive = ... # type: 'QgsPropertyDefinition.StandardPropertyTemplate'
-    IntegerPositiveGreaterZero = ... # type: 'QgsPropertyDefinition.StandardPropertyTemplate'
-    Double = ... # type: 'QgsPropertyDefinition.StandardPropertyTemplate'
-    DoublePositive = ... # type: 'QgsPropertyDefinition.StandardPropertyTemplate'
-    Double0To1 = ... # type: 'QgsPropertyDefinition.StandardPropertyTemplate'
-    Rotation = ... # type: 'QgsPropertyDefinition.StandardPropertyTemplate'
-    String = ... # type: 'QgsPropertyDefinition.StandardPropertyTemplate'
-    Opacity = ... # type: 'QgsPropertyDefinition.StandardPropertyTemplate'
-    RenderUnits = ... # type: 'QgsPropertyDefinition.StandardPropertyTemplate'
-    ColorWithAlpha = ... # type: 'QgsPropertyDefinition.StandardPropertyTemplate'
-    ColorNoAlpha = ... # type: 'QgsPropertyDefinition.StandardPropertyTemplate'
-    PenJoinStyle = ... # type: 'QgsPropertyDefinition.StandardPropertyTemplate'
-    BlendMode = ... # type: 'QgsPropertyDefinition.StandardPropertyTemplate'
-    Point = ... # type: 'QgsPropertyDefinition.StandardPropertyTemplate'
-    Size = ... # type: 'QgsPropertyDefinition.StandardPropertyTemplate'
-    Size2D = ... # type: 'QgsPropertyDefinition.StandardPropertyTemplate'
-    LineStyle = ... # type: 'QgsPropertyDefinition.StandardPropertyTemplate'
-    StrokeWidth = ... # type: 'QgsPropertyDefinition.StandardPropertyTemplate'
-    FillStyle = ... # type: 'QgsPropertyDefinition.StandardPropertyTemplate'
-    CapStyle = ... # type: 'QgsPropertyDefinition.StandardPropertyTemplate'
-    HorizontalAnchor = ... # type: 'QgsPropertyDefinition.StandardPropertyTemplate'
-    VerticalAnchor = ... # type: 'QgsPropertyDefinition.StandardPropertyTemplate'
-    SvgPath = ... # type: 'QgsPropertyDefinition.StandardPropertyTemplate'
-    Offset = ... # type: 'QgsPropertyDefinition.StandardPropertyTemplate'
-    DateTime = ... # type: 'QgsPropertyDefinition.StandardPropertyTemplate'
-    Custom = ... # type: 'QgsPropertyDefinition.StandardPropertyTemplate'
+    class StandardPropertyTemplate(int):
+        Boolean: 'QgsPropertyDefinition.StandardPropertyTemplate'
+        Integer: 'QgsPropertyDefinition.StandardPropertyTemplate'
+        IntegerPositive: 'QgsPropertyDefinition.StandardPropertyTemplate'
+        IntegerPositiveGreaterZero: 'QgsPropertyDefinition.StandardPropertyTemplate'
+        Double: 'QgsPropertyDefinition.StandardPropertyTemplate'
+        DoublePositive: 'QgsPropertyDefinition.StandardPropertyTemplate'
+        Double0To1: 'QgsPropertyDefinition.StandardPropertyTemplate'
+        Rotation: 'QgsPropertyDefinition.StandardPropertyTemplate'
+        String: 'QgsPropertyDefinition.StandardPropertyTemplate'
+        Opacity: 'QgsPropertyDefinition.StandardPropertyTemplate'
+        RenderUnits: 'QgsPropertyDefinition.StandardPropertyTemplate'
+        ColorWithAlpha: 'QgsPropertyDefinition.StandardPropertyTemplate'
+        ColorNoAlpha: 'QgsPropertyDefinition.StandardPropertyTemplate'
+        PenJoinStyle: 'QgsPropertyDefinition.StandardPropertyTemplate'
+        BlendMode: 'QgsPropertyDefinition.StandardPropertyTemplate'
+        Point: 'QgsPropertyDefinition.StandardPropertyTemplate'
+        Size: 'QgsPropertyDefinition.StandardPropertyTemplate'
+        Size2D: 'QgsPropertyDefinition.StandardPropertyTemplate'
+        LineStyle: 'QgsPropertyDefinition.StandardPropertyTemplate'
+        StrokeWidth: 'QgsPropertyDefinition.StandardPropertyTemplate'
+        FillStyle: 'QgsPropertyDefinition.StandardPropertyTemplate'
+        CapStyle: 'QgsPropertyDefinition.StandardPropertyTemplate'
+        HorizontalAnchor: 'QgsPropertyDefinition.StandardPropertyTemplate'
+        VerticalAnchor: 'QgsPropertyDefinition.StandardPropertyTemplate'
+        SvgPath: 'QgsPropertyDefinition.StandardPropertyTemplate'
+        Offset: 'QgsPropertyDefinition.StandardPropertyTemplate'
+        DateTime: 'QgsPropertyDefinition.StandardPropertyTemplate'
+        Custom: 'QgsPropertyDefinition.StandardPropertyTemplate'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -7519,11 +7519,11 @@ class QgsPropertyDefinition(sip.wrapper):
 
 class QgsProperty(sip.wrapper):
 
-    class Type(int): ...
-    InvalidProperty = ... # type: 'QgsProperty.Type'
-    StaticProperty = ... # type: 'QgsProperty.Type'
-    FieldBasedProperty = ... # type: 'QgsProperty.Type'
-    ExpressionBasedProperty = ... # type: 'QgsProperty.Type'
+    class Type(int):
+        InvalidProperty: 'QgsProperty.Type'
+        StaticProperty: 'QgsProperty.Type'
+        FieldBasedProperty: 'QgsProperty.Type'
+        ExpressionBasedProperty: 'QgsProperty.Type'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -7677,10 +7677,10 @@ class QgsCurveTransform(sip.wrapper):
 
 class QgsPropertyTransformer(sip.wrapper):
 
-    class Type(int): ...
-    GenericNumericTransformer = ... # type: 'QgsPropertyTransformer.Type'
-    SizeScaleTransformer = ... # type: 'QgsPropertyTransformer.Type'
-    ColorRampTransformer = ... # type: 'QgsPropertyTransformer.Type'
+    class Type(int):
+        GenericNumericTransformer: 'QgsPropertyTransformer.Type'
+        SizeScaleTransformer: 'QgsPropertyTransformer.Type'
+        ColorRampTransformer: 'QgsPropertyTransformer.Type'
 
     @typing.overload
     def __init__(self, minValue: float = ..., maxValue: float = ...) -> None: ...
@@ -7734,11 +7734,11 @@ class QgsGenericNumericTransformer(QgsPropertyTransformer):
 
 class QgsSizeScaleTransformer(QgsPropertyTransformer):
 
-    class ScaleType(int): ...
-    Linear = ... # type: 'QgsSizeScaleTransformer.ScaleType'
-    Area = ... # type: 'QgsSizeScaleTransformer.ScaleType'
-    Flannery = ... # type: 'QgsSizeScaleTransformer.ScaleType'
-    Exponential = ... # type: 'QgsSizeScaleTransformer.ScaleType'
+    class ScaleType(int):
+        Linear: 'QgsSizeScaleTransformer.ScaleType'
+        Area: 'QgsSizeScaleTransformer.ScaleType'
+        Flannery: 'QgsSizeScaleTransformer.ScaleType'
+        Exponential: 'QgsSizeScaleTransformer.ScaleType'
 
     @typing.overload
     def __init__(self, type: 'QgsSizeScaleTransformer.ScaleType' = ..., minValue: float = ..., maxValue: float = ..., minSize: float = ..., maxSize: float = ..., nullSize: float = ..., exponent: float = ...) -> None: ...
@@ -7790,11 +7790,11 @@ class QgsColorRampTransformer(QgsPropertyTransformer):
 
 class QgsProviderConnectionModel(QtCore.QAbstractItemModel):
 
-    class Role(int): ...
-    RoleConnectionName = ... # type: 'QgsProviderConnectionModel.Role'
-    RoleUri = ... # type: 'QgsProviderConnectionModel.Role'
-    RoleConfiguration = ... # type: 'QgsProviderConnectionModel.Role'
-    RoleEmpty = ... # type: 'QgsProviderConnectionModel.Role'
+    class Role(int):
+        RoleConnectionName: 'QgsProviderConnectionModel.Role'
+        RoleUri: 'QgsProviderConnectionModel.Role'
+        RoleConfiguration: 'QgsProviderConnectionModel.Role'
+        RoleEmpty: 'QgsProviderConnectionModel.Role'
 
     def __init__(self, provider: str, parent: typing.Optional[QtCore.QObject] = ...) -> None: ...
 
@@ -8032,10 +8032,10 @@ class QgsReadWriteContextCategoryPopper(sip.wrapper):
 
 class QgsReadWriteLocker(sip.wrapper):
 
-    class Mode(int): ...
-    Read = ... # type: 'QgsReadWriteLocker.Mode'
-    Write = ... # type: 'QgsReadWriteLocker.Mode'
-    Unlocked = ... # type: 'QgsReadWriteLocker.Mode'
+    class Mode(int):
+        Read: 'QgsReadWriteLocker.Mode'
+        Write: 'QgsReadWriteLocker.Mode'
+        Unlocked: 'QgsReadWriteLocker.Mode'
 
     @typing.overload
     def __init__(self, lock: QtCore.QReadWriteLock, mode: 'QgsReadWriteLocker.Mode') -> None: ...
@@ -8202,9 +8202,9 @@ class QgsRemappingProxyFeatureSink(QgsFeatureSink):
 
 class QgsWeakRelation(sip.wrapper):
 
-    class WeakRelationType(int): ...
-    Referencing = ... # type: 'QgsWeakRelation.WeakRelationType'
-    Referenced = ... # type: 'QgsWeakRelation.WeakRelationType'
+    class WeakRelationType(int):
+        Referencing: 'QgsWeakRelation.WeakRelationType'
+        Referenced: 'QgsWeakRelation.WeakRelationType'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -8278,8 +8278,8 @@ class QgsRelationManager(QtCore.QObject):
 
 class QgsRenderChecker(sip.wrapper):
 
-    class Flag(int): ...
-    AvoidExportingRenderedImage = ... # type: 'QgsRenderChecker.Flag'
+    class Flag(int):
+        AvoidExportingRenderedImage: 'QgsRenderChecker.Flag'
 
     class Flags(sip.wrapper):
 
@@ -8583,10 +8583,10 @@ class QgsSelectionContext(sip.wrapper):
 
 class QgsSimplifyMethod(sip.wrapper):
 
-    class MethodType(int): ...
-    NoSimplification = ... # type: 'QgsSimplifyMethod.MethodType'
-    OptimizeForRendering = ... # type: 'QgsSimplifyMethod.MethodType'
-    PreserveTopology = ... # type: 'QgsSimplifyMethod.MethodType'
+    class MethodType(int):
+        NoSimplification: 'QgsSimplifyMethod.MethodType'
+        OptimizeForRendering: 'QgsSimplifyMethod.MethodType'
+        PreserveTopology: 'QgsSimplifyMethod.MethodType'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -8622,15 +8622,15 @@ class QgsSingleItemModel(QtCore.QAbstractItemModel):
 
 class QgsSnappingConfig(sip.wrapper):
 
-    class ScaleDependencyMode(int): ...
-    Disabled = ... # type: 'QgsSnappingConfig.ScaleDependencyMode'
-    Global = ... # type: 'QgsSnappingConfig.ScaleDependencyMode'
-    PerLayer = ... # type: 'QgsSnappingConfig.ScaleDependencyMode'
+    class ScaleDependencyMode(int):
+        Disabled: 'QgsSnappingConfig.ScaleDependencyMode'
+        Global: 'QgsSnappingConfig.ScaleDependencyMode'
+        PerLayer: 'QgsSnappingConfig.ScaleDependencyMode'
 
-    class SnappingType(int): ...
-    Vertex = ... # type: 'QgsSnappingConfig.SnappingType'
-    VertexAndSegment = ... # type: 'QgsSnappingConfig.SnappingType'
-    Segment = ... # type: 'QgsSnappingConfig.SnappingType'
+    class SnappingType(int):
+        Vertex: 'QgsSnappingConfig.SnappingType'
+        VertexAndSegment: 'QgsSnappingConfig.SnappingType'
+        Segment: 'QgsSnappingConfig.SnappingType'
 
     class IndividualLayerSettings(sip.wrapper):
 
@@ -8713,11 +8713,11 @@ class QgsSnappingConfig(sip.wrapper):
 
 class QgsSnappingUtils(QtCore.QObject):
 
-    class IndexingStrategy(int): ...
-    IndexAlwaysFull = ... # type: 'QgsSnappingUtils.IndexingStrategy'
-    IndexNeverFull = ... # type: 'QgsSnappingUtils.IndexingStrategy'
-    IndexHybrid = ... # type: 'QgsSnappingUtils.IndexingStrategy'
-    IndexExtent = ... # type: 'QgsSnappingUtils.IndexingStrategy'
+    class IndexingStrategy(int):
+        IndexAlwaysFull: 'QgsSnappingUtils.IndexingStrategy'
+        IndexNeverFull: 'QgsSnappingUtils.IndexingStrategy'
+        IndexHybrid: 'QgsSnappingUtils.IndexingStrategy'
+        IndexExtent: 'QgsSnappingUtils.IndexingStrategy'
 
     class LayerConfig(sip.wrapper):
 
@@ -8762,8 +8762,8 @@ class QgsSnappingUtils(QtCore.QObject):
 
 class QgsSpatialIndex(QgsFeatureSink):
 
-    class Flag(int): ...
-    FlagStoreFeatureGeometries = ... # type: 'QgsSpatialIndex.Flag'
+    class Flag(int):
+        FlagStoreFeatureGeometries: 'QgsSpatialIndex.Flag'
 
     class Flags(sip.wrapper):
 
@@ -8860,58 +8860,58 @@ class QgsSqliteUtils(sip.wrapper):
 
 class QgsSQLStatement(sip.wrapper):
 
-    class NodeType(int): ...
-    ntUnaryOperator = ... # type: 'QgsSQLStatement.NodeType'
-    ntBinaryOperator = ... # type: 'QgsSQLStatement.NodeType'
-    ntInOperator = ... # type: 'QgsSQLStatement.NodeType'
-    ntBetweenOperator = ... # type: 'QgsSQLStatement.NodeType'
-    ntFunction = ... # type: 'QgsSQLStatement.NodeType'
-    ntLiteral = ... # type: 'QgsSQLStatement.NodeType'
-    ntColumnRef = ... # type: 'QgsSQLStatement.NodeType'
-    ntSelectedColumn = ... # type: 'QgsSQLStatement.NodeType'
-    ntSelect = ... # type: 'QgsSQLStatement.NodeType'
-    ntTableDef = ... # type: 'QgsSQLStatement.NodeType'
-    ntJoin = ... # type: 'QgsSQLStatement.NodeType'
-    ntColumnSorted = ... # type: 'QgsSQLStatement.NodeType'
-    ntCast = ... # type: 'QgsSQLStatement.NodeType'
+    class NodeType(int):
+        ntUnaryOperator: 'QgsSQLStatement.NodeType'
+        ntBinaryOperator: 'QgsSQLStatement.NodeType'
+        ntInOperator: 'QgsSQLStatement.NodeType'
+        ntBetweenOperator: 'QgsSQLStatement.NodeType'
+        ntFunction: 'QgsSQLStatement.NodeType'
+        ntLiteral: 'QgsSQLStatement.NodeType'
+        ntColumnRef: 'QgsSQLStatement.NodeType'
+        ntSelectedColumn: 'QgsSQLStatement.NodeType'
+        ntSelect: 'QgsSQLStatement.NodeType'
+        ntTableDef: 'QgsSQLStatement.NodeType'
+        ntJoin: 'QgsSQLStatement.NodeType'
+        ntColumnSorted: 'QgsSQLStatement.NodeType'
+        ntCast: 'QgsSQLStatement.NodeType'
 
-    class JoinType(int): ...
-    jtDefault = ... # type: 'QgsSQLStatement.JoinType'
-    jtLeft = ... # type: 'QgsSQLStatement.JoinType'
-    jtLeftOuter = ... # type: 'QgsSQLStatement.JoinType'
-    jtRight = ... # type: 'QgsSQLStatement.JoinType'
-    jtRightOuter = ... # type: 'QgsSQLStatement.JoinType'
-    jtCross = ... # type: 'QgsSQLStatement.JoinType'
-    jtInner = ... # type: 'QgsSQLStatement.JoinType'
-    jtFull = ... # type: 'QgsSQLStatement.JoinType'
+    class JoinType(int):
+        jtDefault: 'QgsSQLStatement.JoinType'
+        jtLeft: 'QgsSQLStatement.JoinType'
+        jtLeftOuter: 'QgsSQLStatement.JoinType'
+        jtRight: 'QgsSQLStatement.JoinType'
+        jtRightOuter: 'QgsSQLStatement.JoinType'
+        jtCross: 'QgsSQLStatement.JoinType'
+        jtInner: 'QgsSQLStatement.JoinType'
+        jtFull: 'QgsSQLStatement.JoinType'
 
-    class BinaryOperator(int): ...
-    boOr = ... # type: 'QgsSQLStatement.BinaryOperator'
-    boAnd = ... # type: 'QgsSQLStatement.BinaryOperator'
-    boEQ = ... # type: 'QgsSQLStatement.BinaryOperator'
-    boNE = ... # type: 'QgsSQLStatement.BinaryOperator'
-    boLE = ... # type: 'QgsSQLStatement.BinaryOperator'
-    boGE = ... # type: 'QgsSQLStatement.BinaryOperator'
-    boLT = ... # type: 'QgsSQLStatement.BinaryOperator'
-    boGT = ... # type: 'QgsSQLStatement.BinaryOperator'
-    boLike = ... # type: 'QgsSQLStatement.BinaryOperator'
-    boNotLike = ... # type: 'QgsSQLStatement.BinaryOperator'
-    boILike = ... # type: 'QgsSQLStatement.BinaryOperator'
-    boNotILike = ... # type: 'QgsSQLStatement.BinaryOperator'
-    boIs = ... # type: 'QgsSQLStatement.BinaryOperator'
-    boIsNot = ... # type: 'QgsSQLStatement.BinaryOperator'
-    boPlus = ... # type: 'QgsSQLStatement.BinaryOperator'
-    boMinus = ... # type: 'QgsSQLStatement.BinaryOperator'
-    boMul = ... # type: 'QgsSQLStatement.BinaryOperator'
-    boDiv = ... # type: 'QgsSQLStatement.BinaryOperator'
-    boIntDiv = ... # type: 'QgsSQLStatement.BinaryOperator'
-    boMod = ... # type: 'QgsSQLStatement.BinaryOperator'
-    boPow = ... # type: 'QgsSQLStatement.BinaryOperator'
-    boConcat = ... # type: 'QgsSQLStatement.BinaryOperator'
+    class BinaryOperator(int):
+        boOr: 'QgsSQLStatement.BinaryOperator'
+        boAnd: 'QgsSQLStatement.BinaryOperator'
+        boEQ: 'QgsSQLStatement.BinaryOperator'
+        boNE: 'QgsSQLStatement.BinaryOperator'
+        boLE: 'QgsSQLStatement.BinaryOperator'
+        boGE: 'QgsSQLStatement.BinaryOperator'
+        boLT: 'QgsSQLStatement.BinaryOperator'
+        boGT: 'QgsSQLStatement.BinaryOperator'
+        boLike: 'QgsSQLStatement.BinaryOperator'
+        boNotLike: 'QgsSQLStatement.BinaryOperator'
+        boILike: 'QgsSQLStatement.BinaryOperator'
+        boNotILike: 'QgsSQLStatement.BinaryOperator'
+        boIs: 'QgsSQLStatement.BinaryOperator'
+        boIsNot: 'QgsSQLStatement.BinaryOperator'
+        boPlus: 'QgsSQLStatement.BinaryOperator'
+        boMinus: 'QgsSQLStatement.BinaryOperator'
+        boMul: 'QgsSQLStatement.BinaryOperator'
+        boDiv: 'QgsSQLStatement.BinaryOperator'
+        boIntDiv: 'QgsSQLStatement.BinaryOperator'
+        boMod: 'QgsSQLStatement.BinaryOperator'
+        boPow: 'QgsSQLStatement.BinaryOperator'
+        boConcat: 'QgsSQLStatement.BinaryOperator'
 
-    class UnaryOperator(int): ...
-    uoNot = ... # type: 'QgsSQLStatement.UnaryOperator'
-    uoMinus = ... # type: 'QgsSQLStatement.UnaryOperator'
+    class UnaryOperator(int):
+        uoNot: 'QgsSQLStatement.UnaryOperator'
+        uoMinus: 'QgsSQLStatement.UnaryOperator'
 
     class Node(sip.wrapper):
 
@@ -9258,26 +9258,26 @@ class QgsSQLStatementFragment(QgsSQLStatement):
 
 class QgsStatisticalSummary(sip.wrapper):
 
-    class Statistic(int): ...
-    Count = ... # type: 'QgsStatisticalSummary.Statistic'
-    CountMissing = ... # type: 'QgsStatisticalSummary.Statistic'
-    Sum = ... # type: 'QgsStatisticalSummary.Statistic'
-    Mean = ... # type: 'QgsStatisticalSummary.Statistic'
-    Median = ... # type: 'QgsStatisticalSummary.Statistic'
-    StDev = ... # type: 'QgsStatisticalSummary.Statistic'
-    StDevSample = ... # type: 'QgsStatisticalSummary.Statistic'
-    Min = ... # type: 'QgsStatisticalSummary.Statistic'
-    Max = ... # type: 'QgsStatisticalSummary.Statistic'
-    Range = ... # type: 'QgsStatisticalSummary.Statistic'
-    Minority = ... # type: 'QgsStatisticalSummary.Statistic'
-    Majority = ... # type: 'QgsStatisticalSummary.Statistic'
-    Variety = ... # type: 'QgsStatisticalSummary.Statistic'
-    FirstQuartile = ... # type: 'QgsStatisticalSummary.Statistic'
-    ThirdQuartile = ... # type: 'QgsStatisticalSummary.Statistic'
-    InterQuartileRange = ... # type: 'QgsStatisticalSummary.Statistic'
-    First = ... # type: 'QgsStatisticalSummary.Statistic'
-    Last = ... # type: 'QgsStatisticalSummary.Statistic'
-    All = ... # type: 'QgsStatisticalSummary.Statistic'
+    class Statistic(int):
+        Count: 'QgsStatisticalSummary.Statistic'
+        CountMissing: 'QgsStatisticalSummary.Statistic'
+        Sum: 'QgsStatisticalSummary.Statistic'
+        Mean: 'QgsStatisticalSummary.Statistic'
+        Median: 'QgsStatisticalSummary.Statistic'
+        StDev: 'QgsStatisticalSummary.Statistic'
+        StDevSample: 'QgsStatisticalSummary.Statistic'
+        Min: 'QgsStatisticalSummary.Statistic'
+        Max: 'QgsStatisticalSummary.Statistic'
+        Range: 'QgsStatisticalSummary.Statistic'
+        Minority: 'QgsStatisticalSummary.Statistic'
+        Majority: 'QgsStatisticalSummary.Statistic'
+        Variety: 'QgsStatisticalSummary.Statistic'
+        FirstQuartile: 'QgsStatisticalSummary.Statistic'
+        ThirdQuartile: 'QgsStatisticalSummary.Statistic'
+        InterQuartileRange: 'QgsStatisticalSummary.Statistic'
+        First: 'QgsStatisticalSummary.Statistic'
+        Last: 'QgsStatisticalSummary.Statistic'
+        All: 'QgsStatisticalSummary.Statistic'
 
     class Statistics(sip.wrapper):
 
@@ -9332,10 +9332,10 @@ class QgsStatisticalSummary(sip.wrapper):
 
 class QgsStoredExpression(sip.wrapper):
 
-    class Category(int): ...
-    FilterExpression = ... # type: 'QgsStoredExpression.Category'
-    DefaultValueExpression = ... # type: 'QgsStoredExpression.Category'
-    All = ... # type: 'QgsStoredExpression.Category'
+    class Category(int):
+        FilterExpression: 'QgsStoredExpression.Category'
+        DefaultValueExpression: 'QgsStoredExpression.Category'
+        All: 'QgsStoredExpression.Category'
 
     expression = ... # type: str
     id = ... # type: str
@@ -9366,18 +9366,18 @@ class QgsStoredExpressionManager(QtCore.QObject):
 
 class QgsStringStatisticalSummary(sip.wrapper):
 
-    class Statistic(int): ...
-    Count = ... # type: 'QgsStringStatisticalSummary.Statistic'
-    CountDistinct = ... # type: 'QgsStringStatisticalSummary.Statistic'
-    CountMissing = ... # type: 'QgsStringStatisticalSummary.Statistic'
-    Min = ... # type: 'QgsStringStatisticalSummary.Statistic'
-    Max = ... # type: 'QgsStringStatisticalSummary.Statistic'
-    MinimumLength = ... # type: 'QgsStringStatisticalSummary.Statistic'
-    MaximumLength = ... # type: 'QgsStringStatisticalSummary.Statistic'
-    MeanLength = ... # type: 'QgsStringStatisticalSummary.Statistic'
-    Minority = ... # type: 'QgsStringStatisticalSummary.Statistic'
-    Majority = ... # type: 'QgsStringStatisticalSummary.Statistic'
-    All = ... # type: 'QgsStringStatisticalSummary.Statistic'
+    class Statistic(int):
+        Count: 'QgsStringStatisticalSummary.Statistic'
+        CountDistinct: 'QgsStringStatisticalSummary.Statistic'
+        CountMissing: 'QgsStringStatisticalSummary.Statistic'
+        Min: 'QgsStringStatisticalSummary.Statistic'
+        Max: 'QgsStringStatisticalSummary.Statistic'
+        MinimumLength: 'QgsStringStatisticalSummary.Statistic'
+        MaximumLength: 'QgsStringStatisticalSummary.Statistic'
+        MeanLength: 'QgsStringStatisticalSummary.Statistic'
+        Minority: 'QgsStringStatisticalSummary.Statistic'
+        Majority: 'QgsStringStatisticalSummary.Statistic'
+        All: 'QgsStringStatisticalSummary.Statistic'
 
     class Statistics(sip.wrapper):
 
@@ -9564,15 +9564,15 @@ class QgsTemporalController(QtCore.QObject):
 
 class QgsTemporalNavigationObject(QgsTemporalController, QgsExpressionContextScopeGenerator):
 
-    class AnimationState(int): ...
-    Forward = ... # type: 'QgsTemporalNavigationObject.AnimationState'
-    Reverse = ... # type: 'QgsTemporalNavigationObject.AnimationState'
-    Idle = ... # type: 'QgsTemporalNavigationObject.AnimationState'
+    class AnimationState(int):
+        Forward: 'QgsTemporalNavigationObject.AnimationState'
+        Reverse: 'QgsTemporalNavigationObject.AnimationState'
+        Idle: 'QgsTemporalNavigationObject.AnimationState'
 
-    class NavigationMode(int): ...
-    NavigationOff = ... # type: 'QgsTemporalNavigationObject.NavigationMode'
-    Animated = ... # type: 'QgsTemporalNavigationObject.NavigationMode'
-    FixedRange = ... # type: 'QgsTemporalNavigationObject.NavigationMode'
+    class NavigationMode(int):
+        NavigationOff: 'QgsTemporalNavigationObject.NavigationMode'
+        Animated: 'QgsTemporalNavigationObject.NavigationMode'
+        FixedRange: 'QgsTemporalNavigationObject.NavigationMode'
 
     def __init__(self, parent: typing.Optional[QtCore.QObject] = ...) -> None: ...
 
@@ -9752,10 +9752,10 @@ class QgsTileMatrixSet(sip.wrapper):
 
 class QgsTolerance(sip.wrapper):
 
-    class UnitType(int): ...
-    LayerUnits = ... # type: 'QgsTolerance.UnitType'
-    Pixels = ... # type: 'QgsTolerance.UnitType'
-    ProjectUnits = ... # type: 'QgsTolerance.UnitType'
+    class UnitType(int):
+        LayerUnits: 'QgsTolerance.UnitType'
+        Pixels: 'QgsTolerance.UnitType'
+        ProjectUnits: 'QgsTolerance.UnitType'
 
     staticMetaObject = ... # type: QtCore.QMetaObject
 
@@ -9780,12 +9780,12 @@ class QgsTolerance(sip.wrapper):
 
 class QgsTracer(QtCore.QObject):
 
-    class PathError(int): ...
-    ErrNone = ... # type: 'QgsTracer.PathError'
-    ErrTooManyFeatures = ... # type: 'QgsTracer.PathError'
-    ErrPoint1 = ... # type: 'QgsTracer.PathError'
-    ErrPoint2 = ... # type: 'QgsTracer.PathError'
-    ErrNoPath = ... # type: 'QgsTracer.PathError'
+    class PathError(int):
+        ErrNone: 'QgsTracer.PathError'
+        ErrTooManyFeatures: 'QgsTracer.PathError'
+        ErrPoint1: 'QgsTracer.PathError'
+        ErrPoint2: 'QgsTracer.PathError'
+        ErrNoPath: 'QgsTracer.PathError'
 
     def __init__(self) -> None: ...
 
@@ -9897,111 +9897,111 @@ class QgsTranslationContext(sip.wrapper):
 
 class QgsUnitTypes(sip.wrapper):
 
-    class LayoutUnitType(int): ...
-    LayoutPaperUnits = ... # type: 'QgsUnitTypes.LayoutUnitType'
-    LayoutScreenUnits = ... # type: 'QgsUnitTypes.LayoutUnitType'
+    class LayoutUnitType(int):
+        LayoutPaperUnits: 'QgsUnitTypes.LayoutUnitType'
+        LayoutScreenUnits: 'QgsUnitTypes.LayoutUnitType'
 
-    class LayoutUnit(int): ...
-    LayoutMillimeters = ... # type: 'QgsUnitTypes.LayoutUnit'
-    LayoutCentimeters = ... # type: 'QgsUnitTypes.LayoutUnit'
-    LayoutMeters = ... # type: 'QgsUnitTypes.LayoutUnit'
-    LayoutInches = ... # type: 'QgsUnitTypes.LayoutUnit'
-    LayoutFeet = ... # type: 'QgsUnitTypes.LayoutUnit'
-    LayoutPoints = ... # type: 'QgsUnitTypes.LayoutUnit'
-    LayoutPicas = ... # type: 'QgsUnitTypes.LayoutUnit'
-    LayoutPixels = ... # type: 'QgsUnitTypes.LayoutUnit'
+    class LayoutUnit(int):
+        LayoutMillimeters: 'QgsUnitTypes.LayoutUnit'
+        LayoutCentimeters: 'QgsUnitTypes.LayoutUnit'
+        LayoutMeters: 'QgsUnitTypes.LayoutUnit'
+        LayoutInches: 'QgsUnitTypes.LayoutUnit'
+        LayoutFeet: 'QgsUnitTypes.LayoutUnit'
+        LayoutPoints: 'QgsUnitTypes.LayoutUnit'
+        LayoutPicas: 'QgsUnitTypes.LayoutUnit'
+        LayoutPixels: 'QgsUnitTypes.LayoutUnit'
 
-    class RenderUnit(int): ...
-    RenderMillimeters = ... # type: 'QgsUnitTypes.RenderUnit'
-    RenderMapUnits = ... # type: 'QgsUnitTypes.RenderUnit'
-    RenderPixels = ... # type: 'QgsUnitTypes.RenderUnit'
-    RenderPercentage = ... # type: 'QgsUnitTypes.RenderUnit'
-    RenderPoints = ... # type: 'QgsUnitTypes.RenderUnit'
-    RenderInches = ... # type: 'QgsUnitTypes.RenderUnit'
-    RenderUnknownUnit = ... # type: 'QgsUnitTypes.RenderUnit'
-    RenderMetersInMapUnits = ... # type: 'QgsUnitTypes.RenderUnit'
+    class RenderUnit(int):
+        RenderMillimeters: 'QgsUnitTypes.RenderUnit'
+        RenderMapUnits: 'QgsUnitTypes.RenderUnit'
+        RenderPixels: 'QgsUnitTypes.RenderUnit'
+        RenderPercentage: 'QgsUnitTypes.RenderUnit'
+        RenderPoints: 'QgsUnitTypes.RenderUnit'
+        RenderInches: 'QgsUnitTypes.RenderUnit'
+        RenderUnknownUnit: 'QgsUnitTypes.RenderUnit'
+        RenderMetersInMapUnits: 'QgsUnitTypes.RenderUnit'
 
-    class TemporalUnit(int): ...
-    TemporalMilliseconds = ... # type: 'QgsUnitTypes.TemporalUnit'
-    TemporalSeconds = ... # type: 'QgsUnitTypes.TemporalUnit'
-    TemporalMinutes = ... # type: 'QgsUnitTypes.TemporalUnit'
-    TemporalHours = ... # type: 'QgsUnitTypes.TemporalUnit'
-    TemporalDays = ... # type: 'QgsUnitTypes.TemporalUnit'
-    TemporalWeeks = ... # type: 'QgsUnitTypes.TemporalUnit'
-    TemporalMonths = ... # type: 'QgsUnitTypes.TemporalUnit'
-    TemporalYears = ... # type: 'QgsUnitTypes.TemporalUnit'
-    TemporalDecades = ... # type: 'QgsUnitTypes.TemporalUnit'
-    TemporalCenturies = ... # type: 'QgsUnitTypes.TemporalUnit'
-    TemporalIrregularStep = ... # type: 'QgsUnitTypes.TemporalUnit'
-    TemporalUnknownUnit = ... # type: 'QgsUnitTypes.TemporalUnit'
+    class TemporalUnit(int):
+        TemporalMilliseconds: 'QgsUnitTypes.TemporalUnit'
+        TemporalSeconds: 'QgsUnitTypes.TemporalUnit'
+        TemporalMinutes: 'QgsUnitTypes.TemporalUnit'
+        TemporalHours: 'QgsUnitTypes.TemporalUnit'
+        TemporalDays: 'QgsUnitTypes.TemporalUnit'
+        TemporalWeeks: 'QgsUnitTypes.TemporalUnit'
+        TemporalMonths: 'QgsUnitTypes.TemporalUnit'
+        TemporalYears: 'QgsUnitTypes.TemporalUnit'
+        TemporalDecades: 'QgsUnitTypes.TemporalUnit'
+        TemporalCenturies: 'QgsUnitTypes.TemporalUnit'
+        TemporalIrregularStep: 'QgsUnitTypes.TemporalUnit'
+        TemporalUnknownUnit: 'QgsUnitTypes.TemporalUnit'
 
-    class AngleUnit(int): ...
-    AngleDegrees = ... # type: 'QgsUnitTypes.AngleUnit'
-    AngleRadians = ... # type: 'QgsUnitTypes.AngleUnit'
-    AngleGon = ... # type: 'QgsUnitTypes.AngleUnit'
-    AngleMinutesOfArc = ... # type: 'QgsUnitTypes.AngleUnit'
-    AngleSecondsOfArc = ... # type: 'QgsUnitTypes.AngleUnit'
-    AngleTurn = ... # type: 'QgsUnitTypes.AngleUnit'
-    AngleMilliradiansSI = ... # type: 'QgsUnitTypes.AngleUnit'
-    AngleMilNATO = ... # type: 'QgsUnitTypes.AngleUnit'
-    AngleUnknownUnit = ... # type: 'QgsUnitTypes.AngleUnit'
+    class AngleUnit(int):
+        AngleDegrees: 'QgsUnitTypes.AngleUnit'
+        AngleRadians: 'QgsUnitTypes.AngleUnit'
+        AngleGon: 'QgsUnitTypes.AngleUnit'
+        AngleMinutesOfArc: 'QgsUnitTypes.AngleUnit'
+        AngleSecondsOfArc: 'QgsUnitTypes.AngleUnit'
+        AngleTurn: 'QgsUnitTypes.AngleUnit'
+        AngleMilliradiansSI: 'QgsUnitTypes.AngleUnit'
+        AngleMilNATO: 'QgsUnitTypes.AngleUnit'
+        AngleUnknownUnit: 'QgsUnitTypes.AngleUnit'
 
-    class VolumeUnit(int): ...
-    VolumeCubicMeters = ... # type: 'QgsUnitTypes.VolumeUnit'
-    VolumeCubicFeet = ... # type: 'QgsUnitTypes.VolumeUnit'
-    VolumeCubicYards = ... # type: 'QgsUnitTypes.VolumeUnit'
-    VolumeBarrel = ... # type: 'QgsUnitTypes.VolumeUnit'
-    VolumeCubicDecimeter = ... # type: 'QgsUnitTypes.VolumeUnit'
-    VolumeLiters = ... # type: 'QgsUnitTypes.VolumeUnit'
-    VolumeGallonUS = ... # type: 'QgsUnitTypes.VolumeUnit'
-    VolumeCubicInch = ... # type: 'QgsUnitTypes.VolumeUnit'
-    VolumeCubicCentimeter = ... # type: 'QgsUnitTypes.VolumeUnit'
-    VolumeCubicDegrees = ... # type: 'QgsUnitTypes.VolumeUnit'
-    VolumeUnknownUnit = ... # type: 'QgsUnitTypes.VolumeUnit'
+    class VolumeUnit(int):
+        VolumeCubicMeters: 'QgsUnitTypes.VolumeUnit'
+        VolumeCubicFeet: 'QgsUnitTypes.VolumeUnit'
+        VolumeCubicYards: 'QgsUnitTypes.VolumeUnit'
+        VolumeBarrel: 'QgsUnitTypes.VolumeUnit'
+        VolumeCubicDecimeter: 'QgsUnitTypes.VolumeUnit'
+        VolumeLiters: 'QgsUnitTypes.VolumeUnit'
+        VolumeGallonUS: 'QgsUnitTypes.VolumeUnit'
+        VolumeCubicInch: 'QgsUnitTypes.VolumeUnit'
+        VolumeCubicCentimeter: 'QgsUnitTypes.VolumeUnit'
+        VolumeCubicDegrees: 'QgsUnitTypes.VolumeUnit'
+        VolumeUnknownUnit: 'QgsUnitTypes.VolumeUnit'
 
-    class AreaUnit(int): ...
-    AreaSquareMeters = ... # type: 'QgsUnitTypes.AreaUnit'
-    AreaSquareKilometers = ... # type: 'QgsUnitTypes.AreaUnit'
-    AreaSquareFeet = ... # type: 'QgsUnitTypes.AreaUnit'
-    AreaSquareYards = ... # type: 'QgsUnitTypes.AreaUnit'
-    AreaSquareMiles = ... # type: 'QgsUnitTypes.AreaUnit'
-    AreaHectares = ... # type: 'QgsUnitTypes.AreaUnit'
-    AreaAcres = ... # type: 'QgsUnitTypes.AreaUnit'
-    AreaSquareNauticalMiles = ... # type: 'QgsUnitTypes.AreaUnit'
-    AreaSquareDegrees = ... # type: 'QgsUnitTypes.AreaUnit'
-    AreaSquareCentimeters = ... # type: 'QgsUnitTypes.AreaUnit'
-    AreaSquareMillimeters = ... # type: 'QgsUnitTypes.AreaUnit'
-    AreaUnknownUnit = ... # type: 'QgsUnitTypes.AreaUnit'
+    class AreaUnit(int):
+        AreaSquareMeters: 'QgsUnitTypes.AreaUnit'
+        AreaSquareKilometers: 'QgsUnitTypes.AreaUnit'
+        AreaSquareFeet: 'QgsUnitTypes.AreaUnit'
+        AreaSquareYards: 'QgsUnitTypes.AreaUnit'
+        AreaSquareMiles: 'QgsUnitTypes.AreaUnit'
+        AreaHectares: 'QgsUnitTypes.AreaUnit'
+        AreaAcres: 'QgsUnitTypes.AreaUnit'
+        AreaSquareNauticalMiles: 'QgsUnitTypes.AreaUnit'
+        AreaSquareDegrees: 'QgsUnitTypes.AreaUnit'
+        AreaSquareCentimeters: 'QgsUnitTypes.AreaUnit'
+        AreaSquareMillimeters: 'QgsUnitTypes.AreaUnit'
+        AreaUnknownUnit: 'QgsUnitTypes.AreaUnit'
 
-    class DistanceUnitType(int): ...
-    Standard = ... # type: 'QgsUnitTypes.DistanceUnitType'
-    Geographic = ... # type: 'QgsUnitTypes.DistanceUnitType'
-    UnknownType = ... # type: 'QgsUnitTypes.DistanceUnitType'
+    class DistanceUnitType(int):
+        Standard: 'QgsUnitTypes.DistanceUnitType'
+        Geographic: 'QgsUnitTypes.DistanceUnitType'
+        UnknownType: 'QgsUnitTypes.DistanceUnitType'
 
-    class DistanceUnit(int): ...
-    DistanceMeters = ... # type: 'QgsUnitTypes.DistanceUnit'
-    DistanceKilometers = ... # type: 'QgsUnitTypes.DistanceUnit'
-    DistanceFeet = ... # type: 'QgsUnitTypes.DistanceUnit'
-    DistanceNauticalMiles = ... # type: 'QgsUnitTypes.DistanceUnit'
-    DistanceYards = ... # type: 'QgsUnitTypes.DistanceUnit'
-    DistanceMiles = ... # type: 'QgsUnitTypes.DistanceUnit'
-    DistanceDegrees = ... # type: 'QgsUnitTypes.DistanceUnit'
-    DistanceCentimeters = ... # type: 'QgsUnitTypes.DistanceUnit'
-    DistanceMillimeters = ... # type: 'QgsUnitTypes.DistanceUnit'
-    DistanceUnknownUnit = ... # type: 'QgsUnitTypes.DistanceUnit'
+    class DistanceUnit(int):
+        DistanceMeters: 'QgsUnitTypes.DistanceUnit'
+        DistanceKilometers: 'QgsUnitTypes.DistanceUnit'
+        DistanceFeet: 'QgsUnitTypes.DistanceUnit'
+        DistanceNauticalMiles: 'QgsUnitTypes.DistanceUnit'
+        DistanceYards: 'QgsUnitTypes.DistanceUnit'
+        DistanceMiles: 'QgsUnitTypes.DistanceUnit'
+        DistanceDegrees: 'QgsUnitTypes.DistanceUnit'
+        DistanceCentimeters: 'QgsUnitTypes.DistanceUnit'
+        DistanceMillimeters: 'QgsUnitTypes.DistanceUnit'
+        DistanceUnknownUnit: 'QgsUnitTypes.DistanceUnit'
 
-    class UnitType(int): ...
-    TypeDistance = ... # type: 'QgsUnitTypes.UnitType'
-    TypeArea = ... # type: 'QgsUnitTypes.UnitType'
-    TypeVolume = ... # type: 'QgsUnitTypes.UnitType'
-    TypeUnknown = ... # type: 'QgsUnitTypes.UnitType'
-    TypeTemporal = ... # type: 'QgsUnitTypes.UnitType'
+    class UnitType(int):
+        TypeDistance: 'QgsUnitTypes.UnitType'
+        TypeArea: 'QgsUnitTypes.UnitType'
+        TypeVolume: 'QgsUnitTypes.UnitType'
+        TypeUnknown: 'QgsUnitTypes.UnitType'
+        TypeTemporal: 'QgsUnitTypes.UnitType'
 
-    class SystemOfMeasurement(int): ...
-    UnknownSystem = ... # type: 'QgsUnitTypes.SystemOfMeasurement'
-    MetricSystem = ... # type: 'QgsUnitTypes.SystemOfMeasurement'
-    ImperialSystem = ... # type: 'QgsUnitTypes.SystemOfMeasurement'
-    USCSSystem = ... # type: 'QgsUnitTypes.SystemOfMeasurement'
+    class SystemOfMeasurement(int):
+        UnknownSystem: 'QgsUnitTypes.SystemOfMeasurement'
+        MetricSystem: 'QgsUnitTypes.SystemOfMeasurement'
+        ImperialSystem: 'QgsUnitTypes.SystemOfMeasurement'
+        USCSSystem: 'QgsUnitTypes.SystemOfMeasurement'
 
     class DistanceValue(sip.wrapper):
 
@@ -10287,49 +10287,49 @@ class QgsVector3D(sip.wrapper):
 
 class QgsVectorFileWriter(QgsFeatureSink):
 
-    class ActionOnExistingFile(int): ...
-    CreateOrOverwriteFile = ... # type: 'QgsVectorFileWriter.ActionOnExistingFile'
-    CreateOrOverwriteLayer = ... # type: 'QgsVectorFileWriter.ActionOnExistingFile'
-    AppendToLayerNoNewFields = ... # type: 'QgsVectorFileWriter.ActionOnExistingFile'
-    AppendToLayerAddFields = ... # type: 'QgsVectorFileWriter.ActionOnExistingFile'
+    class ActionOnExistingFile(int):
+        CreateOrOverwriteFile: 'QgsVectorFileWriter.ActionOnExistingFile'
+        CreateOrOverwriteLayer: 'QgsVectorFileWriter.ActionOnExistingFile'
+        AppendToLayerNoNewFields: 'QgsVectorFileWriter.ActionOnExistingFile'
+        AppendToLayerAddFields: 'QgsVectorFileWriter.ActionOnExistingFile'
 
-    class EditionCapability(int): ...
-    CanAddNewLayer = ... # type: 'QgsVectorFileWriter.EditionCapability'
-    CanAppendToExistingLayer = ... # type: 'QgsVectorFileWriter.EditionCapability'
-    CanAddNewFieldsToExistingLayer = ... # type: 'QgsVectorFileWriter.EditionCapability'
-    CanDeleteLayer = ... # type: 'QgsVectorFileWriter.EditionCapability'
+    class EditionCapability(int):
+        CanAddNewLayer: 'QgsVectorFileWriter.EditionCapability'
+        CanAppendToExistingLayer: 'QgsVectorFileWriter.EditionCapability'
+        CanAddNewFieldsToExistingLayer: 'QgsVectorFileWriter.EditionCapability'
+        CanDeleteLayer: 'QgsVectorFileWriter.EditionCapability'
 
-    class VectorFormatOption(int): ...
-    SortRecommended = ... # type: 'QgsVectorFileWriter.VectorFormatOption'
-    SkipNonSpatialFormats = ... # type: 'QgsVectorFileWriter.VectorFormatOption'
+    class VectorFormatOption(int):
+        SortRecommended: 'QgsVectorFileWriter.VectorFormatOption'
+        SkipNonSpatialFormats: 'QgsVectorFileWriter.VectorFormatOption'
 
-    class FieldNameSource(int): ...
-    Original = ... # type: 'QgsVectorFileWriter.FieldNameSource'
-    PreferAlias = ... # type: 'QgsVectorFileWriter.FieldNameSource'
+    class FieldNameSource(int):
+        Original: 'QgsVectorFileWriter.FieldNameSource'
+        PreferAlias: 'QgsVectorFileWriter.FieldNameSource'
 
-    class SymbologyExport(int): ...
-    NoSymbology = ... # type: 'QgsVectorFileWriter.SymbologyExport'
-    FeatureSymbology = ... # type: 'QgsVectorFileWriter.SymbologyExport'
-    SymbolLayerSymbology = ... # type: 'QgsVectorFileWriter.SymbologyExport'
+    class SymbologyExport(int):
+        NoSymbology: 'QgsVectorFileWriter.SymbologyExport'
+        FeatureSymbology: 'QgsVectorFileWriter.SymbologyExport'
+        SymbolLayerSymbology: 'QgsVectorFileWriter.SymbologyExport'
 
-    class WriterError(int): ...
-    NoError = ... # type: 'QgsVectorFileWriter.WriterError'
-    ErrDriverNotFound = ... # type: 'QgsVectorFileWriter.WriterError'
-    ErrCreateDataSource = ... # type: 'QgsVectorFileWriter.WriterError'
-    ErrCreateLayer = ... # type: 'QgsVectorFileWriter.WriterError'
-    ErrAttributeTypeUnsupported = ... # type: 'QgsVectorFileWriter.WriterError'
-    ErrAttributeCreationFailed = ... # type: 'QgsVectorFileWriter.WriterError'
-    ErrProjection = ... # type: 'QgsVectorFileWriter.WriterError'
-    ErrFeatureWriteFailed = ... # type: 'QgsVectorFileWriter.WriterError'
-    ErrInvalidLayer = ... # type: 'QgsVectorFileWriter.WriterError'
-    ErrSavingMetadata = ... # type: 'QgsVectorFileWriter.WriterError'
-    Canceled = ... # type: 'QgsVectorFileWriter.WriterError'
+    class WriterError(int):
+        NoError: 'QgsVectorFileWriter.WriterError'
+        ErrDriverNotFound: 'QgsVectorFileWriter.WriterError'
+        ErrCreateDataSource: 'QgsVectorFileWriter.WriterError'
+        ErrCreateLayer: 'QgsVectorFileWriter.WriterError'
+        ErrAttributeTypeUnsupported: 'QgsVectorFileWriter.WriterError'
+        ErrAttributeCreationFailed: 'QgsVectorFileWriter.WriterError'
+        ErrProjection: 'QgsVectorFileWriter.WriterError'
+        ErrFeatureWriteFailed: 'QgsVectorFileWriter.WriterError'
+        ErrInvalidLayer: 'QgsVectorFileWriter.WriterError'
+        ErrSavingMetadata: 'QgsVectorFileWriter.WriterError'
+        Canceled: 'QgsVectorFileWriter.WriterError'
 
-    class OptionType(int): ...
-    Set = ... # type: 'QgsVectorFileWriter.OptionType'
-    String = ... # type: 'QgsVectorFileWriter.OptionType'
-    Int = ... # type: 'QgsVectorFileWriter.OptionType'
-    Hidden = ... # type: 'QgsVectorFileWriter.OptionType'
+    class OptionType(int):
+        Set: 'QgsVectorFileWriter.OptionType'
+        String: 'QgsVectorFileWriter.OptionType'
+        Int: 'QgsVectorFileWriter.OptionType'
+        Hidden: 'QgsVectorFileWriter.OptionType'
 
     class Option(sip.wrapper):
 
@@ -10565,17 +10565,17 @@ class QgsVectorFileWriterTask(QgsTask):
 
 class QgsVectorSimplifyMethod(sip.wrapper):
 
-    class SimplifyAlgorithm(int): ...
-    Distance = ... # type: 'QgsVectorSimplifyMethod.SimplifyAlgorithm'
-    SnapToGrid = ... # type: 'QgsVectorSimplifyMethod.SimplifyAlgorithm'
-    Visvalingam = ... # type: 'QgsVectorSimplifyMethod.SimplifyAlgorithm'
-    SnappedToGridGlobal = ... # type: 'QgsVectorSimplifyMethod.SimplifyAlgorithm'
+    class SimplifyAlgorithm(int):
+        Distance: 'QgsVectorSimplifyMethod.SimplifyAlgorithm'
+        SnapToGrid: 'QgsVectorSimplifyMethod.SimplifyAlgorithm'
+        Visvalingam: 'QgsVectorSimplifyMethod.SimplifyAlgorithm'
+        SnappedToGridGlobal: 'QgsVectorSimplifyMethod.SimplifyAlgorithm'
 
-    class SimplifyHint(int): ...
-    NoSimplification = ... # type: 'QgsVectorSimplifyMethod.SimplifyHint'
-    GeometrySimplification = ... # type: 'QgsVectorSimplifyMethod.SimplifyHint'
-    AntialiasingSimplification = ... # type: 'QgsVectorSimplifyMethod.SimplifyHint'
-    FullSimplification = ... # type: 'QgsVectorSimplifyMethod.SimplifyHint'
+    class SimplifyHint(int):
+        NoSimplification: 'QgsVectorSimplifyMethod.SimplifyHint'
+        GeometrySimplification: 'QgsVectorSimplifyMethod.SimplifyHint'
+        AntialiasingSimplification: 'QgsVectorSimplifyMethod.SimplifyHint'
+        FullSimplification: 'QgsVectorSimplifyMethod.SimplifyHint'
 
     class SimplifyHints(sip.wrapper):
 
@@ -10768,9 +10768,9 @@ class Qgs3DSymbolRegistry(sip.wrapper):
 
 class QgsAbstract3DSymbol(sip.wrapper):
 
-    class Property(int): ...
-    PropertyHeight = ... # type: 'QgsAbstract3DSymbol.Property'
-    PropertyExtrusionHeight = ... # type: 'QgsAbstract3DSymbol.Property'
+    class Property(int):
+        PropertyHeight: 'QgsAbstract3DSymbol.Property'
+        PropertyExtrusionHeight: 'QgsAbstract3DSymbol.Property'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -10885,11 +10885,11 @@ class QgsAnnotationItem(sip.wrapper):
 
 class QgsAbstractAnnotationItemEditOperation(sip.wrapper):
 
-    class Type(int): ...
-    MoveNode = ... # type: 'QgsAbstractAnnotationItemEditOperation.Type'
-    DeleteNode = ... # type: 'QgsAbstractAnnotationItemEditOperation.Type'
-    AddNode = ... # type: 'QgsAbstractAnnotationItemEditOperation.Type'
-    TranslateItem = ... # type: 'QgsAbstractAnnotationItemEditOperation.Type'
+    class Type(int):
+        MoveNode: 'QgsAbstractAnnotationItemEditOperation.Type'
+        DeleteNode: 'QgsAbstractAnnotationItemEditOperation.Type'
+        AddNode: 'QgsAbstractAnnotationItemEditOperation.Type'
+        TranslateItem: 'QgsAbstractAnnotationItemEditOperation.Type'
 
     @typing.overload
     def __init__(self, itemId: str) -> None: ...
@@ -11216,34 +11216,34 @@ class QgsTextAnnotation(QgsAnnotation):
 
 class QgsAuthCertUtils(sip.wrapper):
 
-    class ConstraintGroup(int): ...
-    KeyUsage = ... # type: 'QgsAuthCertUtils.ConstraintGroup'
-    ExtendedKeyUsage = ... # type: 'QgsAuthCertUtils.ConstraintGroup'
+    class ConstraintGroup(int):
+        KeyUsage: 'QgsAuthCertUtils.ConstraintGroup'
+        ExtendedKeyUsage: 'QgsAuthCertUtils.ConstraintGroup'
 
-    class CertUsageType(int): ...
-    UndeterminedUsage = ... # type: 'QgsAuthCertUtils.CertUsageType'
-    AnyOrUnspecifiedUsage = ... # type: 'QgsAuthCertUtils.CertUsageType'
-    CertAuthorityUsage = ... # type: 'QgsAuthCertUtils.CertUsageType'
-    CertIssuerUsage = ... # type: 'QgsAuthCertUtils.CertUsageType'
-    TlsServerUsage = ... # type: 'QgsAuthCertUtils.CertUsageType'
-    TlsServerEvUsage = ... # type: 'QgsAuthCertUtils.CertUsageType'
-    TlsClientUsage = ... # type: 'QgsAuthCertUtils.CertUsageType'
-    CodeSigningUsage = ... # type: 'QgsAuthCertUtils.CertUsageType'
-    EmailProtectionUsage = ... # type: 'QgsAuthCertUtils.CertUsageType'
-    TimeStampingUsage = ... # type: 'QgsAuthCertUtils.CertUsageType'
-    CRLSigningUsage = ... # type: 'QgsAuthCertUtils.CertUsageType'
+    class CertUsageType(int):
+        UndeterminedUsage: 'QgsAuthCertUtils.CertUsageType'
+        AnyOrUnspecifiedUsage: 'QgsAuthCertUtils.CertUsageType'
+        CertAuthorityUsage: 'QgsAuthCertUtils.CertUsageType'
+        CertIssuerUsage: 'QgsAuthCertUtils.CertUsageType'
+        TlsServerUsage: 'QgsAuthCertUtils.CertUsageType'
+        TlsServerEvUsage: 'QgsAuthCertUtils.CertUsageType'
+        TlsClientUsage: 'QgsAuthCertUtils.CertUsageType'
+        CodeSigningUsage: 'QgsAuthCertUtils.CertUsageType'
+        EmailProtectionUsage: 'QgsAuthCertUtils.CertUsageType'
+        TimeStampingUsage: 'QgsAuthCertUtils.CertUsageType'
+        CRLSigningUsage: 'QgsAuthCertUtils.CertUsageType'
 
-    class CertTrustPolicy(int): ...
-    DefaultTrust = ... # type: 'QgsAuthCertUtils.CertTrustPolicy'
-    Trusted = ... # type: 'QgsAuthCertUtils.CertTrustPolicy'
-    Untrusted = ... # type: 'QgsAuthCertUtils.CertTrustPolicy'
-    NoPolicy = ... # type: 'QgsAuthCertUtils.CertTrustPolicy'
+    class CertTrustPolicy(int):
+        DefaultTrust: 'QgsAuthCertUtils.CertTrustPolicy'
+        Trusted: 'QgsAuthCertUtils.CertTrustPolicy'
+        Untrusted: 'QgsAuthCertUtils.CertTrustPolicy'
+        NoPolicy: 'QgsAuthCertUtils.CertTrustPolicy'
 
-    class CaCertSource(int): ...
-    SystemRoot = ... # type: 'QgsAuthCertUtils.CaCertSource'
-    FromFile = ... # type: 'QgsAuthCertUtils.CaCertSource'
-    InDatabase = ... # type: 'QgsAuthCertUtils.CaCertSource'
-    Connection = ... # type: 'QgsAuthCertUtils.CaCertSource'
+    class CaCertSource(int):
+        SystemRoot: 'QgsAuthCertUtils.CaCertSource'
+        FromFile: 'QgsAuthCertUtils.CaCertSource'
+        InDatabase: 'QgsAuthCertUtils.CaCertSource'
+        Connection: 'QgsAuthCertUtils.CaCertSource'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -11426,10 +11426,10 @@ class QgsAuthConfigSslServer(sip.wrapper):
 
 class QgsAuthManager(QtCore.QObject):
 
-    class MessageLevel(int): ...
-    INFO = ... # type: 'QgsAuthManager.MessageLevel'
-    WARNING = ... # type: 'QgsAuthManager.MessageLevel'
-    CRITICAL = ... # type: 'QgsAuthManager.MessageLevel'
+    class MessageLevel(int):
+        INFO: 'QgsAuthManager.MessageLevel'
+        WARNING: 'QgsAuthManager.MessageLevel'
+        CRITICAL: 'QgsAuthManager.MessageLevel'
 
     AUTH_MAN_TAG = ... # type: str
     AUTH_PASSWORD_HELPER_DISPLAY_NAME = ... # type: str
@@ -11544,13 +11544,13 @@ class QgsAuthManager(QtCore.QObject):
 
 class QgsAuthMethod(QtCore.QObject):
 
-    class Expansion(int): ...
-    NetworkRequest = ... # type: 'QgsAuthMethod.Expansion'
-    NetworkReply = ... # type: 'QgsAuthMethod.Expansion'
-    DataSourceUri = ... # type: 'QgsAuthMethod.Expansion'
-    GenericDataSourceUri = ... # type: 'QgsAuthMethod.Expansion'
-    NetworkProxy = ... # type: 'QgsAuthMethod.Expansion'
-    All = ... # type: 'QgsAuthMethod.Expansion'
+    class Expansion(int):
+        NetworkRequest: 'QgsAuthMethod.Expansion'
+        NetworkReply: 'QgsAuthMethod.Expansion'
+        DataSourceUri: 'QgsAuthMethod.Expansion'
+        GenericDataSourceUri: 'QgsAuthMethod.Expansion'
+        NetworkProxy: 'QgsAuthMethod.Expansion'
+        All: 'QgsAuthMethod.Expansion'
 
     class Expansions(sip.wrapper):
 
@@ -11590,11 +11590,11 @@ class QgsAuthMethod(QtCore.QObject):
 
 class QgsBrowserModel(QtCore.QAbstractItemModel):
 
-    class ItemDataRole(int): ...
-    PathRole = ... # type: 'QgsBrowserModel.ItemDataRole'
-    CommentRole = ... # type: 'QgsBrowserModel.ItemDataRole'
-    SortRole = ... # type: 'QgsBrowserModel.ItemDataRole'
-    ProviderKeyRole = ... # type: 'QgsBrowserModel.ItemDataRole'
+    class ItemDataRole(int):
+        PathRole: 'QgsBrowserModel.ItemDataRole'
+        CommentRole: 'QgsBrowserModel.ItemDataRole'
+        SortRole: 'QgsBrowserModel.ItemDataRole'
+        ProviderKeyRole: 'QgsBrowserModel.ItemDataRole'
 
     def __init__(self, parent: typing.Optional[QtCore.QObject] = ...) -> None: ...
 
@@ -11645,10 +11645,10 @@ class QgsBrowserModel(QtCore.QAbstractItemModel):
 
 class QgsBrowserProxyModel(QtCore.QSortFilterProxyModel):
 
-    class FilterSyntax(int): ...
-    Normal = ... # type: 'QgsBrowserProxyModel.FilterSyntax'
-    Wildcards = ... # type: 'QgsBrowserProxyModel.FilterSyntax'
-    RegularExpression = ... # type: 'QgsBrowserProxyModel.FilterSyntax'
+    class FilterSyntax(int):
+        Normal: 'QgsBrowserProxyModel.FilterSyntax'
+        Wildcards: 'QgsBrowserProxyModel.FilterSyntax'
+        RegularExpression: 'QgsBrowserProxyModel.FilterSyntax'
 
     def __init__(self, parent: typing.Optional[QtCore.QObject] = ...) -> None: ...
 
@@ -12021,45 +12021,45 @@ class QgsZipItem(QgsDataCollectionItem):
 
 class QgsCallout(sip.wrapper):
 
-    class LabelAnchorPoint(int): ...
-    LabelPointOnExterior = ... # type: 'QgsCallout.LabelAnchorPoint'
-    LabelCentroid = ... # type: 'QgsCallout.LabelAnchorPoint'
-    LabelTopLeft = ... # type: 'QgsCallout.LabelAnchorPoint'
-    LabelTopMiddle = ... # type: 'QgsCallout.LabelAnchorPoint'
-    LabelTopRight = ... # type: 'QgsCallout.LabelAnchorPoint'
-    LabelMiddleLeft = ... # type: 'QgsCallout.LabelAnchorPoint'
-    LabelMiddleRight = ... # type: 'QgsCallout.LabelAnchorPoint'
-    LabelBottomLeft = ... # type: 'QgsCallout.LabelAnchorPoint'
-    LabelBottomMiddle = ... # type: 'QgsCallout.LabelAnchorPoint'
-    LabelBottomRight = ... # type: 'QgsCallout.LabelAnchorPoint'
+    class LabelAnchorPoint(int):
+        LabelPointOnExterior: 'QgsCallout.LabelAnchorPoint'
+        LabelCentroid: 'QgsCallout.LabelAnchorPoint'
+        LabelTopLeft: 'QgsCallout.LabelAnchorPoint'
+        LabelTopMiddle: 'QgsCallout.LabelAnchorPoint'
+        LabelTopRight: 'QgsCallout.LabelAnchorPoint'
+        LabelMiddleLeft: 'QgsCallout.LabelAnchorPoint'
+        LabelMiddleRight: 'QgsCallout.LabelAnchorPoint'
+        LabelBottomLeft: 'QgsCallout.LabelAnchorPoint'
+        LabelBottomMiddle: 'QgsCallout.LabelAnchorPoint'
+        LabelBottomRight: 'QgsCallout.LabelAnchorPoint'
 
-    class AnchorPoint(int): ...
-    PoleOfInaccessibility = ... # type: 'QgsCallout.AnchorPoint'
-    PointOnExterior = ... # type: 'QgsCallout.AnchorPoint'
-    PointOnSurface = ... # type: 'QgsCallout.AnchorPoint'
-    Centroid = ... # type: 'QgsCallout.AnchorPoint'
+    class AnchorPoint(int):
+        PoleOfInaccessibility: 'QgsCallout.AnchorPoint'
+        PointOnExterior: 'QgsCallout.AnchorPoint'
+        PointOnSurface: 'QgsCallout.AnchorPoint'
+        Centroid: 'QgsCallout.AnchorPoint'
 
-    class DrawOrder(int): ...
-    OrderBelowAllLabels = ... # type: 'QgsCallout.DrawOrder'
-    OrderBelowIndividualLabels = ... # type: 'QgsCallout.DrawOrder'
+    class DrawOrder(int):
+        OrderBelowAllLabels: 'QgsCallout.DrawOrder'
+        OrderBelowIndividualLabels: 'QgsCallout.DrawOrder'
 
-    class Property(int): ...
-    MinimumCalloutLength = ... # type: 'QgsCallout.Property'
-    OffsetFromAnchor = ... # type: 'QgsCallout.Property'
-    OffsetFromLabel = ... # type: 'QgsCallout.Property'
-    DrawCalloutToAllParts = ... # type: 'QgsCallout.Property'
-    AnchorPointPosition = ... # type: 'QgsCallout.Property'
-    LabelAnchorPointPosition = ... # type: 'QgsCallout.Property'
-    OriginX = ... # type: 'QgsCallout.Property'
-    OriginY = ... # type: 'QgsCallout.Property'
-    DestinationX = ... # type: 'QgsCallout.Property'
-    DestinationY = ... # type: 'QgsCallout.Property'
-    Curvature = ... # type: 'QgsCallout.Property'
-    Orientation = ... # type: 'QgsCallout.Property'
-    Margins = ... # type: 'QgsCallout.Property'
-    WedgeWidth = ... # type: 'QgsCallout.Property'
-    CornerRadius = ... # type: 'QgsCallout.Property'
-    BlendMode = ... # type: 'QgsCallout.Property'
+    class Property(int):
+        MinimumCalloutLength: 'QgsCallout.Property'
+        OffsetFromAnchor: 'QgsCallout.Property'
+        OffsetFromLabel: 'QgsCallout.Property'
+        DrawCalloutToAllParts: 'QgsCallout.Property'
+        AnchorPointPosition: 'QgsCallout.Property'
+        LabelAnchorPointPosition: 'QgsCallout.Property'
+        OriginX: 'QgsCallout.Property'
+        OriginY: 'QgsCallout.Property'
+        DestinationX: 'QgsCallout.Property'
+        DestinationY: 'QgsCallout.Property'
+        Curvature: 'QgsCallout.Property'
+        Orientation: 'QgsCallout.Property'
+        Margins: 'QgsCallout.Property'
+        WedgeWidth: 'QgsCallout.Property'
+        CornerRadius: 'QgsCallout.Property'
+        BlendMode: 'QgsCallout.Property'
 
     class QgsCalloutContext(sip.wrapper):
 
@@ -12170,10 +12170,10 @@ class QgsManhattanLineCallout(QgsSimpleLineCallout):
 
 class QgsCurvedLineCallout(QgsSimpleLineCallout):
 
-    class Orientation(int): ...
-    Automatic = ... # type: 'QgsCurvedLineCallout.Orientation'
-    Clockwise = ... # type: 'QgsCurvedLineCallout.Orientation'
-    CounterClockwise = ... # type: 'QgsCurvedLineCallout.Orientation'
+    class Orientation(int):
+        Automatic: 'QgsCurvedLineCallout.Orientation'
+        Clockwise: 'QgsCurvedLineCallout.Orientation'
+        CounterClockwise: 'QgsCurvedLineCallout.Orientation'
 
     def __init__(self) -> None: ...
 
@@ -12269,16 +12269,16 @@ class QgsCalloutRegistry(sip.wrapper):
 
 class QgsClassificationMethod(sip.wrapper):
 
-    class ClassPosition(int): ...
-    LowerBound = ... # type: 'QgsClassificationMethod.ClassPosition'
-    Inner = ... # type: 'QgsClassificationMethod.ClassPosition'
-    UpperBound = ... # type: 'QgsClassificationMethod.ClassPosition'
+    class ClassPosition(int):
+        LowerBound: 'QgsClassificationMethod.ClassPosition'
+        Inner: 'QgsClassificationMethod.ClassPosition'
+        UpperBound: 'QgsClassificationMethod.ClassPosition'
 
-    class MethodProperty(int): ...
-    NoFlag = ... # type: 'QgsClassificationMethod.MethodProperty'
-    ValuesNotRequired = ... # type: 'QgsClassificationMethod.MethodProperty'
-    SymmetricModeAvailable = ... # type: 'QgsClassificationMethod.MethodProperty'
-    IgnoresClassCount = ... # type: 'QgsClassificationMethod.MethodProperty'
+    class MethodProperty(int):
+        NoFlag: 'QgsClassificationMethod.MethodProperty'
+        ValuesNotRequired: 'QgsClassificationMethod.MethodProperty'
+        SymmetricModeAvailable: 'QgsClassificationMethod.MethodProperty'
+        IgnoresClassCount: 'QgsClassificationMethod.MethodProperty'
 
     class MethodProperties(sip.wrapper):
 
@@ -12408,10 +12408,10 @@ class QgsClassificationJenks(QgsClassificationMethod):
 
 class QgsClassificationLogarithmic(QgsClassificationMethod):
 
-    class NegativeValueHandling(int): ...
-    NoHandling = ... # type: 'QgsClassificationLogarithmic.NegativeValueHandling'
-    Discard = ... # type: 'QgsClassificationLogarithmic.NegativeValueHandling'
-    PrependBreak = ... # type: 'QgsClassificationLogarithmic.NegativeValueHandling'
+    class NegativeValueHandling(int):
+        NoHandling: 'QgsClassificationLogarithmic.NegativeValueHandling'
+        Discard: 'QgsClassificationLogarithmic.NegativeValueHandling'
+        PrependBreak: 'QgsClassificationLogarithmic.NegativeValueHandling'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -12567,14 +12567,14 @@ class QgsStackedBarDiagram(QgsDiagram):
 
 class QgsTextDiagram(QgsDiagram):
 
-    class Orientation(int): ...
-    Horizontal = ... # type: 'QgsTextDiagram.Orientation'
-    Vertical = ... # type: 'QgsTextDiagram.Orientation'
+    class Orientation(int):
+        Horizontal: 'QgsTextDiagram.Orientation'
+        Vertical: 'QgsTextDiagram.Orientation'
 
-    class Shape(int): ...
-    Circle = ... # type: 'QgsTextDiagram.Shape'
-    Rectangle = ... # type: 'QgsTextDiagram.Shape'
-    Triangle = ... # type: 'QgsTextDiagram.Shape'
+    class Shape(int):
+        Circle: 'QgsTextDiagram.Shape'
+        Rectangle: 'QgsTextDiagram.Shape'
+        Triangle: 'QgsTextDiagram.Shape'
 
     def __init__(self) -> None: ...
 
@@ -12590,45 +12590,45 @@ class QgsTextDiagram(QgsDiagram):
 
 class QgsDxfExport(sip.wrapper):
 
-    class DxfPolylineFlag(int): ...
-    Closed = ... # type: 'QgsDxfExport.DxfPolylineFlag'
-    Curve = ... # type: 'QgsDxfExport.DxfPolylineFlag'
-    Spline = ... # type: 'QgsDxfExport.DxfPolylineFlag'
-    Is3DPolyline = ... # type: 'QgsDxfExport.DxfPolylineFlag'
-    Is3DPolygonMesh = ... # type: 'QgsDxfExport.DxfPolylineFlag'
-    PolygonMesh = ... # type: 'QgsDxfExport.DxfPolylineFlag'
-    PolyfaceMesh = ... # type: 'QgsDxfExport.DxfPolylineFlag'
-    ContinuousPattern = ... # type: 'QgsDxfExport.DxfPolylineFlag'
+    class DxfPolylineFlag(int):
+        Closed: 'QgsDxfExport.DxfPolylineFlag'
+        Curve: 'QgsDxfExport.DxfPolylineFlag'
+        Spline: 'QgsDxfExport.DxfPolylineFlag'
+        Is3DPolyline: 'QgsDxfExport.DxfPolylineFlag'
+        Is3DPolygonMesh: 'QgsDxfExport.DxfPolylineFlag'
+        PolygonMesh: 'QgsDxfExport.DxfPolylineFlag'
+        PolyfaceMesh: 'QgsDxfExport.DxfPolylineFlag'
+        ContinuousPattern: 'QgsDxfExport.DxfPolylineFlag'
 
-    class HAlign(int): ...
-    HLeft = ... # type: 'QgsDxfExport.HAlign'
-    HCenter = ... # type: 'QgsDxfExport.HAlign'
-    HRight = ... # type: 'QgsDxfExport.HAlign'
-    HAligned = ... # type: 'QgsDxfExport.HAlign'
-    HMiddle = ... # type: 'QgsDxfExport.HAlign'
-    HFit = ... # type: 'QgsDxfExport.HAlign'
-    Undefined = ... # type: 'QgsDxfExport.HAlign'
+    class HAlign(int):
+        HLeft: 'QgsDxfExport.HAlign'
+        HCenter: 'QgsDxfExport.HAlign'
+        HRight: 'QgsDxfExport.HAlign'
+        HAligned: 'QgsDxfExport.HAlign'
+        HMiddle: 'QgsDxfExport.HAlign'
+        HFit: 'QgsDxfExport.HAlign'
+        Undefined: 'QgsDxfExport.HAlign'
 
-    class VAlign(int): ...
-    VBaseLine = ... # type: 'QgsDxfExport.VAlign'
-    VBottom = ... # type: 'QgsDxfExport.VAlign'
-    VMiddle = ... # type: 'QgsDxfExport.VAlign'
-    VTop = ... # type: 'QgsDxfExport.VAlign'
-    Undefined = ... # type: 'QgsDxfExport.VAlign'
+    class VAlign(int):
+        VBaseLine: 'QgsDxfExport.VAlign'
+        VBottom: 'QgsDxfExport.VAlign'
+        VMiddle: 'QgsDxfExport.VAlign'
+        VTop: 'QgsDxfExport.VAlign'
+        Undefined: 'QgsDxfExport.VAlign'
 
-    class ExportResult(int): ...
-    Success = ... # type: 'QgsDxfExport.ExportResult'
-    InvalidDeviceError = ... # type: 'QgsDxfExport.ExportResult'
-    DeviceNotWritableError = ... # type: 'QgsDxfExport.ExportResult'
-    EmptyExtentError = ... # type: 'QgsDxfExport.ExportResult'
+    class ExportResult(int):
+        Success: 'QgsDxfExport.ExportResult'
+        InvalidDeviceError: 'QgsDxfExport.ExportResult'
+        DeviceNotWritableError: 'QgsDxfExport.ExportResult'
+        EmptyExtentError: 'QgsDxfExport.ExportResult'
 
-    class Flag(int): ...
-    FlagNoMText = ... # type: 'QgsDxfExport.Flag'
+    class Flag(int):
+        FlagNoMText: 'QgsDxfExport.Flag'
 
-    class SymbologyExport(int): ...
-    NoSymbology = ... # type: 'QgsDxfExport.SymbologyExport'
-    FeatureSymbology = ... # type: 'QgsDxfExport.SymbologyExport'
-    SymbolLayerSymbology = ... # type: 'QgsDxfExport.SymbologyExport'
+    class SymbologyExport(int):
+        NoSymbology: 'QgsDxfExport.SymbologyExport'
+        FeatureSymbology: 'QgsDxfExport.SymbologyExport'
+        SymbolLayerSymbology: 'QgsDxfExport.SymbologyExport'
 
     class DxfLayer(sip.wrapper):
 
@@ -12728,26 +12728,26 @@ class QgsDxfExport(sip.wrapper):
 
 class QgsEditFormConfig(sip.wrapper):
 
-    class DataDefinedProperty(int): ...
-    NoProperty = ... # type: 'QgsEditFormConfig.DataDefinedProperty'
-    AllProperties = ... # type: 'QgsEditFormConfig.DataDefinedProperty'
-    Alias = ... # type: 'QgsEditFormConfig.DataDefinedProperty'
+    class DataDefinedProperty(int):
+        NoProperty: 'QgsEditFormConfig.DataDefinedProperty'
+        AllProperties: 'QgsEditFormConfig.DataDefinedProperty'
+        Alias: 'QgsEditFormConfig.DataDefinedProperty'
 
-    class PythonInitCodeSource(int): ...
-    CodeSourceNone = ... # type: 'QgsEditFormConfig.PythonInitCodeSource'
-    CodeSourceFile = ... # type: 'QgsEditFormConfig.PythonInitCodeSource'
-    CodeSourceDialog = ... # type: 'QgsEditFormConfig.PythonInitCodeSource'
-    CodeSourceEnvironment = ... # type: 'QgsEditFormConfig.PythonInitCodeSource'
+    class PythonInitCodeSource(int):
+        CodeSourceNone: 'QgsEditFormConfig.PythonInitCodeSource'
+        CodeSourceFile: 'QgsEditFormConfig.PythonInitCodeSource'
+        CodeSourceDialog: 'QgsEditFormConfig.PythonInitCodeSource'
+        CodeSourceEnvironment: 'QgsEditFormConfig.PythonInitCodeSource'
 
-    class FeatureFormSuppress(int): ...
-    SuppressDefault = ... # type: 'QgsEditFormConfig.FeatureFormSuppress'
-    SuppressOn = ... # type: 'QgsEditFormConfig.FeatureFormSuppress'
-    SuppressOff = ... # type: 'QgsEditFormConfig.FeatureFormSuppress'
+    class FeatureFormSuppress(int):
+        SuppressDefault: 'QgsEditFormConfig.FeatureFormSuppress'
+        SuppressOn: 'QgsEditFormConfig.FeatureFormSuppress'
+        SuppressOff: 'QgsEditFormConfig.FeatureFormSuppress'
 
-    class EditorLayout(int): ...
-    GeneratedLayout = ... # type: 'QgsEditFormConfig.EditorLayout'
-    TabLayout = ... # type: 'QgsEditFormConfig.EditorLayout'
-    UiFileLayout = ... # type: 'QgsEditFormConfig.EditorLayout'
+    class EditorLayout(int):
+        GeneratedLayout: 'QgsEditFormConfig.EditorLayout'
+        TabLayout: 'QgsEditFormConfig.EditorLayout'
+        UiFileLayout: 'QgsEditFormConfig.EditorLayout'
 
     class GroupData(sip.wrapper):
 
@@ -12819,14 +12819,14 @@ class QgsEditFormConfig(sip.wrapper):
 
 class QgsAttributeEditorElement(sip.wrapper):
 
-    class AttributeEditorType(int): ...
-    AeTypeContainer = ... # type: 'QgsAttributeEditorElement.AttributeEditorType'
-    AeTypeField = ... # type: 'QgsAttributeEditorElement.AttributeEditorType'
-    AeTypeRelation = ... # type: 'QgsAttributeEditorElement.AttributeEditorType'
-    AeTypeInvalid = ... # type: 'QgsAttributeEditorElement.AttributeEditorType'
-    AeTypeQmlElement = ... # type: 'QgsAttributeEditorElement.AttributeEditorType'
-    AeTypeHtmlElement = ... # type: 'QgsAttributeEditorElement.AttributeEditorType'
-    AeTypeAction = ... # type: 'QgsAttributeEditorElement.AttributeEditorType'
+    class AttributeEditorType(int):
+        AeTypeContainer: 'QgsAttributeEditorElement.AttributeEditorType'
+        AeTypeField: 'QgsAttributeEditorElement.AttributeEditorType'
+        AeTypeRelation: 'QgsAttributeEditorElement.AttributeEditorType'
+        AeTypeInvalid: 'QgsAttributeEditorElement.AttributeEditorType'
+        AeTypeQmlElement: 'QgsAttributeEditorElement.AttributeEditorType'
+        AeTypeHtmlElement: 'QgsAttributeEditorElement.AttributeEditorType'
+        AeTypeAction: 'QgsAttributeEditorElement.AttributeEditorType'
 
     class LabelStyle(sip.wrapper):
 
@@ -12910,15 +12910,15 @@ class QgsAttributeEditorField(QgsAttributeEditorElement):
 
 class QgsAttributeEditorRelation(QgsAttributeEditorElement):
 
-    class Button(int): ...
-    Link = ... # type: 'QgsAttributeEditorRelation.Button'
-    Unlink = ... # type: 'QgsAttributeEditorRelation.Button'
-    SaveChildEdits = ... # type: 'QgsAttributeEditorRelation.Button'
-    AddChildFeature = ... # type: 'QgsAttributeEditorRelation.Button'
-    DuplicateChildFeature = ... # type: 'QgsAttributeEditorRelation.Button'
-    DeleteChildFeature = ... # type: 'QgsAttributeEditorRelation.Button'
-    ZoomToChildFeature = ... # type: 'QgsAttributeEditorRelation.Button'
-    AllButtons = ... # type: 'QgsAttributeEditorRelation.Button'
+    class Button(int):
+        Link: 'QgsAttributeEditorRelation.Button'
+        Unlink: 'QgsAttributeEditorRelation.Button'
+        SaveChildEdits: 'QgsAttributeEditorRelation.Button'
+        AddChildFeature: 'QgsAttributeEditorRelation.Button'
+        DuplicateChildFeature: 'QgsAttributeEditorRelation.Button'
+        DeleteChildFeature: 'QgsAttributeEditorRelation.Button'
+        ZoomToChildFeature: 'QgsAttributeEditorRelation.Button'
+        AllButtons: 'QgsAttributeEditorRelation.Button'
 
     class Buttons(sip.wrapper):
 
@@ -13307,10 +13307,10 @@ class QgsExternalStorageRegistry(sip.wrapper):
 
 class QgsPaintEffect(sip.wrapper):
 
-    class DrawMode(int): ...
-    Modifier = ... # type: 'QgsPaintEffect.DrawMode'
-    Render = ... # type: 'QgsPaintEffect.DrawMode'
-    ModifyAndRender = ... # type: 'QgsPaintEffect.DrawMode'
+    class DrawMode(int):
+        Modifier: 'QgsPaintEffect.DrawMode'
+        Render: 'QgsPaintEffect.DrawMode'
+        ModifyAndRender: 'QgsPaintEffect.DrawMode'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -13343,9 +13343,9 @@ class QgsPaintEffect(sip.wrapper):
 
 class QgsBlurEffect(QgsPaintEffect):
 
-    class BlurMethod(int): ...
-    StackBlur = ... # type: 'QgsBlurEffect.BlurMethod'
-    GaussianBlur = ... # type: 'QgsBlurEffect.BlurMethod'
+    class BlurMethod(int):
+        StackBlur: 'QgsBlurEffect.BlurMethod'
+        GaussianBlur: 'QgsBlurEffect.BlurMethod'
 
     def __init__(self) -> None: ...
 
@@ -13433,9 +13433,9 @@ class QgsEffectStack(QgsPaintEffect):
 
 class QgsGlowEffect(QgsPaintEffect):
 
-    class GlowColorType(int): ...
-    SingleColor = ... # type: 'QgsGlowEffect.GlowColorType'
-    ColorRamp = ... # type: 'QgsGlowEffect.GlowColorType'
+    class GlowColorType(int):
+        SingleColor: 'QgsGlowEffect.GlowColorType'
+        ColorRamp: 'QgsGlowEffect.GlowColorType'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -13501,15 +13501,15 @@ class QgsInnerGlowEffect(QgsGlowEffect):
 
 class QgsImageOperation(sip.wrapper):
 
-    class FlipType(int): ...
-    FlipHorizontal = ... # type: 'QgsImageOperation.FlipType'
-    FlipVertical = ... # type: 'QgsImageOperation.FlipType'
+    class FlipType(int):
+        FlipHorizontal: 'QgsImageOperation.FlipType'
+        FlipVertical: 'QgsImageOperation.FlipType'
 
-    class GrayscaleMode(int): ...
-    GrayscaleLightness = ... # type: 'QgsImageOperation.GrayscaleMode'
-    GrayscaleLuminosity = ... # type: 'QgsImageOperation.GrayscaleMode'
-    GrayscaleAverage = ... # type: 'QgsImageOperation.GrayscaleMode'
-    GrayscaleOff = ... # type: 'QgsImageOperation.GrayscaleMode'
+    class GrayscaleMode(int):
+        GrayscaleLightness: 'QgsImageOperation.GrayscaleMode'
+        GrayscaleLuminosity: 'QgsImageOperation.GrayscaleMode'
+        GrayscaleAverage: 'QgsImageOperation.GrayscaleMode'
+        GrayscaleOff: 'QgsImageOperation.GrayscaleMode'
 
     class DistanceTransformProperties(sip.wrapper):
 
@@ -13702,25 +13702,25 @@ class QgsTransformEffect(QgsPaintEffect):
 
 class QgsExpression(sip.wrapper):
 
-    class SpatialOperator(int): ...
-    soBbox = ... # type: 'QgsExpression.SpatialOperator'
-    soIntersects = ... # type: 'QgsExpression.SpatialOperator'
-    soContains = ... # type: 'QgsExpression.SpatialOperator'
-    soCrosses = ... # type: 'QgsExpression.SpatialOperator'
-    soEquals = ... # type: 'QgsExpression.SpatialOperator'
-    soDisjoint = ... # type: 'QgsExpression.SpatialOperator'
-    soOverlaps = ... # type: 'QgsExpression.SpatialOperator'
-    soTouches = ... # type: 'QgsExpression.SpatialOperator'
-    soWithin = ... # type: 'QgsExpression.SpatialOperator'
+    class SpatialOperator(int):
+        soBbox: 'QgsExpression.SpatialOperator'
+        soIntersects: 'QgsExpression.SpatialOperator'
+        soContains: 'QgsExpression.SpatialOperator'
+        soCrosses: 'QgsExpression.SpatialOperator'
+        soEquals: 'QgsExpression.SpatialOperator'
+        soDisjoint: 'QgsExpression.SpatialOperator'
+        soOverlaps: 'QgsExpression.SpatialOperator'
+        soTouches: 'QgsExpression.SpatialOperator'
+        soWithin: 'QgsExpression.SpatialOperator'
 
     class ParserError(sip.wrapper):
 
-        class ParserErrorType(int): ...
-        Unknown = ... # type: 'QgsExpression.ParserError.ParserErrorType'
-        FunctionUnknown = ... # type: 'QgsExpression.ParserError.ParserErrorType'
-        FunctionWrongArgs = ... # type: 'QgsExpression.ParserError.ParserErrorType'
-        FunctionInvalidParams = ... # type: 'QgsExpression.ParserError.ParserErrorType'
-        FunctionNamedArgsError = ... # type: 'QgsExpression.ParserError.ParserErrorType'
+        class ParserErrorType(int):
+            Unknown: 'QgsExpression.ParserError.ParserErrorType'
+            FunctionUnknown: 'QgsExpression.ParserError.ParserErrorType'
+            FunctionWrongArgs: 'QgsExpression.ParserError.ParserErrorType'
+            FunctionInvalidParams: 'QgsExpression.ParserError.ParserErrorType'
+            FunctionNamedArgsError: 'QgsExpression.ParserError.ParserErrorType'
 
         errorMsg = ... # type: str
         errorType = ... # type: 'QgsExpression.ParserError.ParserErrorType'
@@ -13909,16 +13909,16 @@ class QgsExpressionContextUtils(sip.wrapper):
 
 class QgsExpressionNode(sip.wrapper):
 
-    class NodeType(int): ...
-    ntUnaryOperator = ... # type: 'QgsExpressionNode.NodeType'
-    ntBinaryOperator = ... # type: 'QgsExpressionNode.NodeType'
-    ntInOperator = ... # type: 'QgsExpressionNode.NodeType'
-    ntFunction = ... # type: 'QgsExpressionNode.NodeType'
-    ntLiteral = ... # type: 'QgsExpressionNode.NodeType'
-    ntColumnRef = ... # type: 'QgsExpressionNode.NodeType'
-    ntCondition = ... # type: 'QgsExpressionNode.NodeType'
-    ntIndexOperator = ... # type: 'QgsExpressionNode.NodeType'
-    ntBetweenOperator = ... # type: 'QgsExpressionNode.NodeType'
+    class NodeType(int):
+        ntUnaryOperator: 'QgsExpressionNode.NodeType'
+        ntBinaryOperator: 'QgsExpressionNode.NodeType'
+        ntInOperator: 'QgsExpressionNode.NodeType'
+        ntFunction: 'QgsExpressionNode.NodeType'
+        ntLiteral: 'QgsExpressionNode.NodeType'
+        ntColumnRef: 'QgsExpressionNode.NodeType'
+        ntCondition: 'QgsExpressionNode.NodeType'
+        ntIndexOperator: 'QgsExpressionNode.NodeType'
+        ntBetweenOperator: 'QgsExpressionNode.NodeType'
 
     class NamedNode(sip.wrapper):
 
@@ -13976,9 +13976,9 @@ class QgsExpressionNode(sip.wrapper):
 
 class QgsExpressionNodeUnaryOperator(QgsExpressionNode):
 
-    class UnaryOperator(int): ...
-    uoNot = ... # type: 'QgsExpressionNodeUnaryOperator.UnaryOperator'
-    uoMinus = ... # type: 'QgsExpressionNodeUnaryOperator.UnaryOperator'
+    class UnaryOperator(int):
+        uoNot: 'QgsExpressionNodeUnaryOperator.UnaryOperator'
+        uoMinus: 'QgsExpressionNodeUnaryOperator.UnaryOperator'
 
     @typing.overload
     def __init__(self, op: 'QgsExpressionNodeUnaryOperator.UnaryOperator', operand: QgsExpressionNode) -> None: ...
@@ -14002,30 +14002,30 @@ class QgsExpressionNodeUnaryOperator(QgsExpressionNode):
 
 class QgsExpressionNodeBinaryOperator(QgsExpressionNode):
 
-    class BinaryOperator(int): ...
-    boOr = ... # type: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
-    boAnd = ... # type: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
-    boEQ = ... # type: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
-    boNE = ... # type: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
-    boLE = ... # type: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
-    boGE = ... # type: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
-    boLT = ... # type: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
-    boGT = ... # type: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
-    boRegexp = ... # type: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
-    boLike = ... # type: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
-    boNotLike = ... # type: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
-    boILike = ... # type: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
-    boNotILike = ... # type: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
-    boIs = ... # type: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
-    boIsNot = ... # type: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
-    boPlus = ... # type: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
-    boMinus = ... # type: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
-    boMul = ... # type: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
-    boDiv = ... # type: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
-    boIntDiv = ... # type: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
-    boMod = ... # type: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
-    boPow = ... # type: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
-    boConcat = ... # type: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
+    class BinaryOperator(int):
+        boOr: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
+        boAnd: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
+        boEQ: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
+        boNE: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
+        boLE: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
+        boGE: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
+        boLT: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
+        boGT: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
+        boRegexp: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
+        boLike: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
+        boNotLike: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
+        boILike: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
+        boNotILike: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
+        boIs: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
+        boIsNot: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
+        boPlus: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
+        boMinus: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
+        boMul: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
+        boDiv: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
+        boIntDiv: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
+        boMod: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
+        boPow: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
+        boConcat: 'QgsExpressionNodeBinaryOperator.BinaryOperator'
 
     @typing.overload
     def __init__(self, op: 'QgsExpressionNodeBinaryOperator.BinaryOperator', opLeft: QgsExpressionNode, opRight: QgsExpressionNode) -> None: ...
@@ -14211,9 +14211,9 @@ class QgsExpressionNodeCondition(QgsExpressionNode):
 
 class QgsCheckBoxFieldFormatter(QgsFieldFormatter):
 
-    class TextDisplayMethod(int): ...
-    ShowTrueFalse = ... # type: 'QgsCheckBoxFieldFormatter.TextDisplayMethod'
-    ShowStoredValues = ... # type: 'QgsCheckBoxFieldFormatter.TextDisplayMethod'
+    class TextDisplayMethod(int):
+        ShowTrueFalse: 'QgsCheckBoxFieldFormatter.TextDisplayMethod'
+        ShowStoredValues: 'QgsCheckBoxFieldFormatter.TextDisplayMethod'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -14415,10 +14415,10 @@ class QgsGeoNodeStyle(sip.wrapper):
 
 class QgsGeoNodeRequest(QtCore.QObject):
 
-    class BackendServer(int): ...
-    Unknown = ... # type: 'QgsGeoNodeRequest.BackendServer'
-    QgisServer = ... # type: 'QgsGeoNodeRequest.BackendServer'
-    Geoserver = ... # type: 'QgsGeoNodeRequest.BackendServer'
+    class BackendServer(int):
+        Unknown: 'QgsGeoNodeRequest.BackendServer'
+        QgisServer: 'QgsGeoNodeRequest.BackendServer'
+        Geoserver: 'QgsGeoNodeRequest.BackendServer'
 
     class ServiceLayerDetail(sip.wrapper):
 
@@ -14462,15 +14462,15 @@ class QgsGeoNodeRequest(QtCore.QObject):
 
 class QgsLocatorFilter(QtCore.QObject):
 
-    class Flag(int): ...
-    FlagFast = ... # type: 'QgsLocatorFilter.Flag'
+    class Flag(int):
+        FlagFast: 'QgsLocatorFilter.Flag'
 
-    class Priority(int): ...
-    Highest = ... # type: 'QgsLocatorFilter.Priority'
-    High = ... # type: 'QgsLocatorFilter.Priority'
-    Medium = ... # type: 'QgsLocatorFilter.Priority'
-    Low = ... # type: 'QgsLocatorFilter.Priority'
-    Lowest = ... # type: 'QgsLocatorFilter.Priority'
+    class Priority(int):
+        Highest: 'QgsLocatorFilter.Priority'
+        High: 'QgsLocatorFilter.Priority'
+        Medium: 'QgsLocatorFilter.Priority'
+        Low: 'QgsLocatorFilter.Priority'
+        Lowest: 'QgsLocatorFilter.Priority'
 
     class Flags(sip.wrapper):
 
@@ -14535,9 +14535,9 @@ class QgsAbstractGeocoderLocatorFilter(QgsLocatorFilter):
 
 class QgsGeocoderInterface(sip.wrapper):
 
-    class Flag(int): ...
-    GeocodesStrings = ... # type: 'QgsGeocoderInterface.Flag'
-    GeocodesFeatures = ... # type: 'QgsGeocoderInterface.Flag'
+    class Flag(int):
+        GeocodesStrings: 'QgsGeocoderInterface.Flag'
+        GeocodesFeatures: 'QgsGeocoderInterface.Flag'
 
     class Flags(sip.wrapper):
 
@@ -14649,16 +14649,16 @@ class QgsGoogleMapsGeocoder(QgsGeocoderInterface):
 
 class QgsAbstractGeometry(sip.wrapper):
 
-    class WkbFlag(int): ...
-    FlagExportTrianglesAsPolygons = ... # type: 'QgsAbstractGeometry.WkbFlag'
+    class WkbFlag(int):
+        FlagExportTrianglesAsPolygons: 'QgsAbstractGeometry.WkbFlag'
 
-    class AxisOrder(int): ...
-    XY = ... # type: 'QgsAbstractGeometry.AxisOrder'
-    YX = ... # type: 'QgsAbstractGeometry.AxisOrder'
+    class AxisOrder(int):
+        XY: 'QgsAbstractGeometry.AxisOrder'
+        YX: 'QgsAbstractGeometry.AxisOrder'
 
-    class SegmentationToleranceType(int): ...
-    MaximumAngle = ... # type: 'QgsAbstractGeometry.SegmentationToleranceType'
-    MaximumDifference = ... # type: 'QgsAbstractGeometry.SegmentationToleranceType'
+    class SegmentationToleranceType(int):
+        MaximumAngle: 'QgsAbstractGeometry.SegmentationToleranceType'
+        MaximumDifference: 'QgsAbstractGeometry.SegmentationToleranceType'
 
     class WkbFlags(sip.wrapper):
 
@@ -15558,15 +15558,15 @@ class QgsGeometryCollection(QgsAbstractGeometry):
 
 class QgsGeometryEngine(sip.wrapper):
 
-    class EngineOperationResult(int): ...
-    Success = ... # type: 'QgsGeometryEngine.EngineOperationResult'
-    NothingHappened = ... # type: 'QgsGeometryEngine.EngineOperationResult'
-    MethodNotImplemented = ... # type: 'QgsGeometryEngine.EngineOperationResult'
-    EngineError = ... # type: 'QgsGeometryEngine.EngineOperationResult'
-    NodedGeometryError = ... # type: 'QgsGeometryEngine.EngineOperationResult'
-    InvalidBaseGeometry = ... # type: 'QgsGeometryEngine.EngineOperationResult'
-    InvalidInput = ... # type: 'QgsGeometryEngine.EngineOperationResult'
-    SplitCannotSplitPoint = ... # type: 'QgsGeometryEngine.EngineOperationResult'
+    class EngineOperationResult(int):
+        Success: 'QgsGeometryEngine.EngineOperationResult'
+        NothingHappened: 'QgsGeometryEngine.EngineOperationResult'
+        MethodNotImplemented: 'QgsGeometryEngine.EngineOperationResult'
+        EngineError: 'QgsGeometryEngine.EngineOperationResult'
+        NodedGeometryError: 'QgsGeometryEngine.EngineOperationResult'
+        InvalidBaseGeometry: 'QgsGeometryEngine.EngineOperationResult'
+        InvalidInput: 'QgsGeometryEngine.EngineOperationResult'
+        SplitCannotSplitPoint: 'QgsGeometryEngine.EngineOperationResult'
 
     @typing.overload
     def __init__(self, geometry: QgsAbstractGeometry) -> None: ...
@@ -16135,15 +16135,15 @@ class QgsPolygon(QgsCurvePolygon):
 
 class QgsQuadrilateral(sip.wrapper):
 
-    class Point(int): ...
-    Point1 = ... # type: 'QgsQuadrilateral.Point'
-    Point2 = ... # type: 'QgsQuadrilateral.Point'
-    Point3 = ... # type: 'QgsQuadrilateral.Point'
-    Point4 = ... # type: 'QgsQuadrilateral.Point'
+    class Point(int):
+        Point1: 'QgsQuadrilateral.Point'
+        Point2: 'QgsQuadrilateral.Point'
+        Point3: 'QgsQuadrilateral.Point'
+        Point4: 'QgsQuadrilateral.Point'
 
-    class ConstructionOption(int): ...
-    Distance = ... # type: 'QgsQuadrilateral.ConstructionOption'
-    Projected = ... # type: 'QgsQuadrilateral.ConstructionOption'
+    class ConstructionOption(int):
+        Distance: 'QgsQuadrilateral.ConstructionOption'
+        Projected: 'QgsQuadrilateral.ConstructionOption'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -16303,9 +16303,9 @@ class QgsReferencedGeometry(QgsGeometry, QgsReferencedGeometryBase):
 
 class QgsRegularPolygon(sip.wrapper):
 
-    class ConstructionOption(int): ...
-    InscribedCircle = ... # type: 'QgsRegularPolygon.ConstructionOption'
-    CircumscribedCircle = ... # type: 'QgsRegularPolygon.ConstructionOption'
+    class ConstructionOption(int):
+        InscribedCircle: 'QgsRegularPolygon.ConstructionOption'
+        CircumscribedCircle: 'QgsRegularPolygon.ConstructionOption'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -16432,74 +16432,74 @@ class QgsConstWkbPtr(sip.wrapper):
 
 class QgsWkbTypes(sip.wrapper):
 
-    class GeometryType(int): ...
-    PointGeometry = ... # type: 'QgsWkbTypes.GeometryType'
-    LineGeometry = ... # type: 'QgsWkbTypes.GeometryType'
-    PolygonGeometry = ... # type: 'QgsWkbTypes.GeometryType'
-    UnknownGeometry = ... # type: 'QgsWkbTypes.GeometryType'
-    NullGeometry = ... # type: 'QgsWkbTypes.GeometryType'
+    class GeometryType(int):
+        PointGeometry: 'QgsWkbTypes.GeometryType'
+        LineGeometry: 'QgsWkbTypes.GeometryType'
+        PolygonGeometry: 'QgsWkbTypes.GeometryType'
+        UnknownGeometry: 'QgsWkbTypes.GeometryType'
+        NullGeometry: 'QgsWkbTypes.GeometryType'
 
-    class Type(int): ...
-    Unknown = ... # type: 'QgsWkbTypes.Type'
-    Point = ... # type: 'QgsWkbTypes.Type'
-    LineString = ... # type: 'QgsWkbTypes.Type'
-    Polygon = ... # type: 'QgsWkbTypes.Type'
-    Triangle = ... # type: 'QgsWkbTypes.Type'
-    MultiPoint = ... # type: 'QgsWkbTypes.Type'
-    MultiLineString = ... # type: 'QgsWkbTypes.Type'
-    MultiPolygon = ... # type: 'QgsWkbTypes.Type'
-    GeometryCollection = ... # type: 'QgsWkbTypes.Type'
-    CircularString = ... # type: 'QgsWkbTypes.Type'
-    CompoundCurve = ... # type: 'QgsWkbTypes.Type'
-    CurvePolygon = ... # type: 'QgsWkbTypes.Type'
-    MultiCurve = ... # type: 'QgsWkbTypes.Type'
-    MultiSurface = ... # type: 'QgsWkbTypes.Type'
-    NoGeometry = ... # type: 'QgsWkbTypes.Type'
-    PointZ = ... # type: 'QgsWkbTypes.Type'
-    LineStringZ = ... # type: 'QgsWkbTypes.Type'
-    PolygonZ = ... # type: 'QgsWkbTypes.Type'
-    TriangleZ = ... # type: 'QgsWkbTypes.Type'
-    MultiPointZ = ... # type: 'QgsWkbTypes.Type'
-    MultiLineStringZ = ... # type: 'QgsWkbTypes.Type'
-    MultiPolygonZ = ... # type: 'QgsWkbTypes.Type'
-    GeometryCollectionZ = ... # type: 'QgsWkbTypes.Type'
-    CircularStringZ = ... # type: 'QgsWkbTypes.Type'
-    CompoundCurveZ = ... # type: 'QgsWkbTypes.Type'
-    CurvePolygonZ = ... # type: 'QgsWkbTypes.Type'
-    MultiCurveZ = ... # type: 'QgsWkbTypes.Type'
-    MultiSurfaceZ = ... # type: 'QgsWkbTypes.Type'
-    PointM = ... # type: 'QgsWkbTypes.Type'
-    LineStringM = ... # type: 'QgsWkbTypes.Type'
-    PolygonM = ... # type: 'QgsWkbTypes.Type'
-    TriangleM = ... # type: 'QgsWkbTypes.Type'
-    MultiPointM = ... # type: 'QgsWkbTypes.Type'
-    MultiLineStringM = ... # type: 'QgsWkbTypes.Type'
-    MultiPolygonM = ... # type: 'QgsWkbTypes.Type'
-    GeometryCollectionM = ... # type: 'QgsWkbTypes.Type'
-    CircularStringM = ... # type: 'QgsWkbTypes.Type'
-    CompoundCurveM = ... # type: 'QgsWkbTypes.Type'
-    CurvePolygonM = ... # type: 'QgsWkbTypes.Type'
-    MultiCurveM = ... # type: 'QgsWkbTypes.Type'
-    MultiSurfaceM = ... # type: 'QgsWkbTypes.Type'
-    PointZM = ... # type: 'QgsWkbTypes.Type'
-    LineStringZM = ... # type: 'QgsWkbTypes.Type'
-    PolygonZM = ... # type: 'QgsWkbTypes.Type'
-    MultiPointZM = ... # type: 'QgsWkbTypes.Type'
-    MultiLineStringZM = ... # type: 'QgsWkbTypes.Type'
-    MultiPolygonZM = ... # type: 'QgsWkbTypes.Type'
-    GeometryCollectionZM = ... # type: 'QgsWkbTypes.Type'
-    CircularStringZM = ... # type: 'QgsWkbTypes.Type'
-    CompoundCurveZM = ... # type: 'QgsWkbTypes.Type'
-    CurvePolygonZM = ... # type: 'QgsWkbTypes.Type'
-    MultiCurveZM = ... # type: 'QgsWkbTypes.Type'
-    MultiSurfaceZM = ... # type: 'QgsWkbTypes.Type'
-    TriangleZM = ... # type: 'QgsWkbTypes.Type'
-    Point25D = ... # type: 'QgsWkbTypes.Type'
-    LineString25D = ... # type: 'QgsWkbTypes.Type'
-    Polygon25D = ... # type: 'QgsWkbTypes.Type'
-    MultiPoint25D = ... # type: 'QgsWkbTypes.Type'
-    MultiLineString25D = ... # type: 'QgsWkbTypes.Type'
-    MultiPolygon25D = ... # type: 'QgsWkbTypes.Type'
+    class Type(int):
+        Unknown: 'QgsWkbTypes.Type'
+        Point: 'QgsWkbTypes.Type'
+        LineString: 'QgsWkbTypes.Type'
+        Polygon: 'QgsWkbTypes.Type'
+        Triangle: 'QgsWkbTypes.Type'
+        MultiPoint: 'QgsWkbTypes.Type'
+        MultiLineString: 'QgsWkbTypes.Type'
+        MultiPolygon: 'QgsWkbTypes.Type'
+        GeometryCollection: 'QgsWkbTypes.Type'
+        CircularString: 'QgsWkbTypes.Type'
+        CompoundCurve: 'QgsWkbTypes.Type'
+        CurvePolygon: 'QgsWkbTypes.Type'
+        MultiCurve: 'QgsWkbTypes.Type'
+        MultiSurface: 'QgsWkbTypes.Type'
+        NoGeometry: 'QgsWkbTypes.Type'
+        PointZ: 'QgsWkbTypes.Type'
+        LineStringZ: 'QgsWkbTypes.Type'
+        PolygonZ: 'QgsWkbTypes.Type'
+        TriangleZ: 'QgsWkbTypes.Type'
+        MultiPointZ: 'QgsWkbTypes.Type'
+        MultiLineStringZ: 'QgsWkbTypes.Type'
+        MultiPolygonZ: 'QgsWkbTypes.Type'
+        GeometryCollectionZ: 'QgsWkbTypes.Type'
+        CircularStringZ: 'QgsWkbTypes.Type'
+        CompoundCurveZ: 'QgsWkbTypes.Type'
+        CurvePolygonZ: 'QgsWkbTypes.Type'
+        MultiCurveZ: 'QgsWkbTypes.Type'
+        MultiSurfaceZ: 'QgsWkbTypes.Type'
+        PointM: 'QgsWkbTypes.Type'
+        LineStringM: 'QgsWkbTypes.Type'
+        PolygonM: 'QgsWkbTypes.Type'
+        TriangleM: 'QgsWkbTypes.Type'
+        MultiPointM: 'QgsWkbTypes.Type'
+        MultiLineStringM: 'QgsWkbTypes.Type'
+        MultiPolygonM: 'QgsWkbTypes.Type'
+        GeometryCollectionM: 'QgsWkbTypes.Type'
+        CircularStringM: 'QgsWkbTypes.Type'
+        CompoundCurveM: 'QgsWkbTypes.Type'
+        CurvePolygonM: 'QgsWkbTypes.Type'
+        MultiCurveM: 'QgsWkbTypes.Type'
+        MultiSurfaceM: 'QgsWkbTypes.Type'
+        PointZM: 'QgsWkbTypes.Type'
+        LineStringZM: 'QgsWkbTypes.Type'
+        PolygonZM: 'QgsWkbTypes.Type'
+        MultiPointZM: 'QgsWkbTypes.Type'
+        MultiLineStringZM: 'QgsWkbTypes.Type'
+        MultiPolygonZM: 'QgsWkbTypes.Type'
+        GeometryCollectionZM: 'QgsWkbTypes.Type'
+        CircularStringZM: 'QgsWkbTypes.Type'
+        CompoundCurveZM: 'QgsWkbTypes.Type'
+        CurvePolygonZM: 'QgsWkbTypes.Type'
+        MultiCurveZM: 'QgsWkbTypes.Type'
+        MultiSurfaceZM: 'QgsWkbTypes.Type'
+        TriangleZM: 'QgsWkbTypes.Type'
+        Point25D: 'QgsWkbTypes.Type'
+        LineString25D: 'QgsWkbTypes.Type'
+        Polygon25D: 'QgsWkbTypes.Type'
+        MultiPoint25D: 'QgsWkbTypes.Type'
+        MultiLineString25D: 'QgsWkbTypes.Type'
+        MultiPolygon25D: 'QgsWkbTypes.Type'
 
     staticMetaObject = ... # type: QtCore.QMetaObject
 
@@ -16644,11 +16644,11 @@ class QgsSatelliteInfo(sip.wrapper):
 
 class QgsGpsInformation(sip.wrapper):
 
-    class FixStatus(int): ...
-    NoData = ... # type: 'QgsGpsInformation.FixStatus'
-    NoFix = ... # type: 'QgsGpsInformation.FixStatus'
-    Fix2D = ... # type: 'QgsGpsInformation.FixStatus'
-    Fix3D = ... # type: 'QgsGpsInformation.FixStatus'
+    class FixStatus(int):
+        NoData: 'QgsGpsInformation.FixStatus'
+        NoFix: 'QgsGpsInformation.FixStatus'
+        Fix2D: 'QgsGpsInformation.FixStatus'
+        Fix3D: 'QgsGpsInformation.FixStatus'
 
     direction = ... # type: float
     elevation = ... # type: float
@@ -16685,11 +16685,11 @@ class QgsGpsInformation(sip.wrapper):
 
 class QgsGpsConnection(QtCore.QObject):
 
-    class Status(int): ...
-    NotConnected = ... # type: 'QgsGpsConnection.Status'
-    Connected = ... # type: 'QgsGpsConnection.Status'
-    DataReceived = ... # type: 'QgsGpsConnection.Status'
-    GPSDataReceived = ... # type: 'QgsGpsConnection.Status'
+    class Status(int):
+        NotConnected: 'QgsGpsConnection.Status'
+        Connected: 'QgsGpsConnection.Status'
+        DataReceived: 'QgsGpsConnection.Status'
+        GPSDataReceived: 'QgsGpsConnection.Status'
 
     def __init__(self, dev: QtCore.QIODevice) -> None: ...
 
@@ -16765,15 +16765,15 @@ class QgsCalloutPosition(sip.wrapper):
 
 class QgsLabeling(sip.wrapper):
 
-    class PolygonPlacementFlag(int): ...
-    AllowPlacementOutsideOfPolygon = ... # type: 'QgsLabeling.PolygonPlacementFlag'
-    AllowPlacementInsideOfPolygon = ... # type: 'QgsLabeling.PolygonPlacementFlag'
+    class PolygonPlacementFlag(int):
+        AllowPlacementOutsideOfPolygon: 'QgsLabeling.PolygonPlacementFlag'
+        AllowPlacementInsideOfPolygon: 'QgsLabeling.PolygonPlacementFlag'
 
-    class LinePlacementFlag(int): ...
-    OnLine = ... # type: 'QgsLabeling.LinePlacementFlag'
-    AboveLine = ... # type: 'QgsLabeling.LinePlacementFlag'
-    BelowLine = ... # type: 'QgsLabeling.LinePlacementFlag'
-    MapOrientation = ... # type: 'QgsLabeling.LinePlacementFlag'
+    class LinePlacementFlag(int):
+        OnLine: 'QgsLabeling.LinePlacementFlag'
+        AboveLine: 'QgsLabeling.LinePlacementFlag'
+        BelowLine: 'QgsLabeling.LinePlacementFlag'
+        MapOrientation: 'QgsLabeling.LinePlacementFlag'
 
     class LinePlacementFlags(sip.wrapper):
 
@@ -16811,25 +16811,25 @@ class QgsLabeling(sip.wrapper):
 
 class QgsLabelingEngineSettings(sip.wrapper):
 
-    class PlacementEngineVersion(int): ...
-    PlacementEngineVersion1 = ... # type: 'QgsLabelingEngineSettings.PlacementEngineVersion'
-    PlacementEngineVersion2 = ... # type: 'QgsLabelingEngineSettings.PlacementEngineVersion'
+    class PlacementEngineVersion(int):
+        PlacementEngineVersion1: 'QgsLabelingEngineSettings.PlacementEngineVersion'
+        PlacementEngineVersion2: 'QgsLabelingEngineSettings.PlacementEngineVersion'
 
-    class Search(int): ...
-    Chain = ... # type: 'QgsLabelingEngineSettings.Search'
-    Popmusic_Tabu = ... # type: 'QgsLabelingEngineSettings.Search'
-    Popmusic_Chain = ... # type: 'QgsLabelingEngineSettings.Search'
-    Popmusic_Tabu_Chain = ... # type: 'QgsLabelingEngineSettings.Search'
-    Falp = ... # type: 'QgsLabelingEngineSettings.Search'
+    class Search(int):
+        Chain: 'QgsLabelingEngineSettings.Search'
+        Popmusic_Tabu: 'QgsLabelingEngineSettings.Search'
+        Popmusic_Chain: 'QgsLabelingEngineSettings.Search'
+        Popmusic_Tabu_Chain: 'QgsLabelingEngineSettings.Search'
+        Falp: 'QgsLabelingEngineSettings.Search'
 
-    class Flag(int): ...
-    UseAllLabels = ... # type: 'QgsLabelingEngineSettings.Flag'
-    UsePartialCandidates = ... # type: 'QgsLabelingEngineSettings.Flag'
-    RenderOutlineLabels = ... # type: 'QgsLabelingEngineSettings.Flag'
-    DrawLabelRectOnly = ... # type: 'QgsLabelingEngineSettings.Flag'
-    DrawCandidates = ... # type: 'QgsLabelingEngineSettings.Flag'
-    DrawUnplacedLabels = ... # type: 'QgsLabelingEngineSettings.Flag'
-    CollectUnplacedLabels = ... # type: 'QgsLabelingEngineSettings.Flag'
+    class Flag(int):
+        UseAllLabels: 'QgsLabelingEngineSettings.Flag'
+        UsePartialCandidates: 'QgsLabelingEngineSettings.Flag'
+        RenderOutlineLabels: 'QgsLabelingEngineSettings.Flag'
+        DrawLabelRectOnly: 'QgsLabelingEngineSettings.Flag'
+        DrawCandidates: 'QgsLabelingEngineSettings.Flag'
+        DrawUnplacedLabels: 'QgsLabelingEngineSettings.Flag'
+        CollectUnplacedLabels: 'QgsLabelingEngineSettings.Flag'
 
     class Flags(sip.wrapper):
 
@@ -16887,24 +16887,24 @@ class QgsLabelingResults(sip.wrapper):
 
 class QgsLabelLineSettings(sip.wrapper):
 
-    class AnchorTextPoint(int): ...
-    StartOfText = ... # type: 'QgsLabelLineSettings.AnchorTextPoint'
-    CenterOfText = ... # type: 'QgsLabelLineSettings.AnchorTextPoint'
-    EndOfText = ... # type: 'QgsLabelLineSettings.AnchorTextPoint'
-    FollowPlacement = ... # type: 'QgsLabelLineSettings.AnchorTextPoint'
+    class AnchorTextPoint(int):
+        StartOfText: 'QgsLabelLineSettings.AnchorTextPoint'
+        CenterOfText: 'QgsLabelLineSettings.AnchorTextPoint'
+        EndOfText: 'QgsLabelLineSettings.AnchorTextPoint'
+        FollowPlacement: 'QgsLabelLineSettings.AnchorTextPoint'
 
-    class AnchorClipping(int): ...
-    UseVisiblePartsOfLine = ... # type: 'QgsLabelLineSettings.AnchorClipping'
-    UseEntireLine = ... # type: 'QgsLabelLineSettings.AnchorClipping'
+    class AnchorClipping(int):
+        UseVisiblePartsOfLine: 'QgsLabelLineSettings.AnchorClipping'
+        UseEntireLine: 'QgsLabelLineSettings.AnchorClipping'
 
-    class AnchorType(int): ...
-    HintOnly = ... # type: 'QgsLabelLineSettings.AnchorType'
-    Strict = ... # type: 'QgsLabelLineSettings.AnchorType'
+    class AnchorType(int):
+        HintOnly: 'QgsLabelLineSettings.AnchorType'
+        Strict: 'QgsLabelLineSettings.AnchorType'
 
-    class DirectionSymbolPlacement(int): ...
-    SymbolLeftRight = ... # type: 'QgsLabelLineSettings.DirectionSymbolPlacement'
-    SymbolAbove = ... # type: 'QgsLabelLineSettings.DirectionSymbolPlacement'
-    SymbolBelow = ... # type: 'QgsLabelLineSettings.DirectionSymbolPlacement'
+    class DirectionSymbolPlacement(int):
+        SymbolLeftRight: 'QgsLabelLineSettings.DirectionSymbolPlacement'
+        SymbolAbove: 'QgsLabelLineSettings.DirectionSymbolPlacement'
+        SymbolBelow: 'QgsLabelLineSettings.DirectionSymbolPlacement'
 
     staticMetaObject = ... # type: QtCore.QMetaObject
 
@@ -16946,10 +16946,10 @@ class QgsLabelLineSettings(sip.wrapper):
 
 class QgsLabelObstacleSettings(sip.wrapper):
 
-    class ObstacleType(int): ...
-    PolygonInterior = ... # type: 'QgsLabelObstacleSettings.ObstacleType'
-    PolygonBoundary = ... # type: 'QgsLabelObstacleSettings.ObstacleType'
-    PolygonWhole = ... # type: 'QgsLabelObstacleSettings.ObstacleType'
+    class ObstacleType(int):
+        PolygonInterior: 'QgsLabelObstacleSettings.ObstacleType'
+        PolygonBoundary: 'QgsLabelObstacleSettings.ObstacleType'
+        PolygonWhole: 'QgsLabelObstacleSettings.ObstacleType'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -17038,141 +17038,141 @@ class QgsLabelThinningSettings(sip.wrapper):
 
 class QgsPalLayerSettings(sip.wrapper):
 
-    class Property(int): ...
-    Size = ... # type: 'QgsPalLayerSettings.Property'
-    Bold = ... # type: 'QgsPalLayerSettings.Property'
-    Italic = ... # type: 'QgsPalLayerSettings.Property'
-    Underline = ... # type: 'QgsPalLayerSettings.Property'
-    Color = ... # type: 'QgsPalLayerSettings.Property'
-    Strikeout = ... # type: 'QgsPalLayerSettings.Property'
-    Family = ... # type: 'QgsPalLayerSettings.Property'
-    FontStyle = ... # type: 'QgsPalLayerSettings.Property'
-    FontSizeUnit = ... # type: 'QgsPalLayerSettings.Property'
-    FontTransp = ... # type: 'QgsPalLayerSettings.Property'
-    FontOpacity = ... # type: 'QgsPalLayerSettings.Property'
-    FontCase = ... # type: 'QgsPalLayerSettings.Property'
-    FontLetterSpacing = ... # type: 'QgsPalLayerSettings.Property'
-    FontWordSpacing = ... # type: 'QgsPalLayerSettings.Property'
-    FontBlendMode = ... # type: 'QgsPalLayerSettings.Property'
-    FontStretchFactor = ... # type: 'QgsPalLayerSettings.Property'
-    MultiLineWrapChar = ... # type: 'QgsPalLayerSettings.Property'
-    AutoWrapLength = ... # type: 'QgsPalLayerSettings.Property'
-    MultiLineHeight = ... # type: 'QgsPalLayerSettings.Property'
-    MultiLineAlignment = ... # type: 'QgsPalLayerSettings.Property'
-    TextOrientation = ... # type: 'QgsPalLayerSettings.Property'
-    DirSymbDraw = ... # type: 'QgsPalLayerSettings.Property'
-    DirSymbLeft = ... # type: 'QgsPalLayerSettings.Property'
-    DirSymbRight = ... # type: 'QgsPalLayerSettings.Property'
-    DirSymbPlacement = ... # type: 'QgsPalLayerSettings.Property'
-    DirSymbReverse = ... # type: 'QgsPalLayerSettings.Property'
-    NumFormat = ... # type: 'QgsPalLayerSettings.Property'
-    NumDecimals = ... # type: 'QgsPalLayerSettings.Property'
-    NumPlusSign = ... # type: 'QgsPalLayerSettings.Property'
-    BufferDraw = ... # type: 'QgsPalLayerSettings.Property'
-    BufferSize = ... # type: 'QgsPalLayerSettings.Property'
-    BufferUnit = ... # type: 'QgsPalLayerSettings.Property'
-    BufferColor = ... # type: 'QgsPalLayerSettings.Property'
-    BufferTransp = ... # type: 'QgsPalLayerSettings.Property'
-    BufferOpacity = ... # type: 'QgsPalLayerSettings.Property'
-    BufferJoinStyle = ... # type: 'QgsPalLayerSettings.Property'
-    BufferBlendMode = ... # type: 'QgsPalLayerSettings.Property'
-    MaskEnabled = ... # type: 'QgsPalLayerSettings.Property'
-    MaskBufferSize = ... # type: 'QgsPalLayerSettings.Property'
-    MaskBufferUnit = ... # type: 'QgsPalLayerSettings.Property'
-    MaskOpacity = ... # type: 'QgsPalLayerSettings.Property'
-    MaskJoinStyle = ... # type: 'QgsPalLayerSettings.Property'
-    ShapeDraw = ... # type: 'QgsPalLayerSettings.Property'
-    ShapeKind = ... # type: 'QgsPalLayerSettings.Property'
-    ShapeSVGFile = ... # type: 'QgsPalLayerSettings.Property'
-    ShapeSizeType = ... # type: 'QgsPalLayerSettings.Property'
-    ShapeSizeX = ... # type: 'QgsPalLayerSettings.Property'
-    ShapeSizeY = ... # type: 'QgsPalLayerSettings.Property'
-    ShapeSizeUnits = ... # type: 'QgsPalLayerSettings.Property'
-    ShapeRotationType = ... # type: 'QgsPalLayerSettings.Property'
-    ShapeRotation = ... # type: 'QgsPalLayerSettings.Property'
-    ShapeOffset = ... # type: 'QgsPalLayerSettings.Property'
-    ShapeOffsetUnits = ... # type: 'QgsPalLayerSettings.Property'
-    ShapeRadii = ... # type: 'QgsPalLayerSettings.Property'
-    ShapeRadiiUnits = ... # type: 'QgsPalLayerSettings.Property'
-    ShapeTransparency = ... # type: 'QgsPalLayerSettings.Property'
-    ShapeOpacity = ... # type: 'QgsPalLayerSettings.Property'
-    ShapeBlendMode = ... # type: 'QgsPalLayerSettings.Property'
-    ShapeFillColor = ... # type: 'QgsPalLayerSettings.Property'
-    ShapeStrokeColor = ... # type: 'QgsPalLayerSettings.Property'
-    ShapeStrokeWidth = ... # type: 'QgsPalLayerSettings.Property'
-    ShapeStrokeWidthUnits = ... # type: 'QgsPalLayerSettings.Property'
-    ShapeJoinStyle = ... # type: 'QgsPalLayerSettings.Property'
-    ShadowDraw = ... # type: 'QgsPalLayerSettings.Property'
-    ShadowUnder = ... # type: 'QgsPalLayerSettings.Property'
-    ShadowOffsetAngle = ... # type: 'QgsPalLayerSettings.Property'
-    ShadowOffsetDist = ... # type: 'QgsPalLayerSettings.Property'
-    ShadowOffsetUnits = ... # type: 'QgsPalLayerSettings.Property'
-    ShadowRadius = ... # type: 'QgsPalLayerSettings.Property'
-    ShadowRadiusUnits = ... # type: 'QgsPalLayerSettings.Property'
-    ShadowTransparency = ... # type: 'QgsPalLayerSettings.Property'
-    ShadowOpacity = ... # type: 'QgsPalLayerSettings.Property'
-    ShadowScale = ... # type: 'QgsPalLayerSettings.Property'
-    ShadowColor = ... # type: 'QgsPalLayerSettings.Property'
-    ShadowBlendMode = ... # type: 'QgsPalLayerSettings.Property'
-    CentroidWhole = ... # type: 'QgsPalLayerSettings.Property'
-    OffsetQuad = ... # type: 'QgsPalLayerSettings.Property'
-    OffsetXY = ... # type: 'QgsPalLayerSettings.Property'
-    OffsetUnits = ... # type: 'QgsPalLayerSettings.Property'
-    LabelDistance = ... # type: 'QgsPalLayerSettings.Property'
-    DistanceUnits = ... # type: 'QgsPalLayerSettings.Property'
-    OffsetRotation = ... # type: 'QgsPalLayerSettings.Property'
-    CurvedCharAngleInOut = ... # type: 'QgsPalLayerSettings.Property'
-    PositionX = ... # type: 'QgsPalLayerSettings.Property'
-    PositionY = ... # type: 'QgsPalLayerSettings.Property'
-    PositionPoint = ... # type: 'QgsPalLayerSettings.Property'
-    Hali = ... # type: 'QgsPalLayerSettings.Property'
-    Vali = ... # type: 'QgsPalLayerSettings.Property'
-    Rotation = ... # type: 'QgsPalLayerSettings.Property'
-    LabelRotation = ... # type: 'QgsPalLayerSettings.Property'
-    RepeatDistance = ... # type: 'QgsPalLayerSettings.Property'
-    RepeatDistanceUnit = ... # type: 'QgsPalLayerSettings.Property'
-    Priority = ... # type: 'QgsPalLayerSettings.Property'
-    PredefinedPositionOrder = ... # type: 'QgsPalLayerSettings.Property'
-    LinePlacementOptions = ... # type: 'QgsPalLayerSettings.Property'
-    OverrunDistance = ... # type: 'QgsPalLayerSettings.Property'
-    LabelAllParts = ... # type: 'QgsPalLayerSettings.Property'
-    PolygonLabelOutside = ... # type: 'QgsPalLayerSettings.Property'
-    LineAnchorPercent = ... # type: 'QgsPalLayerSettings.Property'
-    LineAnchorClipping = ... # type: 'QgsPalLayerSettings.Property'
-    LineAnchorType = ... # type: 'QgsPalLayerSettings.Property'
-    LineAnchorTextPoint = ... # type: 'QgsPalLayerSettings.Property'
-    ScaleVisibility = ... # type: 'QgsPalLayerSettings.Property'
-    MinScale = ... # type: 'QgsPalLayerSettings.Property'
-    MinimumScale = ... # type: 'QgsPalLayerSettings.Property'
-    MaxScale = ... # type: 'QgsPalLayerSettings.Property'
-    MaximumScale = ... # type: 'QgsPalLayerSettings.Property'
-    FontLimitPixel = ... # type: 'QgsPalLayerSettings.Property'
-    FontMinPixel = ... # type: 'QgsPalLayerSettings.Property'
-    FontMaxPixel = ... # type: 'QgsPalLayerSettings.Property'
-    IsObstacle = ... # type: 'QgsPalLayerSettings.Property'
-    ObstacleFactor = ... # type: 'QgsPalLayerSettings.Property'
-    ZIndex = ... # type: 'QgsPalLayerSettings.Property'
-    CalloutDraw = ... # type: 'QgsPalLayerSettings.Property'
-    AllowDegradedPlacement = ... # type: 'QgsPalLayerSettings.Property'
-    OverlapHandling = ... # type: 'QgsPalLayerSettings.Property'
-    Show = ... # type: 'QgsPalLayerSettings.Property'
-    AlwaysShow = ... # type: 'QgsPalLayerSettings.Property'
+    class Property(int):
+        Size: 'QgsPalLayerSettings.Property'
+        Bold: 'QgsPalLayerSettings.Property'
+        Italic: 'QgsPalLayerSettings.Property'
+        Underline: 'QgsPalLayerSettings.Property'
+        Color: 'QgsPalLayerSettings.Property'
+        Strikeout: 'QgsPalLayerSettings.Property'
+        Family: 'QgsPalLayerSettings.Property'
+        FontStyle: 'QgsPalLayerSettings.Property'
+        FontSizeUnit: 'QgsPalLayerSettings.Property'
+        FontTransp: 'QgsPalLayerSettings.Property'
+        FontOpacity: 'QgsPalLayerSettings.Property'
+        FontCase: 'QgsPalLayerSettings.Property'
+        FontLetterSpacing: 'QgsPalLayerSettings.Property'
+        FontWordSpacing: 'QgsPalLayerSettings.Property'
+        FontBlendMode: 'QgsPalLayerSettings.Property'
+        FontStretchFactor: 'QgsPalLayerSettings.Property'
+        MultiLineWrapChar: 'QgsPalLayerSettings.Property'
+        AutoWrapLength: 'QgsPalLayerSettings.Property'
+        MultiLineHeight: 'QgsPalLayerSettings.Property'
+        MultiLineAlignment: 'QgsPalLayerSettings.Property'
+        TextOrientation: 'QgsPalLayerSettings.Property'
+        DirSymbDraw: 'QgsPalLayerSettings.Property'
+        DirSymbLeft: 'QgsPalLayerSettings.Property'
+        DirSymbRight: 'QgsPalLayerSettings.Property'
+        DirSymbPlacement: 'QgsPalLayerSettings.Property'
+        DirSymbReverse: 'QgsPalLayerSettings.Property'
+        NumFormat: 'QgsPalLayerSettings.Property'
+        NumDecimals: 'QgsPalLayerSettings.Property'
+        NumPlusSign: 'QgsPalLayerSettings.Property'
+        BufferDraw: 'QgsPalLayerSettings.Property'
+        BufferSize: 'QgsPalLayerSettings.Property'
+        BufferUnit: 'QgsPalLayerSettings.Property'
+        BufferColor: 'QgsPalLayerSettings.Property'
+        BufferTransp: 'QgsPalLayerSettings.Property'
+        BufferOpacity: 'QgsPalLayerSettings.Property'
+        BufferJoinStyle: 'QgsPalLayerSettings.Property'
+        BufferBlendMode: 'QgsPalLayerSettings.Property'
+        MaskEnabled: 'QgsPalLayerSettings.Property'
+        MaskBufferSize: 'QgsPalLayerSettings.Property'
+        MaskBufferUnit: 'QgsPalLayerSettings.Property'
+        MaskOpacity: 'QgsPalLayerSettings.Property'
+        MaskJoinStyle: 'QgsPalLayerSettings.Property'
+        ShapeDraw: 'QgsPalLayerSettings.Property'
+        ShapeKind: 'QgsPalLayerSettings.Property'
+        ShapeSVGFile: 'QgsPalLayerSettings.Property'
+        ShapeSizeType: 'QgsPalLayerSettings.Property'
+        ShapeSizeX: 'QgsPalLayerSettings.Property'
+        ShapeSizeY: 'QgsPalLayerSettings.Property'
+        ShapeSizeUnits: 'QgsPalLayerSettings.Property'
+        ShapeRotationType: 'QgsPalLayerSettings.Property'
+        ShapeRotation: 'QgsPalLayerSettings.Property'
+        ShapeOffset: 'QgsPalLayerSettings.Property'
+        ShapeOffsetUnits: 'QgsPalLayerSettings.Property'
+        ShapeRadii: 'QgsPalLayerSettings.Property'
+        ShapeRadiiUnits: 'QgsPalLayerSettings.Property'
+        ShapeTransparency: 'QgsPalLayerSettings.Property'
+        ShapeOpacity: 'QgsPalLayerSettings.Property'
+        ShapeBlendMode: 'QgsPalLayerSettings.Property'
+        ShapeFillColor: 'QgsPalLayerSettings.Property'
+        ShapeStrokeColor: 'QgsPalLayerSettings.Property'
+        ShapeStrokeWidth: 'QgsPalLayerSettings.Property'
+        ShapeStrokeWidthUnits: 'QgsPalLayerSettings.Property'
+        ShapeJoinStyle: 'QgsPalLayerSettings.Property'
+        ShadowDraw: 'QgsPalLayerSettings.Property'
+        ShadowUnder: 'QgsPalLayerSettings.Property'
+        ShadowOffsetAngle: 'QgsPalLayerSettings.Property'
+        ShadowOffsetDist: 'QgsPalLayerSettings.Property'
+        ShadowOffsetUnits: 'QgsPalLayerSettings.Property'
+        ShadowRadius: 'QgsPalLayerSettings.Property'
+        ShadowRadiusUnits: 'QgsPalLayerSettings.Property'
+        ShadowTransparency: 'QgsPalLayerSettings.Property'
+        ShadowOpacity: 'QgsPalLayerSettings.Property'
+        ShadowScale: 'QgsPalLayerSettings.Property'
+        ShadowColor: 'QgsPalLayerSettings.Property'
+        ShadowBlendMode: 'QgsPalLayerSettings.Property'
+        CentroidWhole: 'QgsPalLayerSettings.Property'
+        OffsetQuad: 'QgsPalLayerSettings.Property'
+        OffsetXY: 'QgsPalLayerSettings.Property'
+        OffsetUnits: 'QgsPalLayerSettings.Property'
+        LabelDistance: 'QgsPalLayerSettings.Property'
+        DistanceUnits: 'QgsPalLayerSettings.Property'
+        OffsetRotation: 'QgsPalLayerSettings.Property'
+        CurvedCharAngleInOut: 'QgsPalLayerSettings.Property'
+        PositionX: 'QgsPalLayerSettings.Property'
+        PositionY: 'QgsPalLayerSettings.Property'
+        PositionPoint: 'QgsPalLayerSettings.Property'
+        Hali: 'QgsPalLayerSettings.Property'
+        Vali: 'QgsPalLayerSettings.Property'
+        Rotation: 'QgsPalLayerSettings.Property'
+        LabelRotation: 'QgsPalLayerSettings.Property'
+        RepeatDistance: 'QgsPalLayerSettings.Property'
+        RepeatDistanceUnit: 'QgsPalLayerSettings.Property'
+        Priority: 'QgsPalLayerSettings.Property'
+        PredefinedPositionOrder: 'QgsPalLayerSettings.Property'
+        LinePlacementOptions: 'QgsPalLayerSettings.Property'
+        OverrunDistance: 'QgsPalLayerSettings.Property'
+        LabelAllParts: 'QgsPalLayerSettings.Property'
+        PolygonLabelOutside: 'QgsPalLayerSettings.Property'
+        LineAnchorPercent: 'QgsPalLayerSettings.Property'
+        LineAnchorClipping: 'QgsPalLayerSettings.Property'
+        LineAnchorType: 'QgsPalLayerSettings.Property'
+        LineAnchorTextPoint: 'QgsPalLayerSettings.Property'
+        ScaleVisibility: 'QgsPalLayerSettings.Property'
+        MinScale: 'QgsPalLayerSettings.Property'
+        MinimumScale: 'QgsPalLayerSettings.Property'
+        MaxScale: 'QgsPalLayerSettings.Property'
+        MaximumScale: 'QgsPalLayerSettings.Property'
+        FontLimitPixel: 'QgsPalLayerSettings.Property'
+        FontMinPixel: 'QgsPalLayerSettings.Property'
+        FontMaxPixel: 'QgsPalLayerSettings.Property'
+        IsObstacle: 'QgsPalLayerSettings.Property'
+        ObstacleFactor: 'QgsPalLayerSettings.Property'
+        ZIndex: 'QgsPalLayerSettings.Property'
+        CalloutDraw: 'QgsPalLayerSettings.Property'
+        AllowDegradedPlacement: 'QgsPalLayerSettings.Property'
+        OverlapHandling: 'QgsPalLayerSettings.Property'
+        Show: 'QgsPalLayerSettings.Property'
+        AlwaysShow: 'QgsPalLayerSettings.Property'
 
-    class ObstacleType(int): ...
-    PolygonInterior = ... # type: 'QgsPalLayerSettings.ObstacleType'
-    PolygonBoundary = ... # type: 'QgsPalLayerSettings.ObstacleType'
-    PolygonWhole = ... # type: 'QgsPalLayerSettings.ObstacleType'
+    class ObstacleType(int):
+        PolygonInterior: 'QgsPalLayerSettings.ObstacleType'
+        PolygonBoundary: 'QgsPalLayerSettings.ObstacleType'
+        PolygonWhole: 'QgsPalLayerSettings.ObstacleType'
 
-    class DirectionSymbols(int): ...
-    SymbolLeftRight = ... # type: 'QgsPalLayerSettings.DirectionSymbols'
-    SymbolAbove = ... # type: 'QgsPalLayerSettings.DirectionSymbols'
-    SymbolBelow = ... # type: 'QgsPalLayerSettings.DirectionSymbols'
+    class DirectionSymbols(int):
+        SymbolLeftRight: 'QgsPalLayerSettings.DirectionSymbols'
+        SymbolAbove: 'QgsPalLayerSettings.DirectionSymbols'
+        SymbolBelow: 'QgsPalLayerSettings.DirectionSymbols'
 
-    class LinePlacementFlags(int): ...
-    OnLine = ... # type: 'QgsPalLayerSettings.LinePlacementFlags'
-    AboveLine = ... # type: 'QgsPalLayerSettings.LinePlacementFlags'
-    BelowLine = ... # type: 'QgsPalLayerSettings.LinePlacementFlags'
-    MapOrientation = ... # type: 'QgsPalLayerSettings.LinePlacementFlags'
+    class LinePlacementFlags(int):
+        OnLine: 'QgsPalLayerSettings.LinePlacementFlags'
+        AboveLine: 'QgsPalLayerSettings.LinePlacementFlags'
+        BelowLine: 'QgsPalLayerSettings.LinePlacementFlags'
+        MapOrientation: 'QgsPalLayerSettings.LinePlacementFlags'
 
     angleOffset = ... # type: float
     autoWrapLength = ... # type: int
@@ -17432,10 +17432,10 @@ class QgsRuleBasedLabeling(QgsAbstractVectorLayerLabeling):
 
     class Rule(sip.wrapper):
 
-        class RegisterResult(int): ...
-        Filtered = ... # type: 'QgsRuleBasedLabeling.Rule.RegisterResult'
-        Inactive = ... # type: 'QgsRuleBasedLabeling.Rule.RegisterResult'
-        Registered = ... # type: 'QgsRuleBasedLabeling.Rule.RegisterResult'
+        class RegisterResult(int):
+            Filtered: 'QgsRuleBasedLabeling.Rule.RegisterResult'
+            Inactive: 'QgsRuleBasedLabeling.Rule.RegisterResult'
+            Registered: 'QgsRuleBasedLabeling.Rule.RegisterResult'
 
         def __init__(self, settings: QgsPalLayerSettings, maximumScale: float = ..., minimumScale: float = ..., filterExp: str = ..., description: str = ..., elseRule: bool = ...) -> None: ...
 
@@ -17504,20 +17504,20 @@ class QgsVectorLayerSimpleLabeling(QgsAbstractVectorLayerLabeling):
 
 class QgsLayerTreeModelLegendNode(QtCore.QObject):
 
-    class NodeTypes(int): ...
-    SimpleLegend = ... # type: 'QgsLayerTreeModelLegendNode.NodeTypes'
-    SymbolLegend = ... # type: 'QgsLayerTreeModelLegendNode.NodeTypes'
-    RasterSymbolLegend = ... # type: 'QgsLayerTreeModelLegendNode.NodeTypes'
-    ImageLegend = ... # type: 'QgsLayerTreeModelLegendNode.NodeTypes'
-    WmsLegend = ... # type: 'QgsLayerTreeModelLegendNode.NodeTypes'
-    DataDefinedSizeLegend = ... # type: 'QgsLayerTreeModelLegendNode.NodeTypes'
-    EmbeddedWidget = ... # type: 'QgsLayerTreeModelLegendNode.NodeTypes'
-    ColorRampLegend = ... # type: 'QgsLayerTreeModelLegendNode.NodeTypes'
+    class NodeTypes(int):
+        SimpleLegend: 'QgsLayerTreeModelLegendNode.NodeTypes'
+        SymbolLegend: 'QgsLayerTreeModelLegendNode.NodeTypes'
+        RasterSymbolLegend: 'QgsLayerTreeModelLegendNode.NodeTypes'
+        ImageLegend: 'QgsLayerTreeModelLegendNode.NodeTypes'
+        WmsLegend: 'QgsLayerTreeModelLegendNode.NodeTypes'
+        DataDefinedSizeLegend: 'QgsLayerTreeModelLegendNode.NodeTypes'
+        EmbeddedWidget: 'QgsLayerTreeModelLegendNode.NodeTypes'
+        ColorRampLegend: 'QgsLayerTreeModelLegendNode.NodeTypes'
 
-    class LegendNodeRoles(int): ...
-    RuleKeyRole = ... # type: 'QgsLayerTreeModelLegendNode.LegendNodeRoles'
-    ParentRuleKeyRole = ... # type: 'QgsLayerTreeModelLegendNode.LegendNodeRoles'
-    NodeTypeRole = ... # type: 'QgsLayerTreeModelLegendNode.LegendNodeRoles'
+    class LegendNodeRoles(int):
+        RuleKeyRole: 'QgsLayerTreeModelLegendNode.LegendNodeRoles'
+        ParentRuleKeyRole: 'QgsLayerTreeModelLegendNode.LegendNodeRoles'
+        NodeTypeRole: 'QgsLayerTreeModelLegendNode.LegendNodeRoles'
 
     class ItemContext(sip.wrapper):
 
@@ -17596,9 +17596,9 @@ class QgsColorRampLegendNode(QgsLayerTreeModelLegendNode):
 
 class QgsColorRampLegendNodeSettings(sip.wrapper):
 
-    class Direction(int): ...
-    MinimumToMaximum = ... # type: 'QgsColorRampLegendNodeSettings.Direction'
-    MaximumToMinimum = ... # type: 'QgsColorRampLegendNodeSettings.Direction'
+    class Direction(int):
+        MinimumToMaximum: 'QgsColorRampLegendNodeSettings.Direction'
+        MaximumToMinimum: 'QgsColorRampLegendNodeSettings.Direction'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -17629,9 +17629,9 @@ class QgsColorRampLegendNodeSettings(sip.wrapper):
 
 class QgsLayerTreeNode(QtCore.QObject):
 
-    class NodeType(int): ...
-    NodeGroup = ... # type: 'QgsLayerTreeNode.NodeType'
-    NodeLayer = ... # type: 'QgsLayerTreeNode.NodeType'
+    class NodeType(int):
+        NodeGroup: 'QgsLayerTreeNode.NodeType'
+        NodeLayer: 'QgsLayerTreeNode.NodeType'
 
     @typing.overload
     def __init__(self, t: 'QgsLayerTreeNode.NodeType', checked: bool = ...) -> None: ...
@@ -17760,10 +17760,10 @@ class QgsLayerTree(QgsLayerTreeGroup):
 
 class QgsLayerTreeLayer(QgsLayerTreeNode):
 
-    class LegendNodesSplitBehavior(int): ...
-    UseDefaultLegendSetting = ... # type: 'QgsLayerTreeLayer.LegendNodesSplitBehavior'
-    AllowSplittingLegendNodesOverMultipleColumns = ... # type: 'QgsLayerTreeLayer.LegendNodesSplitBehavior'
-    PreventSplittingLegendNodesOverMultipleColumns = ... # type: 'QgsLayerTreeLayer.LegendNodesSplitBehavior'
+    class LegendNodesSplitBehavior(int):
+        UseDefaultLegendSetting: 'QgsLayerTreeLayer.LegendNodesSplitBehavior'
+        AllowSplittingLegendNodesOverMultipleColumns: 'QgsLayerTreeLayer.LegendNodesSplitBehavior'
+        PreventSplittingLegendNodesOverMultipleColumns: 'QgsLayerTreeLayer.LegendNodesSplitBehavior'
 
     @typing.overload
     def __init__(self, layer: QgsMapLayer) -> None: ...
@@ -17802,17 +17802,17 @@ class QgsLayerTreeLayer(QgsLayerTreeNode):
 
 class QgsLayerTreeModel(QtCore.QAbstractItemModel):
 
-    class Flag(int): ...
-    ShowLegend = ... # type: 'QgsLayerTreeModel.Flag'
-    ShowLegendAsTree = ... # type: 'QgsLayerTreeModel.Flag'
-    DeferredLegendInvalidation = ... # type: 'QgsLayerTreeModel.Flag'
-    UseEmbeddedWidgets = ... # type: 'QgsLayerTreeModel.Flag'
-    UseTextFormatting = ... # type: 'QgsLayerTreeModel.Flag'
-    AllowNodeReorder = ... # type: 'QgsLayerTreeModel.Flag'
-    AllowNodeRename = ... # type: 'QgsLayerTreeModel.Flag'
-    AllowNodeChangeVisibility = ... # type: 'QgsLayerTreeModel.Flag'
-    AllowLegendChangeState = ... # type: 'QgsLayerTreeModel.Flag'
-    ActionHierarchical = ... # type: 'QgsLayerTreeModel.Flag'
+    class Flag(int):
+        ShowLegend: 'QgsLayerTreeModel.Flag'
+        ShowLegendAsTree: 'QgsLayerTreeModel.Flag'
+        DeferredLegendInvalidation: 'QgsLayerTreeModel.Flag'
+        UseEmbeddedWidgets: 'QgsLayerTreeModel.Flag'
+        UseTextFormatting: 'QgsLayerTreeModel.Flag'
+        AllowNodeReorder: 'QgsLayerTreeModel.Flag'
+        AllowNodeRename: 'QgsLayerTreeModel.Flag'
+        AllowNodeChangeVisibility: 'QgsLayerTreeModel.Flag'
+        AllowLegendChangeState: 'QgsLayerTreeModel.Flag'
+        ActionHierarchical: 'QgsLayerTreeModel.Flag'
 
     class Flags(sip.wrapper):
 
@@ -18165,12 +18165,12 @@ class QgsReportSectionContext(sip.wrapper):
 
 class QgsAbstractReportSection(QgsAbstractLayoutIterator):
 
-    class SubSection(int): ...
-    Header = ... # type: 'QgsAbstractReportSection.SubSection'
-    Body = ... # type: 'QgsAbstractReportSection.SubSection'
-    Children = ... # type: 'QgsAbstractReportSection.SubSection'
-    Footer = ... # type: 'QgsAbstractReportSection.SubSection'
-    End = ... # type: 'QgsAbstractReportSection.SubSection'
+    class SubSection(int):
+        Header: 'QgsAbstractReportSection.SubSection'
+        Body: 'QgsAbstractReportSection.SubSection'
+        Children: 'QgsAbstractReportSection.SubSection'
+        Footer: 'QgsAbstractReportSection.SubSection'
+        End: 'QgsAbstractReportSection.SubSection'
 
     def __init__(self, parentSection: typing.Optional['QgsAbstractReportSection'] = ...) -> None: ...
 
@@ -18230,19 +18230,19 @@ class QgsLayoutUndoObjectInterface(sip.wrapper):
 
 class QgsLayout(QtWidgets.QGraphicsScene, QgsExpressionContextGenerator, QgsLayoutUndoObjectInterface):
 
-    class UndoCommand(int): ...
-    UndoLayoutDpi = ... # type: 'QgsLayout.UndoCommand'
-    UndoNone = ... # type: 'QgsLayout.UndoCommand'
+    class UndoCommand(int):
+        UndoLayoutDpi: 'QgsLayout.UndoCommand'
+        UndoNone: 'QgsLayout.UndoCommand'
 
-    class ZValues(int): ...
-    ZPage = ... # type: 'QgsLayout.ZValues'
-    ZItem = ... # type: 'QgsLayout.ZValues'
-    ZGrid = ... # type: 'QgsLayout.ZValues'
-    ZGuide = ... # type: 'QgsLayout.ZValues'
-    ZSmartGuide = ... # type: 'QgsLayout.ZValues'
-    ZMouseHandles = ... # type: 'QgsLayout.ZValues'
-    ZViewTool = ... # type: 'QgsLayout.ZValues'
-    ZSnapIndicator = ... # type: 'QgsLayout.ZValues'
+    class ZValues(int):
+        ZPage: 'QgsLayout.ZValues'
+        ZItem: 'QgsLayout.ZValues'
+        ZGrid: 'QgsLayout.ZValues'
+        ZGuide: 'QgsLayout.ZValues'
+        ZSmartGuide: 'QgsLayout.ZValues'
+        ZMouseHandles: 'QgsLayout.ZValues'
+        ZViewTool: 'QgsLayout.ZValues'
+        ZSnapIndicator: 'QgsLayout.ZValues'
 
     def __init__(self, project: 'QgsProject') -> None: ...
 
@@ -18324,30 +18324,30 @@ class QgsLayout(QtWidgets.QGraphicsScene, QgsExpressionContextGenerator, QgsLayo
 
 class QgsLayoutAligner(sip.wrapper):
 
-    class Resize(int): ...
-    ResizeNarrowest = ... # type: 'QgsLayoutAligner.Resize'
-    ResizeWidest = ... # type: 'QgsLayoutAligner.Resize'
-    ResizeShortest = ... # type: 'QgsLayoutAligner.Resize'
-    ResizeTallest = ... # type: 'QgsLayoutAligner.Resize'
-    ResizeToSquare = ... # type: 'QgsLayoutAligner.Resize'
+    class Resize(int):
+        ResizeNarrowest: 'QgsLayoutAligner.Resize'
+        ResizeWidest: 'QgsLayoutAligner.Resize'
+        ResizeShortest: 'QgsLayoutAligner.Resize'
+        ResizeTallest: 'QgsLayoutAligner.Resize'
+        ResizeToSquare: 'QgsLayoutAligner.Resize'
 
-    class Distribution(int): ...
-    DistributeLeft = ... # type: 'QgsLayoutAligner.Distribution'
-    DistributeHCenter = ... # type: 'QgsLayoutAligner.Distribution'
-    DistributeHSpace = ... # type: 'QgsLayoutAligner.Distribution'
-    DistributeRight = ... # type: 'QgsLayoutAligner.Distribution'
-    DistributeTop = ... # type: 'QgsLayoutAligner.Distribution'
-    DistributeVCenter = ... # type: 'QgsLayoutAligner.Distribution'
-    DistributeVSpace = ... # type: 'QgsLayoutAligner.Distribution'
-    DistributeBottom = ... # type: 'QgsLayoutAligner.Distribution'
+    class Distribution(int):
+        DistributeLeft: 'QgsLayoutAligner.Distribution'
+        DistributeHCenter: 'QgsLayoutAligner.Distribution'
+        DistributeHSpace: 'QgsLayoutAligner.Distribution'
+        DistributeRight: 'QgsLayoutAligner.Distribution'
+        DistributeTop: 'QgsLayoutAligner.Distribution'
+        DistributeVCenter: 'QgsLayoutAligner.Distribution'
+        DistributeVSpace: 'QgsLayoutAligner.Distribution'
+        DistributeBottom: 'QgsLayoutAligner.Distribution'
 
-    class Alignment(int): ...
-    AlignLeft = ... # type: 'QgsLayoutAligner.Alignment'
-    AlignHCenter = ... # type: 'QgsLayoutAligner.Alignment'
-    AlignRight = ... # type: 'QgsLayoutAligner.Alignment'
-    AlignTop = ... # type: 'QgsLayoutAligner.Alignment'
-    AlignVCenter = ... # type: 'QgsLayoutAligner.Alignment'
-    AlignBottom = ... # type: 'QgsLayoutAligner.Alignment'
+    class Alignment(int):
+        AlignLeft: 'QgsLayoutAligner.Alignment'
+        AlignHCenter: 'QgsLayoutAligner.Alignment'
+        AlignRight: 'QgsLayoutAligner.Alignment'
+        AlignTop: 'QgsLayoutAligner.Alignment'
+        AlignVCenter: 'QgsLayoutAligner.Alignment'
+        AlignBottom: 'QgsLayoutAligner.Alignment'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -18443,14 +18443,14 @@ class QgsLayoutEffect(QtWidgets.QGraphicsEffect):
 
 class QgsLayoutExporter(sip.wrapper):
 
-    class ExportResult(int): ...
-    Success = ... # type: 'QgsLayoutExporter.ExportResult'
-    Canceled = ... # type: 'QgsLayoutExporter.ExportResult'
-    MemoryError = ... # type: 'QgsLayoutExporter.ExportResult'
-    FileError = ... # type: 'QgsLayoutExporter.ExportResult'
-    PrintError = ... # type: 'QgsLayoutExporter.ExportResult'
-    SvgLayerError = ... # type: 'QgsLayoutExporter.ExportResult'
-    IteratorError = ... # type: 'QgsLayoutExporter.ExportResult'
+    class ExportResult(int):
+        Success: 'QgsLayoutExporter.ExportResult'
+        Canceled: 'QgsLayoutExporter.ExportResult'
+        MemoryError: 'QgsLayoutExporter.ExportResult'
+        FileError: 'QgsLayoutExporter.ExportResult'
+        PrintError: 'QgsLayoutExporter.ExportResult'
+        SvgLayerError: 'QgsLayoutExporter.ExportResult'
+        IteratorError: 'QgsLayoutExporter.ExportResult'
 
     class PageExportDetails(sip.wrapper):
 
@@ -18583,82 +18583,82 @@ class QgsLayoutExporter(sip.wrapper):
 
 class QgsLayoutObject(QtCore.QObject, QgsExpressionContextGenerator):
 
-    class PropertyValueType(int): ...
-    EvaluatedValue = ... # type: 'QgsLayoutObject.PropertyValueType'
-    OriginalValue = ... # type: 'QgsLayoutObject.PropertyValueType'
+    class PropertyValueType(int):
+        EvaluatedValue: 'QgsLayoutObject.PropertyValueType'
+        OriginalValue: 'QgsLayoutObject.PropertyValueType'
 
-    class DataDefinedProperty(int): ...
-    NoProperty = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    AllProperties = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    TestProperty = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    PresetPaperSize = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    PaperWidth = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    PaperHeight = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    NumPages = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    PaperOrientation = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    PageNumber = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    PositionX = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    PositionY = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    ItemWidth = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    ItemHeight = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    ItemRotation = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    Transparency = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    Opacity = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    BlendMode = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    ExcludeFromExports = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    FrameColor = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    BackgroundColor = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    MapRotation = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    MapScale = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    MapXMin = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    MapYMin = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    MapXMax = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    MapYMax = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    MapAtlasMargin = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    MapLayers = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    MapStylePreset = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    MapLabelMargin = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    MapGridEnabled = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    MapGridIntervalX = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    MapGridIntervalY = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    MapGridOffsetX = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    MapGridOffsetY = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    MapGridFrameSize = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    MapGridFrameMargin = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    MapGridLabelDistance = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    MapGridCrossSize = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    MapGridFrameLineThickness = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    MapGridAnnotationDisplayLeft = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    MapGridAnnotationDisplayRight = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    MapGridAnnotationDisplayTop = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    MapGridAnnotationDisplayBottom = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    MapGridFrameDivisionsLeft = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    MapGridFrameDivisionsRight = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    MapGridFrameDivisionsTop = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    MapGridFrameDivisionsBottom = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    PictureSource = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    PictureSvgBackgroundColor = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    PictureSvgStrokeColor = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    PictureSvgStrokeWidth = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    SourceUrl = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    LegendTitle = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    LegendColumnCount = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    ScalebarLeftSegments = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    ScalebarRightSegments = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    ScalebarSegmentWidth = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    ScalebarMinimumWidth = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    ScalebarMaximumWidth = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    ScalebarHeight = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    ScalebarRightSegmentSubdivisions = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    ScalebarSubdivisionHeight = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    ScalebarFillColor = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    ScalebarFillColor2 = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    ScalebarLineColor = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    ScalebarLineWidth = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    AttributeTableSourceLayer = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    MapCrs = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    StartDateTime = ... # type: 'QgsLayoutObject.DataDefinedProperty'
-    EndDateTime = ... # type: 'QgsLayoutObject.DataDefinedProperty'
+    class DataDefinedProperty(int):
+        NoProperty: 'QgsLayoutObject.DataDefinedProperty'
+        AllProperties: 'QgsLayoutObject.DataDefinedProperty'
+        TestProperty: 'QgsLayoutObject.DataDefinedProperty'
+        PresetPaperSize: 'QgsLayoutObject.DataDefinedProperty'
+        PaperWidth: 'QgsLayoutObject.DataDefinedProperty'
+        PaperHeight: 'QgsLayoutObject.DataDefinedProperty'
+        NumPages: 'QgsLayoutObject.DataDefinedProperty'
+        PaperOrientation: 'QgsLayoutObject.DataDefinedProperty'
+        PageNumber: 'QgsLayoutObject.DataDefinedProperty'
+        PositionX: 'QgsLayoutObject.DataDefinedProperty'
+        PositionY: 'QgsLayoutObject.DataDefinedProperty'
+        ItemWidth: 'QgsLayoutObject.DataDefinedProperty'
+        ItemHeight: 'QgsLayoutObject.DataDefinedProperty'
+        ItemRotation: 'QgsLayoutObject.DataDefinedProperty'
+        Transparency: 'QgsLayoutObject.DataDefinedProperty'
+        Opacity: 'QgsLayoutObject.DataDefinedProperty'
+        BlendMode: 'QgsLayoutObject.DataDefinedProperty'
+        ExcludeFromExports: 'QgsLayoutObject.DataDefinedProperty'
+        FrameColor: 'QgsLayoutObject.DataDefinedProperty'
+        BackgroundColor: 'QgsLayoutObject.DataDefinedProperty'
+        MapRotation: 'QgsLayoutObject.DataDefinedProperty'
+        MapScale: 'QgsLayoutObject.DataDefinedProperty'
+        MapXMin: 'QgsLayoutObject.DataDefinedProperty'
+        MapYMin: 'QgsLayoutObject.DataDefinedProperty'
+        MapXMax: 'QgsLayoutObject.DataDefinedProperty'
+        MapYMax: 'QgsLayoutObject.DataDefinedProperty'
+        MapAtlasMargin: 'QgsLayoutObject.DataDefinedProperty'
+        MapLayers: 'QgsLayoutObject.DataDefinedProperty'
+        MapStylePreset: 'QgsLayoutObject.DataDefinedProperty'
+        MapLabelMargin: 'QgsLayoutObject.DataDefinedProperty'
+        MapGridEnabled: 'QgsLayoutObject.DataDefinedProperty'
+        MapGridIntervalX: 'QgsLayoutObject.DataDefinedProperty'
+        MapGridIntervalY: 'QgsLayoutObject.DataDefinedProperty'
+        MapGridOffsetX: 'QgsLayoutObject.DataDefinedProperty'
+        MapGridOffsetY: 'QgsLayoutObject.DataDefinedProperty'
+        MapGridFrameSize: 'QgsLayoutObject.DataDefinedProperty'
+        MapGridFrameMargin: 'QgsLayoutObject.DataDefinedProperty'
+        MapGridLabelDistance: 'QgsLayoutObject.DataDefinedProperty'
+        MapGridCrossSize: 'QgsLayoutObject.DataDefinedProperty'
+        MapGridFrameLineThickness: 'QgsLayoutObject.DataDefinedProperty'
+        MapGridAnnotationDisplayLeft: 'QgsLayoutObject.DataDefinedProperty'
+        MapGridAnnotationDisplayRight: 'QgsLayoutObject.DataDefinedProperty'
+        MapGridAnnotationDisplayTop: 'QgsLayoutObject.DataDefinedProperty'
+        MapGridAnnotationDisplayBottom: 'QgsLayoutObject.DataDefinedProperty'
+        MapGridFrameDivisionsLeft: 'QgsLayoutObject.DataDefinedProperty'
+        MapGridFrameDivisionsRight: 'QgsLayoutObject.DataDefinedProperty'
+        MapGridFrameDivisionsTop: 'QgsLayoutObject.DataDefinedProperty'
+        MapGridFrameDivisionsBottom: 'QgsLayoutObject.DataDefinedProperty'
+        PictureSource: 'QgsLayoutObject.DataDefinedProperty'
+        PictureSvgBackgroundColor: 'QgsLayoutObject.DataDefinedProperty'
+        PictureSvgStrokeColor: 'QgsLayoutObject.DataDefinedProperty'
+        PictureSvgStrokeWidth: 'QgsLayoutObject.DataDefinedProperty'
+        SourceUrl: 'QgsLayoutObject.DataDefinedProperty'
+        LegendTitle: 'QgsLayoutObject.DataDefinedProperty'
+        LegendColumnCount: 'QgsLayoutObject.DataDefinedProperty'
+        ScalebarLeftSegments: 'QgsLayoutObject.DataDefinedProperty'
+        ScalebarRightSegments: 'QgsLayoutObject.DataDefinedProperty'
+        ScalebarSegmentWidth: 'QgsLayoutObject.DataDefinedProperty'
+        ScalebarMinimumWidth: 'QgsLayoutObject.DataDefinedProperty'
+        ScalebarMaximumWidth: 'QgsLayoutObject.DataDefinedProperty'
+        ScalebarHeight: 'QgsLayoutObject.DataDefinedProperty'
+        ScalebarRightSegmentSubdivisions: 'QgsLayoutObject.DataDefinedProperty'
+        ScalebarSubdivisionHeight: 'QgsLayoutObject.DataDefinedProperty'
+        ScalebarFillColor: 'QgsLayoutObject.DataDefinedProperty'
+        ScalebarFillColor2: 'QgsLayoutObject.DataDefinedProperty'
+        ScalebarLineColor: 'QgsLayoutObject.DataDefinedProperty'
+        ScalebarLineWidth: 'QgsLayoutObject.DataDefinedProperty'
+        AttributeTableSourceLayer: 'QgsLayoutObject.DataDefinedProperty'
+        MapCrs: 'QgsLayoutObject.DataDefinedProperty'
+        StartDateTime: 'QgsLayoutObject.DataDefinedProperty'
+        EndDateTime: 'QgsLayoutObject.DataDefinedProperty'
 
     def __init__(self, layout: QgsLayout) -> None: ...
 
@@ -18682,107 +18682,107 @@ class QgsLayoutObject(QtCore.QObject, QgsExpressionContextGenerator):
 
 class QgsLayoutItem(QgsLayoutObject, QtWidgets.QGraphicsRectItem, QgsLayoutUndoObjectInterface):
 
-    class ExportLayerBehavior(int): ...
-    CanGroupWithAnyOtherItem = ... # type: 'QgsLayoutItem.ExportLayerBehavior'
-    CanGroupWithItemsOfSameType = ... # type: 'QgsLayoutItem.ExportLayerBehavior'
-    MustPlaceInOwnLayer = ... # type: 'QgsLayoutItem.ExportLayerBehavior'
-    ItemContainsSubLayers = ... # type: 'QgsLayoutItem.ExportLayerBehavior'
+    class ExportLayerBehavior(int):
+        CanGroupWithAnyOtherItem: 'QgsLayoutItem.ExportLayerBehavior'
+        CanGroupWithItemsOfSameType: 'QgsLayoutItem.ExportLayerBehavior'
+        MustPlaceInOwnLayer: 'QgsLayoutItem.ExportLayerBehavior'
+        ItemContainsSubLayers: 'QgsLayoutItem.ExportLayerBehavior'
 
-    class Flag(int): ...
-    FlagOverridesPaint = ... # type: 'QgsLayoutItem.Flag'
-    FlagProvidesClipPath = ... # type: 'QgsLayoutItem.Flag'
+    class Flag(int):
+        FlagOverridesPaint: 'QgsLayoutItem.Flag'
+        FlagProvidesClipPath: 'QgsLayoutItem.Flag'
 
-    class UndoCommand(int): ...
-    UndoNone = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoIncrementalMove = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoIncrementalResize = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoStrokeColor = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoStrokeWidth = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoBackgroundColor = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoOpacity = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoSetId = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoRotation = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoShapeStyle = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoShapeCornerRadius = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoNodeMove = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoAtlasMargin = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoMapRotation = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoZoomContent = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoOverviewStyle = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoGridFramePenColor = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoMapGridFrameFill1Color = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoMapGridFrameFill2Color = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoMapAnnotationDistance = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoMapGridAnnotationFontColor = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoMapGridLineSymbol = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoMapGridMarkerSymbol = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoMapGridIntervalRange = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoMapLabelMargin = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoPictureRotation = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoPictureFillColor = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoPictureStrokeColor = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoPictureStrokeWidth = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoPictureNorthOffset = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoLabelText = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoLabelFont = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoLabelMargin = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoLabelFontColor = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoLegendText = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoLegendColumnCount = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoLegendSymbolWidth = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoLegendSymbolHeight = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoLegendMaxSymbolSize = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoLegendMinSymbolSize = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoLegendWmsLegendWidth = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoLegendWmsLegendHeight = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoLegendTitleSpaceBottom = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoLegendGroupSpace = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoLegendGroupIndent = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoLegendSubgroupIndent = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoLegendLayerSpace = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoLegendSymbolSpace = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoLegendIconSymbolSpace = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoLegendFontColor = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoLegendBoxSpace = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoLegendColumnSpace = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoLegendLineSpacing = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoLegendRasterStrokeWidth = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoLegendRasterStrokeColor = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoLegendTitleFont = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoLegendGroupFont = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoLegendLayerFont = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoLegendItemFont = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoScaleBarLineWidth = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoScaleBarSegmentSize = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoScaleBarSegmentsLeft = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoScaleBarSegments = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoScaleBarHeight = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoScaleBarSubdivisions = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoScaleBarSubdivisionsHeight = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoScaleBarFontColor = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoScaleBarFillColor = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoScaleBarFillColor2 = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoScaleBarStrokeColor = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoScaleBarUnitText = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoScaleBarMapUnitsSegment = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoScaleBarLabelBarSize = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoScaleBarBoxContentSpace = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoArrowStrokeWidth = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoArrowHeadWidth = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoArrowHeadFillColor = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoArrowHeadStrokeColor = ... # type: 'QgsLayoutItem.UndoCommand'
-    UndoCustomCommand = ... # type: 'QgsLayoutItem.UndoCommand'
+    class UndoCommand(int):
+        UndoNone: 'QgsLayoutItem.UndoCommand'
+        UndoIncrementalMove: 'QgsLayoutItem.UndoCommand'
+        UndoIncrementalResize: 'QgsLayoutItem.UndoCommand'
+        UndoStrokeColor: 'QgsLayoutItem.UndoCommand'
+        UndoStrokeWidth: 'QgsLayoutItem.UndoCommand'
+        UndoBackgroundColor: 'QgsLayoutItem.UndoCommand'
+        UndoOpacity: 'QgsLayoutItem.UndoCommand'
+        UndoSetId: 'QgsLayoutItem.UndoCommand'
+        UndoRotation: 'QgsLayoutItem.UndoCommand'
+        UndoShapeStyle: 'QgsLayoutItem.UndoCommand'
+        UndoShapeCornerRadius: 'QgsLayoutItem.UndoCommand'
+        UndoNodeMove: 'QgsLayoutItem.UndoCommand'
+        UndoAtlasMargin: 'QgsLayoutItem.UndoCommand'
+        UndoMapRotation: 'QgsLayoutItem.UndoCommand'
+        UndoZoomContent: 'QgsLayoutItem.UndoCommand'
+        UndoOverviewStyle: 'QgsLayoutItem.UndoCommand'
+        UndoGridFramePenColor: 'QgsLayoutItem.UndoCommand'
+        UndoMapGridFrameFill1Color: 'QgsLayoutItem.UndoCommand'
+        UndoMapGridFrameFill2Color: 'QgsLayoutItem.UndoCommand'
+        UndoMapAnnotationDistance: 'QgsLayoutItem.UndoCommand'
+        UndoMapGridAnnotationFontColor: 'QgsLayoutItem.UndoCommand'
+        UndoMapGridLineSymbol: 'QgsLayoutItem.UndoCommand'
+        UndoMapGridMarkerSymbol: 'QgsLayoutItem.UndoCommand'
+        UndoMapGridIntervalRange: 'QgsLayoutItem.UndoCommand'
+        UndoMapLabelMargin: 'QgsLayoutItem.UndoCommand'
+        UndoPictureRotation: 'QgsLayoutItem.UndoCommand'
+        UndoPictureFillColor: 'QgsLayoutItem.UndoCommand'
+        UndoPictureStrokeColor: 'QgsLayoutItem.UndoCommand'
+        UndoPictureStrokeWidth: 'QgsLayoutItem.UndoCommand'
+        UndoPictureNorthOffset: 'QgsLayoutItem.UndoCommand'
+        UndoLabelText: 'QgsLayoutItem.UndoCommand'
+        UndoLabelFont: 'QgsLayoutItem.UndoCommand'
+        UndoLabelMargin: 'QgsLayoutItem.UndoCommand'
+        UndoLabelFontColor: 'QgsLayoutItem.UndoCommand'
+        UndoLegendText: 'QgsLayoutItem.UndoCommand'
+        UndoLegendColumnCount: 'QgsLayoutItem.UndoCommand'
+        UndoLegendSymbolWidth: 'QgsLayoutItem.UndoCommand'
+        UndoLegendSymbolHeight: 'QgsLayoutItem.UndoCommand'
+        UndoLegendMaxSymbolSize: 'QgsLayoutItem.UndoCommand'
+        UndoLegendMinSymbolSize: 'QgsLayoutItem.UndoCommand'
+        UndoLegendWmsLegendWidth: 'QgsLayoutItem.UndoCommand'
+        UndoLegendWmsLegendHeight: 'QgsLayoutItem.UndoCommand'
+        UndoLegendTitleSpaceBottom: 'QgsLayoutItem.UndoCommand'
+        UndoLegendGroupSpace: 'QgsLayoutItem.UndoCommand'
+        UndoLegendGroupIndent: 'QgsLayoutItem.UndoCommand'
+        UndoLegendSubgroupIndent: 'QgsLayoutItem.UndoCommand'
+        UndoLegendLayerSpace: 'QgsLayoutItem.UndoCommand'
+        UndoLegendSymbolSpace: 'QgsLayoutItem.UndoCommand'
+        UndoLegendIconSymbolSpace: 'QgsLayoutItem.UndoCommand'
+        UndoLegendFontColor: 'QgsLayoutItem.UndoCommand'
+        UndoLegendBoxSpace: 'QgsLayoutItem.UndoCommand'
+        UndoLegendColumnSpace: 'QgsLayoutItem.UndoCommand'
+        UndoLegendLineSpacing: 'QgsLayoutItem.UndoCommand'
+        UndoLegendRasterStrokeWidth: 'QgsLayoutItem.UndoCommand'
+        UndoLegendRasterStrokeColor: 'QgsLayoutItem.UndoCommand'
+        UndoLegendTitleFont: 'QgsLayoutItem.UndoCommand'
+        UndoLegendGroupFont: 'QgsLayoutItem.UndoCommand'
+        UndoLegendLayerFont: 'QgsLayoutItem.UndoCommand'
+        UndoLegendItemFont: 'QgsLayoutItem.UndoCommand'
+        UndoScaleBarLineWidth: 'QgsLayoutItem.UndoCommand'
+        UndoScaleBarSegmentSize: 'QgsLayoutItem.UndoCommand'
+        UndoScaleBarSegmentsLeft: 'QgsLayoutItem.UndoCommand'
+        UndoScaleBarSegments: 'QgsLayoutItem.UndoCommand'
+        UndoScaleBarHeight: 'QgsLayoutItem.UndoCommand'
+        UndoScaleBarSubdivisions: 'QgsLayoutItem.UndoCommand'
+        UndoScaleBarSubdivisionsHeight: 'QgsLayoutItem.UndoCommand'
+        UndoScaleBarFontColor: 'QgsLayoutItem.UndoCommand'
+        UndoScaleBarFillColor: 'QgsLayoutItem.UndoCommand'
+        UndoScaleBarFillColor2: 'QgsLayoutItem.UndoCommand'
+        UndoScaleBarStrokeColor: 'QgsLayoutItem.UndoCommand'
+        UndoScaleBarUnitText: 'QgsLayoutItem.UndoCommand'
+        UndoScaleBarMapUnitsSegment: 'QgsLayoutItem.UndoCommand'
+        UndoScaleBarLabelBarSize: 'QgsLayoutItem.UndoCommand'
+        UndoScaleBarBoxContentSpace: 'QgsLayoutItem.UndoCommand'
+        UndoArrowStrokeWidth: 'QgsLayoutItem.UndoCommand'
+        UndoArrowHeadWidth: 'QgsLayoutItem.UndoCommand'
+        UndoArrowHeadFillColor: 'QgsLayoutItem.UndoCommand'
+        UndoArrowHeadStrokeColor: 'QgsLayoutItem.UndoCommand'
+        UndoCustomCommand: 'QgsLayoutItem.UndoCommand'
 
-    class ReferencePoint(int): ...
-    UpperLeft = ... # type: 'QgsLayoutItem.ReferencePoint'
-    UpperMiddle = ... # type: 'QgsLayoutItem.ReferencePoint'
-    UpperRight = ... # type: 'QgsLayoutItem.ReferencePoint'
-    MiddleLeft = ... # type: 'QgsLayoutItem.ReferencePoint'
-    Middle = ... # type: 'QgsLayoutItem.ReferencePoint'
-    MiddleRight = ... # type: 'QgsLayoutItem.ReferencePoint'
-    LowerLeft = ... # type: 'QgsLayoutItem.ReferencePoint'
-    LowerMiddle = ... # type: 'QgsLayoutItem.ReferencePoint'
-    LowerRight = ... # type: 'QgsLayoutItem.ReferencePoint'
+    class ReferencePoint(int):
+        UpperLeft: 'QgsLayoutItem.ReferencePoint'
+        UpperMiddle: 'QgsLayoutItem.ReferencePoint'
+        UpperRight: 'QgsLayoutItem.ReferencePoint'
+        MiddleLeft: 'QgsLayoutItem.ReferencePoint'
+        Middle: 'QgsLayoutItem.ReferencePoint'
+        MiddleRight: 'QgsLayoutItem.ReferencePoint'
+        LowerLeft: 'QgsLayoutItem.ReferencePoint'
+        LowerMiddle: 'QgsLayoutItem.ReferencePoint'
+        LowerRight: 'QgsLayoutItem.ReferencePoint'
 
     class Flags(sip.wrapper):
 
@@ -18951,10 +18951,10 @@ class QgsLayoutFrame(QgsLayoutItem):
 
 class QgsLayoutGridSettings(QgsLayoutSerializableObject):
 
-    class Style(int): ...
-    StyleLines = ... # type: 'QgsLayoutGridSettings.Style'
-    StyleDots = ... # type: 'QgsLayoutGridSettings.Style'
-    StyleCrosses = ... # type: 'QgsLayoutGridSettings.Style'
+    class Style(int):
+        StyleLines: 'QgsLayoutGridSettings.Style'
+        StyleDots: 'QgsLayoutGridSettings.Style'
+        StyleCrosses: 'QgsLayoutGridSettings.Style'
 
     @typing.overload
     def __init__(self, layout: QgsLayout) -> None: ...
@@ -18996,12 +18996,12 @@ class QgsLayoutGuide(QtCore.QObject):
 
 class QgsLayoutGuideCollection(QtCore.QAbstractTableModel, QgsLayoutSerializableObject):
 
-    class Roles(int): ...
-    OrientationRole = ... # type: 'QgsLayoutGuideCollection.Roles'
-    PositionRole = ... # type: 'QgsLayoutGuideCollection.Roles'
-    UnitsRole = ... # type: 'QgsLayoutGuideCollection.Roles'
-    PageRole = ... # type: 'QgsLayoutGuideCollection.Roles'
-    LayoutPositionRole = ... # type: 'QgsLayoutGuideCollection.Roles'
+    class Roles(int):
+        OrientationRole: 'QgsLayoutGuideCollection.Roles'
+        PositionRole: 'QgsLayoutGuideCollection.Roles'
+        UnitsRole: 'QgsLayoutGuideCollection.Roles'
+        PageRole: 'QgsLayoutGuideCollection.Roles'
+        LayoutPositionRole: 'QgsLayoutGuideCollection.Roles'
 
     def __init__(self, layout: QgsLayout, pageCollection: 'QgsLayoutPageCollection') -> None: ...
 
@@ -19050,25 +19050,25 @@ class QgsLayoutItemRenderContext(sip.wrapper):
 
 class QgsLayoutMultiFrame(QgsLayoutObject, QgsLayoutUndoObjectInterface):
 
-    class UndoCommand(int): ...
-    UndoHtmlBreakDistance = ... # type: 'QgsLayoutMultiFrame.UndoCommand'
-    UndoHtmlSource = ... # type: 'QgsLayoutMultiFrame.UndoCommand'
-    UndoHtmlStylesheet = ... # type: 'QgsLayoutMultiFrame.UndoCommand'
-    UndoTableCellStyle = ... # type: 'QgsLayoutMultiFrame.UndoCommand'
-    UndoTableMaximumFeatures = ... # type: 'QgsLayoutMultiFrame.UndoCommand'
-    UndoTableMargin = ... # type: 'QgsLayoutMultiFrame.UndoCommand'
-    UndoTableHeaderFontColor = ... # type: 'QgsLayoutMultiFrame.UndoCommand'
-    UndoTableContentFontColor = ... # type: 'QgsLayoutMultiFrame.UndoCommand'
-    UndoTableGridStrokeWidth = ... # type: 'QgsLayoutMultiFrame.UndoCommand'
-    UndoTableGridColor = ... # type: 'QgsLayoutMultiFrame.UndoCommand'
-    UndoTableBackgroundColor = ... # type: 'QgsLayoutMultiFrame.UndoCommand'
-    UndoNone = ... # type: 'QgsLayoutMultiFrame.UndoCommand'
+    class UndoCommand(int):
+        UndoHtmlBreakDistance: 'QgsLayoutMultiFrame.UndoCommand'
+        UndoHtmlSource: 'QgsLayoutMultiFrame.UndoCommand'
+        UndoHtmlStylesheet: 'QgsLayoutMultiFrame.UndoCommand'
+        UndoTableCellStyle: 'QgsLayoutMultiFrame.UndoCommand'
+        UndoTableMaximumFeatures: 'QgsLayoutMultiFrame.UndoCommand'
+        UndoTableMargin: 'QgsLayoutMultiFrame.UndoCommand'
+        UndoTableHeaderFontColor: 'QgsLayoutMultiFrame.UndoCommand'
+        UndoTableContentFontColor: 'QgsLayoutMultiFrame.UndoCommand'
+        UndoTableGridStrokeWidth: 'QgsLayoutMultiFrame.UndoCommand'
+        UndoTableGridColor: 'QgsLayoutMultiFrame.UndoCommand'
+        UndoTableBackgroundColor: 'QgsLayoutMultiFrame.UndoCommand'
+        UndoNone: 'QgsLayoutMultiFrame.UndoCommand'
 
-    class ResizeMode(int): ...
-    UseExistingFrames = ... # type: 'QgsLayoutMultiFrame.ResizeMode'
-    ExtendToNextPage = ... # type: 'QgsLayoutMultiFrame.ResizeMode'
-    RepeatOnEveryPage = ... # type: 'QgsLayoutMultiFrame.ResizeMode'
-    RepeatUntilFinished = ... # type: 'QgsLayoutMultiFrame.ResizeMode'
+    class ResizeMode(int):
+        UseExistingFrames: 'QgsLayoutMultiFrame.ResizeMode'
+        ExtendToNextPage: 'QgsLayoutMultiFrame.ResizeMode'
+        RepeatOnEveryPage: 'QgsLayoutMultiFrame.ResizeMode'
+        RepeatUntilFinished: 'QgsLayoutMultiFrame.ResizeMode'
 
     def __init__(self, layout: QgsLayout) -> None: ...
 
@@ -19111,36 +19111,36 @@ class QgsLayoutMultiFrame(QgsLayoutObject, QgsLayoutUndoObjectInterface):
 
 class QgsLayoutTable(QgsLayoutMultiFrame):
 
-    class CellStyleGroup(int): ...
-    OddColumns = ... # type: 'QgsLayoutTable.CellStyleGroup'
-    EvenColumns = ... # type: 'QgsLayoutTable.CellStyleGroup'
-    OddRows = ... # type: 'QgsLayoutTable.CellStyleGroup'
-    EvenRows = ... # type: 'QgsLayoutTable.CellStyleGroup'
-    FirstColumn = ... # type: 'QgsLayoutTable.CellStyleGroup'
-    LastColumn = ... # type: 'QgsLayoutTable.CellStyleGroup'
-    HeaderRow = ... # type: 'QgsLayoutTable.CellStyleGroup'
-    FirstRow = ... # type: 'QgsLayoutTable.CellStyleGroup'
-    LastRow = ... # type: 'QgsLayoutTable.CellStyleGroup'
+    class CellStyleGroup(int):
+        OddColumns: 'QgsLayoutTable.CellStyleGroup'
+        EvenColumns: 'QgsLayoutTable.CellStyleGroup'
+        OddRows: 'QgsLayoutTable.CellStyleGroup'
+        EvenRows: 'QgsLayoutTable.CellStyleGroup'
+        FirstColumn: 'QgsLayoutTable.CellStyleGroup'
+        LastColumn: 'QgsLayoutTable.CellStyleGroup'
+        HeaderRow: 'QgsLayoutTable.CellStyleGroup'
+        FirstRow: 'QgsLayoutTable.CellStyleGroup'
+        LastRow: 'QgsLayoutTable.CellStyleGroup'
 
-    class WrapBehavior(int): ...
-    TruncateText = ... # type: 'QgsLayoutTable.WrapBehavior'
-    WrapText = ... # type: 'QgsLayoutTable.WrapBehavior'
+    class WrapBehavior(int):
+        TruncateText: 'QgsLayoutTable.WrapBehavior'
+        WrapText: 'QgsLayoutTable.WrapBehavior'
 
-    class EmptyTableMode(int): ...
-    HeadersOnly = ... # type: 'QgsLayoutTable.EmptyTableMode'
-    HideTable = ... # type: 'QgsLayoutTable.EmptyTableMode'
-    ShowMessage = ... # type: 'QgsLayoutTable.EmptyTableMode'
+    class EmptyTableMode(int):
+        HeadersOnly: 'QgsLayoutTable.EmptyTableMode'
+        HideTable: 'QgsLayoutTable.EmptyTableMode'
+        ShowMessage: 'QgsLayoutTable.EmptyTableMode'
 
-    class HeaderMode(int): ...
-    FirstFrame = ... # type: 'QgsLayoutTable.HeaderMode'
-    AllFrames = ... # type: 'QgsLayoutTable.HeaderMode'
-    NoHeaders = ... # type: 'QgsLayoutTable.HeaderMode'
+    class HeaderMode(int):
+        FirstFrame: 'QgsLayoutTable.HeaderMode'
+        AllFrames: 'QgsLayoutTable.HeaderMode'
+        NoHeaders: 'QgsLayoutTable.HeaderMode'
 
-    class HeaderHAlignment(int): ...
-    FollowColumn = ... # type: 'QgsLayoutTable.HeaderHAlignment'
-    HeaderLeft = ... # type: 'QgsLayoutTable.HeaderHAlignment'
-    HeaderCenter = ... # type: 'QgsLayoutTable.HeaderHAlignment'
-    HeaderRight = ... # type: 'QgsLayoutTable.HeaderHAlignment'
+    class HeaderHAlignment(int):
+        FollowColumn: 'QgsLayoutTable.HeaderHAlignment'
+        HeaderLeft: 'QgsLayoutTable.HeaderHAlignment'
+        HeaderCenter: 'QgsLayoutTable.HeaderHAlignment'
+        HeaderRight: 'QgsLayoutTable.HeaderHAlignment'
 
     def __init__(self, layout: QgsLayout) -> None: ...
 
@@ -19221,10 +19221,10 @@ class QgsLayoutTable(QgsLayoutMultiFrame):
 
 class QgsLayoutItemAttributeTable(QgsLayoutTable):
 
-    class ContentSource(int): ...
-    LayerAttributes = ... # type: 'QgsLayoutItemAttributeTable.ContentSource'
-    AtlasFeature = ... # type: 'QgsLayoutItemAttributeTable.ContentSource'
-    RelationChildren = ... # type: 'QgsLayoutItemAttributeTable.ContentSource'
+    class ContentSource(int):
+        LayerAttributes: 'QgsLayoutItemAttributeTable.ContentSource'
+        AtlasFeature: 'QgsLayoutItemAttributeTable.ContentSource'
+        RelationChildren: 'QgsLayoutItemAttributeTable.ContentSource'
 
     def __init__(self, layout: QgsLayout) -> None: ...
 
@@ -19296,9 +19296,9 @@ class QgsLayoutItemGroup(QgsLayoutItem):
 
 class QgsLayoutItemHtml(QgsLayoutMultiFrame):
 
-    class ContentMode(int): ...
-    Url = ... # type: 'QgsLayoutItemHtml.ContentMode'
-    ManualHtml = ... # type: 'QgsLayoutItemHtml.ContentMode'
+    class ContentMode(int):
+        Url: 'QgsLayoutItemHtml.ContentMode'
+        ManualHtml: 'QgsLayoutItemHtml.ContentMode'
 
     def __init__(self, layout: QgsLayout) -> None: ...
 
@@ -19335,9 +19335,9 @@ class QgsLayoutItemHtml(QgsLayoutMultiFrame):
 
 class QgsLayoutItemLabel(QgsLayoutItem):
 
-    class Mode(int): ...
-    ModeFont = ... # type: 'QgsLayoutItemLabel.Mode'
-    ModeHtml = ... # type: 'QgsLayoutItemLabel.Mode'
+    class Mode(int):
+        ModeFont: 'QgsLayoutItemLabel.Mode'
+        ModeHtml: 'QgsLayoutItemLabel.Mode'
 
     def __init__(self, layout: QgsLayout) -> None: ...
 
@@ -19550,14 +19550,14 @@ class QgsLayoutItemMapItemClipPathSettings(QtCore.QObject):
 
 class QgsLayoutItemMap(QgsLayoutItem, QgsTemporalRangeObject):
 
-    class MapItemFlag(int): ...
-    ShowPartialLabels = ... # type: 'QgsLayoutItemMap.MapItemFlag'
-    ShowUnplacedLabels = ... # type: 'QgsLayoutItemMap.MapItemFlag'
+    class MapItemFlag(int):
+        ShowPartialLabels: 'QgsLayoutItemMap.MapItemFlag'
+        ShowUnplacedLabels: 'QgsLayoutItemMap.MapItemFlag'
 
-    class AtlasScalingMode(int): ...
-    Fixed = ... # type: 'QgsLayoutItemMap.AtlasScalingMode'
-    Predefined = ... # type: 'QgsLayoutItemMap.AtlasScalingMode'
-    Auto = ... # type: 'QgsLayoutItemMap.AtlasScalingMode'
+    class AtlasScalingMode(int):
+        Fixed: 'QgsLayoutItemMap.AtlasScalingMode'
+        Predefined: 'QgsLayoutItemMap.AtlasScalingMode'
+        Auto: 'QgsLayoutItemMap.AtlasScalingMode'
 
     class MapItemFlags(sip.wrapper):
 
@@ -19724,12 +19724,12 @@ class QgsLayoutItemMapGridStack(QgsLayoutItemMapItemStack):
 
 class QgsLayoutItemMapItem(QgsLayoutObject):
 
-    class StackingPosition(int): ...
-    StackBelowMap = ... # type: 'QgsLayoutItemMapItem.StackingPosition'
-    StackBelowMapLayer = ... # type: 'QgsLayoutItemMapItem.StackingPosition'
-    StackAboveMapLayer = ... # type: 'QgsLayoutItemMapItem.StackingPosition'
-    StackBelowMapLabels = ... # type: 'QgsLayoutItemMapItem.StackingPosition'
-    StackAboveMapLabels = ... # type: 'QgsLayoutItemMapItem.StackingPosition'
+    class StackingPosition(int):
+        StackBelowMap: 'QgsLayoutItemMapItem.StackingPosition'
+        StackBelowMapLayer: 'QgsLayoutItemMapItem.StackingPosition'
+        StackAboveMapLayer: 'QgsLayoutItemMapItem.StackingPosition'
+        StackBelowMapLabels: 'QgsLayoutItemMapItem.StackingPosition'
+        StackAboveMapLabels: 'QgsLayoutItemMapItem.StackingPosition'
 
     def __init__(self, name: str, map: QgsLayoutItemMap) -> None: ...
 
@@ -19756,77 +19756,77 @@ class QgsLayoutItemMapItem(QgsLayoutObject):
 
 class QgsLayoutItemMapGrid(QgsLayoutItemMapItem):
 
-    class AnnotationCoordinate(int): ...
-    Longitude = ... # type: 'QgsLayoutItemMapGrid.AnnotationCoordinate'
-    Latitude = ... # type: 'QgsLayoutItemMapGrid.AnnotationCoordinate'
+    class AnnotationCoordinate(int):
+        Longitude: 'QgsLayoutItemMapGrid.AnnotationCoordinate'
+        Latitude: 'QgsLayoutItemMapGrid.AnnotationCoordinate'
 
-    class FrameSideFlag(int): ...
-    FrameLeft = ... # type: 'QgsLayoutItemMapGrid.FrameSideFlag'
-    FrameRight = ... # type: 'QgsLayoutItemMapGrid.FrameSideFlag'
-    FrameTop = ... # type: 'QgsLayoutItemMapGrid.FrameSideFlag'
-    FrameBottom = ... # type: 'QgsLayoutItemMapGrid.FrameSideFlag'
+    class FrameSideFlag(int):
+        FrameLeft: 'QgsLayoutItemMapGrid.FrameSideFlag'
+        FrameRight: 'QgsLayoutItemMapGrid.FrameSideFlag'
+        FrameTop: 'QgsLayoutItemMapGrid.FrameSideFlag'
+        FrameBottom: 'QgsLayoutItemMapGrid.FrameSideFlag'
 
-    class TickLengthMode(int): ...
-    OrthogonalTicks = ... # type: 'QgsLayoutItemMapGrid.TickLengthMode'
-    NormalizedTicks = ... # type: 'QgsLayoutItemMapGrid.TickLengthMode'
+    class TickLengthMode(int):
+        OrthogonalTicks: 'QgsLayoutItemMapGrid.TickLengthMode'
+        NormalizedTicks: 'QgsLayoutItemMapGrid.TickLengthMode'
 
-    class FrameStyle(int): ...
-    NoFrame = ... # type: 'QgsLayoutItemMapGrid.FrameStyle'
-    Zebra = ... # type: 'QgsLayoutItemMapGrid.FrameStyle'
-    InteriorTicks = ... # type: 'QgsLayoutItemMapGrid.FrameStyle'
-    ExteriorTicks = ... # type: 'QgsLayoutItemMapGrid.FrameStyle'
-    InteriorExteriorTicks = ... # type: 'QgsLayoutItemMapGrid.FrameStyle'
-    LineBorder = ... # type: 'QgsLayoutItemMapGrid.FrameStyle'
-    LineBorderNautical = ... # type: 'QgsLayoutItemMapGrid.FrameStyle'
-    ZebraNautical = ... # type: 'QgsLayoutItemMapGrid.FrameStyle'
+    class FrameStyle(int):
+        NoFrame: 'QgsLayoutItemMapGrid.FrameStyle'
+        Zebra: 'QgsLayoutItemMapGrid.FrameStyle'
+        InteriorTicks: 'QgsLayoutItemMapGrid.FrameStyle'
+        ExteriorTicks: 'QgsLayoutItemMapGrid.FrameStyle'
+        InteriorExteriorTicks: 'QgsLayoutItemMapGrid.FrameStyle'
+        LineBorder: 'QgsLayoutItemMapGrid.FrameStyle'
+        LineBorderNautical: 'QgsLayoutItemMapGrid.FrameStyle'
+        ZebraNautical: 'QgsLayoutItemMapGrid.FrameStyle'
 
-    class BorderSide(int): ...
-    Left = ... # type: 'QgsLayoutItemMapGrid.BorderSide'
-    Right = ... # type: 'QgsLayoutItemMapGrid.BorderSide'
-    Bottom = ... # type: 'QgsLayoutItemMapGrid.BorderSide'
-    Top = ... # type: 'QgsLayoutItemMapGrid.BorderSide'
+    class BorderSide(int):
+        Left: 'QgsLayoutItemMapGrid.BorderSide'
+        Right: 'QgsLayoutItemMapGrid.BorderSide'
+        Bottom: 'QgsLayoutItemMapGrid.BorderSide'
+        Top: 'QgsLayoutItemMapGrid.BorderSide'
 
-    class AnnotationFormat(int): ...
-    Decimal = ... # type: 'QgsLayoutItemMapGrid.AnnotationFormat'
-    DegreeMinute = ... # type: 'QgsLayoutItemMapGrid.AnnotationFormat'
-    DegreeMinuteSecond = ... # type: 'QgsLayoutItemMapGrid.AnnotationFormat'
-    DecimalWithSuffix = ... # type: 'QgsLayoutItemMapGrid.AnnotationFormat'
-    DegreeMinuteNoSuffix = ... # type: 'QgsLayoutItemMapGrid.AnnotationFormat'
-    DegreeMinutePadded = ... # type: 'QgsLayoutItemMapGrid.AnnotationFormat'
-    DegreeMinuteSecondNoSuffix = ... # type: 'QgsLayoutItemMapGrid.AnnotationFormat'
-    DegreeMinuteSecondPadded = ... # type: 'QgsLayoutItemMapGrid.AnnotationFormat'
-    CustomFormat = ... # type: 'QgsLayoutItemMapGrid.AnnotationFormat'
+    class AnnotationFormat(int):
+        Decimal: 'QgsLayoutItemMapGrid.AnnotationFormat'
+        DegreeMinute: 'QgsLayoutItemMapGrid.AnnotationFormat'
+        DegreeMinuteSecond: 'QgsLayoutItemMapGrid.AnnotationFormat'
+        DecimalWithSuffix: 'QgsLayoutItemMapGrid.AnnotationFormat'
+        DegreeMinuteNoSuffix: 'QgsLayoutItemMapGrid.AnnotationFormat'
+        DegreeMinutePadded: 'QgsLayoutItemMapGrid.AnnotationFormat'
+        DegreeMinuteSecondNoSuffix: 'QgsLayoutItemMapGrid.AnnotationFormat'
+        DegreeMinuteSecondPadded: 'QgsLayoutItemMapGrid.AnnotationFormat'
+        CustomFormat: 'QgsLayoutItemMapGrid.AnnotationFormat'
 
-    class AnnotationDirection(int): ...
-    Horizontal = ... # type: 'QgsLayoutItemMapGrid.AnnotationDirection'
-    Vertical = ... # type: 'QgsLayoutItemMapGrid.AnnotationDirection'
-    VerticalDescending = ... # type: 'QgsLayoutItemMapGrid.AnnotationDirection'
-    BoundaryDirection = ... # type: 'QgsLayoutItemMapGrid.AnnotationDirection'
-    AboveTick = ... # type: 'QgsLayoutItemMapGrid.AnnotationDirection'
-    OnTick = ... # type: 'QgsLayoutItemMapGrid.AnnotationDirection'
-    UnderTick = ... # type: 'QgsLayoutItemMapGrid.AnnotationDirection'
+    class AnnotationDirection(int):
+        Horizontal: 'QgsLayoutItemMapGrid.AnnotationDirection'
+        Vertical: 'QgsLayoutItemMapGrid.AnnotationDirection'
+        VerticalDescending: 'QgsLayoutItemMapGrid.AnnotationDirection'
+        BoundaryDirection: 'QgsLayoutItemMapGrid.AnnotationDirection'
+        AboveTick: 'QgsLayoutItemMapGrid.AnnotationDirection'
+        OnTick: 'QgsLayoutItemMapGrid.AnnotationDirection'
+        UnderTick: 'QgsLayoutItemMapGrid.AnnotationDirection'
 
-    class AnnotationPosition(int): ...
-    InsideMapFrame = ... # type: 'QgsLayoutItemMapGrid.AnnotationPosition'
-    OutsideMapFrame = ... # type: 'QgsLayoutItemMapGrid.AnnotationPosition'
+    class AnnotationPosition(int):
+        InsideMapFrame: 'QgsLayoutItemMapGrid.AnnotationPosition'
+        OutsideMapFrame: 'QgsLayoutItemMapGrid.AnnotationPosition'
 
-    class DisplayMode(int): ...
-    ShowAll = ... # type: 'QgsLayoutItemMapGrid.DisplayMode'
-    LatitudeOnly = ... # type: 'QgsLayoutItemMapGrid.DisplayMode'
-    LongitudeOnly = ... # type: 'QgsLayoutItemMapGrid.DisplayMode'
-    HideAll = ... # type: 'QgsLayoutItemMapGrid.DisplayMode'
+    class DisplayMode(int):
+        ShowAll: 'QgsLayoutItemMapGrid.DisplayMode'
+        LatitudeOnly: 'QgsLayoutItemMapGrid.DisplayMode'
+        LongitudeOnly: 'QgsLayoutItemMapGrid.DisplayMode'
+        HideAll: 'QgsLayoutItemMapGrid.DisplayMode'
 
-    class GridStyle(int): ...
-    Solid = ... # type: 'QgsLayoutItemMapGrid.GridStyle'
-    Cross = ... # type: 'QgsLayoutItemMapGrid.GridStyle'
-    Markers = ... # type: 'QgsLayoutItemMapGrid.GridStyle'
-    FrameAnnotationsOnly = ... # type: 'QgsLayoutItemMapGrid.GridStyle'
+    class GridStyle(int):
+        Solid: 'QgsLayoutItemMapGrid.GridStyle'
+        Cross: 'QgsLayoutItemMapGrid.GridStyle'
+        Markers: 'QgsLayoutItemMapGrid.GridStyle'
+        FrameAnnotationsOnly: 'QgsLayoutItemMapGrid.GridStyle'
 
-    class GridUnit(int): ...
-    MapUnit = ... # type: 'QgsLayoutItemMapGrid.GridUnit'
-    MM = ... # type: 'QgsLayoutItemMapGrid.GridUnit'
-    CM = ... # type: 'QgsLayoutItemMapGrid.GridUnit'
-    DynamicPageSizeBased = ... # type: 'QgsLayoutItemMapGrid.GridUnit'
+    class GridUnit(int):
+        MapUnit: 'QgsLayoutItemMapGrid.GridUnit'
+        MM: 'QgsLayoutItemMapGrid.GridUnit'
+        CM: 'QgsLayoutItemMapGrid.GridUnit'
+        DynamicPageSizeBased: 'QgsLayoutItemMapGrid.GridUnit'
 
     class FrameSideFlags(sip.wrapper):
 
@@ -20056,12 +20056,12 @@ class QgsLayoutNodesItem(QgsLayoutItem):
 
 class QgsLayoutItemPage(QgsLayoutItem):
 
-    class UndoCommand(int): ...
-    UndoPageSymbol = ... # type: 'QgsLayoutItemPage.UndoCommand'
+    class UndoCommand(int):
+        UndoPageSymbol: 'QgsLayoutItemPage.UndoCommand'
 
-    class Orientation(int): ...
-    Portrait = ... # type: 'QgsLayoutItemPage.Orientation'
-    Landscape = ... # type: 'QgsLayoutItemPage.Orientation'
+    class Orientation(int):
+        Portrait: 'QgsLayoutItemPage.Orientation'
+        Landscape: 'QgsLayoutItemPage.Orientation'
 
     def __init__(self, layout: QgsLayout) -> None: ...
 
@@ -20095,21 +20095,21 @@ class QgsLayoutItemPage(QgsLayoutItem):
 
 class QgsLayoutItemPicture(QgsLayoutItem):
 
-    class NorthMode(int): ...
-    GridNorth = ... # type: 'QgsLayoutItemPicture.NorthMode'
-    TrueNorth = ... # type: 'QgsLayoutItemPicture.NorthMode'
+    class NorthMode(int):
+        GridNorth: 'QgsLayoutItemPicture.NorthMode'
+        TrueNorth: 'QgsLayoutItemPicture.NorthMode'
 
-    class Format(int): ...
-    FormatSVG = ... # type: 'QgsLayoutItemPicture.Format'
-    FormatRaster = ... # type: 'QgsLayoutItemPicture.Format'
-    FormatUnknown = ... # type: 'QgsLayoutItemPicture.Format'
+    class Format(int):
+        FormatSVG: 'QgsLayoutItemPicture.Format'
+        FormatRaster: 'QgsLayoutItemPicture.Format'
+        FormatUnknown: 'QgsLayoutItemPicture.Format'
 
-    class ResizeMode(int): ...
-    Zoom = ... # type: 'QgsLayoutItemPicture.ResizeMode'
-    Stretch = ... # type: 'QgsLayoutItemPicture.ResizeMode'
-    Clip = ... # type: 'QgsLayoutItemPicture.ResizeMode'
-    ZoomResizeFrame = ... # type: 'QgsLayoutItemPicture.ResizeMode'
-    FrameToImageSize = ... # type: 'QgsLayoutItemPicture.ResizeMode'
+    class ResizeMode(int):
+        Zoom: 'QgsLayoutItemPicture.ResizeMode'
+        Stretch: 'QgsLayoutItemPicture.ResizeMode'
+        Clip: 'QgsLayoutItemPicture.ResizeMode'
+        ZoomResizeFrame: 'QgsLayoutItemPicture.ResizeMode'
+        FrameToImageSize: 'QgsLayoutItemPicture.ResizeMode'
 
     def __init__(self, layout: QgsLayout) -> None: ...
 
@@ -20180,10 +20180,10 @@ class QgsLayoutItemPolygon(QgsLayoutNodesItem):
 
 class QgsLayoutItemPolyline(QgsLayoutNodesItem):
 
-    class MarkerMode(int): ...
-    NoMarker = ... # type: 'QgsLayoutItemPolyline.MarkerMode'
-    ArrowHead = ... # type: 'QgsLayoutItemPolyline.MarkerMode'
-    SvgMarker = ... # type: 'QgsLayoutItemPolyline.MarkerMode'
+    class MarkerMode(int):
+        NoMarker: 'QgsLayoutItemPolyline.MarkerMode'
+        ArrowHead: 'QgsLayoutItemPolyline.MarkerMode'
+        SvgMarker: 'QgsLayoutItemPolyline.MarkerMode'
 
     @typing.overload
     def __init__(self, layout: QgsLayout) -> None: ...
@@ -20255,26 +20255,26 @@ class QgsLayoutMultiFrameAbstractMetadata(sip.wrapper):
 
 class QgsLayoutItemRegistry(QtCore.QObject):
 
-    class ItemType(int): ...
-    LayoutItem = ... # type: 'QgsLayoutItemRegistry.ItemType'
-    LayoutGroup = ... # type: 'QgsLayoutItemRegistry.ItemType'
-    LayoutPage = ... # type: 'QgsLayoutItemRegistry.ItemType'
-    LayoutMap = ... # type: 'QgsLayoutItemRegistry.ItemType'
-    LayoutPicture = ... # type: 'QgsLayoutItemRegistry.ItemType'
-    LayoutLabel = ... # type: 'QgsLayoutItemRegistry.ItemType'
-    LayoutLegend = ... # type: 'QgsLayoutItemRegistry.ItemType'
-    LayoutShape = ... # type: 'QgsLayoutItemRegistry.ItemType'
-    LayoutPolygon = ... # type: 'QgsLayoutItemRegistry.ItemType'
-    LayoutPolyline = ... # type: 'QgsLayoutItemRegistry.ItemType'
-    LayoutScaleBar = ... # type: 'QgsLayoutItemRegistry.ItemType'
-    LayoutFrame = ... # type: 'QgsLayoutItemRegistry.ItemType'
-    LayoutHtml = ... # type: 'QgsLayoutItemRegistry.ItemType'
-    LayoutAttributeTable = ... # type: 'QgsLayoutItemRegistry.ItemType'
-    LayoutTextTable = ... # type: 'QgsLayoutItemRegistry.ItemType'
-    Layout3DMap = ... # type: 'QgsLayoutItemRegistry.ItemType'
-    LayoutManualTable = ... # type: 'QgsLayoutItemRegistry.ItemType'
-    LayoutMarker = ... # type: 'QgsLayoutItemRegistry.ItemType'
-    PluginItem = ... # type: 'QgsLayoutItemRegistry.ItemType'
+    class ItemType(int):
+        LayoutItem: 'QgsLayoutItemRegistry.ItemType'
+        LayoutGroup: 'QgsLayoutItemRegistry.ItemType'
+        LayoutPage: 'QgsLayoutItemRegistry.ItemType'
+        LayoutMap: 'QgsLayoutItemRegistry.ItemType'
+        LayoutPicture: 'QgsLayoutItemRegistry.ItemType'
+        LayoutLabel: 'QgsLayoutItemRegistry.ItemType'
+        LayoutLegend: 'QgsLayoutItemRegistry.ItemType'
+        LayoutShape: 'QgsLayoutItemRegistry.ItemType'
+        LayoutPolygon: 'QgsLayoutItemRegistry.ItemType'
+        LayoutPolyline: 'QgsLayoutItemRegistry.ItemType'
+        LayoutScaleBar: 'QgsLayoutItemRegistry.ItemType'
+        LayoutFrame: 'QgsLayoutItemRegistry.ItemType'
+        LayoutHtml: 'QgsLayoutItemRegistry.ItemType'
+        LayoutAttributeTable: 'QgsLayoutItemRegistry.ItemType'
+        LayoutTextTable: 'QgsLayoutItemRegistry.ItemType'
+        Layout3DMap: 'QgsLayoutItemRegistry.ItemType'
+        LayoutManualTable: 'QgsLayoutItemRegistry.ItemType'
+        LayoutMarker: 'QgsLayoutItemRegistry.ItemType'
+        PluginItem: 'QgsLayoutItemRegistry.ItemType'
 
     def __init__(self, parent: typing.Optional[QtCore.QObject] = ...) -> None: ...
 
@@ -20388,10 +20388,10 @@ class QgsLayoutItemScaleBar(QgsLayoutItem):
 
 class QgsLayoutItemShape(QgsLayoutItem):
 
-    class Shape(int): ...
-    Ellipse = ... # type: 'QgsLayoutItemShape.Shape'
-    Rectangle = ... # type: 'QgsLayoutItemShape.Shape'
-    Triangle = ... # type: 'QgsLayoutItemShape.Shape'
+    class Shape(int):
+        Ellipse: 'QgsLayoutItemShape.Shape'
+        Rectangle: 'QgsLayoutItemShape.Shape'
+        Triangle: 'QgsLayoutItemShape.Shape'
 
     def __init__(self, layout: QgsLayout) -> None: ...
 
@@ -20453,8 +20453,8 @@ class QgsLayoutManager(QtCore.QObject):
 
 class QgsLayoutManagerModel(QtCore.QAbstractListModel):
 
-    class Role(int): ...
-    LayoutRole = ... # type: 'QgsLayoutManagerModel.Role'
+    class Role(int):
+        LayoutRole: 'QgsLayoutManagerModel.Role'
 
     def __init__(self, manager: QgsLayoutManager, parent: typing.Optional[QtCore.QObject] = ...) -> None: ...
 
@@ -20470,9 +20470,9 @@ class QgsLayoutManagerModel(QtCore.QAbstractListModel):
 
 class QgsLayoutManagerProxyModel(QtCore.QSortFilterProxyModel):
 
-    class Filter(int): ...
-    FilterPrintLayouts = ... # type: 'QgsLayoutManagerProxyModel.Filter'
-    FilterReports = ... # type: 'QgsLayoutManagerProxyModel.Filter'
+    class Filter(int):
+        FilterPrintLayouts: 'QgsLayoutManagerProxyModel.Filter'
+        FilterReports: 'QgsLayoutManagerProxyModel.Filter'
 
     class Filters(sip.wrapper):
 
@@ -20534,10 +20534,10 @@ class QgsLayoutMeasurementConverter(sip.wrapper):
 
 class QgsLayoutModel(QtCore.QAbstractItemModel):
 
-    class Columns(int): ...
-    Visibility = ... # type: 'QgsLayoutModel.Columns'
-    LockStatus = ... # type: 'QgsLayoutModel.Columns'
-    ItemId = ... # type: 'QgsLayoutModel.Columns'
+    class Columns(int):
+        Visibility: 'QgsLayoutModel.Columns'
+        LockStatus: 'QgsLayoutModel.Columns'
+        ItemId: 'QgsLayoutModel.Columns'
 
     def __init__(self, layout: QgsLayout, parent: typing.Optional[QtCore.QObject] = ...) -> None: ...
 
@@ -20579,9 +20579,9 @@ class QgsLayoutProxyModel(QtCore.QSortFilterProxyModel):
 
 class QgsLayoutNorthArrowHandler(QtCore.QObject):
 
-    class NorthMode(int): ...
-    GridNorth = ... # type: 'QgsLayoutNorthArrowHandler.NorthMode'
-    TrueNorth = ... # type: 'QgsLayoutNorthArrowHandler.NorthMode'
+    class NorthMode(int):
+        GridNorth: 'QgsLayoutNorthArrowHandler.NorthMode'
+        TrueNorth: 'QgsLayoutNorthArrowHandler.NorthMode'
 
     def __init__(self, parent: QtCore.QObject) -> None: ...
 
@@ -20672,17 +20672,17 @@ class QgsLayoutPoint(sip.wrapper):
 
 class QgsLayoutRenderContext(QtCore.QObject):
 
-    class Flag(int): ...
-    FlagDebug = ... # type: 'QgsLayoutRenderContext.Flag'
-    FlagOutlineOnly = ... # type: 'QgsLayoutRenderContext.Flag'
-    FlagAntialiasing = ... # type: 'QgsLayoutRenderContext.Flag'
-    FlagUseAdvancedEffects = ... # type: 'QgsLayoutRenderContext.Flag'
-    FlagForceVectorOutput = ... # type: 'QgsLayoutRenderContext.Flag'
-    FlagHideCoverageLayer = ... # type: 'QgsLayoutRenderContext.Flag'
-    FlagDrawSelection = ... # type: 'QgsLayoutRenderContext.Flag'
-    FlagDisableTiledRasterLayerRenders = ... # type: 'QgsLayoutRenderContext.Flag'
-    FlagRenderLabelsByMapLayer = ... # type: 'QgsLayoutRenderContext.Flag'
-    FlagLosslessImageRendering = ... # type: 'QgsLayoutRenderContext.Flag'
+    class Flag(int):
+        FlagDebug: 'QgsLayoutRenderContext.Flag'
+        FlagOutlineOnly: 'QgsLayoutRenderContext.Flag'
+        FlagAntialiasing: 'QgsLayoutRenderContext.Flag'
+        FlagUseAdvancedEffects: 'QgsLayoutRenderContext.Flag'
+        FlagForceVectorOutput: 'QgsLayoutRenderContext.Flag'
+        FlagHideCoverageLayer: 'QgsLayoutRenderContext.Flag'
+        FlagDrawSelection: 'QgsLayoutRenderContext.Flag'
+        FlagDisableTiledRasterLayerRenders: 'QgsLayoutRenderContext.Flag'
+        FlagRenderLabelsByMapLayer: 'QgsLayoutRenderContext.Flag'
+        FlagLosslessImageRendering: 'QgsLayoutRenderContext.Flag'
 
     class Flags(sip.wrapper):
 
@@ -20942,9 +20942,9 @@ class QgsLayoutUtils(sip.wrapper):
 
 class QgsMasterLayoutInterface(sip.wrapper):
 
-    class Type(int): ...
-    PrintLayout = ... # type: 'QgsMasterLayoutInterface.Type'
-    Report = ... # type: 'QgsMasterLayoutInterface.Type'
+    class Type(int):
+        PrintLayout: 'QgsMasterLayoutInterface.Type'
+        Report: 'QgsMasterLayoutInterface.Type'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -21037,9 +21037,9 @@ class QgsReport(QtCore.QObject, QgsAbstractReportSection, QgsMasterLayoutInterfa
 
 class QgsReportSectionFieldGroup(QgsAbstractReportSection):
 
-    class SectionVisibility(int): ...
-    IncludeWhenFeaturesFound = ... # type: 'QgsReportSectionFieldGroup.SectionVisibility'
-    AlwaysInclude = ... # type: 'QgsReportSectionFieldGroup.SectionVisibility'
+    class SectionVisibility(int):
+        IncludeWhenFeaturesFound: 'QgsReportSectionFieldGroup.SectionVisibility'
+        AlwaysInclude: 'QgsReportSectionFieldGroup.SectionVisibility'
 
     def __init__(self, parentSection: typing.Optional[QgsAbstractReportSection] = ...) -> None: ...
 
@@ -21161,14 +21161,14 @@ class QgsLocatorResult(sip.wrapper):
 
 class QgsLocatorModel(QtCore.QAbstractTableModel):
 
-    class Role(int): ...
-    ResultDataRole = ... # type: 'QgsLocatorModel.Role'
-    ResultTypeRole = ... # type: 'QgsLocatorModel.Role'
-    ResultFilterPriorityRole = ... # type: 'QgsLocatorModel.Role'
-    ResultScoreRole = ... # type: 'QgsLocatorModel.Role'
-    ResultFilterNameRole = ... # type: 'QgsLocatorModel.Role'
-    ResultFilterGroupSortingRole = ... # type: 'QgsLocatorModel.Role'
-    ResultActionsRole = ... # type: 'QgsLocatorModel.Role'
+    class Role(int):
+        ResultDataRole: 'QgsLocatorModel.Role'
+        ResultTypeRole: 'QgsLocatorModel.Role'
+        ResultFilterPriorityRole: 'QgsLocatorModel.Role'
+        ResultScoreRole: 'QgsLocatorModel.Role'
+        ResultFilterNameRole: 'QgsLocatorModel.Role'
+        ResultFilterGroupSortingRole: 'QgsLocatorModel.Role'
+        ResultActionsRole: 'QgsLocatorModel.Role'
 
     NoGroup = ... # type: int
 
@@ -21332,10 +21332,10 @@ class QgsMapRendererSequentialJob(QgsMapRendererQImageJob):
 
 class QgsMapRendererTask(QgsTask):
 
-    class ErrorType(int): ...
-    ImageAllocationFail = ... # type: 'QgsMapRendererTask.ErrorType'
-    ImageSaveFail = ... # type: 'QgsMapRendererTask.ErrorType'
-    ImageUnsupportedFormat = ... # type: 'QgsMapRendererTask.ErrorType'
+    class ErrorType(int):
+        ImageAllocationFail: 'QgsMapRendererTask.ErrorType'
+        ImageSaveFail: 'QgsMapRendererTask.ErrorType'
+        ImageUnsupportedFormat: 'QgsMapRendererTask.ErrorType'
 
     @typing.overload
     def __init__(self, ms: QgsMapSettings, fileName: str, fileFormat: str = ..., forceRaster: bool = ..., flags: typing.Union[QgsTask.Flags, QgsTask.Flag] = ...) -> None: ...
@@ -21369,11 +21369,11 @@ class QgsRenderedItemResults(sip.wrapper):
 
 class QgsMesh3dAveragingMethod(sip.wrapper):
 
-    class Method(int): ...
-    MultiLevelsAveragingMethod = ... # type: 'QgsMesh3dAveragingMethod.Method'
-    SigmaAveragingMethod = ... # type: 'QgsMesh3dAveragingMethod.Method'
-    RelativeHeightAveragingMethod = ... # type: 'QgsMesh3dAveragingMethod.Method'
-    ElevationAveragingMethod = ... # type: 'QgsMesh3dAveragingMethod.Method'
+    class Method(int):
+        MultiLevelsAveragingMethod: 'QgsMesh3dAveragingMethod.Method'
+        SigmaAveragingMethod: 'QgsMesh3dAveragingMethod.Method'
+        RelativeHeightAveragingMethod: 'QgsMesh3dAveragingMethod.Method'
+        ElevationAveragingMethod: 'QgsMesh3dAveragingMethod.Method'
 
     @typing.overload
     def __init__(self, method: 'QgsMesh3dAveragingMethod.Method') -> None: ...
@@ -21520,10 +21520,10 @@ class QgsMeshEditor(QtCore.QObject):
 
 class QgsMesh(sip.wrapper):
 
-    class ElementType(int): ...
-    Vertex = ... # type: 'QgsMesh.ElementType'
-    Edge = ... # type: 'QgsMesh.ElementType'
-    Face = ... # type: 'QgsMesh.ElementType'
+    class ElementType(int):
+        Vertex: 'QgsMesh.ElementType'
+        Edge: 'QgsMesh.ElementType'
+        Face: 'QgsMesh.ElementType'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -21594,23 +21594,23 @@ class QgsMeshDatasetSourceInterface(sip.wrapper):
 
 class QgsDataProvider(QtCore.QObject):
 
-    class ReadFlag(int): ...
-    FlagTrustDataSource = ... # type: 'QgsDataProvider.ReadFlag'
-    SkipFeatureCount = ... # type: 'QgsDataProvider.ReadFlag'
-    FlagLoadDefaultStyle = ... # type: 'QgsDataProvider.ReadFlag'
-    SkipGetExtent = ... # type: 'QgsDataProvider.ReadFlag'
-    SkipFullScan = ... # type: 'QgsDataProvider.ReadFlag'
+    class ReadFlag(int):
+        FlagTrustDataSource: 'QgsDataProvider.ReadFlag'
+        SkipFeatureCount: 'QgsDataProvider.ReadFlag'
+        FlagLoadDefaultStyle: 'QgsDataProvider.ReadFlag'
+        SkipGetExtent: 'QgsDataProvider.ReadFlag'
+        SkipFullScan: 'QgsDataProvider.ReadFlag'
 
-    class ProviderProperty(int): ...
-    EvaluateDefaultValues = ... # type: 'QgsDataProvider.ProviderProperty'
-    CustomData = ... # type: 'QgsDataProvider.ProviderProperty'
+    class ProviderProperty(int):
+        EvaluateDefaultValues: 'QgsDataProvider.ProviderProperty'
+        CustomData: 'QgsDataProvider.ProviderProperty'
 
-    class DataCapability(int): ...
-    NoDataCapabilities = ... # type: 'QgsDataProvider.DataCapability'
-    File = ... # type: 'QgsDataProvider.DataCapability'
-    Dir = ... # type: 'QgsDataProvider.DataCapability'
-    Database = ... # type: 'QgsDataProvider.DataCapability'
-    Net = ... # type: 'QgsDataProvider.DataCapability'
+    class DataCapability(int):
+        NoDataCapabilities: 'QgsDataProvider.DataCapability'
+        File: 'QgsDataProvider.DataCapability'
+        Dir: 'QgsDataProvider.DataCapability'
+        Database: 'QgsDataProvider.DataCapability'
+        Net: 'QgsDataProvider.DataCapability'
 
     class DataCapabilities(sip.wrapper):
 
@@ -21708,9 +21708,9 @@ class QgsMeshDataProvider(QgsDataProvider, QgsMeshDataSourceInterface, QgsMeshDa
 
 class QgsMeshDataProviderTemporalCapabilities(QgsDataProviderTemporalCapabilities):
 
-    class MatchingTemporalDatasetMethod(int): ...
-    FindClosestDatasetBeforeStartRangeTime = ... # type: 'QgsMeshDataProviderTemporalCapabilities.MatchingTemporalDatasetMethod'
-    FindClosestDatasetFromStartRangeTime = ... # type: 'QgsMeshDataProviderTemporalCapabilities.MatchingTemporalDatasetMethod'
+    class MatchingTemporalDatasetMethod(int):
+        FindClosestDatasetBeforeStartRangeTime: 'QgsMeshDataProviderTemporalCapabilities.MatchingTemporalDatasetMethod'
+        FindClosestDatasetFromStartRangeTime: 'QgsMeshDataProviderTemporalCapabilities.MatchingTemporalDatasetMethod'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -21765,10 +21765,10 @@ class QgsMeshDatasetValue(sip.wrapper):
 
 class QgsMeshDataBlock(sip.wrapper):
 
-    class DataType(int): ...
-    ActiveFlagInteger = ... # type: 'QgsMeshDataBlock.DataType'
-    ScalarDouble = ... # type: 'QgsMeshDataBlock.DataType'
-    Vector2DDouble = ... # type: 'QgsMeshDataBlock.DataType'
+    class DataType(int):
+        ActiveFlagInteger: 'QgsMeshDataBlock.DataType'
+        ScalarDouble: 'QgsMeshDataBlock.DataType'
+        Vector2DDouble: 'QgsMeshDataBlock.DataType'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -21820,11 +21820,11 @@ class QgsMesh3dDataBlock(sip.wrapper):
 
 class QgsMeshDatasetGroupMetadata(sip.wrapper):
 
-    class DataType(int): ...
-    DataOnFaces = ... # type: 'QgsMeshDatasetGroupMetadata.DataType'
-    DataOnVertices = ... # type: 'QgsMeshDatasetGroupMetadata.DataType'
-    DataOnVolumes = ... # type: 'QgsMeshDatasetGroupMetadata.DataType'
-    DataOnEdges = ... # type: 'QgsMeshDatasetGroupMetadata.DataType'
+    class DataType(int):
+        DataOnFaces: 'QgsMeshDatasetGroupMetadata.DataType'
+        DataOnVertices: 'QgsMeshDatasetGroupMetadata.DataType'
+        DataOnVolumes: 'QgsMeshDatasetGroupMetadata.DataType'
+        DataOnEdges: 'QgsMeshDatasetGroupMetadata.DataType'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -21879,11 +21879,11 @@ class QgsMeshDataset(sip.wrapper):
 
 class QgsMeshDatasetGroup(sip.wrapper):
 
-    class Type(int): ...
-    None = ... # type: 'QgsMeshDatasetGroup.Type'
-    Persistent = ... # type: 'QgsMeshDatasetGroup.Type'
-    Memory = ... # type: 'QgsMeshDatasetGroup.Type'
-    Virtual = ... # type: 'QgsMeshDatasetGroup.Type'
+    class Type(int):
+        None: 'QgsMeshDatasetGroup.Type'
+        Persistent: 'QgsMeshDatasetGroup.Type'
+        Memory: 'QgsMeshDatasetGroup.Type'
+        Virtual: 'QgsMeshDatasetGroup.Type'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -22120,9 +22120,9 @@ class QgsMeshRendererMeshSettings(sip.wrapper):
 
 class QgsMeshRendererScalarSettings(sip.wrapper):
 
-    class DataResamplingMethod(int): ...
-    None = ... # type: 'QgsMeshRendererScalarSettings.DataResamplingMethod'
-    NeighbourAverage = ... # type: 'QgsMeshRendererScalarSettings.DataResamplingMethod'
+    class DataResamplingMethod(int):
+        None: 'QgsMeshRendererScalarSettings.DataResamplingMethod'
+        NeighbourAverage: 'QgsMeshRendererScalarSettings.DataResamplingMethod'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -22148,10 +22148,10 @@ class QgsMeshRendererScalarSettings(sip.wrapper):
 
 class QgsMeshRendererVectorArrowSettings(sip.wrapper):
 
-    class ArrowScalingMethod(int): ...
-    MinMax = ... # type: 'QgsMeshRendererVectorArrowSettings.ArrowScalingMethod'
-    Scaled = ... # type: 'QgsMeshRendererVectorArrowSettings.ArrowScalingMethod'
-    Fixed = ... # type: 'QgsMeshRendererVectorArrowSettings.ArrowScalingMethod'
+    class ArrowScalingMethod(int):
+        MinMax: 'QgsMeshRendererVectorArrowSettings.ArrowScalingMethod'
+        Scaled: 'QgsMeshRendererVectorArrowSettings.ArrowScalingMethod'
+        Fixed: 'QgsMeshRendererVectorArrowSettings.ArrowScalingMethod'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -22178,9 +22178,9 @@ class QgsMeshRendererVectorArrowSettings(sip.wrapper):
 
 class QgsMeshRendererVectorStreamlineSettings(sip.wrapper):
 
-    class SeedingStartPointsMethod(int): ...
-    MeshGridded = ... # type: 'QgsMeshRendererVectorStreamlineSettings.SeedingStartPointsMethod'
-    Random = ... # type: 'QgsMeshRendererVectorStreamlineSettings.SeedingStartPointsMethod'
+    class SeedingStartPointsMethod(int):
+        MeshGridded: 'QgsMeshRendererVectorStreamlineSettings.SeedingStartPointsMethod'
+        Random: 'QgsMeshRendererVectorStreamlineSettings.SeedingStartPointsMethod'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -22214,10 +22214,10 @@ class QgsMeshRendererVectorTracesSettings(sip.wrapper):
 
 class QgsMeshRendererVectorSettings(sip.wrapper):
 
-    class Symbology(int): ...
-    Arrows = ... # type: 'QgsMeshRendererVectorSettings.Symbology'
-    Streamlines = ... # type: 'QgsMeshRendererVectorSettings.Symbology'
-    Traces = ... # type: 'QgsMeshRendererVectorSettings.Symbology'
+    class Symbology(int):
+        Arrows: 'QgsMeshRendererVectorSettings.Symbology'
+        Streamlines: 'QgsMeshRendererVectorSettings.Symbology'
+        Traces: 'QgsMeshRendererVectorSettings.Symbology'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -22301,11 +22301,11 @@ class QgsMeshSpatialIndex(sip.wrapper):
 
 class QgsMeshTimeSettings(sip.wrapper):
 
-    class TimeUnit(int): ...
-    seconds = ... # type: 'QgsMeshTimeSettings.TimeUnit'
-    minutes = ... # type: 'QgsMeshTimeSettings.TimeUnit'
-    hours = ... # type: 'QgsMeshTimeSettings.TimeUnit'
-    days = ... # type: 'QgsMeshTimeSettings.TimeUnit'
+    class TimeUnit(int):
+        seconds: 'QgsMeshTimeSettings.TimeUnit'
+        minutes: 'QgsMeshTimeSettings.TimeUnit'
+        hours: 'QgsMeshTimeSettings.TimeUnit'
+        days: 'QgsMeshTimeSettings.TimeUnit'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -22341,15 +22341,15 @@ class QgsMeshVectorTraceAnimationGenerator(sip.wrapper):
 
 class QgsMeshCalculator(sip.wrapper):
 
-    class Result(int): ...
-    Success = ... # type: 'QgsMeshCalculator.Result'
-    Canceled = ... # type: 'QgsMeshCalculator.Result'
-    CreateOutputError = ... # type: 'QgsMeshCalculator.Result'
-    InputLayerError = ... # type: 'QgsMeshCalculator.Result'
-    ParserError = ... # type: 'QgsMeshCalculator.Result'
-    InvalidDatasets = ... # type: 'QgsMeshCalculator.Result'
-    EvaluateError = ... # type: 'QgsMeshCalculator.Result'
-    MemoryError = ... # type: 'QgsMeshCalculator.Result'
+    class Result(int):
+        Success: 'QgsMeshCalculator.Result'
+        Canceled: 'QgsMeshCalculator.Result'
+        CreateOutputError: 'QgsMeshCalculator.Result'
+        InputLayerError: 'QgsMeshCalculator.Result'
+        ParserError: 'QgsMeshCalculator.Result'
+        InvalidDatasets: 'QgsMeshCalculator.Result'
+        EvaluateError: 'QgsMeshCalculator.Result'
+        MemoryError: 'QgsMeshCalculator.Result'
 
     @typing.overload
     def __init__(self, formulaString: str, outputFile: str, outputExtent: QgsRectangle, startTime: float, endTime: float, layer: QgsMeshLayer) -> None: ...
@@ -22503,17 +22503,17 @@ class Qgs2DPlot(QgsPlot):
 
 class QgsPointCloudAttribute(sip.wrapper):
 
-    class DataType(int): ...
-    Char = ... # type: 'QgsPointCloudAttribute.DataType'
-    UChar = ... # type: 'QgsPointCloudAttribute.DataType'
-    Short = ... # type: 'QgsPointCloudAttribute.DataType'
-    UShort = ... # type: 'QgsPointCloudAttribute.DataType'
-    Int32 = ... # type: 'QgsPointCloudAttribute.DataType'
-    UInt32 = ... # type: 'QgsPointCloudAttribute.DataType'
-    Int64 = ... # type: 'QgsPointCloudAttribute.DataType'
-    UInt64 = ... # type: 'QgsPointCloudAttribute.DataType'
-    Float = ... # type: 'QgsPointCloudAttribute.DataType'
-    Double = ... # type: 'QgsPointCloudAttribute.DataType'
+    class DataType(int):
+        Char: 'QgsPointCloudAttribute.DataType'
+        UChar: 'QgsPointCloudAttribute.DataType'
+        Short: 'QgsPointCloudAttribute.DataType'
+        UShort: 'QgsPointCloudAttribute.DataType'
+        Int32: 'QgsPointCloudAttribute.DataType'
+        UInt32: 'QgsPointCloudAttribute.DataType'
+        Int64: 'QgsPointCloudAttribute.DataType'
+        UInt64: 'QgsPointCloudAttribute.DataType'
+        Float: 'QgsPointCloudAttribute.DataType'
+        Double: 'QgsPointCloudAttribute.DataType'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -22618,13 +22618,13 @@ class QgsPointCloudAttributeByRampRenderer(QgsPointCloudRenderer):
 
 class QgsPointCloudAttributeModel(QtCore.QAbstractItemModel):
 
-    class FieldRoles(int): ...
-    AttributeNameRole = ... # type: 'QgsPointCloudAttributeModel.FieldRoles'
-    AttributeIndexRole = ... # type: 'QgsPointCloudAttributeModel.FieldRoles'
-    AttributeSizeRole = ... # type: 'QgsPointCloudAttributeModel.FieldRoles'
-    AttributeTypeRole = ... # type: 'QgsPointCloudAttributeModel.FieldRoles'
-    IsEmptyRole = ... # type: 'QgsPointCloudAttributeModel.FieldRoles'
-    IsNumericRole = ... # type: 'QgsPointCloudAttributeModel.FieldRoles'
+    class FieldRoles(int):
+        AttributeNameRole: 'QgsPointCloudAttributeModel.FieldRoles'
+        AttributeIndexRole: 'QgsPointCloudAttributeModel.FieldRoles'
+        AttributeSizeRole: 'QgsPointCloudAttributeModel.FieldRoles'
+        AttributeTypeRole: 'QgsPointCloudAttributeModel.FieldRoles'
+        IsEmptyRole: 'QgsPointCloudAttributeModel.FieldRoles'
+        IsNumericRole: 'QgsPointCloudAttributeModel.FieldRoles'
 
     def __init__(self, parent: typing.Optional[QtCore.QObject] = ...) -> None: ...
 
@@ -22648,14 +22648,14 @@ class QgsPointCloudAttributeModel(QtCore.QAbstractItemModel):
 
 class QgsPointCloudAttributeProxyModel(QtCore.QSortFilterProxyModel):
 
-    class Filter(int): ...
-    Char = ... # type: 'QgsPointCloudAttributeProxyModel.Filter'
-    Short = ... # type: 'QgsPointCloudAttributeProxyModel.Filter'
-    Int32 = ... # type: 'QgsPointCloudAttributeProxyModel.Filter'
-    Float = ... # type: 'QgsPointCloudAttributeProxyModel.Filter'
-    Double = ... # type: 'QgsPointCloudAttributeProxyModel.Filter'
-    Numeric = ... # type: 'QgsPointCloudAttributeProxyModel.Filter'
-    AllTypes = ... # type: 'QgsPointCloudAttributeProxyModel.Filter'
+    class Filter(int):
+        Char: 'QgsPointCloudAttributeProxyModel.Filter'
+        Short: 'QgsPointCloudAttributeProxyModel.Filter'
+        Int32: 'QgsPointCloudAttributeProxyModel.Filter'
+        Float: 'QgsPointCloudAttributeProxyModel.Filter'
+        Double: 'QgsPointCloudAttributeProxyModel.Filter'
+        Numeric: 'QgsPointCloudAttributeProxyModel.Filter'
+        AllTypes: 'QgsPointCloudAttributeProxyModel.Filter'
 
     class Filters(sip.wrapper):
 
@@ -22762,10 +22762,10 @@ class QgsPointCloudBlock(sip.wrapper):
 
 class QgsPointCloudLayer(QgsMapLayer, QgsAbstractProfileSource):
 
-    class PointCloudStatisticsCalculationState(int): ...
-    NotStarted = ... # type: 'QgsPointCloudLayer.PointCloudStatisticsCalculationState'
-    Calculating = ... # type: 'QgsPointCloudLayer.PointCloudStatisticsCalculationState'
-    Calculated = ... # type: 'QgsPointCloudLayer.PointCloudStatisticsCalculationState'
+    class PointCloudStatisticsCalculationState(int):
+        NotStarted: 'QgsPointCloudLayer.PointCloudStatisticsCalculationState'
+        Calculating: 'QgsPointCloudLayer.PointCloudStatisticsCalculationState'
+        Calculated: 'QgsPointCloudLayer.PointCloudStatisticsCalculationState'
 
     class LayerOptions(sip.wrapper):
 
@@ -22848,16 +22848,16 @@ class QgsPointCloudLayerElevationProperties(QgsMapLayerElevationProperties):
 
 class QgsPointCloudDataProvider(QgsDataProvider):
 
-    class PointCloudIndexGenerationState(int): ...
-    NotIndexed = ... # type: 'QgsPointCloudDataProvider.PointCloudIndexGenerationState'
-    Indexing = ... # type: 'QgsPointCloudDataProvider.PointCloudIndexGenerationState'
-    Indexed = ... # type: 'QgsPointCloudDataProvider.PointCloudIndexGenerationState'
+    class PointCloudIndexGenerationState(int):
+        NotIndexed: 'QgsPointCloudDataProvider.PointCloudIndexGenerationState'
+        Indexing: 'QgsPointCloudDataProvider.PointCloudIndexGenerationState'
+        Indexed: 'QgsPointCloudDataProvider.PointCloudIndexGenerationState'
 
-    class Capability(int): ...
-    NoCapabilities = ... # type: 'QgsPointCloudDataProvider.Capability'
-    ReadLayerMetadata = ... # type: 'QgsPointCloudDataProvider.Capability'
-    WriteLayerMetadata = ... # type: 'QgsPointCloudDataProvider.Capability'
-    CreateRenderer = ... # type: 'QgsPointCloudDataProvider.Capability'
+    class Capability(int):
+        NoCapabilities: 'QgsPointCloudDataProvider.Capability'
+        ReadLayerMetadata: 'QgsPointCloudDataProvider.Capability'
+        WriteLayerMetadata: 'QgsPointCloudDataProvider.Capability'
+        CreateRenderer: 'QgsPointCloudDataProvider.Capability'
 
     class Capabilities(sip.wrapper):
 
@@ -23040,28 +23040,28 @@ class QgsCelestialBody(sip.wrapper):
 
 class QgsCoordinateReferenceSystem(sip.wrapper):
 
-    class WktVariant(int): ...
-    WKT1_GDAL = ... # type: 'QgsCoordinateReferenceSystem.WktVariant'
-    WKT1_ESRI = ... # type: 'QgsCoordinateReferenceSystem.WktVariant'
-    WKT2_2015 = ... # type: 'QgsCoordinateReferenceSystem.WktVariant'
-    WKT2_2015_SIMPLIFIED = ... # type: 'QgsCoordinateReferenceSystem.WktVariant'
-    WKT2_2018 = ... # type: 'QgsCoordinateReferenceSystem.WktVariant'
-    WKT2_2018_SIMPLIFIED = ... # type: 'QgsCoordinateReferenceSystem.WktVariant'
-    WKT2_2019 = ... # type: 'QgsCoordinateReferenceSystem.WktVariant'
-    WKT2_2019_SIMPLIFIED = ... # type: 'QgsCoordinateReferenceSystem.WktVariant'
-    WKT_PREFERRED = ... # type: 'QgsCoordinateReferenceSystem.WktVariant'
-    WKT_PREFERRED_SIMPLIFIED = ... # type: 'QgsCoordinateReferenceSystem.WktVariant'
-    WKT_PREFERRED_GDAL = ... # type: 'QgsCoordinateReferenceSystem.WktVariant'
+    class WktVariant(int):
+        WKT1_GDAL: 'QgsCoordinateReferenceSystem.WktVariant'
+        WKT1_ESRI: 'QgsCoordinateReferenceSystem.WktVariant'
+        WKT2_2015: 'QgsCoordinateReferenceSystem.WktVariant'
+        WKT2_2015_SIMPLIFIED: 'QgsCoordinateReferenceSystem.WktVariant'
+        WKT2_2018: 'QgsCoordinateReferenceSystem.WktVariant'
+        WKT2_2018_SIMPLIFIED: 'QgsCoordinateReferenceSystem.WktVariant'
+        WKT2_2019: 'QgsCoordinateReferenceSystem.WktVariant'
+        WKT2_2019_SIMPLIFIED: 'QgsCoordinateReferenceSystem.WktVariant'
+        WKT_PREFERRED: 'QgsCoordinateReferenceSystem.WktVariant'
+        WKT_PREFERRED_SIMPLIFIED: 'QgsCoordinateReferenceSystem.WktVariant'
+        WKT_PREFERRED_GDAL: 'QgsCoordinateReferenceSystem.WktVariant'
 
-    class IdentifierType(int): ...
-    ShortString = ... # type: 'QgsCoordinateReferenceSystem.IdentifierType'
-    MediumString = ... # type: 'QgsCoordinateReferenceSystem.IdentifierType'
-    FullString = ... # type: 'QgsCoordinateReferenceSystem.IdentifierType'
+    class IdentifierType(int):
+        ShortString: 'QgsCoordinateReferenceSystem.IdentifierType'
+        MediumString: 'QgsCoordinateReferenceSystem.IdentifierType'
+        FullString: 'QgsCoordinateReferenceSystem.IdentifierType'
 
-    class CrsType(int): ...
-    InternalCrsId = ... # type: 'QgsCoordinateReferenceSystem.CrsType'
-    PostgisCrsId = ... # type: 'QgsCoordinateReferenceSystem.CrsType'
-    EpsgCrsId = ... # type: 'QgsCoordinateReferenceSystem.CrsType'
+    class CrsType(int):
+        InternalCrsId: 'QgsCoordinateReferenceSystem.CrsType'
+        PostgisCrsId: 'QgsCoordinateReferenceSystem.CrsType'
+        EpsgCrsId: 'QgsCoordinateReferenceSystem.CrsType'
 
     staticMetaObject = ... # type: QtCore.QMetaObject
 
@@ -23756,11 +23756,11 @@ class QgsProjectMetadata(QgsAbstractMetadataBase):
 
 class QgsBlockingNetworkRequest(QtCore.QObject):
 
-    class ErrorCode(int): ...
-    NoError = ... # type: 'QgsBlockingNetworkRequest.ErrorCode'
-    NetworkError = ... # type: 'QgsBlockingNetworkRequest.ErrorCode'
-    TimeoutError = ... # type: 'QgsBlockingNetworkRequest.ErrorCode'
-    ServerExceptionError = ... # type: 'QgsBlockingNetworkRequest.ErrorCode'
+    class ErrorCode(int):
+        NoError: 'QgsBlockingNetworkRequest.ErrorCode'
+        NetworkError: 'QgsBlockingNetworkRequest.ErrorCode'
+        TimeoutError: 'QgsBlockingNetworkRequest.ErrorCode'
+        ServerExceptionError: 'QgsBlockingNetworkRequest.ErrorCode'
 
     def __init__(self) -> None: ...
 
@@ -23801,9 +23801,9 @@ class QgsFileDownloader(QtCore.QObject):
 
 class QgsNetworkRequestParameters(sip.wrapper):
 
-    class RequestAttributes(int): ...
-    AttributeInitiatorClass = ... # type: 'QgsNetworkRequestParameters.RequestAttributes'
-    AttributeInitiatorRequestId = ... # type: 'QgsNetworkRequestParameters.RequestAttributes'
+    class RequestAttributes(int):
+        AttributeInitiatorClass: 'QgsNetworkRequestParameters.RequestAttributes'
+        AttributeInitiatorRequestId: 'QgsNetworkRequestParameters.RequestAttributes'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -23899,11 +23899,11 @@ class QgsNetworkContentFetcher(QtCore.QObject):
 
 class QgsFetchedContent(QtCore.QObject):
 
-    class ContentStatus(int): ...
-    NotStarted = ... # type: 'QgsFetchedContent.ContentStatus'
-    Downloading = ... # type: 'QgsFetchedContent.ContentStatus'
-    Finished = ... # type: 'QgsFetchedContent.ContentStatus'
-    Failed = ... # type: 'QgsFetchedContent.ContentStatus'
+    class ContentStatus(int):
+        NotStarted: 'QgsFetchedContent.ContentStatus'
+        Downloading: 'QgsFetchedContent.ContentStatus'
+        Finished: 'QgsFetchedContent.ContentStatus'
+        Failed: 'QgsFetchedContent.ContentStatus'
 
     def __init__(self, url: str, file: typing.Optional[QtCore.QTemporaryFile] = ..., status: 'QgsFetchedContent.ContentStatus' = ..., authConfig: str = ...) -> None: ...
 
@@ -23969,14 +23969,14 @@ class QgsNetworkReplyContent(sip.wrapper):
 
 class QgsNewsFeedModel(QtCore.QAbstractItemModel):
 
-    class Role(int): ...
-    Key = ... # type: 'QgsNewsFeedModel.Role'
-    Title = ... # type: 'QgsNewsFeedModel.Role'
-    Content = ... # type: 'QgsNewsFeedModel.Role'
-    ImageUrl = ... # type: 'QgsNewsFeedModel.Role'
-    Image = ... # type: 'QgsNewsFeedModel.Role'
-    Link = ... # type: 'QgsNewsFeedModel.Role'
-    Sticky = ... # type: 'QgsNewsFeedModel.Role'
+    class Role(int):
+        Key: 'QgsNewsFeedModel.Role'
+        Title: 'QgsNewsFeedModel.Role'
+        Content: 'QgsNewsFeedModel.Role'
+        ImageUrl: 'QgsNewsFeedModel.Role'
+        Image: 'QgsNewsFeedModel.Role'
+        Link: 'QgsNewsFeedModel.Role'
+        Sticky: 'QgsNewsFeedModel.Role'
 
     def __init__(self, parser: 'QgsNewsFeedParser', parent: typing.Optional[QtCore.QObject] = ...) -> None: ...
 
@@ -24078,9 +24078,9 @@ class QgsNumericFormat(sip.wrapper):
 
 class QgsBasicNumericFormat(QgsNumericFormat):
 
-    class RoundingType(int): ...
-    DecimalPlaces = ... # type: 'QgsBasicNumericFormat.RoundingType'
-    SignificantFigures = ... # type: 'QgsBasicNumericFormat.RoundingType'
+    class RoundingType(int):
+        DecimalPlaces: 'QgsBasicNumericFormat.RoundingType'
+        SignificantFigures: 'QgsBasicNumericFormat.RoundingType'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -24113,10 +24113,10 @@ class QgsBasicNumericFormat(QgsNumericFormat):
 
 class QgsBearingNumericFormat(QgsBasicNumericFormat):
 
-    class FormatDirectionOption(int): ...
-    UseRange0To180WithEWDirectionalSuffix = ... # type: 'QgsBearingNumericFormat.FormatDirectionOption'
-    UseRangeNegative180ToPositive180 = ... # type: 'QgsBearingNumericFormat.FormatDirectionOption'
-    UseRange0To360 = ... # type: 'QgsBearingNumericFormat.FormatDirectionOption'
+    class FormatDirectionOption(int):
+        UseRange0To180WithEWDirectionalSuffix: 'QgsBearingNumericFormat.FormatDirectionOption'
+        UseRangeNegative180ToPositive180: 'QgsBearingNumericFormat.FormatDirectionOption'
+        UseRange0To360: 'QgsBearingNumericFormat.FormatDirectionOption'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -24138,10 +24138,10 @@ class QgsBearingNumericFormat(QgsBasicNumericFormat):
 
 class QgsGeographicCoordinateNumericFormat(QgsBasicNumericFormat):
 
-    class AngleFormat(int): ...
-    DegreesMinutesSeconds = ... # type: 'QgsGeographicCoordinateNumericFormat.AngleFormat'
-    DegreesMinutes = ... # type: 'QgsGeographicCoordinateNumericFormat.AngleFormat'
-    DecimalDegrees = ... # type: 'QgsGeographicCoordinateNumericFormat.AngleFormat'
+    class AngleFormat(int):
+        DegreesMinutesSeconds: 'QgsGeographicCoordinateNumericFormat.AngleFormat'
+        DegreesMinutes: 'QgsGeographicCoordinateNumericFormat.AngleFormat'
+        DecimalDegrees: 'QgsGeographicCoordinateNumericFormat.AngleFormat'
 
     staticMetaObject = ... # type: QtCore.QMetaObject
 
@@ -24242,10 +24242,10 @@ class QgsFractionNumericFormat(QgsNumericFormat):
 
 class QgsNumericFormatContext(sip.wrapper):
 
-    class Interpretation(int): ...
-    Generic = ... # type: 'QgsNumericFormatContext.Interpretation'
-    Latitude = ... # type: 'QgsNumericFormatContext.Interpretation'
-    Longitude = ... # type: 'QgsNumericFormatContext.Interpretation'
+    class Interpretation(int):
+        Generic: 'QgsNumericFormatContext.Interpretation'
+        Latitude: 'QgsNumericFormatContext.Interpretation'
+        Longitude: 'QgsNumericFormatContext.Interpretation'
 
     staticMetaObject = ... # type: QtCore.QMetaObject
 
@@ -24292,9 +24292,9 @@ class QgsNumericFormatRegistry(sip.wrapper):
 
 class QgsPercentageNumericFormat(QgsBasicNumericFormat):
 
-    class InputValues(int): ...
-    ValuesArePercentage = ... # type: 'QgsPercentageNumericFormat.InputValues'
-    ValuesAreFractions = ... # type: 'QgsPercentageNumericFormat.InputValues'
+    class InputValues(int):
+        ValuesArePercentage: 'QgsPercentageNumericFormat.InputValues'
+        ValuesAreFractions: 'QgsPercentageNumericFormat.InputValues'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -24332,26 +24332,26 @@ class QgsScientificNumericFormat(QgsBasicNumericFormat):
 
 class QgsProcessingAlgorithm(sip.wrapper):
 
-    class PropertyAvailability(int): ...
-    NotAvailable = ... # type: 'QgsProcessingAlgorithm.PropertyAvailability'
-    Available = ... # type: 'QgsProcessingAlgorithm.PropertyAvailability'
+    class PropertyAvailability(int):
+        NotAvailable: 'QgsProcessingAlgorithm.PropertyAvailability'
+        Available: 'QgsProcessingAlgorithm.PropertyAvailability'
 
-    class Flag(int): ...
-    FlagHideFromToolbox = ... # type: 'QgsProcessingAlgorithm.Flag'
-    FlagHideFromModeler = ... # type: 'QgsProcessingAlgorithm.Flag'
-    FlagSupportsBatch = ... # type: 'QgsProcessingAlgorithm.Flag'
-    FlagCanCancel = ... # type: 'QgsProcessingAlgorithm.Flag'
-    FlagRequiresMatchingCrs = ... # type: 'QgsProcessingAlgorithm.Flag'
-    FlagNoThreading = ... # type: 'QgsProcessingAlgorithm.Flag'
-    FlagDisplayNameIsLiteral = ... # type: 'QgsProcessingAlgorithm.Flag'
-    FlagSupportsInPlaceEdits = ... # type: 'QgsProcessingAlgorithm.Flag'
-    FlagKnownIssues = ... # type: 'QgsProcessingAlgorithm.Flag'
-    FlagCustomException = ... # type: 'QgsProcessingAlgorithm.Flag'
-    FlagPruneModelBranchesBasedOnAlgorithmResults = ... # type: 'QgsProcessingAlgorithm.Flag'
-    FlagSkipGenericModelLogging = ... # type: 'QgsProcessingAlgorithm.Flag'
-    FlagNotAvailableInStandaloneTool = ... # type: 'QgsProcessingAlgorithm.Flag'
-    FlagRequiresProject = ... # type: 'QgsProcessingAlgorithm.Flag'
-    FlagDeprecated = ... # type: 'QgsProcessingAlgorithm.Flag'
+    class Flag(int):
+        FlagHideFromToolbox: 'QgsProcessingAlgorithm.Flag'
+        FlagHideFromModeler: 'QgsProcessingAlgorithm.Flag'
+        FlagSupportsBatch: 'QgsProcessingAlgorithm.Flag'
+        FlagCanCancel: 'QgsProcessingAlgorithm.Flag'
+        FlagRequiresMatchingCrs: 'QgsProcessingAlgorithm.Flag'
+        FlagNoThreading: 'QgsProcessingAlgorithm.Flag'
+        FlagDisplayNameIsLiteral: 'QgsProcessingAlgorithm.Flag'
+        FlagSupportsInPlaceEdits: 'QgsProcessingAlgorithm.Flag'
+        FlagKnownIssues: 'QgsProcessingAlgorithm.Flag'
+        FlagCustomException: 'QgsProcessingAlgorithm.Flag'
+        FlagPruneModelBranchesBasedOnAlgorithmResults: 'QgsProcessingAlgorithm.Flag'
+        FlagSkipGenericModelLogging: 'QgsProcessingAlgorithm.Flag'
+        FlagNotAvailableInStandaloneTool: 'QgsProcessingAlgorithm.Flag'
+        FlagRequiresProject: 'QgsProcessingAlgorithm.Flag'
+        FlagDeprecated: 'QgsProcessingAlgorithm.Flag'
 
     class Flags(sip.wrapper):
 
@@ -24643,13 +24643,13 @@ class QgsProcessingModelChildDependency(sip.wrapper):
 
 class QgsProcessingModelChildParameterSource(sip.wrapper):
 
-    class Source(int): ...
-    ModelParameter = ... # type: 'QgsProcessingModelChildParameterSource.Source'
-    ChildOutput = ... # type: 'QgsProcessingModelChildParameterSource.Source'
-    StaticValue = ... # type: 'QgsProcessingModelChildParameterSource.Source'
-    Expression = ... # type: 'QgsProcessingModelChildParameterSource.Source'
-    ExpressionText = ... # type: 'QgsProcessingModelChildParameterSource.Source'
-    ModelOutput = ... # type: 'QgsProcessingModelChildParameterSource.Source'
+    class Source(int):
+        ModelParameter: 'QgsProcessingModelChildParameterSource.Source'
+        ChildOutput: 'QgsProcessingModelChildParameterSource.Source'
+        StaticValue: 'QgsProcessingModelChildParameterSource.Source'
+        Expression: 'QgsProcessingModelChildParameterSource.Source'
+        ExpressionText: 'QgsProcessingModelChildParameterSource.Source'
+        ModelOutput: 'QgsProcessingModelChildParameterSource.Source'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -24754,22 +24754,22 @@ class QgsProcessingModelParameter(QgsProcessingModelComponent):
 
 class QgsProcessing(sip.wrapper):
 
-    class PythonOutputType(int): ...
-    PythonQgsProcessingAlgorithmSubclass = ... # type: 'QgsProcessing.PythonOutputType'
+    class PythonOutputType(int):
+        PythonQgsProcessingAlgorithmSubclass: 'QgsProcessing.PythonOutputType'
 
-    class SourceType(int): ...
-    TypeMapLayer = ... # type: 'QgsProcessing.SourceType'
-    TypeVectorAnyGeometry = ... # type: 'QgsProcessing.SourceType'
-    TypeVectorPoint = ... # type: 'QgsProcessing.SourceType'
-    TypeVectorLine = ... # type: 'QgsProcessing.SourceType'
-    TypeVectorPolygon = ... # type: 'QgsProcessing.SourceType'
-    TypeRaster = ... # type: 'QgsProcessing.SourceType'
-    TypeFile = ... # type: 'QgsProcessing.SourceType'
-    TypeVector = ... # type: 'QgsProcessing.SourceType'
-    TypeMesh = ... # type: 'QgsProcessing.SourceType'
-    TypePlugin = ... # type: 'QgsProcessing.SourceType'
-    TypePointCloud = ... # type: 'QgsProcessing.SourceType'
-    TypeAnnotation = ... # type: 'QgsProcessing.SourceType'
+    class SourceType(int):
+        TypeMapLayer: 'QgsProcessing.SourceType'
+        TypeVectorAnyGeometry: 'QgsProcessing.SourceType'
+        TypeVectorPoint: 'QgsProcessing.SourceType'
+        TypeVectorLine: 'QgsProcessing.SourceType'
+        TypeVectorPolygon: 'QgsProcessing.SourceType'
+        TypeRaster: 'QgsProcessing.SourceType'
+        TypeFile: 'QgsProcessing.SourceType'
+        TypeVector: 'QgsProcessing.SourceType'
+        TypeMesh: 'QgsProcessing.SourceType'
+        TypePlugin: 'QgsProcessing.SourceType'
+        TypePointCloud: 'QgsProcessing.SourceType'
+        TypeAnnotation: 'QgsProcessing.SourceType'
 
     TEMPORARY_OUTPUT = ... # type: str
 
@@ -24861,15 +24861,15 @@ class QgsProcessingBatchFeedback(QgsProcessingMultiStepFeedback):
 
 class QgsProcessingContext(sip.wrapper):
 
-    class ProcessArgumentFlag(int): ...
-    IncludeProjectPath = ... # type: 'QgsProcessingContext.ProcessArgumentFlag'
+    class ProcessArgumentFlag(int):
+        IncludeProjectPath: 'QgsProcessingContext.ProcessArgumentFlag'
 
-    class LogLevel(int): ...
-    DefaultLevel = ... # type: 'QgsProcessingContext.LogLevel'
-    Verbose = ... # type: 'QgsProcessingContext.LogLevel'
+    class LogLevel(int):
+        DefaultLevel: 'QgsProcessingContext.LogLevel'
+        Verbose: 'QgsProcessingContext.LogLevel'
 
-    class Flag(int): ...
-    Unused = ... # type: 'QgsProcessingContext.Flag'
+    class Flag(int):
+        Unused: 'QgsProcessingContext.Flag'
 
     class Flags(sip.wrapper):
 
@@ -25140,11 +25140,11 @@ class QgsProcessingOutputConditionalBranch(QgsProcessingOutputDefinition):
 
 class QgsProcessingParameterDefinition(sip.wrapper):
 
-    class Flag(int): ...
-    FlagAdvanced = ... # type: 'QgsProcessingParameterDefinition.Flag'
-    FlagHidden = ... # type: 'QgsProcessingParameterDefinition.Flag'
-    FlagOptional = ... # type: 'QgsProcessingParameterDefinition.Flag'
-    FlagIsModelOutput = ... # type: 'QgsProcessingParameterDefinition.Flag'
+    class Flag(int):
+        FlagAdvanced: 'QgsProcessingParameterDefinition.Flag'
+        FlagHidden: 'QgsProcessingParameterDefinition.Flag'
+        FlagOptional: 'QgsProcessingParameterDefinition.Flag'
+        FlagIsModelOutput: 'QgsProcessingParameterDefinition.Flag'
 
     class Flags(sip.wrapper):
 
@@ -25323,9 +25323,9 @@ class QgsProcessingParameterMeshDatasetTime(QgsProcessingParameterDefinition):
 
 class QgsProcessingFeatureSourceDefinition(sip.wrapper):
 
-    class Flag(int): ...
-    FlagOverrideDefaultGeometryCheck = ... # type: 'QgsProcessingFeatureSourceDefinition.Flag'
-    FlagCreateIndividualOutputPerInputFeature = ... # type: 'QgsProcessingFeatureSourceDefinition.Flag'
+    class Flag(int):
+        FlagOverrideDefaultGeometryCheck: 'QgsProcessingFeatureSourceDefinition.Flag'
+        FlagCreateIndividualOutputPerInputFeature: 'QgsProcessingFeatureSourceDefinition.Flag'
 
     class Flags(sip.wrapper):
 
@@ -25755,9 +25755,9 @@ class QgsProcessingParameterGeometry(QgsProcessingParameterDefinition):
 
 class QgsProcessingParameterFile(QgsProcessingParameterDefinition, QgsFileFilterGenerator):
 
-    class Behavior(int): ...
-    File = ... # type: 'QgsProcessingParameterFile.Behavior'
-    Folder = ... # type: 'QgsProcessingParameterFile.Behavior'
+    class Behavior(int):
+        File: 'QgsProcessingParameterFile.Behavior'
+        Folder: 'QgsProcessingParameterFile.Behavior'
 
     @typing.overload
     def __init__(self, name: str, description: str = ..., behavior: 'QgsProcessingParameterFile.Behavior' = ..., extension: str = ..., defaultValue: typing.Any = ..., optional: bool = ..., fileFilter: str = ...) -> None: ...
@@ -25838,9 +25838,9 @@ class QgsProcessingParameterMultipleLayers(QgsProcessingParameterDefinition, Qgs
 
 class QgsProcessingParameterNumber(QgsProcessingParameterDefinition):
 
-    class Type(int): ...
-    Integer = ... # type: 'QgsProcessingParameterNumber.Type'
-    Double = ... # type: 'QgsProcessingParameterNumber.Type'
+    class Type(int):
+        Integer: 'QgsProcessingParameterNumber.Type'
+        Double: 'QgsProcessingParameterNumber.Type'
 
     @typing.overload
     def __init__(self, name: str, description: str = ..., type: 'QgsProcessingParameterNumber.Type' = ..., defaultValue: typing.Any = ..., optional: bool = ..., minValue: float = ..., maxValue: float = ...) -> None: ...
@@ -26125,11 +26125,11 @@ class QgsProcessingParameterMapLayer(QgsProcessingParameterDefinition, QgsProces
 
 class QgsProcessingParameterField(QgsProcessingParameterDefinition):
 
-    class DataType(int): ...
-    Any = ... # type: 'QgsProcessingParameterField.DataType'
-    Numeric = ... # type: 'QgsProcessingParameterField.DataType'
-    String = ... # type: 'QgsProcessingParameterField.DataType'
-    DateTime = ... # type: 'QgsProcessingParameterField.DataType'
+    class DataType(int):
+        Any: 'QgsProcessingParameterField.DataType'
+        Numeric: 'QgsProcessingParameterField.DataType'
+        String: 'QgsProcessingParameterField.DataType'
+        DateTime: 'QgsProcessingParameterField.DataType'
 
     @typing.overload
     def __init__(self, name: str, description: str = ..., defaultValue: typing.Any = ..., parentLayerParameterName: str = ..., type: 'QgsProcessingParameterField.DataType' = ..., allowMultiple: bool = ..., optional: bool = ..., defaultToAllFields: bool = ...) -> None: ...
@@ -26471,10 +26471,10 @@ class QgsProcessingParameterMapTheme(QgsProcessingParameterDefinition):
 
 class QgsProcessingParameterDateTime(QgsProcessingParameterDefinition):
 
-    class Type(int): ...
-    DateTime = ... # type: 'QgsProcessingParameterDateTime.Type'
-    Date = ... # type: 'QgsProcessingParameterDateTime.Type'
-    Time = ... # type: 'QgsProcessingParameterDateTime.Type'
+    class Type(int):
+        DateTime: 'QgsProcessingParameterDateTime.Type'
+        Date: 'QgsProcessingParameterDateTime.Type'
+        Time: 'QgsProcessingParameterDateTime.Type'
 
     @typing.overload
     def __init__(self, name: str, description: str = ..., type: 'QgsProcessingParameterDateTime.Type' = ..., defaultValue: typing.Any = ..., optional: bool = ..., minValue: typing.Union[QtCore.QDateTime, datetime.datetime] = ..., maxValue: typing.Union[QtCore.QDateTime, datetime.datetime] = ...) -> None: ...
@@ -26634,10 +26634,10 @@ class QgsProcessingParameterPointCloudDestination(QgsProcessingDestinationParame
 
 class QgsProcessingParameterTinInputLayers(QgsProcessingParameterDefinition):
 
-    class Type(int): ...
-    Vertices = ... # type: 'QgsProcessingParameterTinInputLayers.Type'
-    StructureLines = ... # type: 'QgsProcessingParameterTinInputLayers.Type'
-    BreakLines = ... # type: 'QgsProcessingParameterTinInputLayers.Type'
+    class Type(int):
+        Vertices: 'QgsProcessingParameterTinInputLayers.Type'
+        StructureLines: 'QgsProcessingParameterTinInputLayers.Type'
+        BreakLines: 'QgsProcessingParameterTinInputLayers.Type'
 
     class InputLayer(sip.wrapper):
 
@@ -26666,8 +26666,8 @@ class QgsProcessingParameterTinInputLayers(QgsProcessingParameterDefinition):
 
 class QgsProcessingParameterType(sip.wrapper):
 
-    class ParameterFlag(int): ...
-    ExposeToModeler = ... # type: 'QgsProcessingParameterType.ParameterFlag'
+    class ParameterFlag(int):
+        ExposeToModeler: 'QgsProcessingParameterType.ParameterFlag'
 
     class ParameterFlags(sip.wrapper):
 
@@ -26724,8 +26724,8 @@ class QgsProcessingParameterVectorTileWriterLayers(QgsProcessingParameterDefinit
 
 class QgsProcessingProvider(QtCore.QObject):
 
-    class Flag(int): ...
-    FlagDeemphasiseSearchResults = ... # type: 'QgsProcessingProvider.Flag'
+    class Flag(int):
+        FlagDeemphasiseSearchResults: 'QgsProcessingProvider.Flag'
 
     class Flags(sip.wrapper):
 
@@ -26800,13 +26800,13 @@ class QgsProcessingRegistry(QtCore.QObject):
 
 class QgsProcessingUtils(sip.wrapper):
 
-    class LayerHint(int): ...
-    UnknownType = ... # type: 'QgsProcessingUtils.LayerHint'
-    Vector = ... # type: 'QgsProcessingUtils.LayerHint'
-    Raster = ... # type: 'QgsProcessingUtils.LayerHint'
-    Mesh = ... # type: 'QgsProcessingUtils.LayerHint'
-    PointCloud = ... # type: 'QgsProcessingUtils.LayerHint'
-    Annotation = ... # type: 'QgsProcessingUtils.LayerHint'
+    class LayerHint(int):
+        UnknownType: 'QgsProcessingUtils.LayerHint'
+        Vector: 'QgsProcessingUtils.LayerHint'
+        Raster: 'QgsProcessingUtils.LayerHint'
+        Mesh: 'QgsProcessingUtils.LayerHint'
+        PointCloud: 'QgsProcessingUtils.LayerHint'
+        Annotation: 'QgsProcessingUtils.LayerHint'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -26881,8 +26881,8 @@ class QgsProcessingUtils(sip.wrapper):
 
 class QgsProcessingFeatureSource(QgsFeatureSource):
 
-    class Flag(int): ...
-    FlagSkipGeometryValidityChecks = ... # type: 'QgsProcessingFeatureSource.Flag'
+    class Flag(int):
+        FlagSkipGeometryValidityChecks: 'QgsProcessingFeatureSource.Flag'
 
     class Flags(sip.wrapper):
 
@@ -26935,10 +26935,10 @@ class QgsProjectTranslator(sip.wrapper):
 
 class QgsProject(QtCore.QObject, QgsExpressionContextGenerator, QgsExpressionContextScopeGenerator, QgsProjectTranslator):
 
-    class DataDefinedServerProperty(int): ...
-    NoProperty = ... # type: 'QgsProject.DataDefinedServerProperty'
-    AllProperties = ... # type: 'QgsProject.DataDefinedServerProperty'
-    WMSOnlineResource = ... # type: 'QgsProject.DataDefinedServerProperty'
+    class DataDefinedServerProperty(int):
+        NoProperty: 'QgsProject.DataDefinedServerProperty'
+        AllProperties: 'QgsProject.DataDefinedServerProperty'
+        WMSOnlineResource: 'QgsProject.DataDefinedServerProperty'
 
     def __init__(self, parent: typing.Optional[QtCore.QObject] = ..., capabilities: typing.Union[Qgis.ProjectCapabilities, Qgis.ProjectCapability] = ...) -> None: ...
 
@@ -27169,16 +27169,16 @@ class QgsProjectDirtyBlocker(sip.wrapper):
 
 class QgsProjectBadLayerHandler(sip.wrapper):
 
-    class ProviderType(int): ...
-    IS_FILE = ... # type: 'QgsProjectBadLayerHandler.ProviderType'
-    IS_DATABASE = ... # type: 'QgsProjectBadLayerHandler.ProviderType'
-    IS_URL = ... # type: 'QgsProjectBadLayerHandler.ProviderType'
-    IS_Unknown = ... # type: 'QgsProjectBadLayerHandler.ProviderType'
+    class ProviderType(int):
+        IS_FILE: 'QgsProjectBadLayerHandler.ProviderType'
+        IS_DATABASE: 'QgsProjectBadLayerHandler.ProviderType'
+        IS_URL: 'QgsProjectBadLayerHandler.ProviderType'
+        IS_Unknown: 'QgsProjectBadLayerHandler.ProviderType'
 
-    class DataType(int): ...
-    IS_VECTOR = ... # type: 'QgsProjectBadLayerHandler.DataType'
-    IS_RASTER = ... # type: 'QgsProjectBadLayerHandler.DataType'
-    IS_BOGUS = ... # type: 'QgsProjectBadLayerHandler.DataType'
+    class DataType(int):
+        IS_VECTOR: 'QgsProjectBadLayerHandler.DataType'
+        IS_RASTER: 'QgsProjectBadLayerHandler.DataType'
+        IS_BOGUS: 'QgsProjectBadLayerHandler.DataType'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -27302,12 +27302,12 @@ class QgsProjectPropertyKey(QgsProjectProperty):
 
 class QgsProjectServerValidator(sip.wrapper):
 
-    class ValidationError(int): ...
-    DuplicatedNames = ... # type: 'QgsProjectServerValidator.ValidationError'
-    LayerShortName = ... # type: 'QgsProjectServerValidator.ValidationError'
-    LayerEncoding = ... # type: 'QgsProjectServerValidator.ValidationError'
-    ProjectShortName = ... # type: 'QgsProjectServerValidator.ValidationError'
-    ProjectRootNameConflict = ... # type: 'QgsProjectServerValidator.ValidationError'
+    class ValidationError(int):
+        DuplicatedNames: 'QgsProjectServerValidator.ValidationError'
+        LayerShortName: 'QgsProjectServerValidator.ValidationError'
+        LayerEncoding: 'QgsProjectServerValidator.ValidationError'
+        ProjectShortName: 'QgsProjectServerValidator.ValidationError'
+        ProjectRootNameConflict: 'QgsProjectServerValidator.ValidationError'
 
     class ValidationResult(sip.wrapper):
 
@@ -27404,9 +27404,9 @@ class QgsProjectStyleSettings(QtCore.QObject):
 
 class QgsProjectStyleDatabaseModel(QtCore.QAbstractListModel):
 
-    class Role(int): ...
-    StyleRole = ... # type: 'QgsProjectStyleDatabaseModel.Role'
-    PathRole = ... # type: 'QgsProjectStyleDatabaseModel.Role'
+    class Role(int):
+        StyleRole: 'QgsProjectStyleDatabaseModel.Role'
+        PathRole: 'QgsProjectStyleDatabaseModel.Role'
 
     def __init__(self, settings: QgsProjectStyleSettings, parent: typing.Optional[QtCore.QObject] = ...) -> None: ...
 
@@ -27420,8 +27420,8 @@ class QgsProjectStyleDatabaseModel(QtCore.QAbstractListModel):
 
 class QgsProjectStyleDatabaseProxyModel(QtCore.QSortFilterProxyModel):
 
-    class Filter(int): ...
-    FilterHideReadOnly = ... # type: 'QgsProjectStyleDatabaseProxyModel.Filter'
+    class Filter(int):
+        FilterHideReadOnly: 'QgsProjectStyleDatabaseProxyModel.Filter'
 
     class Filters(sip.wrapper):
 
@@ -27559,51 +27559,51 @@ class QgsAbstractProviderConnection(sip.wrapper):
 
 class QgsAbstractDatabaseProviderConnection(QgsAbstractProviderConnection):
 
-    class GeometryColumnCapability(int): ...
-    Z = ... # type: 'QgsAbstractDatabaseProviderConnection.GeometryColumnCapability'
-    M = ... # type: 'QgsAbstractDatabaseProviderConnection.GeometryColumnCapability'
-    SinglePart = ... # type: 'QgsAbstractDatabaseProviderConnection.GeometryColumnCapability'
-    Curves = ... # type: 'QgsAbstractDatabaseProviderConnection.GeometryColumnCapability'
-    SinglePoint = ... # type: 'QgsAbstractDatabaseProviderConnection.GeometryColumnCapability'
-    SingleLineString = ... # type: 'QgsAbstractDatabaseProviderConnection.GeometryColumnCapability'
-    SinglePolygon = ... # type: 'QgsAbstractDatabaseProviderConnection.GeometryColumnCapability'
+    class GeometryColumnCapability(int):
+        Z: 'QgsAbstractDatabaseProviderConnection.GeometryColumnCapability'
+        M: 'QgsAbstractDatabaseProviderConnection.GeometryColumnCapability'
+        SinglePart: 'QgsAbstractDatabaseProviderConnection.GeometryColumnCapability'
+        Curves: 'QgsAbstractDatabaseProviderConnection.GeometryColumnCapability'
+        SinglePoint: 'QgsAbstractDatabaseProviderConnection.GeometryColumnCapability'
+        SingleLineString: 'QgsAbstractDatabaseProviderConnection.GeometryColumnCapability'
+        SinglePolygon: 'QgsAbstractDatabaseProviderConnection.GeometryColumnCapability'
 
-    class Capability(int): ...
-    CreateVectorTable = ... # type: 'QgsAbstractDatabaseProviderConnection.Capability'
-    DropRasterTable = ... # type: 'QgsAbstractDatabaseProviderConnection.Capability'
-    DropVectorTable = ... # type: 'QgsAbstractDatabaseProviderConnection.Capability'
-    RenameVectorTable = ... # type: 'QgsAbstractDatabaseProviderConnection.Capability'
-    RenameRasterTable = ... # type: 'QgsAbstractDatabaseProviderConnection.Capability'
-    CreateSchema = ... # type: 'QgsAbstractDatabaseProviderConnection.Capability'
-    DropSchema = ... # type: 'QgsAbstractDatabaseProviderConnection.Capability'
-    RenameSchema = ... # type: 'QgsAbstractDatabaseProviderConnection.Capability'
-    ExecuteSql = ... # type: 'QgsAbstractDatabaseProviderConnection.Capability'
-    Vacuum = ... # type: 'QgsAbstractDatabaseProviderConnection.Capability'
-    Tables = ... # type: 'QgsAbstractDatabaseProviderConnection.Capability'
-    Schemas = ... # type: 'QgsAbstractDatabaseProviderConnection.Capability'
-    SqlLayers = ... # type: 'QgsAbstractDatabaseProviderConnection.Capability'
-    TableExists = ... # type: 'QgsAbstractDatabaseProviderConnection.Capability'
-    Spatial = ... # type: 'QgsAbstractDatabaseProviderConnection.Capability'
-    CreateSpatialIndex = ... # type: 'QgsAbstractDatabaseProviderConnection.Capability'
-    SpatialIndexExists = ... # type: 'QgsAbstractDatabaseProviderConnection.Capability'
-    DeleteSpatialIndex = ... # type: 'QgsAbstractDatabaseProviderConnection.Capability'
-    DeleteField = ... # type: 'QgsAbstractDatabaseProviderConnection.Capability'
-    DeleteFieldCascade = ... # type: 'QgsAbstractDatabaseProviderConnection.Capability'
-    AddField = ... # type: 'QgsAbstractDatabaseProviderConnection.Capability'
-    ListFieldDomains = ... # type: 'QgsAbstractDatabaseProviderConnection.Capability'
-    RetrieveFieldDomain = ... # type: 'QgsAbstractDatabaseProviderConnection.Capability'
-    SetFieldDomain = ... # type: 'QgsAbstractDatabaseProviderConnection.Capability'
-    AddFieldDomain = ... # type: 'QgsAbstractDatabaseProviderConnection.Capability'
-    RenameField = ... # type: 'QgsAbstractDatabaseProviderConnection.Capability'
-    RetrieveRelationships = ... # type: 'QgsAbstractDatabaseProviderConnection.Capability'
+    class Capability(int):
+        CreateVectorTable: 'QgsAbstractDatabaseProviderConnection.Capability'
+        DropRasterTable: 'QgsAbstractDatabaseProviderConnection.Capability'
+        DropVectorTable: 'QgsAbstractDatabaseProviderConnection.Capability'
+        RenameVectorTable: 'QgsAbstractDatabaseProviderConnection.Capability'
+        RenameRasterTable: 'QgsAbstractDatabaseProviderConnection.Capability'
+        CreateSchema: 'QgsAbstractDatabaseProviderConnection.Capability'
+        DropSchema: 'QgsAbstractDatabaseProviderConnection.Capability'
+        RenameSchema: 'QgsAbstractDatabaseProviderConnection.Capability'
+        ExecuteSql: 'QgsAbstractDatabaseProviderConnection.Capability'
+        Vacuum: 'QgsAbstractDatabaseProviderConnection.Capability'
+        Tables: 'QgsAbstractDatabaseProviderConnection.Capability'
+        Schemas: 'QgsAbstractDatabaseProviderConnection.Capability'
+        SqlLayers: 'QgsAbstractDatabaseProviderConnection.Capability'
+        TableExists: 'QgsAbstractDatabaseProviderConnection.Capability'
+        Spatial: 'QgsAbstractDatabaseProviderConnection.Capability'
+        CreateSpatialIndex: 'QgsAbstractDatabaseProviderConnection.Capability'
+        SpatialIndexExists: 'QgsAbstractDatabaseProviderConnection.Capability'
+        DeleteSpatialIndex: 'QgsAbstractDatabaseProviderConnection.Capability'
+        DeleteField: 'QgsAbstractDatabaseProviderConnection.Capability'
+        DeleteFieldCascade: 'QgsAbstractDatabaseProviderConnection.Capability'
+        AddField: 'QgsAbstractDatabaseProviderConnection.Capability'
+        ListFieldDomains: 'QgsAbstractDatabaseProviderConnection.Capability'
+        RetrieveFieldDomain: 'QgsAbstractDatabaseProviderConnection.Capability'
+        SetFieldDomain: 'QgsAbstractDatabaseProviderConnection.Capability'
+        AddFieldDomain: 'QgsAbstractDatabaseProviderConnection.Capability'
+        RenameField: 'QgsAbstractDatabaseProviderConnection.Capability'
+        RetrieveRelationships: 'QgsAbstractDatabaseProviderConnection.Capability'
 
-    class TableFlag(int): ...
-    Aspatial = ... # type: 'QgsAbstractDatabaseProviderConnection.TableFlag'
-    Vector = ... # type: 'QgsAbstractDatabaseProviderConnection.TableFlag'
-    Raster = ... # type: 'QgsAbstractDatabaseProviderConnection.TableFlag'
-    View = ... # type: 'QgsAbstractDatabaseProviderConnection.TableFlag'
-    MaterializedView = ... # type: 'QgsAbstractDatabaseProviderConnection.TableFlag'
-    Foreign = ... # type: 'QgsAbstractDatabaseProviderConnection.TableFlag'
+    class TableFlag(int):
+        Aspatial: 'QgsAbstractDatabaseProviderConnection.TableFlag'
+        Vector: 'QgsAbstractDatabaseProviderConnection.TableFlag'
+        Raster: 'QgsAbstractDatabaseProviderConnection.TableFlag'
+        View: 'QgsAbstractDatabaseProviderConnection.TableFlag'
+        MaterializedView: 'QgsAbstractDatabaseProviderConnection.TableFlag'
+        Foreign: 'QgsAbstractDatabaseProviderConnection.TableFlag'
 
     class TableFlags(sip.wrapper):
 
@@ -27784,11 +27784,11 @@ class QgsAbstractDatabaseProviderConnection(QgsAbstractProviderConnection):
 
 class QgsMeshDriverMetadata(sip.wrapper):
 
-    class MeshDriverCapability(int): ...
-    CanWriteFaceDatasets = ... # type: 'QgsMeshDriverMetadata.MeshDriverCapability'
-    CanWriteVertexDatasets = ... # type: 'QgsMeshDriverMetadata.MeshDriverCapability'
-    CanWriteEdgeDatasets = ... # type: 'QgsMeshDriverMetadata.MeshDriverCapability'
-    CanWriteMeshData = ... # type: 'QgsMeshDriverMetadata.MeshDriverCapability'
+    class MeshDriverCapability(int):
+        CanWriteFaceDatasets: 'QgsMeshDriverMetadata.MeshDriverCapability'
+        CanWriteVertexDatasets: 'QgsMeshDriverMetadata.MeshDriverCapability'
+        CanWriteEdgeDatasets: 'QgsMeshDriverMetadata.MeshDriverCapability'
+        CanWriteMeshData: 'QgsMeshDriverMetadata.MeshDriverCapability'
 
     class MeshDriverCapabilities(sip.wrapper):
 
@@ -27825,22 +27825,22 @@ class QgsMeshDriverMetadata(sip.wrapper):
 
 class QgsProviderMetadata(QtCore.QObject):
 
-    class FilterType(int): ...
-    FilterVector = ... # type: 'QgsProviderMetadata.FilterType'
-    FilterRaster = ... # type: 'QgsProviderMetadata.FilterType'
-    FilterMesh = ... # type: 'QgsProviderMetadata.FilterType'
-    FilterMeshDataset = ... # type: 'QgsProviderMetadata.FilterType'
-    FilterPointCloud = ... # type: 'QgsProviderMetadata.FilterType'
+    class FilterType(int):
+        FilterVector: 'QgsProviderMetadata.FilterType'
+        FilterRaster: 'QgsProviderMetadata.FilterType'
+        FilterMesh: 'QgsProviderMetadata.FilterType'
+        FilterMeshDataset: 'QgsProviderMetadata.FilterType'
+        FilterPointCloud: 'QgsProviderMetadata.FilterType'
 
-    class ProviderCapability(int): ...
-    FileBasedUris = ... # type: 'QgsProviderMetadata.ProviderCapability'
-    SaveLayerMetadata = ... # type: 'QgsProviderMetadata.ProviderCapability'
+    class ProviderCapability(int):
+        FileBasedUris: 'QgsProviderMetadata.ProviderCapability'
+        SaveLayerMetadata: 'QgsProviderMetadata.ProviderCapability'
 
-    class ProviderMetadataCapability(int): ...
-    PriorityForUri = ... # type: 'QgsProviderMetadata.ProviderMetadataCapability'
-    LayerTypesForUri = ... # type: 'QgsProviderMetadata.ProviderMetadataCapability'
-    QuerySublayers = ... # type: 'QgsProviderMetadata.ProviderMetadataCapability'
-    CreateDatabase = ... # type: 'QgsProviderMetadata.ProviderMetadataCapability'
+    class ProviderMetadataCapability(int):
+        PriorityForUri: 'QgsProviderMetadata.ProviderMetadataCapability'
+        LayerTypesForUri: 'QgsProviderMetadata.ProviderMetadataCapability'
+        QuerySublayers: 'QgsProviderMetadata.ProviderMetadataCapability'
+        CreateDatabase: 'QgsProviderMetadata.ProviderMetadataCapability'
 
     class ProviderMetadataCapabilities(sip.wrapper):
 
@@ -27929,10 +27929,10 @@ class QgsProviderMetadata(QtCore.QObject):
 
 class QgsProviderRegistry(sip.wrapper):
 
-    class WidgetMode(int): ...
-    None = ... # type: 'QgsProviderRegistry.WidgetMode'
-    Embedded = ... # type: 'QgsProviderRegistry.WidgetMode'
-    Manager = ... # type: 'QgsProviderRegistry.WidgetMode'
+    class WidgetMode(int):
+        None: 'QgsProviderRegistry.WidgetMode'
+        Embedded: 'QgsProviderRegistry.WidgetMode'
+        Manager: 'QgsProviderRegistry.WidgetMode'
 
     class ProviderCandidateDetails(sip.wrapper):
 
@@ -28067,24 +28067,24 @@ class QgsProviderSublayerDetails(sip.wrapper):
 
 class QgsProviderSublayerModel(QtCore.QAbstractItemModel):
 
-    class Column(int): ...
-    Name = ... # type: 'QgsProviderSublayerModel.Column'
-    Description = ... # type: 'QgsProviderSublayerModel.Column'
+    class Column(int):
+        Name: 'QgsProviderSublayerModel.Column'
+        Description: 'QgsProviderSublayerModel.Column'
 
-    class Role(int): ...
-    ProviderKey = ... # type: 'QgsProviderSublayerModel.Role'
-    LayerType = ... # type: 'QgsProviderSublayerModel.Role'
-    Uri = ... # type: 'QgsProviderSublayerModel.Role'
-    Name = ... # type: 'QgsProviderSublayerModel.Role'
-    Description = ... # type: 'QgsProviderSublayerModel.Role'
-    Path = ... # type: 'QgsProviderSublayerModel.Role'
-    FeatureCount = ... # type: 'QgsProviderSublayerModel.Role'
-    WkbType = ... # type: 'QgsProviderSublayerModel.Role'
-    GeometryColumnName = ... # type: 'QgsProviderSublayerModel.Role'
-    LayerNumber = ... # type: 'QgsProviderSublayerModel.Role'
-    IsNonLayerItem = ... # type: 'QgsProviderSublayerModel.Role'
-    NonLayerItemType = ... # type: 'QgsProviderSublayerModel.Role'
-    Flags = ... # type: 'QgsProviderSublayerModel.Role'
+    class Role(int):
+        ProviderKey: 'QgsProviderSublayerModel.Role'
+        LayerType: 'QgsProviderSublayerModel.Role'
+        Uri: 'QgsProviderSublayerModel.Role'
+        Name: 'QgsProviderSublayerModel.Role'
+        Description: 'QgsProviderSublayerModel.Role'
+        Path: 'QgsProviderSublayerModel.Role'
+        FeatureCount: 'QgsProviderSublayerModel.Role'
+        WkbType: 'QgsProviderSublayerModel.Role'
+        GeometryColumnName: 'QgsProviderSublayerModel.Role'
+        LayerNumber: 'QgsProviderSublayerModel.Role'
+        IsNonLayerItem: 'QgsProviderSublayerModel.Role'
+        NonLayerItemType: 'QgsProviderSublayerModel.Role'
+        Flags: 'QgsProviderSublayerModel.Role'
 
     class NonLayerItem(sip.wrapper):
 
@@ -28144,9 +28144,9 @@ class QgsProviderSublayerTask(QgsTask):
 
 class QgsProviderUtils(sip.wrapper):
 
-    class SublayerCompletenessFlag(int): ...
-    IgnoreUnknownFeatureCount = ... # type: 'QgsProviderUtils.SublayerCompletenessFlag'
-    IgnoreUnknownGeometryType = ... # type: 'QgsProviderUtils.SublayerCompletenessFlag'
+    class SublayerCompletenessFlag(int):
+        IgnoreUnknownFeatureCount: 'QgsProviderUtils.SublayerCompletenessFlag'
+        IgnoreUnknownGeometryType: 'QgsProviderUtils.SublayerCompletenessFlag'
 
     class SublayerCompletenessFlags(sip.wrapper):
 
@@ -28221,9 +28221,9 @@ class QgsArcGisRestContext(sip.wrapper):
 
 class QgsArcGisRestUtils(sip.wrapper):
 
-    class FeatureToJsonFlag(int): ...
-    IncludeGeometry = ... # type: 'QgsArcGisRestUtils.FeatureToJsonFlag'
-    IncludeNonObjectIdAttributes = ... # type: 'QgsArcGisRestUtils.FeatureToJsonFlag'
+    class FeatureToJsonFlag(int):
+        IncludeGeometry: 'QgsArcGisRestUtils.FeatureToJsonFlag'
+        IncludeNonObjectIdAttributes: 'QgsArcGisRestUtils.FeatureToJsonFlag'
 
     class FeatureToJsonFlags(sip.wrapper):
 
@@ -28334,18 +28334,18 @@ class QgsBilinearRasterResampler(QgsRasterResamplerV2):
 
 class QgsRasterInterface(sip.wrapper):
 
-    class Capability(int): ...
-    NoCapabilities = ... # type: 'QgsRasterInterface.Capability'
-    Size = ... # type: 'QgsRasterInterface.Capability'
-    Create = ... # type: 'QgsRasterInterface.Capability'
-    Remove = ... # type: 'QgsRasterInterface.Capability'
-    BuildPyramids = ... # type: 'QgsRasterInterface.Capability'
-    Identify = ... # type: 'QgsRasterInterface.Capability'
-    IdentifyValue = ... # type: 'QgsRasterInterface.Capability'
-    IdentifyText = ... # type: 'QgsRasterInterface.Capability'
-    IdentifyHtml = ... # type: 'QgsRasterInterface.Capability'
-    IdentifyFeature = ... # type: 'QgsRasterInterface.Capability'
-    Prefetch = ... # type: 'QgsRasterInterface.Capability'
+    class Capability(int):
+        NoCapabilities: 'QgsRasterInterface.Capability'
+        Size: 'QgsRasterInterface.Capability'
+        Create: 'QgsRasterInterface.Capability'
+        Remove: 'QgsRasterInterface.Capability'
+        BuildPyramids: 'QgsRasterInterface.Capability'
+        Identify: 'QgsRasterInterface.Capability'
+        IdentifyValue: 'QgsRasterInterface.Capability'
+        IdentifyText: 'QgsRasterInterface.Capability'
+        IdentifyHtml: 'QgsRasterInterface.Capability'
+        IdentifyFeature: 'QgsRasterInterface.Capability'
+        Prefetch: 'QgsRasterInterface.Capability'
 
     def __init__(self, input: typing.Optional['QgsRasterInterface'] = ...) -> None: ...
 
@@ -28449,15 +28449,15 @@ class QgsRasterShaderFunction(sip.wrapper):
 
 class QgsColorRampShader(QgsRasterShaderFunction):
 
-    class ClassificationMode(int): ...
-    Continuous = ... # type: 'QgsColorRampShader.ClassificationMode'
-    EqualInterval = ... # type: 'QgsColorRampShader.ClassificationMode'
-    Quantile = ... # type: 'QgsColorRampShader.ClassificationMode'
+    class ClassificationMode(int):
+        Continuous: 'QgsColorRampShader.ClassificationMode'
+        EqualInterval: 'QgsColorRampShader.ClassificationMode'
+        Quantile: 'QgsColorRampShader.ClassificationMode'
 
-    class Type(int): ...
-    Interpolated = ... # type: 'QgsColorRampShader.Type'
-    Discrete = ... # type: 'QgsColorRampShader.Type'
-    Exact = ... # type: 'QgsColorRampShader.Type'
+    class Type(int):
+        Interpolated: 'QgsColorRampShader.Type'
+        Discrete: 'QgsColorRampShader.Type'
+        Exact: 'QgsColorRampShader.Type'
 
     class ColorRampItem(sip.wrapper):
 
@@ -28508,12 +28508,12 @@ class QgsColorRampShader(QgsRasterShaderFunction):
 
 class QgsContrastEnhancement(sip.wrapper):
 
-    class ContrastEnhancementAlgorithm(int): ...
-    NoEnhancement = ... # type: 'QgsContrastEnhancement.ContrastEnhancementAlgorithm'
-    StretchToMinimumMaximum = ... # type: 'QgsContrastEnhancement.ContrastEnhancementAlgorithm'
-    StretchAndClipToMinimumMaximum = ... # type: 'QgsContrastEnhancement.ContrastEnhancementAlgorithm'
-    ClipToMinimumMaximum = ... # type: 'QgsContrastEnhancement.ContrastEnhancementAlgorithm'
-    UserDefinedEnhancement = ... # type: 'QgsContrastEnhancement.ContrastEnhancementAlgorithm'
+    class ContrastEnhancementAlgorithm(int):
+        NoEnhancement: 'QgsContrastEnhancement.ContrastEnhancementAlgorithm'
+        StretchToMinimumMaximum: 'QgsContrastEnhancement.ContrastEnhancementAlgorithm'
+        StretchAndClipToMinimumMaximum: 'QgsContrastEnhancement.ContrastEnhancementAlgorithm'
+        ClipToMinimumMaximum: 'QgsContrastEnhancement.ContrastEnhancementAlgorithm'
+        UserDefinedEnhancement: 'QgsContrastEnhancement.ContrastEnhancementAlgorithm'
 
     @typing.overload
     def __init__(self, datatype: Qgis.DataType = ...) -> None: ...
@@ -28645,11 +28645,11 @@ class QgsHillshadeRenderer(QgsRasterRenderer):
 
 class QgsHueSaturationFilter(QgsRasterInterface):
 
-    class GrayscaleMode(int): ...
-    GrayscaleOff = ... # type: 'QgsHueSaturationFilter.GrayscaleMode'
-    GrayscaleLightness = ... # type: 'QgsHueSaturationFilter.GrayscaleMode'
-    GrayscaleLuminosity = ... # type: 'QgsHueSaturationFilter.GrayscaleMode'
-    GrayscaleAverage = ... # type: 'QgsHueSaturationFilter.GrayscaleMode'
+    class GrayscaleMode(int):
+        GrayscaleOff: 'QgsHueSaturationFilter.GrayscaleMode'
+        GrayscaleLightness: 'QgsHueSaturationFilter.GrayscaleMode'
+        GrayscaleLuminosity: 'QgsHueSaturationFilter.GrayscaleMode'
+        GrayscaleAverage: 'QgsHueSaturationFilter.GrayscaleMode'
 
     def __init__(self, input: typing.Optional[QgsRasterInterface] = ...) -> None: ...
 
@@ -28767,60 +28767,60 @@ class QgsPalettedRasterRenderer(QgsRasterRenderer):
 
 class QgsRaster(sip.wrapper):
 
-    class DrawingStyle(int): ...
-    UndefinedDrawingStyle = ... # type: 'QgsRaster.DrawingStyle'
-    SingleBandGray = ... # type: 'QgsRaster.DrawingStyle'
-    SingleBandPseudoColor = ... # type: 'QgsRaster.DrawingStyle'
-    PalettedColor = ... # type: 'QgsRaster.DrawingStyle'
-    PalettedSingleBandGray = ... # type: 'QgsRaster.DrawingStyle'
-    PalettedSingleBandPseudoColor = ... # type: 'QgsRaster.DrawingStyle'
-    PalettedMultiBandColor = ... # type: 'QgsRaster.DrawingStyle'
-    MultiBandSingleBandGray = ... # type: 'QgsRaster.DrawingStyle'
-    MultiBandSingleBandPseudoColor = ... # type: 'QgsRaster.DrawingStyle'
-    MultiBandColor = ... # type: 'QgsRaster.DrawingStyle'
-    SingleBandColorDataStyle = ... # type: 'QgsRaster.DrawingStyle'
+    class DrawingStyle(int):
+        UndefinedDrawingStyle: 'QgsRaster.DrawingStyle'
+        SingleBandGray: 'QgsRaster.DrawingStyle'
+        SingleBandPseudoColor: 'QgsRaster.DrawingStyle'
+        PalettedColor: 'QgsRaster.DrawingStyle'
+        PalettedSingleBandGray: 'QgsRaster.DrawingStyle'
+        PalettedSingleBandPseudoColor: 'QgsRaster.DrawingStyle'
+        PalettedMultiBandColor: 'QgsRaster.DrawingStyle'
+        MultiBandSingleBandGray: 'QgsRaster.DrawingStyle'
+        MultiBandSingleBandPseudoColor: 'QgsRaster.DrawingStyle'
+        MultiBandColor: 'QgsRaster.DrawingStyle'
+        SingleBandColorDataStyle: 'QgsRaster.DrawingStyle'
 
-    class RasterPyramidsFormat(int): ...
-    PyramidsGTiff = ... # type: 'QgsRaster.RasterPyramidsFormat'
-    PyramidsInternal = ... # type: 'QgsRaster.RasterPyramidsFormat'
-    PyramidsErdas = ... # type: 'QgsRaster.RasterPyramidsFormat'
+    class RasterPyramidsFormat(int):
+        PyramidsGTiff: 'QgsRaster.RasterPyramidsFormat'
+        PyramidsInternal: 'QgsRaster.RasterPyramidsFormat'
+        PyramidsErdas: 'QgsRaster.RasterPyramidsFormat'
 
-    class RasterBuildPyramids(int): ...
-    PyramidsFlagNo = ... # type: 'QgsRaster.RasterBuildPyramids'
-    PyramidsFlagYes = ... # type: 'QgsRaster.RasterBuildPyramids'
-    PyramidsCopyExisting = ... # type: 'QgsRaster.RasterBuildPyramids'
+    class RasterBuildPyramids(int):
+        PyramidsFlagNo: 'QgsRaster.RasterBuildPyramids'
+        PyramidsFlagYes: 'QgsRaster.RasterBuildPyramids'
+        PyramidsCopyExisting: 'QgsRaster.RasterBuildPyramids'
 
-    class RasterProgressType(int): ...
-    ProgressHistogram = ... # type: 'QgsRaster.RasterProgressType'
-    ProgressPyramids = ... # type: 'QgsRaster.RasterProgressType'
-    ProgressStatistics = ... # type: 'QgsRaster.RasterProgressType'
+    class RasterProgressType(int):
+        ProgressHistogram: 'QgsRaster.RasterProgressType'
+        ProgressPyramids: 'QgsRaster.RasterProgressType'
+        ProgressStatistics: 'QgsRaster.RasterProgressType'
 
-    class IdentifyFormat(int): ...
-    IdentifyFormatUndefined = ... # type: 'QgsRaster.IdentifyFormat'
-    IdentifyFormatValue = ... # type: 'QgsRaster.IdentifyFormat'
-    IdentifyFormatText = ... # type: 'QgsRaster.IdentifyFormat'
-    IdentifyFormatHtml = ... # type: 'QgsRaster.IdentifyFormat'
-    IdentifyFormatFeature = ... # type: 'QgsRaster.IdentifyFormat'
+    class IdentifyFormat(int):
+        IdentifyFormatUndefined: 'QgsRaster.IdentifyFormat'
+        IdentifyFormatValue: 'QgsRaster.IdentifyFormat'
+        IdentifyFormatText: 'QgsRaster.IdentifyFormat'
+        IdentifyFormatHtml: 'QgsRaster.IdentifyFormat'
+        IdentifyFormatFeature: 'QgsRaster.IdentifyFormat'
 
-    class ColorInterpretation(int): ...
-    UndefinedColorInterpretation = ... # type: 'QgsRaster.ColorInterpretation'
-    GrayIndex = ... # type: 'QgsRaster.ColorInterpretation'
-    PaletteIndex = ... # type: 'QgsRaster.ColorInterpretation'
-    RedBand = ... # type: 'QgsRaster.ColorInterpretation'
-    GreenBand = ... # type: 'QgsRaster.ColorInterpretation'
-    BlueBand = ... # type: 'QgsRaster.ColorInterpretation'
-    AlphaBand = ... # type: 'QgsRaster.ColorInterpretation'
-    HueBand = ... # type: 'QgsRaster.ColorInterpretation'
-    SaturationBand = ... # type: 'QgsRaster.ColorInterpretation'
-    LightnessBand = ... # type: 'QgsRaster.ColorInterpretation'
-    CyanBand = ... # type: 'QgsRaster.ColorInterpretation'
-    MagentaBand = ... # type: 'QgsRaster.ColorInterpretation'
-    YellowBand = ... # type: 'QgsRaster.ColorInterpretation'
-    BlackBand = ... # type: 'QgsRaster.ColorInterpretation'
-    YCbCr_YBand = ... # type: 'QgsRaster.ColorInterpretation'
-    YCbCr_CbBand = ... # type: 'QgsRaster.ColorInterpretation'
-    YCbCr_CrBand = ... # type: 'QgsRaster.ColorInterpretation'
-    ContinuousPalette = ... # type: 'QgsRaster.ColorInterpretation'
+    class ColorInterpretation(int):
+        UndefinedColorInterpretation: 'QgsRaster.ColorInterpretation'
+        GrayIndex: 'QgsRaster.ColorInterpretation'
+        PaletteIndex: 'QgsRaster.ColorInterpretation'
+        RedBand: 'QgsRaster.ColorInterpretation'
+        GreenBand: 'QgsRaster.ColorInterpretation'
+        BlueBand: 'QgsRaster.ColorInterpretation'
+        AlphaBand: 'QgsRaster.ColorInterpretation'
+        HueBand: 'QgsRaster.ColorInterpretation'
+        SaturationBand: 'QgsRaster.ColorInterpretation'
+        LightnessBand: 'QgsRaster.ColorInterpretation'
+        CyanBand: 'QgsRaster.ColorInterpretation'
+        MagentaBand: 'QgsRaster.ColorInterpretation'
+        YellowBand: 'QgsRaster.ColorInterpretation'
+        BlackBand: 'QgsRaster.ColorInterpretation'
+        YCbCr_YBand: 'QgsRaster.ColorInterpretation'
+        YCbCr_CbBand: 'QgsRaster.ColorInterpretation'
+        YCbCr_CrBand: 'QgsRaster.ColorInterpretation'
+        ContinuousPalette: 'QgsRaster.ColorInterpretation'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -28833,16 +28833,16 @@ class QgsRaster(sip.wrapper):
 
 class QgsRasterBandStats(sip.wrapper):
 
-    class Stats(int): ...
-    None = ... # type: 'QgsRasterBandStats.Stats'
-    Min = ... # type: 'QgsRasterBandStats.Stats'
-    Max = ... # type: 'QgsRasterBandStats.Stats'
-    Range = ... # type: 'QgsRasterBandStats.Stats'
-    Sum = ... # type: 'QgsRasterBandStats.Stats'
-    Mean = ... # type: 'QgsRasterBandStats.Stats'
-    StdDev = ... # type: 'QgsRasterBandStats.Stats'
-    SumOfSquares = ... # type: 'QgsRasterBandStats.Stats'
-    All = ... # type: 'QgsRasterBandStats.Stats'
+    class Stats(int):
+        None: 'QgsRasterBandStats.Stats'
+        Min: 'QgsRasterBandStats.Stats'
+        Max: 'QgsRasterBandStats.Stats'
+        Range: 'QgsRasterBandStats.Stats'
+        Sum: 'QgsRasterBandStats.Stats'
+        Mean: 'QgsRasterBandStats.Stats'
+        StdDev: 'QgsRasterBandStats.Stats'
+        SumOfSquares: 'QgsRasterBandStats.Stats'
+        All: 'QgsRasterBandStats.Stats'
 
     bandNumber = ... # type: int
     elementCount = ... # type: int
@@ -28995,28 +28995,28 @@ class QgsImageFetcher(QtCore.QObject):
 
 class QgsRasterDataProvider(QgsDataProvider, QgsRasterInterface):
 
-    class ResamplingMethod(int): ...
-    Nearest = ... # type: 'QgsRasterDataProvider.ResamplingMethod'
-    Bilinear = ... # type: 'QgsRasterDataProvider.ResamplingMethod'
-    Cubic = ... # type: 'QgsRasterDataProvider.ResamplingMethod'
-    CubicSpline = ... # type: 'QgsRasterDataProvider.ResamplingMethod'
-    Lanczos = ... # type: 'QgsRasterDataProvider.ResamplingMethod'
-    Average = ... # type: 'QgsRasterDataProvider.ResamplingMethod'
-    Mode = ... # type: 'QgsRasterDataProvider.ResamplingMethod'
-    Gauss = ... # type: 'QgsRasterDataProvider.ResamplingMethod'
+    class ResamplingMethod(int):
+        Nearest: 'QgsRasterDataProvider.ResamplingMethod'
+        Bilinear: 'QgsRasterDataProvider.ResamplingMethod'
+        Cubic: 'QgsRasterDataProvider.ResamplingMethod'
+        CubicSpline: 'QgsRasterDataProvider.ResamplingMethod'
+        Lanczos: 'QgsRasterDataProvider.ResamplingMethod'
+        Average: 'QgsRasterDataProvider.ResamplingMethod'
+        Mode: 'QgsRasterDataProvider.ResamplingMethod'
+        Gauss: 'QgsRasterDataProvider.ResamplingMethod'
 
-    class TransformType(int): ...
-    TransformImageToLayer = ... # type: 'QgsRasterDataProvider.TransformType'
-    TransformLayerToImage = ... # type: 'QgsRasterDataProvider.TransformType'
+    class TransformType(int):
+        TransformImageToLayer: 'QgsRasterDataProvider.TransformType'
+        TransformLayerToImage: 'QgsRasterDataProvider.TransformType'
 
-    class ProviderCapability(int): ...
-    NoProviderCapabilities = ... # type: 'QgsRasterDataProvider.ProviderCapability'
-    ReadLayerMetadata = ... # type: 'QgsRasterDataProvider.ProviderCapability'
-    WriteLayerMetadata = ... # type: 'QgsRasterDataProvider.ProviderCapability'
-    ProviderHintBenefitsFromResampling = ... # type: 'QgsRasterDataProvider.ProviderCapability'
-    ProviderHintCanPerformProviderResampling = ... # type: 'QgsRasterDataProvider.ProviderCapability'
-    ReloadData = ... # type: 'QgsRasterDataProvider.ProviderCapability'
-    DpiDependentData = ... # type: 'QgsRasterDataProvider.ProviderCapability'
+    class ProviderCapability(int):
+        NoProviderCapabilities: 'QgsRasterDataProvider.ProviderCapability'
+        ReadLayerMetadata: 'QgsRasterDataProvider.ProviderCapability'
+        WriteLayerMetadata: 'QgsRasterDataProvider.ProviderCapability'
+        ProviderHintBenefitsFromResampling: 'QgsRasterDataProvider.ProviderCapability'
+        ProviderHintCanPerformProviderResampling: 'QgsRasterDataProvider.ProviderCapability'
+        ReloadData: 'QgsRasterDataProvider.ProviderCapability'
+        DpiDependentData: 'QgsRasterDataProvider.ProviderCapability'
 
     class ProviderCapabilities(sip.wrapper):
 
@@ -29178,21 +29178,21 @@ class QgsRasterDrawer(sip.wrapper):
 
 class QgsRasterFileWriter(sip.wrapper):
 
-    class RasterFormatOption(int): ...
-    SortRecommended = ... # type: 'QgsRasterFileWriter.RasterFormatOption'
+    class RasterFormatOption(int):
+        SortRecommended: 'QgsRasterFileWriter.RasterFormatOption'
 
-    class WriterError(int): ...
-    NoError = ... # type: 'QgsRasterFileWriter.WriterError'
-    SourceProviderError = ... # type: 'QgsRasterFileWriter.WriterError'
-    DestProviderError = ... # type: 'QgsRasterFileWriter.WriterError'
-    CreateDatasourceError = ... # type: 'QgsRasterFileWriter.WriterError'
-    WriteError = ... # type: 'QgsRasterFileWriter.WriterError'
-    NoDataConflict = ... # type: 'QgsRasterFileWriter.WriterError'
-    WriteCanceled = ... # type: 'QgsRasterFileWriter.WriterError'
+    class WriterError(int):
+        NoError: 'QgsRasterFileWriter.WriterError'
+        SourceProviderError: 'QgsRasterFileWriter.WriterError'
+        DestProviderError: 'QgsRasterFileWriter.WriterError'
+        CreateDatasourceError: 'QgsRasterFileWriter.WriterError'
+        WriteError: 'QgsRasterFileWriter.WriterError'
+        NoDataConflict: 'QgsRasterFileWriter.WriterError'
+        WriteCanceled: 'QgsRasterFileWriter.WriterError'
 
-    class Mode(int): ...
-    Raw = ... # type: 'QgsRasterFileWriter.Mode'
-    Image = ... # type: 'QgsRasterFileWriter.Mode'
+    class Mode(int):
+        Raw: 'QgsRasterFileWriter.Mode'
+        Image: 'QgsRasterFileWriter.Mode'
 
     class RasterFormatOptions(sip.wrapper):
 
@@ -29361,18 +29361,18 @@ class QgsRasterIterator(sip.wrapper):
 
 class QgsRasterLayer(QgsMapLayer, QgsAbstractProfileSource):
 
-    class LayerType(int): ...
-    GrayOrUndefined = ... # type: 'QgsRasterLayer.LayerType'
-    Palette = ... # type: 'QgsRasterLayer.LayerType'
-    Multiband = ... # type: 'QgsRasterLayer.LayerType'
-    ColorLayer = ... # type: 'QgsRasterLayer.LayerType'
+    class LayerType(int):
+        GrayOrUndefined: 'QgsRasterLayer.LayerType'
+        Palette: 'QgsRasterLayer.LayerType'
+        Multiband: 'QgsRasterLayer.LayerType'
+        ColorLayer: 'QgsRasterLayer.LayerType'
 
-    class ColorShadingAlgorithm(int): ...
-    UndefinedShader = ... # type: 'QgsRasterLayer.ColorShadingAlgorithm'
-    PseudoColorShader = ... # type: 'QgsRasterLayer.ColorShadingAlgorithm'
-    FreakOutShader = ... # type: 'QgsRasterLayer.ColorShadingAlgorithm'
-    ColorRampShader = ... # type: 'QgsRasterLayer.ColorShadingAlgorithm'
-    UserDefinedShader = ... # type: 'QgsRasterLayer.ColorShadingAlgorithm'
+    class ColorShadingAlgorithm(int):
+        UndefinedShader: 'QgsRasterLayer.ColorShadingAlgorithm'
+        PseudoColorShader: 'QgsRasterLayer.ColorShadingAlgorithm'
+        FreakOutShader: 'QgsRasterLayer.ColorShadingAlgorithm'
+        ColorRampShader: 'QgsRasterLayer.ColorShadingAlgorithm'
+        UserDefinedShader: 'QgsRasterLayer.ColorShadingAlgorithm'
 
     class LayerOptions(sip.wrapper):
 
@@ -29512,20 +29512,20 @@ class QgsRasterLayerTemporalProperties(QgsMapLayerTemporalProperties):
 
 class QgsRasterMinMaxOrigin(sip.wrapper):
 
-    class StatAccuracy(int): ...
-    Exact = ... # type: 'QgsRasterMinMaxOrigin.StatAccuracy'
-    Estimated = ... # type: 'QgsRasterMinMaxOrigin.StatAccuracy'
+    class StatAccuracy(int):
+        Exact: 'QgsRasterMinMaxOrigin.StatAccuracy'
+        Estimated: 'QgsRasterMinMaxOrigin.StatAccuracy'
 
-    class Extent(int): ...
-    WholeRaster = ... # type: 'QgsRasterMinMaxOrigin.Extent'
-    CurrentCanvas = ... # type: 'QgsRasterMinMaxOrigin.Extent'
-    UpdatedCanvas = ... # type: 'QgsRasterMinMaxOrigin.Extent'
+    class Extent(int):
+        WholeRaster: 'QgsRasterMinMaxOrigin.Extent'
+        CurrentCanvas: 'QgsRasterMinMaxOrigin.Extent'
+        UpdatedCanvas: 'QgsRasterMinMaxOrigin.Extent'
 
-    class Limits(int): ...
-    None_ = ... # type: 'QgsRasterMinMaxOrigin.Limits'
-    MinMax = ... # type: 'QgsRasterMinMaxOrigin.Limits'
-    StdDev = ... # type: 'QgsRasterMinMaxOrigin.Limits'
-    CumulativeCut = ... # type: 'QgsRasterMinMaxOrigin.Limits'
+    class Limits(int):
+        None_: 'QgsRasterMinMaxOrigin.Limits'
+        MinMax: 'QgsRasterMinMaxOrigin.Limits'
+        StdDev: 'QgsRasterMinMaxOrigin.Limits'
+        CumulativeCut: 'QgsRasterMinMaxOrigin.Limits'
 
     CUMULATIVE_CUT_LOWER = ... # type: float
     CUMULATIVE_CUT_UPPER = ... # type: float
@@ -29589,8 +29589,8 @@ class QgsRasterNuller(QgsRasterInterface):
 
 class QgsRasterPipe(sip.wrapper):
 
-    class Property(int): ...
-    RendererOpacity = ... # type: 'QgsRasterPipe.Property'
+    class Property(int):
+        RendererOpacity: 'QgsRasterPipe.Property'
 
     def __init__(self) -> None: ...
 
@@ -29624,9 +29624,9 @@ class QgsRasterPipe(sip.wrapper):
 
 class QgsRasterProjector(QgsRasterInterface):
 
-    class Precision(int): ...
-    Approximate = ... # type: 'QgsRasterProjector.Precision'
-    Exact = ... # type: 'QgsRasterProjector.Precision'
+    class Precision(int):
+        Approximate: 'QgsRasterProjector.Precision'
+        Exact: 'QgsRasterProjector.Precision'
 
     staticMetaObject = ... # type: QtCore.QMetaObject
 
@@ -29692,11 +29692,11 @@ class QgsRasterPyramid(sip.wrapper):
 
 class QgsRasterRange(sip.wrapper):
 
-    class BoundsType(int): ...
-    IncludeMinAndMax = ... # type: 'QgsRasterRange.BoundsType'
-    IncludeMax = ... # type: 'QgsRasterRange.BoundsType'
-    IncludeMin = ... # type: 'QgsRasterRange.BoundsType'
-    Exclusive = ... # type: 'QgsRasterRange.BoundsType'
+    class BoundsType(int):
+        IncludeMinAndMax: 'QgsRasterRange.BoundsType'
+        IncludeMax: 'QgsRasterRange.BoundsType'
+        IncludeMin: 'QgsRasterRange.BoundsType'
+        Exclusive: 'QgsRasterRange.BoundsType'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -29849,9 +29849,9 @@ class QgsSingleBandColorDataRenderer(QgsRasterRenderer):
 
 class QgsSingleBandGrayRenderer(QgsRasterRenderer):
 
-    class Gradient(int): ...
-    BlackToWhite = ... # type: 'QgsSingleBandGrayRenderer.Gradient'
-    WhiteToBlack = ... # type: 'QgsSingleBandGrayRenderer.Gradient'
+    class Gradient(int):
+        BlackToWhite: 'QgsSingleBandGrayRenderer.Gradient'
+        WhiteToBlack: 'QgsSingleBandGrayRenderer.Gradient'
 
     def __init__(self, input: QgsRasterInterface, grayBand: int) -> None: ...
 
@@ -29902,22 +29902,22 @@ class QgsSingleBandPseudoColorRenderer(QgsRasterRenderer):
 
 class QgsScaleBarRenderer(sip.wrapper):
 
-    class Flag(int): ...
-    FlagUsesLineSymbol = ... # type: 'QgsScaleBarRenderer.Flag'
-    FlagUsesFillSymbol = ... # type: 'QgsScaleBarRenderer.Flag'
-    FlagUsesAlternateFillSymbol = ... # type: 'QgsScaleBarRenderer.Flag'
-    FlagRespectsUnits = ... # type: 'QgsScaleBarRenderer.Flag'
-    FlagRespectsMapUnitsPerScaleBarUnit = ... # type: 'QgsScaleBarRenderer.Flag'
-    FlagUsesUnitLabel = ... # type: 'QgsScaleBarRenderer.Flag'
-    FlagUsesSegments = ... # type: 'QgsScaleBarRenderer.Flag'
-    FlagUsesLabelBarSpace = ... # type: 'QgsScaleBarRenderer.Flag'
-    FlagUsesLabelVerticalPlacement = ... # type: 'QgsScaleBarRenderer.Flag'
-    FlagUsesLabelHorizontalPlacement = ... # type: 'QgsScaleBarRenderer.Flag'
-    FlagUsesAlignment = ... # type: 'QgsScaleBarRenderer.Flag'
-    FlagUsesSubdivisions = ... # type: 'QgsScaleBarRenderer.Flag'
-    FlagUsesDivisionSymbol = ... # type: 'QgsScaleBarRenderer.Flag'
-    FlagUsesSubdivisionSymbol = ... # type: 'QgsScaleBarRenderer.Flag'
-    FlagUsesSubdivisionsHeight = ... # type: 'QgsScaleBarRenderer.Flag'
+    class Flag(int):
+        FlagUsesLineSymbol: 'QgsScaleBarRenderer.Flag'
+        FlagUsesFillSymbol: 'QgsScaleBarRenderer.Flag'
+        FlagUsesAlternateFillSymbol: 'QgsScaleBarRenderer.Flag'
+        FlagRespectsUnits: 'QgsScaleBarRenderer.Flag'
+        FlagRespectsMapUnitsPerScaleBarUnit: 'QgsScaleBarRenderer.Flag'
+        FlagUsesUnitLabel: 'QgsScaleBarRenderer.Flag'
+        FlagUsesSegments: 'QgsScaleBarRenderer.Flag'
+        FlagUsesLabelBarSpace: 'QgsScaleBarRenderer.Flag'
+        FlagUsesLabelVerticalPlacement: 'QgsScaleBarRenderer.Flag'
+        FlagUsesLabelHorizontalPlacement: 'QgsScaleBarRenderer.Flag'
+        FlagUsesAlignment: 'QgsScaleBarRenderer.Flag'
+        FlagUsesSubdivisions: 'QgsScaleBarRenderer.Flag'
+        FlagUsesDivisionSymbol: 'QgsScaleBarRenderer.Flag'
+        FlagUsesSubdivisionSymbol: 'QgsScaleBarRenderer.Flag'
+        FlagUsesSubdivisionsHeight: 'QgsScaleBarRenderer.Flag'
 
     class Flags(sip.wrapper):
 
@@ -30043,22 +30043,22 @@ class QgsScaleBarRendererRegistry(sip.wrapper):
 
 class QgsScaleBarSettings(sip.wrapper):
 
-    class LabelHorizontalPlacement(int): ...
-    LabelCenteredEdge = ... # type: 'QgsScaleBarSettings.LabelHorizontalPlacement'
-    LabelCenteredSegment = ... # type: 'QgsScaleBarSettings.LabelHorizontalPlacement'
+    class LabelHorizontalPlacement(int):
+        LabelCenteredEdge: 'QgsScaleBarSettings.LabelHorizontalPlacement'
+        LabelCenteredSegment: 'QgsScaleBarSettings.LabelHorizontalPlacement'
 
-    class LabelVerticalPlacement(int): ...
-    LabelAboveSegment = ... # type: 'QgsScaleBarSettings.LabelVerticalPlacement'
-    LabelBelowSegment = ... # type: 'QgsScaleBarSettings.LabelVerticalPlacement'
+    class LabelVerticalPlacement(int):
+        LabelAboveSegment: 'QgsScaleBarSettings.LabelVerticalPlacement'
+        LabelBelowSegment: 'QgsScaleBarSettings.LabelVerticalPlacement'
 
-    class SegmentSizeMode(int): ...
-    SegmentSizeFixed = ... # type: 'QgsScaleBarSettings.SegmentSizeMode'
-    SegmentSizeFitWidth = ... # type: 'QgsScaleBarSettings.SegmentSizeMode'
+    class SegmentSizeMode(int):
+        SegmentSizeFixed: 'QgsScaleBarSettings.SegmentSizeMode'
+        SegmentSizeFitWidth: 'QgsScaleBarSettings.SegmentSizeMode'
 
-    class Alignment(int): ...
-    AlignLeft = ... # type: 'QgsScaleBarSettings.Alignment'
-    AlignMiddle = ... # type: 'QgsScaleBarSettings.Alignment'
-    AlignRight = ... # type: 'QgsScaleBarSettings.Alignment'
+    class Alignment(int):
+        AlignLeft: 'QgsScaleBarSettings.Alignment'
+        AlignMiddle: 'QgsScaleBarSettings.Alignment'
+        AlignRight: 'QgsScaleBarSettings.Alignment'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -30169,10 +30169,10 @@ class QgsSteppedLineScaleBarRenderer(QgsScaleBarRenderer):
 
 class QgsTicksScaleBarRenderer(QgsScaleBarRenderer):
 
-    class TickPosition(int): ...
-    TicksUp = ... # type: 'QgsTicksScaleBarRenderer.TickPosition'
-    TicksDown = ... # type: 'QgsTicksScaleBarRenderer.TickPosition'
-    TicksMiddle = ... # type: 'QgsTicksScaleBarRenderer.TickPosition'
+    class TickPosition(int):
+        TicksUp: 'QgsTicksScaleBarRenderer.TickPosition'
+        TicksDown: 'QgsTicksScaleBarRenderer.TickPosition'
+        TicksMiddle: 'QgsTicksScaleBarRenderer.TickPosition'
 
     @typing.overload
     def __init__(self, position: 'QgsTicksScaleBarRenderer.TickPosition' = ...) -> None: ...
@@ -30191,11 +30191,11 @@ class QgsTicksScaleBarRenderer(QgsScaleBarRenderer):
 
 class QgsFeatureRenderer(sip.wrapper):
 
-    class Capability(int): ...
-    SymbolLevels = ... # type: 'QgsFeatureRenderer.Capability'
-    MoreSymbolsPerFeature = ... # type: 'QgsFeatureRenderer.Capability'
-    Filter = ... # type: 'QgsFeatureRenderer.Capability'
-    ScaleDependent = ... # type: 'QgsFeatureRenderer.Capability'
+    class Capability(int):
+        SymbolLevels: 'QgsFeatureRenderer.Capability'
+        MoreSymbolsPerFeature: 'QgsFeatureRenderer.Capability'
+        Filter: 'QgsFeatureRenderer.Capability'
+        ScaleDependent: 'QgsFeatureRenderer.Capability'
 
     class Capabilities(sip.wrapper):
 
@@ -30310,77 +30310,77 @@ class Qgs25DRenderer(QgsFeatureRenderer):
 
 class QgsSymbolLayer(sip.wrapper):
 
-    class Property(int): ...
-    PropertySize = ... # type: 'QgsSymbolLayer.Property'
-    PropertyAngle = ... # type: 'QgsSymbolLayer.Property'
-    PropertyName = ... # type: 'QgsSymbolLayer.Property'
-    PropertyFillColor = ... # type: 'QgsSymbolLayer.Property'
-    PropertyStrokeColor = ... # type: 'QgsSymbolLayer.Property'
-    PropertyStrokeWidth = ... # type: 'QgsSymbolLayer.Property'
-    PropertyStrokeStyle = ... # type: 'QgsSymbolLayer.Property'
-    PropertyOffset = ... # type: 'QgsSymbolLayer.Property'
-    PropertyCharacter = ... # type: 'QgsSymbolLayer.Property'
-    PropertyWidth = ... # type: 'QgsSymbolLayer.Property'
-    PropertyHeight = ... # type: 'QgsSymbolLayer.Property'
-    PropertyPreserveAspectRatio = ... # type: 'QgsSymbolLayer.Property'
-    PropertyFillStyle = ... # type: 'QgsSymbolLayer.Property'
-    PropertyJoinStyle = ... # type: 'QgsSymbolLayer.Property'
-    PropertySecondaryColor = ... # type: 'QgsSymbolLayer.Property'
-    PropertyLineAngle = ... # type: 'QgsSymbolLayer.Property'
-    PropertyLineDistance = ... # type: 'QgsSymbolLayer.Property'
-    PropertyGradientType = ... # type: 'QgsSymbolLayer.Property'
-    PropertyCoordinateMode = ... # type: 'QgsSymbolLayer.Property'
-    PropertyGradientSpread = ... # type: 'QgsSymbolLayer.Property'
-    PropertyGradientReference1X = ... # type: 'QgsSymbolLayer.Property'
-    PropertyGradientReference1Y = ... # type: 'QgsSymbolLayer.Property'
-    PropertyGradientReference2X = ... # type: 'QgsSymbolLayer.Property'
-    PropertyGradientReference2Y = ... # type: 'QgsSymbolLayer.Property'
-    PropertyGradientReference1IsCentroid = ... # type: 'QgsSymbolLayer.Property'
-    PropertyGradientReference2IsCentroid = ... # type: 'QgsSymbolLayer.Property'
-    PropertyBlurRadius = ... # type: 'QgsSymbolLayer.Property'
-    PropertyShapeburstUseWholeShape = ... # type: 'QgsSymbolLayer.Property'
-    PropertyShapeburstMaxDistance = ... # type: 'QgsSymbolLayer.Property'
-    PropertyShapeburstIgnoreRings = ... # type: 'QgsSymbolLayer.Property'
-    PropertyFile = ... # type: 'QgsSymbolLayer.Property'
-    PropertyDistanceX = ... # type: 'QgsSymbolLayer.Property'
-    PropertyDistanceY = ... # type: 'QgsSymbolLayer.Property'
-    PropertyDisplacementX = ... # type: 'QgsSymbolLayer.Property'
-    PropertyDisplacementY = ... # type: 'QgsSymbolLayer.Property'
-    PropertyOpacity = ... # type: 'QgsSymbolLayer.Property'
-    PropertyCustomDash = ... # type: 'QgsSymbolLayer.Property'
-    PropertyCapStyle = ... # type: 'QgsSymbolLayer.Property'
-    PropertyPlacement = ... # type: 'QgsSymbolLayer.Property'
-    PropertyInterval = ... # type: 'QgsSymbolLayer.Property'
-    PropertyOffsetAlongLine = ... # type: 'QgsSymbolLayer.Property'
-    PropertyAverageAngleLength = ... # type: 'QgsSymbolLayer.Property'
-    PropertyHorizontalAnchor = ... # type: 'QgsSymbolLayer.Property'
-    PropertyVerticalAnchor = ... # type: 'QgsSymbolLayer.Property'
-    PropertyLayerEnabled = ... # type: 'QgsSymbolLayer.Property'
-    PropertyArrowWidth = ... # type: 'QgsSymbolLayer.Property'
-    PropertyArrowStartWidth = ... # type: 'QgsSymbolLayer.Property'
-    PropertyArrowHeadLength = ... # type: 'QgsSymbolLayer.Property'
-    PropertyArrowHeadThickness = ... # type: 'QgsSymbolLayer.Property'
-    PropertyArrowHeadType = ... # type: 'QgsSymbolLayer.Property'
-    PropertyArrowType = ... # type: 'QgsSymbolLayer.Property'
-    PropertyOffsetX = ... # type: 'QgsSymbolLayer.Property'
-    PropertyOffsetY = ... # type: 'QgsSymbolLayer.Property'
-    PropertyPointCount = ... # type: 'QgsSymbolLayer.Property'
-    PropertyRandomSeed = ... # type: 'QgsSymbolLayer.Property'
-    PropertyClipPoints = ... # type: 'QgsSymbolLayer.Property'
-    PropertyDensityArea = ... # type: 'QgsSymbolLayer.Property'
-    PropertyFontFamily = ... # type: 'QgsSymbolLayer.Property'
-    PropertyFontStyle = ... # type: 'QgsSymbolLayer.Property'
-    PropertyDashPatternOffset = ... # type: 'QgsSymbolLayer.Property'
-    PropertyTrimStart = ... # type: 'QgsSymbolLayer.Property'
-    PropertyTrimEnd = ... # type: 'QgsSymbolLayer.Property'
-    PropertyLineStartWidthValue = ... # type: 'QgsSymbolLayer.Property'
-    PropertyLineEndWidthValue = ... # type: 'QgsSymbolLayer.Property'
-    PropertyLineStartColorValue = ... # type: 'QgsSymbolLayer.Property'
-    PropertyLineEndColorValue = ... # type: 'QgsSymbolLayer.Property'
-    PropertyMarkerClipping = ... # type: 'QgsSymbolLayer.Property'
-    PropertyRandomOffsetX = ... # type: 'QgsSymbolLayer.Property'
-    PropertyRandomOffsetY = ... # type: 'QgsSymbolLayer.Property'
-    PropertyLineClipping = ... # type: 'QgsSymbolLayer.Property'
+    class Property(int):
+        PropertySize: 'QgsSymbolLayer.Property'
+        PropertyAngle: 'QgsSymbolLayer.Property'
+        PropertyName: 'QgsSymbolLayer.Property'
+        PropertyFillColor: 'QgsSymbolLayer.Property'
+        PropertyStrokeColor: 'QgsSymbolLayer.Property'
+        PropertyStrokeWidth: 'QgsSymbolLayer.Property'
+        PropertyStrokeStyle: 'QgsSymbolLayer.Property'
+        PropertyOffset: 'QgsSymbolLayer.Property'
+        PropertyCharacter: 'QgsSymbolLayer.Property'
+        PropertyWidth: 'QgsSymbolLayer.Property'
+        PropertyHeight: 'QgsSymbolLayer.Property'
+        PropertyPreserveAspectRatio: 'QgsSymbolLayer.Property'
+        PropertyFillStyle: 'QgsSymbolLayer.Property'
+        PropertyJoinStyle: 'QgsSymbolLayer.Property'
+        PropertySecondaryColor: 'QgsSymbolLayer.Property'
+        PropertyLineAngle: 'QgsSymbolLayer.Property'
+        PropertyLineDistance: 'QgsSymbolLayer.Property'
+        PropertyGradientType: 'QgsSymbolLayer.Property'
+        PropertyCoordinateMode: 'QgsSymbolLayer.Property'
+        PropertyGradientSpread: 'QgsSymbolLayer.Property'
+        PropertyGradientReference1X: 'QgsSymbolLayer.Property'
+        PropertyGradientReference1Y: 'QgsSymbolLayer.Property'
+        PropertyGradientReference2X: 'QgsSymbolLayer.Property'
+        PropertyGradientReference2Y: 'QgsSymbolLayer.Property'
+        PropertyGradientReference1IsCentroid: 'QgsSymbolLayer.Property'
+        PropertyGradientReference2IsCentroid: 'QgsSymbolLayer.Property'
+        PropertyBlurRadius: 'QgsSymbolLayer.Property'
+        PropertyShapeburstUseWholeShape: 'QgsSymbolLayer.Property'
+        PropertyShapeburstMaxDistance: 'QgsSymbolLayer.Property'
+        PropertyShapeburstIgnoreRings: 'QgsSymbolLayer.Property'
+        PropertyFile: 'QgsSymbolLayer.Property'
+        PropertyDistanceX: 'QgsSymbolLayer.Property'
+        PropertyDistanceY: 'QgsSymbolLayer.Property'
+        PropertyDisplacementX: 'QgsSymbolLayer.Property'
+        PropertyDisplacementY: 'QgsSymbolLayer.Property'
+        PropertyOpacity: 'QgsSymbolLayer.Property'
+        PropertyCustomDash: 'QgsSymbolLayer.Property'
+        PropertyCapStyle: 'QgsSymbolLayer.Property'
+        PropertyPlacement: 'QgsSymbolLayer.Property'
+        PropertyInterval: 'QgsSymbolLayer.Property'
+        PropertyOffsetAlongLine: 'QgsSymbolLayer.Property'
+        PropertyAverageAngleLength: 'QgsSymbolLayer.Property'
+        PropertyHorizontalAnchor: 'QgsSymbolLayer.Property'
+        PropertyVerticalAnchor: 'QgsSymbolLayer.Property'
+        PropertyLayerEnabled: 'QgsSymbolLayer.Property'
+        PropertyArrowWidth: 'QgsSymbolLayer.Property'
+        PropertyArrowStartWidth: 'QgsSymbolLayer.Property'
+        PropertyArrowHeadLength: 'QgsSymbolLayer.Property'
+        PropertyArrowHeadThickness: 'QgsSymbolLayer.Property'
+        PropertyArrowHeadType: 'QgsSymbolLayer.Property'
+        PropertyArrowType: 'QgsSymbolLayer.Property'
+        PropertyOffsetX: 'QgsSymbolLayer.Property'
+        PropertyOffsetY: 'QgsSymbolLayer.Property'
+        PropertyPointCount: 'QgsSymbolLayer.Property'
+        PropertyRandomSeed: 'QgsSymbolLayer.Property'
+        PropertyClipPoints: 'QgsSymbolLayer.Property'
+        PropertyDensityArea: 'QgsSymbolLayer.Property'
+        PropertyFontFamily: 'QgsSymbolLayer.Property'
+        PropertyFontStyle: 'QgsSymbolLayer.Property'
+        PropertyDashPatternOffset: 'QgsSymbolLayer.Property'
+        PropertyTrimStart: 'QgsSymbolLayer.Property'
+        PropertyTrimEnd: 'QgsSymbolLayer.Property'
+        PropertyLineStartWidthValue: 'QgsSymbolLayer.Property'
+        PropertyLineEndWidthValue: 'QgsSymbolLayer.Property'
+        PropertyLineStartColorValue: 'QgsSymbolLayer.Property'
+        PropertyLineEndColorValue: 'QgsSymbolLayer.Property'
+        PropertyMarkerClipping: 'QgsSymbolLayer.Property'
+        PropertyRandomOffsetX: 'QgsSymbolLayer.Property'
+        PropertyRandomOffsetY: 'QgsSymbolLayer.Property'
+        PropertyLineClipping: 'QgsSymbolLayer.Property'
 
     def __init__(self, type: Qgis.SymbolType, locked: bool = ...) -> None: ...
 
@@ -30446,10 +30446,10 @@ class QgsSymbolLayer(sip.wrapper):
 
 class QgsLineSymbolLayer(QgsSymbolLayer):
 
-    class RenderRingFilter(int): ...
-    AllRings = ... # type: 'QgsLineSymbolLayer.RenderRingFilter'
-    ExteriorRingOnly = ... # type: 'QgsLineSymbolLayer.RenderRingFilter'
-    InteriorRingsOnly = ... # type: 'QgsLineSymbolLayer.RenderRingFilter'
+    class RenderRingFilter(int):
+        AllRings: 'QgsLineSymbolLayer.RenderRingFilter'
+        ExteriorRingOnly: 'QgsLineSymbolLayer.RenderRingFilter'
+        InteriorRingsOnly: 'QgsLineSymbolLayer.RenderRingFilter'
 
     def __init__(self, locked: bool = ...) -> None: ...
 
@@ -30482,15 +30482,15 @@ class QgsLineSymbolLayer(QgsSymbolLayer):
 
 class QgsArrowSymbolLayer(QgsLineSymbolLayer):
 
-    class ArrowType(int): ...
-    ArrowPlain = ... # type: 'QgsArrowSymbolLayer.ArrowType'
-    ArrowLeftHalf = ... # type: 'QgsArrowSymbolLayer.ArrowType'
-    ArrowRightHalf = ... # type: 'QgsArrowSymbolLayer.ArrowType'
+    class ArrowType(int):
+        ArrowPlain: 'QgsArrowSymbolLayer.ArrowType'
+        ArrowLeftHalf: 'QgsArrowSymbolLayer.ArrowType'
+        ArrowRightHalf: 'QgsArrowSymbolLayer.ArrowType'
 
-    class HeadType(int): ...
-    HeadSingle = ... # type: 'QgsArrowSymbolLayer.HeadType'
-    HeadReversed = ... # type: 'QgsArrowSymbolLayer.HeadType'
-    HeadDouble = ... # type: 'QgsArrowSymbolLayer.HeadType'
+    class HeadType(int):
+        HeadSingle: 'QgsArrowSymbolLayer.HeadType'
+        HeadReversed: 'QgsArrowSymbolLayer.HeadType'
+        HeadDouble: 'QgsArrowSymbolLayer.HeadType'
 
     def __init__(self) -> None: ...
 
@@ -30689,12 +30689,12 @@ class QgsCptCityArchive(sip.wrapper):
 
 class QgsCptCityDataItem(QtCore.QObject):
 
-    class Type(int): ...
-    ColorRamp = ... # type: 'QgsCptCityDataItem.Type'
-    Collection = ... # type: 'QgsCptCityDataItem.Type'
-    Directory = ... # type: 'QgsCptCityDataItem.Type'
-    Selection = ... # type: 'QgsCptCityDataItem.Type'
-    AllRamps = ... # type: 'QgsCptCityDataItem.Type'
+    class Type(int):
+        ColorRamp: 'QgsCptCityDataItem.Type'
+        Collection: 'QgsCptCityDataItem.Type'
+        Directory: 'QgsCptCityDataItem.Type'
+        Selection: 'QgsCptCityDataItem.Type'
+        AllRamps: 'QgsCptCityDataItem.Type'
 
     def __init__(self, type: 'QgsCptCityDataItem.Type', parent: 'QgsCptCityDataItem', name: str, path: str) -> None: ...
 
@@ -30793,10 +30793,10 @@ class QgsCptCityAllRampsItem(QgsCptCityCollectionItem):
 
 class QgsCptCityBrowserModel(QtCore.QAbstractItemModel):
 
-    class ViewType(int): ...
-    Authors = ... # type: 'QgsCptCityBrowserModel.ViewType'
-    Selections = ... # type: 'QgsCptCityBrowserModel.ViewType'
-    List = ... # type: 'QgsCptCityBrowserModel.ViewType'
+    class ViewType(int):
+        Authors: 'QgsCptCityBrowserModel.ViewType'
+        Selections: 'QgsCptCityBrowserModel.ViewType'
+        List: 'QgsCptCityBrowserModel.ViewType'
 
     def __init__(self, parent: typing.Optional[QtCore.QObject] = ..., archive: typing.Optional[QgsCptCityArchive] = ..., Type: 'QgsCptCityBrowserModel.ViewType' = ...) -> None: ...
 
@@ -30829,15 +30829,15 @@ class QgsCptCityBrowserModel(QtCore.QAbstractItemModel):
 
 class QgsMarkerSymbolLayer(QgsSymbolLayer):
 
-    class VerticalAnchorPoint(int): ...
-    Top = ... # type: 'QgsMarkerSymbolLayer.VerticalAnchorPoint'
-    VCenter = ... # type: 'QgsMarkerSymbolLayer.VerticalAnchorPoint'
-    Bottom = ... # type: 'QgsMarkerSymbolLayer.VerticalAnchorPoint'
+    class VerticalAnchorPoint(int):
+        Top: 'QgsMarkerSymbolLayer.VerticalAnchorPoint'
+        VCenter: 'QgsMarkerSymbolLayer.VerticalAnchorPoint'
+        Bottom: 'QgsMarkerSymbolLayer.VerticalAnchorPoint'
 
-    class HorizontalAnchorPoint(int): ...
-    Left = ... # type: 'QgsMarkerSymbolLayer.HorizontalAnchorPoint'
-    HCenter = ... # type: 'QgsMarkerSymbolLayer.HorizontalAnchorPoint'
-    Right = ... # type: 'QgsMarkerSymbolLayer.HorizontalAnchorPoint'
+    class HorizontalAnchorPoint(int):
+        Left: 'QgsMarkerSymbolLayer.HorizontalAnchorPoint'
+        HCenter: 'QgsMarkerSymbolLayer.HorizontalAnchorPoint'
+        Right: 'QgsMarkerSymbolLayer.HorizontalAnchorPoint'
 
     def __init__(self, locked: bool = ...) -> None: ...
 
@@ -30882,23 +30882,23 @@ class QgsMarkerSymbolLayer(QgsSymbolLayer):
 
 class QgsEllipseSymbolLayer(QgsMarkerSymbolLayer):
 
-    class Shape(int): ...
-    Circle = ... # type: 'QgsEllipseSymbolLayer.Shape'
-    Rectangle = ... # type: 'QgsEllipseSymbolLayer.Shape'
-    Diamond = ... # type: 'QgsEllipseSymbolLayer.Shape'
-    Cross = ... # type: 'QgsEllipseSymbolLayer.Shape'
-    Arrow = ... # type: 'QgsEllipseSymbolLayer.Shape'
-    HalfArc = ... # type: 'QgsEllipseSymbolLayer.Shape'
-    Triangle = ... # type: 'QgsEllipseSymbolLayer.Shape'
-    RightHalfTriangle = ... # type: 'QgsEllipseSymbolLayer.Shape'
-    LeftHalfTriangle = ... # type: 'QgsEllipseSymbolLayer.Shape'
-    SemiCircle = ... # type: 'QgsEllipseSymbolLayer.Shape'
-    ThirdCircle = ... # type: 'QgsEllipseSymbolLayer.Shape'
-    QuarterCircle = ... # type: 'QgsEllipseSymbolLayer.Shape'
-    Pentagon = ... # type: 'QgsEllipseSymbolLayer.Shape'
-    Hexagon = ... # type: 'QgsEllipseSymbolLayer.Shape'
-    Octagon = ... # type: 'QgsEllipseSymbolLayer.Shape'
-    Star = ... # type: 'QgsEllipseSymbolLayer.Shape'
+    class Shape(int):
+        Circle: 'QgsEllipseSymbolLayer.Shape'
+        Rectangle: 'QgsEllipseSymbolLayer.Shape'
+        Diamond: 'QgsEllipseSymbolLayer.Shape'
+        Cross: 'QgsEllipseSymbolLayer.Shape'
+        Arrow: 'QgsEllipseSymbolLayer.Shape'
+        HalfArc: 'QgsEllipseSymbolLayer.Shape'
+        Triangle: 'QgsEllipseSymbolLayer.Shape'
+        RightHalfTriangle: 'QgsEllipseSymbolLayer.Shape'
+        LeftHalfTriangle: 'QgsEllipseSymbolLayer.Shape'
+        SemiCircle: 'QgsEllipseSymbolLayer.Shape'
+        ThirdCircle: 'QgsEllipseSymbolLayer.Shape'
+        QuarterCircle: 'QgsEllipseSymbolLayer.Shape'
+        Pentagon: 'QgsEllipseSymbolLayer.Shape'
+        Hexagon: 'QgsEllipseSymbolLayer.Shape'
+        Octagon: 'QgsEllipseSymbolLayer.Shape'
+        Star: 'QgsEllipseSymbolLayer.Shape'
 
     def __init__(self) -> None: ...
 
@@ -31001,8 +31001,8 @@ class QgsFeatureRendererGenerator(sip.wrapper):
 
 class QgsSymbol(sip.wrapper):
 
-    class Property(int): ...
-    PropertyOpacity = ... # type: 'QgsSymbol.Property'
+    class Property(int):
+        PropertyOpacity: 'QgsSymbol.Property'
 
     def __init__(self, type: Qgis.SymbolType, layers: typing.Iterable[QgsSymbolLayer]) -> None: ...
 
@@ -31621,13 +31621,13 @@ class QgsGeometryGeneratorSymbolLayer(QgsSymbolLayer):
 
 class QgsGraduatedSymbolRenderer(QgsFeatureRenderer):
 
-    class Mode(int): ...
-    EqualInterval = ... # type: 'QgsGraduatedSymbolRenderer.Mode'
-    Quantile = ... # type: 'QgsGraduatedSymbolRenderer.Mode'
-    Jenks = ... # type: 'QgsGraduatedSymbolRenderer.Mode'
-    StdDev = ... # type: 'QgsGraduatedSymbolRenderer.Mode'
-    Pretty = ... # type: 'QgsGraduatedSymbolRenderer.Mode'
-    Custom = ... # type: 'QgsGraduatedSymbolRenderer.Mode'
+    class Mode(int):
+        EqualInterval: 'QgsGraduatedSymbolRenderer.Mode'
+        Quantile: 'QgsGraduatedSymbolRenderer.Mode'
+        Jenks: 'QgsGraduatedSymbolRenderer.Mode'
+        StdDev: 'QgsGraduatedSymbolRenderer.Mode'
+        Pretty: 'QgsGraduatedSymbolRenderer.Mode'
+        Custom: 'QgsGraduatedSymbolRenderer.Mode'
 
     def __init__(self, attrName: str = ..., ranges: typing.Iterable['QgsRendererRange'] = ...) -> None: ...
 
@@ -31754,9 +31754,9 @@ class QgsHeatmapRenderer(QgsFeatureRenderer):
 
 class QgsInterpolatedLineColor(sip.wrapper):
 
-    class ColoringMethod(int): ...
-    SingleColor = ... # type: 'QgsInterpolatedLineColor.ColoringMethod'
-    ColorRamp = ... # type: 'QgsInterpolatedLineColor.ColoringMethod'
+    class ColoringMethod(int):
+        SingleColor: 'QgsInterpolatedLineColor.ColoringMethod'
+        ColorRamp: 'QgsInterpolatedLineColor.ColoringMethod'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -31865,10 +31865,10 @@ class QgsInterpolatedLineSymbolLayer(QgsLineSymbolLayer):
 
 class QgsMergedFeatureRenderer(QgsFeatureRenderer):
 
-    class GeometryOperation(int): ...
-    Merge = ... # type: 'QgsMergedFeatureRenderer.GeometryOperation'
-    InvertOnly = ... # type: 'QgsMergedFeatureRenderer.GeometryOperation'
-    MergeAndInvert = ... # type: 'QgsMergedFeatureRenderer.GeometryOperation'
+    class GeometryOperation(int):
+        Merge: 'QgsMergedFeatureRenderer.GeometryOperation'
+        InvertOnly: 'QgsMergedFeatureRenderer.GeometryOperation'
+        MergeAndInvert: 'QgsMergedFeatureRenderer.GeometryOperation'
 
     @typing.overload
     def __init__(self, embeddedRenderer: QgsFeatureRenderer) -> None: ...
@@ -32602,10 +32602,10 @@ class QgsPointClusterRenderer(QgsPointDistanceRenderer):
 
 class QgsPointDisplacementRenderer(QgsPointDistanceRenderer):
 
-    class Placement(int): ...
-    Ring = ... # type: 'QgsPointDisplacementRenderer.Placement'
-    ConcentricRings = ... # type: 'QgsPointDisplacementRenderer.Placement'
-    Grid = ... # type: 'QgsPointDisplacementRenderer.Placement'
+    class Placement(int):
+        Ring: 'QgsPointDisplacementRenderer.Placement'
+        ConcentricRings: 'QgsPointDisplacementRenderer.Placement'
+        Grid: 'QgsPointDisplacementRenderer.Placement'
 
     def __init__(self, labelAttributeName: str = ...) -> None: ...
 
@@ -32699,11 +32699,11 @@ class QgsRendererRangeLabelFormat(sip.wrapper):
 
 class QgsRendererAbstractMetadata(sip.wrapper):
 
-    class LayerType(int): ...
-    PointLayer = ... # type: 'QgsRendererAbstractMetadata.LayerType'
-    LineLayer = ... # type: 'QgsRendererAbstractMetadata.LayerType'
-    PolygonLayer = ... # type: 'QgsRendererAbstractMetadata.LayerType'
-    All = ... # type: 'QgsRendererAbstractMetadata.LayerType'
+    class LayerType(int):
+        PointLayer: 'QgsRendererAbstractMetadata.LayerType'
+        LineLayer: 'QgsRendererAbstractMetadata.LayerType'
+        PolygonLayer: 'QgsRendererAbstractMetadata.LayerType'
+        All: 'QgsRendererAbstractMetadata.LayerType'
 
     class LayerTypes(sip.wrapper):
 
@@ -32759,9 +32759,9 @@ class QgsRendererRegistry(sip.wrapper):
 
 class QgsRuleBasedRenderer(QgsFeatureRenderer):
 
-    class FeatureFlags(int): ...
-    FeatIsSelected = ... # type: 'QgsRuleBasedRenderer.FeatureFlags'
-    FeatDrawMarkers = ... # type: 'QgsRuleBasedRenderer.FeatureFlags'
+    class FeatureFlags(int):
+        FeatIsSelected: 'QgsRuleBasedRenderer.FeatureFlags'
+        FeatDrawMarkers: 'QgsRuleBasedRenderer.FeatureFlags'
 
     class FeatureToRender(sip.wrapper):
 
@@ -32795,10 +32795,10 @@ class QgsRuleBasedRenderer(QgsFeatureRenderer):
 
     class Rule(sip.wrapper):
 
-        class RenderResult(int): ...
-        Filtered = ... # type: 'QgsRuleBasedRenderer.Rule.RenderResult'
-        Inactive = ... # type: 'QgsRuleBasedRenderer.Rule.RenderResult'
-        Rendered = ... # type: 'QgsRuleBasedRenderer.Rule.RenderResult'
+        class RenderResult(int):
+            Filtered: 'QgsRuleBasedRenderer.Rule.RenderResult'
+            Inactive: 'QgsRuleBasedRenderer.Rule.RenderResult'
+            Rendered: 'QgsRuleBasedRenderer.Rule.RenderResult'
 
         def __init__(self, symbol: QgsSymbol, maximumScale: int = ..., minimumScale: int = ..., filterExp: str = ..., label: str = ..., description: str = ..., elseRule: bool = ...) -> None: ...
 
@@ -32937,18 +32937,18 @@ class QgsSingleSymbolRenderer(QgsFeatureRenderer):
 
 class QgsStyle(QtCore.QObject):
 
-    class TextFormatContext(int): ...
-    Labeling = ... # type: 'QgsStyle.TextFormatContext'
+    class TextFormatContext(int):
+        Labeling: 'QgsStyle.TextFormatContext'
 
-    class StyleEntity(int): ...
-    SymbolEntity = ... # type: 'QgsStyle.StyleEntity'
-    TagEntity = ... # type: 'QgsStyle.StyleEntity'
-    ColorrampEntity = ... # type: 'QgsStyle.StyleEntity'
-    SmartgroupEntity = ... # type: 'QgsStyle.StyleEntity'
-    TextFormatEntity = ... # type: 'QgsStyle.StyleEntity'
-    LabelSettingsEntity = ... # type: 'QgsStyle.StyleEntity'
-    LegendPatchShapeEntity = ... # type: 'QgsStyle.StyleEntity'
-    Symbol3DEntity = ... # type: 'QgsStyle.StyleEntity'
+    class StyleEntity(int):
+        SymbolEntity: 'QgsStyle.StyleEntity'
+        TagEntity: 'QgsStyle.StyleEntity'
+        ColorrampEntity: 'QgsStyle.StyleEntity'
+        SmartgroupEntity: 'QgsStyle.StyleEntity'
+        TextFormatEntity: 'QgsStyle.StyleEntity'
+        LabelSettingsEntity: 'QgsStyle.StyleEntity'
+        LegendPatchShapeEntity: 'QgsStyle.StyleEntity'
+        Symbol3DEntity: 'QgsStyle.StyleEntity'
 
     def __init__(self, parent: typing.Optional[QtCore.QObject] = ...) -> None: ...
 
@@ -33162,19 +33162,19 @@ class QgsStyleSymbol3DEntity(QgsStyleEntityInterface):
 
 class QgsStyleEntityVisitorInterface(sip.wrapper):
 
-    class NodeType(int): ...
-    Project = ... # type: 'QgsStyleEntityVisitorInterface.NodeType'
-    Layer = ... # type: 'QgsStyleEntityVisitorInterface.NodeType'
-    SymbolRule = ... # type: 'QgsStyleEntityVisitorInterface.NodeType'
-    Layouts = ... # type: 'QgsStyleEntityVisitorInterface.NodeType'
-    PrintLayout = ... # type: 'QgsStyleEntityVisitorInterface.NodeType'
-    LayoutItem = ... # type: 'QgsStyleEntityVisitorInterface.NodeType'
-    Report = ... # type: 'QgsStyleEntityVisitorInterface.NodeType'
-    ReportHeader = ... # type: 'QgsStyleEntityVisitorInterface.NodeType'
-    ReportFooter = ... # type: 'QgsStyleEntityVisitorInterface.NodeType'
-    ReportSection = ... # type: 'QgsStyleEntityVisitorInterface.NodeType'
-    Annotations = ... # type: 'QgsStyleEntityVisitorInterface.NodeType'
-    Annotation = ... # type: 'QgsStyleEntityVisitorInterface.NodeType'
+    class NodeType(int):
+        Project: 'QgsStyleEntityVisitorInterface.NodeType'
+        Layer: 'QgsStyleEntityVisitorInterface.NodeType'
+        SymbolRule: 'QgsStyleEntityVisitorInterface.NodeType'
+        Layouts: 'QgsStyleEntityVisitorInterface.NodeType'
+        PrintLayout: 'QgsStyleEntityVisitorInterface.NodeType'
+        LayoutItem: 'QgsStyleEntityVisitorInterface.NodeType'
+        Report: 'QgsStyleEntityVisitorInterface.NodeType'
+        ReportHeader: 'QgsStyleEntityVisitorInterface.NodeType'
+        ReportFooter: 'QgsStyleEntityVisitorInterface.NodeType'
+        ReportSection: 'QgsStyleEntityVisitorInterface.NodeType'
+        Annotations: 'QgsStyleEntityVisitorInterface.NodeType'
+        Annotation: 'QgsStyleEntityVisitorInterface.NodeType'
 
     class StyleLeaf(sip.wrapper):
 
@@ -33210,21 +33210,21 @@ class QgsStyleEntityVisitorInterface(sip.wrapper):
 
 class QgsStyleModel(QtCore.QAbstractItemModel):
 
-    class Role(int): ...
-    TypeRole = ... # type: 'QgsStyleModel.Role'
-    TagRole = ... # type: 'QgsStyleModel.Role'
-    EntityName = ... # type: 'QgsStyleModel.Role'
-    SymbolTypeRole = ... # type: 'QgsStyleModel.Role'
-    IsFavoriteRole = ... # type: 'QgsStyleModel.Role'
-    LayerTypeRole = ... # type: 'QgsStyleModel.Role'
-    CompatibleGeometryTypesRole = ... # type: 'QgsStyleModel.Role'
-    StyleName = ... # type: 'QgsStyleModel.Role'
-    StyleFileName = ... # type: 'QgsStyleModel.Role'
-    IsTitleRole = ... # type: 'QgsStyleModel.Role'
+    class Role(int):
+        TypeRole: 'QgsStyleModel.Role'
+        TagRole: 'QgsStyleModel.Role'
+        EntityName: 'QgsStyleModel.Role'
+        SymbolTypeRole: 'QgsStyleModel.Role'
+        IsFavoriteRole: 'QgsStyleModel.Role'
+        LayerTypeRole: 'QgsStyleModel.Role'
+        CompatibleGeometryTypesRole: 'QgsStyleModel.Role'
+        StyleName: 'QgsStyleModel.Role'
+        StyleFileName: 'QgsStyleModel.Role'
+        IsTitleRole: 'QgsStyleModel.Role'
 
-    class Column(int): ...
-    Name = ... # type: 'QgsStyleModel.Column'
-    Tags = ... # type: 'QgsStyleModel.Column'
+    class Column(int):
+        Name: 'QgsStyleModel.Column'
+        Tags: 'QgsStyleModel.Column'
 
     def __init__(self, style: QgsStyle, parent: typing.Optional[QtCore.QObject] = ...) -> None: ...
 
@@ -33735,18 +33735,18 @@ class QgsSymbolRenderContext(sip.wrapper):
 
 class QgsVectorFieldSymbolLayer(QgsMarkerSymbolLayer):
 
-    class AngleUnits(int): ...
-    Degrees = ... # type: 'QgsVectorFieldSymbolLayer.AngleUnits'
-    Radians = ... # type: 'QgsVectorFieldSymbolLayer.AngleUnits'
+    class AngleUnits(int):
+        Degrees: 'QgsVectorFieldSymbolLayer.AngleUnits'
+        Radians: 'QgsVectorFieldSymbolLayer.AngleUnits'
 
-    class AngleOrientation(int): ...
-    ClockwiseFromNorth = ... # type: 'QgsVectorFieldSymbolLayer.AngleOrientation'
-    CounterclockwiseFromEast = ... # type: 'QgsVectorFieldSymbolLayer.AngleOrientation'
+    class AngleOrientation(int):
+        ClockwiseFromNorth: 'QgsVectorFieldSymbolLayer.AngleOrientation'
+        CounterclockwiseFromEast: 'QgsVectorFieldSymbolLayer.AngleOrientation'
 
-    class VectorFieldType(int): ...
-    Cartesian = ... # type: 'QgsVectorFieldSymbolLayer.VectorFieldType'
-    Polar = ... # type: 'QgsVectorFieldSymbolLayer.VectorFieldType'
-    Height = ... # type: 'QgsVectorFieldSymbolLayer.VectorFieldType'
+    class VectorFieldType(int):
+        Cartesian: 'QgsVectorFieldSymbolLayer.VectorFieldType'
+        Polar: 'QgsVectorFieldSymbolLayer.VectorFieldType'
+        Height: 'QgsVectorFieldSymbolLayer.VectorFieldType'
 
     def __init__(self) -> None: ...
 
@@ -33814,23 +33814,23 @@ class QgsFontManager(QtCore.QObject):
 
 class QgsTextBackgroundSettings(sip.wrapper):
 
-    class RotationType(int): ...
-    RotationSync = ... # type: 'QgsTextBackgroundSettings.RotationType'
-    RotationOffset = ... # type: 'QgsTextBackgroundSettings.RotationType'
-    RotationFixed = ... # type: 'QgsTextBackgroundSettings.RotationType'
+    class RotationType(int):
+        RotationSync: 'QgsTextBackgroundSettings.RotationType'
+        RotationOffset: 'QgsTextBackgroundSettings.RotationType'
+        RotationFixed: 'QgsTextBackgroundSettings.RotationType'
 
-    class SizeType(int): ...
-    SizeBuffer = ... # type: 'QgsTextBackgroundSettings.SizeType'
-    SizeFixed = ... # type: 'QgsTextBackgroundSettings.SizeType'
-    SizePercent = ... # type: 'QgsTextBackgroundSettings.SizeType'
+    class SizeType(int):
+        SizeBuffer: 'QgsTextBackgroundSettings.SizeType'
+        SizeFixed: 'QgsTextBackgroundSettings.SizeType'
+        SizePercent: 'QgsTextBackgroundSettings.SizeType'
 
-    class ShapeType(int): ...
-    ShapeRectangle = ... # type: 'QgsTextBackgroundSettings.ShapeType'
-    ShapeSquare = ... # type: 'QgsTextBackgroundSettings.ShapeType'
-    ShapeEllipse = ... # type: 'QgsTextBackgroundSettings.ShapeType'
-    ShapeCircle = ... # type: 'QgsTextBackgroundSettings.ShapeType'
-    ShapeSVG = ... # type: 'QgsTextBackgroundSettings.ShapeType'
-    ShapeMarkerSymbol = ... # type: 'QgsTextBackgroundSettings.ShapeType'
+    class ShapeType(int):
+        ShapeRectangle: 'QgsTextBackgroundSettings.ShapeType'
+        ShapeSquare: 'QgsTextBackgroundSettings.ShapeType'
+        ShapeEllipse: 'QgsTextBackgroundSettings.ShapeType'
+        ShapeCircle: 'QgsTextBackgroundSettings.ShapeType'
+        ShapeSVG: 'QgsTextBackgroundSettings.ShapeType'
+        ShapeMarkerSymbol: 'QgsTextBackgroundSettings.ShapeType'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -33952,10 +33952,10 @@ class QgsTextBufferSettings(sip.wrapper):
 
 class QgsTextCharacterFormat(sip.wrapper):
 
-    class BooleanValue(int): ...
-    NotSet = ... # type: 'QgsTextCharacterFormat.BooleanValue'
-    SetTrue = ... # type: 'QgsTextCharacterFormat.BooleanValue'
-    SetFalse = ... # type: 'QgsTextCharacterFormat.BooleanValue'
+    class BooleanValue(int):
+        NotSet: 'QgsTextCharacterFormat.BooleanValue'
+        SetTrue: 'QgsTextCharacterFormat.BooleanValue'
+        SetFalse: 'QgsTextCharacterFormat.BooleanValue'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -34003,10 +34003,10 @@ class QgsTextDocument(sip.wrapper):
 
 class QgsTextFormat(sip.wrapper):
 
-    class TextOrientation(int): ...
-    HorizontalOrientation = ... # type: 'QgsTextFormat.TextOrientation'
-    VerticalOrientation = ... # type: 'QgsTextFormat.TextOrientation'
-    RotationBasedOrientation = ... # type: 'QgsTextFormat.TextOrientation'
+    class TextOrientation(int):
+        HorizontalOrientation: 'QgsTextFormat.TextOrientation'
+        VerticalOrientation: 'QgsTextFormat.TextOrientation'
+        RotationBasedOrientation: 'QgsTextFormat.TextOrientation'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -34097,8 +34097,8 @@ class QgsTextFragment(sip.wrapper):
 
 class QgsTextMaskSettings(sip.wrapper):
 
-    class MaskType(int): ...
-    MaskBuffer = ... # type: 'QgsTextMaskSettings.MaskType'
+    class MaskType(int):
+        MaskBuffer: 'QgsTextMaskSettings.MaskType'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -34131,27 +34131,27 @@ class QgsTextMaskSettings(sip.wrapper):
 
 class QgsTextRenderer(sip.wrapper):
 
-    class VAlignment(int): ...
-    AlignTop = ... # type: 'QgsTextRenderer.VAlignment'
-    AlignVCenter = ... # type: 'QgsTextRenderer.VAlignment'
-    AlignBottom = ... # type: 'QgsTextRenderer.VAlignment'
+    class VAlignment(int):
+        AlignTop: 'QgsTextRenderer.VAlignment'
+        AlignVCenter: 'QgsTextRenderer.VAlignment'
+        AlignBottom: 'QgsTextRenderer.VAlignment'
 
-    class HAlignment(int): ...
-    AlignLeft = ... # type: 'QgsTextRenderer.HAlignment'
-    AlignCenter = ... # type: 'QgsTextRenderer.HAlignment'
-    AlignRight = ... # type: 'QgsTextRenderer.HAlignment'
-    AlignJustify = ... # type: 'QgsTextRenderer.HAlignment'
+    class HAlignment(int):
+        AlignLeft: 'QgsTextRenderer.HAlignment'
+        AlignCenter: 'QgsTextRenderer.HAlignment'
+        AlignRight: 'QgsTextRenderer.HAlignment'
+        AlignJustify: 'QgsTextRenderer.HAlignment'
 
-    class TextPart(int): ...
-    Text = ... # type: 'QgsTextRenderer.TextPart'
-    Buffer = ... # type: 'QgsTextRenderer.TextPart'
-    Background = ... # type: 'QgsTextRenderer.TextPart'
-    Shadow = ... # type: 'QgsTextRenderer.TextPart'
+    class TextPart(int):
+        Text: 'QgsTextRenderer.TextPart'
+        Buffer: 'QgsTextRenderer.TextPart'
+        Background: 'QgsTextRenderer.TextPart'
+        Shadow: 'QgsTextRenderer.TextPart'
 
-    class DrawMode(int): ...
-    Rect = ... # type: 'QgsTextRenderer.DrawMode'
-    Point = ... # type: 'QgsTextRenderer.DrawMode'
-    Label = ... # type: 'QgsTextRenderer.DrawMode'
+    class DrawMode(int):
+        Rect: 'QgsTextRenderer.DrawMode'
+        Point: 'QgsTextRenderer.DrawMode'
+        Label: 'QgsTextRenderer.DrawMode'
 
     FONT_WORKAROUND_SCALE = ... # type: float
 
@@ -34217,11 +34217,11 @@ class QgsTextRendererUtils(sip.wrapper):
 
 class QgsTextShadowSettings(sip.wrapper):
 
-    class ShadowPlacement(int): ...
-    ShadowLowest = ... # type: 'QgsTextShadowSettings.ShadowPlacement'
-    ShadowText = ... # type: 'QgsTextShadowSettings.ShadowPlacement'
-    ShadowBuffer = ... # type: 'QgsTextShadowSettings.ShadowPlacement'
-    ShadowShape = ... # type: 'QgsTextShadowSettings.ShadowPlacement'
+    class ShadowPlacement(int):
+        ShadowLowest: 'QgsTextShadowSettings.ShadowPlacement'
+        ShadowText: 'QgsTextShadowSettings.ShadowPlacement'
+        ShadowBuffer: 'QgsTextShadowSettings.ShadowPlacement'
+        ShadowShape: 'QgsTextShadowSettings.ShadowPlacement'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -34267,18 +34267,18 @@ class QgsTextShadowSettings(sip.wrapper):
 
 class QgsSettings(QtCore.QObject):
 
-    class Section(int): ...
-    NoSection = ... # type: 'QgsSettings.Section'
-    Core = ... # type: 'QgsSettings.Section'
-    Gui = ... # type: 'QgsSettings.Section'
-    Server = ... # type: 'QgsSettings.Section'
-    Plugins = ... # type: 'QgsSettings.Section'
-    Auth = ... # type: 'QgsSettings.Section'
-    App = ... # type: 'QgsSettings.Section'
-    Providers = ... # type: 'QgsSettings.Section'
-    Expressions = ... # type: 'QgsSettings.Section'
-    Misc = ... # type: 'QgsSettings.Section'
-    Gps = ... # type: 'QgsSettings.Section'
+    class Section(int):
+        NoSection: 'QgsSettings.Section'
+        Core: 'QgsSettings.Section'
+        Gui: 'QgsSettings.Section'
+        Server: 'QgsSettings.Section'
+        Plugins: 'QgsSettings.Section'
+        Auth: 'QgsSettings.Section'
+        App: 'QgsSettings.Section'
+        Providers: 'QgsSettings.Section'
+        Expressions: 'QgsSettings.Section'
+        Misc: 'QgsSettings.Section'
+        Gps: 'QgsSettings.Section'
 
     @typing.overload
     def __init__(self, organization: str, application: str = ..., parent: typing.Optional[QtCore.QObject] = ...) -> None: ...
@@ -34740,9 +34740,9 @@ class QgsSettingsRegistryCore(QgsSettingsRegistry):
 
 class QgsValidityCheckResult(sip.wrapper):
 
-    class Type(int): ...
-    Warning = ... # type: 'QgsValidityCheckResult.Type'
-    Critical = ... # type: 'QgsValidityCheckResult.Type'
+    class Type(int):
+        Warning: 'QgsValidityCheckResult.Type'
+        Critical: 'QgsValidityCheckResult.Type'
 
     checkId = ... # type: str
     detailedDescription = ... # type: str
@@ -34757,9 +34757,9 @@ class QgsValidityCheckResult(sip.wrapper):
 
 class QgsAbstractValidityCheck(sip.wrapper):
 
-    class Type(int): ...
-    TypeLayoutCheck = ... # type: 'QgsAbstractValidityCheck.Type'
-    TypeUserCheck = ... # type: 'QgsAbstractValidityCheck.Type'
+    class Type(int):
+        TypeLayoutCheck: 'QgsAbstractValidityCheck.Type'
+        TypeUserCheck: 'QgsAbstractValidityCheck.Type'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -34775,9 +34775,9 @@ class QgsAbstractValidityCheck(sip.wrapper):
 
 class QgsValidityCheckContext(sip.wrapper):
 
-    class ContextType(int): ...
-    TypeLayoutContext = ... # type: 'QgsValidityCheckContext.ContextType'
-    TypeUserContext = ... # type: 'QgsValidityCheckContext.ContextType'
+    class ContextType(int):
+        TypeLayoutContext: 'QgsValidityCheckContext.ContextType'
+        TypeUserContext: 'QgsValidityCheckContext.ContextType'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -34890,32 +34890,32 @@ class QgsGlobFieldDomain(QgsFieldDomain):
 
 class QgsVectorDataProvider(QgsDataProvider, QgsFeatureSink, QgsFeatureSource):
 
-    class Capability(int): ...
-    NoCapabilities = ... # type: 'QgsVectorDataProvider.Capability'
-    AddFeatures = ... # type: 'QgsVectorDataProvider.Capability'
-    DeleteFeatures = ... # type: 'QgsVectorDataProvider.Capability'
-    ChangeAttributeValues = ... # type: 'QgsVectorDataProvider.Capability'
-    AddAttributes = ... # type: 'QgsVectorDataProvider.Capability'
-    DeleteAttributes = ... # type: 'QgsVectorDataProvider.Capability'
-    CreateSpatialIndex = ... # type: 'QgsVectorDataProvider.Capability'
-    SelectAtId = ... # type: 'QgsVectorDataProvider.Capability'
-    ChangeGeometries = ... # type: 'QgsVectorDataProvider.Capability'
-    SelectEncoding = ... # type: 'QgsVectorDataProvider.Capability'
-    CreateAttributeIndex = ... # type: 'QgsVectorDataProvider.Capability'
-    SimplifyGeometries = ... # type: 'QgsVectorDataProvider.Capability'
-    SimplifyGeometriesWithTopologicalValidation = ... # type: 'QgsVectorDataProvider.Capability'
-    TransactionSupport = ... # type: 'QgsVectorDataProvider.Capability'
-    CircularGeometries = ... # type: 'QgsVectorDataProvider.Capability'
-    ChangeFeatures = ... # type: 'QgsVectorDataProvider.Capability'
-    RenameAttributes = ... # type: 'QgsVectorDataProvider.Capability'
-    FastTruncate = ... # type: 'QgsVectorDataProvider.Capability'
-    ReadLayerMetadata = ... # type: 'QgsVectorDataProvider.Capability'
-    WriteLayerMetadata = ... # type: 'QgsVectorDataProvider.Capability'
-    CancelSupport = ... # type: 'QgsVectorDataProvider.Capability'
-    CreateRenderer = ... # type: 'QgsVectorDataProvider.Capability'
-    CreateLabeling = ... # type: 'QgsVectorDataProvider.Capability'
-    ReloadData = ... # type: 'QgsVectorDataProvider.Capability'
-    FeatureSymbology = ... # type: 'QgsVectorDataProvider.Capability'
+    class Capability(int):
+        NoCapabilities: 'QgsVectorDataProvider.Capability'
+        AddFeatures: 'QgsVectorDataProvider.Capability'
+        DeleteFeatures: 'QgsVectorDataProvider.Capability'
+        ChangeAttributeValues: 'QgsVectorDataProvider.Capability'
+        AddAttributes: 'QgsVectorDataProvider.Capability'
+        DeleteAttributes: 'QgsVectorDataProvider.Capability'
+        CreateSpatialIndex: 'QgsVectorDataProvider.Capability'
+        SelectAtId: 'QgsVectorDataProvider.Capability'
+        ChangeGeometries: 'QgsVectorDataProvider.Capability'
+        SelectEncoding: 'QgsVectorDataProvider.Capability'
+        CreateAttributeIndex: 'QgsVectorDataProvider.Capability'
+        SimplifyGeometries: 'QgsVectorDataProvider.Capability'
+        SimplifyGeometriesWithTopologicalValidation: 'QgsVectorDataProvider.Capability'
+        TransactionSupport: 'QgsVectorDataProvider.Capability'
+        CircularGeometries: 'QgsVectorDataProvider.Capability'
+        ChangeFeatures: 'QgsVectorDataProvider.Capability'
+        RenameAttributes: 'QgsVectorDataProvider.Capability'
+        FastTruncate: 'QgsVectorDataProvider.Capability'
+        ReadLayerMetadata: 'QgsVectorDataProvider.Capability'
+        WriteLayerMetadata: 'QgsVectorDataProvider.Capability'
+        CancelSupport: 'QgsVectorDataProvider.Capability'
+        CreateRenderer: 'QgsVectorDataProvider.Capability'
+        CreateLabeling: 'QgsVectorDataProvider.Capability'
+        ReloadData: 'QgsVectorDataProvider.Capability'
+        FeatureSymbology: 'QgsVectorDataProvider.Capability'
 
     class Capabilities(sip.wrapper):
 
@@ -35642,8 +35642,8 @@ class QgsVectorLayerUndoPassthroughCommandUpdate(QgsVectorLayerUndoPassthroughCo
 
 class QgsVectorLayerUtils(sip.wrapper):
 
-    class CascadedFeatureFlag(int): ...
-    IgnoreAuxiliaryLayers = ... # type: 'QgsVectorLayerUtils.CascadedFeatureFlag'
+    class CascadedFeatureFlag(int):
+        IgnoreAuxiliaryLayers: 'QgsVectorLayerUtils.CascadedFeatureFlag'
 
     class QgsDuplicateFeatureContext(sip.wrapper):
 
@@ -35793,15 +35793,15 @@ class QgsMapBoxGlStyleRasterSubLayer(sip.wrapper):
 
 class QgsMapBoxGlStyleConverter(sip.wrapper):
 
-    class PropertyType(int): ...
-    Color = ... # type: 'QgsMapBoxGlStyleConverter.PropertyType'
-    Numeric = ... # type: 'QgsMapBoxGlStyleConverter.PropertyType'
-    Opacity = ... # type: 'QgsMapBoxGlStyleConverter.PropertyType'
-    Point = ... # type: 'QgsMapBoxGlStyleConverter.PropertyType'
+    class PropertyType(int):
+        Color: 'QgsMapBoxGlStyleConverter.PropertyType'
+        Numeric: 'QgsMapBoxGlStyleConverter.PropertyType'
+        Opacity: 'QgsMapBoxGlStyleConverter.PropertyType'
+        Point: 'QgsMapBoxGlStyleConverter.PropertyType'
 
-    class Result(int): ...
-    Success = ... # type: 'QgsMapBoxGlStyleConverter.Result'
-    NoLayerList = ... # type: 'QgsMapBoxGlStyleConverter.Result'
+    class Result(int):
+        Success: 'QgsMapBoxGlStyleConverter.Result'
+        NoLayerList: 'QgsMapBoxGlStyleConverter.Result'
 
     staticMetaObject = ... # type: QtCore.QMetaObject
 

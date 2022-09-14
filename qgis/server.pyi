@@ -99,27 +99,27 @@ class QgsServerLogger(_core.QgsMessageLogConsole):
 
 class QgsServerOgcApi(QgsServerApi):
 
-    class ContentType(int): ...
-    GEOJSON = ... # type: 'QgsServerOgcApi.ContentType'
-    OPENAPI3 = ... # type: 'QgsServerOgcApi.ContentType'
-    JSON = ... # type: 'QgsServerOgcApi.ContentType'
-    HTML = ... # type: 'QgsServerOgcApi.ContentType'
-    XML = ... # type: 'QgsServerOgcApi.ContentType'
+    class ContentType(int):
+        GEOJSON: 'QgsServerOgcApi.ContentType'
+        OPENAPI3: 'QgsServerOgcApi.ContentType'
+        JSON: 'QgsServerOgcApi.ContentType'
+        HTML: 'QgsServerOgcApi.ContentType'
+        XML: 'QgsServerOgcApi.ContentType'
 
-    class Rel(int): ...
-    alternate = ... # type: 'QgsServerOgcApi.Rel'
-    describedBy = ... # type: 'QgsServerOgcApi.Rel'
-    collection = ... # type: 'QgsServerOgcApi.Rel'
-    item = ... # type: 'QgsServerOgcApi.Rel'
-    self = ... # type: 'QgsServerOgcApi.Rel'
-    service_desc = ... # type: 'QgsServerOgcApi.Rel'
-    service_doc = ... # type: 'QgsServerOgcApi.Rel'
-    prev = ... # type: 'QgsServerOgcApi.Rel'
-    next = ... # type: 'QgsServerOgcApi.Rel'
-    license = ... # type: 'QgsServerOgcApi.Rel'
-    items = ... # type: 'QgsServerOgcApi.Rel'
-    conformance = ... # type: 'QgsServerOgcApi.Rel'
-    data = ... # type: 'QgsServerOgcApi.Rel'
+    class Rel(int):
+        alternate: 'QgsServerOgcApi.Rel'
+        describedBy: 'QgsServerOgcApi.Rel'
+        collection: 'QgsServerOgcApi.Rel'
+        item: 'QgsServerOgcApi.Rel'
+        self: 'QgsServerOgcApi.Rel'
+        service_desc: 'QgsServerOgcApi.Rel'
+        service_doc: 'QgsServerOgcApi.Rel'
+        prev: 'QgsServerOgcApi.Rel'
+        next: 'QgsServerOgcApi.Rel'
+        license: 'QgsServerOgcApi.Rel'
+        items: 'QgsServerOgcApi.Rel'
+        conformance: 'QgsServerOgcApi.Rel'
+        data: 'QgsServerOgcApi.Rel'
 
     staticMetaObject = ... # type: QtCore.QMetaObject
 
@@ -231,13 +231,13 @@ class QgsServerParameterDefinition(sip.wrapper):
 
 class QgsServerParameter(QgsServerParameterDefinition):
 
-    class Name(int): ...
-    UNKNOWN = ... # type: 'QgsServerParameter.Name'
-    SERVICE = ... # type: 'QgsServerParameter.Name'
-    VERSION_SERVICE = ... # type: 'QgsServerParameter.Name'
-    REQUEST = ... # type: 'QgsServerParameter.Name'
-    MAP = ... # type: 'QgsServerParameter.Name'
-    FILE_NAME = ... # type: 'QgsServerParameter.Name'
+    class Name(int):
+        UNKNOWN: 'QgsServerParameter.Name'
+        SERVICE: 'QgsServerParameter.Name'
+        VERSION_SERVICE: 'QgsServerParameter.Name'
+        REQUEST: 'QgsServerParameter.Name'
+        MAP: 'QgsServerParameter.Name'
+        FILE_NAME: 'QgsServerParameter.Name'
 
     mName = ... # type: 'QgsServerParameter.Name'
     staticMetaObject = ... # type: QtCore.QMetaObject
@@ -295,12 +295,12 @@ class QgsServerFeatureId(sip.simplewrapper):
 
 class QgsServerQueryStringParameter(sip.wrapper):
 
-    class Type(int): ...
-    String = ... # type: 'QgsServerQueryStringParameter.Type'
-    Integer = ... # type: 'QgsServerQueryStringParameter.Type'
-    Double = ... # type: 'QgsServerQueryStringParameter.Type'
-    Boolean = ... # type: 'QgsServerQueryStringParameter.Type'
-    List = ... # type: 'QgsServerQueryStringParameter.Type'
+    class Type(int):
+        String: 'QgsServerQueryStringParameter.Type'
+        Integer: 'QgsServerQueryStringParameter.Type'
+        Double: 'QgsServerQueryStringParameter.Type'
+        Boolean: 'QgsServerQueryStringParameter.Type'
+        List: 'QgsServerQueryStringParameter.Type'
 
     staticMetaObject = ... # type: QtCore.QMetaObject
 
@@ -319,41 +319,41 @@ class QgsServerQueryStringParameter(sip.wrapper):
 
 class QgsServerSettingsEnv(QtCore.QObject):
 
-    class EnvVar(int): ...
-    QGIS_OPTIONS_PATH = ... # type: 'QgsServerSettingsEnv.EnvVar'
-    QGIS_SERVER_PARALLEL_RENDERING = ... # type: 'QgsServerSettingsEnv.EnvVar'
-    QGIS_SERVER_MAX_THREADS = ... # type: 'QgsServerSettingsEnv.EnvVar'
-    QGIS_SERVER_LOG_LEVEL = ... # type: 'QgsServerSettingsEnv.EnvVar'
-    QGIS_SERVER_LOG_FILE = ... # type: 'QgsServerSettingsEnv.EnvVar'
-    QGIS_SERVER_LOG_STDERR = ... # type: 'QgsServerSettingsEnv.EnvVar'
-    QGIS_PROJECT_FILE = ... # type: 'QgsServerSettingsEnv.EnvVar'
-    QGIS_SERVER_IGNORE_BAD_LAYERS = ... # type: 'QgsServerSettingsEnv.EnvVar'
-    QGIS_SERVER_CACHE_DIRECTORY = ... # type: 'QgsServerSettingsEnv.EnvVar'
-    QGIS_SERVER_CACHE_SIZE = ... # type: 'QgsServerSettingsEnv.EnvVar'
-    QGIS_SERVER_SHOW_GROUP_SEPARATOR = ... # type: 'QgsServerSettingsEnv.EnvVar'
-    QGIS_SERVER_OVERRIDE_SYSTEM_LOCALE = ... # type: 'QgsServerSettingsEnv.EnvVar'
-    QGIS_SERVER_WMS_MAX_HEIGHT = ... # type: 'QgsServerSettingsEnv.EnvVar'
-    QGIS_SERVER_WMS_MAX_WIDTH = ... # type: 'QgsServerSettingsEnv.EnvVar'
-    QGIS_SERVER_API_RESOURCES_DIRECTORY = ... # type: 'QgsServerSettingsEnv.EnvVar'
-    QGIS_SERVER_API_WFS3_MAX_LIMIT = ... # type: 'QgsServerSettingsEnv.EnvVar'
-    QGIS_SERVER_TRUST_LAYER_METADATA = ... # type: 'QgsServerSettingsEnv.EnvVar'
-    QGIS_SERVER_DISABLE_GETPRINT = ... # type: 'QgsServerSettingsEnv.EnvVar'
-    QGIS_SERVER_LANDING_PAGE_PROJECTS_DIRECTORIES = ... # type: 'QgsServerSettingsEnv.EnvVar'
-    QGIS_SERVER_LANDING_PAGE_PROJECTS_PG_CONNECTIONS = ... # type: 'QgsServerSettingsEnv.EnvVar'
-    QGIS_SERVER_LOG_PROFILE = ... # type: 'QgsServerSettingsEnv.EnvVar'
-    QGIS_SERVER_SERVICE_URL = ... # type: 'QgsServerSettingsEnv.EnvVar'
-    QGIS_SERVER_WMS_SERVICE_URL = ... # type: 'QgsServerSettingsEnv.EnvVar'
-    QGIS_SERVER_WFS_SERVICE_URL = ... # type: 'QgsServerSettingsEnv.EnvVar'
-    QGIS_SERVER_WCS_SERVICE_URL = ... # type: 'QgsServerSettingsEnv.EnvVar'
-    QGIS_SERVER_WMTS_SERVICE_URL = ... # type: 'QgsServerSettingsEnv.EnvVar'
-    QGIS_SERVER_LANDING_PAGE_PREFIX = ... # type: 'QgsServerSettingsEnv.EnvVar'
-    QGIS_SERVER_PROJECT_CACHE_CHECK_INTERVAL = ... # type: 'QgsServerSettingsEnv.EnvVar'
-    QGIS_SERVER_PROJECT_CACHE_STRATEGY = ... # type: 'QgsServerSettingsEnv.EnvVar'
+    class EnvVar(int):
+        QGIS_OPTIONS_PATH: 'QgsServerSettingsEnv.EnvVar'
+        QGIS_SERVER_PARALLEL_RENDERING: 'QgsServerSettingsEnv.EnvVar'
+        QGIS_SERVER_MAX_THREADS: 'QgsServerSettingsEnv.EnvVar'
+        QGIS_SERVER_LOG_LEVEL: 'QgsServerSettingsEnv.EnvVar'
+        QGIS_SERVER_LOG_FILE: 'QgsServerSettingsEnv.EnvVar'
+        QGIS_SERVER_LOG_STDERR: 'QgsServerSettingsEnv.EnvVar'
+        QGIS_PROJECT_FILE: 'QgsServerSettingsEnv.EnvVar'
+        QGIS_SERVER_IGNORE_BAD_LAYERS: 'QgsServerSettingsEnv.EnvVar'
+        QGIS_SERVER_CACHE_DIRECTORY: 'QgsServerSettingsEnv.EnvVar'
+        QGIS_SERVER_CACHE_SIZE: 'QgsServerSettingsEnv.EnvVar'
+        QGIS_SERVER_SHOW_GROUP_SEPARATOR: 'QgsServerSettingsEnv.EnvVar'
+        QGIS_SERVER_OVERRIDE_SYSTEM_LOCALE: 'QgsServerSettingsEnv.EnvVar'
+        QGIS_SERVER_WMS_MAX_HEIGHT: 'QgsServerSettingsEnv.EnvVar'
+        QGIS_SERVER_WMS_MAX_WIDTH: 'QgsServerSettingsEnv.EnvVar'
+        QGIS_SERVER_API_RESOURCES_DIRECTORY: 'QgsServerSettingsEnv.EnvVar'
+        QGIS_SERVER_API_WFS3_MAX_LIMIT: 'QgsServerSettingsEnv.EnvVar'
+        QGIS_SERVER_TRUST_LAYER_METADATA: 'QgsServerSettingsEnv.EnvVar'
+        QGIS_SERVER_DISABLE_GETPRINT: 'QgsServerSettingsEnv.EnvVar'
+        QGIS_SERVER_LANDING_PAGE_PROJECTS_DIRECTORIES: 'QgsServerSettingsEnv.EnvVar'
+        QGIS_SERVER_LANDING_PAGE_PROJECTS_PG_CONNECTIONS: 'QgsServerSettingsEnv.EnvVar'
+        QGIS_SERVER_LOG_PROFILE: 'QgsServerSettingsEnv.EnvVar'
+        QGIS_SERVER_SERVICE_URL: 'QgsServerSettingsEnv.EnvVar'
+        QGIS_SERVER_WMS_SERVICE_URL: 'QgsServerSettingsEnv.EnvVar'
+        QGIS_SERVER_WFS_SERVICE_URL: 'QgsServerSettingsEnv.EnvVar'
+        QGIS_SERVER_WCS_SERVICE_URL: 'QgsServerSettingsEnv.EnvVar'
+        QGIS_SERVER_WMTS_SERVICE_URL: 'QgsServerSettingsEnv.EnvVar'
+        QGIS_SERVER_LANDING_PAGE_PREFIX: 'QgsServerSettingsEnv.EnvVar'
+        QGIS_SERVER_PROJECT_CACHE_CHECK_INTERVAL: 'QgsServerSettingsEnv.EnvVar'
+        QGIS_SERVER_PROJECT_CACHE_STRATEGY: 'QgsServerSettingsEnv.EnvVar'
 
-    class Source(int): ...
-    DEFAULT_VALUE = ... # type: 'QgsServerSettingsEnv.Source'
-    ENVIRONMENT_VARIABLE = ... # type: 'QgsServerSettingsEnv.Source'
-    INI_FILE = ... # type: 'QgsServerSettingsEnv.Source'
+    class Source(int):
+        DEFAULT_VALUE: 'QgsServerSettingsEnv.Source'
+        ENVIRONMENT_VARIABLE: 'QgsServerSettingsEnv.Source'
+        INI_FILE: 'QgsServerSettingsEnv.Source'
 
     def __init__(self) -> None: ...
 
@@ -411,28 +411,28 @@ class QgsServiceModule(sip.wrapper):
 
 class QgsServerRequest(sip.wrapper):
 
-    class RequestHeader(int): ...
-    HOST = ... # type: 'QgsServerRequest.RequestHeader'
-    FORWARDED = ... # type: 'QgsServerRequest.RequestHeader'
-    X_FORWARDED_FOR = ... # type: 'QgsServerRequest.RequestHeader'
-    X_FORWARDED_HOST = ... # type: 'QgsServerRequest.RequestHeader'
-    X_FORWARDED_PROTO = ... # type: 'QgsServerRequest.RequestHeader'
-    X_QGIS_SERVICE_URL = ... # type: 'QgsServerRequest.RequestHeader'
-    X_QGIS_WMS_SERVICE_URL = ... # type: 'QgsServerRequest.RequestHeader'
-    X_QGIS_WFS_SERVICE_URL = ... # type: 'QgsServerRequest.RequestHeader'
-    X_QGIS_WCS_SERVICE_URL = ... # type: 'QgsServerRequest.RequestHeader'
-    X_QGIS_WMTS_SERVICE_URL = ... # type: 'QgsServerRequest.RequestHeader'
-    ACCEPT = ... # type: 'QgsServerRequest.RequestHeader'
-    USER_AGENT = ... # type: 'QgsServerRequest.RequestHeader'
-    AUTHORIZATION = ... # type: 'QgsServerRequest.RequestHeader'
+    class RequestHeader(int):
+        HOST: 'QgsServerRequest.RequestHeader'
+        FORWARDED: 'QgsServerRequest.RequestHeader'
+        X_FORWARDED_FOR: 'QgsServerRequest.RequestHeader'
+        X_FORWARDED_HOST: 'QgsServerRequest.RequestHeader'
+        X_FORWARDED_PROTO: 'QgsServerRequest.RequestHeader'
+        X_QGIS_SERVICE_URL: 'QgsServerRequest.RequestHeader'
+        X_QGIS_WMS_SERVICE_URL: 'QgsServerRequest.RequestHeader'
+        X_QGIS_WFS_SERVICE_URL: 'QgsServerRequest.RequestHeader'
+        X_QGIS_WCS_SERVICE_URL: 'QgsServerRequest.RequestHeader'
+        X_QGIS_WMTS_SERVICE_URL: 'QgsServerRequest.RequestHeader'
+        ACCEPT: 'QgsServerRequest.RequestHeader'
+        USER_AGENT: 'QgsServerRequest.RequestHeader'
+        AUTHORIZATION: 'QgsServerRequest.RequestHeader'
 
-    class Method(int): ...
-    HeadMethod = ... # type: 'QgsServerRequest.Method'
-    PutMethod = ... # type: 'QgsServerRequest.Method'
-    GetMethod = ... # type: 'QgsServerRequest.Method'
-    PostMethod = ... # type: 'QgsServerRequest.Method'
-    DeleteMethod = ... # type: 'QgsServerRequest.Method'
-    PatchMethod = ... # type: 'QgsServerRequest.Method'
+    class Method(int):
+        HeadMethod: 'QgsServerRequest.Method'
+        PutMethod: 'QgsServerRequest.Method'
+        GetMethod: 'QgsServerRequest.Method'
+        PostMethod: 'QgsServerRequest.Method'
+        DeleteMethod: 'QgsServerRequest.Method'
+        PatchMethod: 'QgsServerRequest.Method'
 
     staticMetaObject = ... # type: QtCore.QMetaObject
 

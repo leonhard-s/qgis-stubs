@@ -26,14 +26,14 @@ PYQT_OPENGL_BOUND_ARRAY = typing.Union[typing.Sequence[int],
         typing.Sequence[float], sip.Buffer, int, None]
 
 
-class QgsMaterialSettingsRenderingTechnique(int): ...
-Triangles = ... # type: QgsMaterialSettingsRenderingTechnique
-Lines = ... # type: QgsMaterialSettingsRenderingTechnique
-InstancedPoints = ... # type: QgsMaterialSettingsRenderingTechnique
-Points = ... # type: QgsMaterialSettingsRenderingTechnique
-TrianglesWithFixedTexture = ... # type: QgsMaterialSettingsRenderingTechnique
-TrianglesFromModel = ... # type: QgsMaterialSettingsRenderingTechnique
-TrianglesDataDefined = ... # type: QgsMaterialSettingsRenderingTechnique
+class QgsMaterialSettingsRenderingTechnique(int):
+    Triangles: 'QgsMaterialSettingsRenderingTechnique'
+    Lines: 'QgsMaterialSettingsRenderingTechnique'
+    InstancedPoints: 'QgsMaterialSettingsRenderingTechnique'
+    Points: 'QgsMaterialSettingsRenderingTechnique'
+    TrianglesWithFixedTexture: 'QgsMaterialSettingsRenderingTechnique'
+    TrianglesFromModel: 'QgsMaterialSettingsRenderingTechnique'
+    TrianglesDataDefined: 'QgsMaterialSettingsRenderingTechnique'
 
 
 class Qgs3DAlgorithms(_core.QgsProcessingProvider):
@@ -194,11 +194,11 @@ class Qgs3DMapSettings(QtCore.QObject, _core.QgsTemporalRangeObject):
 
 class Qgs3DTypes(sip.wrapper):
 
-    class CullingMode(int): ...
-    NoCulling = ... # type: 'Qgs3DTypes.CullingMode'
-    Front = ... # type: 'Qgs3DTypes.CullingMode'
-    Back = ... # type: 'Qgs3DTypes.CullingMode'
-    FrontAndBack = ... # type: 'Qgs3DTypes.CullingMode'
+    class CullingMode(int):
+        NoCulling: 'Qgs3DTypes.CullingMode'
+        Front: 'Qgs3DTypes.CullingMode'
+        Back: 'Qgs3DTypes.CullingMode'
+        FrontAndBack: 'Qgs3DTypes.CullingMode'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -289,10 +289,10 @@ class QgsRuleBased3DRenderer(QgsAbstractVectorLayer3DRenderer):
 
     class Rule(sip.wrapper):
 
-        class RegisterResult(int): ...
-        Filtered = ... # type: 'QgsRuleBased3DRenderer.Rule.RegisterResult'
-        Inactive = ... # type: 'QgsRuleBased3DRenderer.Rule.RegisterResult'
-        Registered = ... # type: 'QgsRuleBased3DRenderer.Rule.RegisterResult'
+        class RegisterResult(int):
+            Filtered: 'QgsRuleBased3DRenderer.Rule.RegisterResult'
+            Inactive: 'QgsRuleBased3DRenderer.Rule.RegisterResult'
+            Registered: 'QgsRuleBased3DRenderer.Rule.RegisterResult'
 
         def __init__(self, symbol: _core.QgsAbstract3DSymbol, filterExp: str = ..., description: str = ..., elseRule: bool = ...) -> None: ...
 
@@ -642,16 +642,16 @@ class QgsLine3DSymbol(_core.QgsAbstract3DSymbol):
 
 class QgsPoint3DSymbol(_core.QgsAbstract3DSymbol):
 
-    class Shape(int): ...
-    Cylinder = ... # type: 'QgsPoint3DSymbol.Shape'
-    Sphere = ... # type: 'QgsPoint3DSymbol.Shape'
-    Cone = ... # type: 'QgsPoint3DSymbol.Shape'
-    Cube = ... # type: 'QgsPoint3DSymbol.Shape'
-    Torus = ... # type: 'QgsPoint3DSymbol.Shape'
-    Plane = ... # type: 'QgsPoint3DSymbol.Shape'
-    ExtrudedText = ... # type: 'QgsPoint3DSymbol.Shape'
-    Model = ... # type: 'QgsPoint3DSymbol.Shape'
-    Billboard = ... # type: 'QgsPoint3DSymbol.Shape'
+    class Shape(int):
+        Cylinder: 'QgsPoint3DSymbol.Shape'
+        Sphere: 'QgsPoint3DSymbol.Shape'
+        Cone: 'QgsPoint3DSymbol.Shape'
+        Cube: 'QgsPoint3DSymbol.Shape'
+        Torus: 'QgsPoint3DSymbol.Shape'
+        Plane: 'QgsPoint3DSymbol.Shape'
+        ExtrudedText: 'QgsPoint3DSymbol.Shape'
+        Model: 'QgsPoint3DSymbol.Shape'
+        Billboard: 'QgsPoint3DSymbol.Shape'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -725,12 +725,12 @@ class QgsPolygon3DSymbol(_core.QgsAbstract3DSymbol):
 
 class QgsPointCloud3DSymbol(_core.QgsAbstract3DSymbol):
 
-    class RenderingStyle(int): ...
-    NoRendering = ... # type: 'QgsPointCloud3DSymbol.RenderingStyle'
-    SingleColor = ... # type: 'QgsPointCloud3DSymbol.RenderingStyle'
-    ColorRamp = ... # type: 'QgsPointCloud3DSymbol.RenderingStyle'
-    RgbRendering = ... # type: 'QgsPointCloud3DSymbol.RenderingStyle'
-    Classification = ... # type: 'QgsPointCloud3DSymbol.RenderingStyle'
+    class RenderingStyle(int):
+        NoRendering: 'QgsPointCloud3DSymbol.RenderingStyle'
+        SingleColor: 'QgsPointCloud3DSymbol.RenderingStyle'
+        ColorRamp: 'QgsPointCloud3DSymbol.RenderingStyle'
+        RgbRendering: 'QgsPointCloud3DSymbol.RenderingStyle'
+        Classification: 'QgsPointCloud3DSymbol.RenderingStyle'
 
     @typing.overload
     def __init__(self) -> None: ...

@@ -379,10 +379,10 @@ class QgsAbstractMapToolHandler(sip.wrapper):
 
 class QgsActionMenu(QtWidgets.QMenu):
 
-    class ActionType(int): ...
-    Invalid = ... # type: 'QgsActionMenu.ActionType'
-    MapLayerAction = ... # type: 'QgsActionMenu.ActionType'
-    AttributeAction = ... # type: 'QgsActionMenu.ActionType'
+    class ActionType(int):
+        Invalid: 'QgsActionMenu.ActionType'
+        MapLayerAction: 'QgsActionMenu.ActionType'
+        AttributeAction: 'QgsActionMenu.ActionType'
 
     class ActionData(sip.wrapper):
 
@@ -435,14 +435,14 @@ class QgsDockWidget(QtWidgets.QDockWidget):
 
 class QgsAdvancedDigitizingDockWidget(QgsDockWidget):
 
-    class WidgetSetMode(int): ...
-    ReturnPressed = ... # type: 'QgsAdvancedDigitizingDockWidget.WidgetSetMode'
+    class WidgetSetMode(int):
+        ReturnPressed: 'QgsAdvancedDigitizingDockWidget.WidgetSetMode'
 
-    class CadCapacity(int): ...
-    AbsoluteAngle = ... # type: 'QgsAdvancedDigitizingDockWidget.CadCapacity'
-    RelativeAngle = ... # type: 'QgsAdvancedDigitizingDockWidget.CadCapacity'
-    RelativeCoordinates = ... # type: 'QgsAdvancedDigitizingDockWidget.CadCapacity'
-    Distance = ... # type: 'QgsAdvancedDigitizingDockWidget.CadCapacity'
+    class CadCapacity(int):
+        AbsoluteAngle: 'QgsAdvancedDigitizingDockWidget.CadCapacity'
+        RelativeAngle: 'QgsAdvancedDigitizingDockWidget.CadCapacity'
+        RelativeCoordinates: 'QgsAdvancedDigitizingDockWidget.CadCapacity'
+        Distance: 'QgsAdvancedDigitizingDockWidget.CadCapacity'
 
     class CadCapacities(sip.wrapper):
 
@@ -460,10 +460,10 @@ class QgsAdvancedDigitizingDockWidget(QgsDockWidget):
 
     class CadConstraint(sip.wrapper):
 
-        class LockMode(int): ...
-        NoLock = ... # type: 'QgsAdvancedDigitizingDockWidget.CadConstraint.LockMode'
-        SoftLock = ... # type: 'QgsAdvancedDigitizingDockWidget.CadConstraint.LockMode'
-        HardLock = ... # type: 'QgsAdvancedDigitizingDockWidget.CadConstraint.LockMode'
+        class LockMode(int):
+            NoLock: 'QgsAdvancedDigitizingDockWidget.CadConstraint.LockMode'
+            SoftLock: 'QgsAdvancedDigitizingDockWidget.CadConstraint.LockMode'
+            HardLock: 'QgsAdvancedDigitizingDockWidget.CadConstraint.LockMode'
 
         @typing.overload
         def __init__(self, lineEdit: QtWidgets.QLineEdit, lockerButton: QtWidgets.QToolButton, relativeButton: typing.Optional[QtWidgets.QToolButton] = ..., repeatingLockButton: typing.Optional[QtWidgets.QToolButton] = ...) -> None: ...
@@ -641,24 +641,24 @@ class QgsAttributeDialog(QtWidgets.QDialog):
 
 class QgsAttributeEditorContext(sip.wrapper):
 
-    class FormMode(int): ...
-    Embed = ... # type: 'QgsAttributeEditorContext.FormMode'
-    StandaloneDialog = ... # type: 'QgsAttributeEditorContext.FormMode'
-    Popup = ... # type: 'QgsAttributeEditorContext.FormMode'
+    class FormMode(int):
+        Embed: 'QgsAttributeEditorContext.FormMode'
+        StandaloneDialog: 'QgsAttributeEditorContext.FormMode'
+        Popup: 'QgsAttributeEditorContext.FormMode'
 
-    class RelationMode(int): ...
-    Undefined = ... # type: 'QgsAttributeEditorContext.RelationMode'
-    Multiple = ... # type: 'QgsAttributeEditorContext.RelationMode'
-    Single = ... # type: 'QgsAttributeEditorContext.RelationMode'
+    class RelationMode(int):
+        Undefined: 'QgsAttributeEditorContext.RelationMode'
+        Multiple: 'QgsAttributeEditorContext.RelationMode'
+        Single: 'QgsAttributeEditorContext.RelationMode'
 
-    class Mode(int): ...
-    SingleEditMode = ... # type: 'QgsAttributeEditorContext.Mode'
-    AddFeatureMode = ... # type: 'QgsAttributeEditorContext.Mode'
-    FixAttributeMode = ... # type: 'QgsAttributeEditorContext.Mode'
-    MultiEditMode = ... # type: 'QgsAttributeEditorContext.Mode'
-    SearchMode = ... # type: 'QgsAttributeEditorContext.Mode'
-    AggregateSearchMode = ... # type: 'QgsAttributeEditorContext.Mode'
-    IdentifyMode = ... # type: 'QgsAttributeEditorContext.Mode'
+    class Mode(int):
+        SingleEditMode: 'QgsAttributeEditorContext.Mode'
+        AddFeatureMode: 'QgsAttributeEditorContext.Mode'
+        FixAttributeMode: 'QgsAttributeEditorContext.Mode'
+        MultiEditMode: 'QgsAttributeEditorContext.Mode'
+        SearchMode: 'QgsAttributeEditorContext.Mode'
+        AggregateSearchMode: 'QgsAttributeEditorContext.Mode'
+        IdentifyMode: 'QgsAttributeEditorContext.Mode'
 
     staticMetaObject = ... # type: QtCore.QMetaObject
 
@@ -700,18 +700,18 @@ class QgsAttributeEditorContext(sip.wrapper):
 
 class QgsAttributeForm(QtWidgets.QWidget):
 
-    class FilterType(int): ...
-    ReplaceFilter = ... # type: 'QgsAttributeForm.FilterType'
-    FilterAnd = ... # type: 'QgsAttributeForm.FilterType'
-    FilterOr = ... # type: 'QgsAttributeForm.FilterType'
+    class FilterType(int):
+        ReplaceFilter: 'QgsAttributeForm.FilterType'
+        FilterAnd: 'QgsAttributeForm.FilterType'
+        FilterOr: 'QgsAttributeForm.FilterType'
 
-    class Mode(int): ...
-    SingleEditMode = ... # type: 'QgsAttributeForm.Mode'
-    AddFeatureMode = ... # type: 'QgsAttributeForm.Mode'
-    MultiEditMode = ... # type: 'QgsAttributeForm.Mode'
-    SearchMode = ... # type: 'QgsAttributeForm.Mode'
-    AggregateSearchMode = ... # type: 'QgsAttributeForm.Mode'
-    IdentifyMode = ... # type: 'QgsAttributeForm.Mode'
+    class Mode(int):
+        SingleEditMode: 'QgsAttributeForm.Mode'
+        AddFeatureMode: 'QgsAttributeForm.Mode'
+        MultiEditMode: 'QgsAttributeForm.Mode'
+        SearchMode: 'QgsAttributeForm.Mode'
+        AggregateSearchMode: 'QgsAttributeForm.Mode'
+        IdentifyMode: 'QgsAttributeForm.Mode'
 
     def __init__(self, vl: _core.QgsVectorLayer, feature: _core.QgsFeature = ..., context: QgsAttributeEditorContext = ..., parent: typing.Optional[QtWidgets.QWidget] = ...) -> None: ...
 
@@ -754,11 +754,11 @@ class QgsAttributeForm(QtWidgets.QWidget):
 
 class QgsAttributeFormWidget(QtWidgets.QWidget):
 
-    class Mode(int): ...
-    DefaultMode = ... # type: 'QgsAttributeFormWidget.Mode'
-    MultiEditMode = ... # type: 'QgsAttributeFormWidget.Mode'
-    SearchMode = ... # type: 'QgsAttributeFormWidget.Mode'
-    AggregateSearchMode = ... # type: 'QgsAttributeFormWidget.Mode'
+    class Mode(int):
+        DefaultMode: 'QgsAttributeFormWidget.Mode'
+        MultiEditMode: 'QgsAttributeFormWidget.Mode'
+        SearchMode: 'QgsAttributeFormWidget.Mode'
+        AggregateSearchMode: 'QgsAttributeFormWidget.Mode'
 
     def __init__(self, widget: 'QgsWidgetWrapper', form: QgsAttributeForm) -> None: ...
 
@@ -1056,9 +1056,9 @@ class QgsColorBrewerColorRampDialog(QtWidgets.QDialog):
 
 class QgsColorButton(QtWidgets.QToolButton):
 
-    class Behavior(int): ...
-    ShowDialog = ... # type: 'QgsColorButton.Behavior'
-    SignalOnly = ... # type: 'QgsColorButton.Behavior'
+    class Behavior(int):
+        ShowDialog: 'QgsColorButton.Behavior'
+        SignalOnly: 'QgsColorButton.Behavior'
 
     def __init__(self, parent: typing.Optional[QtWidgets.QWidget] = ..., cdt: str = ..., registry: typing.Optional[_core.QgsColorSchemeRegistry] = ...) -> None: ...
 
@@ -1287,15 +1287,15 @@ class QgsColorSwatchGridAction(QtWidgets.QWidgetAction):
 
 class QgsColorWidget(QtWidgets.QWidget):
 
-    class ColorComponent(int): ...
-    Multiple = ... # type: 'QgsColorWidget.ColorComponent'
-    Red = ... # type: 'QgsColorWidget.ColorComponent'
-    Green = ... # type: 'QgsColorWidget.ColorComponent'
-    Blue = ... # type: 'QgsColorWidget.ColorComponent'
-    Hue = ... # type: 'QgsColorWidget.ColorComponent'
-    Saturation = ... # type: 'QgsColorWidget.ColorComponent'
-    Value = ... # type: 'QgsColorWidget.ColorComponent'
-    Alpha = ... # type: 'QgsColorWidget.ColorComponent'
+    class ColorComponent(int):
+        Multiple: 'QgsColorWidget.ColorComponent'
+        Red: 'QgsColorWidget.ColorComponent'
+        Green: 'QgsColorWidget.ColorComponent'
+        Blue: 'QgsColorWidget.ColorComponent'
+        Hue: 'QgsColorWidget.ColorComponent'
+        Saturation: 'QgsColorWidget.ColorComponent'
+        Value: 'QgsColorWidget.ColorComponent'
+        Alpha: 'QgsColorWidget.ColorComponent'
 
     def __init__(self, parent: typing.Optional[QtWidgets.QWidget] = ..., component: 'QgsColorWidget.ColorComponent' = ...) -> None: ...
 
@@ -1366,9 +1366,9 @@ class QgsColorBox(QgsColorWidget):
 
 class QgsColorRampWidget(QgsColorWidget):
 
-    class Orientation(int): ...
-    Horizontal = ... # type: 'QgsColorRampWidget.Orientation'
-    Vertical = ... # type: 'QgsColorRampWidget.Orientation'
+    class Orientation(int):
+        Horizontal: 'QgsColorRampWidget.Orientation'
+        Vertical: 'QgsColorRampWidget.Orientation'
 
     def __init__(self, parent: typing.Optional[QtWidgets.QWidget] = ..., component: QgsColorWidget.ColorComponent = ..., orientation: 'QgsColorRampWidget.Orientation' = ...) -> None: ...
 
@@ -1400,11 +1400,11 @@ class QgsColorSliderWidget(QgsColorWidget):
 
 class QgsColorTextWidget(QgsColorWidget):
 
-    class ColorTextFormat(int): ...
-    HexRgb = ... # type: 'QgsColorTextWidget.ColorTextFormat'
-    HexRgbA = ... # type: 'QgsColorTextWidget.ColorTextFormat'
-    Rgb = ... # type: 'QgsColorTextWidget.ColorTextFormat'
-    Rgba = ... # type: 'QgsColorTextWidget.ColorTextFormat'
+    class ColorTextFormat(int):
+        HexRgb: 'QgsColorTextWidget.ColorTextFormat'
+        HexRgbA: 'QgsColorTextWidget.ColorTextFormat'
+        Rgb: 'QgsColorTextWidget.ColorTextFormat'
+        Rgba: 'QgsColorTextWidget.ColorTextFormat'
 
     def __init__(self, parent: typing.Optional[QtWidgets.QWidget] = ...) -> None: ...
 
@@ -1427,9 +1427,9 @@ class QgsColorPreviewWidget(QgsColorWidget):
 
 class QgsCompoundColorWidget(QgsPanelWidget):
 
-    class Layout(int): ...
-    LayoutDefault = ... # type: 'QgsCompoundColorWidget.Layout'
-    LayoutVertical = ... # type: 'QgsCompoundColorWidget.Layout'
+    class Layout(int):
+        LayoutDefault: 'QgsCompoundColorWidget.Layout'
+        LayoutVertical: 'QgsCompoundColorWidget.Layout'
 
     def __init__(self, parent: typing.Optional[QtWidgets.QWidget] = ..., color: typing.Union[QtGui.QColor, QtCore.Qt.GlobalColor, QtGui.QGradient] = ..., layout: 'QgsCompoundColorWidget.Layout' = ...) -> None: ...
 
@@ -2038,11 +2038,11 @@ class QgsExpressionStoreDialog(QtWidgets.QDialog):
 
 class QgsExpressionBuilderWidget(QtWidgets.QWidget):
 
-    class Flag(int): ...
-    LoadNothing = ... # type: 'QgsExpressionBuilderWidget.Flag'
-    LoadRecent = ... # type: 'QgsExpressionBuilderWidget.Flag'
-    LoadUserExpressions = ... # type: 'QgsExpressionBuilderWidget.Flag'
-    LoadAll = ... # type: 'QgsExpressionBuilderWidget.Flag'
+    class Flag(int):
+        LoadNothing: 'QgsExpressionBuilderWidget.Flag'
+        LoadRecent: 'QgsExpressionBuilderWidget.Flag'
+        LoadUserExpressions: 'QgsExpressionBuilderWidget.Flag'
+        LoadAll: 'QgsExpressionBuilderWidget.Flag'
 
     class Flags(sip.wrapper):
 
@@ -2174,10 +2174,10 @@ class QgsExpressionSelectionDialog(QtWidgets.QDialog):
 
 class QgsExpressionItem(QtGui.QStandardItem):
 
-    class ItemType(int): ...
-    Header = ... # type: 'QgsExpressionItem.ItemType'
-    Field = ... # type: 'QgsExpressionItem.ItemType'
-    ExpressionNode = ... # type: 'QgsExpressionItem.ItemType'
+    class ItemType(int):
+        Header: 'QgsExpressionItem.ItemType'
+        Field: 'QgsExpressionItem.ItemType'
+        ExpressionNode: 'QgsExpressionItem.ItemType'
 
     CUSTOM_SORT_ROLE = ... # type: int
     ITEM_NAME_ROLE = ... # type: int
@@ -2244,12 +2244,12 @@ class QgsExpressionTreeView(QtWidgets.QTreeView):
 
 class QgsExtentGroupBox(QgsCollapsibleGroupBox):
 
-    class ExtentState(int): ...
-    OriginalExtent = ... # type: 'QgsExtentGroupBox.ExtentState'
-    CurrentExtent = ... # type: 'QgsExtentGroupBox.ExtentState'
-    UserExtent = ... # type: 'QgsExtentGroupBox.ExtentState'
-    ProjectLayerExtent = ... # type: 'QgsExtentGroupBox.ExtentState'
-    DrawOnCanvas = ... # type: 'QgsExtentGroupBox.ExtentState'
+    class ExtentState(int):
+        OriginalExtent: 'QgsExtentGroupBox.ExtentState'
+        CurrentExtent: 'QgsExtentGroupBox.ExtentState'
+        UserExtent: 'QgsExtentGroupBox.ExtentState'
+        ProjectLayerExtent: 'QgsExtentGroupBox.ExtentState'
+        DrawOnCanvas: 'QgsExtentGroupBox.ExtentState'
 
     def __init__(self, parent: typing.Optional[QtWidgets.QWidget] = ...) -> None: ...
 
@@ -2278,16 +2278,16 @@ class QgsExtentGroupBox(QgsCollapsibleGroupBox):
 
 class QgsExtentWidget(QtWidgets.QWidget):
 
-    class WidgetStyle(int): ...
-    CondensedStyle = ... # type: 'QgsExtentWidget.WidgetStyle'
-    ExpandedStyle = ... # type: 'QgsExtentWidget.WidgetStyle'
+    class WidgetStyle(int):
+        CondensedStyle: 'QgsExtentWidget.WidgetStyle'
+        ExpandedStyle: 'QgsExtentWidget.WidgetStyle'
 
-    class ExtentState(int): ...
-    OriginalExtent = ... # type: 'QgsExtentWidget.ExtentState'
-    CurrentExtent = ... # type: 'QgsExtentWidget.ExtentState'
-    UserExtent = ... # type: 'QgsExtentWidget.ExtentState'
-    ProjectLayerExtent = ... # type: 'QgsExtentWidget.ExtentState'
-    DrawOnCanvas = ... # type: 'QgsExtentWidget.ExtentState'
+    class ExtentState(int):
+        OriginalExtent: 'QgsExtentWidget.ExtentState'
+        CurrentExtent: 'QgsExtentWidget.ExtentState'
+        UserExtent: 'QgsExtentWidget.ExtentState'
+        ProjectLayerExtent: 'QgsExtentWidget.ExtentState'
+        DrawOnCanvas: 'QgsExtentWidget.ExtentState'
 
     def __init__(self, parent: typing.Optional[QtWidgets.QWidget] = ..., style: 'QgsExtentWidget.WidgetStyle' = ...) -> None: ...
 
@@ -2323,10 +2323,10 @@ class QgsExtentWidget(QtWidgets.QWidget):
 
 class QgsExternalResourceWidget(QtWidgets.QWidget):
 
-    class DocumentViewerContent(int): ...
-    NoContent = ... # type: 'QgsExternalResourceWidget.DocumentViewerContent'
-    Image = ... # type: 'QgsExternalResourceWidget.DocumentViewerContent'
-    Web = ... # type: 'QgsExternalResourceWidget.DocumentViewerContent'
+    class DocumentViewerContent(int):
+        NoContent: 'QgsExternalResourceWidget.DocumentViewerContent'
+        Image: 'QgsExternalResourceWidget.DocumentViewerContent'
+        Web: 'QgsExternalResourceWidget.DocumentViewerContent'
 
     def __init__(self, parent: typing.Optional[QtWidgets.QWidget] = ...) -> None: ...
 
@@ -2543,13 +2543,13 @@ class QgsFieldMappingWidget(QgsPanelWidget):
 
 class QgsFieldMappingModel(QtCore.QAbstractTableModel):
 
-    class ColumnDataIndex(int): ...
-    SourceExpression = ... # type: 'QgsFieldMappingModel.ColumnDataIndex'
-    DestinationName = ... # type: 'QgsFieldMappingModel.ColumnDataIndex'
-    DestinationType = ... # type: 'QgsFieldMappingModel.ColumnDataIndex'
-    DestinationLength = ... # type: 'QgsFieldMappingModel.ColumnDataIndex'
-    DestinationPrecision = ... # type: 'QgsFieldMappingModel.ColumnDataIndex'
-    DestinationConstraints = ... # type: 'QgsFieldMappingModel.ColumnDataIndex'
+    class ColumnDataIndex(int):
+        SourceExpression: 'QgsFieldMappingModel.ColumnDataIndex'
+        DestinationName: 'QgsFieldMappingModel.ColumnDataIndex'
+        DestinationType: 'QgsFieldMappingModel.ColumnDataIndex'
+        DestinationLength: 'QgsFieldMappingModel.ColumnDataIndex'
+        DestinationPrecision: 'QgsFieldMappingModel.ColumnDataIndex'
+        DestinationConstraints: 'QgsFieldMappingModel.ColumnDataIndex'
 
     class Field(sip.wrapper):
 
@@ -2601,9 +2601,9 @@ class QgsFieldValidator(QtGui.QValidator):
 
 class QgsFilterLineEdit(QtWidgets.QLineEdit):
 
-    class ClearMode(int): ...
-    ClearToNull = ... # type: 'QgsFilterLineEdit.ClearMode'
-    ClearToDefault = ... # type: 'QgsFilterLineEdit.ClearMode'
+    class ClearMode(int):
+        ClearToNull: 'QgsFilterLineEdit.ClearMode'
+        ClearToDefault: 'QgsFilterLineEdit.ClearMode'
 
     def __init__(self, parent: typing.Optional[QtWidgets.QWidget] = ..., nullValue: str = ...) -> None: ...
 
@@ -2665,10 +2665,10 @@ class QgsAbstractFileContentSourceLineEdit(QtWidgets.QWidget):
 
 class QgsPictureSourceLineEditBase(QgsAbstractFileContentSourceLineEdit):
 
-    class Format(int): ...
-    Svg = ... # type: 'QgsPictureSourceLineEditBase.Format'
-    Image = ... # type: 'QgsPictureSourceLineEditBase.Format'
-    AnimatedImage = ... # type: 'QgsPictureSourceLineEditBase.Format'
+    class Format(int):
+        Svg: 'QgsPictureSourceLineEditBase.Format'
+        Image: 'QgsPictureSourceLineEditBase.Format'
+        AnimatedImage: 'QgsPictureSourceLineEditBase.Format'
 
     @typing.overload
     def __init__(self, parent: typing.Optional[QtWidgets.QWidget] = ...) -> None: ...
@@ -2706,16 +2706,16 @@ class QgsFileDownloaderDialog(QtWidgets.QProgressDialog):
 
 class QgsFileWidget(QtWidgets.QWidget):
 
-    class RelativeStorage(int): ...
-    Absolute = ... # type: 'QgsFileWidget.RelativeStorage'
-    RelativeProject = ... # type: 'QgsFileWidget.RelativeStorage'
-    RelativeDefaultPath = ... # type: 'QgsFileWidget.RelativeStorage'
+    class RelativeStorage(int):
+        Absolute: 'QgsFileWidget.RelativeStorage'
+        RelativeProject: 'QgsFileWidget.RelativeStorage'
+        RelativeDefaultPath: 'QgsFileWidget.RelativeStorage'
 
-    class StorageMode(int): ...
-    GetFile = ... # type: 'QgsFileWidget.StorageMode'
-    GetDirectory = ... # type: 'QgsFileWidget.StorageMode'
-    GetMultipleFiles = ... # type: 'QgsFileWidget.StorageMode'
-    SaveFile = ... # type: 'QgsFileWidget.StorageMode'
+    class StorageMode(int):
+        GetFile: 'QgsFileWidget.StorageMode'
+        GetDirectory: 'QgsFileWidget.StorageMode'
+        GetMultipleFiles: 'QgsFileWidget.StorageMode'
+        SaveFile: 'QgsFileWidget.StorageMode'
 
     def __init__(self, parent: typing.Optional[QtWidgets.QWidget] = ...) -> None: ...
 
@@ -2800,16 +2800,16 @@ class QgsFindFilesByPatternDialog(QtWidgets.QDialog):
 
 class QgsFloatingWidget(QtWidgets.QWidget):
 
-    class AnchorPoint(int): ...
-    TopLeft = ... # type: 'QgsFloatingWidget.AnchorPoint'
-    TopMiddle = ... # type: 'QgsFloatingWidget.AnchorPoint'
-    TopRight = ... # type: 'QgsFloatingWidget.AnchorPoint'
-    MiddleLeft = ... # type: 'QgsFloatingWidget.AnchorPoint'
-    Middle = ... # type: 'QgsFloatingWidget.AnchorPoint'
-    MiddleRight = ... # type: 'QgsFloatingWidget.AnchorPoint'
-    BottomLeft = ... # type: 'QgsFloatingWidget.AnchorPoint'
-    BottomMiddle = ... # type: 'QgsFloatingWidget.AnchorPoint'
-    BottomRight = ... # type: 'QgsFloatingWidget.AnchorPoint'
+    class AnchorPoint(int):
+        TopLeft: 'QgsFloatingWidget.AnchorPoint'
+        TopMiddle: 'QgsFloatingWidget.AnchorPoint'
+        TopRight: 'QgsFloatingWidget.AnchorPoint'
+        MiddleLeft: 'QgsFloatingWidget.AnchorPoint'
+        Middle: 'QgsFloatingWidget.AnchorPoint'
+        MiddleRight: 'QgsFloatingWidget.AnchorPoint'
+        BottomLeft: 'QgsFloatingWidget.AnchorPoint'
+        BottomMiddle: 'QgsFloatingWidget.AnchorPoint'
+        BottomRight: 'QgsFloatingWidget.AnchorPoint'
 
     def __init__(self, parent: typing.Optional[QtWidgets.QWidget] = ...) -> None: ...
 
@@ -2839,9 +2839,9 @@ class QgsFocusWatcher(QtCore.QObject):
 
 class QgsFontButton(QtWidgets.QToolButton):
 
-    class Mode(int): ...
-    ModeTextRenderer = ... # type: 'QgsFontButton.Mode'
-    ModeQFont = ... # type: 'QgsFontButton.Mode'
+    class Mode(int):
+        ModeTextRenderer: 'QgsFontButton.Mode'
+        ModeQFont: 'QgsFontButton.Mode'
 
     def __init__(self, parent: typing.Optional[QtWidgets.QWidget] = ..., dialogTitle: str = ...) -> None: ...
 
@@ -2928,13 +2928,13 @@ class QgsMapCanvasItem(QtWidgets.QGraphicsItem):
 
 class QgsGeometryRubberBand(QgsMapCanvasItem):
 
-    class IconType(int): ...
-    ICON_NONE = ... # type: 'QgsGeometryRubberBand.IconType'
-    ICON_CROSS = ... # type: 'QgsGeometryRubberBand.IconType'
-    ICON_X = ... # type: 'QgsGeometryRubberBand.IconType'
-    ICON_BOX = ... # type: 'QgsGeometryRubberBand.IconType'
-    ICON_CIRCLE = ... # type: 'QgsGeometryRubberBand.IconType'
-    ICON_FULL_BOX = ... # type: 'QgsGeometryRubberBand.IconType'
+    class IconType(int):
+        ICON_NONE: 'QgsGeometryRubberBand.IconType'
+        ICON_CROSS: 'QgsGeometryRubberBand.IconType'
+        ICON_X: 'QgsGeometryRubberBand.IconType'
+        ICON_BOX: 'QgsGeometryRubberBand.IconType'
+        ICON_CIRCLE: 'QgsGeometryRubberBand.IconType'
+        ICON_FULL_BOX: 'QgsGeometryRubberBand.IconType'
 
     def __init__(self, mapCanvas: QgsMapCanvas, geomType: _core.QgsWkbTypes.GeometryType = ...) -> None: ...
 
@@ -3008,13 +3008,13 @@ class QgsGroupWmsDataDialog(QtWidgets.QDialog):
 
 class QgsGui(QtCore.QObject):
 
-    class HigFlag(int): ...
-    HigMenuTextIsTitleCase = ... # type: 'QgsGui.HigFlag'
-    HigDialogTitleIsTitleCase = ... # type: 'QgsGui.HigFlag'
+    class HigFlag(int):
+        HigMenuTextIsTitleCase: 'QgsGui.HigFlag'
+        HigDialogTitleIsTitleCase: 'QgsGui.HigFlag'
 
-    class ProjectCrsBehavior(int): ...
-    UseCrsOfFirstLayerAdded = ... # type: 'QgsGui.ProjectCrsBehavior'
-    UsePresetCrs = ... # type: 'QgsGui.ProjectCrsBehavior'
+    class ProjectCrsBehavior(int):
+        UseCrsOfFirstLayerAdded: 'QgsGui.ProjectCrsBehavior'
+        UsePresetCrs: 'QgsGui.ProjectCrsBehavior'
 
     class HigFlags(sip.wrapper):
 
@@ -3163,9 +3163,9 @@ class QgsHttpHeaderWidget(QtWidgets.QWidget):
 
 class QgsIdentifyMenu(QtWidgets.QMenu):
 
-    class MenuLevel(int): ...
-    LayerLevel = ... # type: 'QgsIdentifyMenu.MenuLevel'
-    FeatureLevel = ... # type: 'QgsIdentifyMenu.MenuLevel'
+    class MenuLevel(int):
+        LayerLevel: 'QgsIdentifyMenu.MenuLevel'
+        FeatureLevel: 'QgsIdentifyMenu.MenuLevel'
 
     class ActionData(sip.wrapper):
 
@@ -3343,23 +3343,23 @@ class QgsLUDialog(QtWidgets.QDialog):
 
 class QgsManageConnectionsDialog(QtWidgets.QDialog):
 
-    class Type(int): ...
-    WMS = ... # type: 'QgsManageConnectionsDialog.Type'
-    PostGIS = ... # type: 'QgsManageConnectionsDialog.Type'
-    WFS = ... # type: 'QgsManageConnectionsDialog.Type'
-    MSSQL = ... # type: 'QgsManageConnectionsDialog.Type'
-    WCS = ... # type: 'QgsManageConnectionsDialog.Type'
-    Oracle = ... # type: 'QgsManageConnectionsDialog.Type'
-    HANA = ... # type: 'QgsManageConnectionsDialog.Type'
-    GeoNode = ... # type: 'QgsManageConnectionsDialog.Type'
-    XyzTiles = ... # type: 'QgsManageConnectionsDialog.Type'
-    ArcgisMapServer = ... # type: 'QgsManageConnectionsDialog.Type'
-    ArcgisFeatureServer = ... # type: 'QgsManageConnectionsDialog.Type'
-    VectorTile = ... # type: 'QgsManageConnectionsDialog.Type'
+    class Type(int):
+        WMS: 'QgsManageConnectionsDialog.Type'
+        PostGIS: 'QgsManageConnectionsDialog.Type'
+        WFS: 'QgsManageConnectionsDialog.Type'
+        MSSQL: 'QgsManageConnectionsDialog.Type'
+        WCS: 'QgsManageConnectionsDialog.Type'
+        Oracle: 'QgsManageConnectionsDialog.Type'
+        HANA: 'QgsManageConnectionsDialog.Type'
+        GeoNode: 'QgsManageConnectionsDialog.Type'
+        XyzTiles: 'QgsManageConnectionsDialog.Type'
+        ArcgisMapServer: 'QgsManageConnectionsDialog.Type'
+        ArcgisFeatureServer: 'QgsManageConnectionsDialog.Type'
+        VectorTile: 'QgsManageConnectionsDialog.Type'
 
-    class Mode(int): ...
-    Export = ... # type: 'QgsManageConnectionsDialog.Mode'
-    Import = ... # type: 'QgsManageConnectionsDialog.Mode'
+    class Mode(int):
+        Export: 'QgsManageConnectionsDialog.Mode'
+        Import: 'QgsManageConnectionsDialog.Mode'
 
     def __init__(self, parent: typing.Optional[QtWidgets.QWidget] = ..., mode: 'QgsManageConnectionsDialog.Mode' = ..., type: 'QgsManageConnectionsDialog.Type' = ..., fileName: str = ...) -> None: ...
 
@@ -3371,18 +3371,18 @@ class QgsManageConnectionsDialog(QtWidgets.QDialog):
 
 class QgsMapCanvasAnnotationItem(QtCore.QObject, QgsMapCanvasItem):
 
-    class MouseMoveAction(int): ...
-    NoAction = ... # type: 'QgsMapCanvasAnnotationItem.MouseMoveAction'
-    MoveMapPosition = ... # type: 'QgsMapCanvasAnnotationItem.MouseMoveAction'
-    MoveFramePosition = ... # type: 'QgsMapCanvasAnnotationItem.MouseMoveAction'
-    ResizeFrameUp = ... # type: 'QgsMapCanvasAnnotationItem.MouseMoveAction'
-    ResizeFrameDown = ... # type: 'QgsMapCanvasAnnotationItem.MouseMoveAction'
-    ResizeFrameLeft = ... # type: 'QgsMapCanvasAnnotationItem.MouseMoveAction'
-    ResizeFrameRight = ... # type: 'QgsMapCanvasAnnotationItem.MouseMoveAction'
-    ResizeFrameLeftUp = ... # type: 'QgsMapCanvasAnnotationItem.MouseMoveAction'
-    ResizeFrameRightUp = ... # type: 'QgsMapCanvasAnnotationItem.MouseMoveAction'
-    ResizeFrameLeftDown = ... # type: 'QgsMapCanvasAnnotationItem.MouseMoveAction'
-    ResizeFrameRightDown = ... # type: 'QgsMapCanvasAnnotationItem.MouseMoveAction'
+    class MouseMoveAction(int):
+        NoAction: 'QgsMapCanvasAnnotationItem.MouseMoveAction'
+        MoveMapPosition: 'QgsMapCanvasAnnotationItem.MouseMoveAction'
+        MoveFramePosition: 'QgsMapCanvasAnnotationItem.MouseMoveAction'
+        ResizeFrameUp: 'QgsMapCanvasAnnotationItem.MouseMoveAction'
+        ResizeFrameDown: 'QgsMapCanvasAnnotationItem.MouseMoveAction'
+        ResizeFrameLeft: 'QgsMapCanvasAnnotationItem.MouseMoveAction'
+        ResizeFrameRight: 'QgsMapCanvasAnnotationItem.MouseMoveAction'
+        ResizeFrameLeftUp: 'QgsMapCanvasAnnotationItem.MouseMoveAction'
+        ResizeFrameRightUp: 'QgsMapCanvasAnnotationItem.MouseMoveAction'
+        ResizeFrameLeftDown: 'QgsMapCanvasAnnotationItem.MouseMoveAction'
+        ResizeFrameRightDown: 'QgsMapCanvasAnnotationItem.MouseMoveAction'
 
     def __init__(self, annotation: _core.QgsAnnotation, mapCanvas: QgsMapCanvas) -> None: ...
 
@@ -3396,8 +3396,8 @@ class QgsMapCanvasAnnotationItem(QtCore.QObject, QgsMapCanvasItem):
 
 class QgsMapCanvasInteractionBlocker(sip.wrapper):
 
-    class Interaction(int): ...
-    MapPanOnSingleClick = ... # type: 'QgsMapCanvasInteractionBlocker.Interaction'
+    class Interaction(int):
+        MapPanOnSingleClick: 'QgsMapCanvasInteractionBlocker.Interaction'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -3446,14 +3446,14 @@ class QgsMapCanvasUtils(sip.wrapper):
 
 class QgsMapLayerAction(QtWidgets.QAction):
 
-    class Flag(int): ...
-    EnabledOnlyWhenEditable = ... # type: 'QgsMapLayerAction.Flag'
+    class Flag(int):
+        EnabledOnlyWhenEditable: 'QgsMapLayerAction.Flag'
 
-    class Target(int): ...
-    Layer = ... # type: 'QgsMapLayerAction.Target'
-    SingleFeature = ... # type: 'QgsMapLayerAction.Target'
-    MultipleFeatures = ... # type: 'QgsMapLayerAction.Target'
-    AllActions = ... # type: 'QgsMapLayerAction.Target'
+    class Target(int):
+        Layer: 'QgsMapLayerAction.Target'
+        SingleFeature: 'QgsMapLayerAction.Target'
+        MultipleFeatures: 'QgsMapLayerAction.Target'
+        AllActions: 'QgsMapLayerAction.Target'
 
     class Targets(sip.wrapper):
 
@@ -3576,9 +3576,9 @@ class QgsMapLayerConfigWidget(QgsPanelWidget):
 
 class QgsMapLayerConfigWidgetFactory(sip.wrapper):
 
-    class ParentPage(int): ...
-    NoParent = ... # type: 'QgsMapLayerConfigWidgetFactory.ParentPage'
-    Temporal = ... # type: 'QgsMapLayerConfigWidgetFactory.ParentPage'
+    class ParentPage(int):
+        NoParent: 'QgsMapLayerConfigWidgetFactory.ParentPage'
+        Temporal: 'QgsMapLayerConfigWidgetFactory.ParentPage'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -3665,11 +3665,11 @@ class QgsMapTip(QtWidgets.QWidget):
 
 class QgsMapTool(QtCore.QObject):
 
-    class Flag(int): ...
-    Transient = ... # type: 'QgsMapTool.Flag'
-    EditTool = ... # type: 'QgsMapTool.Flag'
-    AllowZoomRect = ... # type: 'QgsMapTool.Flag'
-    ShowContextMenu = ... # type: 'QgsMapTool.Flag'
+    class Flag(int):
+        Transient: 'QgsMapTool.Flag'
+        EditTool: 'QgsMapTool.Flag'
+        AllowZoomRect: 'QgsMapTool.Flag'
+        ShowContextMenu: 'QgsMapTool.Flag'
 
     class Flags(sip.wrapper):
 
@@ -3741,10 +3741,10 @@ class QgsMapTool(QtCore.QObject):
 
 class QgsMapToolEdit(QgsMapTool):
 
-    class TopologicalResult(int): ...
-    Success = ... # type: 'QgsMapToolEdit.TopologicalResult'
-    InvalidCanvas = ... # type: 'QgsMapToolEdit.TopologicalResult'
-    InvalidLayer = ... # type: 'QgsMapToolEdit.TopologicalResult'
+    class TopologicalResult(int):
+        Success: 'QgsMapToolEdit.TopologicalResult'
+        InvalidCanvas: 'QgsMapToolEdit.TopologicalResult'
+        InvalidLayer: 'QgsMapToolEdit.TopologicalResult'
 
     def __init__(self, canvas: QgsMapCanvas) -> None: ...
 
@@ -3794,16 +3794,16 @@ class QgsMapToolAdvancedDigitizing(QgsMapToolEdit):
 
 class QgsMapToolCapture(QgsMapToolAdvancedDigitizing):
 
-    class Capability(int): ...
-    NoCapabilities = ... # type: 'QgsMapToolCapture.Capability'
-    SupportsCurves = ... # type: 'QgsMapToolCapture.Capability'
-    ValidateGeometries = ... # type: 'QgsMapToolCapture.Capability'
+    class Capability(int):
+        NoCapabilities: 'QgsMapToolCapture.Capability'
+        SupportsCurves: 'QgsMapToolCapture.Capability'
+        ValidateGeometries: 'QgsMapToolCapture.Capability'
 
-    class CaptureMode(int): ...
-    CaptureNone = ... # type: 'QgsMapToolCapture.CaptureMode'
-    CapturePoint = ... # type: 'QgsMapToolCapture.CaptureMode'
-    CaptureLine = ... # type: 'QgsMapToolCapture.CaptureMode'
-    CapturePolygon = ... # type: 'QgsMapToolCapture.CaptureMode'
+    class CaptureMode(int):
+        CaptureNone: 'QgsMapToolCapture.CaptureMode'
+        CapturePoint: 'QgsMapToolCapture.CaptureMode'
+        CaptureLine: 'QgsMapToolCapture.CaptureMode'
+        CapturePolygon: 'QgsMapToolCapture.CaptureMode'
 
     class Capabilities(sip.wrapper):
 
@@ -3920,20 +3920,20 @@ class QgsMapToolExtent(QgsMapTool):
 
 class QgsMapToolIdentify(QgsMapTool):
 
-    class Type(int): ...
-    VectorLayer = ... # type: 'QgsMapToolIdentify.Type'
-    RasterLayer = ... # type: 'QgsMapToolIdentify.Type'
-    MeshLayer = ... # type: 'QgsMapToolIdentify.Type'
-    VectorTileLayer = ... # type: 'QgsMapToolIdentify.Type'
-    PointCloudLayer = ... # type: 'QgsMapToolIdentify.Type'
-    AllLayers = ... # type: 'QgsMapToolIdentify.Type'
+    class Type(int):
+        VectorLayer: 'QgsMapToolIdentify.Type'
+        RasterLayer: 'QgsMapToolIdentify.Type'
+        MeshLayer: 'QgsMapToolIdentify.Type'
+        VectorTileLayer: 'QgsMapToolIdentify.Type'
+        PointCloudLayer: 'QgsMapToolIdentify.Type'
+        AllLayers: 'QgsMapToolIdentify.Type'
 
-    class IdentifyMode(int): ...
-    DefaultQgsSetting = ... # type: 'QgsMapToolIdentify.IdentifyMode'
-    ActiveLayer = ... # type: 'QgsMapToolIdentify.IdentifyMode'
-    TopDownStopAtFirst = ... # type: 'QgsMapToolIdentify.IdentifyMode'
-    TopDownAll = ... # type: 'QgsMapToolIdentify.IdentifyMode'
-    LayerSelection = ... # type: 'QgsMapToolIdentify.IdentifyMode'
+    class IdentifyMode(int):
+        DefaultQgsSetting: 'QgsMapToolIdentify.IdentifyMode'
+        ActiveLayer: 'QgsMapToolIdentify.IdentifyMode'
+        TopDownStopAtFirst: 'QgsMapToolIdentify.IdentifyMode'
+        TopDownAll: 'QgsMapToolIdentify.IdentifyMode'
+        LayerSelection: 'QgsMapToolIdentify.IdentifyMode'
 
     class LayerType(sip.wrapper):
 
@@ -4154,9 +4154,9 @@ class QgsMessageViewer(QtWidgets.QDialog, _core.QgsMessageOutput):
 
 class QgsMetadataWidget(QtWidgets.QWidget):
 
-    class Mode(int): ...
-    LayerMetadata = ... # type: 'QgsMetadataWidget.Mode'
-    ProjectMetadata = ... # type: 'QgsMetadataWidget.Mode'
+    class Mode(int):
+        LayerMetadata: 'QgsMetadataWidget.Mode'
+        ProjectMetadata: 'QgsMetadataWidget.Mode'
 
     def __init__(self, parent: typing.Optional[QtWidgets.QWidget] = ..., layer: typing.Optional[_core.QgsMapLayer] = ...) -> None: ...
 
@@ -4201,10 +4201,10 @@ class QgsNewAuxiliaryLayerDialog(QtWidgets.QDialog):
 
 class QgsNewGeoPackageLayerDialog(QtWidgets.QDialog):
 
-    class OverwriteBehavior(int): ...
-    Prompt = ... # type: 'QgsNewGeoPackageLayerDialog.OverwriteBehavior'
-    Overwrite = ... # type: 'QgsNewGeoPackageLayerDialog.OverwriteBehavior'
-    AddNewLayer = ... # type: 'QgsNewGeoPackageLayerDialog.OverwriteBehavior'
+    class OverwriteBehavior(int):
+        Prompt: 'QgsNewGeoPackageLayerDialog.OverwriteBehavior'
+        Overwrite: 'QgsNewGeoPackageLayerDialog.OverwriteBehavior'
+        AddNewLayer: 'QgsNewGeoPackageLayerDialog.OverwriteBehavior'
 
     def __init__(self, parent: typing.Optional[QtWidgets.QWidget] = ..., fl: typing.Union[QtCore.Qt.WindowFlags, QtCore.Qt.WindowType] = ...) -> None: ...
 
@@ -4238,23 +4238,23 @@ class QgsNewVectorTableDialog(QtWidgets.QDialog):
 
 class QgsNewHttpConnection(QtWidgets.QDialog):
 
-    class WfsVersionIndex(int): ...
-    WFS_VERSION_MAX = ... # type: 'QgsNewHttpConnection.WfsVersionIndex'
-    WFS_VERSION_1_0 = ... # type: 'QgsNewHttpConnection.WfsVersionIndex'
-    WFS_VERSION_1_1 = ... # type: 'QgsNewHttpConnection.WfsVersionIndex'
-    WFS_VERSION_2_0 = ... # type: 'QgsNewHttpConnection.WfsVersionIndex'
-    WFS_VERSION_API_FEATURES_1_0 = ... # type: 'QgsNewHttpConnection.WfsVersionIndex'
+    class WfsVersionIndex(int):
+        WFS_VERSION_MAX: 'QgsNewHttpConnection.WfsVersionIndex'
+        WFS_VERSION_1_0: 'QgsNewHttpConnection.WfsVersionIndex'
+        WFS_VERSION_1_1: 'QgsNewHttpConnection.WfsVersionIndex'
+        WFS_VERSION_2_0: 'QgsNewHttpConnection.WfsVersionIndex'
+        WFS_VERSION_API_FEATURES_1_0: 'QgsNewHttpConnection.WfsVersionIndex'
 
-    class Flag(int): ...
-    FlagShowTestConnection = ... # type: 'QgsNewHttpConnection.Flag'
-    FlagHideAuthenticationGroup = ... # type: 'QgsNewHttpConnection.Flag'
-    FlagShowHttpSettings = ... # type: 'QgsNewHttpConnection.Flag'
+    class Flag(int):
+        FlagShowTestConnection: 'QgsNewHttpConnection.Flag'
+        FlagHideAuthenticationGroup: 'QgsNewHttpConnection.Flag'
+        FlagShowHttpSettings: 'QgsNewHttpConnection.Flag'
 
-    class ConnectionType(int): ...
-    ConnectionWfs = ... # type: 'QgsNewHttpConnection.ConnectionType'
-    ConnectionWms = ... # type: 'QgsNewHttpConnection.ConnectionType'
-    ConnectionWcs = ... # type: 'QgsNewHttpConnection.ConnectionType'
-    ConnectionOther = ... # type: 'QgsNewHttpConnection.ConnectionType'
+    class ConnectionType(int):
+        ConnectionWfs: 'QgsNewHttpConnection.ConnectionType'
+        ConnectionWms: 'QgsNewHttpConnection.ConnectionType'
+        ConnectionWcs: 'QgsNewHttpConnection.ConnectionType'
+        ConnectionOther: 'QgsNewHttpConnection.ConnectionType'
 
     class ConnectionTypes(sip.wrapper):
 
@@ -4651,12 +4651,12 @@ class QgsPresetColorRampDialog(QtWidgets.QDialog):
 
 class QgsPreviewEffect(QtWidgets.QGraphicsEffect):
 
-    class PreviewMode(int): ...
-    PreviewGrayscale = ... # type: 'QgsPreviewEffect.PreviewMode'
-    PreviewMono = ... # type: 'QgsPreviewEffect.PreviewMode'
-    PreviewProtanope = ... # type: 'QgsPreviewEffect.PreviewMode'
-    PreviewDeuteranope = ... # type: 'QgsPreviewEffect.PreviewMode'
-    PreviewTritanope = ... # type: 'QgsPreviewEffect.PreviewMode'
+    class PreviewMode(int):
+        PreviewGrayscale: 'QgsPreviewEffect.PreviewMode'
+        PreviewMono: 'QgsPreviewEffect.PreviewMode'
+        PreviewProtanope: 'QgsPreviewEffect.PreviewMode'
+        PreviewDeuteranope: 'QgsPreviewEffect.PreviewMode'
+        PreviewTritanope: 'QgsPreviewEffect.PreviewMode'
 
     def __init__(self, parent: QtCore.QObject) -> None: ...
 
@@ -4724,13 +4724,13 @@ class QgsProjectionSelectionTreeWidget(QtWidgets.QWidget):
 
 class QgsProjectionSelectionWidget(QtWidgets.QWidget):
 
-    class CrsOption(int): ...
-    LayerCrs = ... # type: 'QgsProjectionSelectionWidget.CrsOption'
-    ProjectCrs = ... # type: 'QgsProjectionSelectionWidget.CrsOption'
-    CurrentCrs = ... # type: 'QgsProjectionSelectionWidget.CrsOption'
-    DefaultCrs = ... # type: 'QgsProjectionSelectionWidget.CrsOption'
-    RecentCrs = ... # type: 'QgsProjectionSelectionWidget.CrsOption'
-    CrsNotSet = ... # type: 'QgsProjectionSelectionWidget.CrsOption'
+    class CrsOption(int):
+        LayerCrs: 'QgsProjectionSelectionWidget.CrsOption'
+        ProjectCrs: 'QgsProjectionSelectionWidget.CrsOption'
+        CurrentCrs: 'QgsProjectionSelectionWidget.CrsOption'
+        DefaultCrs: 'QgsProjectionSelectionWidget.CrsOption'
+        RecentCrs: 'QgsProjectionSelectionWidget.CrsOption'
+        CrsNotSet: 'QgsProjectionSelectionWidget.CrsOption'
 
     def __init__(self, parent: typing.Optional[QtWidgets.QWidget] = ...) -> None: ...
 
@@ -4940,9 +4940,9 @@ class QgsQueryBuilder(QgsSubsetStringEditorInterface):
 
 class QgsQueryResultWidget(QtWidgets.QWidget):
 
-    class QueryWidgetMode(int): ...
-    SqlQueryMode = ... # type: 'QgsQueryResultWidget.QueryWidgetMode'
-    QueryLayerUpdateMode = ... # type: 'QgsQueryResultWidget.QueryWidgetMode'
+    class QueryWidgetMode(int):
+        SqlQueryMode: 'QgsQueryResultWidget.QueryWidgetMode'
+        QueryLayerUpdateMode: 'QgsQueryResultWidget.QueryWidgetMode'
 
     def __init__(self, parent: typing.Optional[QtWidgets.QWidget] = ..., connection: typing.Optional[_core.QgsAbstractDatabaseProviderConnection] = ...) -> None: ...
 
@@ -5001,12 +5001,12 @@ class QgsRangeSlider(QtWidgets.QWidget):
 
 class QgsRasterFormatSaveOptionsWidget(QtWidgets.QWidget):
 
-    class Type(int): ...
-    Default = ... # type: 'QgsRasterFormatSaveOptionsWidget.Type'
-    Full = ... # type: 'QgsRasterFormatSaveOptionsWidget.Type'
-    Table = ... # type: 'QgsRasterFormatSaveOptionsWidget.Type'
-    LineEdit = ... # type: 'QgsRasterFormatSaveOptionsWidget.Type'
-    ProfileLineEdit = ... # type: 'QgsRasterFormatSaveOptionsWidget.Type'
+    class Type(int):
+        Default: 'QgsRasterFormatSaveOptionsWidget.Type'
+        Full: 'QgsRasterFormatSaveOptionsWidget.Type'
+        Table: 'QgsRasterFormatSaveOptionsWidget.Type'
+        LineEdit: 'QgsRasterFormatSaveOptionsWidget.Type'
+        ProfileLineEdit: 'QgsRasterFormatSaveOptionsWidget.Type'
 
     def __init__(self, parent: typing.Optional[QtWidgets.QWidget] = ..., format: str = ..., type: 'QgsRasterFormatSaveOptionsWidget.Type' = ..., provider: str = ...) -> None: ...
 
@@ -5028,18 +5028,18 @@ class QgsRasterFormatSaveOptionsWidget(QtWidgets.QWidget):
 
 class QgsRasterLayerSaveAsDialog(QtWidgets.QDialog):
 
-    class ResolutionState(int): ...
-    OriginalResolution = ... # type: 'QgsRasterLayerSaveAsDialog.ResolutionState'
-    UserResolution = ... # type: 'QgsRasterLayerSaveAsDialog.ResolutionState'
+    class ResolutionState(int):
+        OriginalResolution: 'QgsRasterLayerSaveAsDialog.ResolutionState'
+        UserResolution: 'QgsRasterLayerSaveAsDialog.ResolutionState'
 
-    class CrsState(int): ...
-    OriginalCrs = ... # type: 'QgsRasterLayerSaveAsDialog.CrsState'
-    CurrentCrs = ... # type: 'QgsRasterLayerSaveAsDialog.CrsState'
-    UserCrs = ... # type: 'QgsRasterLayerSaveAsDialog.CrsState'
+    class CrsState(int):
+        OriginalCrs: 'QgsRasterLayerSaveAsDialog.CrsState'
+        CurrentCrs: 'QgsRasterLayerSaveAsDialog.CrsState'
+        UserCrs: 'QgsRasterLayerSaveAsDialog.CrsState'
 
-    class Mode(int): ...
-    RawDataMode = ... # type: 'QgsRasterLayerSaveAsDialog.Mode'
-    RenderedImageMode = ... # type: 'QgsRasterLayerSaveAsDialog.Mode'
+    class Mode(int):
+        RawDataMode: 'QgsRasterLayerSaveAsDialog.Mode'
+        RenderedImageMode: 'QgsRasterLayerSaveAsDialog.Mode'
 
     def __init__(self, rasterLayer: _core.QgsRasterLayer, sourceProvider: _core.QgsRasterDataProvider, currentExtent: _core.QgsRectangle, layerCrs: _core.QgsCoordinateReferenceSystem, currentCrs: _core.QgsCoordinateReferenceSystem, parent: typing.Optional[QtWidgets.QWidget] = ..., f: typing.Union[QtCore.Qt.WindowFlags, QtCore.Qt.WindowType] = ...) -> None: ...
 
@@ -5152,16 +5152,16 @@ class QgsAbstractRelationEditorWidget(QtWidgets.QWidget):
 
 class QgsRelationEditorWidget(QgsAbstractRelationEditorWidget):
 
-    class Button(int): ...
-    NoButton = ... # type: 'QgsRelationEditorWidget.Button'
-    Link = ... # type: 'QgsRelationEditorWidget.Button'
-    Unlink = ... # type: 'QgsRelationEditorWidget.Button'
-    SaveChildEdits = ... # type: 'QgsRelationEditorWidget.Button'
-    AddChildFeature = ... # type: 'QgsRelationEditorWidget.Button'
-    DuplicateChildFeature = ... # type: 'QgsRelationEditorWidget.Button'
-    DeleteChildFeature = ... # type: 'QgsRelationEditorWidget.Button'
-    ZoomToChildFeature = ... # type: 'QgsRelationEditorWidget.Button'
-    AllButtons = ... # type: 'QgsRelationEditorWidget.Button'
+    class Button(int):
+        NoButton: 'QgsRelationEditorWidget.Button'
+        Link: 'QgsRelationEditorWidget.Button'
+        Unlink: 'QgsRelationEditorWidget.Button'
+        SaveChildEdits: 'QgsRelationEditorWidget.Button'
+        AddChildFeature: 'QgsRelationEditorWidget.Button'
+        DuplicateChildFeature: 'QgsRelationEditorWidget.Button'
+        DeleteChildFeature: 'QgsRelationEditorWidget.Button'
+        ZoomToChildFeature: 'QgsRelationEditorWidget.Button'
+        AllButtons: 'QgsRelationEditorWidget.Button'
 
     class Buttons(sip.wrapper):
 
@@ -5267,16 +5267,16 @@ class QgsRichTextEditor(QtWidgets.QWidget):
 
 class QgsRubberBand(QgsMapCanvasItem):
 
-    class IconType(int): ...
-    ICON_NONE = ... # type: 'QgsRubberBand.IconType'
-    ICON_CROSS = ... # type: 'QgsRubberBand.IconType'
-    ICON_X = ... # type: 'QgsRubberBand.IconType'
-    ICON_BOX = ... # type: 'QgsRubberBand.IconType'
-    ICON_CIRCLE = ... # type: 'QgsRubberBand.IconType'
-    ICON_FULL_BOX = ... # type: 'QgsRubberBand.IconType'
-    ICON_DIAMOND = ... # type: 'QgsRubberBand.IconType'
-    ICON_FULL_DIAMOND = ... # type: 'QgsRubberBand.IconType'
-    ICON_SVG = ... # type: 'QgsRubberBand.IconType'
+    class IconType(int):
+        ICON_NONE: 'QgsRubberBand.IconType'
+        ICON_CROSS: 'QgsRubberBand.IconType'
+        ICON_X: 'QgsRubberBand.IconType'
+        ICON_BOX: 'QgsRubberBand.IconType'
+        ICON_CIRCLE: 'QgsRubberBand.IconType'
+        ICON_FULL_BOX: 'QgsRubberBand.IconType'
+        ICON_DIAMOND: 'QgsRubberBand.IconType'
+        ICON_FULL_DIAMOND: 'QgsRubberBand.IconType'
+        ICON_SVG: 'QgsRubberBand.IconType'
 
     def __init__(self, mapCanvas: QgsMapCanvas, geometryType: _core.QgsWkbTypes.GeometryType = ...) -> None: ...
 
@@ -5532,12 +5532,12 @@ class QgsSnapToGridCanvasItem(QgsMapCanvasItem):
 
 class QgsSourceSelectProvider(sip.wrapper):
 
-    class Ordering(int): ...
-    OrderLocalProvider = ... # type: 'QgsSourceSelectProvider.Ordering'
-    OrderDatabaseProvider = ... # type: 'QgsSourceSelectProvider.Ordering'
-    OrderRemoteProvider = ... # type: 'QgsSourceSelectProvider.Ordering'
-    OrderGeoCmsProvider = ... # type: 'QgsSourceSelectProvider.Ordering'
-    OrderOtherProvider = ... # type: 'QgsSourceSelectProvider.Ordering'
+    class Ordering(int):
+        OrderLocalProvider: 'QgsSourceSelectProvider.Ordering'
+        OrderDatabaseProvider: 'QgsSourceSelectProvider.Ordering'
+        OrderRemoteProvider: 'QgsSourceSelectProvider.Ordering'
+        OrderGeoCmsProvider: 'QgsSourceSelectProvider.Ordering'
+        OrderOtherProvider: 'QgsSourceSelectProvider.Ordering'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -5568,9 +5568,9 @@ class QgsSourceSelectProviderRegistry(sip.wrapper):
 
 class QgsStatusBar(QtWidgets.QWidget):
 
-    class Anchor(int): ...
-    AnchorLeft = ... # type: 'QgsStatusBar.Anchor'
-    AnchorRight = ... # type: 'QgsStatusBar.Anchor'
+    class Anchor(int):
+        AnchorLeft: 'QgsStatusBar.Anchor'
+        AnchorRight: 'QgsStatusBar.Anchor'
 
     def __init__(self, parent: typing.Optional[QtWidgets.QWidget] = ...) -> None: ...
 
@@ -5602,17 +5602,17 @@ class QgsStyleItemsListWidget(QtWidgets.QWidget):
 
 class QgsSublayersDialog(QtWidgets.QDialog):
 
-    class ProviderType(int): ...
-    Ogr = ... # type: 'QgsSublayersDialog.ProviderType'
-    Gdal = ... # type: 'QgsSublayersDialog.ProviderType'
-    Vsifile = ... # type: 'QgsSublayersDialog.ProviderType'
-    Mdal = ... # type: 'QgsSublayersDialog.ProviderType'
+    class ProviderType(int):
+        Ogr: 'QgsSublayersDialog.ProviderType'
+        Gdal: 'QgsSublayersDialog.ProviderType'
+        Vsifile: 'QgsSublayersDialog.ProviderType'
+        Mdal: 'QgsSublayersDialog.ProviderType'
 
-    class PromptMode(int): ...
-    PromptAlways = ... # type: 'QgsSublayersDialog.PromptMode'
-    PromptIfNeeded = ... # type: 'QgsSublayersDialog.PromptMode'
-    PromptNever = ... # type: 'QgsSublayersDialog.PromptMode'
-    PromptLoadAll = ... # type: 'QgsSublayersDialog.PromptMode'
+    class PromptMode(int):
+        PromptAlways: 'QgsSublayersDialog.PromptMode'
+        PromptIfNeeded: 'QgsSublayersDialog.PromptMode'
+        PromptNever: 'QgsSublayersDialog.PromptMode'
+        PromptLoadAll: 'QgsSublayersDialog.PromptMode'
 
     class LayerDefinition(sip.wrapper):
 
@@ -5746,9 +5746,9 @@ class QgsTemporalControllerWidget(QgsPanelWidget):
 
 class QgsTextFormatWidget(QtWidgets.QWidget, _core.QgsExpressionContextGenerator):
 
-    class Mode(int): ...
-    Text = ... # type: 'QgsTextFormatWidget.Mode'
-    Labeling = ... # type: 'QgsTextFormatWidget.Mode'
+    class Mode(int):
+        Text: 'QgsTextFormatWidget.Mode'
+        Labeling: 'QgsTextFormatWidget.Mode'
 
     @typing.overload
     def __init__(self, format: _core.QgsTextFormat = ..., mapCanvas: typing.Optional[QgsMapCanvas] = ..., parent: typing.Optional[QtWidgets.QWidget] = ..., layer: typing.Optional[_core.QgsVectorLayer] = ...) -> None: ...
@@ -5894,8 +5894,8 @@ class QgsUserInputWidget(QgsFloatingWidget):
 
 class QgsValidityCheckResultsModel(QtCore.QAbstractItemModel):
 
-    class Roles(int): ...
-    DescriptionRole = ... # type: 'QgsValidityCheckResultsModel.Roles'
+    class Roles(int):
+        DescriptionRole: 'QgsValidityCheckResultsModel.Roles'
 
     def __init__(self, results: typing.Iterable[_core.QgsValidityCheckResult], parent: typing.Optional[QtCore.QObject] = ...) -> None: ...
 
@@ -5943,16 +5943,16 @@ class QgsVectorLayerTemporalPropertiesWidget(QtWidgets.QWidget, _core.QgsExpress
 
 class QgsVertexMarker(QgsMapCanvasItem):
 
-    class IconType(int): ...
-    ICON_NONE = ... # type: 'QgsVertexMarker.IconType'
-    ICON_CROSS = ... # type: 'QgsVertexMarker.IconType'
-    ICON_X = ... # type: 'QgsVertexMarker.IconType'
-    ICON_BOX = ... # type: 'QgsVertexMarker.IconType'
-    ICON_CIRCLE = ... # type: 'QgsVertexMarker.IconType'
-    ICON_DOUBLE_TRIANGLE = ... # type: 'QgsVertexMarker.IconType'
-    ICON_TRIANGLE = ... # type: 'QgsVertexMarker.IconType'
-    ICON_RHOMBUS = ... # type: 'QgsVertexMarker.IconType'
-    ICON_INVERTED_TRIANGLE = ... # type: 'QgsVertexMarker.IconType'
+    class IconType(int):
+        ICON_NONE: 'QgsVertexMarker.IconType'
+        ICON_CROSS: 'QgsVertexMarker.IconType'
+        ICON_X: 'QgsVertexMarker.IconType'
+        ICON_BOX: 'QgsVertexMarker.IconType'
+        ICON_CIRCLE: 'QgsVertexMarker.IconType'
+        ICON_DOUBLE_TRIANGLE: 'QgsVertexMarker.IconType'
+        ICON_TRIANGLE: 'QgsVertexMarker.IconType'
+        ICON_RHOMBUS: 'QgsVertexMarker.IconType'
+        ICON_INVERTED_TRIANGLE: 'QgsVertexMarker.IconType'
 
     def __init__(self, mapCanvas: QgsMapCanvas) -> None: ...
 
@@ -5979,8 +5979,8 @@ class QgsVScrollArea(QgsScrollArea):
 
 class QgsWindowManagerInterface(sip.wrapper):
 
-    class StandardDialog(int): ...
-    DialogStyleManager = ... # type: 'QgsWindowManagerInterface.StandardDialog'
+    class StandardDialog(int):
+        DialogStyleManager: 'QgsWindowManagerInterface.StandardDialog'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -6107,19 +6107,19 @@ class QgsFeatureModel(sip.wrapper):
 
 class QgsAttributeTableFilterModel(QtCore.QSortFilterProxyModel, QgsFeatureModel):
 
-    class Role(int): ...
-    TypeRole = ... # type: 'QgsAttributeTableFilterModel.Role'
+    class Role(int):
+        TypeRole: 'QgsAttributeTableFilterModel.Role'
 
-    class ColumnType(int): ...
-    ColumnTypeField = ... # type: 'QgsAttributeTableFilterModel.ColumnType'
-    ColumnTypeActionButton = ... # type: 'QgsAttributeTableFilterModel.ColumnType'
+    class ColumnType(int):
+        ColumnTypeField: 'QgsAttributeTableFilterModel.ColumnType'
+        ColumnTypeActionButton: 'QgsAttributeTableFilterModel.ColumnType'
 
-    class FilterMode(int): ...
-    ShowAll = ... # type: 'QgsAttributeTableFilterModel.FilterMode'
-    ShowSelected = ... # type: 'QgsAttributeTableFilterModel.FilterMode'
-    ShowVisible = ... # type: 'QgsAttributeTableFilterModel.FilterMode'
-    ShowFilteredList = ... # type: 'QgsAttributeTableFilterModel.FilterMode'
-    ShowEdited = ... # type: 'QgsAttributeTableFilterModel.FilterMode'
+    class FilterMode(int):
+        ShowAll: 'QgsAttributeTableFilterModel.FilterMode'
+        ShowSelected: 'QgsAttributeTableFilterModel.FilterMode'
+        ShowVisible: 'QgsAttributeTableFilterModel.FilterMode'
+        ShowFilteredList: 'QgsAttributeTableFilterModel.FilterMode'
+        ShowEdited: 'QgsAttributeTableFilterModel.FilterMode'
 
     def __init__(self, canvas: QgsMapCanvas, sourceModel: 'QgsAttributeTableModel', parent: typing.Optional[QtCore.QObject] = ...) -> None: ...
 
@@ -6168,11 +6168,11 @@ class QgsAttributeTableFilterModel(QtCore.QSortFilterProxyModel, QgsFeatureModel
 
 class QgsAttributeTableModel(QtCore.QAbstractTableModel):
 
-    class Role(int): ...
-    FeatureIdRole = ... # type: 'QgsAttributeTableModel.Role'
-    FieldIndexRole = ... # type: 'QgsAttributeTableModel.Role'
-    UserRole = ... # type: 'QgsAttributeTableModel.Role'
-    SortRole = ... # type: 'QgsAttributeTableModel.Role'
+    class Role(int):
+        FeatureIdRole: 'QgsAttributeTableModel.Role'
+        FieldIndexRole: 'QgsAttributeTableModel.Role'
+        UserRole: 'QgsAttributeTableModel.Role'
+        SortRole: 'QgsAttributeTableModel.Role'
 
     def __init__(self, layerCache: _core.QgsVectorLayerCache, parent: typing.Optional[QtCore.QObject] = ...) -> None: ...
 
@@ -6242,14 +6242,14 @@ class QgsAttributeTableView(QgsTableView):
 
 class QgsDualView(QtWidgets.QStackedWidget):
 
-    class FeatureListBrowsingAction(int): ...
-    NoAction = ... # type: 'QgsDualView.FeatureListBrowsingAction'
-    PanToFeature = ... # type: 'QgsDualView.FeatureListBrowsingAction'
-    ZoomToFeature = ... # type: 'QgsDualView.FeatureListBrowsingAction'
+    class FeatureListBrowsingAction(int):
+        NoAction: 'QgsDualView.FeatureListBrowsingAction'
+        PanToFeature: 'QgsDualView.FeatureListBrowsingAction'
+        ZoomToFeature: 'QgsDualView.FeatureListBrowsingAction'
 
-    class ViewMode(int): ...
-    AttributeTable = ... # type: 'QgsDualView.ViewMode'
-    AttributeEditor = ... # type: 'QgsDualView.ViewMode'
+    class ViewMode(int):
+        AttributeTable: 'QgsDualView.ViewMode'
+        AttributeEditor: 'QgsDualView.ViewMode'
 
     def __init__(self, parent: typing.Optional[QtWidgets.QWidget] = ...) -> None: ...
 
@@ -6305,9 +6305,9 @@ class QgsAttributeTableMapLayerAction(QtWidgets.QAction):
 
 class QgsFeatureListModel(QtCore.QSortFilterProxyModel, QgsFeatureModel):
 
-    class Role(int): ...
-    FeatureInfoRole = ... # type: 'QgsFeatureListModel.Role'
-    FeatureRole = ... # type: 'QgsFeatureListModel.Role'
+    class Role(int):
+        FeatureInfoRole: 'QgsFeatureListModel.Role'
+        FeatureRole: 'QgsFeatureListModel.Role'
 
     class FeatureInfo(sip.wrapper):
 
@@ -6392,9 +6392,9 @@ class QgsFeatureListView(QtWidgets.QListView):
 
 class QgsFeatureListViewDelegate(QtWidgets.QItemDelegate):
 
-    class Element(int): ...
-    EditElement = ... # type: 'QgsFeatureListViewDelegate.Element'
-    SelectionElement = ... # type: 'QgsFeatureListViewDelegate.Element'
+    class Element(int):
+        EditElement: 'QgsFeatureListViewDelegate.Element'
+        SelectionElement: 'QgsFeatureListViewDelegate.Element'
 
     ICON_SIZE = ... # type: int
 
@@ -6579,14 +6579,14 @@ class QgsAuthIdentitiesEditor(QtWidgets.QWidget):
 
 class QgsAuthImportCertDialog(QtWidgets.QDialog):
 
-    class CertInput(int): ...
-    AllInputs = ... # type: 'QgsAuthImportCertDialog.CertInput'
-    FileInput = ... # type: 'QgsAuthImportCertDialog.CertInput'
-    TextInput = ... # type: 'QgsAuthImportCertDialog.CertInput'
+    class CertInput(int):
+        AllInputs: 'QgsAuthImportCertDialog.CertInput'
+        FileInput: 'QgsAuthImportCertDialog.CertInput'
+        TextInput: 'QgsAuthImportCertDialog.CertInput'
 
-    class CertFilter(int): ...
-    NoFilter = ... # type: 'QgsAuthImportCertDialog.CertFilter'
-    CaFilter = ... # type: 'QgsAuthImportCertDialog.CertFilter'
+    class CertFilter(int):
+        NoFilter: 'QgsAuthImportCertDialog.CertFilter'
+        CaFilter: 'QgsAuthImportCertDialog.CertFilter'
 
     def __init__(self, parent: typing.Optional[QtWidgets.QWidget] = ..., filter: 'QgsAuthImportCertDialog.CertFilter' = ..., input: 'QgsAuthImportCertDialog.CertInput' = ...) -> None: ...
 
@@ -6599,17 +6599,17 @@ class QgsAuthImportCertDialog(QtWidgets.QDialog):
 
 class QgsAuthImportIdentityDialog(QtWidgets.QDialog):
 
-    class Validity(int): ...
-    Valid = ... # type: 'QgsAuthImportIdentityDialog.Validity'
-    Invalid = ... # type: 'QgsAuthImportIdentityDialog.Validity'
-    Unknown = ... # type: 'QgsAuthImportIdentityDialog.Validity'
+    class Validity(int):
+        Valid: 'QgsAuthImportIdentityDialog.Validity'
+        Invalid: 'QgsAuthImportIdentityDialog.Validity'
+        Unknown: 'QgsAuthImportIdentityDialog.Validity'
 
-    class BundleTypes(int): ...
-    PkiPaths = ... # type: 'QgsAuthImportIdentityDialog.BundleTypes'
-    PkiPkcs12 = ... # type: 'QgsAuthImportIdentityDialog.BundleTypes'
+    class BundleTypes(int):
+        PkiPaths: 'QgsAuthImportIdentityDialog.BundleTypes'
+        PkiPkcs12: 'QgsAuthImportIdentityDialog.BundleTypes'
 
-    class IdentityType(int): ...
-    CertIdentity = ... # type: 'QgsAuthImportIdentityDialog.IdentityType'
+    class IdentityType(int):
+        CertIdentity: 'QgsAuthImportIdentityDialog.IdentityType'
 
     def __init__(self, identitytype: 'QgsAuthImportIdentityDialog.IdentityType', parent: typing.Optional[QtWidgets.QWidget] = ...) -> None: ...
 
@@ -6638,9 +6638,9 @@ class QgsAuthServersEditor(QtWidgets.QWidget):
 
 class QgsAuthSettingsWidget(QtWidgets.QWidget):
 
-    class WarningType(int): ...
-    ProjectFile = ... # type: 'QgsAuthSettingsWidget.WarningType'
-    UserSettings = ... # type: 'QgsAuthSettingsWidget.WarningType'
+    class WarningType(int):
+        ProjectFile: 'QgsAuthSettingsWidget.WarningType'
+        UserSettings: 'QgsAuthSettingsWidget.WarningType'
 
     def __init__(self, parent: typing.Optional[QtWidgets.QWidget] = ..., configId: str = ..., username: str = ..., password: str = ..., dataprovider: str = ...) -> None: ...
 
@@ -6749,10 +6749,10 @@ class QgsCalloutWidget(QtWidgets.QWidget):
 
 class QgsCodeEditor(Qsci.QsciScintilla):
 
-    class MarginRole(int): ...
-    LineNumbers = ... # type: 'QgsCodeEditor.MarginRole'
-    ErrorIndicators = ... # type: 'QgsCodeEditor.MarginRole'
-    FoldingControls = ... # type: 'QgsCodeEditor.MarginRole'
+    class MarginRole(int):
+        LineNumbers: 'QgsCodeEditor.MarginRole'
+        ErrorIndicators: 'QgsCodeEditor.MarginRole'
+        FoldingControls: 'QgsCodeEditor.MarginRole'
 
     def __init__(self, parent: typing.Optional[QtWidgets.QWidget] = ..., title: str = ..., folding: bool = ..., margin: bool = ...) -> None: ...
 
@@ -6785,42 +6785,42 @@ class QgsCodeEditor(Qsci.QsciScintilla):
 
 class QgsCodeEditorColorScheme(sip.wrapper):
 
-    class ColorRole(int): ...
-    Default = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
-    Keyword = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
-    Class = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
-    Method = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
-    Decoration = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
-    Number = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
-    Comment = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
-    CommentLine = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
-    CommentBlock = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
-    Background = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
-    Cursor = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
-    CaretLine = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
-    SingleQuote = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
-    DoubleQuote = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
-    TripleSingleQuote = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
-    TripleDoubleQuote = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
-    Operator = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
-    QuotedOperator = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
-    Identifier = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
-    QuotedIdentifier = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
-    Tag = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
-    UnknownTag = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
-    MarginBackground = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
-    MarginForeground = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
-    SelectionBackground = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
-    SelectionForeground = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
-    MatchedBraceBackground = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
-    MatchedBraceForeground = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
-    Edge = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
-    Fold = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
-    Error = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
-    ErrorBackground = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
-    FoldIconForeground = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
-    FoldIconHalo = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
-    IndentationGuide = ... # type: 'QgsCodeEditorColorScheme.ColorRole'
+    class ColorRole(int):
+        Default: 'QgsCodeEditorColorScheme.ColorRole'
+        Keyword: 'QgsCodeEditorColorScheme.ColorRole'
+        Class: 'QgsCodeEditorColorScheme.ColorRole'
+        Method: 'QgsCodeEditorColorScheme.ColorRole'
+        Decoration: 'QgsCodeEditorColorScheme.ColorRole'
+        Number: 'QgsCodeEditorColorScheme.ColorRole'
+        Comment: 'QgsCodeEditorColorScheme.ColorRole'
+        CommentLine: 'QgsCodeEditorColorScheme.ColorRole'
+        CommentBlock: 'QgsCodeEditorColorScheme.ColorRole'
+        Background: 'QgsCodeEditorColorScheme.ColorRole'
+        Cursor: 'QgsCodeEditorColorScheme.ColorRole'
+        CaretLine: 'QgsCodeEditorColorScheme.ColorRole'
+        SingleQuote: 'QgsCodeEditorColorScheme.ColorRole'
+        DoubleQuote: 'QgsCodeEditorColorScheme.ColorRole'
+        TripleSingleQuote: 'QgsCodeEditorColorScheme.ColorRole'
+        TripleDoubleQuote: 'QgsCodeEditorColorScheme.ColorRole'
+        Operator: 'QgsCodeEditorColorScheme.ColorRole'
+        QuotedOperator: 'QgsCodeEditorColorScheme.ColorRole'
+        Identifier: 'QgsCodeEditorColorScheme.ColorRole'
+        QuotedIdentifier: 'QgsCodeEditorColorScheme.ColorRole'
+        Tag: 'QgsCodeEditorColorScheme.ColorRole'
+        UnknownTag: 'QgsCodeEditorColorScheme.ColorRole'
+        MarginBackground: 'QgsCodeEditorColorScheme.ColorRole'
+        MarginForeground: 'QgsCodeEditorColorScheme.ColorRole'
+        SelectionBackground: 'QgsCodeEditorColorScheme.ColorRole'
+        SelectionForeground: 'QgsCodeEditorColorScheme.ColorRole'
+        MatchedBraceBackground: 'QgsCodeEditorColorScheme.ColorRole'
+        MatchedBraceForeground: 'QgsCodeEditorColorScheme.ColorRole'
+        Edge: 'QgsCodeEditorColorScheme.ColorRole'
+        Fold: 'QgsCodeEditorColorScheme.ColorRole'
+        Error: 'QgsCodeEditorColorScheme.ColorRole'
+        ErrorBackground: 'QgsCodeEditorColorScheme.ColorRole'
+        FoldIconForeground: 'QgsCodeEditorColorScheme.ColorRole'
+        FoldIconHalo: 'QgsCodeEditorColorScheme.ColorRole'
+        IndentationGuide: 'QgsCodeEditorColorScheme.ColorRole'
 
     @typing.overload
     def __init__(self, id: str = ..., name: str = ...) -> None: ...
@@ -6986,10 +6986,10 @@ class QgsEditorWidgetRegistry(QtCore.QObject):
 
 class QgsWidgetWrapper(QtCore.QObject):
 
-    class Property(int): ...
-    RootPath = ... # type: 'QgsWidgetWrapper.Property'
-    DocumentViewerContent = ... # type: 'QgsWidgetWrapper.Property'
-    StorageUrl = ... # type: 'QgsWidgetWrapper.Property'
+    class Property(int):
+        RootPath: 'QgsWidgetWrapper.Property'
+        DocumentViewerContent: 'QgsWidgetWrapper.Property'
+        StorageUrl: 'QgsWidgetWrapper.Property'
 
     def __init__(self, vl: _core.QgsVectorLayer, editor: typing.Optional[QtWidgets.QWidget] = ..., parent: typing.Optional[QtWidgets.QWidget] = ...) -> None: ...
 
@@ -7019,10 +7019,10 @@ class QgsWidgetWrapper(QtCore.QObject):
 
 class QgsEditorWidgetWrapper(QgsWidgetWrapper):
 
-    class ConstraintResult(int): ...
-    ConstraintResultPass = ... # type: 'QgsEditorWidgetWrapper.ConstraintResult'
-    ConstraintResultFailHard = ... # type: 'QgsEditorWidgetWrapper.ConstraintResult'
-    ConstraintResultFailSoft = ... # type: 'QgsEditorWidgetWrapper.ConstraintResult'
+    class ConstraintResult(int):
+        ConstraintResultPass: 'QgsEditorWidgetWrapper.ConstraintResult'
+        ConstraintResultFailHard: 'QgsEditorWidgetWrapper.ConstraintResult'
+        ConstraintResultFailSoft: 'QgsEditorWidgetWrapper.ConstraintResult'
 
     def __init__(self, vl: _core.QgsVectorLayer, fieldIdx: int, editor: typing.Optional[QtWidgets.QWidget] = ..., parent: typing.Optional[QtWidgets.QWidget] = ...) -> None: ...
 
@@ -7066,22 +7066,22 @@ class QgsEditorWidgetWrapper(QgsWidgetWrapper):
 
 class QgsSearchWidgetWrapper(QgsWidgetWrapper):
 
-    class FilterFlag(int): ...
-    EqualTo = ... # type: 'QgsSearchWidgetWrapper.FilterFlag'
-    NotEqualTo = ... # type: 'QgsSearchWidgetWrapper.FilterFlag'
-    GreaterThan = ... # type: 'QgsSearchWidgetWrapper.FilterFlag'
-    LessThan = ... # type: 'QgsSearchWidgetWrapper.FilterFlag'
-    GreaterThanOrEqualTo = ... # type: 'QgsSearchWidgetWrapper.FilterFlag'
-    LessThanOrEqualTo = ... # type: 'QgsSearchWidgetWrapper.FilterFlag'
-    Between = ... # type: 'QgsSearchWidgetWrapper.FilterFlag'
-    CaseInsensitive = ... # type: 'QgsSearchWidgetWrapper.FilterFlag'
-    Contains = ... # type: 'QgsSearchWidgetWrapper.FilterFlag'
-    DoesNotContain = ... # type: 'QgsSearchWidgetWrapper.FilterFlag'
-    IsNull = ... # type: 'QgsSearchWidgetWrapper.FilterFlag'
-    IsNotBetween = ... # type: 'QgsSearchWidgetWrapper.FilterFlag'
-    IsNotNull = ... # type: 'QgsSearchWidgetWrapper.FilterFlag'
-    StartsWith = ... # type: 'QgsSearchWidgetWrapper.FilterFlag'
-    EndsWith = ... # type: 'QgsSearchWidgetWrapper.FilterFlag'
+    class FilterFlag(int):
+        EqualTo: 'QgsSearchWidgetWrapper.FilterFlag'
+        NotEqualTo: 'QgsSearchWidgetWrapper.FilterFlag'
+        GreaterThan: 'QgsSearchWidgetWrapper.FilterFlag'
+        LessThan: 'QgsSearchWidgetWrapper.FilterFlag'
+        GreaterThanOrEqualTo: 'QgsSearchWidgetWrapper.FilterFlag'
+        LessThanOrEqualTo: 'QgsSearchWidgetWrapper.FilterFlag'
+        Between: 'QgsSearchWidgetWrapper.FilterFlag'
+        CaseInsensitive: 'QgsSearchWidgetWrapper.FilterFlag'
+        Contains: 'QgsSearchWidgetWrapper.FilterFlag'
+        DoesNotContain: 'QgsSearchWidgetWrapper.FilterFlag'
+        IsNull: 'QgsSearchWidgetWrapper.FilterFlag'
+        IsNotBetween: 'QgsSearchWidgetWrapper.FilterFlag'
+        IsNotNull: 'QgsSearchWidgetWrapper.FilterFlag'
+        StartsWith: 'QgsSearchWidgetWrapper.FilterFlag'
+        EndsWith: 'QgsSearchWidgetWrapper.FilterFlag'
 
     class FilterFlags(sip.wrapper):
 
@@ -7236,10 +7236,10 @@ class QgsDefaultSearchWidgetWrapper(QgsSearchWidgetWrapper):
 
 class QgsDoubleSpinBox(QtWidgets.QDoubleSpinBox):
 
-    class ClearValueMode(int): ...
-    MinimumValue = ... # type: 'QgsDoubleSpinBox.ClearValueMode'
-    MaximumValue = ... # type: 'QgsDoubleSpinBox.ClearValueMode'
-    CustomValue = ... # type: 'QgsDoubleSpinBox.ClearValueMode'
+    class ClearValueMode(int):
+        MinimumValue: 'QgsDoubleSpinBox.ClearValueMode'
+        MaximumValue: 'QgsDoubleSpinBox.ClearValueMode'
+        CustomValue: 'QgsDoubleSpinBox.ClearValueMode'
 
     def __init__(self, parent: typing.Optional[QtWidgets.QWidget] = ...) -> None: ...
 
@@ -7276,14 +7276,14 @@ class QgsHtmlWidgetWrapper(QgsWidgetWrapper):
 
 class QgsJsonEditWidget(QtWidgets.QWidget):
 
-    class FormatJson(int): ...
-    Indented = ... # type: 'QgsJsonEditWidget.FormatJson'
-    Compact = ... # type: 'QgsJsonEditWidget.FormatJson'
-    Disabled = ... # type: 'QgsJsonEditWidget.FormatJson'
+    class FormatJson(int):
+        Indented: 'QgsJsonEditWidget.FormatJson'
+        Compact: 'QgsJsonEditWidget.FormatJson'
+        Disabled: 'QgsJsonEditWidget.FormatJson'
 
-    class View(int): ...
-    Text = ... # type: 'QgsJsonEditWidget.View'
-    Tree = ... # type: 'QgsJsonEditWidget.View'
+    class View(int):
+        Text: 'QgsJsonEditWidget.View'
+        Tree: 'QgsJsonEditWidget.View'
 
     def __init__(self, parent: typing.Optional[QtWidgets.QWidget] = ...) -> None: ...
 
@@ -7296,10 +7296,10 @@ class QgsJsonEditWidget(QtWidgets.QWidget):
 
 class QgsMultiEditToolButton(QtWidgets.QToolButton):
 
-    class State(int): ...
-    Default = ... # type: 'QgsMultiEditToolButton.State'
-    MixedValues = ... # type: 'QgsMultiEditToolButton.State'
-    Changed = ... # type: 'QgsMultiEditToolButton.State'
+    class State(int):
+        Default: 'QgsMultiEditToolButton.State'
+        MixedValues: 'QgsMultiEditToolButton.State'
+        Changed: 'QgsMultiEditToolButton.State'
 
     def __init__(self, parent: typing.Optional[QtWidgets.QWidget] = ...) -> None: ...
 
@@ -7346,10 +7346,10 @@ class QgsRelationReferenceSearchWidgetWrapper(QgsSearchWidgetWrapper):
 
 class QgsRelationReferenceWidget(QtWidgets.QWidget):
 
-    class CanvasExtent(int): ...
-    Fixed = ... # type: 'QgsRelationReferenceWidget.CanvasExtent'
-    Pan = ... # type: 'QgsRelationReferenceWidget.CanvasExtent'
-    Scale = ... # type: 'QgsRelationReferenceWidget.CanvasExtent'
+    class CanvasExtent(int):
+        Fixed: 'QgsRelationReferenceWidget.CanvasExtent'
+        Pan: 'QgsRelationReferenceWidget.CanvasExtent'
+        Scale: 'QgsRelationReferenceWidget.CanvasExtent'
 
     def __init__(self, parent: QtWidgets.QWidget) -> None: ...
 
@@ -7467,10 +7467,10 @@ class QgsSearchWidgetToolButton(QtWidgets.QToolButton):
 
 class QgsSpinBox(QtWidgets.QSpinBox):
 
-    class ClearValueMode(int): ...
-    MinimumValue = ... # type: 'QgsSpinBox.ClearValueMode'
-    MaximumValue = ... # type: 'QgsSpinBox.ClearValueMode'
-    CustomValue = ... # type: 'QgsSpinBox.ClearValueMode'
+    class ClearValueMode(int):
+        MinimumValue: 'QgsSpinBox.ClearValueMode'
+        MaximumValue: 'QgsSpinBox.ClearValueMode'
+        CustomValue: 'QgsSpinBox.ClearValueMode'
 
     def __init__(self, parent: typing.Optional[QtWidgets.QWidget] = ...) -> None: ...
 
@@ -8044,9 +8044,9 @@ class QgsLayoutCustomDropHandler(QtCore.QObject):
 
 class QgsLayoutDesignerInterface(QtCore.QObject):
 
-    class StandardTool(int): ...
-    ToolMoveItemContent = ... # type: 'QgsLayoutDesignerInterface.StandardTool'
-    ToolMoveItemNodes = ... # type: 'QgsLayoutDesignerInterface.StandardTool'
+    class StandardTool(int):
+        ToolMoveItemContent: 'QgsLayoutDesignerInterface.StandardTool'
+        ToolMoveItemNodes: 'QgsLayoutDesignerInterface.StandardTool'
 
     class ExportResults(sip.wrapper):
 
@@ -8113,8 +8113,8 @@ class QgsLayoutItemComboBox(QtWidgets.QComboBox):
 
 class QgsLayoutItemAbstractGuiMetadata(sip.wrapper):
 
-    class Flag(int): ...
-    FlagNoCreationTools = ... # type: 'QgsLayoutItemAbstractGuiMetadata.Flag'
+    class Flag(int):
+        FlagNoCreationTools: 'QgsLayoutItemAbstractGuiMetadata.Flag'
 
     class Flags(sip.wrapper):
 
@@ -8262,14 +8262,14 @@ class QgsLayoutUnitsComboBox(QtWidgets.QComboBox):
 
 class QgsLayoutView(QtWidgets.QGraphicsView):
 
-    class PasteMode(int): ...
-    PasteModeCursor = ... # type: 'QgsLayoutView.PasteMode'
-    PasteModeCenter = ... # type: 'QgsLayoutView.PasteMode'
-    PasteModeInPlace = ... # type: 'QgsLayoutView.PasteMode'
+    class PasteMode(int):
+        PasteModeCursor: 'QgsLayoutView.PasteMode'
+        PasteModeCenter: 'QgsLayoutView.PasteMode'
+        PasteModeInPlace: 'QgsLayoutView.PasteMode'
 
-    class ClipboardOperation(int): ...
-    ClipboardCut = ... # type: 'QgsLayoutView.ClipboardOperation'
-    ClipboardCopy = ... # type: 'QgsLayoutView.ClipboardOperation'
+    class ClipboardOperation(int):
+        ClipboardCut: 'QgsLayoutView.ClipboardOperation'
+        ClipboardCopy: 'QgsLayoutView.ClipboardOperation'
 
     def __init__(self, parent: typing.Optional[QtWidgets.QWidget] = ...) -> None: ...
 
@@ -8421,8 +8421,8 @@ class QgsLayoutViewTriangleRubberBand(QgsLayoutViewRubberBand):
 
 class QgsLayoutViewTool(QtCore.QObject):
 
-    class Flag(int): ...
-    FlagSnaps = ... # type: 'QgsLayoutViewTool.Flag'
+    class Flag(int):
+        FlagSnaps: 'QgsLayoutViewTool.Flag'
 
     class Flags(sip.wrapper):
 
@@ -8864,14 +8864,14 @@ class QgsPointCloudRendererPropertiesWidget(QgsMapLayerConfigWidget):
 
 class QgsAggregateMappingModel(QtCore.QAbstractTableModel):
 
-    class ColumnDataIndex(int): ...
-    SourceExpression = ... # type: 'QgsAggregateMappingModel.ColumnDataIndex'
-    Aggregate = ... # type: 'QgsAggregateMappingModel.ColumnDataIndex'
-    Delimiter = ... # type: 'QgsAggregateMappingModel.ColumnDataIndex'
-    DestinationName = ... # type: 'QgsAggregateMappingModel.ColumnDataIndex'
-    DestinationType = ... # type: 'QgsAggregateMappingModel.ColumnDataIndex'
-    DestinationLength = ... # type: 'QgsAggregateMappingModel.ColumnDataIndex'
-    DestinationPrecision = ... # type: 'QgsAggregateMappingModel.ColumnDataIndex'
+    class ColumnDataIndex(int):
+        SourceExpression: 'QgsAggregateMappingModel.ColumnDataIndex'
+        Aggregate: 'QgsAggregateMappingModel.ColumnDataIndex'
+        Delimiter: 'QgsAggregateMappingModel.ColumnDataIndex'
+        DestinationName: 'QgsAggregateMappingModel.ColumnDataIndex'
+        DestinationType: 'QgsAggregateMappingModel.ColumnDataIndex'
+        DestinationLength: 'QgsAggregateMappingModel.ColumnDataIndex'
+        DestinationPrecision: 'QgsAggregateMappingModel.ColumnDataIndex'
 
     class Aggregate(sip.wrapper):
 
@@ -8952,8 +8952,8 @@ class QgsProcessingAlgorithmConfigurationWidgetFactory(sip.wrapper):
 
 class QgsProcessingParametersGenerator(sip.wrapper):
 
-    class Flag(int): ...
-    SkipDefaultValueParameters = ... # type: 'QgsProcessingParametersGenerator.Flag'
+    class Flag(int):
+        SkipDefaultValueParameters: 'QgsProcessingParametersGenerator.Flag'
 
     class Flags(sip.wrapper):
 
@@ -8989,13 +8989,13 @@ class QgsProcessingContextGenerator(sip.wrapper):
 
 class QgsProcessingAlgorithmDialogBase(QtWidgets.QDialog, QgsProcessingParametersGenerator, QgsProcessingContextGenerator):
 
-    class DialogMode(int): ...
-    Single = ... # type: 'QgsProcessingAlgorithmDialogBase.DialogMode'
-    Batch = ... # type: 'QgsProcessingAlgorithmDialogBase.DialogMode'
+    class DialogMode(int):
+        Single: 'QgsProcessingAlgorithmDialogBase.DialogMode'
+        Batch: 'QgsProcessingAlgorithmDialogBase.DialogMode'
 
-    class LogFormat(int): ...
-    FormatPlainText = ... # type: 'QgsProcessingAlgorithmDialogBase.LogFormat'
-    FormatHtml = ... # type: 'QgsProcessingAlgorithmDialogBase.LogFormat'
+    class LogFormat(int):
+        FormatPlainText: 'QgsProcessingAlgorithmDialogBase.LogFormat'
+        FormatHtml: 'QgsProcessingAlgorithmDialogBase.LogFormat'
 
     def __init__(self, parent: typing.Optional[QtWidgets.QWidget] = ..., flags: typing.Union[QtCore.Qt.WindowFlags, QtCore.Qt.WindowType] = ..., mode: 'QgsProcessingAlgorithmDialogBase.DialogMode' = ...) -> None: ...
 
@@ -9071,10 +9071,10 @@ class QgsProcessingBatchAlgorithmDialogBase(QgsProcessingAlgorithmDialogBase):
 
 class QgsProcessingGui(sip.wrapper):
 
-    class WidgetType(int): ...
-    Standard = ... # type: 'QgsProcessingGui.WidgetType'
-    Batch = ... # type: 'QgsProcessingGui.WidgetType'
-    Modeler = ... # type: 'QgsProcessingGui.WidgetType'
+    class WidgetType(int):
+        Standard: 'QgsProcessingGui.WidgetType'
+        Batch: 'QgsProcessingGui.WidgetType'
+        Modeler: 'QgsProcessingGui.WidgetType'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -9263,11 +9263,11 @@ class QgsProcessingRecentAlgorithmLog(QtCore.QObject):
 
 class QgsProcessingToolboxModelNode(QtCore.QObject):
 
-    class NodeType(int): ...
-    NodeProvider = ... # type: 'QgsProcessingToolboxModelNode.NodeType'
-    NodeGroup = ... # type: 'QgsProcessingToolboxModelNode.NodeType'
-    NodeAlgorithm = ... # type: 'QgsProcessingToolboxModelNode.NodeType'
-    NodeRecent = ... # type: 'QgsProcessingToolboxModelNode.NodeType'
+    class NodeType(int):
+        NodeProvider: 'QgsProcessingToolboxModelNode.NodeType'
+        NodeGroup: 'QgsProcessingToolboxModelNode.NodeType'
+        NodeAlgorithm: 'QgsProcessingToolboxModelNode.NodeType'
+        NodeRecent: 'QgsProcessingToolboxModelNode.NodeType'
 
     def __init__(self) -> None: ...
 
@@ -9315,14 +9315,14 @@ class QgsProcessingToolboxModelAlgorithmNode(QgsProcessingToolboxModelNode):
 
 class QgsProcessingToolboxModel(QtCore.QAbstractItemModel):
 
-    class Roles(int): ...
-    RoleNodeType = ... # type: 'QgsProcessingToolboxModel.Roles'
-    RoleAlgorithmFlags = ... # type: 'QgsProcessingToolboxModel.Roles'
-    RoleAlgorithmId = ... # type: 'QgsProcessingToolboxModel.Roles'
-    RoleAlgorithmName = ... # type: 'QgsProcessingToolboxModel.Roles'
-    RoleAlgorithmShortDescription = ... # type: 'QgsProcessingToolboxModel.Roles'
-    RoleAlgorithmTags = ... # type: 'QgsProcessingToolboxModel.Roles'
-    RoleProviderFlags = ... # type: 'QgsProcessingToolboxModel.Roles'
+    class Roles(int):
+        RoleNodeType: 'QgsProcessingToolboxModel.Roles'
+        RoleAlgorithmFlags: 'QgsProcessingToolboxModel.Roles'
+        RoleAlgorithmId: 'QgsProcessingToolboxModel.Roles'
+        RoleAlgorithmName: 'QgsProcessingToolboxModel.Roles'
+        RoleAlgorithmShortDescription: 'QgsProcessingToolboxModel.Roles'
+        RoleAlgorithmTags: 'QgsProcessingToolboxModel.Roles'
+        RoleProviderFlags: 'QgsProcessingToolboxModel.Roles'
 
     def __init__(self, parent: typing.Optional[QtCore.QObject] = ..., registry: typing.Optional[_core.QgsProcessingRegistry] = ..., recentLog: typing.Optional[QgsProcessingRecentAlgorithmLog] = ...) -> None: ...
 
@@ -9346,11 +9346,11 @@ class QgsProcessingToolboxModel(QtCore.QAbstractItemModel):
 
 class QgsProcessingToolboxProxyModel(QtCore.QSortFilterProxyModel):
 
-    class Filter(int): ...
-    FilterToolbox = ... # type: 'QgsProcessingToolboxProxyModel.Filter'
-    FilterModeler = ... # type: 'QgsProcessingToolboxProxyModel.Filter'
-    FilterInPlace = ... # type: 'QgsProcessingToolboxProxyModel.Filter'
-    FilterShowKnownIssues = ... # type: 'QgsProcessingToolboxProxyModel.Filter'
+    class Filter(int):
+        FilterToolbox: 'QgsProcessingToolboxProxyModel.Filter'
+        FilterModeler: 'QgsProcessingToolboxProxyModel.Filter'
+        FilterInPlace: 'QgsProcessingToolboxProxyModel.Filter'
+        FilterShowKnownIssues: 'QgsProcessingToolboxProxyModel.Filter'
 
     class Filters(sip.wrapper):
 
@@ -9480,9 +9480,9 @@ class QgsProcessingHiddenWidgetWrapper(QgsAbstractProcessingParameterWidgetWrapp
 
 class QgsModelArrowItem(QtCore.QObject, QtWidgets.QGraphicsPathItem):
 
-    class Marker(int): ...
-    Circle = ... # type: 'QgsModelArrowItem.Marker'
-    ArrowHead = ... # type: 'QgsModelArrowItem.Marker'
+    class Marker(int):
+        Circle: 'QgsModelArrowItem.Marker'
+        ArrowHead: 'QgsModelArrowItem.Marker'
 
     @typing.overload
     def __init__(self, startItem: 'QgsModelComponentGraphicItem', startEdge: QtCore.Qt.Edge, startIndex: int, startIsOutgoing: bool, startMarker: 'QgsModelArrowItem.Marker', endItem: 'QgsModelComponentGraphicItem', endEdge: QtCore.Qt.Edge, endIndex: int, endIsIncoming: bool, endMarker: 'QgsModelArrowItem.Marker') -> None: ...
@@ -9500,13 +9500,13 @@ class QgsModelArrowItem(QtCore.QObject, QtWidgets.QGraphicsPathItem):
 
 class QgsModelComponentGraphicItem(QtWidgets.QGraphicsObject):
 
-    class Flag(int): ...
-    Unused = ... # type: 'QgsModelComponentGraphicItem.Flag'
+    class Flag(int):
+        Unused: 'QgsModelComponentGraphicItem.Flag'
 
-    class State(int): ...
-    Normal = ... # type: 'QgsModelComponentGraphicItem.State'
-    Selected = ... # type: 'QgsModelComponentGraphicItem.State'
-    Hover = ... # type: 'QgsModelComponentGraphicItem.State'
+    class State(int):
+        Normal: 'QgsModelComponentGraphicItem.State'
+        Selected: 'QgsModelComponentGraphicItem.State'
+        Hover: 'QgsModelComponentGraphicItem.State'
 
     class Flags(sip.wrapper):
 
@@ -9654,9 +9654,9 @@ class QgsModelGroupBoxGraphicItem(QgsModelComponentGraphicItem):
 
 class QgsModelDesignerDialog(QtWidgets.QMainWindow):
 
-    class SaveAction(int): ...
-    SaveAsFile = ... # type: 'QgsModelDesignerDialog.SaveAction'
-    SaveInProject = ... # type: 'QgsModelDesignerDialog.SaveAction'
+    class SaveAction(int):
+        SaveAsFile: 'QgsModelDesignerDialog.SaveAction'
+        SaveInProject: 'QgsModelDesignerDialog.SaveAction'
 
     def __init__(self, parent: typing.Optional[QtWidgets.QWidget] = ..., flags: typing.Union[QtCore.Qt.WindowFlags, QtCore.Qt.WindowType] = ...) -> None: ...
 
@@ -9720,17 +9720,17 @@ class QgsModelDesignerFoldButtonGraphicItem(QgsModelDesignerFlatButtonGraphicIte
 
 class QgsModelGraphicsScene(QtWidgets.QGraphicsScene):
 
-    class Flag(int): ...
-    FlagHideControls = ... # type: 'QgsModelGraphicsScene.Flag'
-    FlagHideComments = ... # type: 'QgsModelGraphicsScene.Flag'
+    class Flag(int):
+        FlagHideControls: 'QgsModelGraphicsScene.Flag'
+        FlagHideComments: 'QgsModelGraphicsScene.Flag'
 
-    class ZValues(int): ...
-    GroupBox = ... # type: 'QgsModelGraphicsScene.ZValues'
-    ArrowLink = ... # type: 'QgsModelGraphicsScene.ZValues'
-    ModelComponent = ... # type: 'QgsModelGraphicsScene.ZValues'
-    MouseHandles = ... # type: 'QgsModelGraphicsScene.ZValues'
-    RubberBand = ... # type: 'QgsModelGraphicsScene.ZValues'
-    ZSnapIndicator = ... # type: 'QgsModelGraphicsScene.ZValues'
+    class ZValues(int):
+        GroupBox: 'QgsModelGraphicsScene.ZValues'
+        ArrowLink: 'QgsModelGraphicsScene.ZValues'
+        ModelComponent: 'QgsModelGraphicsScene.ZValues'
+        MouseHandles: 'QgsModelGraphicsScene.ZValues'
+        RubberBand: 'QgsModelGraphicsScene.ZValues'
+        ZSnapIndicator: 'QgsModelGraphicsScene.ZValues'
 
     class Flags(sip.wrapper):
 
@@ -9779,14 +9779,14 @@ class QgsModelGraphicsScene(QtWidgets.QGraphicsScene):
 
 class QgsModelGraphicsView(QtWidgets.QGraphicsView):
 
-    class PasteMode(int): ...
-    PasteModeCursor = ... # type: 'QgsModelGraphicsView.PasteMode'
-    PasteModeCenter = ... # type: 'QgsModelGraphicsView.PasteMode'
-    PasteModeInPlace = ... # type: 'QgsModelGraphicsView.PasteMode'
+    class PasteMode(int):
+        PasteModeCursor: 'QgsModelGraphicsView.PasteMode'
+        PasteModeCenter: 'QgsModelGraphicsView.PasteMode'
+        PasteModeInPlace: 'QgsModelGraphicsView.PasteMode'
 
-    class ClipboardOperation(int): ...
-    ClipboardCut = ... # type: 'QgsModelGraphicsView.ClipboardOperation'
-    ClipboardCopy = ... # type: 'QgsModelGraphicsView.ClipboardOperation'
+    class ClipboardOperation(int):
+        ClipboardCut: 'QgsModelGraphicsView.ClipboardOperation'
+        ClipboardCopy: 'QgsModelGraphicsView.ClipboardOperation'
 
     def __init__(self, parent: typing.Optional[QtWidgets.QWidget] = ...) -> None: ...
 
@@ -10184,8 +10184,8 @@ class QgsBrushStyleComboBox(QtWidgets.QComboBox):
 
 class QgsCategorizedSymbolRendererWidget(QgsRendererWidget):
 
-    class CustomRoles(int): ...
-    ValueRole = ... # type: 'QgsCategorizedSymbolRendererWidget.CustomRoles'
+    class CustomRoles(int):
+        ValueRole: 'QgsCategorizedSymbolRendererWidget.CustomRoles'
 
     def __init__(self, layer: _core.QgsVectorLayer, style: _core.QgsStyle, renderer: _core.QgsFeatureRenderer) -> None: ...
 
@@ -10639,9 +10639,9 @@ class QgsSmartGroupEditorDialog(QtWidgets.QDialog):
 
 class QgsStyleExportImportDialog(QtWidgets.QDialog):
 
-    class Mode(int): ...
-    Export = ... # type: 'QgsStyleExportImportDialog.Mode'
-    Import = ... # type: 'QgsStyleExportImportDialog.Mode'
+    class Mode(int):
+        Export: 'QgsStyleExportImportDialog.Mode'
+        Import: 'QgsStyleExportImportDialog.Mode'
 
     def __init__(self, style: _core.QgsStyle, parent: typing.Optional[QtWidgets.QWidget] = ..., mode: 'QgsStyleExportImportDialog.Mode' = ...) -> None: ...
 

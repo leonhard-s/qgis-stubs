@@ -49,9 +49,9 @@ class QgsGcpGeometryTransformer(_core.QgsAbstractGeometryTransformer):
 
 class QgsGcpPoint(sip.wrapper):
 
-    class PointType(int): ...
-    Source = ... # type: 'QgsGcpPoint.PointType'
-    Destination = ... # type: 'QgsGcpPoint.PointType'
+    class PointType(int):
+        Source: 'QgsGcpPoint.PointType'
+        Destination: 'QgsGcpPoint.PointType'
 
     @typing.overload
     def __init__(self, sourcePoint: _core.QgsPointXY, destinationPoint: _core.QgsPointXY, destinationPointCrs: _core.QgsCoordinateReferenceSystem, enabled: bool = ...) -> None: ...
@@ -71,15 +71,15 @@ class QgsGcpPoint(sip.wrapper):
 
 class QgsGcpTransformerInterface(sip.wrapper):
 
-    class TransformMethod(int): ...
-    Linear = ... # type: 'QgsGcpTransformerInterface.TransformMethod'
-    Helmert = ... # type: 'QgsGcpTransformerInterface.TransformMethod'
-    PolynomialOrder1 = ... # type: 'QgsGcpTransformerInterface.TransformMethod'
-    PolynomialOrder2 = ... # type: 'QgsGcpTransformerInterface.TransformMethod'
-    PolynomialOrder3 = ... # type: 'QgsGcpTransformerInterface.TransformMethod'
-    ThinPlateSpline = ... # type: 'QgsGcpTransformerInterface.TransformMethod'
-    Projective = ... # type: 'QgsGcpTransformerInterface.TransformMethod'
-    InvalidTransform = ... # type: 'QgsGcpTransformerInterface.TransformMethod'
+    class TransformMethod(int):
+        Linear: 'QgsGcpTransformerInterface.TransformMethod'
+        Helmert: 'QgsGcpTransformerInterface.TransformMethod'
+        PolynomialOrder1: 'QgsGcpTransformerInterface.TransformMethod'
+        PolynomialOrder2: 'QgsGcpTransformerInterface.TransformMethod'
+        PolynomialOrder3: 'QgsGcpTransformerInterface.TransformMethod'
+        ThinPlateSpline: 'QgsGcpTransformerInterface.TransformMethod'
+        Projective: 'QgsGcpTransformerInterface.TransformMethod'
+        InvalidTransform: 'QgsGcpTransformerInterface.TransformMethod'
 
     staticMetaObject = ... # type: QtCore.QMetaObject
 
@@ -111,10 +111,10 @@ class QgsVectorWarper(sip.wrapper):
 
 class QgsVectorWarperTask(_core.QgsTask):
 
-    class Result(int): ...
-    Success = ... # type: 'QgsVectorWarperTask.Result'
-    Canceled = ... # type: 'QgsVectorWarperTask.Result'
-    Error = ... # type: 'QgsVectorWarperTask.Result'
+    class Result(int):
+        Success: 'QgsVectorWarperTask.Result'
+        Canceled: 'QgsVectorWarperTask.Result'
+        Error: 'QgsVectorWarperTask.Result'
 
     def __init__(self, method: QgsGcpTransformerInterface.TransformMethod, points: typing.Iterable[QgsGcpPoint], destinationCrs: _core.QgsCoordinateReferenceSystem, layer: _core.QgsVectorLayer, fileName: str) -> None: ...
 
@@ -136,21 +136,21 @@ class QgsGridFileWriter(sip.wrapper):
 
 class QgsInterpolator(sip.wrapper):
 
-    class Result(int): ...
-    Success = ... # type: 'QgsInterpolator.Result'
-    Canceled = ... # type: 'QgsInterpolator.Result'
-    InvalidSource = ... # type: 'QgsInterpolator.Result'
-    FeatureGeometryError = ... # type: 'QgsInterpolator.Result'
+    class Result(int):
+        Success: 'QgsInterpolator.Result'
+        Canceled: 'QgsInterpolator.Result'
+        InvalidSource: 'QgsInterpolator.Result'
+        FeatureGeometryError: 'QgsInterpolator.Result'
 
-    class ValueSource(int): ...
-    ValueAttribute = ... # type: 'QgsInterpolator.ValueSource'
-    ValueZ = ... # type: 'QgsInterpolator.ValueSource'
-    ValueM = ... # type: 'QgsInterpolator.ValueSource'
+    class ValueSource(int):
+        ValueAttribute: 'QgsInterpolator.ValueSource'
+        ValueZ: 'QgsInterpolator.ValueSource'
+        ValueM: 'QgsInterpolator.ValueSource'
 
-    class SourceType(int): ...
-    SourcePoints = ... # type: 'QgsInterpolator.SourceType'
-    SourceStructureLines = ... # type: 'QgsInterpolator.SourceType'
-    SourceBreakLines = ... # type: 'QgsInterpolator.SourceType'
+    class SourceType(int):
+        SourcePoints: 'QgsInterpolator.SourceType'
+        SourceStructureLines: 'QgsInterpolator.SourceType'
+        SourceBreakLines: 'QgsInterpolator.SourceType'
 
     class LayerData(sip.wrapper):
 
@@ -202,9 +202,9 @@ class QgsInterpolatorVertexData(sip.wrapper):
 
 class QgsTinInterpolator(QgsInterpolator):
 
-    class TinInterpolation(int): ...
-    Linear = ... # type: 'QgsTinInterpolator.TinInterpolation'
-    CloughTocher = ... # type: 'QgsTinInterpolator.TinInterpolation'
+    class TinInterpolation(int):
+        Linear: 'QgsTinInterpolator.TinInterpolation'
+        CloughTocher: 'QgsTinInterpolator.TinInterpolation'
 
     @typing.overload
     def __init__(self, inputData: typing.Iterable[QgsInterpolator.LayerData], interpolation: 'QgsTinInterpolator.TinInterpolation' = ..., feedback: typing.Optional[_core.QgsFeedback] = ...) -> None: ...
@@ -390,10 +390,10 @@ class QgsNetworkSpeedStrategy(QgsNetworkStrategy):
 
 class QgsVectorLayerDirector(QgsGraphDirector):
 
-    class Direction(int): ...
-    DirectionForward = ... # type: 'QgsVectorLayerDirector.Direction'
-    DirectionBackward = ... # type: 'QgsVectorLayerDirector.Direction'
-    DirectionBoth = ... # type: 'QgsVectorLayerDirector.Direction'
+    class Direction(int):
+        DirectionForward: 'QgsVectorLayerDirector.Direction'
+        DirectionBackward: 'QgsVectorLayerDirector.Direction'
+        DirectionBoth: 'QgsVectorLayerDirector.Direction'
 
     def __init__(self, source: _core.QgsFeatureSource, directionFieldId: int, directDirectionValue: str, reverseDirectionValue: str, bothDirectionValue: str, defaultDirection: 'QgsVectorLayerDirector.Direction') -> None: ...
 
@@ -434,19 +434,19 @@ class QgsNativeAlgorithms(_core.QgsProcessingProvider):
 
 class QgsAlignRaster(sip.wrapper):
 
-    class ResampleAlg(int): ...
-    RA_NearestNeighbour = ... # type: 'QgsAlignRaster.ResampleAlg'
-    RA_Bilinear = ... # type: 'QgsAlignRaster.ResampleAlg'
-    RA_Cubic = ... # type: 'QgsAlignRaster.ResampleAlg'
-    RA_CubicSpline = ... # type: 'QgsAlignRaster.ResampleAlg'
-    RA_Lanczos = ... # type: 'QgsAlignRaster.ResampleAlg'
-    RA_Average = ... # type: 'QgsAlignRaster.ResampleAlg'
-    RA_Mode = ... # type: 'QgsAlignRaster.ResampleAlg'
-    RA_Max = ... # type: 'QgsAlignRaster.ResampleAlg'
-    RA_Min = ... # type: 'QgsAlignRaster.ResampleAlg'
-    RA_Median = ... # type: 'QgsAlignRaster.ResampleAlg'
-    RA_Q1 = ... # type: 'QgsAlignRaster.ResampleAlg'
-    RA_Q3 = ... # type: 'QgsAlignRaster.ResampleAlg'
+    class ResampleAlg(int):
+        RA_NearestNeighbour: 'QgsAlignRaster.ResampleAlg'
+        RA_Bilinear: 'QgsAlignRaster.ResampleAlg'
+        RA_Cubic: 'QgsAlignRaster.ResampleAlg'
+        RA_CubicSpline: 'QgsAlignRaster.ResampleAlg'
+        RA_Lanczos: 'QgsAlignRaster.ResampleAlg'
+        RA_Average: 'QgsAlignRaster.ResampleAlg'
+        RA_Mode: 'QgsAlignRaster.ResampleAlg'
+        RA_Max: 'QgsAlignRaster.ResampleAlg'
+        RA_Min: 'QgsAlignRaster.ResampleAlg'
+        RA_Median: 'QgsAlignRaster.ResampleAlg'
+        RA_Q1: 'QgsAlignRaster.ResampleAlg'
+        RA_Q3: 'QgsAlignRaster.ResampleAlg'
 
     class RasterInfo(sip.wrapper):
 
@@ -583,23 +583,23 @@ class QgsHillshadeFilter(QgsDerivativeFilter):
 
 class QgsKernelDensityEstimation(sip.wrapper):
 
-    class Result(int): ...
-    Success = ... # type: 'QgsKernelDensityEstimation.Result'
-    DriverError = ... # type: 'QgsKernelDensityEstimation.Result'
-    InvalidParameters = ... # type: 'QgsKernelDensityEstimation.Result'
-    FileCreationError = ... # type: 'QgsKernelDensityEstimation.Result'
-    RasterIoError = ... # type: 'QgsKernelDensityEstimation.Result'
+    class Result(int):
+        Success: 'QgsKernelDensityEstimation.Result'
+        DriverError: 'QgsKernelDensityEstimation.Result'
+        InvalidParameters: 'QgsKernelDensityEstimation.Result'
+        FileCreationError: 'QgsKernelDensityEstimation.Result'
+        RasterIoError: 'QgsKernelDensityEstimation.Result'
 
-    class OutputValues(int): ...
-    OutputRaw = ... # type: 'QgsKernelDensityEstimation.OutputValues'
-    OutputScaled = ... # type: 'QgsKernelDensityEstimation.OutputValues'
+    class OutputValues(int):
+        OutputRaw: 'QgsKernelDensityEstimation.OutputValues'
+        OutputScaled: 'QgsKernelDensityEstimation.OutputValues'
 
-    class KernelShape(int): ...
-    KernelQuartic = ... # type: 'QgsKernelDensityEstimation.KernelShape'
-    KernelTriangular = ... # type: 'QgsKernelDensityEstimation.KernelShape'
-    KernelUniform = ... # type: 'QgsKernelDensityEstimation.KernelShape'
-    KernelTriweight = ... # type: 'QgsKernelDensityEstimation.KernelShape'
-    KernelEpanechnikov = ... # type: 'QgsKernelDensityEstimation.KernelShape'
+    class KernelShape(int):
+        KernelQuartic: 'QgsKernelDensityEstimation.KernelShape'
+        KernelTriangular: 'QgsKernelDensityEstimation.KernelShape'
+        KernelUniform: 'QgsKernelDensityEstimation.KernelShape'
+        KernelTriweight: 'QgsKernelDensityEstimation.KernelShape'
+        KernelEpanechnikov: 'QgsKernelDensityEstimation.KernelShape'
 
     class Parameters(sip.wrapper):
 
@@ -627,41 +627,41 @@ class QgsKernelDensityEstimation(sip.wrapper):
 
 class QgsRasterCalcNode(sip.wrapper):
 
-    class Operator(int): ...
-    opPLUS = ... # type: 'QgsRasterCalcNode.Operator'
-    opMINUS = ... # type: 'QgsRasterCalcNode.Operator'
-    opMUL = ... # type: 'QgsRasterCalcNode.Operator'
-    opDIV = ... # type: 'QgsRasterCalcNode.Operator'
-    opPOW = ... # type: 'QgsRasterCalcNode.Operator'
-    opSQRT = ... # type: 'QgsRasterCalcNode.Operator'
-    opSIN = ... # type: 'QgsRasterCalcNode.Operator'
-    opCOS = ... # type: 'QgsRasterCalcNode.Operator'
-    opTAN = ... # type: 'QgsRasterCalcNode.Operator'
-    opASIN = ... # type: 'QgsRasterCalcNode.Operator'
-    opACOS = ... # type: 'QgsRasterCalcNode.Operator'
-    opATAN = ... # type: 'QgsRasterCalcNode.Operator'
-    opEQ = ... # type: 'QgsRasterCalcNode.Operator'
-    opNE = ... # type: 'QgsRasterCalcNode.Operator'
-    opGT = ... # type: 'QgsRasterCalcNode.Operator'
-    opLT = ... # type: 'QgsRasterCalcNode.Operator'
-    opGE = ... # type: 'QgsRasterCalcNode.Operator'
-    opLE = ... # type: 'QgsRasterCalcNode.Operator'
-    opAND = ... # type: 'QgsRasterCalcNode.Operator'
-    opOR = ... # type: 'QgsRasterCalcNode.Operator'
-    opSIGN = ... # type: 'QgsRasterCalcNode.Operator'
-    opLOG = ... # type: 'QgsRasterCalcNode.Operator'
-    opLOG10 = ... # type: 'QgsRasterCalcNode.Operator'
-    opABS = ... # type: 'QgsRasterCalcNode.Operator'
-    opMAX = ... # type: 'QgsRasterCalcNode.Operator'
-    opMIN = ... # type: 'QgsRasterCalcNode.Operator'
-    opNONE = ... # type: 'QgsRasterCalcNode.Operator'
+    class Operator(int):
+        opPLUS: 'QgsRasterCalcNode.Operator'
+        opMINUS: 'QgsRasterCalcNode.Operator'
+        opMUL: 'QgsRasterCalcNode.Operator'
+        opDIV: 'QgsRasterCalcNode.Operator'
+        opPOW: 'QgsRasterCalcNode.Operator'
+        opSQRT: 'QgsRasterCalcNode.Operator'
+        opSIN: 'QgsRasterCalcNode.Operator'
+        opCOS: 'QgsRasterCalcNode.Operator'
+        opTAN: 'QgsRasterCalcNode.Operator'
+        opASIN: 'QgsRasterCalcNode.Operator'
+        opACOS: 'QgsRasterCalcNode.Operator'
+        opATAN: 'QgsRasterCalcNode.Operator'
+        opEQ: 'QgsRasterCalcNode.Operator'
+        opNE: 'QgsRasterCalcNode.Operator'
+        opGT: 'QgsRasterCalcNode.Operator'
+        opLT: 'QgsRasterCalcNode.Operator'
+        opGE: 'QgsRasterCalcNode.Operator'
+        opLE: 'QgsRasterCalcNode.Operator'
+        opAND: 'QgsRasterCalcNode.Operator'
+        opOR: 'QgsRasterCalcNode.Operator'
+        opSIGN: 'QgsRasterCalcNode.Operator'
+        opLOG: 'QgsRasterCalcNode.Operator'
+        opLOG10: 'QgsRasterCalcNode.Operator'
+        opABS: 'QgsRasterCalcNode.Operator'
+        opMAX: 'QgsRasterCalcNode.Operator'
+        opMIN: 'QgsRasterCalcNode.Operator'
+        opNONE: 'QgsRasterCalcNode.Operator'
 
-    class Type(int): ...
-    tOperator = ... # type: 'QgsRasterCalcNode.Type'
-    tNumber = ... # type: 'QgsRasterCalcNode.Type'
-    tRasterRef = ... # type: 'QgsRasterCalcNode.Type'
-    tMatrix = ... # type: 'QgsRasterCalcNode.Type'
-    tFunction = ... # type: 'QgsRasterCalcNode.Type'
+    class Type(int):
+        tOperator: 'QgsRasterCalcNode.Type'
+        tNumber: 'QgsRasterCalcNode.Type'
+        tRasterRef: 'QgsRasterCalcNode.Type'
+        tMatrix: 'QgsRasterCalcNode.Type'
+        tFunction: 'QgsRasterCalcNode.Type'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -704,15 +704,15 @@ class QgsRasterCalculatorEntry(sip.wrapper):
 
 class QgsRasterCalculator(sip.wrapper):
 
-    class Result(int): ...
-    Success = ... # type: 'QgsRasterCalculator.Result'
-    CreateOutputError = ... # type: 'QgsRasterCalculator.Result'
-    InputLayerError = ... # type: 'QgsRasterCalculator.Result'
-    Canceled = ... # type: 'QgsRasterCalculator.Result'
-    ParserError = ... # type: 'QgsRasterCalculator.Result'
-    MemoryError = ... # type: 'QgsRasterCalculator.Result'
-    BandError = ... # type: 'QgsRasterCalculator.Result'
-    CalculationError = ... # type: 'QgsRasterCalculator.Result'
+    class Result(int):
+        Success: 'QgsRasterCalculator.Result'
+        CreateOutputError: 'QgsRasterCalculator.Result'
+        InputLayerError: 'QgsRasterCalculator.Result'
+        Canceled: 'QgsRasterCalculator.Result'
+        ParserError: 'QgsRasterCalculator.Result'
+        MemoryError: 'QgsRasterCalculator.Result'
+        BandError: 'QgsRasterCalculator.Result'
+        CalculationError: 'QgsRasterCalculator.Result'
 
     @typing.overload
     def __init__(self, formulaString: str, outputFile: str, outputFormat: str, outputExtent: _core.QgsRectangle, nOutputColumns: int, nOutputRows: int, rasterEntries: typing.Iterable[QgsRasterCalculatorEntry], transformContext: _core.QgsCoordinateTransformContext) -> None: ...
@@ -731,35 +731,35 @@ class QgsRasterCalculator(sip.wrapper):
 
 class QgsRasterMatrix(sip.wrapper):
 
-    class OneArgOperator(int): ...
-    opSQRT = ... # type: 'QgsRasterMatrix.OneArgOperator'
-    opSIN = ... # type: 'QgsRasterMatrix.OneArgOperator'
-    opCOS = ... # type: 'QgsRasterMatrix.OneArgOperator'
-    opTAN = ... # type: 'QgsRasterMatrix.OneArgOperator'
-    opASIN = ... # type: 'QgsRasterMatrix.OneArgOperator'
-    opACOS = ... # type: 'QgsRasterMatrix.OneArgOperator'
-    opATAN = ... # type: 'QgsRasterMatrix.OneArgOperator'
-    opSIGN = ... # type: 'QgsRasterMatrix.OneArgOperator'
-    opLOG = ... # type: 'QgsRasterMatrix.OneArgOperator'
-    opLOG10 = ... # type: 'QgsRasterMatrix.OneArgOperator'
-    opABS = ... # type: 'QgsRasterMatrix.OneArgOperator'
+    class OneArgOperator(int):
+        opSQRT: 'QgsRasterMatrix.OneArgOperator'
+        opSIN: 'QgsRasterMatrix.OneArgOperator'
+        opCOS: 'QgsRasterMatrix.OneArgOperator'
+        opTAN: 'QgsRasterMatrix.OneArgOperator'
+        opASIN: 'QgsRasterMatrix.OneArgOperator'
+        opACOS: 'QgsRasterMatrix.OneArgOperator'
+        opATAN: 'QgsRasterMatrix.OneArgOperator'
+        opSIGN: 'QgsRasterMatrix.OneArgOperator'
+        opLOG: 'QgsRasterMatrix.OneArgOperator'
+        opLOG10: 'QgsRasterMatrix.OneArgOperator'
+        opABS: 'QgsRasterMatrix.OneArgOperator'
 
-    class TwoArgOperator(int): ...
-    opPLUS = ... # type: 'QgsRasterMatrix.TwoArgOperator'
-    opMINUS = ... # type: 'QgsRasterMatrix.TwoArgOperator'
-    opMUL = ... # type: 'QgsRasterMatrix.TwoArgOperator'
-    opDIV = ... # type: 'QgsRasterMatrix.TwoArgOperator'
-    opPOW = ... # type: 'QgsRasterMatrix.TwoArgOperator'
-    opEQ = ... # type: 'QgsRasterMatrix.TwoArgOperator'
-    opNE = ... # type: 'QgsRasterMatrix.TwoArgOperator'
-    opGT = ... # type: 'QgsRasterMatrix.TwoArgOperator'
-    opLT = ... # type: 'QgsRasterMatrix.TwoArgOperator'
-    opGE = ... # type: 'QgsRasterMatrix.TwoArgOperator'
-    opLE = ... # type: 'QgsRasterMatrix.TwoArgOperator'
-    opAND = ... # type: 'QgsRasterMatrix.TwoArgOperator'
-    opOR = ... # type: 'QgsRasterMatrix.TwoArgOperator'
-    opMIN = ... # type: 'QgsRasterMatrix.TwoArgOperator'
-    opMAX = ... # type: 'QgsRasterMatrix.TwoArgOperator'
+    class TwoArgOperator(int):
+        opPLUS: 'QgsRasterMatrix.TwoArgOperator'
+        opMINUS: 'QgsRasterMatrix.TwoArgOperator'
+        opMUL: 'QgsRasterMatrix.TwoArgOperator'
+        opDIV: 'QgsRasterMatrix.TwoArgOperator'
+        opPOW: 'QgsRasterMatrix.TwoArgOperator'
+        opEQ: 'QgsRasterMatrix.TwoArgOperator'
+        opNE: 'QgsRasterMatrix.TwoArgOperator'
+        opGT: 'QgsRasterMatrix.TwoArgOperator'
+        opLT: 'QgsRasterMatrix.TwoArgOperator'
+        opGE: 'QgsRasterMatrix.TwoArgOperator'
+        opLE: 'QgsRasterMatrix.TwoArgOperator'
+        opAND: 'QgsRasterMatrix.TwoArgOperator'
+        opOR: 'QgsRasterMatrix.TwoArgOperator'
+        opMIN: 'QgsRasterMatrix.TwoArgOperator'
+        opMAX: 'QgsRasterMatrix.TwoArgOperator'
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -876,24 +876,24 @@ class QgsFeaturePool(_core.QgsFeatureSink):
 
 class QgsGeometryCheck(sip.wrapper):
 
-    class Flag(int): ...
-    AvailableInValidation = ... # type: 'QgsGeometryCheck.Flag'
+    class Flag(int):
+        AvailableInValidation: 'QgsGeometryCheck.Flag'
 
-    class CheckType(int): ...
-    FeatureNodeCheck = ... # type: 'QgsGeometryCheck.CheckType'
-    FeatureCheck = ... # type: 'QgsGeometryCheck.CheckType'
-    LayerCheck = ... # type: 'QgsGeometryCheck.CheckType'
+    class CheckType(int):
+        FeatureNodeCheck: 'QgsGeometryCheck.CheckType'
+        FeatureCheck: 'QgsGeometryCheck.CheckType'
+        LayerCheck: 'QgsGeometryCheck.CheckType'
 
-    class ChangeType(int): ...
-    ChangeAdded = ... # type: 'QgsGeometryCheck.ChangeType'
-    ChangeRemoved = ... # type: 'QgsGeometryCheck.ChangeType'
-    ChangeChanged = ... # type: 'QgsGeometryCheck.ChangeType'
+    class ChangeType(int):
+        ChangeAdded: 'QgsGeometryCheck.ChangeType'
+        ChangeRemoved: 'QgsGeometryCheck.ChangeType'
+        ChangeChanged: 'QgsGeometryCheck.ChangeType'
 
-    class ChangeWhat(int): ...
-    ChangeFeature = ... # type: 'QgsGeometryCheck.ChangeWhat'
-    ChangePart = ... # type: 'QgsGeometryCheck.ChangeWhat'
-    ChangeRing = ... # type: 'QgsGeometryCheck.ChangeWhat'
-    ChangeNode = ... # type: 'QgsGeometryCheck.ChangeWhat'
+    class ChangeWhat(int):
+        ChangeFeature: 'QgsGeometryCheck.ChangeWhat'
+        ChangePart: 'QgsGeometryCheck.ChangeWhat'
+        ChangeRing: 'QgsGeometryCheck.ChangeWhat'
+        ChangeNode: 'QgsGeometryCheck.ChangeWhat'
 
     class LayerFeatureIds(sip.wrapper):
 
@@ -976,16 +976,16 @@ class QgsGeometryCheckContext(sip.wrapper):
 
 class QgsGeometryCheckError(sip.wrapper):
 
-    class ValueType(int): ...
-    ValueLength = ... # type: 'QgsGeometryCheckError.ValueType'
-    ValueArea = ... # type: 'QgsGeometryCheckError.ValueType'
-    ValueOther = ... # type: 'QgsGeometryCheckError.ValueType'
+    class ValueType(int):
+        ValueLength: 'QgsGeometryCheckError.ValueType'
+        ValueArea: 'QgsGeometryCheckError.ValueType'
+        ValueOther: 'QgsGeometryCheckError.ValueType'
 
-    class Status(int): ...
-    StatusPending = ... # type: 'QgsGeometryCheckError.Status'
-    StatusFixFailed = ... # type: 'QgsGeometryCheckError.Status'
-    StatusFixed = ... # type: 'QgsGeometryCheckError.Status'
-    StatusObsolete = ... # type: 'QgsGeometryCheckError.Status'
+    class Status(int):
+        StatusPending: 'QgsGeometryCheckError.Status'
+        StatusFixFailed: 'QgsGeometryCheckError.Status'
+        StatusFixed: 'QgsGeometryCheckError.Status'
+        StatusObsolete: 'QgsGeometryCheckError.Status'
 
     @typing.overload
     def __init__(self, check: QgsGeometryCheck, layerFeature: 'QgsGeometryCheckerUtils.LayerFeature', errorLocation: _core.QgsPointXY, vidx: _core.QgsVertexId = ..., value: typing.Any = ..., valueType: 'QgsGeometryCheckError.ValueType' = ...) -> None: ...
@@ -1106,14 +1106,14 @@ class QgsSingleGeometryCheck(QgsGeometryCheck):
 
 class QgsGeometrySnapper(QtCore.QObject):
 
-    class SnapMode(int): ...
-    PreferNodes = ... # type: 'QgsGeometrySnapper.SnapMode'
-    PreferClosest = ... # type: 'QgsGeometrySnapper.SnapMode'
-    PreferNodesNoExtraVertices = ... # type: 'QgsGeometrySnapper.SnapMode'
-    PreferClosestNoExtraVertices = ... # type: 'QgsGeometrySnapper.SnapMode'
-    EndPointPreferNodes = ... # type: 'QgsGeometrySnapper.SnapMode'
-    EndPointPreferClosest = ... # type: 'QgsGeometrySnapper.SnapMode'
-    EndPointToEndPoint = ... # type: 'QgsGeometrySnapper.SnapMode'
+    class SnapMode(int):
+        PreferNodes: 'QgsGeometrySnapper.SnapMode'
+        PreferClosest: 'QgsGeometrySnapper.SnapMode'
+        PreferNodesNoExtraVertices: 'QgsGeometrySnapper.SnapMode'
+        PreferClosestNoExtraVertices: 'QgsGeometrySnapper.SnapMode'
+        EndPointPreferNodes: 'QgsGeometrySnapper.SnapMode'
+        EndPointPreferClosest: 'QgsGeometrySnapper.SnapMode'
+        EndPointToEndPoint: 'QgsGeometrySnapper.SnapMode'
 
     def __init__(self, referenceSource: _core.QgsFeatureSource) -> None: ...
 
@@ -1150,29 +1150,29 @@ class QgsGeometrySnapperSingleSource(sip.wrapper):
 
 class QgsZonalStatistics(sip.wrapper):
 
-    class Result(int): ...
-    Success = ... # type: 'QgsZonalStatistics.Result'
-    LayerTypeWrong = ... # type: 'QgsZonalStatistics.Result'
-    LayerInvalid = ... # type: 'QgsZonalStatistics.Result'
-    RasterInvalid = ... # type: 'QgsZonalStatistics.Result'
-    RasterBandInvalid = ... # type: 'QgsZonalStatistics.Result'
-    FailedToCreateField = ... # type: 'QgsZonalStatistics.Result'
-    Canceled = ... # type: 'QgsZonalStatistics.Result'
+    class Result(int):
+        Success: 'QgsZonalStatistics.Result'
+        LayerTypeWrong: 'QgsZonalStatistics.Result'
+        LayerInvalid: 'QgsZonalStatistics.Result'
+        RasterInvalid: 'QgsZonalStatistics.Result'
+        RasterBandInvalid: 'QgsZonalStatistics.Result'
+        FailedToCreateField: 'QgsZonalStatistics.Result'
+        Canceled: 'QgsZonalStatistics.Result'
 
-    class Statistic(int): ...
-    Count = ... # type: 'QgsZonalStatistics.Statistic'
-    Sum = ... # type: 'QgsZonalStatistics.Statistic'
-    Mean = ... # type: 'QgsZonalStatistics.Statistic'
-    Median = ... # type: 'QgsZonalStatistics.Statistic'
-    StDev = ... # type: 'QgsZonalStatistics.Statistic'
-    Min = ... # type: 'QgsZonalStatistics.Statistic'
-    Max = ... # type: 'QgsZonalStatistics.Statistic'
-    Range = ... # type: 'QgsZonalStatistics.Statistic'
-    Minority = ... # type: 'QgsZonalStatistics.Statistic'
-    Majority = ... # type: 'QgsZonalStatistics.Statistic'
-    Variety = ... # type: 'QgsZonalStatistics.Statistic'
-    Variance = ... # type: 'QgsZonalStatistics.Statistic'
-    All = ... # type: 'QgsZonalStatistics.Statistic'
+    class Statistic(int):
+        Count: 'QgsZonalStatistics.Statistic'
+        Sum: 'QgsZonalStatistics.Statistic'
+        Mean: 'QgsZonalStatistics.Statistic'
+        Median: 'QgsZonalStatistics.Statistic'
+        StDev: 'QgsZonalStatistics.Statistic'
+        Min: 'QgsZonalStatistics.Statistic'
+        Max: 'QgsZonalStatistics.Statistic'
+        Range: 'QgsZonalStatistics.Statistic'
+        Minority: 'QgsZonalStatistics.Statistic'
+        Majority: 'QgsZonalStatistics.Statistic'
+        Variety: 'QgsZonalStatistics.Statistic'
+        Variance: 'QgsZonalStatistics.Statistic'
+        All: 'QgsZonalStatistics.Statistic'
 
     class Statistics(sip.wrapper):
 
