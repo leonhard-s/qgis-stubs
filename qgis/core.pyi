@@ -21880,7 +21880,7 @@ class QgsMeshDataset(sip.wrapper):
 class QgsMeshDatasetGroup(sip.wrapper):
 
     class Type(int):
-        None: 'QgsMeshDatasetGroup.Type'
+        # None: 'QgsMeshDatasetGroup.Type'
         Persistent: 'QgsMeshDatasetGroup.Type'
         Memory: 'QgsMeshDatasetGroup.Type'
         Virtual: 'QgsMeshDatasetGroup.Type'
@@ -22121,7 +22121,7 @@ class QgsMeshRendererMeshSettings(sip.wrapper):
 class QgsMeshRendererScalarSettings(sip.wrapper):
 
     class DataResamplingMethod(int):
-        None: 'QgsMeshRendererScalarSettings.DataResamplingMethod'
+        # None: 'QgsMeshRendererScalarSettings.DataResamplingMethod'
         NeighbourAverage: 'QgsMeshRendererScalarSettings.DataResamplingMethod'
 
     @typing.overload
@@ -27930,7 +27930,7 @@ class QgsProviderMetadata(QtCore.QObject):
 class QgsProviderRegistry(sip.wrapper):
 
     class WidgetMode(int):
-        None: 'QgsProviderRegistry.WidgetMode'
+        # None: 'QgsProviderRegistry.WidgetMode'
         Embedded: 'QgsProviderRegistry.WidgetMode'
         Manager: 'QgsProviderRegistry.WidgetMode'
 
@@ -28834,7 +28834,7 @@ class QgsRaster(sip.wrapper):
 class QgsRasterBandStats(sip.wrapper):
 
     class Stats(int):
-        None: 'QgsRasterBandStats.Stats'
+        # None: 'QgsRasterBandStats.Stats'
         Min: 'QgsRasterBandStats.Stats'
         Max: 'QgsRasterBandStats.Stats'
         Range: 'QgsRasterBandStats.Stats'
