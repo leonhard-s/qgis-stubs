@@ -12,7 +12,11 @@ from PyQt5 import QtPrintSupport
 from PyQt5 import QtSql
 from PyQt5 import QtNetwork
 from PyQt5 import QtXml
+from PyQt5 import QtCore
+from PyQt5 import QtGui
 
+from .gui import (QgsCalloutWidget, QgsPaintEffectWidget, QgsRendererWidget,
+                  QgsSymbolLayerWidget)
 
 # Type aliases used for arguments and return types. Note that these names are
 # *NOT* available at runtime, they only exist for typing purposes.

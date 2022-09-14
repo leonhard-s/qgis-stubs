@@ -6,10 +6,12 @@
 import typing
 sip: typing.Any = ...
 
-from PyQt5 import Qsci
+Qsci: typing.Any = ...
 from PyQt5 import QtXml
 from PyQt5 import QtGui
 from PyQt5 import QtCore
+from PyQt5 import QtNetwork
+from PyQt5 import QtWidgets
 
 from . import core as _core
 
