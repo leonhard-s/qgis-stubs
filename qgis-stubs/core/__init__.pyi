@@ -43,6 +43,9 @@ PYQT_OPENGL_BOUND_ARRAY = typing.Union[typing.Sequence[int],
         typing.Sequence[float], sip.Buffer, int, None]
 
 
+class QgsProcessingException(Exception): ...
+
+
 class SmartgroupTable(int):
     SmartgroupId: 'SmartgroupTable'
     SmartgroupName: 'SmartgroupTable'
