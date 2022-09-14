@@ -1,7 +1,7 @@
 import typing
 
-from ..core import (QgsAbstractValidityCheck, QgsExpressionFunction,
-                    QgsSettingsEntryBase, Qgis)
+from . import (QgsAbstractValidityCheck, QgsExpressionFunction,
+               QgsSettingsEntryBase, Qgis)
 
 from ._context_managers import (edit, ProjectDirtyBlocker,
                                 ReadWriteContextEnterCategory,
@@ -125,7 +125,7 @@ class PyQgsSettingsEntryEnumFlag(QgsSettingsEntryBase):
         """
         ...
 
-    def setValue(self, value: typing.Any, dynamicKeyPart: typing.Union[typing.List[str], str, None] = None) -> bool:
+    def setValue(self, value: typing.Any, dynamicKeyPart: typing.Union[typing.List[str], str, None] = ...) -> bool:
         """
         Set settings value.
         :param value: the value to set for the setting.

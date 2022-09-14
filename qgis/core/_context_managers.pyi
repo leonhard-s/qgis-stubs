@@ -1,7 +1,7 @@
 import types
 import typing
 
-from ..core import QgsMapLayer, QgsProject, QgsReadWriteContext
+from . import QgsMapLayer, QgsProject, QgsReadWriteContext
 
 
 class edit:
