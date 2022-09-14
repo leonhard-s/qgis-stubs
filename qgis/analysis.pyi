@@ -6,10 +6,11 @@
 import typing
 sip: typing.Any = ...
 
-from qgis import _core
 from PyQt5 import QtXml
 from PyQt5 import QtGui
 from PyQt5 import QtCore
+
+from . import core as _core
 
 # Support for QDate, QDateTime and QTime.
 import datetime
