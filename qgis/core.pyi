@@ -3553,6 +3553,10 @@ class QgsCoordinateFormatter(sip.wrapper):
 
 class QgsTask(QtCore.QObject):
 
+    # Manually added from "core.additions.fromfunction.py"
+    @classmethod
+    def fromFunction(cls, description: str, function: typing.Callable[..., typing.Any], *args: typing.Any, on_finished: typing.Callable[..., typing.Any], flags: 'QgsTask.Flags' = ..., **kwargs: typing.Any) -> QgsTask: ...
+
     class SubTaskDependency(int):
         SubTaskIndependent: 'QgsTask.SubTaskDependency'
         ParentDependsOnSubTask: 'QgsTask.SubTaskDependency'
