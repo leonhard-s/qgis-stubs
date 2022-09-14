@@ -6,16 +6,13 @@ import setuptools
 with open('README.md', encoding='utf-8') as readme:
     long_description = readme.read()
 
-with open('requirements.txt', encoding='utf-8') as requirements:
-    install_requires = requirements.read().splitlines()
-
 setuptools.setup(
     name='qgis-stubs',
     version='0.2.0',
     url='https://github.com/leonhard-s/qgis-stubs',
     author='Leonhard S.',
     maintainer_email='leonhard-sei@outlook.com',
-    description='PEP561 type stub files for the QGIS Python wrapper',
+    description='PEP561 type stubs for PyQGIS',
     long_description=long_description,
     long_description_content_type='text/markdown',
     python_requires='>= 3.6',
@@ -31,10 +28,12 @@ setuptools.setup(
     ],
     classifiers=[
         'Development Status :: 3 - Alpha',
-        'License :: OSI Approved :: MIT License',
+        'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
         'Intended Audience :: Developers',
         'Programming Language :: Python :: 3',
         'Topic :: Software Development'
     ],
-    install_requires=install_requires,
+    install_requires=[
+        'PyQt5-stubs >= 5.14',
+    ],
 )
