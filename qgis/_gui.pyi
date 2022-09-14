@@ -4,7 +4,7 @@
 
 
 import typing
-import sip
+sip: typing.Any = ...
 
 from PyQt5 import Qsci
 from PyQt5 import QtXml

@@ -4,7 +4,7 @@
 
 
 import typing
-import sip
+sip: typing.Any = ...
 
 from qgis import _core
 from PyQt5 import QtXml
