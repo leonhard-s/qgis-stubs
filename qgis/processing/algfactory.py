@@ -24,8 +24,8 @@ __copyright__ = '(C) 2018, Nathan Woodrow'
 from collections import OrderedDict
 from functools import partial
 
-from qgis.PyQt.QtCore import QCoreApplication
-from qgis.PyQt.QtGui import QIcon
+from PyQt5.QtCore import QCoreApplication
+from PyQt5.QtGui import QIcon
 from qgis.core import (QgsProcessingParameterDefinition,
                        QgsProcessingAlgorithm,
                        QgsProcessingParameterString,
