@@ -160,6 +160,6 @@ jobs:
           destination_branch: "main"
           pr_title: Update stubs using ${{ env.TARGET_BRANCH }}
           pr_template: .github/PULL_REQUEST_TEMPLATE/stubgen-pr.md
-          pr_assignees: leonhard-s
-          pr_reviewers: leonhard-s
+          pr_assignee: leonhard-s
+          pr_reviewer: leonhard-s
           github_token: ${{ secrets.GITHUB_TOKEN }}
