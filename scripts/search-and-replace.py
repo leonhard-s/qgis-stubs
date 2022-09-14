@@ -69,6 +69,8 @@ def _search_and_replace_dir(dir_: pathlib.Path, old: str, new: str) -> None:
         new: The string to replace with.
 
     """
+    if not dir_.is_dir():
+        raise ValueError(f"{dir_} is not a directory")
     for path in dir_.iterdir():
         if path.is_dir():
             _search_and_replace_dir(path, old, new)

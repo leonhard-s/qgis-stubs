@@ -1,0 +1,165 @@
+# This action fetches the latest version of QGIS, builds it, and extracts the
+# Python components into a new branch.
+# It then performs basic cleanup and automated fixes in additional commits and
+# finally creates a PR with the updated type stubs.
+#
+# Manual review and tidying up is usually required before merging.
+
+name: Generate type stubs
+
+# Only manual trigger supported for now
+on:
+  workflow_dispatch: {}
+
+# Configuration
+env:
+  GIT_USER: Type Stub Generation Bot
+  GIT_EMAIL: action@github.com
+
+  SOURCE_BRANCH: stubgen-ci
+  TARGET_BRANCH: stubgen/${{ github.run_id }}
+
+  QGIS_IMAGE: qgis/qgis:latest
+
+jobs:
+  # Create the branch used for the PR
+  create-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ env.SOURCE_BRANCH }}
+          fetch-depth: 0
+
+      - name: Configure git
+        run: |
+          git config --local user.email "${{ env.GIT_EMAIL }}"
+          git config --local user.name "${{ env.GIT_USER }}"
+
+      - name: Create branch
+        run: |
+          git checkout -b ${{ env.TARGET_BRANCH }}
+          git push --set-upstream origin ${{ env.TARGET_BRANCH }}
+
+  # Build QGIS in a docker container and extract the Python components to the
+  # new branch
+  build-qgis:
+    runs-on: ubuntu-latest
+    needs: create-branch
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ env.TARGET_BRANCH }}
+          fetch-depth: 0
+
+      - name: Fetch latest QGIS
+        run: |
+          docker image pull ${{ env.QGIS_IMAGE }}
+
+      - name: Build QGIS
+        run: |
+          docker run --name qgis-stubgen ${{ env.QGIS_IMAGE }} sh -c "cd /QGIS/build && cmake . && ninja"
+
+      - name: Extract Python modules
+        run: |
+          docker cp qgis-stubgen:/QGIS/build/output/python/qgis .
+
+      - name: Remove non-Python files
+        run: |
+          python scripts/delete-non-python.py qgis
+
+      - name: Configure git
+        run: |
+          git config --local user.email "${{ env.GIT_EMAIL }}"
+          git config --local user.name "${{ env.GIT_USER }}"
+
+      - name: Commit changes
+        run: |
+          git add --all qgis
+          git commit -m "Extract Python modules from QGIS build"
+          git push
+
+      - name: Cleanup
+        run: |
+          docker rm qgis-stubgen
+
+  # Delete the branch if the build failed
+  delete-branch:
+    runs-on: ubuntu-latest
+    needs: build-qgis
+    if: ${{ always() && needs.build-qgis.result == 'failure' }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ env.TARGET_BRANCH }}
+          fetch-depth: 0
+
+      - name: Configure git
+        run: |
+          git config --local user.email "${{ env.GIT_EMAIL }}"
+          git config --local user.name "${{ env.GIT_USER }}"
+
+      - name: Delete branch
+        run: |
+          git push -d origin ${{ env.TARGET_BRANCH }}
+          git branch -D ${{ env.TARGET_BRANCH }}
+
+  # Perform automated replacements and tidy-up on the new stubs
+  clean-stubs:
+    runs-on: ubuntu-latest
+    needs: build-qgis
+    if: ${{ always() && needs.build-qgis.result == 'success' }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ env.TARGET_BRANCH }}
+          fetch-depth: 0
+
+      - name: Configure git
+        run: |
+          git config --local user.email "${{ env.GIT_EMAIL }}"
+          git config --local user.name "${{ env.GIT_USER }}"
+
+      - name: Step 1 - Replace PyQt with PyQt5
+        run: |
+          python scripts/search-and-replace.py qgis "from qgis.PyQt" "from PyQt5"
+          rm -rf qgis/PyQt
+          git add --all qgis
+          git commit -m "Replace qgis.PyQt references with PyQt5"
+
+      - name: Step 2 - Replace sip imports with dummy
+        run: |
+          python scripts/search-and-replace.py qgis "import sip" "sip: typing.Any = ..."
+          git add --all qgis
+          git commit -m "Replace sip references with type dummy"
+
+      - name: Push changes
+        run: |
+          git push origin ${{ env.TARGET_BRANCH }}
+
+  # Create a PR with the updated stubs
+  create-pr:
+    runs-on: ubuntu-latest
+    needs: clean-stubs
+    if: ${{ always() }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ env.TARGET_BRANCH }}
+          fetch-depth: 0
+
+      - name: Configure git
+        run: |
+          git config --local user.email "${{ env.GIT_EMAIL }}"
+          git config --local user.name "${{ env.GIT_USER }}"
+
+      - name: GitHub Pull Request Action
+        uses: repo-sync/pull-request@v2.6.2
+        with:
+          source_branch: ${{ env.TARGET_BRANCH }}
+          destination_branch: "main"
+          pr_title: Update stubs using ${{ env.TARGET_BRANCH }}
+          pr_template: .github/PULL_REQUEST_TEMPLATE/stubgen-pr.md
+          pr_assignees: leonhard-s
+          pr_reviewers: leonhard-s
+          github_token: ${{ secrets.GITHUB_TOKEN }}

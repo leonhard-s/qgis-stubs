@@ -15,7 +15,7 @@ def filter_recursive(dir_: pathlib.Path, *extensions: str) -> None:
 
     """
     if not dir_.is_dir():
-        raise ValueError(f"{dir_} is not a directory")
+        raise ValueError(f'{dir_} is not a directory')
     for path in dir_.iterdir():
         if path.is_dir():
             filter_recursive(path, *extensions)
@@ -27,10 +27,10 @@ def filter_recursive(dir_: pathlib.Path, *extensions: str) -> None:
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("dir", help="Directory to search")
+    parser.add_argument('dir', help='Directory to search')
     parser.add_argument(
-        "-e", "--extensions", nargs="+", default=['.py', '.pyi'],
-        help="File extensions to keep (default: .py .pyi)")
+        '-e', '--extensions', nargs='+', default=['.py', '.pyi'],
+        help='File extensions to keep (default: .py .pyi)')
     args = parser.parse_args()
 
     filter_recursive(pathlib.Path(args.dir), *args.extensions)
