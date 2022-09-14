@@ -75,7 +75,7 @@ if os.name == 'nt':
             if os.path.exists(p):
                 os.add_dll_directory(p)
 
-from qgis.PyQt import QtCore
+from PyQt5 import QtCore
 
 # monkey patching custom widgets in case we are running on a local install
 # this should fix import errors such as "ModuleNotFoundError: No module named qgsfilewidget"

@@ -16,7 +16,7 @@
 *                                                                         *
 ***************************************************************************
 """
-from qgis.PyQt.QtCore import Qt
+from PyQt5.QtCore import Qt
 
 
 # add some __repr__ methods to QGIS range classes. We can't do this via sip because they are template based classes

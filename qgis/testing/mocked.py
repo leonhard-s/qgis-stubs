@@ -28,8 +28,8 @@ import mock
 from qgis.gui import QgisInterface, QgsMapCanvas
 from qgis.core import QgsApplication
 
-from qgis.PyQt.QtWidgets import QMainWindow
-from qgis.PyQt.QtCore import QSize
+from PyQt5.QtWidgets import QMainWindow
+from PyQt5.QtCore import QSize
 
 from qgis.testing import start_app
 

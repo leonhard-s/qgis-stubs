@@ -29,7 +29,7 @@ import filecmp
 import tempfile
 from pathlib import Path
 
-from qgis.PyQt.QtCore import QVariant, QDateTime, QDate
+from PyQt5.QtCore import QVariant, QDateTime, QDate
 from qgis.core import (
     QgsApplication,
     QgsFeatureRequest,
