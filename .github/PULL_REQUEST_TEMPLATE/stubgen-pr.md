@@ -107,12 +107,24 @@ It requires manual review and cleanup before it can be merged.
 
 - [ ] Various occurrences of `typing.List` and `typing.Dict` have no type arguments
 
+## Intermediate review
+
+Now that the core cleanup is done, it is recommended to check and test their stubs manually. A recommended Pylance configuration can be found in `.vscode/settings.json`.
+
+For this, it may be required to rename the `code/` folder to ensure the stubs used are from `code.pyi`.
+
+After this is finalized for the core modules, the extension modules `additions` and `processing` can be integrated:
+
 - [ ] Port the contents of `core.additions`.
 
   Not all names in this module are visible to the user or implemented. As a rule of thumb, only names that have search engine hits beyond the automatically generated QGIS stubs should be ported.
 
 - [ ] Rename `core.pyi` to `core/__init__.pyi` and import any remaining names from `core.additions` into its namespace.
 
+- [ ] Port the `processing` module.
+
+  As of writing, this primarily involves the `@alg` decorator and its factories.
+
 ## Final review
 
-At this stage, the stubs should be ready for manual testing and review. A recommended Pylance configuration can be found in `.vscode/settings.json`.
+Now that everything is ported, a last manual review is required prior to merging. As before, it is recommended to use the Pylance configuration in `.vscode/settings.json` for consistency.
