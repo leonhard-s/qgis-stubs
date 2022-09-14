@@ -8939,7 +8939,7 @@ class QgsSQLStatement(sip.wrapper):
         def list(self) -> typing.List['QgsSQLStatement.Node']: ...
         def append(self, node: 'QgsSQLStatement.Node') -> None: ...
 
-    class NodeUnaryOperator('QgsSQLStatement.Node'):
+    class NodeUnaryOperator(Node):
 
         @typing.overload
         def __init__(self, op: 'QgsSQLStatement.UnaryOperator', operand: 'QgsSQLStatement.Node') -> None: ...
@@ -8953,7 +8953,7 @@ class QgsSQLStatement(sip.wrapper):
         def operand(self) -> 'QgsSQLStatement.Node': ...
         def op(self) -> 'QgsSQLStatement.UnaryOperator': ...
 
-    class NodeBinaryOperator('QgsSQLStatement.Node'):
+    class NodeBinaryOperator(Node):
 
         @typing.overload
         def __init__(self, op: 'QgsSQLStatement.BinaryOperator', opLeft: 'QgsSQLStatement.Node', opRight: 'QgsSQLStatement.Node') -> None: ...
@@ -8970,7 +8970,7 @@ class QgsSQLStatement(sip.wrapper):
         def opLeft(self) -> 'QgsSQLStatement.Node': ...
         def op(self) -> 'QgsSQLStatement.BinaryOperator': ...
 
-    class NodeInOperator('QgsSQLStatement.Node'):
+    class NodeInOperator(Node):
 
         @typing.overload
         def __init__(self, node: 'QgsSQLStatement.Node', list: 'QgsSQLStatement.NodeList', notin: bool = ...) -> None: ...
@@ -8985,7 +8985,7 @@ class QgsSQLStatement(sip.wrapper):
         def isNotIn(self) -> bool: ...
         def node(self) -> 'QgsSQLStatement.Node': ...
 
-    class NodeBetweenOperator('QgsSQLStatement.Node'):
+    class NodeBetweenOperator(Node):
 
         @typing.overload
         def __init__(self, node: 'QgsSQLStatement.Node', minVal: 'QgsSQLStatement.Node', maxVal: 'QgsSQLStatement.Node', notBetween: bool = ...) -> None: ...
@@ -9001,7 +9001,7 @@ class QgsSQLStatement(sip.wrapper):
         def isNotBetween(self) -> bool: ...
         def node(self) -> 'QgsSQLStatement.Node': ...
 
-    class NodeFunction('QgsSQLStatement.Node'):
+    class NodeFunction(Node):
 
         @typing.overload
         def __init__(self, name: str, args: 'QgsSQLStatement.NodeList') -> None: ...
@@ -9015,7 +9015,7 @@ class QgsSQLStatement(sip.wrapper):
         def args(self) -> 'QgsSQLStatement.NodeList': ...
         def name(self) -> str: ...
 
-    class NodeLiteral('QgsSQLStatement.Node'):
+    class NodeLiteral(Node):
 
         @typing.overload
         def __init__(self, value: typing.Any) -> None: ...
@@ -9028,7 +9028,7 @@ class QgsSQLStatement(sip.wrapper):
         def nodeType(self) -> 'QgsSQLStatement.NodeType': ...
         def value(self) -> typing.Any: ...
 
-    class NodeColumnRef('QgsSQLStatement.Node'):
+    class NodeColumnRef(Node):
 
         @typing.overload
         def __init__(self, name: str, star: bool) -> None: ...
@@ -9048,7 +9048,7 @@ class QgsSQLStatement(sip.wrapper):
         def tableName(self) -> str: ...
         def setDistinct(self, distinct: bool = ...) -> None: ...
 
-    class NodeSelectedColumn('QgsSQLStatement.Node'):
+    class NodeSelectedColumn(Node):
 
         @typing.overload
         def __init__(self, node: 'QgsSQLStatement.Node') -> None: ...
@@ -9064,7 +9064,7 @@ class QgsSQLStatement(sip.wrapper):
         def column(self) -> 'QgsSQLStatement.Node': ...
         def setAlias(self, alias: str) -> None: ...
 
-    class NodeCast('QgsSQLStatement.Node'):
+    class NodeCast(Node):
 
         @typing.overload
         def __init__(self, node: 'QgsSQLStatement.Node', type: str) -> None: ...
@@ -9078,7 +9078,7 @@ class QgsSQLStatement(sip.wrapper):
         def type(self) -> str: ...
         def node(self) -> 'QgsSQLStatement.Node': ...
 
-    class NodeTableDef('QgsSQLStatement.Node'):
+    class NodeTableDef(Node):
 
         @typing.overload
         def __init__(self, name: str) -> None: ...
@@ -9098,7 +9098,7 @@ class QgsSQLStatement(sip.wrapper):
         def schema(self) -> str: ...
         def name(self) -> str: ...
 
-    class NodeJoin('QgsSQLStatement.Node'):
+    class NodeJoin(Node):
 
         @typing.overload
         def __init__(self, tabledef: 'QgsSQLStatement.NodeTableDef', onExpr: 'QgsSQLStatement.Node', type: 'QgsSQLStatement.JoinType') -> None: ...
@@ -9117,7 +9117,7 @@ class QgsSQLStatement(sip.wrapper):
         def onExpr(self) -> 'QgsSQLStatement.Node': ...
         def tableDef(self) -> 'QgsSQLStatement.NodeTableDef': ...
 
-    class NodeColumnSorted('QgsSQLStatement.Node'):
+    class NodeColumnSorted(Node):
 
         @typing.overload
         def __init__(self, column: 'QgsSQLStatement.NodeColumnRef', asc: bool) -> None: ...
@@ -9132,7 +9132,7 @@ class QgsSQLStatement(sip.wrapper):
         def ascending(self) -> bool: ...
         def column(self) -> 'QgsSQLStatement.NodeColumnRef': ...
 
-    class NodeSelect('QgsSQLStatement.Node'):
+    class NodeSelect(Node):
 
         @typing.overload
         def __init__(self, tableList: typing.Iterable['QgsSQLStatement.NodeTableDef'], columns: typing.Iterable['QgsSQLStatement.NodeSelectedColumn'], distinct: bool) -> None: ...
@@ -9188,7 +9188,7 @@ class QgsSQLStatement(sip.wrapper):
         @typing.overload
         def visit(self, n: 'QgsSQLStatement.NodeCast') -> None: ...
 
-    class RecursiveVisitor('QgsSQLStatement.Visitor'):
+    class RecursiveVisitor(Visitor):
 
         @typing.overload
         def __init__(self) -> None: ...
@@ -10341,7 +10341,7 @@ class QgsVectorFileWriter(QgsFeatureSink):
         @typing.overload
         def __init__(self, a0: 'QgsVectorFileWriter.Option') -> None: ...
 
-    class SetOption('QgsVectorFileWriter.Option'):
+    class SetOption(Option):
 
         allowNone = ... # type: bool
         defaultValue = ... # type: str
@@ -10352,7 +10352,7 @@ class QgsVectorFileWriter(QgsFeatureSink):
         @typing.overload
         def __init__(self, a0: 'QgsVectorFileWriter.SetOption') -> None: ...
 
-    class StringOption('QgsVectorFileWriter.Option'):
+    class StringOption(Option):
 
         defaultValue = ... # type: str
 
@@ -10361,7 +10361,7 @@ class QgsVectorFileWriter(QgsFeatureSink):
         @typing.overload
         def __init__(self, a0: 'QgsVectorFileWriter.StringOption') -> None: ...
 
-    class IntOption('QgsVectorFileWriter.Option'):
+    class IntOption(Option):
 
         defaultValue = ... # type: int
 
@@ -10370,14 +10370,14 @@ class QgsVectorFileWriter(QgsFeatureSink):
         @typing.overload
         def __init__(self, a0: 'QgsVectorFileWriter.IntOption') -> None: ...
 
-    class BoolOption('QgsVectorFileWriter.SetOption'):
+    class BoolOption(SetOption):
 
         @typing.overload
         def __init__(self, docString: str, defaultValue: bool) -> None: ...
         @typing.overload
         def __init__(self, a0: 'QgsVectorFileWriter.BoolOption') -> None: ...
 
-    class HiddenOption('QgsVectorFileWriter.Option'):
+    class HiddenOption(Option):
 
         mValue = ... # type: str
 
