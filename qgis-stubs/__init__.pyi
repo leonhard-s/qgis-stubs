@@ -9,4 +9,4 @@ __all__ = [
     'server',
 ]
 
-__version__ = '3.26.3'
+__version__ = '0.2.0'
