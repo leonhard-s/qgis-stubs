@@ -1,3 +1,1 @@
-PyQt5 >= 5.14
-PyQt5-stubs >= 5.14.2.2
-qscintilla >= 2.12.1
+PyQt5-stubs >= 5.14
