@@ -10,9 +10,6 @@ name: Generate type stubs
 # Only manual trigger supported for now
 on:
   workflow_dispatch: {}
-  push:
-    branches:
-      - stubgen-ci
 
 # Configuration
 env:
@@ -163,5 +160,6 @@ jobs:
           destination_branch: "main"
           pr_title: Update stubs using ${{ env.TARGET_BRANCH }}
           pr_template: .github/PULL_REQUEST_TEMPLATE/stubgen-pr.md
-          pr_draft: true                                    # Creates pull request as draft
+          pr_assignees: leonhard-s
+          pr_reviewers: leonhard-s
           github_token: ${{ secrets.GITHUB_TOKEN }}
