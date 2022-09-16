@@ -4,13 +4,13 @@
 
 
 import typing
-sip: typing.Any = ...
 
 from PyQt5 import QtXml
 from PyQt5 import QtGui
 from PyQt5 import QtCore
 
 from . import core as _core
+from ._types import sip
 
 # Support for QDate, QDateTime and QTime.
 import datetime

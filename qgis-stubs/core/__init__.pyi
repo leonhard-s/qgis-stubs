@@ -4,7 +4,6 @@
 
 
 import typing
-sip: typing.Any = ...
 
 from PyQt5 import QtPositioning
 from PyQt5 import QtWidgets
@@ -17,6 +16,7 @@ from PyQt5 import QtGui
 
 from ..gui import (QgsCalloutWidget, QgsPaintEffectWidget, QgsRendererWidget,
                    QgsSymbolLayerWidget)
+from .._types import sip
 
 # Type aliases used for arguments and return types. Note that these names are
 # *NOT* available at runtime, they only exist for typing purposes.
