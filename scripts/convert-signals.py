@@ -62,9 +62,10 @@ class _Soup:
         return cell
 
 
-def _generate_cpp_api_url(classname: str) -> str:
+def _generate_cpp_api_url(classname: str) -> typing.List[str] :
     """Generate the URL for the C++ API docs for a given class."""
-    return f'https://api.qgis.org/api/class{classname}.html'
+    return [f'https://api.qgis.org/api/{k}{classname}.html'
+            for k in ('class', 'struct')]
 
 
 def _get_signals_for_class(classname: str) -> typing.List[str]:
@@ -73,13 +74,21 @@ def _get_signals_for_class(classname: str) -> typing.List[str]:
     This makes a request to the QGIS C++ API docs and scrapes the
     resulting web page.
     """
+
     # NOTE: Using requests because making this work reliably with
     # aiohttp sounds like a bad time.
-    url = _generate_cpp_api_url(classname)
-    response = requests.get(url)
-    try:
-        response.raise_for_status()
-    except requests.exceptions.HTTPError:
+
+    # Try multiple URLs since some Python classes may be based on C++ structs,
+    # which use a different URL
+    for url in _generate_cpp_api_url(classname):
+        response = requests.get(url)
+        try:
+            response.raise_for_status()
+        except requests.exceptions.HTTPError:
+            continue
+        else:
+            break
+    else:
         print(f'ERROR: Class not found: {classname}')
         return []
 
