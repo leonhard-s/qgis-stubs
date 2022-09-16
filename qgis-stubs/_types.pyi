@@ -24,5 +24,5 @@ class sip:
 class Qsci:
     """Dummy namespace for the untyped PyQt5.Qsci module."""
 
-    class QsciScintilla:
+    class QsciScintilla(typing.Any):
         pass
