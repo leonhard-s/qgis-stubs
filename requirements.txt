@@ -1,0 +1,4 @@
+# Development dependencies for the project
+PyQt5-stubs
+beautifulsoup4
+requests
