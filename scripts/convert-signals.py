@@ -40,7 +40,7 @@ class _Soup:
             # Stop parsing once we reach inherited members
             if cls._is_inheritance_header(row):
                 break
-        
+
             if cls._is_signal_row(row):
                 yield cls._table_cell_by_class(row, 'memItemRight')
 
@@ -62,7 +62,7 @@ class _Soup:
         return cell
 
 
-def _generate_cpp_api_url(classname: str) -> typing.List[str] :
+def _generate_cpp_api_url(classname: str) -> typing.List[str]:
     """Generate the URL for the C++ API docs for a given class."""
     return [f'https://api.qgis.org/api/{k}{classname}.html'
             for k in ('class', 'struct')]
@@ -101,15 +101,15 @@ def _get_signals_for_class(classname: str) -> typing.List[str]:
     # Find the signal names for this class
     signals: typing.List[str] = []
     for cell in _Soup.get_signal_rows(table):
-    
+
         # NOTE: Since PyQt5-stubs's "QtCore.pyqtSignal" does not support
         # argument annotation, we don't need to worry about arguments (yet).
         # But if we did, this is where we'd do it.
-    
+
         name_link = cell.find('a')
         if name_link is None:
             raise ValueError(f'Unable to find signal name in {cell}')
-        
+
         signals.append(name_link.text)
 
     return signals
@@ -151,6 +151,14 @@ def _replace_signals_in_class(
 
         # Not a signal and not the start of the next class
         elif not line.startswith('class'):
+
+            # Check if this is an already-converted signal
+            if 'QtCore.pyqtSignal' in line:
+                for signal in signals:
+                    if signal in line:
+                        signals.remove(signal)
+                        break
+
             out_f.write(line)
 
         # If we found the next class, break and let the next call handle it
@@ -194,7 +202,12 @@ def _replace_signals_in_file(
                 # Find a class, consuming additional lines as needed
                 if line.startswith('class'):
                     classes += 1
-                    classname = _RE_CLASSNAME.match(line).group(1)
+                    class_regex = _RE_CLASSNAME.match(line)
+                    if class_regex is None:
+                        print(f'ERROR: Unable to parse class name: {line}')
+                        line = next(in_iter)
+                        continue
+                    classname = class_regex.group(1)
                     line, new_replacements = _replace_signals_in_class(
                         in_iter, out_f, classname)
 
@@ -219,18 +232,18 @@ if __name__ == '__main__':
 
     files: typing.List[pathlib.Path]
     if args.path.is_dir():
-        files = args.path.glob('*.pyi')
+        files = args.path.glob('**/*.pyi')
     else:
         files = [args.path]
 
     for filename in files:
         print(f'\nProcessing file: {filename}')
-    
+
         in_path = filename.rename(filename.with_suffix('.pyi.bak'))
         out_path = filename
         classes, replacements = _replace_signals_in_file(in_path, out_path)
 
         print(f'  {classes} classes processed\n'
-            f'  {replacements} signals replaced')
+              f'  {replacements} signals replaced')
 
     print('\ndone \\o/\n')
