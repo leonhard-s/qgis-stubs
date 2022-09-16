@@ -6315,13 +6315,6 @@ class QgsMapLayerStore(QtCore.QObject):
     allLayersRemoved: typing.ClassVar[QtCore.pyqtSignal]
     layerRemoved: typing.ClassVar[QtCore.pyqtSignal]
     layersRemoved: typing.ClassVar[QtCore.pyqtSignal]
-    @typing.overload
-    layerWillBeRemoved: typing.ClassVar[QtCore.pyqtSignal]
-    @typing.overload
-    layerWillBeRemoved: typing.ClassVar[QtCore.pyqtSignal]
-    @typing.overload
-    layersWillBeRemoved: typing.ClassVar[QtCore.pyqtSignal]
-    @typing.overload
     layersWillBeRemoved: typing.ClassVar[QtCore.pyqtSignal]
     def transferLayersFromStore(self, other: 'QgsMapLayerStore') -> None: ...
     def removeAllMapLayers(self) -> None: ...
@@ -6892,9 +6885,6 @@ class QgsMessageLog(QtCore.QObject):
 
     def __init__(self) -> None: ...
 
-    @typing.overload
-    messageReceived: typing.ClassVar[QtCore.pyqtSignal]
-    @typing.overload
     messageReceived: typing.ClassVar[QtCore.pyqtSignal]
     @staticmethod
     def logMessage(message: str, tag: str = ..., level: Qgis.MessageLevel = ..., notifyUser: bool = ...) -> None: ...
@@ -16742,9 +16732,6 @@ class QgsGpsDetector(QtCore.QObject):
 
     detectionFailed: typing.ClassVar[QtCore.pyqtSignal]
     def connDestroyed(self, a0: QtCore.QObject) -> None: ...
-    @typing.overload
-    detected: typing.ClassVar[QtCore.pyqtSignal]
-    @typing.overload
     detected: typing.ClassVar[QtCore.pyqtSignal]
     def advance(self) -> None: ...
     @staticmethod
@@ -23844,14 +23831,8 @@ class QgsNetworkAccessManager(QtNetwork.QNetworkAccessManager):
     requestAuthDetailsAdded: typing.ClassVar[QtCore.pyqtSignal]
     requestRequiresAuth: typing.ClassVar[QtCore.pyqtSignal]
     downloadProgress: typing.ClassVar[QtCore.pyqtSignal]
-    @typing.overload
-    requestTimedOut: typing.ClassVar[QtCore.pyqtSignal]
-    @typing.overload
     requestTimedOut: typing.ClassVar[QtCore.pyqtSignal]
     finished: typing.ClassVar[QtCore.pyqtSignal]
-    @typing.overload
-    requestAboutToBeCreated: typing.ClassVar[QtCore.pyqtSignal]
-    @typing.overload
     requestAboutToBeCreated: typing.ClassVar[QtCore.pyqtSignal]
     def preprocessRequest(self, req: QtNetwork.QNetworkRequest) -> None: ...
     def abortAuthBrowser(self) -> None: ...
@@ -26972,13 +26953,6 @@ class QgsProject(QtCore.QObject, QgsExpressionContextGenerator, QgsExpressionCon
     removeAll: typing.ClassVar[QtCore.pyqtSignal]
     layerRemoved: typing.ClassVar[QtCore.pyqtSignal]
     layersRemoved: typing.ClassVar[QtCore.pyqtSignal]
-    @typing.overload
-    layerWillBeRemoved: typing.ClassVar[QtCore.pyqtSignal]
-    @typing.overload
-    layerWillBeRemoved: typing.ClassVar[QtCore.pyqtSignal]
-    @typing.overload
-    layersWillBeRemoved: typing.ClassVar[QtCore.pyqtSignal]
-    @typing.overload
     layersWillBeRemoved: typing.ClassVar[QtCore.pyqtSignal]
     selectionColorChanged: typing.ClassVar[QtCore.pyqtSignal]
     backgroundColorChanged: typing.ClassVar[QtCore.pyqtSignal]
@@ -29284,9 +29258,6 @@ class QgsRasterFileWriterTask(QgsTask):
 
     def finished(self, result: bool) -> None: ...
     def run(self) -> bool: ...
-    @typing.overload
-    errorOccurred: typing.ClassVar[QtCore.pyqtSignal]
-    @typing.overload
     errorOccurred: typing.ClassVar[QtCore.pyqtSignal]
     writeComplete: typing.ClassVar[QtCore.pyqtSignal]
     def cancel(self) -> None: ...
