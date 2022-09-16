@@ -149,8 +149,8 @@ def _replace_signals_in_class(
             # Replace the method with pyqtsignal typehint
             out_f.write(f'{indent}{signal}: {_SIGNAL_TYPE}\n')
 
-        # Not a signal
-        else:
+        # Not a signal and not the start of the next class
+        elif not line.startswith('class'):
             out_f.write(line)
 
         # If we found the next class, break and let the next call handle it
@@ -233,4 +233,4 @@ if __name__ == '__main__':
         print(f'  {classes} classes processed\n'
             f'  {replacements} signals replaced')
 
-    print('done \\o/')
+    print('\ndone \\o/\n')
