@@ -3245,7 +3245,7 @@ class QgsColorScheme(sip.wrapper):
     def schemeName(self) -> str: ...
 
 
-class QgsPresetSchemeColorRamp(QgsColorRamp, QgsColorScheme):
+class QgsPresetSchemeColorRamp(QgsColorRamp, QgsColorScheme):  # type: ignore[misc]
 
     @typing.overload
     def __init__(self, colors: typing.Iterable[typing.Union[QtGui.QColor, QtCore.Qt.GlobalColor, QtGui.QGradient]] = ...) -> None: ...
@@ -20993,7 +20993,7 @@ class QgsPageSizeRegistry(sip.wrapper):
     def add(self, size: QgsPageSize) -> None: ...
 
 
-class QgsPrintLayout(QgsLayout, QgsMasterLayoutInterface):
+class QgsPrintLayout(QgsLayout, QgsMasterLayoutInterface):  # type: ignore[misc]
 
     def __init__(self, project: 'QgsProject') -> None: ...
 
@@ -21014,7 +21014,7 @@ class QgsPrintLayout(QgsLayout, QgsMasterLayoutInterface):
     def clone(self) -> 'QgsPrintLayout': ...
 
 
-class QgsReport(QtCore.QObject, QgsAbstractReportSection, QgsMasterLayoutInterface):
+class QgsReport(QtCore.QObject, QgsAbstractReportSection, QgsMasterLayoutInterface):  # type: ignore[misc]
 
     def __init__(self, project: 'QgsProject') -> None: ...
 

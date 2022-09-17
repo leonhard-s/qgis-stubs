@@ -5829,7 +5829,7 @@ class QgsTreeWidgetItem(QtWidgets.QTreeWidgetItem):
     def setSortData(self, column: int, value: typing.Any) -> None: ...
 
 
-class QgsTreeWidgetItemObject(QtCore.QObject, QgsTreeWidgetItem):
+class QgsTreeWidgetItemObject(QtCore.QObject, QgsTreeWidgetItem):  # type: ignore[misc]
 
     @typing.overload
     def __init__(self, type: int = ...) -> None: ...

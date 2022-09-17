@@ -8,7 +8,6 @@
         "reportUnusedImport": "none",
         "reportOptionalMemberAccess": "none",
         "reportOverlappingOverload": "none",
-        "reportIncompatibleMethodOverride": "none",
     },
     // Disable formatting
     "editor.formatOnSave": false,
