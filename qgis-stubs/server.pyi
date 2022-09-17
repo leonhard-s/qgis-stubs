@@ -121,7 +121,7 @@ class QgsServerOgcApi(QgsServerApi):
         conformance: 'QgsServerOgcApi.Rel'
         data: 'QgsServerOgcApi.Rel'
 
-    staticMetaObject = ... # type: QtCore.QMetaObject
+    staticMetaObject: QtCore.QMetaObject = ...
 
     @typing.overload
     def __init__(self, serverIface: 'QgsServerInterface', rootPath: str, name: str, description: str = ..., version: str = ...) -> None: ...
@@ -199,9 +199,9 @@ class QgsServerStaticHandler(QgsServerOgcApiHandler):
 
 class QgsServerParameterDefinition(sip.wrapper):
 
-    mDefaultValue = ... # type: typing.Any
-    mType = ... # type: QtCore.QVariant.Type
-    mValue = ... # type: typing.Any
+    mDefaultValue: typing.Any = ...
+    mType: QtCore.QVariant.Type = ...
+    mValue: typing.Any = ...
 
     @typing.overload
     def __init__(self, type: QtCore.QVariant.Type = ..., defaultValue: typing.Any = ...) -> None: ...
@@ -239,8 +239,8 @@ class QgsServerParameter(QgsServerParameterDefinition):
         MAP: 'QgsServerParameter.Name'
         FILE_NAME: 'QgsServerParameter.Name'
 
-    mName = ... # type: 'QgsServerParameter.Name'
-    staticMetaObject = ... # type: QtCore.QMetaObject
+    mName: 'QgsServerParameter.Name' = ...
+    staticMetaObject: QtCore.QMetaObject = ...
 
     @typing.overload
     def __init__(self, name: 'QgsServerParameter.Name' = ..., type: QtCore.QVariant.Type = ..., defaultValue: typing.Any = ...) -> None: ...
@@ -258,7 +258,7 @@ class QgsServerParameter(QgsServerParameterDefinition):
 
 class QgsServerParameters(sip.wrapper):
 
-    staticMetaObject = ... # type: QtCore.QMetaObject
+    staticMetaObject: QtCore.QMetaObject = ...
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -302,7 +302,7 @@ class QgsServerQueryStringParameter(sip.wrapper):
         Boolean: 'QgsServerQueryStringParameter.Type'
         List: 'QgsServerQueryStringParameter.Type'
 
-    staticMetaObject = ... # type: QtCore.QMetaObject
+    staticMetaObject: QtCore.QMetaObject = ...
 
     @typing.overload
     def __init__(self, name: str, required: bool = ..., type: 'QgsServerQueryStringParameter.Type' = ..., description: str = ..., defaultValue: typing.Any = ...) -> None: ...
@@ -434,7 +434,7 @@ class QgsServerRequest(sip.wrapper):
         DeleteMethod: 'QgsServerRequest.Method'
         PatchMethod: 'QgsServerRequest.Method'
 
-    staticMetaObject = ... # type: QtCore.QMetaObject
+    staticMetaObject: QtCore.QMetaObject = ...
 
     @typing.overload
     def __init__(self) -> None: ...
@@ -810,10 +810,10 @@ class QgsAccessControlFilter(sip.wrapper):
 
     class LayerPermissions(sip.wrapper):
 
-        canDelete = ... # type: bool
-        canInsert = ... # type: bool
-        canRead = ... # type: bool
-        canUpdate = ... # type: bool
+        canDelete: bool = ...
+        canInsert: bool = ...
+        canRead: bool = ...
+        canUpdate: bool = ...
 
         @typing.overload
         def __init__(self) -> None: ...
