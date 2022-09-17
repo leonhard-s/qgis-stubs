@@ -124,6 +124,20 @@ After this is finalized for the core modules, the extension modules `additions` 
 - [ ] Port the `processing` module.
 
   As of writing, this primarily involves the `@alg` decorator and its factories.
+  
+- [ ] Replace any type comments with annotations via RegEx replacements:
+
+  Find:
+
+  ```regex
+  ^( *\w+) = ... # type: ([ \[\],'\w\.]+)
+  ```
+
+  Replace:
+
+  ```regex
+  $1: $2 = ...
+  ```
 
 ## Final review
 
