@@ -2,3 +2,5 @@
 PyQt5-stubs
 beautifulsoup4
 requests
+mypy
+lxml

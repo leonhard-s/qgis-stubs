@@ -4,7 +4,6 @@
     "python.analysis.diagnosticMode": "workspace",
     // Disable specific warnings that make no sense for type stubs
     "python.analysis.diagnosticSeverityOverrides": {
-        "reportTypeCommentUsage": "none",
         "reportMissingModuleSource": "none",
         "reportUnusedImport": "none",
         "reportOptionalMemberAccess": "none",

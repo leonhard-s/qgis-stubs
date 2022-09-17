@@ -12,7 +12,7 @@ _SipWrapper =  typing.NewType('_SipWrapper', object)
 class sip:
     """Dummy namespace for the untyped sip module."""
 
-    Buffer: typing.Any    
+    Buffer: typing.ClassVar[typing.Any]
 
     class simplewrapper:
         pass
@@ -24,5 +24,4 @@ class sip:
 class Qsci:
     """Dummy namespace for the untyped PyQt5.Qsci module."""
 
-    class QsciScintilla(typing.Any):
-        pass
+    QsciScintilla: typing.ClassVar[typing.Any]
