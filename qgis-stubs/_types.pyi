@@ -15,13 +15,14 @@ class sip:
     Buffer: typing.ClassVar[typing.Any]
 
     class simplewrapper:
-        pass
+        ...
 
     class wrapper:
-        pass
+        ...
 
 
 class Qsci:
     """Dummy namespace for the untyped PyQt5.Qsci module."""
 
-    QsciScintilla: typing.ClassVar[typing.Any]
+    class QsciScintilla:
+        ...
