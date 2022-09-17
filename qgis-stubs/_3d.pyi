@@ -12,9 +12,6 @@ from PyQt5 import QtCore
 from . import core as _core
 from ._types import sip
 
-# Support for QDate, QDateTime and QTime.
-import datetime
-
 # Convenient type aliases.
 PYQT_SIGNAL = typing.Union[QtCore.pyqtSignal, QtCore.pyqtBoundSignal]
 PYQT_SLOT = typing.Union[typing.Callable[..., None], QtCore.pyqtBoundSignal]

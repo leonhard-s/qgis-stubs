@@ -56,6 +56,8 @@ from ..core import (QgsProcessingOutputDefinition, QgsProcessingParameterDefinit
                     QgsProcessingOutputVectorLayer,
                     QgsProcessingOutputPointCloudLayer)
 
+_ = QgsProcessingParameterDuration
+
 _CallableT = typing.TypeVar('_CallableT', bound=typing.Callable[..., typing.Any])
 
 

@@ -18,6 +18,20 @@ from ..gui import (QgsCalloutWidget, QgsPaintEffectWidget, QgsRendererWidget,
                    QgsSymbolLayerWidget)
 from .._types import sip
 
+from ._additions import (ProjectDirtyBlocker, PyQgsSettingsEntryEnumFlag,
+                         QgsEditError, ReadWriteContextEnterCategory,
+                         ScopedRuntimeProfileContextManager, check, edit,
+                         register_function, qgsfunction)
+
+# Dummy expression to flag these imports as used. Could also be done via an
+# __all__ list but that would have to include everything in the file, which
+# would be tedious and difficult to maintain.
+
+_ = [ProjectDirtyBlocker, PyQgsSettingsEntryEnumFlag, QgsEditError,
+     ReadWriteContextEnterCategory, ScopedRuntimeProfileContextManager,
+     check, edit, register_function, qgsfunction]
+
+
 # Type aliases used for arguments and return types. Note that these names are
 # *NOT* available at runtime, they only exist for typing purposes.
 QgsMultiPointXY = typing.List['QgsPointXY']
@@ -6767,8 +6781,6 @@ class QgsMapToPixel(sip.wrapper):
     def transformInPlace(self) -> typing.Tuple[float, float]: ...
     @typing.overload
     def transform(self, p: 'QgsPointXY') -> 'QgsPointXY': ...
-    @typing.overload
-    def transform(self, p: 'QgsPointXY') -> None: ...  # type: ignore[misc]
     @typing.overload
     def transform(self, x: float, y: float) -> 'QgsPointXY': ...
     @typing.overload

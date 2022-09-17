@@ -4,10 +4,7 @@
     "python.analysis.diagnosticMode": "workspace",
     // Disable specific warnings that make no sense for type stubs
     "python.analysis.diagnosticSeverityOverrides": {
-        "reportMissingModuleSource": "none",
-        "reportUnusedImport": "none",
-        "reportOptionalMemberAccess": "none",
-        "reportOverlappingOverload": "none",
+        "reportIncompatibleMethodOverride": "none",
     },
     // Disable formatting
     "editor.formatOnSave": false,

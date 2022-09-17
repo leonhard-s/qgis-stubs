@@ -7,6 +7,19 @@ from ._context_managers import (edit, ProjectDirtyBlocker,
                                 ReadWriteContextEnterCategory,
                                 ScopedRuntimeProfileContextManager)
 
+__all__ = [
+    'ProjectDirtyBlocker',
+    'PyQgsSettingsEntryEnumFlag',
+    'QgsEditError',
+    'ReadWriteContextEnterCategory',
+    'ScopedRuntimeProfileContextManager',
+    'check',
+    'edit',
+    'register_function',
+    'qgsfunction',
+]
+
+
 # NOTE: Some monkey-patched methods have been typed directly into their
 # respective classes:
 #
