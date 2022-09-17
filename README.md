@@ -1,6 +1,6 @@
 # Type Stubs for QGIS
 
-This package defines Python stub files (.pyi) for the [PyQGIS](https://qgis.org/pyqgis/master/) wrapper module available in [QGIS](https://qgis.org/).
+Python stubs for the [PyQGIS](https://qgis.org/pyqgis/master/) module used in [QGIS](https://qgis.org/). Compatible with and tested on [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)/[pyright](https://github.com/Microsoft/pyright) and [MyPy](http://mypy-lang.org/).
 
 ## Overview
 
@@ -40,9 +40,7 @@ The Python modules used by QGIS are not without issues. Most of these are shared
 
 - Compatibility fallback names for unscoped enumerators are not available as they are "monkey-patched" at runtime.
 
-  It was decided not to include these patches in the stubs as they lead to naming collisions.
-
-- This module uses [`PyQt5-stubs`](https://github.com/python-qt-tools/PyQt5-stubs) for its Qt types, which does not support the `PyQt5.Qsci` submodule. As a result, any classes derived from the `Qsci` namespace are typed as `Any` and not checked.
+  It was decided not to include these patches in the stubs as they lead to naming collisions and are almost all flagged as deprecated for QGIS 4.
 
 ## Contributing
 
