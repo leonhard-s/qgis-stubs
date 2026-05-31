@@ -19,7 +19,7 @@ env:
   SOURCE_BRANCH: stubgen-ci
   TARGET_BRANCH: stubgen/${{ github.run_id }}
 
-  QGIS_IMAGE: qgis/qgis:latest
+  QGIS_IMAGE: qgis/qgis:3.44-trixie
 
 jobs:
   # Create the branch used for the PR
