@@ -66,7 +66,7 @@ jobs:
 
       - name: Remove non-Python files
         run: |
-          python scripts/delete-non-python.py qgis
+          python scripts/delete_non_python.py qgis
 
       - name: Configure git
         run: |
@@ -122,14 +122,14 @@ jobs:
 
       - name: Step 1 - Replace PyQt with PyQt5
         run: |
-          python scripts/search-and-replace.py qgis "from qgis.PyQt" "from PyQt5"
+          python scripts/search_and_replace.py qgis "from qgis.PyQt" "from PyQt5"
           rm -rf qgis/PyQt
           git add --all qgis
           git commit -m "Replace qgis.PyQt references with PyQt5"
 
       - name: Step 2 - Replace sip imports with dummy
         run: |
-          python scripts/search-and-replace.py qgis "import sip" "sip: typing.Any = ..."
+          python scripts/search_and_replace.py qgis "import sip" "sip: typing.Any = ..."
           git add --all qgis
           git commit -m "Replace sip references with type dummy"
 
