@@ -57,7 +57,7 @@ class _Soup:
     @staticmethod
     def _table_cell_by_class(row: Tag, class_: str) -> Tag:
         """Get the first cell in the given row with the given class."""
-        cell = typing.cast(typing.Optional[Tag], row.find('td', class_=class_))
+        cell = row.find('td', class_=class_)
         if cell is None:
             raise ValueError(f'Unable to find table cell with class {class_}')
         return cell
@@ -82,7 +82,7 @@ def _get_signals_for_class(classname: str) -> typing.List[str]:
     # Try multiple URLs since some Python classes may be based on C++ structs,
     # which use a different URL
     for url in _generate_cpp_api_url(classname):
-        response = requests.get(url)
+        response = requests.get(url, timeout=10)
         try:
             response.raise_for_status()
         except requests.exceptions.HTTPError:
@@ -129,8 +129,13 @@ def _replace_signals_in_class(
     # Generate a RegEx for all signals in this class
     signals_re = re.compile(r'^( +)(def )(' + '|'.join(signals) + r')\(')
 
-    line: typing.Optional[str] = next(in_)
+    line: typing.Optional[str]
     while True:
+        try:
+            line = next(in_)
+        except StopIteration:
+            line = None
+            break
 
         # Find a method matching a known signal
         signal_match = signals_re.match(line)
@@ -155,7 +160,7 @@ def _replace_signals_in_class(
 
             # Check if this is an already-converted signal
             if 'QtCore.pyqtSignal' in line:
-                for signal in signals:
+                for signal in list(signals):
                     if signal in line:
                         signals.remove(signal)
                         break
@@ -196,8 +201,13 @@ def _replace_signals_in_file(
             # any that use signals (yet)
 
             in_iter = iter(in_f)
-            line = next(in_iter)
+            line: typing.Optional[str]
             while True:
+                try:
+                    line = next(in_iter)
+                except StopIteration:
+                    break
+
                 out_f.write(line)
 
                 # Find a class, consuming additional lines as needed
@@ -214,12 +224,6 @@ def _replace_signals_in_file(
 
                     replacements += new_replacements
                     if line is None:
-                        break
-
-                else:
-                    try:
-                        line = next(in_iter)
-                    except StopIteration:
                         break
 
     return classes, replacements
