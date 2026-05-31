@@ -19,18 +19,18 @@ def filter_recursive(dir_: pathlib.Path, *extensions: str) -> None:
     for path in dir_.iterdir():
         if path.is_dir():
             filter_recursive(path, *extensions)
-            if not len(list(path.iterdir())):
+            if not list(path.iterdir()):
                 path.rmdir()
         elif path.suffix not in extensions:
             path.unlink()
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('dir', help='Directory to search')
-    parser.add_argument(
+    _parser = argparse.ArgumentParser(description=__doc__)
+    _parser.add_argument('dir', help='Directory to search')
+    _parser.add_argument(
         '-e', '--extensions', nargs='+', default=['.py', '.pyi'],
         help='File extensions to keep (default: .py .pyi)')
-    args = parser.parse_args()
+    _args = _parser.parse_args()
 
-    filter_recursive(pathlib.Path(args.dir), *args.extensions)
+    filter_recursive(pathlib.Path(_args.dir), *_args.extensions)

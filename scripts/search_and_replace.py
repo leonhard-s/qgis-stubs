@@ -79,16 +79,16 @@ def _search_and_replace_dir(dir_: pathlib.Path, old: str, new: str) -> None:
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("path", help="File or directory to search")
-    parser.add_argument("old", help="String to replace")
-    parser.add_argument("new", help="String to replace with")
-    args = parser.parse_args()
+    _parser = argparse.ArgumentParser(description=__doc__)
+    _parser.add_argument("path", help="File or directory to search")
+    _parser.add_argument("old", help="String to replace")
+    _parser.add_argument("new", help="String to replace with")
+    _args = _parser.parse_args()
 
-    path = pathlib.Path(args.path)
-    if path.is_dir():
-        _search_and_replace_dir(path, args.old, args.new)
-    elif path.exists():
-        search_and_replace(path, args.old, args.new)
+    _path = pathlib.Path(_args.path)
+    if _path.is_dir():
+        _search_and_replace_dir(_path, _args.old, _args.new)
+    elif _path.exists():
+        search_and_replace(_path, _args.old, _args.new)
     else:
-        raise ValueError(f"{path} does not exist")
+        raise ValueError(f"{_path} does not exist")

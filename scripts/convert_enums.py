@@ -63,7 +63,7 @@ def convert_enum_to_file(in_: pathlib.Path, out: pathlib.Path) -> None:
                         indent, field_name, qualified_type = match.groups()
                         f_out.writelines(
                             [indent, '    ', field_name, ': \'',
-                            qualified_type.replace('\'', ''), '\'\n'])
+                             qualified_type.replace('\'', ''), '\'\n'])
                         # Consume next line
                         line = next(iterator)
                         match = _FIELD_PATTERN.match(line)
@@ -120,12 +120,12 @@ def _convert_enum_dir(dir_: pathlib.Path) -> None:
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("path", help="File or directory to search")
-    args = parser.parse_args()
+    _parser = argparse.ArgumentParser(description=__doc__)
+    _parser.add_argument("path", help="File or directory to search")
+    _args = _parser.parse_args()
 
-    path = pathlib.Path(args.path)
-    if path.is_dir():
-        _convert_enum_dir(path)
+    _path = pathlib.Path(_args.path)
+    if _path.is_dir():
+        _convert_enum_dir(_path)
     else:
-        convert_enum(path)
+        convert_enum(_path)
