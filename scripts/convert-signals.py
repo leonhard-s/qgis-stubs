@@ -30,6 +30,7 @@ class _Soup:
         for table in soup.find_all('table', class_='memberdecls'):
             if table.find('a', id='signals') is not None:
                 return table
+        return None
 
     @classmethod
     def get_signal_rows(cls, table: Tag) -> typing.Iterator[Tag]:
@@ -224,17 +225,13 @@ def _replace_signals_in_file(
     return classes, replacements
 
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(__doc__)
-    parser.add_argument(
-        'path', type=pathlib.Path, help='File or folder to process')
-    args = parser.parse_args()
-
+def main(path: pathlib.Path) -> None:
+    """Main entry point for the script."""
     files: typing.List[pathlib.Path]
-    if args.path.is_dir():
-        files = args.path.glob('**/*.pyi')
+    if path.is_dir():
+        files = list(path.glob('**/*.pyi'))
     else:
-        files = [args.path]
+        files = [path]
 
     for filename in files:
         print(f'\nProcessing file: {filename}')
@@ -247,3 +244,12 @@ if __name__ == '__main__':
               f'  {replacements} signals replaced')
 
     print('\ndone \\o/\n')
+
+
+if __name__ == '__main__':
+    _parser = argparse.ArgumentParser(__doc__)
+    _parser.add_argument(
+        'path', type=pathlib.Path, help='File or folder to process')
+    _args = _parser.parse_args()
+
+    main(_args.path)
