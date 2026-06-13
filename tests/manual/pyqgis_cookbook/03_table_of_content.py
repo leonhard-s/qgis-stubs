@@ -8,7 +8,7 @@ def list_layers() -> None:
     project = QgsProject.instance()
     assert project is not None
     # list of layer names using list comprehension
-    layer_names: list[QgsVectorLayer] = [
+    layer_names: list[str] = [
         layer.name() for layer in project.mapLayers().values()]
     print(layer_names)
     # dictionary with key = layer name and value = layer object
