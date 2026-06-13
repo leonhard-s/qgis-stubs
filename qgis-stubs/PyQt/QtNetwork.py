@@ -1,0 +1,39 @@
+# -*- coding: utf-8 -*-
+
+"""
+***************************************************************************
+    QtNetwork.py
+    ---------------------
+    Date                 : March 2016
+    Copyright            : (C) 2016 by Juergen E. Fischer
+    Email                : jef at norbit dot de
+***************************************************************************
+*                                                                         *
+*   This program is free software; you can redistribute it and/or modify  *
+*   it under the terms of the GNU General Public License as published by  *
+*   the Free Software Foundation; either version 2 of the License, or     *
+*   (at your option) any later version.                                   *
+*                                                                         *
+***************************************************************************
+"""
+
+__author__ = 'Juergen E. Fischer'
+__date__ = 'March 2016'
+__copyright__ = '(C) 2016, Juergen E. Fischer'
+
+from PyQt5.QtNetwork import *
+from .common import install_extended_enum_wrapper
+
+if 5 == 6:
+    # patch back in Qt flags removed in PyQt
+    QAbstractSocket.BindMode = lambda flags=0: QAbstractSocket.BindFlag(flags)
+    QAbstractSocket.PauseModes = lambda flags=0: QAbstractSocket.PauseMode(flags)
+    QHostAddress.ConversionMode = lambda flags=0: QHostAddress.ConversionModeFlag(flags)
+    QHstsPolicy.PolicyFlags = lambda flags=0: QHstsPolicy.PolicyFlag(flags)
+    QLocalServer.SocketOptions = lambda flags=0: QLocalServer.SocketOption(flags)
+    QNetworkInterface.InterfaceFlags = lambda flags=0: QNetworkInterface.InterfaceFlag(flags)
+    QNetworkProxy.Capabilities = lambda flags=0: QNetworkProxy.Capability(flags)
+    QSsl.SslOptions = lambda flags=0: QSsl.SslOption(flags)
+
+    QNetworkRequest.setAttribute = install_extended_enum_wrapper(QNetworkRequest.setAttribute)
+

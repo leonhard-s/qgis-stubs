@@ -1,0 +1,98 @@
+# -*- coding: utf-8 -*-
+
+"""
+***************************************************************************
+    QtGui.py
+    ---------------------
+    Date                 : November 2015
+    Copyright            : (C) 2015 by Matthias Kuhn
+    Email                : matthias at opengis dot ch
+***************************************************************************
+*                                                                         *
+*   This program is free software; you can redistribute it and/or modify  *
+*   it under the terms of the GNU General Public License as published by  *
+*   the Free Software Foundation; either version 2 of the License, or     *
+*   (at your option) any later version.                                   *
+*                                                                         *
+***************************************************************************
+"""
+
+__author__ = 'Matthias Kuhn'
+__date__ = 'November 2015'
+__copyright__ = '(C) 2015, Matthias Kuhn'
+
+
+from PyQt5.QtCore import QT_VERSION
+from PyQt5.QtGui import *
+def __qcolor_repr__(self: QColor):
+    import math
+    def _not_fuzzy_equal(a, b):
+        return not math.isclose(a, b, abs_tol=0.00001)
+
+    if not self.isValid():
+        return '<QColor: invalid>'
+    elif self.spec() == QColor.Spec.Rgb:
+        if (_not_fuzzy_equal(self.red(), self.redF() * 255)
+                or _not_fuzzy_equal(self.green(), self.greenF() * 255)
+                or _not_fuzzy_equal(self.blue(), self.blueF() * 255)
+                or _not_fuzzy_equal(self.alpha(), self.alphaF() * 255)):
+            # represent using floats if required for full precision
+            return f'<QColor: RGBA {self.redF() * 255}, {self.greenF() * 255}, {self.blueF() * 255}, {self.alphaF() * 255}>'
+        return f'<QColor: RGBA {self.red()}, {self.green()}, {self.blue()}, {self.alpha()}>'
+    elif self.spec() == QColor.Spec.Hsv:
+        if (_not_fuzzy_equal(self.hsvHue(), self.hsvHueF() * 360)
+                or _not_fuzzy_equal(self.hsvSaturation(),
+                                    self.hsvSaturationF() * 255)
+                or _not_fuzzy_equal(self.value(), self.valueF() * 255)
+                or _not_fuzzy_equal(self.alpha(), self.alphaF() * 255)):
+            # represent using floats if required for full precision
+            return f'<QColor: HSVA {self.hsvHueF() * 360}, {self.hsvSaturationF() * 255}, {self.valueF() * 255}, {self.alphaF() * 255}>'
+        return f'<QColor: HSVA {self.hsvHue()}, {self.hsvSaturation()}, {self.value()}, {self.alpha()}>'
+    elif self.spec() == QColor.Spec.Cmyk:
+        if (_not_fuzzy_equal(self.cyan(), self.cyanF() * 255)
+                or _not_fuzzy_equal(self.magenta(), self.magentaF() * 255)
+                or _not_fuzzy_equal(self.yellow(), self.yellowF() * 255)
+                or _not_fuzzy_equal(self.black(), self.blackF() * 255)
+                or _not_fuzzy_equal(self.alpha(), self.alphaF() * 255)):
+            # represent using floats if required for full precision
+            return f'<QColor: CMYKA {self.cyan()}, {self.magenta()}, {self.yellow()}, {self.black()}, {self.alpha()}>'
+        return f'<QColor: CMYKA {self.cyan()}, {self.magenta()}, {self.yellow()}, {self.black()}, {self.alpha()}>'
+    elif self.spec() == QColor.Spec.Hsl:
+        if (_not_fuzzy_equal(self.hslHue(), self.hslHueF() * 360)
+                or _not_fuzzy_equal(self.hslSaturation(),
+                                    self.hslSaturationF() * 255)
+                or _not_fuzzy_equal(self.lightness(), self.lightnessF() * 255)
+                or _not_fuzzy_equal(self.alpha(), self.alphaF() * 255)):
+            # represent using floats if required for full precision
+            return f'<QColor: HSLA {self.hslHueF() * 360}, {self.hslSaturationF() * 255}, {self.lightnessF() * 255}, {self.alphaF() * 255}>'
+        return f'<QColor: HSLA {self.hslHue()}, {self.hslSaturation()}, {self.lightness()}, {self.alpha()}>'
+    elif self.spec() == QColor.Spec.ExtendedRgb:
+        return f'<QColor: Extended RGBA {self.redF()}, {self.greenF()}, {self.blueF()}, {self.alphaF()}>'
+
+
+# PyQt doesn't provide __repr__ for QColor, but it's highly desirable!
+QColor.__repr__ = __qcolor_repr__
+
+if (QT_VERSION < 0x060000):
+  from PyQt5.QtWidgets import QAction as _QAction, QActionGroup as _QActionGroup, QShortcut as _QShortcut
+  QAction = _QAction
+  QActionGroup = _QActionGroup
+  QShortcut = _QShortcut
+
+
+if 5 == 6:
+  # patch back in Qt flags removed in PyQt
+  QFileSystemModel.Options = lambda flags=0: QFileSystemModel.Option(flags)
+  QGlyphRun.GlyphRunFlags = lambda flags=0: QGlyphRun.GlyphRunFlag(flags)
+  QImageIOHandler.Transformations = lambda flags=0: QImageIOHandler.Transformation(flags)
+  QPaintEngine.DirtyFlags = lambda flags=0: QPaintEngine.DirtyFlag(flags)
+  QPaintEngine.PaintEngineFeatures = lambda flags=0: QPaintEngine.PaintEngineFeature(flags)
+  QPainter.PixmapFragmentHints = lambda flags=0: QPainter.PixmapFragmentHint(flags)
+  QPainter.RenderHints = lambda flags=0: QPainter.RenderHint(flags)
+  QRawFont.LayoutFlags = lambda flags=0: QRawFont.LayoutFlag(flags)
+  QSurfaceFormat.FormatOptions = lambda flags=0: QSurfaceFormat.FormatOption(flags)
+  QTextFormat.PageBreakFlags = lambda flags=0: QTextFormat.PageBreakFlag(flags)
+  QTextDocument.FindFlags = lambda flags=0: QTextDocument.FindFlag(flags)
+  QTextDocument.MarkdownFeatures = lambda flags=0: QTextDocument.MarkdownFeature(flags)
+  QTextItem.RenderFlags = lambda flags=0: QTextItem.RenderFlag(flags)
+  QTextOption.Flags = lambda flags=0: QTextOption.Flag(flags)
