@@ -32,7 +32,7 @@ from pathlib import Path
 from typing import Optional, Tuple, Union
 from warnings import warn
 
-from qgis.PyQt.QtCore import (
+from PyQt5.QtCore import (
     Qt,
     QVariant,
     QDateTime,
@@ -42,7 +42,7 @@ from qgis.PyQt.QtCore import (
     QSize,
     QCoreApplication,
 )
-from qgis.PyQt.QtGui import QImage, QDesktopServices, QPainter
+from PyQt5.QtGui import QImage, QDesktopServices, QPainter
 from qgis.core import (
     QgsApplication,
     QgsFeatureRequest,

@@ -19,7 +19,7 @@ import inspect
 import string
 import traceback
 
-from qgis.PyQt.QtCore import QCoreApplication
+from PyQt5.QtCore import QCoreApplication
 from qgis._core import (
     QgsExpressionFunction,
     QgsExpression,

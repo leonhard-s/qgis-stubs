@@ -25,7 +25,7 @@ QGIS utilities module
 """
 from typing import List, Dict, Optional
 
-from qgis.PyQt.QtCore import (
+from PyQt5.QtCore import (
     QT_VERSION_STR,
     QCoreApplication,
     QLocale,
@@ -33,8 +33,8 @@ from qgis.PyQt.QtCore import (
     qDebug,
     QUrl,
 )
-from qgis.PyQt.QtGui import QDesktopServices
-from qgis.PyQt.QtWidgets import QPushButton, QApplication
+from PyQt5.QtGui import QDesktopServices
+from PyQt5.QtWidgets import QPushButton, QApplication
 from qgis.core import Qgis, QgsMessageLog, qgsfunction, QgsMessageOutput
 from qgis.gui import QgsMessageBar
 
@@ -245,7 +245,7 @@ iface = None
 
 def initInterface(pointer):
     from qgis.gui import QgisInterface
-    from qgis.PyQt.sip import wrapinstance
+    from PyQt5.sip import wrapinstance
 
     global iface
     iface = wrapinstance(pointer, QgisInterface)
@@ -890,7 +890,7 @@ serverIface = None
 
 def initServerInterface(pointer):
     from qgis.server import QgsServerInterface
-    from qgis.PyQt.sip import wrapinstance
+    from PyQt5.sip import wrapinstance
 
     sys.excepthook = sys.__excepthook__
     global serverIface

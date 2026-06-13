@@ -23,8 +23,8 @@ __copyright__ = '(C) 2014, Nathan Woodrow'
 
 import typing as _typing
 
-from qgis.PyQt.QtCore import NULL
-from qgis.PyQt.QtCore import Qt as _Qt
+from PyQt5.QtCore import NULL
+from PyQt5.QtCore import Qt as _Qt
 from qgis._core import *
 
 """
