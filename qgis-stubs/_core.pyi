@@ -4393,6 +4393,34 @@ class Qgis(PyQt5.sip.wrapper):
     def versionInt() -> int: ...
     @staticmethod
     def version() -> str: ...
+    UnknownDataType: Qgis.DataType
+    Byte: Qgis.DataType
+    Int8: Qgis.DataType
+    UInt16: Qgis.DataType
+    Int16: Qgis.DataType
+    UInt32: Qgis.DataType
+    Int32: Qgis.DataType
+    Float32: Qgis.DataType
+    Float64: Qgis.DataType
+    CInt16: Qgis.DataType
+    CInt32: Qgis.DataType
+    CFloat32: Qgis.DataType
+    CFloat64: Qgis.DataType
+    ARGB32: Qgis.DataType
+    ARGB32_Premultiplied: Qgis.DataType
+    PythonMacroMode: typing.Type[Qgis.PythonEmbeddedMode]
+    Never: Qgis.PythonEmbeddedMode
+    Ask: Qgis.PythonEmbeddedMode
+    SessionOnly: Qgis.PythonEmbeddedMode
+    Always: Qgis.PythonEmbeddedMode
+    NotForThisSession: Qgis.PythonEmbeddedMode
+    GpsConnectionStatus: typing.Type[Qgis.DeviceConnectionStatus]
+    Disconnected: Qgis.DeviceConnectionStatus
+    Connecting: Qgis.DeviceConnectionStatus
+    Connected: Qgis.DeviceConnectionStatus
+    NoConstraint: Qgis.BetweenLineConstraint
+    Perpendicular: Qgis.BetweenLineConstraint
+    Parallel: Qgis.BetweenLineConstraint
 
 
 class QgsAbstractContentCacheEntry(PyQt5.sip.wrapper):
@@ -4473,6 +4501,29 @@ class QgsAggregateCalculator(PyQt5.sip.wrapper):
     def setParameters(self, parameters: 'QgsAggregateCalculator.AggregateParameters') -> None: ...
     def layer(self) -> typing.Optional['QgsVectorLayer']: ...
     def lastError(self) -> str: ...
+    Aggregate: typing.Type[Qgis.Aggregate]
+    Count: Qgis.Aggregate
+    CountDistinct: Qgis.Aggregate
+    CountMissing: Qgis.Aggregate
+    Min: Qgis.Aggregate
+    Max: Qgis.Aggregate
+    Sum: Qgis.Aggregate
+    Mean: Qgis.Aggregate
+    Median: Qgis.Aggregate
+    StDev: Qgis.Aggregate
+    StDevSample: Qgis.Aggregate
+    Range: Qgis.Aggregate
+    Minority: Qgis.Aggregate
+    Majority: Qgis.Aggregate
+    FirstQuartile: Qgis.Aggregate
+    ThirdQuartile: Qgis.Aggregate
+    InterQuartileRange: Qgis.Aggregate
+    StringMinimumLength: Qgis.Aggregate
+    StringMaximumLength: Qgis.Aggregate
+    StringConcatenate: Qgis.Aggregate
+    GeometryCollect: Qgis.Aggregate
+    ArrayAggregate: Qgis.Aggregate
+    StringConcatenateUnique: Qgis.Aggregate
 
 
 class QgsAlignRasterData(PyQt5.sip.wrapper):
@@ -5297,6 +5348,16 @@ class QgsMapLayer(QtCore.QObject):
     def clone(self) -> typing.Optional['QgsMapLayer']: ...
     @typing.overload
     def clone(self, layer: typing.Optional['QgsMapLayer']) -> None: ...
+    LayerType: typing.Type[Qgis.LayerType]
+    VectorLayer: Qgis.LayerType
+    RasterLayer: Qgis.LayerType
+    PluginLayer: Qgis.LayerType
+    MeshLayer: Qgis.LayerType
+    VectorTileLayer: Qgis.LayerType
+    AnnotationLayer: Qgis.LayerType
+    PointCloudLayer: Qgis.LayerType
+    GroupLayer: Qgis.LayerType
+    TiledScene: Qgis.LayerType
 
 
 class QgsExpressionContextGenerator(PyQt5.sip.wrapper):
@@ -5409,6 +5470,14 @@ class QgsFeatureSource(PyQt5.sip.wrapper):
     def sourceCrs(self) -> 'QgsCoordinateReferenceSystem': ...
     def sourceName(self) -> str: ...
     def getFeatures(self, request: 'QgsFeatureRequest' = ...) -> 'QgsFeatureIterator': ...
+    SpatialIndexPresence: typing.Type[Qgis.SpatialIndexPresence]
+    SpatialIndexUnknown: Qgis.SpatialIndexPresence
+    SpatialIndexNotPresent: Qgis.SpatialIndexPresence
+    SpatialIndexPresent: Qgis.SpatialIndexPresence
+    FeatureAvailability: typing.Type[Qgis.FeatureAvailability]
+    NoFeaturesAvailable: Qgis.FeatureAvailability
+    FeaturesAvailable: Qgis.FeatureAvailability
+    FeaturesMaybeAvailable: Qgis.FeatureAvailability
 
 
 class QgsAbstractProfileSource(PyQt5.sip.wrapper):
@@ -5746,6 +5815,21 @@ class QgsVectorLayer(QgsMapLayer, QgsExpressionContextGenerator, QgsExpressionCo
     def storageType(self) -> str: ...
     def clone(self) -> typing.Optional['QgsVectorLayer']: ...
     def __repr__(self) -> typing.Any: ...
+    SelectBehavior: typing.Type[Qgis.SelectBehavior]
+    SetSelection: Qgis.SelectBehavior
+    AddToSelection: Qgis.SelectBehavior
+    IntersectSelection: Qgis.SelectBehavior
+    RemoveFromSelection: Qgis.SelectBehavior
+    EditResult: typing.Type[Qgis.VectorEditResult]
+    Success: Qgis.VectorEditResult
+    EmptyGeometry: Qgis.VectorEditResult
+    EditFailed: Qgis.VectorEditResult
+    FetchFeatureFailed: Qgis.VectorEditResult
+    InvalidLayer: Qgis.VectorEditResult
+    VertexMarkerType: typing.Type[Qgis.VertexMarkerType]
+    SemiTransparentCircle: Qgis.VertexMarkerType
+    Cross: Qgis.VertexMarkerType
+    NoMarker: Qgis.VertexMarkerType
 
 
 class QgsAuxiliaryLayer(QgsVectorLayer):
@@ -5913,6 +5997,12 @@ class QgsBookmarkManagerModel(QtCore.QAbstractTableModel):
     def data(self, index: QtCore.QModelIndex, role: int = ...) -> typing.Any: ...
     def columnCount(self, parent: QtCore.QModelIndex = ...) -> int: ...
     def rowCount(self, parent: QtCore.QModelIndex = ...) -> int: ...
+    CustomRoles: typing.Type[QgsBookmarkManagerModel.CustomRole]
+    RoleExtent: QgsBookmarkManagerModel.CustomRole
+    RoleName: QgsBookmarkManagerModel.CustomRole
+    RoleId: QgsBookmarkManagerModel.CustomRole
+    RoleGroup: QgsBookmarkManagerModel.CustomRole
+    RoleRotation: QgsBookmarkManagerModel.CustomRole
 
 
 class QgsBookmarkManagerProxyModel(QtCore.QSortFilterProxyModel):
@@ -6672,6 +6762,7 @@ class QgsTask(QtCore.QObject):
     def canCancel(self) -> bool: ...
     def setDescription(self, description: typing.Optional[str]) -> None: ...
     def flags(self) -> 'QgsTask.Flags': ...
+    fromFunction: typing.Type[_fromFunction]
 
 
 class QgsCopyFileTask(QgsTask):
@@ -6756,6 +6847,8 @@ class QgsDatabaseSchemaModel(QtCore.QAbstractItemModel):
     def columnCount(self, parent: QtCore.QModelIndex = ...) -> int: ...
     def rowCount(self, parent: QtCore.QModelIndex = ...) -> int: ...
     def parent(self, child: QtCore.QModelIndex) -> QtCore.QModelIndex: ...
+    Role: typing.Type[QgsDatabaseSchemaModel.CustomRole]
+    RoleEmpty: QgsDatabaseSchemaModel.CustomRole
 
 
 class QgsDatabaseTableModel(QtCore.QAbstractItemModel):
@@ -6783,6 +6876,15 @@ class QgsDatabaseTableModel(QtCore.QAbstractItemModel):
     def columnCount(self, parent: QtCore.QModelIndex = ...) -> int: ...
     def rowCount(self, parent: QtCore.QModelIndex = ...) -> int: ...
     def parent(self, child: QtCore.QModelIndex) -> QtCore.QModelIndex: ...
+    Role: typing.Type[QgsDatabaseTableModel.CustomRole]
+    RoleTableName: QgsDatabaseTableModel.CustomRole
+    RoleSchema: QgsDatabaseTableModel.CustomRole
+    RoleTableFlags: QgsDatabaseTableModel.CustomRole
+    RoleComment: QgsDatabaseTableModel.CustomRole
+    RoleCustomInfo: QgsDatabaseTableModel.CustomRole
+    RoleWkbType: QgsDatabaseTableModel.CustomRole
+    RoleCrs: QgsDatabaseTableModel.CustomRole
+    RoleEmpty: QgsDatabaseTableModel.CustomRole
 
 
 class QgsDataDefinedSizeLegend(PyQt5.sip.wrapper):
@@ -6971,6 +7073,15 @@ class QgsDateTimeStatisticalSummary(PyQt5.sip.wrapper):
     def reset(self) -> None: ...
     def setStatistics(self, stats: typing.Union[Qgis.DateTimeStatistics, Qgis.DateTimeStatistic]) -> None: ...
     def statistics(self) -> Qgis.DateTimeStatistics: ...
+    Statistic: typing.Type[Qgis.DateTimeStatistic]
+    Count: Qgis.DateTimeStatistic
+    CountDistinct: Qgis.DateTimeStatistic
+    CountMissing: Qgis.DateTimeStatistic
+    Min: Qgis.DateTimeStatistic
+    Max: Qgis.DateTimeStatistic
+    Range: Qgis.DateTimeStatistic
+    All: Qgis.DateTimeStatistic
+    Statistics: typing.Type[Qgis.DateTimeStatistics]
 
 
 @deprecated("")
@@ -7118,6 +7229,18 @@ class QgsDiagramLayerSettings(PyQt5.sip.wrapper):
     def placement(self) -> 'QgsDiagramLayerSettings.Placement': ...
     @staticmethod
     def propertyDefinitions() -> dict[int, 'QgsPropertyDefinition']: ...
+    BackgroundColor: QgsDiagramLayerSettings.Property
+    StrokeColor: QgsDiagramLayerSettings.Property
+    StrokeWidth: QgsDiagramLayerSettings.Property
+    PositionX: QgsDiagramLayerSettings.Property
+    PositionY: QgsDiagramLayerSettings.Property
+    Distance: QgsDiagramLayerSettings.Property
+    Priority: QgsDiagramLayerSettings.Property
+    ZIndex: QgsDiagramLayerSettings.Property
+    IsObstacle: QgsDiagramLayerSettings.Property
+    Show: QgsDiagramLayerSettings.Property
+    AlwaysShow: QgsDiagramLayerSettings.Property
+    StartAngle: QgsDiagramLayerSettings.Property
 
 
 class QgsDiagramSettings(PyQt5.sip.wrapper):
@@ -7852,6 +7975,12 @@ class QgsFeaturePickerModelBase(QtCore.QAbstractItemModel):
     def displayExpression(self) -> str: ...
     def setSourceLayer(self, sourceLayer: typing.Optional[QgsVectorLayer]) -> None: ...
     def sourceLayer(self) -> typing.Optional[QgsVectorLayer]: ...
+    Role: typing.Type[QgsFeaturePickerModelBase.CustomRole]
+    IdentifierValueRole: QgsFeaturePickerModelBase.CustomRole
+    IdentifierValuesRole: QgsFeaturePickerModelBase.CustomRole
+    ValueRole: QgsFeaturePickerModelBase.CustomRole
+    FeatureRole: QgsFeaturePickerModelBase.CustomRole
+    FeatureIdRole: QgsFeaturePickerModelBase.CustomRole
 
 
 class QgsFeaturePickerModel(QgsFeaturePickerModelBase):
@@ -8027,6 +8156,23 @@ class QgsFeatureRequest(PyQt5.sip.wrapper):
     def spatialFilterType(self) -> Qgis.SpatialFilterType: ...
     def filterType(self) -> Qgis.FeatureRequestFilterType: ...
     def compare(self, other: 'QgsFeatureRequest') -> bool: ...
+    Flag: typing.Type[Qgis.FeatureRequestFlag]
+    NoFlags: Qgis.FeatureRequestFlag
+    NoGeometry: Qgis.FeatureRequestFlag
+    SubsetOfAttributes: Qgis.FeatureRequestFlag
+    ExactIntersect: Qgis.FeatureRequestFlag
+    IgnoreStaticNodesDuringExpressionCompilation: Qgis.FeatureRequestFlag
+    EmbeddedSymbols: Qgis.FeatureRequestFlag
+    Flags: typing.Type[Qgis.FeatureRequestFlags]
+    FilterType: typing.Type[Qgis.FeatureRequestFilterType]
+    FilterNone: Qgis.FeatureRequestFilterType
+    FilterFid: Qgis.FeatureRequestFilterType
+    FilterExpression: Qgis.FeatureRequestFilterType
+    FilterFids: Qgis.FeatureRequestFilterType
+    InvalidGeometryCheck: typing.Type[Qgis.InvalidGeometryCheck]
+    GeometryNoCheck: Qgis.InvalidGeometryCheck
+    GeometrySkipInvalid: Qgis.InvalidGeometryCheck
+    GeometryAbortOnInvalid: Qgis.InvalidGeometryCheck
 
 
 class QgsAbstractFeatureSource(PyQt5.sip.wrapper):
@@ -8320,6 +8466,18 @@ class QgsFieldModel(QtCore.QAbstractItemModel):
     def allowExpression(self) -> bool: ...
     def setAllowExpression(self, allowExpression: bool) -> None: ...
     def indexFromName(self, fieldName: typing.Optional[str]) -> QtCore.QModelIndex: ...
+    FieldRoles: typing.Type[QgsFieldModel.CustomRole]
+    FieldNameRole: QgsFieldModel.CustomRole
+    FieldIndexRole: QgsFieldModel.CustomRole
+    ExpressionRole: QgsFieldModel.CustomRole
+    IsExpressionRole: QgsFieldModel.CustomRole
+    ExpressionValidityRole: QgsFieldModel.CustomRole
+    FieldTypeRole: QgsFieldModel.CustomRole
+    FieldOriginRole: QgsFieldModel.CustomRole
+    IsEmptyRole: QgsFieldModel.CustomRole
+    EditorWidgetType: QgsFieldModel.CustomRole
+    JoinedFieldIsEditable: QgsFieldModel.CustomRole
+    FieldIsWidgetEditable: QgsFieldModel.CustomRole
 
 
 class QgsFieldProxyModel(QtCore.QSortFilterProxyModel):
@@ -8425,6 +8583,12 @@ class QgsFields(PyQt5.sip.wrapper):
     @typing.overload
     def append(self, fields: 'QgsFields') -> bool: ...
     def clear(self) -> None: ...
+    FieldOrigin: typing.Type[Qgis.FieldOrigin]
+    OriginUnknown: Qgis.FieldOrigin
+    OriginProvider: Qgis.FieldOrigin
+    OriginJoin: Qgis.FieldOrigin
+    OriginEdit: Qgis.FieldOrigin
+    OriginExpression: Qgis.FieldOrigin
 
 
 class QgsFileFilterGenerator(PyQt5.sip.wrapper):
@@ -9094,6 +9258,14 @@ class QgsLegendStyle(PyQt5.sip.wrapper):
     def setFont(self, font: QtGui.QFont) -> None: ...
     @deprecated("""""")
     def font(self) -> QtGui.QFont: ...
+    Style: typing.Type[Qgis.LegendComponent]
+    Undefined: Qgis.LegendComponent
+    Hidden: Qgis.LegendComponent
+    Title: Qgis.LegendComponent
+    Group: Qgis.LegendComponent
+    Subgroup: Qgis.LegendComponent
+    Symbol: Qgis.LegendComponent
+    SymbolLabel: Qgis.LegendComponent
 
 
 class QgsLocalDefaultSettings(PyQt5.sip.wrapper):
@@ -9437,6 +9609,11 @@ class QgsMapLayerModel(QtCore.QAbstractItemModel):
     def setItemsCanBeReordered(self, allow: bool) -> None: ...
     def setProject(self, project: typing.Optional['QgsProject']) -> None: ...
     def setItemsCheckable(self, checkable: bool) -> None: ...
+    ItemDataRole: typing.Type[QgsMapLayerModel.CustomRole]
+    LayerIdRole: QgsMapLayerModel.CustomRole
+    LayerRole: QgsMapLayerModel.CustomRole
+    EmptyRole: QgsMapLayerModel.CustomRole
+    AdditionalRole: QgsMapLayerModel.CustomRole
 
 
 class QgsMapLayerProxyModel(QtCore.QSortFilterProxyModel):
@@ -9470,6 +9647,23 @@ class QgsMapLayerProxyModel(QtCore.QSortFilterProxyModel):
     @deprecated("""""")
     def setFilters(self, filters: int) -> None: ...
     def sourceLayerModel(self) -> typing.Optional[QgsMapLayerModel]: ...
+    Filter: typing.Type[Qgis.LayerFilter]
+    RasterLayer: Qgis.LayerFilter
+    NoGeometry: Qgis.LayerFilter
+    PointLayer: Qgis.LayerFilter
+    LineLayer: Qgis.LayerFilter
+    PolygonLayer: Qgis.LayerFilter
+    HasGeometry: Qgis.LayerFilter
+    VectorLayer: Qgis.LayerFilter
+    PluginLayer: Qgis.LayerFilter
+    WritableLayer: Qgis.LayerFilter
+    MeshLayer: Qgis.LayerFilter
+    VectorTileLayer: Qgis.LayerFilter
+    PointCloudLayer: Qgis.LayerFilter
+    AnnotationLayer: Qgis.LayerFilter
+    TiledSceneLayer: Qgis.LayerFilter
+    All: Qgis.LayerFilter
+    SpatialLayer: Qgis.LayerFilter
 
 
 class QgsMapLayerRenderer(PyQt5.sip.wrapper):
@@ -9770,6 +9964,10 @@ class QgsMapLayerElevationProperties(QtCore.QObject):
     def readXml(self, element: QtXml.QDomElement, context: 'QgsReadWriteContext') -> bool: ...
     def writeXml(self, element: QtXml.QDomElement, doc: QtXml.QDomDocument, context: 'QgsReadWriteContext') -> QtXml.QDomElement: ...
     def hasElevation(self) -> bool: ...
+    ZOffset: QgsMapLayerElevationProperties.Property
+    ExtrusionHeight: QgsMapLayerElevationProperties.Property
+    RasterPerBandLowerElevation: QgsMapLayerElevationProperties.Property
+    RasterPerBandUpperElevation: QgsMapLayerElevationProperties.Property
 
 
 class QgsMapLayerSelectionProperties(QtCore.QObject):
@@ -9991,6 +10189,27 @@ class QgsMapSettings(QgsTemporalRangeObject):
     def extentBuffer(self) -> float: ...
     def setExtent(self, rect: 'QgsRectangle', magnified: bool = ...) -> None: ...
     def extent(self) -> 'QgsRectangle': ...
+    Flag: typing.Type[Qgis.MapSettingsFlag]
+    Antialiasing: Qgis.MapSettingsFlag
+    DrawEditingInfo: Qgis.MapSettingsFlag
+    ForceVectorOutput: Qgis.MapSettingsFlag
+    UseAdvancedEffects: Qgis.MapSettingsFlag
+    DrawLabeling: Qgis.MapSettingsFlag
+    UseRenderingOptimization: Qgis.MapSettingsFlag
+    DrawSelection: Qgis.MapSettingsFlag
+    DrawSymbolBounds: Qgis.MapSettingsFlag
+    RenderMapTile: Qgis.MapSettingsFlag
+    RenderPartialOutput: Qgis.MapSettingsFlag
+    RenderPreviewJob: Qgis.MapSettingsFlag
+    RenderBlocking: Qgis.MapSettingsFlag
+    LosslessImageRendering: Qgis.MapSettingsFlag
+    Render3DMap: Qgis.MapSettingsFlag
+    HighQualityImageTransforms: Qgis.MapSettingsFlag
+    SkipSymbolRendering: Qgis.MapSettingsFlag
+    ForceRasterMasks: Qgis.MapSettingsFlag
+    RecordProfile: Qgis.MapSettingsFlag
+    AlwaysUseGlobalMasks: Qgis.MapSettingsFlag
+    Flags: typing.Type[Qgis.MapSettingsFlags]
 
 
 class QgsMapSettingsUtils(PyQt5.sip.wrapper):
@@ -10184,6 +10403,10 @@ class QgsMapToPixelSimplifier(QgsAbstractGeometrySimplifier):
     def equalSnapToGrid(x1: float, y1: float, x2: float, y2: float, gridOriginX: float, gridOriginY: float, gridInverseSizeXY: float) -> bool: ...
     @staticmethod
     def calculateLengthSquared2D(x1: float, y1: float, x2: float, y2: float) -> float: ...
+    Distance: Qgis.VectorSimplificationAlgorithm
+    SnapToGrid: Qgis.VectorSimplificationAlgorithm
+    Visvalingam: Qgis.VectorSimplificationAlgorithm
+    SnappedToGridGlobal: Qgis.VectorSimplificationAlgorithm
 
 
 class QgsMapUnitScale(PyQt5.sip.wrapper):
@@ -10966,6 +11189,11 @@ class QgsProperty(PyQt5.sip.wrapper):
     def variantMapToPropertyMap(variantMap: dict[str, typing.Any]) -> dict[str, 'QgsProperty']: ...
     @staticmethod
     def propertyMapToVariantMap(propertyMap: dict[typing.Optional[str], 'QgsProperty']) -> dict[str, typing.Any]: ...
+    Type: typing.Type[Qgis.PropertyType]
+    InvalidProperty: Qgis.PropertyType
+    StaticProperty: Qgis.PropertyType
+    FieldBasedProperty: Qgis.PropertyType
+    ExpressionBasedProperty: Qgis.PropertyType
 
 
 class QgsAbstractPropertyCollection(PyQt5.sip.wrapper):
@@ -11205,6 +11433,11 @@ class QgsProviderConnectionModel(QtCore.QAbstractItemModel):
     def parent(self, child: QtCore.QModelIndex) -> QtCore.QModelIndex: ...
     def allowEmptyConnection(self) -> bool: ...
     def setAllowEmptyConnection(self, allowEmpty: bool) -> None: ...
+    Role: typing.Type[QgsProviderConnectionModel.CustomRole]
+    RoleConnectionName: QgsProviderConnectionModel.CustomRole
+    RoleUri: QgsProviderConnectionModel.CustomRole
+    RoleConfiguration: QgsProviderConnectionModel.CustomRole
+    RoleEmpty: QgsProviderConnectionModel.CustomRole
 
 
 class QgsProxyFeatureSink(QgsFeatureSink):
@@ -11447,6 +11680,7 @@ class QgsReadWriteContext(PyQt5.sip.wrapper):
     def pushMessage(self, message: typing.Optional[str], level: Qgis.MessageLevel = ...) -> None: ...
     def setPathResolver(self, resolver: QgsPathResolver) -> None: ...
     def pathResolver(self) -> QgsPathResolver: ...
+    enterCategory: typing.Type[ReadWriteContextEnterCategory]
 
 
 class QgsReadWriteContextCategoryPopper(PyQt5.sip.wrapper):
@@ -11535,6 +11769,12 @@ class QgsRelation(PyQt5.sip.wrapper):
     def writeXml(self, node: QtXml.QDomNode, doc: QtXml.QDomDocument) -> None: ...
     @staticmethod
     def createFromXml(node: QtXml.QDomNode, context: QgsReadWriteContext, relationContext: 'QgsRelationContext' = ...) -> 'QgsRelation': ...
+    RelationType: typing.Type[Qgis.RelationshipType]
+    Normal: Qgis.RelationshipType
+    Generated: Qgis.RelationshipType
+    RelationStrength: typing.Type[Qgis.RelationshipStrength]
+    Association: Qgis.RelationshipStrength
+    Composition: Qgis.RelationshipStrength
 
 
 class QgsPolymorphicRelation(PyQt5.sip.wrapper):
@@ -11926,6 +12166,35 @@ class QgsRenderContext(QgsTemporalRangeObject):
     def flags(self) -> Qgis.RenderContextFlags: ...
     def setFlag(self, flag: Qgis.RenderContextFlag, on: bool = ...) -> None: ...
     def setFlags(self, flags: typing.Union[Qgis.RenderContextFlags, Qgis.RenderContextFlag]) -> None: ...
+    Flag: typing.Type[Qgis.RenderContextFlag]
+    DrawEditingInfo: Qgis.RenderContextFlag
+    ForceVectorOutput: Qgis.RenderContextFlag
+    UseAdvancedEffects: Qgis.RenderContextFlag
+    UseRenderingOptimization: Qgis.RenderContextFlag
+    DrawSelection: Qgis.RenderContextFlag
+    DrawSymbolBounds: Qgis.RenderContextFlag
+    RenderMapTile: Qgis.RenderContextFlag
+    Antialiasing: Qgis.RenderContextFlag
+    RenderPartialOutput: Qgis.RenderContextFlag
+    RenderPreviewJob: Qgis.RenderContextFlag
+    RenderBlocking: Qgis.RenderContextFlag
+    RenderSymbolPreview: Qgis.RenderContextFlag
+    LosslessImageRendering: Qgis.RenderContextFlag
+    ApplyScalingWorkaroundForTextRendering: Qgis.RenderContextFlag
+    Render3DMap: Qgis.RenderContextFlag
+    ApplyClipAfterReprojection: Qgis.RenderContextFlag
+    RenderingSubSymbol: Qgis.RenderContextFlag
+    HighQualityImageTransforms: Qgis.RenderContextFlag
+    SkipSymbolRendering: Qgis.RenderContextFlag
+    RecordProfile: Qgis.RenderContextFlag
+    AlwaysUseGlobalMasks: Qgis.RenderContextFlag
+    DisableSymbolClippingToExtent: Qgis.RenderContextFlag
+    RenderLayerTree: Qgis.RenderContextFlag
+    Flags: typing.Type[Qgis.RenderContextFlags]
+    TextRenderFormat: typing.Type[Qgis.TextRenderFormat]
+    TextFormatAlwaysOutlines: Qgis.TextRenderFormat
+    TextFormatAlwaysText: Qgis.TextRenderFormat
+    PreferText: Qgis.TextRenderFormat
 
 
 class QgsRenderedFeatureHandlerInterface(PyQt5.sip.wrapper):
@@ -12039,6 +12308,7 @@ class QgsRuntimeProfiler(QtCore.QAbstractItemModel):
     def endGroup(self) -> None: ...
     @deprecated("""""")
     def beginGroup(self, name: typing.Optional[str]) -> None: ...
+    profile: typing.Type[ScopedRuntimeProfileContextManager]
 
 
 class QgsScopedRuntimeProfile(PyQt5.sip.wrapper):
@@ -12291,6 +12561,19 @@ class QgsSnappingConfig(PyQt5.sip.wrapper):
     def snappingTypeFlagToString(type: Qgis.SnappingType) -> str: ...
     @staticmethod
     def snappingTypeToString(type: Qgis.SnappingType) -> str: ...
+    SnappingMode: typing.Type[Qgis.SnappingMode]
+    ActiveLayer: Qgis.SnappingMode
+    AllLayers: Qgis.SnappingMode
+    AdvancedConfiguration: Qgis.SnappingMode
+    SnappingTypes: typing.Type[Qgis.SnappingType]
+    NoSnapFlag: Qgis.SnappingType
+    VertexFlag: Qgis.SnappingType
+    SegmentFlag: Qgis.SnappingType
+    AreaFlag: Qgis.SnappingType
+    CentroidFlag: Qgis.SnappingType
+    MiddleOfSegmentFlag: Qgis.SnappingType
+    LineEndpointFlag: Qgis.SnappingType
+    SnappingTypeFlag: typing.Type[Qgis.SnappingTypes]
 
 
 class QgsSnappingUtils(QtCore.QObject):
@@ -12861,6 +13144,27 @@ class QgsStatisticalSummary(PyQt5.sip.wrapper):
     def reset(self) -> None: ...
     def setStatistics(self, stats: typing.Union[Qgis.Statistics, Qgis.Statistic]) -> None: ...
     def statistics(self) -> Qgis.Statistics: ...
+    Statistic: typing.Type[Qgis.Statistic]
+    Count: Qgis.Statistic
+    CountMissing: Qgis.Statistic
+    Sum: Qgis.Statistic
+    Mean: Qgis.Statistic
+    Median: Qgis.Statistic
+    StDev: Qgis.Statistic
+    StDevSample: Qgis.Statistic
+    Min: Qgis.Statistic
+    Max: Qgis.Statistic
+    Range: Qgis.Statistic
+    Minority: Qgis.Statistic
+    Majority: Qgis.Statistic
+    Variety: Qgis.Statistic
+    FirstQuartile: Qgis.Statistic
+    ThirdQuartile: Qgis.Statistic
+    InterQuartileRange: Qgis.Statistic
+    First: Qgis.Statistic
+    Last: Qgis.Statistic
+    All: Qgis.Statistic
+    Statistics: typing.Type[Qgis.Statistics]
 
 
 class QgsStoredExpression(PyQt5.sip.wrapper):
@@ -12926,6 +13230,19 @@ class QgsStringStatisticalSummary(PyQt5.sip.wrapper):
     def reset(self) -> None: ...
     def setStatistics(self, stats: typing.Union[Qgis.StringStatistics, Qgis.StringStatistic]) -> None: ...
     def statistics(self) -> Qgis.StringStatistics: ...
+    Statistic: typing.Type[Qgis.StringStatistic]
+    Count: Qgis.StringStatistic
+    CountDistinct: Qgis.StringStatistic
+    CountMissing: Qgis.StringStatistic
+    Min: Qgis.StringStatistic
+    Max: Qgis.StringStatistic
+    MinimumLength: Qgis.StringStatistic
+    MaximumLength: Qgis.StringStatistic
+    MeanLength: Qgis.StringStatistic
+    Minority: Qgis.StringStatistic
+    Majority: Qgis.StringStatistic
+    All: Qgis.StringStatistic
+    Statistics: typing.Type[Qgis.StringStatistics]
 
 
 class QgsStringReplacement(PyQt5.sip.wrapper):
@@ -12998,6 +13315,15 @@ class QgsStringUtils(PyQt5.sip.wrapper):
     def ampersandEncode(string: typing.Optional[str]) -> str: ...
     @staticmethod
     def capitalize(string: typing.Optional[str], capitalization: Qgis.Capitalization) -> str: ...
+    Capitalization: typing.Type[Qgis.Capitalization]
+    MixedCase: Qgis.Capitalization
+    AllUppercase: Qgis.Capitalization
+    AllLowercase: Qgis.Capitalization
+    ForceFirstLetterToCapital: Qgis.Capitalization
+    SmallCaps: Qgis.Capitalization
+    TitleCase: Qgis.Capitalization
+    UpperCamelCase: Qgis.Capitalization
+    AllSmallCaps: Qgis.Capitalization
 
 
 class QgsTableCell(PyQt5.sip.wrapper):
@@ -13126,6 +13452,15 @@ class QgsTemporalNavigationObject(QgsTemporalController, QgsExpressionContextSco
     def setNavigationMode(self, mode: Qgis.TemporalNavigationMode) -> None: ...
     def animationState(self) -> Qgis.AnimationState: ...
     def setAnimationState(self, state: Qgis.AnimationState) -> None: ...
+    NavigationMode: typing.Type[Qgis.TemporalNavigationMode]
+    NavigationOff: Qgis.TemporalNavigationMode
+    Animated: Qgis.TemporalNavigationMode
+    FixedRange: Qgis.TemporalNavigationMode
+    Movie: Qgis.TemporalNavigationMode
+    AnimationState: typing.Type[Qgis.AnimationState]
+    Forward: Qgis.AnimationState
+    Reverse: Qgis.AnimationState
+    Idle: Qgis.AnimationState
 
 
 class QgsTemporalUtils(PyQt5.sip.wrapper):
@@ -13308,6 +13643,10 @@ class QgsTolerance(PyQt5.sip.wrapper):
     @typing.overload
     @staticmethod
     def vertexSearchRadius(layer: typing.Optional[QgsMapLayer], mapSettings: QgsMapSettings) -> float: ...
+    UnitType: typing.Type[Qgis.MapToolUnit]
+    LayerUnits: Qgis.MapToolUnit
+    Pixels: Qgis.MapToolUnit
+    ProjectUnits: Qgis.MapToolUnit
 
 
 class QgsTracer(QtCore.QObject):
@@ -13593,6 +13932,142 @@ class QgsUnitTypes(PyQt5.sip.wrapper):
     def decodeUnitType(string: typing.Optional[str]) -> typing.Tuple[Qgis.UnitType, typing.Optional[bool]]: ...
     @staticmethod
     def encodeUnitType(type: Qgis.UnitType) -> str: ...
+    SystemOfMeasurement: typing.Type[Qgis.SystemOfMeasurement]
+    UnknownSystem: Qgis.SystemOfMeasurement
+    MetricSystem: Qgis.SystemOfMeasurement
+    ImperialSystem: Qgis.SystemOfMeasurement
+    USCSSystem: Qgis.SystemOfMeasurement
+    UnitType: typing.Type[Qgis.UnitType]
+    TypeDistance: Qgis.UnitType
+    TypeArea: Qgis.UnitType
+    TypeVolume: Qgis.UnitType
+    TypeUnknown: Qgis.UnitType
+    TypeTemporal: Qgis.UnitType
+    DistanceUnit: typing.Type[Qgis.DistanceUnit]
+    DistanceMeters: Qgis.DistanceUnit
+    DistanceKilometers: Qgis.DistanceUnit
+    DistanceFeet: Qgis.DistanceUnit
+    DistanceNauticalMiles: Qgis.DistanceUnit
+    DistanceYards: Qgis.DistanceUnit
+    DistanceMiles: Qgis.DistanceUnit
+    DistanceDegrees: Qgis.DistanceUnit
+    DistanceCentimeters: Qgis.DistanceUnit
+    DistanceMillimeters: Qgis.DistanceUnit
+    Inches: Qgis.DistanceUnit
+    ChainsInternational: Qgis.DistanceUnit
+    ChainsBritishBenoit1895A: Qgis.DistanceUnit
+    ChainsBritishBenoit1895B: Qgis.DistanceUnit
+    ChainsBritishSears1922Truncated: Qgis.DistanceUnit
+    ChainsBritishSears1922: Qgis.DistanceUnit
+    ChainsClarkes: Qgis.DistanceUnit
+    ChainsUSSurvey: Qgis.DistanceUnit
+    FeetBritish1865: Qgis.DistanceUnit
+    FeetBritish1936: Qgis.DistanceUnit
+    FeetBritishBenoit1895A: Qgis.DistanceUnit
+    FeetBritishBenoit1895B: Qgis.DistanceUnit
+    FeetBritishSears1922Truncated: Qgis.DistanceUnit
+    FeetBritishSears1922: Qgis.DistanceUnit
+    FeetClarkes: Qgis.DistanceUnit
+    FeetGoldCoast: Qgis.DistanceUnit
+    FeetIndian: Qgis.DistanceUnit
+    FeetIndian1937: Qgis.DistanceUnit
+    FeetIndian1962: Qgis.DistanceUnit
+    FeetIndian1975: Qgis.DistanceUnit
+    FeetUSSurvey: Qgis.DistanceUnit
+    LinksInternational: Qgis.DistanceUnit
+    LinksBritishBenoit1895A: Qgis.DistanceUnit
+    LinksBritishBenoit1895B: Qgis.DistanceUnit
+    LinksBritishSears1922Truncated: Qgis.DistanceUnit
+    LinksBritishSears1922: Qgis.DistanceUnit
+    LinksClarkes: Qgis.DistanceUnit
+    LinksUSSurvey: Qgis.DistanceUnit
+    YardsBritishBenoit1895A: Qgis.DistanceUnit
+    YardsBritishBenoit1895B: Qgis.DistanceUnit
+    YardsBritishSears1922Truncated: Qgis.DistanceUnit
+    YardsBritishSears1922: Qgis.DistanceUnit
+    YardsClarkes: Qgis.DistanceUnit
+    YardsIndian: Qgis.DistanceUnit
+    YardsIndian1937: Qgis.DistanceUnit
+    YardsIndian1962: Qgis.DistanceUnit
+    YardsIndian1975: Qgis.DistanceUnit
+    MilesUSSurvey: Qgis.DistanceUnit
+    Fathoms: Qgis.DistanceUnit
+    MetersGermanLegal: Qgis.DistanceUnit
+    DistanceUnknownUnit: Qgis.DistanceUnit
+    DistanceUnitType: typing.Type[Qgis.DistanceUnitType]
+    Standard: Qgis.DistanceUnitType
+    Geographic: Qgis.DistanceUnitType
+    UnknownType: Qgis.DistanceUnitType
+    AreaUnit: typing.Type[Qgis.AreaUnit]
+    AreaSquareMeters: Qgis.AreaUnit
+    AreaSquareKilometers: Qgis.AreaUnit
+    AreaSquareFeet: Qgis.AreaUnit
+    AreaSquareYards: Qgis.AreaUnit
+    AreaSquareMiles: Qgis.AreaUnit
+    AreaHectares: Qgis.AreaUnit
+    AreaAcres: Qgis.AreaUnit
+    AreaSquareNauticalMiles: Qgis.AreaUnit
+    AreaSquareDegrees: Qgis.AreaUnit
+    AreaSquareCentimeters: Qgis.AreaUnit
+    AreaSquareMillimeters: Qgis.AreaUnit
+    SquareInches: Qgis.AreaUnit
+    AreaUnknownUnit: Qgis.AreaUnit
+    VolumeUnit: typing.Type[Qgis.VolumeUnit]
+    VolumeCubicMeters: Qgis.VolumeUnit
+    VolumeCubicFeet: Qgis.VolumeUnit
+    VolumeCubicYards: Qgis.VolumeUnit
+    VolumeBarrel: Qgis.VolumeUnit
+    VolumeCubicDecimeter: Qgis.VolumeUnit
+    VolumeLiters: Qgis.VolumeUnit
+    VolumeGallonUS: Qgis.VolumeUnit
+    VolumeCubicInch: Qgis.VolumeUnit
+    VolumeCubicCentimeter: Qgis.VolumeUnit
+    VolumeCubicDegrees: Qgis.VolumeUnit
+    VolumeUnknownUnit: Qgis.VolumeUnit
+    AngleUnit: typing.Type[Qgis.AngleUnit]
+    AngleDegrees: Qgis.AngleUnit
+    AngleRadians: Qgis.AngleUnit
+    AngleGon: Qgis.AngleUnit
+    AngleMinutesOfArc: Qgis.AngleUnit
+    AngleSecondsOfArc: Qgis.AngleUnit
+    AngleTurn: Qgis.AngleUnit
+    AngleMilliradiansSI: Qgis.AngleUnit
+    AngleMilNATO: Qgis.AngleUnit
+    AngleUnknownUnit: Qgis.AngleUnit
+    TemporalUnit: typing.Type[Qgis.TemporalUnit]
+    TemporalMilliseconds: Qgis.TemporalUnit
+    TemporalSeconds: Qgis.TemporalUnit
+    TemporalMinutes: Qgis.TemporalUnit
+    TemporalHours: Qgis.TemporalUnit
+    TemporalDays: Qgis.TemporalUnit
+    TemporalWeeks: Qgis.TemporalUnit
+    TemporalMonths: Qgis.TemporalUnit
+    TemporalYears: Qgis.TemporalUnit
+    TemporalDecades: Qgis.TemporalUnit
+    TemporalCenturies: Qgis.TemporalUnit
+    TemporalIrregularStep: Qgis.TemporalUnit
+    TemporalUnknownUnit: Qgis.TemporalUnit
+    RenderUnit: typing.Type[Qgis.RenderUnit]
+    RenderMillimeters: Qgis.RenderUnit
+    RenderMapUnits: Qgis.RenderUnit
+    RenderPixels: Qgis.RenderUnit
+    RenderPercentage: Qgis.RenderUnit
+    RenderPoints: Qgis.RenderUnit
+    RenderInches: Qgis.RenderUnit
+    RenderUnknownUnit: Qgis.RenderUnit
+    RenderMetersInMapUnits: Qgis.RenderUnit
+    LayoutUnit: typing.Type[Qgis.LayoutUnit]
+    LayoutMillimeters: Qgis.LayoutUnit
+    LayoutCentimeters: Qgis.LayoutUnit
+    LayoutMeters: Qgis.LayoutUnit
+    LayoutInches: Qgis.LayoutUnit
+    LayoutFeet: Qgis.LayoutUnit
+    LayoutPoints: Qgis.LayoutUnit
+    LayoutPicas: Qgis.LayoutUnit
+    LayoutPixels: Qgis.LayoutUnit
+    LayoutUnitType: typing.Type[Qgis.LayoutUnitType]
+    LayoutPaperUnits: Qgis.LayoutUnitType
+    LayoutScreenUnits: Qgis.LayoutUnitType
 
 
 class QgsUnsetAttributeValue(PyQt5.sip.wrapper):
@@ -14040,6 +14515,10 @@ class QgsVectorFileWriter(QgsFeatureSink):
     @staticmethod
     @deprecated("""""")
     def writeAsVectorFormat(layer: typing.Optional[QgsVectorLayer], fileName: typing.Optional[str], options: 'QgsVectorFileWriter.SaveVectorOptions', newFilename: typing.Optional[typing.Optional[str]] = ...) -> typing.Tuple['QgsVectorFileWriter.WriterError', typing.Optional[str]]: ...
+    SymbologyExport: typing.Type[Qgis.FeatureSymbologyExport]
+    NoSymbology: Qgis.FeatureSymbologyExport
+    FeatureSymbology: Qgis.FeatureSymbologyExport
+    SymbolLayerSymbology: Qgis.FeatureSymbologyExport
 
 
 class QgsVectorFileWriterTask(QgsTask):
@@ -14074,6 +14553,17 @@ class QgsVectorSimplifyMethod(PyQt5.sip.wrapper):
     def setSimplifyAlgorithm(self, simplifyAlgorithm: Qgis.VectorSimplificationAlgorithm) -> None: ...
     def simplifyHints(self) -> Qgis.VectorRenderingSimplificationFlags: ...
     def setSimplifyHints(self, simplifyHints: typing.Union[Qgis.VectorRenderingSimplificationFlags, Qgis.VectorRenderingSimplificationFlag]) -> None: ...
+    SimplifyAlgorithm: typing.Type[Qgis.VectorSimplificationAlgorithm]
+    Distance: Qgis.VectorSimplificationAlgorithm
+    SnapToGrid: Qgis.VectorSimplificationAlgorithm
+    Visvalingam: Qgis.VectorSimplificationAlgorithm
+    SnappedToGridGlobal: Qgis.VectorSimplificationAlgorithm
+    SimplifyHint: typing.Type[Qgis.VectorRenderingSimplificationFlag]
+    NoSimplification: Qgis.VectorRenderingSimplificationFlag
+    GeometrySimplification: Qgis.VectorRenderingSimplificationFlag
+    AntialiasingSimplification: Qgis.VectorRenderingSimplificationFlag
+    FullSimplification: Qgis.VectorRenderingSimplificationFlag
+    SimplifyHints: typing.Type[Qgis.VectorRenderingSimplificationFlags]
 
 
 class QgsVirtualLayerDefinition(PyQt5.sip.wrapper):
@@ -14266,6 +14756,8 @@ class QgsAbstract3DSymbol(PyQt5.sip.wrapper):
     def writeXml(self, elem: QtXml.QDomElement, context: QgsReadWriteContext) -> None: ...
     def clone(self) -> typing.Optional['QgsAbstract3DSymbol']: ...
     def type(self) -> str: ...
+    PropertyHeight: QgsAbstract3DSymbol.Property
+    PropertyExtrusionHeight: QgsAbstract3DSymbol.Property
 
 
 class QgsAbstract3DRenderer(PyQt5.sip.wrapper):
@@ -14324,6 +14816,15 @@ class QgsAction(PyQt5.sip.wrapper):
     def id(self) -> QtCore.QUuid: ...
     def shortTitle(self) -> str: ...
     def name(self) -> str: ...
+    ActionType: typing.Type[Qgis.AttributeActionType]
+    Generic: Qgis.AttributeActionType
+    GenericPython: Qgis.AttributeActionType
+    Mac: Qgis.AttributeActionType
+    Windows: Qgis.AttributeActionType
+    Unix: Qgis.AttributeActionType
+    OpenUrl: Qgis.AttributeActionType
+    SubmitUrlEncoded: Qgis.AttributeActionType
+    SubmitUrlMultipart: Qgis.AttributeActionType
 
 
 class QgsActionManager(QtCore.QObject):
@@ -15602,6 +16103,12 @@ class QgsBrowserModel(QtCore.QAbstractItemModel):
     def setData(self, index: QtCore.QModelIndex, value: typing.Any, role: int = ...) -> bool: ...
     def data(self, index: QtCore.QModelIndex, role: int = ...) -> typing.Any: ...
     def flags(self, index: QtCore.QModelIndex) -> QtCore.Qt.ItemFlags: ...
+    ItemDataRole: typing.Type[QgsBrowserModel.CustomRole]
+    PathRole: QgsBrowserModel.CustomRole
+    CommentRole: QgsBrowserModel.CustomRole
+    SortRole: QgsBrowserModel.CustomRole
+    ProviderKeyRole: QgsBrowserModel.CustomRole
+    LayerMetadataRole: QgsBrowserModel.CustomRole
 
 
 class QgsBrowserProxyModel(QtCore.QSortFilterProxyModel):
@@ -15718,6 +16225,32 @@ class QgsDataItem(QtCore.QObject):
     def layerCollection(self) -> bool: ...
     def hasChildren(self) -> bool: ...
     def __repr__(self) -> typing.Any: ...
+    Type: typing.Type[Qgis.BrowserItemType]
+    Collection: Qgis.BrowserItemType
+    Directory: Qgis.BrowserItemType
+    Layer: Qgis.BrowserItemType
+    Error: Qgis.BrowserItemType
+    Favorites: Qgis.BrowserItemType
+    Project: Qgis.BrowserItemType
+    Custom: Qgis.BrowserItemType
+    Fields: Qgis.BrowserItemType
+    Field: Qgis.BrowserItemType
+    State: typing.Type[Qgis.BrowserItemState]
+    NotPopulated: Qgis.BrowserItemState
+    Populating: Qgis.BrowserItemState
+    Populated: Qgis.BrowserItemState
+    Capability: typing.Type[Qgis.BrowserItemCapability]
+    NoCapabilities: Qgis.BrowserItemCapability
+    SetCrs: Qgis.BrowserItemCapability
+    Fertile: Qgis.BrowserItemCapability
+    Fast: Qgis.BrowserItemCapability
+    Collapse: Qgis.BrowserItemCapability
+    Rename: Qgis.BrowserItemCapability
+    Delete: Qgis.BrowserItemCapability
+    ItemRepresentsFile: Qgis.BrowserItemCapability
+    RefreshChildrenWhenItemIsRefreshed: Qgis.BrowserItemCapability
+    ReadOnly: Qgis.BrowserItemCapability
+    Capabilities: typing.Type[Qgis.BrowserItemCapabilities]
 
 
 class QgsDataCollectionItem(QgsDataItem):
@@ -15932,6 +16465,21 @@ class QgsLayerItem(QgsDataItem):
     def hasDragEnabled(self) -> bool: ...
     def equal(self, other: typing.Optional[QgsDataItem]) -> bool: ...
     def __repr__(self) -> typing.Any: ...
+    LayerType: typing.Type[Qgis.BrowserLayerType]
+    NoType: Qgis.BrowserLayerType
+    Vector: Qgis.BrowserLayerType
+    Raster: Qgis.BrowserLayerType
+    Point: Qgis.BrowserLayerType
+    Line: Qgis.BrowserLayerType
+    Polygon: Qgis.BrowserLayerType
+    TableLayer: Qgis.BrowserLayerType
+    Database: Qgis.BrowserLayerType
+    Table: Qgis.BrowserLayerType
+    Plugin: Qgis.BrowserLayerType
+    Mesh: Qgis.BrowserLayerType
+    VectorTile: Qgis.BrowserLayerType
+    PointCloud: Qgis.BrowserLayerType
+    TiledScene: Qgis.BrowserLayerType
 
 
 class QgsProjectItem(QgsDataItem):
@@ -16087,6 +16635,22 @@ class QgsCallout(PyQt5.sip.wrapper):
     def properties(self, context: QgsReadWriteContext) -> dict[str, typing.Any]: ...
     def clone(self) -> typing.Optional['QgsCallout']: ...
     def type(self) -> str: ...
+    MinimumCalloutLength: QgsCallout.Property
+    OffsetFromAnchor: QgsCallout.Property
+    OffsetFromLabel: QgsCallout.Property
+    DrawCalloutToAllParts: QgsCallout.Property
+    AnchorPointPosition: QgsCallout.Property
+    LabelAnchorPointPosition: QgsCallout.Property
+    OriginX: QgsCallout.Property
+    OriginY: QgsCallout.Property
+    DestinationX: QgsCallout.Property
+    DestinationY: QgsCallout.Property
+    Curvature: QgsCallout.Property
+    Orientation: QgsCallout.Property
+    Margins: QgsCallout.Property
+    WedgeWidth: QgsCallout.Property
+    CornerRadius: QgsCallout.Property
+    BlendMode: QgsCallout.Property
 
 
 class QgsSimpleLineCallout(QgsCallout):
@@ -16736,6 +17300,10 @@ class QgsDxfExport(PyQt5.sip.wrapper):
     def flags(self) -> 'QgsDxfExport.Flags': ...
     def setFlags(self, flags: typing.Union['QgsDxfExport.Flags', 'QgsDxfExport.Flag']) -> None: ...
     def setMapSettings(self, settings: QgsMapSettings) -> None: ...
+    SymbologyExport: typing.Type[Qgis.FeatureSymbologyExport]
+    NoSymbology: Qgis.FeatureSymbologyExport
+    FeatureSymbology: Qgis.FeatureSymbologyExport
+    SymbolLayerSymbology: Qgis.FeatureSymbologyExport
 
 
 class QgsEditFormConfig(PyQt5.sip.wrapper):
@@ -16815,6 +17383,23 @@ class QgsEditFormConfig(PyQt5.sip.wrapper):
     def tabs(self) -> list['QgsAttributeEditorElement']: ...
     def addTab(self, data: typing.Optional['QgsAttributeEditorElement']) -> None: ...
     def __eq__(self, other: object): ...
+    EditorLayout: typing.Type[Qgis.AttributeFormLayout]
+    GeneratedLayout: Qgis.AttributeFormLayout
+    TabLayout: Qgis.AttributeFormLayout
+    UiFileLayout: Qgis.AttributeFormLayout
+    FeatureFormSuppress: typing.Type[Qgis.AttributeFormSuppression]
+    SuppressDefault: Qgis.AttributeFormSuppression
+    SuppressOn: Qgis.AttributeFormSuppression
+    SuppressOff: Qgis.AttributeFormSuppression
+    PythonInitCodeSource: typing.Type[Qgis.AttributeFormPythonInitCodeSource]
+    CodeSourceNone: Qgis.AttributeFormPythonInitCodeSource
+    CodeSourceFile: Qgis.AttributeFormPythonInitCodeSource
+    CodeSourceDialog: Qgis.AttributeFormPythonInitCodeSource
+    CodeSourceEnvironment: Qgis.AttributeFormPythonInitCodeSource
+    NoProperty: QgsEditFormConfig.DataDefinedProperty
+    AllProperties: QgsEditFormConfig.DataDefinedProperty
+    Alias: QgsEditFormConfig.DataDefinedProperty
+    Editable: QgsEditFormConfig.DataDefinedProperty
 
 
 class QgsAttributeEditorElement(PyQt5.sip.wrapper):
@@ -16851,6 +17436,16 @@ class QgsAttributeEditorElement(PyQt5.sip.wrapper):
     def name(self) -> str: ...
     @staticmethod
     def create(element: QtXml.QDomElement, layerId: typing.Optional[str], fields: QgsFields, context: QgsReadWriteContext, parent: typing.Optional['QgsAttributeEditorElement'] = ...) -> typing.Optional['QgsAttributeEditorElement']: ...
+    AttributeEditorType: typing.Type[Qgis.AttributeEditorType]
+    AeTypeContainer: Qgis.AttributeEditorType
+    AeTypeField: Qgis.AttributeEditorType
+    AeTypeRelation: Qgis.AttributeEditorType
+    AeTypeQmlElement: Qgis.AttributeEditorType
+    AeTypeHtmlElement: Qgis.AttributeEditorType
+    AeTypeAction: Qgis.AttributeEditorType
+    AeTypeTextElement: Qgis.AttributeEditorType
+    AeTypeSpacerElement: Qgis.AttributeEditorType
+    AeTypeInvalid: Qgis.AttributeEditorType
 
 
 class QgsAttributeEditorAction(QgsAttributeEditorElement):
@@ -19068,6 +19663,10 @@ class QgsCurve(QgsAbstractGeometry):
     def __ne__(self, other: object): ...
     def __eq__(self, other: object): ...
     def equals(self, other: 'QgsCurve') -> bool: ...
+    Orientation: typing.Type[Qgis.AngularDirection]
+    Clockwise: Qgis.AngularDirection
+    CounterClockwise: Qgis.AngularDirection
+    NoOrientation: Qgis.AngularDirection
 
 
 class QgsCircularString(QgsCurve):
@@ -19609,6 +20208,40 @@ class QgsGeometry(PyQt5.sip.wrapper):
     def set(self, geometry: typing.Optional[QgsAbstractGeometry]) -> None: ...
     def get(self) -> typing.Optional[QgsAbstractGeometry]: ...
     def constGet(self) -> typing.Optional[QgsAbstractGeometry]: ...
+    OperationResult: typing.Type[Qgis.GeometryOperationResult]
+    Success: Qgis.GeometryOperationResult
+    NothingHappened: Qgis.GeometryOperationResult
+    InvalidBaseGeometry: Qgis.GeometryOperationResult
+    InvalidInputGeometryType: Qgis.GeometryOperationResult
+    SelectionIsEmpty: Qgis.GeometryOperationResult
+    SelectionIsGreaterThanOne: Qgis.GeometryOperationResult
+    GeometryEngineError: Qgis.GeometryOperationResult
+    LayerNotEditable: Qgis.GeometryOperationResult
+    AddPartSelectedGeometryNotFound: Qgis.GeometryOperationResult
+    AddPartNotMultiGeometry: Qgis.GeometryOperationResult
+    AddRingNotClosed: Qgis.GeometryOperationResult
+    AddRingNotValid: Qgis.GeometryOperationResult
+    AddRingCrossesExistingRings: Qgis.GeometryOperationResult
+    AddRingNotInExistingFeature: Qgis.GeometryOperationResult
+    SplitCannotSplitPoint: Qgis.GeometryOperationResult
+    GeometryTypeHasChanged: Qgis.GeometryOperationResult
+    ValidityFlag: typing.Type[Qgis.GeometryValidityFlag]
+    FlagAllowSelfTouchingHoles: Qgis.GeometryValidityFlag
+    ValidityFlags: typing.Type[Qgis.GeometryValidityFlags]
+    ValidationMethod: typing.Type[Qgis.GeometryValidationEngine]
+    ValidatorQgisInternal: Qgis.GeometryValidationEngine
+    ValidatorGeos: Qgis.GeometryValidationEngine
+    BufferSide: typing.Type[Qgis.BufferSide]
+    SideLeft: Qgis.BufferSide
+    SideRight: Qgis.BufferSide
+    EndCapStyle: typing.Type[Qgis.EndCapStyle]
+    CapRound: Qgis.EndCapStyle
+    CapFlat: Qgis.EndCapStyle
+    CapSquare: Qgis.EndCapStyle
+    JoinStyle: typing.Type[Qgis.JoinStyle]
+    JoinStyleRound: Qgis.JoinStyle
+    JoinStyleMiter: Qgis.JoinStyle
+    JoinStyleBevel: Qgis.JoinStyle
 
 
 class QgsGeometryCollection(QgsAbstractGeometry):
@@ -21019,6 +21652,9 @@ class QgsVertexId(PyQt5.sip.wrapper):
     def isValid(self) -> bool: ...
     @typing.overload
     def isValid(self, geom: typing.Optional[QgsAbstractGeometry]) -> bool: ...
+    VertexType: typing.Type[Qgis.VertexType]
+    SegmentVertex: Qgis.VertexType
+    CurveVertex: Qgis.VertexType
 
 
 class QgsWkbPtr(PyQt5.sip.wrapper):
@@ -21094,6 +21730,81 @@ class QgsWkbTypes(PyQt5.sip.wrapper):
     def multiType(type: Qgis.WkbType) -> Qgis.WkbType: ...
     @staticmethod
     def singleType(type: Qgis.WkbType) -> Qgis.WkbType: ...
+    Type: typing.Type[Qgis.WkbType]
+    Unknown: Qgis.WkbType
+    Point: Qgis.WkbType
+    LineString: Qgis.WkbType
+    Polygon: Qgis.WkbType
+    Triangle: Qgis.WkbType
+    MultiPoint: Qgis.WkbType
+    MultiLineString: Qgis.WkbType
+    MultiPolygon: Qgis.WkbType
+    GeometryCollection: Qgis.WkbType
+    CircularString: Qgis.WkbType
+    CompoundCurve: Qgis.WkbType
+    CurvePolygon: Qgis.WkbType
+    MultiCurve: Qgis.WkbType
+    MultiSurface: Qgis.WkbType
+    PolyhedralSurface: Qgis.WkbType
+    TIN: Qgis.WkbType
+    NoGeometry: Qgis.WkbType
+    PointZ: Qgis.WkbType
+    LineStringZ: Qgis.WkbType
+    PolygonZ: Qgis.WkbType
+    TriangleZ: Qgis.WkbType
+    MultiPointZ: Qgis.WkbType
+    MultiLineStringZ: Qgis.WkbType
+    MultiPolygonZ: Qgis.WkbType
+    GeometryCollectionZ: Qgis.WkbType
+    CircularStringZ: Qgis.WkbType
+    CompoundCurveZ: Qgis.WkbType
+    CurvePolygonZ: Qgis.WkbType
+    MultiCurveZ: Qgis.WkbType
+    MultiSurfaceZ: Qgis.WkbType
+    PolyhedralSurfaceZ: Qgis.WkbType
+    TINZ: Qgis.WkbType
+    PointM: Qgis.WkbType
+    LineStringM: Qgis.WkbType
+    PolygonM: Qgis.WkbType
+    TriangleM: Qgis.WkbType
+    MultiPointM: Qgis.WkbType
+    MultiLineStringM: Qgis.WkbType
+    MultiPolygonM: Qgis.WkbType
+    GeometryCollectionM: Qgis.WkbType
+    CircularStringM: Qgis.WkbType
+    CompoundCurveM: Qgis.WkbType
+    CurvePolygonM: Qgis.WkbType
+    MultiCurveM: Qgis.WkbType
+    MultiSurfaceM: Qgis.WkbType
+    PolyhedralSurfaceM: Qgis.WkbType
+    TINM: Qgis.WkbType
+    PointZM: Qgis.WkbType
+    LineStringZM: Qgis.WkbType
+    PolygonZM: Qgis.WkbType
+    MultiPointZM: Qgis.WkbType
+    MultiLineStringZM: Qgis.WkbType
+    MultiPolygonZM: Qgis.WkbType
+    GeometryCollectionZM: Qgis.WkbType
+    CircularStringZM: Qgis.WkbType
+    CompoundCurveZM: Qgis.WkbType
+    CurvePolygonZM: Qgis.WkbType
+    MultiCurveZM: Qgis.WkbType
+    MultiSurfaceZM: Qgis.WkbType
+    PolyhedralSurfaceZM: Qgis.WkbType
+    TINZM: Qgis.WkbType
+    TriangleZM: Qgis.WkbType
+    Point25D: Qgis.WkbType
+    LineString25D: Qgis.WkbType
+    Polygon25D: Qgis.WkbType
+    MultiPoint25D: Qgis.WkbType
+    MultiLineString25D: Qgis.WkbType
+    MultiPolygon25D: Qgis.WkbType
+    GeometryType: typing.Type[Qgis.GeometryType]
+    PointGeometry: Qgis.GeometryType
+    LineGeometry: Qgis.GeometryType
+    PolygonGeometry: Qgis.GeometryType
+    UnknownGeometry: Qgis.GeometryType
+    NullGeometry: Qgis.GeometryType
 
 
 class QgsRay3D(PyQt5.sip.wrapper):
@@ -21264,6 +21975,11 @@ class QgsGpsInformation(PyQt5.sip.wrapper):
     def navigationStatus(self) -> Qgis.GpsNavigationStatus: ...
     def bestFixStatus(self) -> typing.Tuple[Qgis.GpsFixStatus, Qgis.GnssConstellation]: ...
     def constellationFixStatus(self) -> dict[Qgis.GnssConstellation, Qgis.GpsFixStatus]: ...
+    FixStatus: typing.Type[Qgis.GpsFixStatus]
+    NoData: Qgis.GpsFixStatus
+    NoFix: Qgis.GpsFixStatus
+    Fix2D: Qgis.GpsFixStatus
+    Fix3D: Qgis.GpsFixStatus
 
 
 class QgsGpsLogger(QtCore.QObject):
@@ -21381,6 +22097,15 @@ class QgsLabeling(PyQt5.sip.wrapper):
     def __init__(self) -> None: ...
     @typing.overload
     def __init__(self, a0: 'QgsLabeling') -> None: ...
+    LinePlacementFlag: typing.Type[Qgis.LabelLinePlacementFlag]
+    OnLine: Qgis.LabelLinePlacementFlag
+    AboveLine: Qgis.LabelLinePlacementFlag
+    BelowLine: Qgis.LabelLinePlacementFlag
+    MapOrientation: Qgis.LabelLinePlacementFlag
+    LinePlacementFlags: typing.Type[Qgis.LabelLinePlacementFlags]
+    PolygonPlacementFlag: typing.Type[Qgis.LabelPolygonPlacementFlag]
+    AllowPlacementOutsideOfPolygon: Qgis.LabelPolygonPlacementFlag
+    AllowPlacementInsideOfPolygon: Qgis.LabelPolygonPlacementFlag
 
 
 class QgsLabelCandidate(PyQt5.sip.wrapper):
@@ -21439,6 +22164,19 @@ class QgsLabelingEngineSettings(PyQt5.sip.wrapper):
     def flags(self) -> Qgis.LabelingFlags: ...
     def setFlags(self, flags: typing.Union[Qgis.LabelingFlags, Qgis.LabelingFlag]) -> None: ...
     def clear(self) -> None: ...
+    Flag: typing.Type[Qgis.LabelingFlag]
+    UseAllLabels: Qgis.LabelingFlag
+    UsePartialCandidates: Qgis.LabelingFlag
+    RenderOutlineLabels: Qgis.LabelingFlag
+    DrawLabelRectOnly: Qgis.LabelingFlag
+    DrawCandidates: Qgis.LabelingFlag
+    DrawUnplacedLabels: Qgis.LabelingFlag
+    CollectUnplacedLabels: Qgis.LabelingFlag
+    DrawLabelMetrics: Qgis.LabelingFlag
+    Flags: typing.Type[Qgis.LabelingFlags]
+    PlacementEngineVersion: typing.Type[Qgis.LabelPlacementEngineVersion]
+    PlacementEngineVersion1: Qgis.LabelPlacementEngineVersion
+    PlacementEngineVersion2: Qgis.LabelPlacementEngineVersion
 
 
 class QgsLabelingResults(PyQt5.sip.wrapper):
@@ -21533,6 +22271,9 @@ class QgsLabelObstacleSettings(PyQt5.sip.wrapper):
     def factor(self) -> float: ...
     def setIsObstacle(self, isObstacle: bool) -> None: ...
     def isObstacle(self) -> bool: ...
+    PolygonInterior: QgsLabelObstacleSettings.ObstacleType
+    PolygonBoundary: QgsLabelObstacleSettings.ObstacleType
+    PolygonWhole: QgsLabelObstacleSettings.ObstacleType
 
 
 class QgsLabelPlacementSettings(PyQt5.sip.wrapper):
@@ -21875,6 +22616,188 @@ class QgsPalLayerSettings(PyQt5.sip.wrapper):
     def startRender(self, context: QgsRenderContext) -> None: ...
     def referencedFields(self, context: QgsRenderContext) -> set[str]: ...
     def prepare(self, context: QgsRenderContext, attributeNames: collections.abc.Iterable[typing.Optional[str]], fields: QgsFields, mapSettings: QgsMapSettings, crs: 'QgsCoordinateReferenceSystem') -> typing.Tuple[bool, set[str]]: ...
+    Placement: typing.Type[Qgis.LabelPlacement]
+    AroundPoint: Qgis.LabelPlacement
+    OverPoint: Qgis.LabelPlacement
+    Line: Qgis.LabelPlacement
+    Curved: Qgis.LabelPlacement
+    Horizontal: Qgis.LabelPlacement
+    Free: Qgis.LabelPlacement
+    OrderedPositionsAroundPoint: Qgis.LabelPlacement
+    PerimeterCurved: Qgis.LabelPlacement
+    OutsidePolygons: Qgis.LabelPlacement
+    PredefinedPointPosition: typing.Type[Qgis.LabelPredefinedPointPosition]
+    TopLeft: Qgis.LabelPredefinedPointPosition
+    TopSlightlyLeft: Qgis.LabelPredefinedPointPosition
+    TopMiddle: Qgis.LabelPredefinedPointPosition
+    TopSlightlyRight: Qgis.LabelPredefinedPointPosition
+    TopRight: Qgis.LabelPredefinedPointPosition
+    MiddleLeft: Qgis.LabelPredefinedPointPosition
+    MiddleRight: Qgis.LabelPredefinedPointPosition
+    BottomLeft: Qgis.LabelPredefinedPointPosition
+    BottomSlightlyLeft: Qgis.LabelPredefinedPointPosition
+    BottomMiddle: Qgis.LabelPredefinedPointPosition
+    BottomSlightlyRight: Qgis.LabelPredefinedPointPosition
+    BottomRight: Qgis.LabelPredefinedPointPosition
+    OffsetType: typing.Type[Qgis.LabelOffsetType]
+    FromPoint: Qgis.LabelOffsetType
+    FromSymbolBounds: Qgis.LabelOffsetType
+    QuadrantPosition: typing.Type[Qgis.LabelQuadrantPosition]
+    QuadrantAboveLeft: Qgis.LabelQuadrantPosition
+    QuadrantAbove: Qgis.LabelQuadrantPosition
+    QuadrantAboveRight: Qgis.LabelQuadrantPosition
+    QuadrantLeft: Qgis.LabelQuadrantPosition
+    QuadrantOver: Qgis.LabelQuadrantPosition
+    QuadrantRight: Qgis.LabelQuadrantPosition
+    QuadrantBelowLeft: Qgis.LabelQuadrantPosition
+    QuadrantBelow: Qgis.LabelQuadrantPosition
+    QuadrantBelowRight: Qgis.LabelQuadrantPosition
+    UpsideDownLabels: typing.Type[Qgis.UpsideDownLabelHandling]
+    Upright: Qgis.UpsideDownLabelHandling
+    ShowDefined: Qgis.UpsideDownLabelHandling
+    ShowAll: Qgis.UpsideDownLabelHandling
+    MultiLineAlign: typing.Type[Qgis.LabelMultiLineAlignment]
+    MultiLeft: Qgis.LabelMultiLineAlignment
+    MultiCenter: Qgis.LabelMultiLineAlignment
+    MultiRight: Qgis.LabelMultiLineAlignment
+    MultiFollowPlacement: Qgis.LabelMultiLineAlignment
+    MultiJustify: Qgis.LabelMultiLineAlignment
+    Size: QgsPalLayerSettings.Property
+    Bold: QgsPalLayerSettings.Property
+    Italic: QgsPalLayerSettings.Property
+    Underline: QgsPalLayerSettings.Property
+    Color: QgsPalLayerSettings.Property
+    Strikeout: QgsPalLayerSettings.Property
+    Family: QgsPalLayerSettings.Property
+    FontStyle: QgsPalLayerSettings.Property
+    FontSizeUnit: QgsPalLayerSettings.Property
+    FontTransp: QgsPalLayerSettings.Property
+    FontOpacity: QgsPalLayerSettings.Property
+    FontCase: QgsPalLayerSettings.Property
+    FontLetterSpacing: QgsPalLayerSettings.Property
+    FontWordSpacing: QgsPalLayerSettings.Property
+    FontBlendMode: QgsPalLayerSettings.Property
+    FontStretchFactor: QgsPalLayerSettings.Property
+    MultiLineWrapChar: QgsPalLayerSettings.Property
+    AutoWrapLength: QgsPalLayerSettings.Property
+    MultiLineHeight: QgsPalLayerSettings.Property
+    MultiLineAlignment: QgsPalLayerSettings.Property
+    TextOrientation: QgsPalLayerSettings.Property
+    TabStopDistance: QgsPalLayerSettings.Property
+    DirSymbDraw: QgsPalLayerSettings.Property
+    DirSymbLeft: QgsPalLayerSettings.Property
+    DirSymbRight: QgsPalLayerSettings.Property
+    DirSymbPlacement: QgsPalLayerSettings.Property
+    DirSymbReverse: QgsPalLayerSettings.Property
+    NumFormat: QgsPalLayerSettings.Property
+    NumDecimals: QgsPalLayerSettings.Property
+    NumPlusSign: QgsPalLayerSettings.Property
+    BufferDraw: QgsPalLayerSettings.Property
+    BufferSize: QgsPalLayerSettings.Property
+    BufferUnit: QgsPalLayerSettings.Property
+    BufferColor: QgsPalLayerSettings.Property
+    BufferTransp: QgsPalLayerSettings.Property
+    BufferOpacity: QgsPalLayerSettings.Property
+    BufferJoinStyle: QgsPalLayerSettings.Property
+    BufferBlendMode: QgsPalLayerSettings.Property
+    MaskEnabled: QgsPalLayerSettings.Property
+    MaskBufferSize: QgsPalLayerSettings.Property
+    MaskBufferUnit: QgsPalLayerSettings.Property
+    MaskOpacity: QgsPalLayerSettings.Property
+    MaskJoinStyle: QgsPalLayerSettings.Property
+    ShapeDraw: QgsPalLayerSettings.Property
+    ShapeKind: QgsPalLayerSettings.Property
+    ShapeSVGFile: QgsPalLayerSettings.Property
+    ShapeSizeType: QgsPalLayerSettings.Property
+    ShapeSizeX: QgsPalLayerSettings.Property
+    ShapeSizeY: QgsPalLayerSettings.Property
+    ShapeSizeUnits: QgsPalLayerSettings.Property
+    ShapeRotationType: QgsPalLayerSettings.Property
+    ShapeRotation: QgsPalLayerSettings.Property
+    ShapeOffset: QgsPalLayerSettings.Property
+    ShapeOffsetUnits: QgsPalLayerSettings.Property
+    ShapeRadii: QgsPalLayerSettings.Property
+    ShapeRadiiUnits: QgsPalLayerSettings.Property
+    ShapeTransparency: QgsPalLayerSettings.Property
+    ShapeOpacity: QgsPalLayerSettings.Property
+    ShapeBlendMode: QgsPalLayerSettings.Property
+    ShapeFillColor: QgsPalLayerSettings.Property
+    ShapeStrokeColor: QgsPalLayerSettings.Property
+    ShapeStrokeWidth: QgsPalLayerSettings.Property
+    ShapeStrokeWidthUnits: QgsPalLayerSettings.Property
+    ShapeJoinStyle: QgsPalLayerSettings.Property
+    ShadowDraw: QgsPalLayerSettings.Property
+    ShadowUnder: QgsPalLayerSettings.Property
+    ShadowOffsetAngle: QgsPalLayerSettings.Property
+    ShadowOffsetDist: QgsPalLayerSettings.Property
+    ShadowOffsetUnits: QgsPalLayerSettings.Property
+    ShadowRadius: QgsPalLayerSettings.Property
+    ShadowRadiusUnits: QgsPalLayerSettings.Property
+    ShadowTransparency: QgsPalLayerSettings.Property
+    ShadowOpacity: QgsPalLayerSettings.Property
+    ShadowScale: QgsPalLayerSettings.Property
+    ShadowColor: QgsPalLayerSettings.Property
+    ShadowBlendMode: QgsPalLayerSettings.Property
+    CentroidWhole: QgsPalLayerSettings.Property
+    OffsetQuad: QgsPalLayerSettings.Property
+    OffsetXY: QgsPalLayerSettings.Property
+    OffsetUnits: QgsPalLayerSettings.Property
+    LabelDistance: QgsPalLayerSettings.Property
+    MaximumDistance: QgsPalLayerSettings.Property
+    DistanceUnits: QgsPalLayerSettings.Property
+    OffsetRotation: QgsPalLayerSettings.Property
+    CurvedCharAngleInOut: QgsPalLayerSettings.Property
+    PositionX: QgsPalLayerSettings.Property
+    PositionY: QgsPalLayerSettings.Property
+    PositionPoint: QgsPalLayerSettings.Property
+    Hali: QgsPalLayerSettings.Property
+    Vali: QgsPalLayerSettings.Property
+    Rotation: QgsPalLayerSettings.Property
+    LabelRotation: QgsPalLayerSettings.Property
+    RepeatDistance: QgsPalLayerSettings.Property
+    RepeatDistanceUnit: QgsPalLayerSettings.Property
+    Priority: QgsPalLayerSettings.Property
+    PredefinedPositionOrder: QgsPalLayerSettings.Property
+    LinePlacementOptions: QgsPalLayerSettings.Property
+    OverrunDistance: QgsPalLayerSettings.Property
+    LabelAllParts: QgsPalLayerSettings.Property
+    PolygonLabelOutside: QgsPalLayerSettings.Property
+    LineAnchorPercent: QgsPalLayerSettings.Property
+    LineAnchorClipping: QgsPalLayerSettings.Property
+    LineAnchorType: QgsPalLayerSettings.Property
+    LineAnchorTextPoint: QgsPalLayerSettings.Property
+    ScaleVisibility: QgsPalLayerSettings.Property
+    MinScale: QgsPalLayerSettings.Property
+    MinimumScale: QgsPalLayerSettings.Property
+    MaxScale: QgsPalLayerSettings.Property
+    MaximumScale: QgsPalLayerSettings.Property
+    FontLimitPixel: QgsPalLayerSettings.Property
+    FontMinPixel: QgsPalLayerSettings.Property
+    FontMaxPixel: QgsPalLayerSettings.Property
+    IsObstacle: QgsPalLayerSettings.Property
+    ObstacleFactor: QgsPalLayerSettings.Property
+    ZIndex: QgsPalLayerSettings.Property
+    CalloutDraw: QgsPalLayerSettings.Property
+    AllowDegradedPlacement: QgsPalLayerSettings.Property
+    OverlapHandling: QgsPalLayerSettings.Property
+    LabelMarginDistance: QgsPalLayerSettings.Property
+    RemoveDuplicateLabels: QgsPalLayerSettings.Property
+    RemoveDuplicateLabelDistance: QgsPalLayerSettings.Property
+    Show: QgsPalLayerSettings.Property
+    AlwaysShow: QgsPalLayerSettings.Property
+    LinePlacementFlags: typing.Type[_LinePlacementFlags]
+    OnLine: QgsPalLayerSettings.LinePlacementFlags
+    AboveLine: QgsPalLayerSettings.LinePlacementFlags
+    BelowLine: QgsPalLayerSettings.LinePlacementFlags
+    MapOrientation: QgsPalLayerSettings.LinePlacementFlags
+    DirectionSymbols: typing.Type[_DirectionSymbols]
+    SymbolLeftRight: QgsPalLayerSettings.DirectionSymbols
+    SymbolAbove: QgsPalLayerSettings.DirectionSymbols
+    SymbolBelow: QgsPalLayerSettings.DirectionSymbols
+    ObstacleType: typing.Type[QgsLabelObstacleSettings.ObstacleType]
+    PolygonInterior: QgsLabelObstacleSettings.ObstacleType
+    PolygonBoundary: QgsLabelObstacleSettings.ObstacleType
+    PolygonWhole: QgsLabelObstacleSettings.ObstacleType
 
 
 class QgsPalLabeling(PyQt5.sip.wrapper):
@@ -22228,6 +23151,11 @@ class QgsLayerTreeModelLegendNode(QtCore.QObject):
     def flags(self) -> QtCore.Qt.ItemFlags: ...
     def model(self) -> typing.Optional['QgsLayerTreeModel']: ...
     def layerNode(self) -> typing.Optional['QgsLayerTreeLayer']: ...
+    LegendNodeRoles: typing.Type[QgsLayerTreeModelLegendNode.CustomRole]
+    RuleKeyRole: QgsLayerTreeModelLegendNode.CustomRole
+    ParentRuleKeyRole: QgsLayerTreeModelLegendNode.CustomRole
+    NodeTypeRole: QgsLayerTreeModelLegendNode.CustomRole
+    IsDataDefinedSizeRole: QgsLayerTreeModelLegendNode.CustomRole
 
 
 class QgsColorRampLegendNode(QgsLayerTreeModelLegendNode):
@@ -23415,6 +24343,95 @@ class QgsLayoutObject(QtCore.QObject, QgsExpressionContextGenerator):
     def propertyAssociatesWithParentMultiframe(property: 'QgsLayoutObject.DataDefinedProperty') -> bool: ...
     @staticmethod
     def propertyDefinitions() -> dict[int, QgsPropertyDefinition]: ...
+    NoProperty: QgsLayoutObject.DataDefinedProperty
+    AllProperties: QgsLayoutObject.DataDefinedProperty
+    TestProperty: QgsLayoutObject.DataDefinedProperty
+    PresetPaperSize: QgsLayoutObject.DataDefinedProperty
+    PaperWidth: QgsLayoutObject.DataDefinedProperty
+    PaperHeight: QgsLayoutObject.DataDefinedProperty
+    NumPages: QgsLayoutObject.DataDefinedProperty
+    PaperOrientation: QgsLayoutObject.DataDefinedProperty
+    PageNumber: QgsLayoutObject.DataDefinedProperty
+    PositionX: QgsLayoutObject.DataDefinedProperty
+    PositionY: QgsLayoutObject.DataDefinedProperty
+    ItemWidth: QgsLayoutObject.DataDefinedProperty
+    ItemHeight: QgsLayoutObject.DataDefinedProperty
+    ItemRotation: QgsLayoutObject.DataDefinedProperty
+    Transparency: QgsLayoutObject.DataDefinedProperty
+    Opacity: QgsLayoutObject.DataDefinedProperty
+    BlendMode: QgsLayoutObject.DataDefinedProperty
+    ExcludeFromExports: QgsLayoutObject.DataDefinedProperty
+    FrameColor: QgsLayoutObject.DataDefinedProperty
+    BackgroundColor: QgsLayoutObject.DataDefinedProperty
+    MarginLeft: QgsLayoutObject.DataDefinedProperty
+    MarginTop: QgsLayoutObject.DataDefinedProperty
+    MarginRight: QgsLayoutObject.DataDefinedProperty
+    MarginBottom: QgsLayoutObject.DataDefinedProperty
+    MapRotation: QgsLayoutObject.DataDefinedProperty
+    MapScale: QgsLayoutObject.DataDefinedProperty
+    MapXMin: QgsLayoutObject.DataDefinedProperty
+    MapYMin: QgsLayoutObject.DataDefinedProperty
+    MapXMax: QgsLayoutObject.DataDefinedProperty
+    MapYMax: QgsLayoutObject.DataDefinedProperty
+    MapAtlasMargin: QgsLayoutObject.DataDefinedProperty
+    MapLayers: QgsLayoutObject.DataDefinedProperty
+    MapStylePreset: QgsLayoutObject.DataDefinedProperty
+    MapLabelMargin: QgsLayoutObject.DataDefinedProperty
+    MapGridEnabled: QgsLayoutObject.DataDefinedProperty
+    MapGridIntervalX: QgsLayoutObject.DataDefinedProperty
+    MapGridIntervalY: QgsLayoutObject.DataDefinedProperty
+    MapGridOffsetX: QgsLayoutObject.DataDefinedProperty
+    MapGridOffsetY: QgsLayoutObject.DataDefinedProperty
+    MapGridFrameSize: QgsLayoutObject.DataDefinedProperty
+    MapGridFrameMargin: QgsLayoutObject.DataDefinedProperty
+    MapGridLabelDistance: QgsLayoutObject.DataDefinedProperty
+    MapGridCrossSize: QgsLayoutObject.DataDefinedProperty
+    MapGridFrameLineThickness: QgsLayoutObject.DataDefinedProperty
+    MapGridAnnotationDisplayLeft: QgsLayoutObject.DataDefinedProperty
+    MapGridAnnotationDisplayRight: QgsLayoutObject.DataDefinedProperty
+    MapGridAnnotationDisplayTop: QgsLayoutObject.DataDefinedProperty
+    MapGridAnnotationDisplayBottom: QgsLayoutObject.DataDefinedProperty
+    MapGridFrameDivisionsLeft: QgsLayoutObject.DataDefinedProperty
+    MapGridFrameDivisionsRight: QgsLayoutObject.DataDefinedProperty
+    MapGridFrameDivisionsTop: QgsLayoutObject.DataDefinedProperty
+    MapGridFrameDivisionsBottom: QgsLayoutObject.DataDefinedProperty
+    MapCrs: QgsLayoutObject.DataDefinedProperty
+    StartDateTime: QgsLayoutObject.DataDefinedProperty
+    EndDateTime: QgsLayoutObject.DataDefinedProperty
+    MapZRangeLower: QgsLayoutObject.DataDefinedProperty
+    MapZRangeUpper: QgsLayoutObject.DataDefinedProperty
+    PictureSource: QgsLayoutObject.DataDefinedProperty
+    PictureSvgBackgroundColor: QgsLayoutObject.DataDefinedProperty
+    PictureSvgStrokeColor: QgsLayoutObject.DataDefinedProperty
+    PictureSvgStrokeWidth: QgsLayoutObject.DataDefinedProperty
+    SourceUrl: QgsLayoutObject.DataDefinedProperty
+    LegendTitle: QgsLayoutObject.DataDefinedProperty
+    LegendColumnCount: QgsLayoutObject.DataDefinedProperty
+    LegendAutoWrapWidth: QgsLayoutObject.DataDefinedProperty
+    ScalebarLeftSegments: QgsLayoutObject.DataDefinedProperty
+    ScalebarRightSegments: QgsLayoutObject.DataDefinedProperty
+    ScalebarSegmentWidth: QgsLayoutObject.DataDefinedProperty
+    ScalebarMinimumWidth: QgsLayoutObject.DataDefinedProperty
+    ScalebarMaximumWidth: QgsLayoutObject.DataDefinedProperty
+    ScalebarHeight: QgsLayoutObject.DataDefinedProperty
+    ScalebarRightSegmentSubdivisions: QgsLayoutObject.DataDefinedProperty
+    ScalebarSubdivisionHeight: QgsLayoutObject.DataDefinedProperty
+    ScalebarFillColor: QgsLayoutObject.DataDefinedProperty
+    ScalebarFillColor2: QgsLayoutObject.DataDefinedProperty
+    ScalebarLineColor: QgsLayoutObject.DataDefinedProperty
+    ScalebarLineWidth: QgsLayoutObject.DataDefinedProperty
+    AttributeTableSourceLayer: QgsLayoutObject.DataDefinedProperty
+    ElevationProfileTolerance: QgsLayoutObject.DataDefinedProperty
+    ElevationProfileDistanceMajorInterval: QgsLayoutObject.DataDefinedProperty
+    ElevationProfileDistanceMinorInterval: QgsLayoutObject.DataDefinedProperty
+    ElevationProfileDistanceLabelInterval: QgsLayoutObject.DataDefinedProperty
+    ElevationProfileElevationMajorInterval: QgsLayoutObject.DataDefinedProperty
+    ElevationProfileElevationMinorInterval: QgsLayoutObject.DataDefinedProperty
+    ElevationProfileElevationLabelInterval: QgsLayoutObject.DataDefinedProperty
+    ElevationProfileMinimumDistance: QgsLayoutObject.DataDefinedProperty
+    ElevationProfileMaximumDistance: QgsLayoutObject.DataDefinedProperty
+    ElevationProfileMinimumElevation: QgsLayoutObject.DataDefinedProperty
+    ElevationProfileMaximumElevation: QgsLayoutObject.DataDefinedProperty
 
 
 class QgsLayoutItem(QgsLayoutObject, QtWidgets.QGraphicsRectItem, QgsLayoutUndoObjectInterface):
@@ -23802,6 +24819,12 @@ class QgsLayoutGuideCollection(QtCore.QAbstractTableModel, QgsLayoutSerializable
     def rowCount(self, a0: QtCore.QModelIndex) -> int: ...
     def layout(self) -> typing.Optional[QgsLayout]: ...
     def stringType(self) -> str: ...
+    Roles: typing.Type[QgsLayoutGuideCollection.CustomRole]
+    OrientationRole: QgsLayoutGuideCollection.CustomRole
+    PositionRole: QgsLayoutGuideCollection.CustomRole
+    UnitsRole: QgsLayoutGuideCollection.CustomRole
+    PageRole: QgsLayoutGuideCollection.CustomRole
+    LayoutPositionRole: QgsLayoutGuideCollection.CustomRole
 
 
 class QgsLayoutGuideProxyModel(QtCore.QSortFilterProxyModel):
@@ -25021,6 +26044,10 @@ class QgsLayoutItemPicture(QgsLayoutItem):
     def create(layout: typing.Optional[QgsLayout]) -> typing.Optional['QgsLayoutItemPicture']: ...
     def icon(self) -> QtGui.QIcon: ...
     def type(self) -> int: ...
+    Format: typing.Type[Qgis.PictureFormat]
+    FormatSVG: Qgis.PictureFormat
+    FormatRaster: Qgis.PictureFormat
+    FormatUnknown: Qgis.PictureFormat
 
 
 class QgsLayoutItemPolygon(QgsLayoutNodesItem):
@@ -25359,6 +26386,8 @@ class QgsLayoutManagerModel(QtCore.QAbstractListModel):
     def setData(self, index: QtCore.QModelIndex, value: typing.Any, role: int = ...) -> bool: ...
     def data(self, index: QtCore.QModelIndex, role: int) -> typing.Any: ...
     def rowCount(self, parent: QtCore.QModelIndex) -> int: ...
+    Role: typing.Type[QgsLayoutManagerModel.CustomRole]
+    LayoutRole: QgsLayoutManagerModel.CustomRole
 
 
 class QgsLayoutManagerProxyModel(QtCore.QSortFilterProxyModel):
@@ -25630,6 +26659,20 @@ class QgsLayoutRenderContext(QtCore.QObject):
     def flags(self) -> Qgis.LayoutRenderFlags: ...
     def setFlag(self, flag: Qgis.LayoutRenderFlag, on: bool = ...) -> None: ...
     def setFlags(self, flags: typing.Union[Qgis.LayoutRenderFlags, Qgis.LayoutRenderFlag]) -> None: ...
+    Flag: typing.Type[Qgis.LayoutRenderFlag]
+    FlagDebug: Qgis.LayoutRenderFlag
+    FlagOutlineOnly: Qgis.LayoutRenderFlag
+    FlagAntialiasing: Qgis.LayoutRenderFlag
+    FlagUseAdvancedEffects: Qgis.LayoutRenderFlag
+    FlagForceVectorOutput: Qgis.LayoutRenderFlag
+    FlagHideCoverageLayer: Qgis.LayoutRenderFlag
+    FlagDrawSelection: Qgis.LayoutRenderFlag
+    FlagDisableTiledRasterLayerRenders: Qgis.LayoutRenderFlag
+    FlagRenderLabelsByMapLayer: Qgis.LayoutRenderFlag
+    FlagLosslessImageRendering: Qgis.LayoutRenderFlag
+    FlagSynchronousLegendGraphics: Qgis.LayoutRenderFlag
+    FlagAlwaysUseGlobalMasks: Qgis.LayoutRenderFlag
+    Flags: typing.Type[Qgis.LayoutRenderFlags]
 
 
 class QgsLayoutReportContext(QtCore.QObject):
@@ -26103,6 +27146,16 @@ class QgsLocatorModel(QtCore.QAbstractTableModel):
     def rowCount(self, parent: QtCore.QModelIndex = ...) -> int: ...
     def deferredClear(self) -> None: ...
     def clear(self) -> None: ...
+    Role: typing.Type[QgsLocatorModel.CustomRole]
+    ResultDataRole: QgsLocatorModel.CustomRole
+    ResultTypeRole: QgsLocatorModel.CustomRole
+    ResultFilterPriorityRole: QgsLocatorModel.CustomRole
+    ResultScoreRole: QgsLocatorModel.CustomRole
+    ResultFilterNameRole: QgsLocatorModel.CustomRole
+    ResultFilterGroupSortingRole: QgsLocatorModel.CustomRole
+    ResultFilterGroupTitle: QgsLocatorModel.CustomRole
+    ResultFilterGroupScore: QgsLocatorModel.CustomRole
+    ResultActionsRole: QgsLocatorModel.CustomRole
 
 
 class QgsLocatorAutomaticModel(QgsLocatorModel):
@@ -26591,6 +27644,23 @@ class QgsDataProvider(QtCore.QObject):
     def dataSourceUri(self, expandAuthConfig: bool = ...) -> str: ...
     def setDataSourceUri(self, uri: typing.Optional[str]) -> None: ...
     def crs(self) -> 'QgsCoordinateReferenceSystem': ...
+    ReadFlag: typing.Type[Qgis.DataProviderReadFlag]
+    FlagTrustDataSource: Qgis.DataProviderReadFlag
+    SkipFeatureCount: Qgis.DataProviderReadFlag
+    FlagLoadDefaultStyle: Qgis.DataProviderReadFlag
+    SkipGetExtent: Qgis.DataProviderReadFlag
+    SkipFullScan: Qgis.DataProviderReadFlag
+    ForceReadOnly: Qgis.DataProviderReadFlag
+    SkipCredentialsRequest: Qgis.DataProviderReadFlag
+    ParallelThreadLoading: Qgis.DataProviderReadFlag
+    ReadFlags: typing.Type[Qgis.DataProviderReadFlags]
+    DataCapability: typing.Type[Qgis.DataItemProviderCapability]
+    NoDataCapabilities: Qgis.DataItemProviderCapability
+    File: Qgis.DataItemProviderCapability
+    Dir: Qgis.DataItemProviderCapability
+    Database: Qgis.DataItemProviderCapability
+    Net: Qgis.DataItemProviderCapability
+    DataCapabilities: typing.Type[Qgis.DataItemProviderCapabilities]
 
 
 class QgsMeshDataProvider(QgsDataProvider, QgsMeshDataSourceInterface, QgsMeshDatasetSourceInterface):
@@ -27600,6 +28670,31 @@ class QgsPainting(PyQt5.sip.wrapper):
     def getBlendModeEnum(blendMode: QtGui.QPainter.CompositionMode) -> Qgis.BlendMode: ...
     @staticmethod
     def getCompositionMode(blendMode: Qgis.BlendMode) -> QtGui.QPainter.CompositionMode: ...
+    BlendMode: typing.Type[Qgis.BlendMode]
+    BlendNormal: Qgis.BlendMode
+    BlendLighten: Qgis.BlendMode
+    BlendScreen: Qgis.BlendMode
+    BlendDodge: Qgis.BlendMode
+    BlendAddition: Qgis.BlendMode
+    BlendDarken: Qgis.BlendMode
+    BlendMultiply: Qgis.BlendMode
+    BlendBurn: Qgis.BlendMode
+    BlendOverlay: Qgis.BlendMode
+    BlendSoftLight: Qgis.BlendMode
+    BlendHardLight: Qgis.BlendMode
+    BlendDifference: Qgis.BlendMode
+    BlendSubtract: Qgis.BlendMode
+    BlendSource: Qgis.BlendMode
+    BlendDestinationOver: Qgis.BlendMode
+    BlendClear: Qgis.BlendMode
+    BlendDestination: Qgis.BlendMode
+    BlendSourceIn: Qgis.BlendMode
+    BlendDestinationIn: Qgis.BlendMode
+    BlendSourceOut: Qgis.BlendMode
+    BlendDestinationOut: Qgis.BlendMode
+    BlendSourceAtop: Qgis.BlendMode
+    BlendDestinationAtop: Qgis.BlendMode
+    BlendXor: Qgis.BlendMode
 
 
 class QgsPdfRenderer(PyQt5.sip.wrapper):
@@ -27807,6 +28902,13 @@ class QgsPointCloudRenderer(PyQt5.sip.wrapper):
     def renderBlock(self, block: typing.Optional['QgsPointCloudBlock'], context: 'QgsPointCloudRenderContext') -> None: ...
     def clone(self) -> typing.Optional['QgsPointCloudRenderer']: ...
     def type(self) -> str: ...
+    PointSymbol: typing.Type[Qgis.PointCloudSymbol]
+    Square: Qgis.PointCloudSymbol
+    Circle: Qgis.PointCloudSymbol
+    DrawOrder: typing.Type[Qgis.PointCloudDrawOrder]
+    Default: Qgis.PointCloudDrawOrder
+    BottomToTop: Qgis.PointCloudDrawOrder
+    TopToBottom: Qgis.PointCloudDrawOrder
 
 
 class QgsPointCloudAttributeByRampRenderer(QgsPointCloudRenderer):
@@ -27859,6 +28961,13 @@ class QgsPointCloudAttributeModel(QtCore.QAbstractItemModel):
     def setAttributes(self, attributes: QgsPointCloudAttributeCollection) -> None: ...
     def layer(self) -> typing.Optional['QgsPointCloudLayer']: ...
     def setLayer(self, layer: typing.Optional['QgsPointCloudLayer']) -> None: ...
+    FieldRoles: typing.Type[QgsPointCloudAttributeModel.CustomRole]
+    AttributeNameRole: QgsPointCloudAttributeModel.CustomRole
+    AttributeIndexRole: QgsPointCloudAttributeModel.CustomRole
+    AttributeSizeRole: QgsPointCloudAttributeModel.CustomRole
+    AttributeTypeRole: QgsPointCloudAttributeModel.CustomRole
+    IsEmptyRole: QgsPointCloudAttributeModel.CustomRole
+    IsNumericRole: QgsPointCloudAttributeModel.CustomRole
 
 
 class QgsPointCloudAttributeProxyModel(QtCore.QSortFilterProxyModel):
@@ -28532,6 +29641,25 @@ class QgsCoordinateReferenceSystem(PyQt5.sip.wrapper):
     def fromOgcWmsCrs(ogcCrs: typing.Optional[str]) -> 'QgsCoordinateReferenceSystem': ...
     @staticmethod
     def validSrsIds() -> typing.Any: ...
+    IdentifierType: typing.Type[Qgis.CrsIdentifierType]
+    ShortString: Qgis.CrsIdentifierType
+    MediumString: Qgis.CrsIdentifierType
+    FullString: Qgis.CrsIdentifierType
+    WktVariant: typing.Type[Qgis.CrsWktVariant]
+    WKT1_GDAL: Qgis.CrsWktVariant
+    WKT1_ESRI: Qgis.CrsWktVariant
+    WKT2_2015: Qgis.CrsWktVariant
+    WKT2_2015_SIMPLIFIED: Qgis.CrsWktVariant
+    WKT2_2019: Qgis.CrsWktVariant
+    WKT2_2019_SIMPLIFIED: Qgis.CrsWktVariant
+    WKT_PREFERRED: Qgis.CrsWktVariant
+    WKT_PREFERRED_SIMPLIFIED: Qgis.CrsWktVariant
+    WKT_PREFERRED_GDAL: Qgis.CrsWktVariant
+    Format: typing.Type[Qgis.CrsDefinitionFormat]
+    FormatWkt: Qgis.CrsDefinitionFormat
+    FormatProj: Qgis.CrsDefinitionFormat
+    WKT2_2018: Qgis.CrsWktVariant
+    WKT2_2018_SIMPLIFIED: Qgis.CrsWktVariant
 
 
 class QgsCoordinateReferenceSystemRegistry(QtCore.QObject):
@@ -28647,6 +29775,9 @@ class QgsCoordinateTransform(PyQt5.sip.wrapper):
     def isTransformationPossible(source: QgsCoordinateReferenceSystem, destination: QgsCoordinateReferenceSystem) -> bool: ...
     def __ne__(self, other: object): ...
     def __eq__(self, other: object): ...
+    TransformDirection: typing.Type[Qgis.TransformDirection]
+    ForwardTransform: Qgis.TransformDirection
+    ReverseTransform: Qgis.TransformDirection
 
 
 class QgsCoordinateTransformContext(PyQt5.sip.wrapper):
@@ -29457,6 +30588,9 @@ class QgsNetworkContentFetcherRegistry(QtCore.QObject):
 
     def localPath(self, filePathOrUrl: typing.Optional[str]) -> str: ...
     def fetch(self, url: typing.Optional[str], fetchingMode: Qgis.ActionStart = ..., authConfig: typing.Optional[str] = ..., headers: 'QgsHttpHeaders' = ...) -> typing.Optional[QgsFetchedContent]: ...
+    FetchingMode: typing.Type[Qgis.ActionStart]
+    DownloadLater: Qgis.ActionStart
+    DownloadImmediately: Qgis.ActionStart
 
 
 class QgsNetworkContentFetcherTask(QgsTask):
@@ -29520,6 +30654,14 @@ class QgsNewsFeedModel(QtCore.QAbstractItemModel):
     def index(self, row: int, column: int, parent: QtCore.QModelIndex = ...) -> QtCore.QModelIndex: ...
     def flags(self, index: QtCore.QModelIndex) -> QtCore.Qt.ItemFlags: ...
     def data(self, index: QtCore.QModelIndex, role: int) -> typing.Any: ...
+    Role: typing.Type[QgsNewsFeedModel.CustomRole]
+    Key: QgsNewsFeedModel.CustomRole
+    Title: QgsNewsFeedModel.CustomRole
+    Content: QgsNewsFeedModel.CustomRole
+    ImageUrl: QgsNewsFeedModel.CustomRole
+    Image: QgsNewsFeedModel.CustomRole
+    Link: QgsNewsFeedModel.CustomRole
+    Sticky: QgsNewsFeedModel.CustomRole
 
 
 class QgsNewsFeedProxyModel(QtCore.QSortFilterProxyModel):
@@ -30015,6 +31157,27 @@ class QgsProcessingAlgorithm(PyQt5.sip.wrapper):
     def id(self) -> str: ...
     def name(self) -> str: ...
     def create(self, configuration: dict[str, typing.Any] = ...) -> typing.Optional['QgsProcessingAlgorithm']: ...
+    Flag: typing.Type[Qgis.ProcessingAlgorithmFlag]
+    FlagHideFromToolbox: Qgis.ProcessingAlgorithmFlag
+    FlagHideFromModeler: Qgis.ProcessingAlgorithmFlag
+    FlagSupportsBatch: Qgis.ProcessingAlgorithmFlag
+    FlagCanCancel: Qgis.ProcessingAlgorithmFlag
+    FlagRequiresMatchingCrs: Qgis.ProcessingAlgorithmFlag
+    FlagNoThreading: Qgis.ProcessingAlgorithmFlag
+    FlagDisplayNameIsLiteral: Qgis.ProcessingAlgorithmFlag
+    FlagSupportsInPlaceEdits: Qgis.ProcessingAlgorithmFlag
+    FlagKnownIssues: Qgis.ProcessingAlgorithmFlag
+    FlagCustomException: Qgis.ProcessingAlgorithmFlag
+    FlagPruneModelBranchesBasedOnAlgorithmResults: Qgis.ProcessingAlgorithmFlag
+    FlagSkipGenericModelLogging: Qgis.ProcessingAlgorithmFlag
+    FlagNotAvailableInStandaloneTool: Qgis.ProcessingAlgorithmFlag
+    FlagRequiresProject: Qgis.ProcessingAlgorithmFlag
+    SecurityRisk: Qgis.ProcessingAlgorithmFlag
+    FlagDeprecated: Qgis.ProcessingAlgorithmFlag
+    Flags: typing.Type[Qgis.ProcessingAlgorithmFlags]
+    PropertyAvailability: typing.Type[Qgis.ProcessingPropertyAvailability]
+    NotAvailable: Qgis.ProcessingPropertyAvailability
+    Available: Qgis.ProcessingPropertyAvailability
 
 
 class QgsProcessingModelAlgorithm(QgsProcessingAlgorithm):
@@ -30367,6 +31530,22 @@ class QgsProcessing(PyQt5.sip.wrapper):
     def documentationFlagToString(flag: Qgis.ProcessingAlgorithmDocumentationFlag) -> str: ...
     @staticmethod
     def sourceTypeToString(type: Qgis.ProcessingSourceType) -> str: ...
+    SourceType: typing.Type[Qgis.ProcessingSourceType]
+    TypeMapLayer: Qgis.ProcessingSourceType
+    TypeVectorAnyGeometry: Qgis.ProcessingSourceType
+    TypeVectorPoint: Qgis.ProcessingSourceType
+    TypeVectorLine: Qgis.ProcessingSourceType
+    TypeVectorPolygon: Qgis.ProcessingSourceType
+    TypeRaster: Qgis.ProcessingSourceType
+    TypeFile: Qgis.ProcessingSourceType
+    TypeVector: Qgis.ProcessingSourceType
+    TypeMesh: Qgis.ProcessingSourceType
+    TypePlugin: Qgis.ProcessingSourceType
+    TypePointCloud: Qgis.ProcessingSourceType
+    TypeAnnotation: Qgis.ProcessingSourceType
+    TypeVectorTile: Qgis.ProcessingSourceType
+    TiledScene: Qgis.ProcessingSourceType
+    PythonQgsProcessingAlgorithmSubclass: QgsProcessing.PythonOutputType
 
 
 class QgsProcessingFeatureBasedAlgorithm(QgsProcessingAlgorithm):
@@ -30572,6 +31751,10 @@ class QgsProcessingContext(PyQt5.sip.wrapper):
     def setFlags(self, flags: typing.Union['QgsProcessingContext.Flags', 'QgsProcessingContext.Flag']) -> None: ...
     def flags(self) -> 'QgsProcessingContext.Flags': ...
     def copyThreadSafeSettings(self, other: 'QgsProcessingContext') -> None: ...
+    LogLevel: typing.Type[Qgis.ProcessingLogLevel]
+    DefaultLevel: Qgis.ProcessingLogLevel
+    Verbose: Qgis.ProcessingLogLevel
+    ModelDebug: Qgis.ProcessingLogLevel
 
 
 class QgsProcessingLayerPostProcessorInterface(PyQt5.sip.wrapper):
@@ -30827,6 +32010,12 @@ class QgsProcessingParameterDefinition(PyQt5.sip.wrapper):
     def isDestination(self) -> bool: ...
     def type(self) -> str: ...
     def clone(self) -> typing.Optional['QgsProcessingParameterDefinition']: ...
+    Flag: typing.Type[Qgis.ProcessingParameterFlag]
+    FlagAdvanced: Qgis.ProcessingParameterFlag
+    FlagHidden: Qgis.ProcessingParameterFlag
+    FlagOptional: Qgis.ProcessingParameterFlag
+    FlagIsModelOutput: Qgis.ProcessingParameterFlag
+    Flags: typing.Type[Qgis.ProcessingParameterFlags]
 
 
 class QgsProcessingParameterAggregate(QgsProcessingParameterDefinition):
@@ -30965,6 +32154,10 @@ class QgsProcessingFeatureSourceDefinition(PyQt5.sip.wrapper):
     def __eq__(self, other: object): ...
     def loadVariant(self, map: dict[str, typing.Any]) -> bool: ...
     def toVariant(self) -> typing.Any: ...
+    Flag: typing.Type[Qgis.ProcessingFeatureSourceDefinitionFlag]
+    FlagOverrideDefaultGeometryCheck: Qgis.ProcessingFeatureSourceDefinitionFlag
+    FlagCreateIndividualOutputPerInputFeature: Qgis.ProcessingFeatureSourceDefinitionFlag
+    Flags: typing.Type[Qgis.ProcessingFeatureSourceDefinitionFlags]
 
 
 class QgsProcessingOutputLayerDefinition(PyQt5.sip.wrapper):
@@ -31401,6 +32594,9 @@ class QgsProcessingParameterFile(QgsProcessingParameterDefinition, QgsFileFilter
     def clone(self) -> typing.Optional[QgsProcessingParameterDefinition]: ...
     @staticmethod
     def typeName() -> str: ...
+    Behavior: typing.Type[Qgis.ProcessingFileParameterBehavior]
+    File: Qgis.ProcessingFileParameterBehavior
+    Folder: Qgis.ProcessingFileParameterBehavior
 
 
 class QgsProcessingParameterMatrix(QgsProcessingParameterDefinition):
@@ -31482,6 +32678,9 @@ class QgsProcessingParameterNumber(QgsProcessingParameterDefinition):
     def clone(self) -> typing.Optional[QgsProcessingParameterDefinition]: ...
     @staticmethod
     def typeName() -> str: ...
+    Type: typing.Type[Qgis.ProcessingNumberParameterType]
+    Integer: Qgis.ProcessingNumberParameterType
+    Double: Qgis.ProcessingNumberParameterType
 
 
 class QgsProcessingParameterDistance(QgsProcessingParameterNumber):
@@ -31820,6 +33019,13 @@ class QgsProcessingParameterField(QgsProcessingParameterDefinition):
     def clone(self) -> typing.Optional[QgsProcessingParameterDefinition]: ...
     @staticmethod
     def typeName() -> str: ...
+    DataType: typing.Type[Qgis.ProcessingFieldParameterDataType]
+    Any: Qgis.ProcessingFieldParameterDataType
+    Numeric: Qgis.ProcessingFieldParameterDataType
+    String: Qgis.ProcessingFieldParameterDataType
+    DateTime: Qgis.ProcessingFieldParameterDataType
+    Binary: Qgis.ProcessingFieldParameterDataType
+    Boolean: Qgis.ProcessingFieldParameterDataType
 
 
 class QgsProcessingParameterFeatureSource(QgsProcessingParameterDefinition, QgsProcessingParameterLimitedDataTypes, QgsFileFilterGenerator):
@@ -32159,6 +33365,10 @@ class QgsProcessingParameterDateTime(QgsProcessingParameterDefinition):
     def clone(self) -> typing.Optional[QgsProcessingParameterDefinition]: ...
     @staticmethod
     def typeName() -> str: ...
+    Type: typing.Type[Qgis.ProcessingDateTimeParameterDataType]
+    DateTime: Qgis.ProcessingDateTimeParameterDataType
+    Date: Qgis.ProcessingDateTimeParameterDataType
+    Time: Qgis.ProcessingDateTimeParameterDataType
 
 
 class QgsProcessingParameterProviderConnection(QgsProcessingParameterDefinition):
@@ -32372,6 +33582,10 @@ class QgsProcessingParameterTinInputLayers(QgsProcessingParameterDefinition):
     def checkValueIsAcceptable(self, input: typing.Any, context: typing.Optional[QgsProcessingContext] = ...) -> bool: ...
     def type(self) -> str: ...
     def clone(self) -> typing.Optional[QgsProcessingParameterDefinition]: ...
+    Type: typing.Type[Qgis.ProcessingTinInputLayerType]
+    Vertices: Qgis.ProcessingTinInputLayerType
+    StructureLines: Qgis.ProcessingTinInputLayerType
+    BreakLines: Qgis.ProcessingTinInputLayerType
 
 
 class QgsProcessingParameterType(PyQt5.sip.wrapper):
@@ -32394,6 +33608,9 @@ class QgsProcessingParameterType(PyQt5.sip.wrapper):
     def name(self) -> str: ...
     def description(self) -> str: ...
     def create(self, name: typing.Optional[str]) -> typing.Optional[QgsProcessingParameterDefinition]: ...
+    ParameterFlag: typing.Type[Qgis.ProcessingParameterTypeFlag]
+    ExposeToModeler: Qgis.ProcessingParameterTypeFlag
+    ParameterFlags: typing.Type[Qgis.ProcessingParameterTypeFlags]
 
 
 class QgsProcessingParameterVectorTileWriterLayers(QgsProcessingParameterDefinition):
@@ -32476,6 +33693,10 @@ class QgsProcessingProvider(QtCore.QObject):
     def flags(self) -> Qgis.ProcessingProviderFlags: ...
     def svgIconPath(self) -> str: ...
     def icon(self) -> QtGui.QIcon: ...
+    Flag: typing.Type[Qgis.ProcessingProviderFlag]
+    FlagDeemphasiseSearchResults: Qgis.ProcessingProviderFlag
+    FlagCompatibleWithVirtualRaster: Qgis.ProcessingProviderFlag
+    Flags: typing.Type[Qgis.ProcessingProviderFlags]
 
 
 class QgsProcessingAlgorithmInformation(PyQt5.sip.wrapper):
@@ -32613,6 +33834,14 @@ class QgsProcessingUtils(PyQt5.sip.wrapper):
     def compatibleVectorLayers(project: typing.Optional['QgsProject'], sourceTypes: collections.abc.Iterable[int] = ..., sort: bool = ...) -> list[QgsVectorLayer]: ...
     @staticmethod
     def compatibleRasterLayers(project: typing.Optional['QgsProject'], sort: bool = ...) -> list['QgsRasterLayer']: ...
+    UnknownType: QgsProcessingUtils.LayerHint
+    Vector: QgsProcessingUtils.LayerHint
+    Raster: QgsProcessingUtils.LayerHint
+    Mesh: QgsProcessingUtils.LayerHint
+    PointCloud: QgsProcessingUtils.LayerHint
+    Annotation: QgsProcessingUtils.LayerHint
+    VectorTile: QgsProcessingUtils.LayerHint
+    TiledScene: QgsProcessingUtils.LayerHint
 
 
 class QgsProcessingFeatureSource(QgsFeatureSource):
@@ -32641,6 +33870,9 @@ class QgsProcessingFeatureSource(QgsFeatureSource):
     def getFeatures(self, request: QgsFeatureRequest, flags: typing.Union[Qgis.ProcessingFeatureSourceFlags, Qgis.ProcessingFeatureSourceFlag]) -> QgsFeatureIterator: ...
     @typing.overload
     def getFeatures(self, request: QgsFeatureRequest = ...) -> QgsFeatureIterator: ...
+    Flag: typing.Type[Qgis.ProcessingFeatureSourceFlag]
+    FlagSkipGeometryValidityChecks: Qgis.ProcessingFeatureSourceFlag
+    Flags: typing.Type[Qgis.ProcessingFeatureSourceFlags]
 
 
 class QgsProjectTranslator(PyQt5.sip.wrapper):
@@ -32900,6 +34132,27 @@ class QgsProject(QtCore.QObject, QgsExpressionContextGenerator, QgsExpressionCon
     def setInstance(project: typing.Optional['QgsProject']) -> None: ...
     @staticmethod
     def instance() -> typing.Optional['QgsProject']: ...
+    AvoidIntersectionsMode: typing.Type[Qgis.AvoidIntersectionsMode]
+    AllowIntersections: Qgis.AvoidIntersectionsMode
+    AvoidIntersectionsCurrentLayer: Qgis.AvoidIntersectionsMode
+    AvoidIntersectionsLayers: Qgis.AvoidIntersectionsMode
+    FileFormat: typing.Type[Qgis.ProjectFileFormat]
+    Qgz: Qgis.ProjectFileFormat
+    Qgs: Qgis.ProjectFileFormat
+    ReadFlag: typing.Type[Qgis.ProjectReadFlag]
+    FlagDontResolveLayers: Qgis.ProjectReadFlag
+    FlagDontLoadLayouts: Qgis.ProjectReadFlag
+    FlagTrustLayerMetadata: Qgis.ProjectReadFlag
+    FlagDontStoreOriginalStyles: Qgis.ProjectReadFlag
+    FlagDontLoad3DViews: Qgis.ProjectReadFlag
+    DontLoadProjectStyles: Qgis.ProjectReadFlag
+    ForceReadOnlyLayers: Qgis.ProjectReadFlag
+    DontUpgradeAnnotations: Qgis.ProjectReadFlag
+    ReadFlags: typing.Type[Qgis.ProjectReadFlags]
+    NoProperty: QgsProject.DataDefinedServerProperty
+    AllProperties: QgsProject.DataDefinedServerProperty
+    WMSOnlineResource: QgsProject.DataDefinedServerProperty
+    blockDirtying: typing.Type[ProjectDirtyBlocker]
 
 
 class QgsProjectDirtyBlocker(PyQt5.sip.wrapper):
@@ -33211,6 +34464,9 @@ class QgsProjectStyleDatabaseModel(QtCore.QAbstractListModel):
     def styleFromIndex(self, index: QtCore.QModelIndex) -> typing.Optional['QgsStyle']: ...
     def data(self, index: QtCore.QModelIndex, role: int) -> typing.Any: ...
     def rowCount(self, parent: QtCore.QModelIndex) -> int: ...
+    Role: typing.Type[QgsProjectStyleDatabaseModel.CustomRole]
+    StyleRole: QgsProjectStyleDatabaseModel.CustomRole
+    PathRole: QgsProjectStyleDatabaseModel.CustomRole
 
 
 class QgsProjectStyleDatabaseProxyModel(QtCore.QSortFilterProxyModel):
@@ -33659,6 +34915,13 @@ class QgsAbstractDatabaseProviderConnection(QgsAbstractProviderConnection):
     def geometryColumnCapabilities(self) -> 'QgsAbstractDatabaseProviderConnection.GeometryColumnCapabilities': ...
     def capabilities2(self) -> Qgis.DatabaseProviderConnectionCapabilities2: ...
     def capabilities(self) -> 'QgsAbstractDatabaseProviderConnection.Capabilities': ...
+    Aspatial: QgsAbstractDatabaseProviderConnection.TableFlag
+    Vector: QgsAbstractDatabaseProviderConnection.TableFlag
+    Raster: QgsAbstractDatabaseProviderConnection.TableFlag
+    View: QgsAbstractDatabaseProviderConnection.TableFlag
+    MaterializedView: QgsAbstractDatabaseProviderConnection.TableFlag
+    Foreign: QgsAbstractDatabaseProviderConnection.TableFlag
+    IncludeSystemTables: QgsAbstractDatabaseProviderConnection.TableFlag
 
 
 class QgsMeshDriverMetadata(PyQt5.sip.wrapper):
@@ -33826,6 +35089,14 @@ class QgsProviderMetadata(QtCore.QObject):
     def icon(self) -> QtGui.QIcon: ...
     def description(self) -> str: ...
     def key(self) -> str: ...
+    FilterType: typing.Type[Qgis.FileFilterType]
+    FilterVector: Qgis.FileFilterType
+    FilterRaster: Qgis.FileFilterType
+    FilterMesh: Qgis.FileFilterType
+    FilterMeshDataset: Qgis.FileFilterType
+    FilterPointCloud: Qgis.FileFilterType
+    VectorTile: Qgis.FileFilterType
+    TiledScene: Qgis.FileFilterType
 
 
 class QgsProviderRegistry(PyQt5.sip.wrapper):
@@ -34148,6 +35419,14 @@ class QgsArcGisPortalUtils(PyQt5.sip.wrapper):
     @staticmethod
     @deprecated("""""")
     def retrieveUserInfo(communityUrl: typing.Optional[str], user: typing.Optional[str], authcfg: typing.Optional[str], requestHeaders: dict[typing.Optional[str], typing.Any], feedback: typing.Optional[QgsFeedback] = ..., urlPrefix: typing.Optional[str] = ...) -> typing.Tuple[dict[str, typing.Any], str, str]: ...
+    ItemType: typing.Type[Qgis.ArcGisRestServiceType]
+    FeatureService: Qgis.ArcGisRestServiceType
+    MapService: Qgis.ArcGisRestServiceType
+    ImageService: Qgis.ArcGisRestServiceType
+    GlobeServer: Qgis.ArcGisRestServiceType
+    GPServer: Qgis.ArcGisRestServiceType
+    GeocodeServer: Qgis.ArcGisRestServiceType
+    Unknown: Qgis.ArcGisRestServiceType
 
 
 class QgsArcGisRestContext(PyQt5.sip.wrapper):
@@ -34523,6 +35802,18 @@ class QgsRasterInterface(PyQt5.sip.wrapper):
     def capabilitiesString(self) -> str: ...
     def capabilities(self) -> Qgis.RasterInterfaceCapabilities: ...
     def clone(self) -> typing.Optional['QgsRasterInterface']: ...
+    Capability: typing.Type[Qgis.RasterInterfaceCapability]
+    NoCapabilities: Qgis.RasterInterfaceCapability
+    Size: Qgis.RasterInterfaceCapability
+    Create: Qgis.RasterInterfaceCapability
+    Remove: Qgis.RasterInterfaceCapability
+    BuildPyramids: Qgis.RasterInterfaceCapability
+    Identify: Qgis.RasterInterfaceCapability
+    IdentifyValue: Qgis.RasterInterfaceCapability
+    IdentifyText: Qgis.RasterInterfaceCapability
+    IdentifyHtml: Qgis.RasterInterfaceCapability
+    IdentifyFeature: Qgis.RasterInterfaceCapability
+    Prefetch: Qgis.RasterInterfaceCapability
 
 
 class QgsBrightnessContrastFilter(QgsRasterInterface):
@@ -34645,6 +35936,14 @@ class QgsColorRampShader(QgsRasterShaderFunction):
     def colorRampItemList(self) -> list['QgsColorRampShader.ColorRampItem']: ...
     def __ne__(self, other: object): ...
     def __eq__(self, other: object): ...
+    Type: typing.Type[Qgis.ShaderInterpolationMethod]
+    Interpolated: Qgis.ShaderInterpolationMethod
+    Discrete: Qgis.ShaderInterpolationMethod
+    Exact: Qgis.ShaderInterpolationMethod
+    ClassificationMode: typing.Type[Qgis.ShaderClassificationMethod]
+    Continuous: Qgis.ShaderClassificationMethod
+    EqualInterval: Qgis.ShaderClassificationMethod
+    Quantile: Qgis.ShaderClassificationMethod
 
 
 class QgsContrastEnhancement(PyQt5.sip.wrapper):
@@ -34964,6 +36263,68 @@ class QgsRaster(PyQt5.sip.wrapper):
 
     @staticmethod
     def representableValue(value: float, dataType: Qgis.DataType) -> float: ...
+    ColorInterpretation: typing.Type[Qgis.RasterColorInterpretation]
+    UndefinedColorInterpretation: Qgis.RasterColorInterpretation
+    GrayIndex: Qgis.RasterColorInterpretation
+    PaletteIndex: Qgis.RasterColorInterpretation
+    RedBand: Qgis.RasterColorInterpretation
+    GreenBand: Qgis.RasterColorInterpretation
+    BlueBand: Qgis.RasterColorInterpretation
+    AlphaBand: Qgis.RasterColorInterpretation
+    HueBand: Qgis.RasterColorInterpretation
+    SaturationBand: Qgis.RasterColorInterpretation
+    LightnessBand: Qgis.RasterColorInterpretation
+    CyanBand: Qgis.RasterColorInterpretation
+    MagentaBand: Qgis.RasterColorInterpretation
+    YellowBand: Qgis.RasterColorInterpretation
+    BlackBand: Qgis.RasterColorInterpretation
+    YCbCr_YBand: Qgis.RasterColorInterpretation
+    YCbCr_CbBand: Qgis.RasterColorInterpretation
+    YCbCr_CrBand: Qgis.RasterColorInterpretation
+    ContinuousPalette: Qgis.RasterColorInterpretation
+    PanBand: Qgis.RasterColorInterpretation
+    CoastalBand: Qgis.RasterColorInterpretation
+    RedEdgeBand: Qgis.RasterColorInterpretation
+    NIRBand: Qgis.RasterColorInterpretation
+    SWIRBand: Qgis.RasterColorInterpretation
+    MWIRBand: Qgis.RasterColorInterpretation
+    LWIRBand: Qgis.RasterColorInterpretation
+    TIRBand: Qgis.RasterColorInterpretation
+    OtherIRBand: Qgis.RasterColorInterpretation
+    SAR_Ka_Band: Qgis.RasterColorInterpretation
+    SAR_K_Band: Qgis.RasterColorInterpretation
+    SAR_Ku_Band: Qgis.RasterColorInterpretation
+    SAR_X_Band: Qgis.RasterColorInterpretation
+    SAR_C_Band: Qgis.RasterColorInterpretation
+    SAR_S_Band: Qgis.RasterColorInterpretation
+    SAR_L_Band: Qgis.RasterColorInterpretation
+    SAR_P_Band: Qgis.RasterColorInterpretation
+    DrawingStyle: typing.Type[Qgis.RasterDrawingStyle]
+    UndefinedDrawingStyle: Qgis.RasterDrawingStyle
+    SingleBandGray: Qgis.RasterDrawingStyle
+    SingleBandPseudoColor: Qgis.RasterDrawingStyle
+    PalettedColor: Qgis.RasterDrawingStyle
+    PalettedSingleBandGray: Qgis.RasterDrawingStyle
+    PalettedSingleBandPseudoColor: Qgis.RasterDrawingStyle
+    PalettedMultiBandColor: Qgis.RasterDrawingStyle
+    MultiBandSingleBandGray: Qgis.RasterDrawingStyle
+    MultiBandSingleBandPseudoColor: Qgis.RasterDrawingStyle
+    MultiBandColor: Qgis.RasterDrawingStyle
+    SingleBandColorDataStyle: Qgis.RasterDrawingStyle
+    RasterPyramidsFormat: typing.Type[Qgis.RasterPyramidFormat]
+    PyramidsGTiff: Qgis.RasterPyramidFormat
+    PyramidsInternal: Qgis.RasterPyramidFormat
+    PyramidsErdas: Qgis.RasterPyramidFormat
+    RasterBuildPyramids: typing.Type[Qgis.RasterBuildPyramidOption]
+    PyramidsFlagNo: Qgis.RasterBuildPyramidOption
+    PyramidsFlagYes: Qgis.RasterBuildPyramidOption
+    PyramidsCopyExisting: Qgis.RasterBuildPyramidOption
+    IdentifyFormat: typing.Type[Qgis.RasterIdentifyFormat]
+    IdentifyFormatUndefined: Qgis.RasterIdentifyFormat
+    IdentifyFormatValue: Qgis.RasterIdentifyFormat
+    IdentifyFormatText: Qgis.RasterIdentifyFormat
+    IdentifyFormatHtml: Qgis.RasterIdentifyFormat
+    IdentifyFormatFeature: Qgis.RasterIdentifyFormat
 
 
 class QgsRasterBandStats(PyQt5.sip.wrapper):
@@ -34988,6 +36349,16 @@ class QgsRasterBandStats(PyQt5.sip.wrapper):
     def __init__(self, a0: 'QgsRasterBandStats') -> None: ...
 
     def contains(self, s: 'QgsRasterBandStats') -> bool: ...
+    Stats: typing.Type[Qgis.RasterBandStatistic]
+    NoStatistic: Qgis.RasterBandStatistic
+    Min: Qgis.RasterBandStatistic
+    Max: Qgis.RasterBandStatistic
+    Range: Qgis.RasterBandStatistic
+    Sum: Qgis.RasterBandStatistic
+    Mean: Qgis.RasterBandStatistic
+    StdDev: Qgis.RasterBandStatistic
+    SumOfSquares: Qgis.RasterBandStatistic
+    All: Qgis.RasterBandStatistic
 
 
 class QgsRasterBlock(PyQt5.sip.wrapper):
@@ -35249,6 +36620,26 @@ class QgsRasterDataProvider(QgsDataProvider, QgsRasterInterface):
     def setInput(self, input: typing.Optional[QgsRasterInterface]) -> bool: ...
     def providerCapabilities(self) -> Qgis.RasterProviderCapabilities: ...
     def clone(self) -> typing.Optional['QgsRasterDataProvider']: ...
+    ResamplingMethod: typing.Type[Qgis.RasterResamplingMethod]
+    Nearest: Qgis.RasterResamplingMethod
+    Bilinear: Qgis.RasterResamplingMethod
+    Cubic: Qgis.RasterResamplingMethod
+    CubicSpline: Qgis.RasterResamplingMethod
+    Lanczos: Qgis.RasterResamplingMethod
+    Average: Qgis.RasterResamplingMethod
+    Mode: Qgis.RasterResamplingMethod
+    Gauss: Qgis.RasterResamplingMethod
+    ProviderCapability: typing.Type[Qgis.RasterProviderCapability]
+    NoProviderCapabilities: Qgis.RasterProviderCapability
+    ReadLayerMetadata: Qgis.RasterProviderCapability
+    WriteLayerMetadata: Qgis.RasterProviderCapability
+    ProviderHintBenefitsFromResampling: Qgis.RasterProviderCapability
+    ProviderHintCanPerformProviderResampling: Qgis.RasterProviderCapability
+    ReloadData: Qgis.RasterProviderCapability
+    DpiDependentData: Qgis.RasterProviderCapability
+    NativeRasterAttributeTable: Qgis.RasterProviderCapability
+    BuildPyramids: Qgis.RasterProviderCapability
+    ProviderCapabilities: typing.Type[Qgis.RasterProviderCapabilities]
 
 
 class QgsRasterDataProviderElevationProperties(QgsDataProviderElevationProperties):
@@ -35279,6 +36670,12 @@ class QgsRasterDataProviderTemporalCapabilities(QgsDataProviderTemporalCapabilit
     def intervalHandlingMethod(self) -> Qgis.TemporalIntervalMatchMethod: ...
     def setFlags(self, flags: typing.Union[Qgis.RasterTemporalCapabilityFlags, Qgis.RasterTemporalCapabilityFlag]) -> None: ...
     def flags(self) -> Qgis.RasterTemporalCapabilityFlags: ...
+    IntervalHandlingMethod: typing.Type[Qgis.TemporalIntervalMatchMethod]
+    MatchUsingWholeRange: Qgis.TemporalIntervalMatchMethod
+    MatchExactUsingStartOfRange: Qgis.TemporalIntervalMatchMethod
+    MatchExactUsingEndOfRange: Qgis.TemporalIntervalMatchMethod
+    FindClosestMatchToStartOfRange: Qgis.TemporalIntervalMatchMethod
+    FindClosestMatchToEndOfRange: Qgis.TemporalIntervalMatchMethod
 
 
 class QgsRasterDrawer(PyQt5.sip.wrapper):
@@ -35382,6 +36779,17 @@ class QgsRasterFileWriter(PyQt5.sip.wrapper):
     def writeRaster(self, pipe: typing.Optional['QgsRasterPipe'], nCols: int, nRows: int, outputExtent: QgsRectangle, crs: QgsCoordinateReferenceSystem, transformContext: QgsCoordinateTransformContext, feedback: typing.Optional['QgsRasterBlockFeedback'] = ...) -> Qgis.RasterFileWriterResult: ...
     def createMultiBandRaster(self, dataType: Qgis.DataType, width: int, height: int, extent: QgsRectangle, crs: QgsCoordinateReferenceSystem, nBands: int) -> typing.Optional[QgsRasterDataProvider]: ...
     def createOneBandRaster(self, dataType: Qgis.DataType, width: int, height: int, extent: QgsRectangle, crs: QgsCoordinateReferenceSystem) -> typing.Optional[QgsRasterDataProvider]: ...
+    Mode: typing.Type[Qgis.RasterExportType]
+    Raw: Qgis.RasterExportType
+    Image: Qgis.RasterExportType
+    WriterError: typing.Type[Qgis.RasterFileWriterResult]
+    NoError: Qgis.RasterFileWriterResult
+    SourceProviderError: Qgis.RasterFileWriterResult
+    DestProviderError: Qgis.RasterFileWriterResult
+    CreateDatasourceError: Qgis.RasterFileWriterResult
+    WriteError: Qgis.RasterFileWriterResult
+    NoDataConflict: Qgis.RasterFileWriterResult
+    WriteCanceled: Qgis.RasterFileWriterResult
 
 
 class QgsRasterFileWriterTask(QgsTask):
@@ -35652,6 +37060,11 @@ class QgsRasterLayer(QgsMapLayer, QgsAbstractProfileSource):
     def profileSource(self) -> typing.Optional[QgsAbstractProfileSource]: ...
     def clone(self) -> typing.Optional['QgsRasterLayer']: ...
     def __repr__(self) -> typing.Any: ...
+    LayerType: typing.Type[Qgis.RasterLayerType]
+    GrayOrUndefined: Qgis.RasterLayerType
+    Palette: Qgis.RasterLayerType
+    Multiband: Qgis.RasterLayerType
+    ColorLayer: Qgis.RasterLayerType
 
 
 class QgsRasterLayerElevationProperties(QgsMapLayerElevationProperties):
@@ -35718,6 +37131,13 @@ class QgsRasterLayerTemporalProperties(QgsMapLayerTemporalProperties):
     def mode(self) -> Qgis.RasterTemporalMode: ...
     def allTemporalRanges(self, layer: typing.Optional[QgsMapLayer]) -> list[QgsDateTimeRange]: ...
     def isVisibleInTemporalRange(self, range: QgsDateTimeRange) -> bool: ...
+    TemporalMode: typing.Type[Qgis.RasterTemporalMode]
+    ModeFixedTemporalRange: Qgis.RasterTemporalMode
+    ModeTemporalRangeFromDataProvider: Qgis.RasterTemporalMode
+    ModeRedrawLayerOnly: Qgis.RasterTemporalMode
+    FixedRangePerBand: Qgis.RasterTemporalMode
+    RepresentsTemporalValues: Qgis.RasterTemporalMode
+    FixedDateTime: Qgis.RasterTemporalMode
 
 
 class QgsRasterLayerUtils(PyQt5.sip.wrapper):
@@ -35772,6 +37192,17 @@ class QgsRasterMinMaxOrigin(PyQt5.sip.wrapper):
     def extent(self) -> Qgis.RasterRangeExtent: ...
     def limits(self) -> Qgis.RasterRangeLimit: ...
     def __eq__(self, other: object): ...
+    Limits: typing.Type[Qgis.RasterRangeLimit]
+    None_: Qgis.RasterRangeLimit
+    MinMax: Qgis.RasterRangeLimit
+    StdDev: Qgis.RasterRangeLimit
+    CumulativeCut: Qgis.RasterRangeLimit
+    Extent: typing.Type[Qgis.RasterRangeExtent]
+    CurrentCanvas: Qgis.RasterRangeExtent
+    UpdatedCanvas: Qgis.RasterRangeExtent
+    StatAccuracy: typing.Type[Qgis.RasterRangeAccuracy]
+    Exact: Qgis.RasterRangeAccuracy
+    Estimated: Qgis.RasterRangeAccuracy
 
 
 class QgsRasterNuller(QgsRasterInterface):
@@ -35831,6 +37262,19 @@ class QgsRasterPipe(PyQt5.sip.wrapper):
     def replace(self, idx: int, interface: typing.Optional[QgsRasterInterface]) -> bool: ...
     def insert(self, idx: int, interface: typing.Optional[QgsRasterInterface]) -> bool: ...
     def moveToThread(self, thread: typing.Optional[QtCore.QThread]) -> None: ...
+    Role: typing.Type[Qgis.RasterPipeInterfaceRole]
+    UnknownRole: Qgis.RasterPipeInterfaceRole
+    ProviderRole: Qgis.RasterPipeInterfaceRole
+    RendererRole: Qgis.RasterPipeInterfaceRole
+    BrightnessRole: Qgis.RasterPipeInterfaceRole
+    ResamplerRole: Qgis.RasterPipeInterfaceRole
+    ProjectorRole: Qgis.RasterPipeInterfaceRole
+    NullerRole: Qgis.RasterPipeInterfaceRole
+    HueSaturationRole: Qgis.RasterPipeInterfaceRole
+    ResamplingStage: typing.Type[Qgis.RasterResamplingStage]
+    ResampleFilter: Qgis.RasterResamplingStage
+    Provider: Qgis.RasterResamplingStage
+    RendererOpacity: QgsRasterPipe.Property
 
 
 class QgsRasterProjector(QgsRasterInterface):
@@ -36437,6 +37881,19 @@ class QgsScaleBarSettings(PyQt5.sip.wrapper):
     def numberOfSegmentsLeft(self) -> int: ...
     def setNumberOfSegments(self, segments: int) -> None: ...
     def numberOfSegments(self) -> int: ...
+    Alignment: typing.Type[Qgis.ScaleBarAlignment]
+    AlignLeft: Qgis.ScaleBarAlignment
+    AlignMiddle: Qgis.ScaleBarAlignment
+    AlignRight: Qgis.ScaleBarAlignment
+    SegmentSizeMode: typing.Type[Qgis.ScaleBarSegmentSizeMode]
+    SegmentSizeFixed: Qgis.ScaleBarSegmentSizeMode
+    SegmentSizeFitWidth: Qgis.ScaleBarSegmentSizeMode
+    LabelVerticalPlacement: typing.Type[Qgis.ScaleBarDistanceLabelVerticalPlacement]
+    LabelAboveSegment: Qgis.ScaleBarDistanceLabelVerticalPlacement
+    LabelBelowSegment: Qgis.ScaleBarDistanceLabelVerticalPlacement
+    LabelHorizontalPlacement: typing.Type[Qgis.ScaleBarDistanceLabelHorizontalPlacement]
+    LabelCenteredEdge: Qgis.ScaleBarDistanceLabelHorizontalPlacement
+    LabelCenteredSegment: Qgis.ScaleBarDistanceLabelHorizontalPlacement
 
 
 class QgsSingleBoxScaleBarRenderer(QgsScaleBarRenderer):
@@ -37051,6 +38508,78 @@ class QgsSymbolLayer(PyQt5.sip.wrapper):
     def flags(self) -> Qgis.SymbolLayerFlags: ...
     @staticmethod
     def propertyDefinitions() -> dict[int, QgsPropertyDefinition]: ...
+    PropertySize: QgsSymbolLayer.Property
+    PropertyAngle: QgsSymbolLayer.Property
+    PropertyName: QgsSymbolLayer.Property
+    PropertyFillColor: QgsSymbolLayer.Property
+    PropertyStrokeColor: QgsSymbolLayer.Property
+    PropertyStrokeWidth: QgsSymbolLayer.Property
+    PropertyStrokeStyle: QgsSymbolLayer.Property
+    PropertyOffset: QgsSymbolLayer.Property
+    PropertyCharacter: QgsSymbolLayer.Property
+    PropertyWidth: QgsSymbolLayer.Property
+    PropertyHeight: QgsSymbolLayer.Property
+    PropertyPreserveAspectRatio: QgsSymbolLayer.Property
+    PropertyFillStyle: QgsSymbolLayer.Property
+    PropertyJoinStyle: QgsSymbolLayer.Property
+    PropertySecondaryColor: QgsSymbolLayer.Property
+    PropertyLineAngle: QgsSymbolLayer.Property
+    PropertyLineDistance: QgsSymbolLayer.Property
+    PropertyGradientType: QgsSymbolLayer.Property
+    PropertyCoordinateMode: QgsSymbolLayer.Property
+    PropertyGradientSpread: QgsSymbolLayer.Property
+    PropertyGradientReference1X: QgsSymbolLayer.Property
+    PropertyGradientReference1Y: QgsSymbolLayer.Property
+    PropertyGradientReference2X: QgsSymbolLayer.Property
+    PropertyGradientReference2Y: QgsSymbolLayer.Property
+    PropertyGradientReference1IsCentroid: QgsSymbolLayer.Property
+    PropertyGradientReference2IsCentroid: QgsSymbolLayer.Property
+    PropertyBlurRadius: QgsSymbolLayer.Property
+    PropertyShapeburstUseWholeShape: QgsSymbolLayer.Property
+    PropertyShapeburstMaxDistance: QgsSymbolLayer.Property
+    PropertyShapeburstIgnoreRings: QgsSymbolLayer.Property
+    PropertyFile: QgsSymbolLayer.Property
+    PropertyDistanceX: QgsSymbolLayer.Property
+    PropertyDistanceY: QgsSymbolLayer.Property
+    PropertyDisplacementX: QgsSymbolLayer.Property
+    PropertyDisplacementY: QgsSymbolLayer.Property
+    PropertyOpacity: QgsSymbolLayer.Property
+    PropertyCustomDash: QgsSymbolLayer.Property
+    PropertyCapStyle: QgsSymbolLayer.Property
+    PropertyPlacement: QgsSymbolLayer.Property
+    PropertyInterval: QgsSymbolLayer.Property
+    PropertyOffsetAlongLine: QgsSymbolLayer.Property
+    PropertyAverageAngleLength: QgsSymbolLayer.Property
+    PropertyHorizontalAnchor: QgsSymbolLayer.Property
+    PropertyVerticalAnchor: QgsSymbolLayer.Property
+    PropertyLayerEnabled: QgsSymbolLayer.Property
+    PropertyArrowWidth: QgsSymbolLayer.Property
+    PropertyArrowStartWidth: QgsSymbolLayer.Property
+    PropertyArrowHeadLength: QgsSymbolLayer.Property
+    PropertyArrowHeadThickness: QgsSymbolLayer.Property
+    PropertyArrowHeadType: QgsSymbolLayer.Property
+    PropertyArrowType: QgsSymbolLayer.Property
+    PropertyOffsetX: QgsSymbolLayer.Property
+    PropertyOffsetY: QgsSymbolLayer.Property
+    PropertyPointCount: QgsSymbolLayer.Property
+    PropertyRandomSeed: QgsSymbolLayer.Property
+    PropertyClipPoints: QgsSymbolLayer.Property
+    PropertyDensityArea: QgsSymbolLayer.Property
+    PropertyFontFamily: QgsSymbolLayer.Property
+    PropertyFontStyle: QgsSymbolLayer.Property
+    PropertyDashPatternOffset: QgsSymbolLayer.Property
+    PropertyTrimStart: QgsSymbolLayer.Property
+    PropertyTrimEnd: QgsSymbolLayer.Property
+    PropertyLineStartWidthValue: QgsSymbolLayer.Property
+    PropertyLineEndWidthValue: QgsSymbolLayer.Property
+    PropertyLineStartColorValue: QgsSymbolLayer.Property
+    PropertyLineEndColorValue: QgsSymbolLayer.Property
+    PropertyMarkerClipping: QgsSymbolLayer.Property
+    PropertyRandomOffsetX: QgsSymbolLayer.Property
+    PropertyRandomOffsetY: QgsSymbolLayer.Property
+    PropertyLineClipping: QgsSymbolLayer.Property
+    SkipMultiples: QgsSymbolLayer.Property
+    ShowMarker: QgsSymbolLayer.Property
 
 
 class QgsLineSymbolLayer(QgsSymbolLayer):
@@ -37512,6 +39041,15 @@ class QgsMarkerSymbolLayer(QgsSymbolLayer):
     def renderPoint(self, point: typing.Union[QtCore.QPointF, QtCore.QPoint], context: 'QgsSymbolRenderContext') -> None: ...
     def stopRender(self, context: 'QgsSymbolRenderContext') -> None: ...
     def startRender(self, context: 'QgsSymbolRenderContext') -> None: ...
+    HorizontalAnchorPoint: typing.Type[Qgis.HorizontalAnchorPoint]
+    Left: Qgis.HorizontalAnchorPoint
+    HCenter: Qgis.HorizontalAnchorPoint
+    Right: Qgis.HorizontalAnchorPoint
+    VerticalAnchorPoint: typing.Type[Qgis.VerticalAnchorPoint]
+    Top: Qgis.VerticalAnchorPoint
+    VCenter: Qgis.VerticalAnchorPoint
+    Bottom: Qgis.VerticalAnchorPoint
+    Baseline: Qgis.VerticalAnchorPoint
 
 
 class QgsEllipseSymbolLayer(QgsMarkerSymbolLayer):
@@ -37739,6 +39277,26 @@ class QgsSymbol(PyQt5.sip.wrapper):
     def symbolTypeForGeometryType(type: Qgis.GeometryType) -> Qgis.SymbolType: ...
     @staticmethod
     def symbolTypeToString(type: Qgis.SymbolType) -> str: ...
+    SymbolType: typing.Type[Qgis.SymbolType]
+    Marker: Qgis.SymbolType
+    Line: Qgis.SymbolType
+    Fill: Qgis.SymbolType
+    Hybrid: Qgis.SymbolType
+    ScaleMethod: typing.Type[Qgis.ScaleMethod]
+    ScaleArea: Qgis.ScaleMethod
+    ScaleDiameter: Qgis.ScaleMethod
+    RenderHint: typing.Type[Qgis.SymbolRenderHint]
+    DynamicRotation: Qgis.SymbolRenderHint
+    IsSymbolLayerSubSymbol: Qgis.SymbolRenderHint
+    ForceVectorRendering: Qgis.SymbolRenderHint
+    ExcludeSymbolBuffers: Qgis.SymbolRenderHint
+    RenderHints: typing.Type[Qgis.SymbolRenderHints]
+    PreviewFlag: typing.Type[Qgis.SymbolPreviewFlag]
+    FlagIncludeCrosshairsForMarkerSymbols: Qgis.SymbolPreviewFlag
+    SymbolPreviewFlags: typing.Type[Qgis.SymbolPreviewFlags]
+    PropertyOpacity: QgsSymbol.Property
+    ExtentBuffer: QgsSymbol.Property
+    PreviewFlags: typing.Type[Qgis.SymbolPreviewFlags]
 
 
 class QgsFillSymbol(QgsSymbol):
@@ -37868,6 +39426,20 @@ class QgsGradientFillSymbolLayer(QgsFillSymbolLayer):
     def flags(self) -> Qgis.SymbolLayerFlags: ...
     @staticmethod
     def create(properties: dict[str, typing.Any] = ...) -> typing.Optional[QgsSymbolLayer]: ...
+    GradientColorType: typing.Type[Qgis.GradientColorSource]
+    SimpleTwoColor: Qgis.GradientColorSource
+    ColorRamp: Qgis.GradientColorSource
+    GradientType: typing.Type[Qgis.GradientType]
+    Linear: Qgis.GradientType
+    Radial: Qgis.GradientType
+    Conical: Qgis.GradientType
+    GradientCoordinateMode: typing.Type[Qgis.SymbolCoordinateReference]
+    Feature: Qgis.SymbolCoordinateReference
+    Viewport: Qgis.SymbolCoordinateReference
+    GradientSpread: typing.Type[Qgis.GradientSpread]
+    Pad: Qgis.GradientSpread
+    Reflect: Qgis.GradientSpread
+    Repeat: Qgis.GradientSpread
 
 
 class QgsShapeburstFillSymbolLayer(QgsFillSymbolLayer):
@@ -37914,6 +39486,9 @@ class QgsShapeburstFillSymbolLayer(QgsFillSymbolLayer):
     def layerType(self) -> str: ...
     @staticmethod
     def create(properties: dict[str, typing.Any] = ...) -> typing.Optional[QgsSymbolLayer]: ...
+    ShapeburstColorType: typing.Type[Qgis.GradientColorSource]
+    SimpleTwoColor: Qgis.GradientColorSource
+    ColorRamp: Qgis.GradientColorSource
 
 
 class QgsImageFillSymbolLayer(QgsFillSymbolLayer):
@@ -37991,6 +39566,9 @@ class QgsRasterFillSymbolLayer(QgsImageFillSymbolLayer):
     def createFromSld(element: QtXml.QDomElement) -> typing.Optional[QgsSymbolLayer]: ...
     @staticmethod
     def create(properties: dict[str, typing.Any] = ...) -> typing.Optional[QgsSymbolLayer]: ...
+    FillCoordinateMode: typing.Type[Qgis.SymbolCoordinateReference]
+    Feature: Qgis.SymbolCoordinateReference
+    Viewport: Qgis.SymbolCoordinateReference
 
 
 class QgsSVGFillSymbolLayer(QgsImageFillSymbolLayer):
@@ -38240,6 +39818,9 @@ class QgsRandomMarkerFillSymbolLayer(QgsFillSymbolLayer):
     def layerType(self) -> str: ...
     @staticmethod
     def create(properties: dict[str, typing.Any] = ...) -> typing.Optional[QgsSymbolLayer]: ...
+    CountMethod: typing.Type[Qgis.PointCountMethod]
+    AbsoluteCount: Qgis.PointCountMethod
+    DensityBasedCount: Qgis.PointCountMethod
 
 
 class QgsCentroidFillSymbolLayer(QgsFillSymbolLayer):
@@ -38432,6 +40013,9 @@ class QgsGraduatedSymbolRenderer(QgsFeatureRenderer):
     def originalSymbolForFeature(self, feature: QgsFeature, context: QgsRenderContext) -> typing.Optional[QgsSymbol]: ...
     def symbolForFeature(self, feature: QgsFeature, context: QgsRenderContext) -> typing.Optional[QgsSymbol]: ...
     def flags(self) -> Qgis.FeatureRendererFlags: ...
+    GraduatedMethod: typing.Type[Qgis.GraduatedMethod]
+    GraduatedColor: Qgis.GraduatedMethod
+    GraduatedSize: Qgis.GraduatedMethod
 
 
 class QgsHeatmapRenderer(QgsFeatureRenderer):
@@ -38859,6 +40443,15 @@ class QgsTemplatedLineSymbolLayerBase(QgsLineSymbolLayer):
     def interval(self) -> float: ...
     def setRotateSymbols(self, rotate: bool) -> None: ...
     def rotateSymbols(self) -> bool: ...
+    Placement: typing.Type[Qgis.MarkerLinePlacement]
+    Interval: Qgis.MarkerLinePlacement
+    Vertex: Qgis.MarkerLinePlacement
+    LastVertex: Qgis.MarkerLinePlacement
+    FirstVertex: Qgis.MarkerLinePlacement
+    CentralPoint: Qgis.MarkerLinePlacement
+    CurvePoint: Qgis.MarkerLinePlacement
+    SegmentCenter: Qgis.MarkerLinePlacement
+    InnerVertices: Qgis.MarkerLinePlacement
 
 
 class QgsMarkerLineSymbolLayer(QgsTemplatedLineSymbolLayerBase):
@@ -38902,6 +40495,12 @@ class QgsMarkerLineSymbolLayer(QgsTemplatedLineSymbolLayerBase):
     def createFromSld(element: QtXml.QDomElement) -> typing.Optional[QgsSymbolLayer]: ...
     @staticmethod
     def create(properties: dict[str, typing.Any] = ...) -> typing.Optional[QgsSymbolLayer]: ...
+    Interval: Qgis.MarkerLinePlacement
+    Vertex: Qgis.MarkerLinePlacement
+    LastVertex: Qgis.MarkerLinePlacement
+    FirstVertex: Qgis.MarkerLinePlacement
+    CentralPoint: Qgis.MarkerLinePlacement
+    CurvePoint: Qgis.MarkerLinePlacement
 
 
 class QgsHashedLineSymbolLayer(QgsTemplatedLineSymbolLayerBase):
@@ -39122,6 +40721,44 @@ class QgsSimpleMarkerSymbolLayerBase(QgsMarkerSymbolLayer):
     def shapeIsFilled(shape: Qgis.MarkerShape) -> bool: ...
     @staticmethod
     def availableShapes() -> list[Qgis.MarkerShape]: ...
+    Shape: typing.Type[Qgis.MarkerShape]
+    Square: Qgis.MarkerShape
+    Diamond: Qgis.MarkerShape
+    Pentagon: Qgis.MarkerShape
+    Hexagon: Qgis.MarkerShape
+    Triangle: Qgis.MarkerShape
+    EquilateralTriangle: Qgis.MarkerShape
+    Star: Qgis.MarkerShape
+    Arrow: Qgis.MarkerShape
+    Circle: Qgis.MarkerShape
+    Cross: Qgis.MarkerShape
+    CrossFill: Qgis.MarkerShape
+    Cross2: Qgis.MarkerShape
+    Line: Qgis.MarkerShape
+    ArrowHead: Qgis.MarkerShape
+    ArrowHeadFilled: Qgis.MarkerShape
+    SemiCircle: Qgis.MarkerShape
+    ThirdCircle: Qgis.MarkerShape
+    QuarterCircle: Qgis.MarkerShape
+    QuarterSquare: Qgis.MarkerShape
+    HalfSquare: Qgis.MarkerShape
+    DiagonalHalfSquare: Qgis.MarkerShape
+    RightHalfTriangle: Qgis.MarkerShape
+    LeftHalfTriangle: Qgis.MarkerShape
+    Octagon: Qgis.MarkerShape
+    SquareWithCorners: Qgis.MarkerShape
+    AsteriskFill: Qgis.MarkerShape
+    HalfArc: Qgis.MarkerShape
+    ThirdArc: Qgis.MarkerShape
+    QuarterArc: Qgis.MarkerShape
+    ParallelogramRight: Qgis.MarkerShape
+    ParallelogramLeft: Qgis.MarkerShape
+    Trapezoid: Qgis.MarkerShape
+    Shield: Qgis.MarkerShape
+    DiamondStar: Qgis.MarkerShape
+    Heart: Qgis.MarkerShape
+    Decagon: Qgis.MarkerShape
+    RoundedSquare: Qgis.MarkerShape
 
 
 class QgsSimpleMarkerSymbolLayer(QgsSimpleMarkerSymbolLayerBase):
@@ -40203,6 +41840,17 @@ class QgsStyleModel(QtCore.QAbstractItemModel):
     def setData(self, index: QtCore.QModelIndex, value: typing.Any, role: int = ...) -> bool: ...
     def data(self, index: QtCore.QModelIndex, role: int) -> typing.Any: ...
     def style(self) -> typing.Optional[QgsStyle]: ...
+    Role: typing.Type[QgsStyleModel.CustomRole]
+    TypeRole: QgsStyleModel.CustomRole
+    TagRole: QgsStyleModel.CustomRole
+    EntityName: QgsStyleModel.CustomRole
+    SymbolTypeRole: QgsStyleModel.CustomRole
+    IsFavoriteRole: QgsStyleModel.CustomRole
+    LayerTypeRole: QgsStyleModel.CustomRole
+    CompatibleGeometryTypesRole: QgsStyleModel.CustomRole
+    StyleName: QgsStyleModel.CustomRole
+    StyleFileName: QgsStyleModel.CustomRole
+    IsTitleRole: QgsStyleModel.CustomRole
 
 
 class QgsStyleProxyModel(QtCore.QSortFilterProxyModel):
@@ -40786,6 +42434,10 @@ class QgsSymbolLayerUtils(PyQt5.sip.wrapper):
     def decodeColor(str: typing.Optional[str]) -> QtGui.QColor: ...
     @staticmethod
     def encodeColor(color: typing.Union[QtGui.QColor, QtCore.Qt.GlobalColor]) -> str: ...
+    VertexMarkerType: typing.Type[Qgis.VertexMarkerType]
+    SemiTransparentCircle: Qgis.VertexMarkerType
+    Cross: Qgis.VertexMarkerType
+    NoMarker: Qgis.VertexMarkerType
 
 
 class QgsSymbolRenderContext(PyQt5.sip.wrapper):
@@ -41343,6 +42995,10 @@ class QgsTextFormat(PyQt5.sip.wrapper):
     def isValid(self) -> bool: ...
     def __ne__(self, other: object): ...
     def __eq__(self, other: object): ...
+    TextOrientation: typing.Type[Qgis.TextOrientation]
+    HorizontalOrientation: Qgis.TextOrientation
+    VerticalOrientation: Qgis.TextOrientation
+    RotationBasedOrientation: Qgis.TextOrientation
 
 
 class QgsTextFragment(PyQt5.sip.wrapper):
@@ -41457,6 +43113,26 @@ class QgsTextRenderer(PyQt5.sip.wrapper):
     def convertQtVAlignment(alignment: typing.Union[QtCore.Qt.Alignment, QtCore.Qt.AlignmentFlag]) -> Qgis.TextVerticalAlignment: ...
     @staticmethod
     def convertQtHAlignment(alignment: typing.Union[QtCore.Qt.Alignment, QtCore.Qt.AlignmentFlag]) -> Qgis.TextHorizontalAlignment: ...
+    DrawMode: typing.Type[Qgis.TextLayoutMode]
+    Rect: Qgis.TextLayoutMode
+    Point: Qgis.TextLayoutMode
+    Label: Qgis.TextLayoutMode
+    RectangleCapHeightBased: Qgis.TextLayoutMode
+    RectangleAscentBased: Qgis.TextLayoutMode
+    TextPart: typing.Type[Qgis.TextComponent]
+    Text: Qgis.TextComponent
+    Buffer: Qgis.TextComponent
+    Background: Qgis.TextComponent
+    Shadow: Qgis.TextComponent
+    HAlignment: typing.Type[Qgis.TextHorizontalAlignment]
+    AlignLeft: Qgis.TextHorizontalAlignment
+    AlignCenter: Qgis.TextHorizontalAlignment
+    AlignRight: Qgis.TextHorizontalAlignment
+    AlignJustify: Qgis.TextHorizontalAlignment
+    VAlignment: typing.Type[Qgis.TextVerticalAlignment]
+    AlignTop: Qgis.TextVerticalAlignment
+    AlignVCenter: Qgis.TextVerticalAlignment
+    AlignBottom: Qgis.TextVerticalAlignment
 
 
 class QgsTextRendererUtils(PyQt5.sip.wrapper):
@@ -41478,6 +43154,12 @@ class QgsTextRendererUtils(PyQt5.sip.wrapper):
     def decodeBackgroundSizeType(string: typing.Optional[str]) -> QgsTextBackgroundSettings.SizeType: ...
     @staticmethod
     def decodeShapeType(string: typing.Optional[str]) -> QgsTextBackgroundSettings.ShapeType: ...
+    CurvedTextFlag: typing.Type[Qgis.CurvedTextFlag]
+    TruncateStringWhenLineIsTooShort: Qgis.CurvedTextFlag
+    UseBaselinePlacement: Qgis.CurvedTextFlag
+    UprightCharactersOnly: Qgis.CurvedTextFlag
+    ExtendLineToFitText: Qgis.CurvedTextFlag
+    CurvedTextFlags: typing.Type[Qgis.CurvedTextFlags]
 
 
 class QgsTextShadowSettings(PyQt5.sip.wrapper):
@@ -41857,6 +43539,14 @@ class QgsSensorModel(QtCore.QAbstractItemModel):
     def flags(self, index: QtCore.QModelIndex) -> QtCore.Qt.ItemFlags: ...
     def setData(self, index: QtCore.QModelIndex, value: typing.Any, role: int = ...) -> bool: ...
     def data(self, index: QtCore.QModelIndex, role: int) -> typing.Any: ...
+    Role: typing.Type[QgsSensorModel.CustomRole]
+    SensorType: QgsSensorModel.CustomRole
+    SensorId: QgsSensorModel.CustomRole
+    SensorName: QgsSensorModel.CustomRole
+    SensorStatus: QgsSensorModel.CustomRole
+    SensorLastValue: QgsSensorModel.CustomRole
+    SensorLastTimestamp: QgsSensorModel.CustomRole
+    Sensor: QgsSensorModel.CustomRole
 
 
 class QgsSensorManager(QtCore.QObject):
@@ -42057,6 +43747,9 @@ class QgsSettings(QtCore.QObject):
     def group(self) -> str: ...
     def endGroup(self) -> None: ...
     def beginGroup(self, prefix: typing.Optional[str], section: 'QgsSettings.Section' = ...) -> None: ...
+    enumValue: typing.Type[_qgssettings_enum_value]
+    setEnumValue: typing.Type[_qgssettings_set_enum_value]
+    flagValue: typing.Type[_qgssettings_flag_value]
 
 
 class QgsSettingsEntryBase(PyQt5.sip.wrapper):
@@ -42124,6 +43817,17 @@ class QgsSettingsEntryBase(PyQt5.sip.wrapper):
     def typeId(self) -> str: ...
     @staticmethod
     def dynamicKeyPartToList(dynamicKeyPart: typing.Optional[str]) -> list[str]: ...
+    SettingsType: typing.Type[Qgis.SettingsType]
+    Custom: Qgis.SettingsType
+    Variant: Qgis.SettingsType
+    String: Qgis.SettingsType
+    StringList: Qgis.SettingsType
+    VariantMap: Qgis.SettingsType
+    Bool: Qgis.SettingsType
+    Integer: Qgis.SettingsType
+    Double: Qgis.SettingsType
+    EnumFlag: Qgis.SettingsType
+    Color: Qgis.SettingsType
 
 
 @deprecated("")
@@ -42641,6 +44345,8 @@ class QgsAbstractValidityCheck(PyQt5.sip.wrapper):
     def checkType(self) -> int: ...
     def id(self) -> str: ...
     def create(self) -> typing.Optional['QgsAbstractValidityCheck']: ...
+    TypeLayoutCheck: QgsAbstractValidityCheck.Type
+    TypeUserCheck: QgsAbstractValidityCheck.Type
 
 
 class QgsValidityCheckContext(PyQt5.sip.wrapper):
@@ -42892,6 +44598,37 @@ class QgsVectorDataProvider(QgsDataProvider, QgsFeatureSink, QgsFeatureSource):
     def getFeatures(self, request: QgsFeatureRequest = ...) -> QgsFeatureIterator: ...
     def storageType(self) -> str: ...
     def featureSource(self) -> typing.Optional[QgsAbstractFeatureSource]: ...
+    Capability: typing.Type[Qgis.VectorProviderCapability]
+    NoCapabilities: Qgis.VectorProviderCapability
+    AddFeatures: Qgis.VectorProviderCapability
+    DeleteFeatures: Qgis.VectorProviderCapability
+    ChangeAttributeValues: Qgis.VectorProviderCapability
+    AddAttributes: Qgis.VectorProviderCapability
+    DeleteAttributes: Qgis.VectorProviderCapability
+    CreateSpatialIndex: Qgis.VectorProviderCapability
+    SelectAtId: Qgis.VectorProviderCapability
+    ChangeGeometries: Qgis.VectorProviderCapability
+    SelectEncoding: Qgis.VectorProviderCapability
+    CreateAttributeIndex: Qgis.VectorProviderCapability
+    SimplifyGeometries: Qgis.VectorProviderCapability
+    SimplifyGeometriesWithTopologicalValidation: Qgis.VectorProviderCapability
+    TransactionSupport: Qgis.VectorProviderCapability
+    CircularGeometries: Qgis.VectorProviderCapability
+    ChangeFeatures: Qgis.VectorProviderCapability
+    RenameAttributes: Qgis.VectorProviderCapability
+    FastTruncate: Qgis.VectorProviderCapability
+    ReadLayerMetadata: Qgis.VectorProviderCapability
+    WriteLayerMetadata: Qgis.VectorProviderCapability
+    CancelSupport: Qgis.VectorProviderCapability
+    CreateRenderer: Qgis.VectorProviderCapability
+    CreateLabeling: Qgis.VectorProviderCapability
+    ReloadData: Qgis.VectorProviderCapability
+    FeatureSymbology: Qgis.VectorProviderCapability
+    EditingCapabilities: Qgis.VectorProviderCapability
+    Capabilities: typing.Type[Qgis.VectorProviderCapabilities]
+    FeatureCountState: typing.Type[Qgis.FeatureCountState]
+    Uncounted: Qgis.FeatureCountState
+    UnknownCount: Qgis.FeatureCountState
 
 
 class QgsVectorDataProviderTemporalCapabilities(QgsDataProviderTemporalCapabilities):
@@ -42909,6 +44646,10 @@ class QgsVectorDataProviderTemporalCapabilities(QgsDataProviderTemporalCapabilit
     def setAvailableTemporalRange(self, range: QgsDateTimeRange) -> None: ...
     def setMode(self, mode: Qgis.VectorDataProviderTemporalMode) -> None: ...
     def mode(self) -> Qgis.VectorDataProviderTemporalMode: ...
+    TemporalMode: typing.Type[Qgis.VectorDataProviderTemporalMode]
+    ProviderHasFixedTemporalRange: Qgis.VectorDataProviderTemporalMode
+    ProviderStoresFeatureDateTimeInstantInField: Qgis.VectorDataProviderTemporalMode
+    ProviderStoresFeatureDateTimeStartAndEndInSeparateFields: Qgis.VectorDataProviderTemporalMode
 
 
 class QgsVectorLayerCache(QtCore.QObject):
@@ -43194,6 +44935,19 @@ class QgsVectorLayerExporter(QgsFeatureSink):
     @typing.overload
     @staticmethod
     def exportLayer(layer: typing.Optional[QgsVectorLayer], uri: typing.Optional[str], providerKey: typing.Optional[str], exportOptions: 'QgsVectorLayerExporter.ExportOptions', providerOptions: dict[typing.Optional[str], typing.Any] = ..., feedback: typing.Optional[QgsFeedback] = ...) -> typing.Tuple[Qgis.VectorExportResult, typing.Optional[str]]: ...
+    ExportError: typing.Type[Qgis.VectorExportResult]
+    NoError: Qgis.VectorExportResult
+    ErrCreateDataSource: Qgis.VectorExportResult
+    ErrCreateLayer: Qgis.VectorExportResult
+    ErrAttributeTypeUnsupported: Qgis.VectorExportResult
+    ErrAttributeCreationFailed: Qgis.VectorExportResult
+    ErrProjection: Qgis.VectorExportResult
+    ErrFeatureWriteFailed: Qgis.VectorExportResult
+    ErrInvalidLayer: Qgis.VectorExportResult
+    ErrInvalidProvider: Qgis.VectorExportResult
+    ErrProviderUnsupportedFeature: Qgis.VectorExportResult
+    ErrConnectionFailed: Qgis.VectorExportResult
+    ErrUserCanceled: Qgis.VectorExportResult
 
 
 class QgsVectorLayerExporterTask(QgsTask):
@@ -43430,6 +45184,13 @@ class QgsVectorLayerTemporalProperties(QgsMapLayerTemporalProperties):
     def setMode(self, mode: Qgis.VectorTemporalMode) -> None: ...
     def mode(self) -> Qgis.VectorTemporalMode: ...
     def isVisibleInTemporalRange(self, range: QgsDateTimeRange) -> bool: ...
+    TemporalMode: typing.Type[Qgis.VectorTemporalMode]
+    ModeFixedTemporalRange: Qgis.VectorTemporalMode
+    ModeFeatureDateTimeInstantFromField: Qgis.VectorTemporalMode
+    ModeFeatureDateTimeStartAndEndFromFields: Qgis.VectorTemporalMode
+    ModeFeatureDateTimeStartAndDurationFromFields: Qgis.VectorTemporalMode
+    ModeFeatureDateTimeStartAndEndFromExpressions: Qgis.VectorTemporalMode
+    ModeRedrawLayerOnly: Qgis.VectorTemporalMode
 
 
 class QgsVectorLayerToolsContext(PyQt5.sip.wrapper):

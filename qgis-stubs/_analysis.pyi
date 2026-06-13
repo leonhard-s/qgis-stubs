@@ -190,6 +190,12 @@ class QgsInterpolator(PyQt5.sip.wrapper):
 
     def cacheBaseData(self, feedback: typing.Optional[_core.QgsFeedback] = ...) -> 'QgsInterpolator.Result': ...
     def interpolatePoint(self, x: float, y: float, feedback: typing.Optional[_core.QgsFeedback] = ...) -> typing.Tuple[int, float]: ...
+    SourcePoints: QgsInterpolator.SourceType
+    SourceStructureLines: QgsInterpolator.SourceType
+    SourceBreakLines: QgsInterpolator.SourceType
+    ValueAttribute: QgsInterpolator.ValueSource
+    ValueZ: QgsInterpolator.ValueSource
+    ValueM: QgsInterpolator.ValueSource
 
 
 class QgsIDWInterpolator(QgsInterpolator):
@@ -233,6 +239,8 @@ class QgsTinInterpolator(QgsInterpolator):
     @staticmethod
     def triangulationFields() -> _core.QgsFields: ...
     def interpolatePoint(self, x: float, y: float, feedback: typing.Optional[_core.QgsFeedback]) -> typing.Tuple[int, float]: ...
+    Linear: QgsTinInterpolator.TinInterpolation
+    CloughTocher: QgsTinInterpolator.TinInterpolation
 
 
 class QgsMeshContours(PyQt5.sip.wrapper):
@@ -514,6 +522,20 @@ class QgsAlignRaster(PyQt5.sip.wrapper):
     def setRasters(self, list: collections.abc.Iterable[_core.QgsAlignRasterData.RasterItem]) -> None: ...
     def progressHandler(self) -> typing.Optional['QgsAlignRaster.ProgressHandler']: ...
     def setProgressHandler(self, progressHandler: typing.Optional['QgsAlignRaster.ProgressHandler']) -> None: ...
+    Item: typing.Type[QgsAlignRasterData.RasterItem]
+    ResampleAlg: typing.Type[_Qgis.GdalResampleAlgorithm]
+    RA_NearestNeighbour: _Qgis.GdalResampleAlgorithm
+    RA_Bilinear: _Qgis.GdalResampleAlgorithm
+    RA_Cubic: _Qgis.GdalResampleAlgorithm
+    RA_CubicSpline: _Qgis.GdalResampleAlgorithm
+    RA_Lanczos: _Qgis.GdalResampleAlgorithm
+    RA_Average: _Qgis.GdalResampleAlgorithm
+    RA_Mode: _Qgis.GdalResampleAlgorithm
+    RA_Max: _Qgis.GdalResampleAlgorithm
+    RA_Min: _Qgis.GdalResampleAlgorithm
+    RA_Median: _Qgis.GdalResampleAlgorithm
+    RA_Q1: _Qgis.GdalResampleAlgorithm
+    RA_Q3: _Qgis.GdalResampleAlgorithm
 
 
 class QgsNineCellFilter(PyQt5.sip.wrapper):
@@ -627,6 +649,18 @@ class QgsKernelDensityEstimation(PyQt5.sip.wrapper):
     def addFeature(self, feature: _core.QgsFeature) -> 'QgsKernelDensityEstimation.Result': ...
     def prepare(self) -> 'QgsKernelDensityEstimation.Result': ...
     def run(self) -> 'QgsKernelDensityEstimation.Result': ...
+    KernelQuartic: QgsKernelDensityEstimation.KernelShape
+    KernelTriangular: QgsKernelDensityEstimation.KernelShape
+    KernelUniform: QgsKernelDensityEstimation.KernelShape
+    KernelTriweight: QgsKernelDensityEstimation.KernelShape
+    KernelEpanechnikov: QgsKernelDensityEstimation.KernelShape
+    OutputRaw: QgsKernelDensityEstimation.OutputValues
+    OutputScaled: QgsKernelDensityEstimation.OutputValues
+    Success: QgsKernelDensityEstimation.Result
+    DriverError: QgsKernelDensityEstimation.Result
+    InvalidParameters: QgsKernelDensityEstimation.Result
+    FileCreationError: QgsKernelDensityEstimation.Result
+    RasterIoError: QgsKernelDensityEstimation.Result
 
 
 class QgsRasterCalcNode(PyQt5.sip.wrapper):
@@ -738,6 +772,15 @@ class QgsRasterCalculator(PyQt5.sip.wrapper):
     def setCreationOptions(self, options: collections.abc.Iterable[typing.Optional[str]]) -> None: ...
     def lastError(self) -> str: ...
     def processCalculation(self, feedback: typing.Optional[_core.QgsFeedback] = ...) -> 'QgsRasterCalculator.Result': ...
+    Success: QgsRasterCalculator.Result
+    CreateOutputError: QgsRasterCalculator.Result
+    InputLayerError: QgsRasterCalculator.Result
+    Canceled: QgsRasterCalculator.Result
+    ParserError: QgsRasterCalculator.Result
+    MemoryError: QgsRasterCalculator.Result
+    BandError: QgsRasterCalculator.Result
+    CalculationError: QgsRasterCalculator.Result
+    OpenCLKernelBuildError: QgsRasterCalculator.Result
 
 
 class QgsRasterMatrix(PyQt5.sip.wrapper):
@@ -1198,3 +1241,27 @@ class QgsZonalStatistics(PyQt5.sip.wrapper):
     @typing.overload
     @staticmethod
     def calculateStatistics(rasterInterface: typing.Optional[_core.QgsRasterInterface], geometry: _core.QgsGeometry, cellSizeX: float, cellSizeY: float, rasterBand: int, statistics: typing.Union[_core.Qgis.ZonalStatistics, _core.Qgis.ZonalStatistic]) -> dict[int, typing.Any]: ...
+    Statistic: typing.Type[_Qgis.ZonalStatistic]
+    Count: _Qgis.ZonalStatistic
+    Sum: _Qgis.ZonalStatistic
+    Mean: _Qgis.ZonalStatistic
+    Median: _Qgis.ZonalStatistic
+    StDev: _Qgis.ZonalStatistic
+    Min: _Qgis.ZonalStatistic
+    Max: _Qgis.ZonalStatistic
+    Range: _Qgis.ZonalStatistic
+    Minority: _Qgis.ZonalStatistic
+    Majority: _Qgis.ZonalStatistic
+    Variety: _Qgis.ZonalStatistic
+    Variance: _Qgis.ZonalStatistic
+    All: _Qgis.ZonalStatistic
+    Default: _Qgis.ZonalStatistic
+    Statistics: typing.Type[_Qgis.ZonalStatistics]
+    Result: typing.Type[_Qgis.ZonalStatisticResult]
+    Success: _Qgis.ZonalStatisticResult
+    LayerTypeWrong: _Qgis.ZonalStatisticResult
+    LayerInvalid: _Qgis.ZonalStatisticResult
+    RasterInvalid: _Qgis.ZonalStatisticResult
+    RasterBandInvalid: _Qgis.ZonalStatisticResult
+    FailedToCreateField: _Qgis.ZonalStatisticResult
+    Canceled: _Qgis.ZonalStatisticResult

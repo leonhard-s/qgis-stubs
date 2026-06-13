@@ -3464,6 +3464,8 @@ class QgsLayerMetadataResultsModel(QtCore.QAbstractTableModel):
     def data(self, index: QtCore.QModelIndex, role: int) -> typing.Any: ...
     def columnCount(self, parent: QtCore.QModelIndex) -> int: ...
     def rowCount(self, parent: QtCore.QModelIndex) -> int: ...
+    Roles: typing.Type[QgsLayerMetadataResultsModel.CustomRole]
+    Metadata: QgsLayerMetadataResultsModel.CustomRole
 
 
 class QgsLayerMetadataResultsProxyModel(QtCore.QSortFilterProxyModel):
@@ -6130,6 +6132,8 @@ class QgsValidityCheckResultsModel(QtCore.QAbstractItemModel):
     def rowCount(self, parent: QtCore.QModelIndex = ...) -> int: ...
     def parent(self, child: QtCore.QModelIndex) -> QtCore.QModelIndex: ...
     def index(self, row: int, column: int, parent: QtCore.QModelIndex) -> QtCore.QModelIndex: ...
+    Roles: typing.Type[QgsValidityCheckResultsModel.CustomRole]
+    DescriptionRole: QgsValidityCheckResultsModel.CustomRole
 
 
 class QgsValidityCheckResultsWidget(QtWidgets.QWidget):
@@ -6247,6 +6251,10 @@ class QgsActionMenu(QtWidgets.QMenu):
     def setMode(self, mode: QgsAttributeEditorContext.Mode) -> None: ...
     def setFeature(self, feature: _core.QgsFeature) -> None: ...
     def setActionContextGenerator(self, generator: typing.Optional[QgsMapLayerActionContextGenerator]) -> None: ...
+    ActionType: typing.Type[_Qgis.ActionType]
+    Invalid: _Qgis.ActionType
+    MapLayerAction: _Qgis.ActionType
+    AttributeAction: _Qgis.ActionType
 
 
 class QgsMapLayerAction(QtWidgets.QAction):
@@ -6288,6 +6296,15 @@ class QgsMapLayerAction(QtWidgets.QAction):
     @typing.overload
     def canRunUsingLayer(self, layer: typing.Optional[_core.QgsMapLayer], context: 'QgsMapLayerActionContext') -> bool: ...
     def flags(self) -> _core.Qgis.MapLayerActionFlags: ...
+    Target: typing.Type[_Qgis.MapLayerActionTarget]
+    Layer: _Qgis.MapLayerActionTarget
+    SingleFeature: _Qgis.MapLayerActionTarget
+    MultipleFeatures: _Qgis.MapLayerActionTarget
+    AllActions: _Qgis.MapLayerActionTarget
+    Targets: typing.Type[_Qgis.MapLayerActionTargets]
+    Flag: typing.Type[_Qgis.MapLayerActionFlag]
+    EnabledOnlyWhenEditable: _Qgis.MapLayerActionFlag
+    Flags: typing.Type[_Qgis.MapLayerActionFlags]
 
 
 class QgsMapLayerActionContext(PyQt5.sip.wrapper):
@@ -6496,6 +6513,8 @@ class QgsAttributeTableFilterModel(QtCore.QSortFilterProxyModel, QgsFeatureModel
     def selectedOnTop(self) -> bool: ...
     def setSelectedOnTop(self, selectedOnTop: bool) -> None: ...
     def setSourceModel(self, sourceModel: typing.Optional['QgsAttributeTableModel']) -> None: ...
+    Role: typing.Type[QgsAttributeTableFilterModel.CustomRole]
+    TypeRole: QgsAttributeTableFilterModel.CustomRole
 
 
 class QgsAttributeTableModel(QtCore.QAbstractTableModel):
@@ -6544,6 +6563,11 @@ class QgsAttributeTableModel(QtCore.QAbstractTableModel):
     def headerData(self, section: int, orientation: QtCore.Qt.Orientation, role: int = ...) -> typing.Any: ...
     def columnCount(self, parent: QtCore.QModelIndex = ...) -> int: ...
     def rowCount(self, parent: QtCore.QModelIndex = ...) -> int: ...
+    Role: typing.Type[QgsAttributeTableModel.CustomRole]
+    FeatureIdRole: QgsAttributeTableModel.CustomRole
+    FieldIndexRole: QgsAttributeTableModel.CustomRole
+    UserRole: QgsAttributeTableModel.CustomRole
+    SortRole: QgsAttributeTableModel.CustomRole
 
 
 class QgsAttributeTableView(QgsTableView):
@@ -7230,6 +7254,9 @@ class QgsCodeEditor(Qsci.QsciScintilla):
     def languageCapabilities(self) -> _core.Qgis.ScriptLanguageCapabilities: ...
     def language(self) -> _core.Qgis.ScriptLanguage: ...
     def setTitle(self, title: typing.Optional[str]) -> None: ...
+    LineNumbers: QgsCodeEditor.MarginRole
+    ErrorIndicators: QgsCodeEditor.MarginRole
+    FoldingControls: QgsCodeEditor.MarginRole
 
 
 class QgsCodeEditorColorScheme(PyQt5.sip.wrapper):
@@ -7547,6 +7574,9 @@ class QgsWidgetWrapper(QtCore.QObject):
     def widget(self) -> typing.Optional[QtWidgets.QWidget]: ...
     @staticmethod
     def propertyDefinitions() -> dict[int, _core.QgsPropertyDefinition]: ...
+    RootPath: QgsWidgetWrapper.Property
+    DocumentViewerContent: QgsWidgetWrapper.Property
+    StorageUrl: QgsWidgetWrapper.Property
 
 
 class QgsEditorWidgetWrapper(QgsWidgetWrapper):
@@ -9659,6 +9689,11 @@ class QgsMapToolCapture(QgsMapToolAdvancedDigitizing):
     def setCurrentCaptureTechnique(self, technique: _core.Qgis.CaptureTechnique) -> None: ...
     def supportsTechnique(self, technique: _core.Qgis.CaptureTechnique) -> bool: ...
     def capabilities(self) -> 'QgsMapToolCapture.Capabilities': ...
+    CaptureTechnique: typing.Type[_Qgis.CaptureTechnique]
+    StraightSegments: _Qgis.CaptureTechnique
+    CircularString: _Qgis.CaptureTechnique
+    Streaming: _Qgis.CaptureTechnique
+    Shape: _Qgis.CaptureTechnique
 
 
 class QgsMapToolCaptureLayerGeometry(QgsMapToolCapture):
@@ -10464,6 +10499,10 @@ class QgsProcessingGui(PyQt5.sip.wrapper):
     def __init__(self) -> None: ...
     @typing.overload
     def __init__(self, a0: 'QgsProcessingGui') -> None: ...
+    WidgetType: typing.Type[_Qgis.ProcessingMode]
+    Standard: _Qgis.ProcessingMode
+    Batch: _Qgis.ProcessingMode
+    Modeler: _Qgis.ProcessingMode
 
 
 class QgsProcessingGuiRegistry(PyQt5.sip.wrapper):
@@ -10711,6 +10750,13 @@ class QgsProcessingToolboxModelNode(QtCore.QObject):
     def children(self) -> list['QgsProcessingToolboxModelNode']: ...
     def parent(self) -> typing.Optional['QgsProcessingToolboxModelNode']: ...
     def nodeType(self) -> 'QgsProcessingToolboxModelNode.NodeType': ...
+    NodeProvider: QgsProcessingToolboxModelNode.NodeType
+    NodeGroup: QgsProcessingToolboxModelNode.NodeType
+    NodeAlgorithm: QgsProcessingToolboxModelNode.NodeType
+    NodeRecent: QgsProcessingToolboxModelNode.NodeType
+    Parameter: QgsProcessingToolboxModelNode.NodeType
+    ParameterGroup: QgsProcessingToolboxModelNode.NodeType
+    Favorite: QgsProcessingToolboxModelNode.NodeType
 
 
 class QgsProcessingToolboxModelRecentNode(QgsProcessingToolboxModelNode):
@@ -10801,6 +10847,15 @@ class QgsProcessingToolboxModel(QtCore.QAbstractItemModel):
     def rowCount(self, parent: QtCore.QModelIndex = ...) -> int: ...
     def data(self, index: QtCore.QModelIndex, role: int = ...) -> typing.Any: ...
     def flags(self, index: QtCore.QModelIndex) -> QtCore.Qt.ItemFlags: ...
+    Roles: typing.Type[QgsProcessingToolboxModel.CustomRole]
+    RoleNodeType: QgsProcessingToolboxModel.CustomRole
+    RoleAlgorithmFlags: QgsProcessingToolboxModel.CustomRole
+    RoleAlgorithmId: QgsProcessingToolboxModel.CustomRole
+    RoleAlgorithmName: QgsProcessingToolboxModel.CustomRole
+    RoleAlgorithmShortDescription: QgsProcessingToolboxModel.CustomRole
+    RoleAlgorithmTags: QgsProcessingToolboxModel.CustomRole
+    RoleProviderFlags: QgsProcessingToolboxModel.CustomRole
+    ParameterTypeId: QgsProcessingToolboxModel.CustomRole
 
 
 class QgsProcessingToolboxProxyModel(QtCore.QSortFilterProxyModel):
@@ -10843,6 +10898,10 @@ class QgsProcessingToolboxProxyModel(QtCore.QSortFilterProxyModel):
     def filters(self) -> 'QgsProcessingToolboxProxyModel.Filters': ...
     def setFilters(self, filters: typing.Union['QgsProcessingToolboxProxyModel.Filters', 'QgsProcessingToolboxProxyModel.Filter']) -> None: ...
     def toolboxModel(self) -> typing.Optional[QgsProcessingToolboxModel]: ...
+    FilterToolbox: QgsProcessingToolboxProxyModel.Filter
+    FilterModeler: QgsProcessingToolboxProxyModel.Filter
+    FilterInPlace: QgsProcessingToolboxProxyModel.Filter
+    FilterShowKnownIssues: QgsProcessingToolboxProxyModel.Filter
 
 
 class QgsProcessingToolboxTreeView(QtWidgets.QTreeView):
@@ -11406,6 +11465,17 @@ class QgsCoordinateReferenceSystemModel(QtCore.QAbstractItemModel):
     def headerData(self, section: int, orientation: QtCore.Qt.Orientation, role: int) -> typing.Any: ...
     def data(self, index: QtCore.QModelIndex, role: int) -> typing.Any: ...
     def flags(self, index: QtCore.QModelIndex) -> QtCore.Qt.ItemFlags: ...
+    Roles: typing.Type[QgsCoordinateReferenceSystemModel.CustomRole]
+    RoleNodeType: QgsCoordinateReferenceSystemModel.CustomRole
+    RoleName: QgsCoordinateReferenceSystemModel.CustomRole
+    RoleAuthId: QgsCoordinateReferenceSystemModel.CustomRole
+    RoleDeprecated: QgsCoordinateReferenceSystemModel.CustomRole
+    RoleType: QgsCoordinateReferenceSystemModel.CustomRole
+    RoleGroupId: QgsCoordinateReferenceSystemModel.CustomRole
+    RoleWkt: QgsCoordinateReferenceSystemModel.CustomRole
+    RoleProj: QgsCoordinateReferenceSystemModel.CustomRole
+    Group: QgsCoordinateReferenceSystemModel.CustomRole
+    Projection: QgsCoordinateReferenceSystemModel.CustomRole
 
 
 class QgsCoordinateReferenceSystemProxyModel(QtCore.QSortFilterProxyModel):
@@ -11584,6 +11654,9 @@ class QgsRecentCoordinateReferenceSystemsModel(QtCore.QAbstractItemModel):
     def rowCount(self, parent: QtCore.QModelIndex = ...) -> int: ...
     def data(self, index: QtCore.QModelIndex, role: int) -> typing.Any: ...
     def flags(self, index: QtCore.QModelIndex) -> QtCore.Qt.ItemFlags: ...
+    Roles: typing.Type[QgsRecentCoordinateReferenceSystemsModel.CustomRole]
+    RoleCrs: QgsRecentCoordinateReferenceSystemsModel.CustomRole
+    RoleAuthId: QgsRecentCoordinateReferenceSystemsModel.CustomRole
 
 
 class QgsRecentCoordinateReferenceSystemsProxyModel(QtCore.QSortFilterProxyModel):
@@ -12070,6 +12143,8 @@ class QgsCategorizedSymbolRendererWidget(QgsRendererWidget):
     def renderer(self) -> typing.Optional[_core.QgsFeatureRenderer]: ...
     @staticmethod
     def create(layer: typing.Optional[_core.QgsVectorLayer], style: typing.Optional[_core.QgsStyle], renderer: typing.Optional[_core.QgsFeatureRenderer]) -> typing.Optional[QgsRendererWidget]: ...
+    CustomRoles: typing.Type[QgsCategorizedSymbolRendererWidget.CustomRole]
+    ValueRole: QgsCategorizedSymbolRendererWidget.CustomRole
 
 
 class QgsCptCityColorRampDialog(QtWidgets.QDialog):
