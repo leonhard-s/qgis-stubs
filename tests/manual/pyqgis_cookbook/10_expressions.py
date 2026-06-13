@@ -16,6 +16,7 @@ def expressions_with_features() -> None:
     # create a vector layer
     vl = QgsVectorLayer("Point", "Companies", "memory")
     pr = vl.dataProvider()
+    assert pr is not None
     raw_args = (("Name", QMetaType.Type.QString),
                 ("Employees",  QMetaType.Type.Int),
                 ("Revenue", QMetaType.Type.Double),
@@ -40,9 +41,9 @@ def expressions_with_features() -> None:
         pr.addFeature(f)
 
     vl.updateExtents()
-    instance = QgsProject.instance()
-    assert instance is not None
-    instance.addMapLayer(vl)
+    project = QgsProject.instance()
+    assert project is not None
+    project.addMapLayer(vl)
 
     # The first expression computes the revenue per employee.
     # The second one computes the sum of all revenue values in the layer.

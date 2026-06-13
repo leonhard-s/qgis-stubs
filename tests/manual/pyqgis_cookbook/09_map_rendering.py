@@ -10,9 +10,12 @@ from PyQt5.QtGui import QColor
 iface = QgisInterface()
 
 def simple_rendering() -> None:
-    image_location = os.path.join(QgsProject.instance().homePath(), "render.png")
+    project = QgsProject.instance()
+    assert project is not None
+    image_location = os.path.join(project.homePath(), "render.png")
 
     vlayer = iface.activeLayer()
+    assert vlayer is not None
     settings = QgsMapSettings()
     settings.setLayers([vlayer])
     settings.setBackgroundColor(QColor(255, 255, 255))

@@ -32,7 +32,7 @@ def iterate_vector_layer() -> None:
         # show some information about the feature geometry
         geom = feature.geometry()
         geomSingleType = QgsWkbTypes.isSingleType(geom.wkbType())
-        if geom.type() == QgsWkbTypes.GeometryType.PointGeometry:
+        if geom.type() == QgsWkbTypes.PointGeometry:
             x: typing.Any
             # the geometry type can be of single or multi type
             if geomSingleType:
@@ -41,14 +41,14 @@ def iterate_vector_layer() -> None:
             else:
                 x = geom.asMultiPoint()
                 print("MultiPoint: ", x)
-        elif geom.type() == QgsWkbTypes.GeometryType.LineGeometry:
+        elif geom.type() == QgsWkbTypes.LineGeometry:
             if geomSingleType:
                 x = geom.asPolyline()
                 print("Line: ", x, "length: ", geom.length())
             else:
                 x = geom.asMultiPolyline()
                 print("MultiLine: ", x, "length: ", geom.length())
-        elif geom.type() == QgsWkbTypes.GeometryType.PolygonGeometry:
+        elif geom.type() == QgsWkbTypes.PolygonGeometry:
             if geomSingleType:
                 x = geom.asPolygon()
                 print("Polygon: ", x, "Area: ", geom.area())
@@ -67,23 +67,27 @@ def iterate_vector_layer() -> None:
 
 def get_capabilities() -> None:
     layer = QgsVectorLayer()
-    caps = layer.dataProvider().capabilities()
+    provider = layer.dataProvider()
+    assert provider is not None
+    caps = provider.capabilities()
     # Check if a particular capability is supported:
-    if caps & QgsVectorDataProvider.Capability.DeleteFeatures:  # type: ignore
+    if caps & QgsVectorDataProvider.Capability.DeleteFeatures:
         print('The layer supports DeleteFeatures')
 
 
 def add_features() -> None:
     layer = QgsVectorLayer()
-    caps = layer.dataProvider().capabilities()
-    if caps & QgsVectorDataProvider.Capability.AddFeatures:  # type: ignore
+    provider = layer.dataProvider()
+    assert provider is not None
+    caps = provider.capabilities()
+    if caps & QgsVectorDataProvider.Capability.AddFeatures:
         feat = QgsFeature(layer.fields())
         feat.setAttributes([0, 'hello'])
         # Or set a single attribute by key or by index:
         feat.setAttribute('name', 'hello')
         feat.setAttribute(0, 'hello')
         feat.setGeometry(QgsGeometry.fromPointXY(QgsPointXY(123, 456)))
-        (res, outFeats) = layer.dataProvider().addFeatures([feat])
+        (res, outFeats) = provider.addFeatures([feat])
 
         _ = (res, outFeats)
 
@@ -118,9 +122,9 @@ def editing_buffer() -> None:
 def create_from_file_writer() -> None:
     # SaveVectorOptions contains many settings for the writer process
     save_options = QgsVectorFileWriter.SaveVectorOptions()
-    instance = QgsProject.instance()
-    assert instance is not None
-    transform_context = instance.transformContext()
+    project = QgsProject.instance()
+    assert project is not None
+    transform_context = project.transformContext()
     # Write to a GeoPackage (default)
     layer = QgsVectorLayer()
     error = QgsVectorFileWriter.writeAsVectorFormatV3(layer,
@@ -153,10 +157,10 @@ def create_from_features() -> None:
     6. save options (driver name for the output file, encoding etc.)
     """
 
-    instance = QgsProject.instance()
-    assert instance is not None
-    crs = instance.crs()
-    transform_context = QgsProject.instance().transformContext()
+    project = QgsProject.instance()
+    assert project is not None
+    crs = project.crs()
+    transform_context = project.transformContext()
     save_options = QgsVectorFileWriter.SaveVectorOptions()
     save_options.driverName = "ESRI Shapefile"
     save_options.fileEncoding = "UTF-8"
@@ -169,6 +173,7 @@ def create_from_features() -> None:
     transform_context,
     save_options
     )
+    assert writer is not None
 
     if writer.hasError() != QgsVectorFileWriter.WriterError.NoError:
         print("Error when creating shapefile: ",  writer.errorMessage())

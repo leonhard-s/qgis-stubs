@@ -24,6 +24,7 @@ def add_vector_layer_via_interface() -> None:
     gpkg_airports_layer = path_to_gpkg + "|layername=airports"
     iface = QgisInterface()
     vlayer = iface.addVectorLayer(gpkg_airports_layer, "Airports layer", "ogr")
+    assert vlayer is not None
     if not vlayer:
         print("Layer failed to load!")
 
@@ -40,6 +41,7 @@ def discover_layer_relations() -> None:
     project = QgsProject.instance()
     assert project is not None
     relation_manager = project.relationManager()
+    assert relation_manager is not None
     existing_relations = list(relation_manager.relations().values())
 
     layers = [

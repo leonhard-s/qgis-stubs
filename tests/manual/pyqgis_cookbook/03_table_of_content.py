@@ -14,7 +14,9 @@ def list_layers() -> None:
     # dictionary with key = layer name and value = layer object
     layers_list: dict[str, QgsVectorLayer] = {}
     l: QgsVectorLayer
-    for l in QgsProject.instance().mapLayers().values():
+    project = QgsProject.instance()
+    assert project is not None
+    for l in project.mapLayers().values():
         layers_list[l.name()] = l
 
     print(layers_list)
@@ -24,10 +26,12 @@ def move_layer_on_legend() -> None:
     project = QgsProject.instance()
     assert project is not None
     root = project.layerTreeRoot()
+    assert root is not None
     # get a QgsVectorLayer
     vl = project.mapLayersByName("countries")[0]
     # create a QgsLayerTreeLayer object from vl by its id
     myvl = root.findLayer(vl.id())
+    assert myvl is not None
     # clone the myvl QgsLayerTreeLayer object
     myvlclone = myvl.clone()
     # get the parent. If None (layer is not in group) returns ''
