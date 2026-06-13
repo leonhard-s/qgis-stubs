@@ -5,7 +5,23 @@
     // Disable specific warnings that make no sense for type stubs
     "python.analysis.diagnosticSeverityOverrides": {
         "reportIncompatibleMethodOverride": "none",
+        "reportMissingModuleSource": "none",
     },
     // Disable formatting
     "editor.formatOnSave": false,
+    // Configure Mypy
+    "mypy-type-checker.args": [
+        "--strict",
+    ],
+    "mypy-type-checker.reportingScope": "workspace",
+    "pylint.args": [
+        "--disable=import-error",
+        "--disable=missing-module-docstring",
+        "--disable=missing-function-docstring",
+        "--disable=invalid-name",
+    ],
+    "pylint.ignorePatterns": [
+        "**/site-packages/**/*.py",
+        "qgis-stubs/**/*.pyi",
+    ]
 }
