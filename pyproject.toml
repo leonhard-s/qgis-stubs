@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "qgis-stubs"
-version = "0.3.0.dev0"
+version = "0.4.0.dev1"
 authors = [
     {name = "Leonhard S.", email="leonhard-sei@outlook.com"},
 ]
