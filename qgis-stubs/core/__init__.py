@@ -24546,7 +24546,12 @@ except (NameError, AttributeError):
     pass
 
 
-from .additions.edit import edit, QgsEditError
+# Typed wrapper over core.additions.edit
+from .additions.edit import edit as edit_
+def edit(layer: 'QgsVectorLayer') -> '_typing.ContextManager[QgsVectorLayer]':
+    return edit_(layer)  # type: ignore
+
+from .additions.edit import QgsEditError
 from .additions.fromfunction import _fromFunction
 from .additions.metaenum import metaEnumFromType, metaEnumFromValue
 from .additions.projectdirtyblocker import ProjectDirtyBlocker

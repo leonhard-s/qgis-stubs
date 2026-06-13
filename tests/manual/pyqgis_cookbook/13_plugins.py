@@ -44,14 +44,11 @@ class MyPlugin:
         # Save reference to the QGIS interface
         self.iface = iface
 
-        # FIXME: The "tr" helper is missing from the stubs, need to investigate
-        self.tr = str
-
         self.options_factory: MyPluginOptionsFactory
 
     def initGui(self) -> None:
         self.options_factory = MyPluginOptionsFactory()
-        self.options_factory.setTitle(self.tr('My Plugin'))
+        self.options_factory.setTitle('My Plugin')
         self.iface.registerOptionsWidgetFactory(self.options_factory)
 
     def unload(self) -> None:

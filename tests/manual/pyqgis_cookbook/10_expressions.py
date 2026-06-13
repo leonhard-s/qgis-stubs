@@ -4,13 +4,9 @@
 import typing
 from qgis.core import (
     QgsExpression, QgsExpressionContext, QgsExpressionContextUtils, QgsFeature,
-    QgsField, QgsGeometry, QgsPointXY, QgsProject, QgsVectorLayer)
+    QgsField, QgsGeometry, QgsPointXY, QgsProject, QgsVectorLayer, edit)
 from PyQt5.QtCore import QMetaType, QVariant
 
-# FIXME: this should come from qgis.core, but it's not in the stubs
-def edit(_: QgsVectorLayer) -> typing.ContextManager[None]:
-    return typing.cast(typing.ContextManager[None], None)
-# pylint: disable=not-context-manager
 
 def expressions_with_features() -> None:
     # create a vector layer
