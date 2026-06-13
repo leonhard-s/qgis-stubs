@@ -39,10 +39,12 @@ class BufferAlgorithm(QgsProcessingAlgorithm):
         _ = feedback
 
         source = self.parameterAsSource(parameters, self.INPUT, context)
+        assert source is not None
         distance = self.parameterAsDouble(parameters, self.DISTANCE, context)
         (sink, dest_id) = self.parameterAsSink(
             parameters, self.OUTPUT, context,
             source.fields(), source.wkbType(), source.sourceCrs())
+        assert sink is not None
         for f in source.getFeatures():
             f.setGeometry(f.geometry().buffer(distance, 5))
             sink.addFeature(f, QgsFeatureSink.Flag.FastInsert)

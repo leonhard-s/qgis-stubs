@@ -4,18 +4,15 @@
 import typing
 from qgis.core import (
     QgsExpression, QgsExpressionContext, QgsExpressionContextUtils, QgsFeature,
-    QgsField, QgsGeometry, QgsPointXY, QgsProject, QgsVectorLayer)
+    QgsField, QgsGeometry, QgsPointXY, QgsProject, QgsVectorLayer, edit)
 from PyQt5.QtCore import QMetaType, QVariant
 
-# FIXME: this should come from qgis.core, but it's not in the stubs
-def edit(_: QgsVectorLayer) -> typing.ContextManager[None]:
-    return typing.cast(typing.ContextManager[None], None)
-# pylint: disable=not-context-manager
 
 def expressions_with_features() -> None:
     # create a vector layer
     vl = QgsVectorLayer("Point", "Companies", "memory")
     pr = vl.dataProvider()
+    assert pr is not None
     raw_args = (("Name", QMetaType.Type.QString),
                 ("Employees",  QMetaType.Type.Int),
                 ("Revenue", QMetaType.Type.Double),
@@ -40,9 +37,9 @@ def expressions_with_features() -> None:
         pr.addFeature(f)
 
     vl.updateExtents()
-    instance = QgsProject.instance()
-    assert instance is not None
-    instance.addMapLayer(vl)
+    project = QgsProject.instance()
+    assert project is not None
+    project.addMapLayer(vl)
 
     # The first expression computes the revenue per employee.
     # The second one computes the sum of all revenue values in the layer.

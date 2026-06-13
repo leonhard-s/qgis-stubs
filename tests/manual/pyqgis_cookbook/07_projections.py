@@ -7,7 +7,9 @@ from qgis.core import (QgsCoordinateReferenceSystem, QgsCoordinateTransform,
 def crs_transformation() -> None:
     crsSrc = QgsCoordinateReferenceSystem("EPSG:4326")    # WGS 84
     crsDest = QgsCoordinateReferenceSystem("EPSG:32633")  # WGS 84 / UTM zone 33N
-    transformContext = QgsProject.instance().transformContext()
+    project = QgsProject.instance()
+    assert project is not None
+    transformContext = project.transformContext()
     xform = QgsCoordinateTransform(crsSrc, crsDest, transformContext)
 
     # forward transformation: src -> dest
@@ -15,5 +17,5 @@ def crs_transformation() -> None:
     print("Transformed point:", pt1)
 
     # inverse transformation: dest -> src
-    pt2 = xform.transform(pt1, QgsCoordinateTransform.ReverseTransform)  # type: ignore
+    pt2 = xform.transform(pt1, QgsCoordinateTransform.ReverseTransform)
     print("Transformed back:", pt2)

@@ -4,13 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "qgis-stubs"
-version = "0.3.0.dev0"
+version = "0.4.0.dev1"
 authors = [
     {name = "Leonhard S.", email="leonhard-sei@outlook.com"},
 ]
 description = "PEP561 type stubs for PyQGIS."
 readme = "README.md"
-requires-python = ">=3.6"
+requires-python = ">=3.10"
 keywords = ["qgis", "pyqgis", "stubs", "type hints", "python"]
 license = "GPL-3.0"
 classifiers = [
@@ -37,6 +37,13 @@ dev = [
 [tool.setuptools]
 packages = [
     "qgis-stubs",
+    "qgis-stubs._3d",
+    "qgis-stubs.analysis",
     "qgis-stubs.core",
+    "qgis-stubs.core.additions",
+    "qgis-stubs.gui",
+    "qgis-stubs.gui.additions",
     "qgis-stubs.processing",
+    "qgis-stubs.server",
+    "qgis-stubs.testing",
 ]

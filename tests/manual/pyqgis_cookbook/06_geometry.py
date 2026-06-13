@@ -3,8 +3,8 @@
 
 import typing
 from qgis.core import (
-    QgsDistanceArea, QgsGeometry, QgsFeatureRequest, QgsPoint, QgsPointXY,
-    QgsProject, QgsUnitTypes,  QgsVectorLayer)
+    Qgis, QgsDistanceArea, QgsGeometry, QgsFeatureRequest, QgsPoint,
+    QgsPointXY, QgsProject, QgsVectorLayer)
 
 
 def geometry_from_coordinates() -> None:
@@ -21,10 +21,10 @@ def calculate_area() -> None:
     d = QgsDistanceArea()
     d.setEllipsoid('WGS84')
 
-    instance = QgsProject.instance()
-    assert instance is not None
+    project = QgsProject.instance()
+    assert project is not None
     layer = typing.cast(
-        QgsVectorLayer, instance.mapLayersByName('countries')[0])
+        QgsVectorLayer, project.mapLayersByName('countries')[0])
 
     # let's filter for countries that begin with Z, then get their features
     query = '"name" LIKE \'Z%\''
@@ -40,4 +40,4 @@ def calculate_area() -> None:
         # let's calculate and print the area again, but this time in square
         # kilometers
         print("Area (km2):", d.convertAreaMeasurement(
-            d.measureArea(geom), QgsUnitTypes.AreaUnit.AreaSquareKilometers))
+            d.measureArea(geom), Qgis.AreaUnit.SquareKilometers))

@@ -3,7 +3,7 @@
 
 import typing
 from qgis.core import (
-    QgsColorRampShader, QgsProject, QgsRasterLayer, QgsRasterShader,
+    Qgis, QgsColorRampShader, QgsProject, QgsRasterLayer, QgsRasterShader,
     QgsSingleBandPseudoColorRenderer)
 from PyQt5.QtGui import QColor
 
@@ -32,7 +32,7 @@ def get_layer() -> None:
 
 def set_single_band_renderer() -> None:
     fcn = QgsColorRampShader()
-    fcn.setColorRampType(QgsColorRampShader.Type.Interpolated)
+    fcn.setColorRampType(Qgis.ShaderInterpolationMethod.Linear)
     lst = [ QgsColorRampShader.ColorRampItem(0, QColor(0,255,0)),
         QgsColorRampShader.ColorRampItem(255, QColor(255,255,0)) ]
     fcn.setColorRampItemList(lst)
