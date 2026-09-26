@@ -1,5 +1,5 @@
 # Adapted from:
-# https://docs.qgis.org/3.44/en/docs/pyqgis_developer_cookbook/communicating.html
+# https://docs.qgis.org/4.2/en/docs/pyqgis_developer_cookbook/communicating.html
 
 import typing
 from qgis.core import Qgis
@@ -13,13 +13,13 @@ class MyDialog(QDialog):
     def __init__(self) -> None:
         QDialog.__init__(self)
         self.bar = QgsMessageBar()
-        self.bar.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.bar.setSizePolicy( QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed )
         self.setLayout(QGridLayout())
-        self.layout().setContentsMargins(0, 0, 0, 0)
-        self.buttonbox = QDialogButtonBox(QDialogButtonBox.Ok)
+        layout = typing.cast(QGridLayout | None, self.layout())
+        assert layout is not None
+        layout.setContentsMargins(0, 0, 0, 0)
+        self.buttonbox = QDialogButtonBox(QDialogButtonBox.StandardButton.Ok)
         self.buttonbox.accepted.connect(self.run)
-
-        layout = typing.cast(QGridLayout, self.layout())
         layout.addWidget(self.buttonbox, 0, 0, 2, 1)
         layout.addWidget(self.bar, 0, 0, 1, 1)
 

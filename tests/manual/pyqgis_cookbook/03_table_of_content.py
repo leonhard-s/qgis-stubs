@@ -1,7 +1,7 @@
 # Adapted from:
-# https://docs.qgis.org/3.44/en/docs/pyqgis_developer_cookbook/legend.html
+# https://docs.qgis.org/4.2/en/docs/pyqgis_developer_cookbook/legend.html
 
-from qgis.core import QgsProject, QgsLayerTreeGroup, QgsVectorLayer
+from qgis.core import QgsProject, QgsVectorLayer
 
 
 def list_layers() -> None:
@@ -34,9 +34,16 @@ def move_layer_on_legend() -> None:
     assert myvl is not None
     # clone the myvl QgsLayerTreeLayer object
     myvlclone = myvl.clone()
+    # create a new group
+    group1 = root.addGroup("Group1")
+    assert group1 is not None
     # get the parent. If None (layer is not in group) returns ''
-    parent: QgsLayerTreeGroup = myvl.parent()  # type: ignore
+    parent = myvl.parent()
+    assert parent is not None
     # move the cloned layer to the top (0)
-    parent.insertChildNode(0, myvlclone)
-    # remove the original myvl
-    root.removeChildNode(myvl)
+    group1.insertChildNode(0, myvlclone)
+
+    # remove the QgsLayerTreeLayer from its parent
+    # TODO: This call is still referenced in the docs but no longer exposed in
+    # the stubs, need to clarify if the docs or stubs are correct
+    parent.removeChildNode(myvl)  # type: ignore

@@ -1,10 +1,10 @@
 # Adapted from:
-# https://docs.qgis.org/3.44/en/docs/pyqgis_developer_cookbook/geometry.html
+# https://docs.qgis.org/4.2/en/docs/pyqgis_developer_cookbook/geometry.html
 
 import typing
 from qgis.core import (
-    Qgis, QgsDistanceArea, QgsGeometry, QgsFeatureRequest, QgsPoint,
-    QgsPointXY, QgsProject, QgsVectorLayer)
+    QgsDistanceArea, QgsGeometry, QgsFeatureRequest, QgsPoint,
+    QgsPointXY, QgsProject, QgsUnitTypes, QgsVectorLayer)
 
 
 def geometry_from_coordinates() -> None:
@@ -37,7 +37,5 @@ def calculate_area() -> None:
         print("Perimeter (m):", d.measurePerimeter(geom))
         print("Area (m2):", d.measureArea(geom))
 
-        # let's calculate and print the area again, but this time in square
-        # kilometers
-        print("Area (km2):", d.convertAreaMeasurement(
-            d.measureArea(geom), Qgis.AreaUnit.SquareKilometers))
+        # let's calculate and print the area again, but this time in square kilometers
+        print("Area (km2):", d.convertAreaMeasurement(d.measureArea(geom), QgsUnitTypes.AreaSquareKilometers))

@@ -1,5 +1,5 @@
 # Adapted from:
-# https://docs.qgis.org/3.44/en/docs/pyqgis_developer_cookbook/loadlayer.html
+# https://docs.qgis.org/4.2/en/docs/pyqgis_developer_cookbook/loadlayer.html
 
 from qgis.core import (
     QgsDataSourceUri, QgsProject, QgsRasterLayer,

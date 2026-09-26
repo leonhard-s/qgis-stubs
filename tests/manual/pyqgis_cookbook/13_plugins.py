@@ -1,5 +1,5 @@
 # Adapted from:
-# https://docs.qgis.org/3.44/en/docs/pyqgis_developer_cookbook/plugins/snippets.html
+# https://docs.qgis.org/4.2/en/docs/pyqgis_developer_cookbook/plugins/snippets.html
 
 from qgis.gui import QgisInterface, QgsOptionsPageWidget, QgsOptionsWidgetFactory
 from PyQt6.QtGui import QIcon
