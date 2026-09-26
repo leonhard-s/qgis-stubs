@@ -24,6 +24,18 @@ from PyQt6 import QtPositioning
 from PyQt6 import QtMultimedia
 from PyQt6 import QtSerialPort
 
+
+# Type aliases used for arguments and return types. Note that these names are
+# *NOT* available at runtime, they only exist for typing purposes.
+QgsMultiPointXY = typing.List['QgsPointXY']
+QgsPolylineXY = typing.List['QgsPointXY']
+QgsPolygonXY = typing.List[QgsPolylineXY]
+QgsMultiPolygonXY = typing.List[QgsPolygonXY]
+QgsMultiPolylineXY = typing.List[QgsPolylineXY]
+QgsPointSequence = typing.List['QgsPoint']
+QgsPolyline = QgsPointSequence
+
+
 # Support for QDate, QDateTime and QTime.
 import datetime
 
