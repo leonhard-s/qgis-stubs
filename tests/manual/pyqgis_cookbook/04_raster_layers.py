@@ -1,11 +1,11 @@
 # Adapted from:
-# https://docs.qgis.org/3.44/en/docs/pyqgis_developer_cookbook/raster.html
+# https://docs.qgis.org/4.2/en/docs/pyqgis_developer_cookbook/raster.html
 
 import typing
 from qgis.core import (
-    Qgis, QgsColorRampShader, QgsProject, QgsRasterLayer, QgsRasterShader,
+    QgsColorRampShader, QgsProject, QgsRasterLayer, QgsRasterShader,
     QgsSingleBandPseudoColorRenderer)
-from PyQt5.QtGui import QColor
+from PyQt6.QtGui import QColor
 
 
 def get_layer() -> None:
@@ -32,7 +32,7 @@ def get_layer() -> None:
 
 def set_single_band_renderer() -> None:
     fcn = QgsColorRampShader()
-    fcn.setColorRampType(Qgis.ShaderInterpolationMethod.Linear)
+    fcn.setColorRampType(QgsColorRampShader.Interpolated)
     lst = [ QgsColorRampShader.ColorRampItem(0, QColor(0,255,0)),
         QgsColorRampShader.ColorRampItem(255, QColor(255,255,0)) ]
     fcn.setColorRampItemList(lst)

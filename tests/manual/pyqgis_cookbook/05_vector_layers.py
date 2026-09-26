@@ -1,5 +1,5 @@
 # Adapted from:
-# https://docs.qgis.org/3.44/en/docs/pyqgis_developer_cookbook/vector.html
+# https://docs.qgis.org/4.2/en/docs/pyqgis_developer_cookbook/vector.html
 
 import typing
 from qgis.core import (
@@ -7,7 +7,7 @@ from qgis.core import (
     QgsVectorDataProvider, QgsVectorFileWriter, QgsVectorLayer,
     QgsWkbTypes)
 from qgis.gui import QgisInterface
-from PyQt5.QtCore import QMetaType, QVariant
+from PyQt6.QtCore import QMetaType
 
 
 def get_layer_info() -> None:
@@ -109,15 +109,13 @@ def editing_buffer() -> None:
     layer.changeGeometry(fid, geometry)
     # update an attribute with given field index (int) to a given value
     fieldIndex =1
-    value = 'My new name'
+    value ='My new name'
     layer.changeAttributeValue(fid, fieldIndex, value)
 
     # add new field
-    type_ = typing.cast(QVariant.Type, QMetaType.Type.QString)
-    layer.addAttribute(QgsField("mytext", type_))
+    layer.addAttribute(QgsField("mytext", QMetaType.Type.QString))
     # remove a field
     layer.deleteAttribute(fieldIndex)
-
 
 def create_from_file_writer() -> None:
     # SaveVectorOptions contains many settings for the writer process
@@ -140,12 +138,9 @@ def create_from_file_writer() -> None:
 def create_from_features() -> None:
     # define fields for feature attributes. A QgsFields object is needed
     fields = QgsFields()
-    type_ = typing.cast(QVariant.Type, QMetaType.Type.Int)
-    fields.append(QgsField("first", type_))
-    type_ = typing.cast(QVariant.Type, QMetaType.Type.QString)
-    fields.append(QgsField("second", type_))
+    fields.append(QgsField("first", QMetaType.Type.Int))
+    fields.append(QgsField("second", QMetaType.Type.QString))
 
-    # pylint: disable=pointless-string-statement
     """ create an instance of vector file writer, which will create the vector file.
     Arguments:
     1. path to new file (will fail if exists already)
@@ -166,16 +161,16 @@ def create_from_features() -> None:
     save_options.fileEncoding = "UTF-8"
 
     writer = QgsVectorFileWriter.create(
-    "testdata/my_new_shapefile.shp",
-    fields,
-    QgsWkbTypes.Type.Point,
-    crs,
-    transform_context,
-    save_options
+        "testdata/my_new_shapefile.shp",
+        fields,
+        QgsWkbTypes.Point,
+        crs,
+        transform_context,
+        save_options
     )
     assert writer is not None
 
-    if writer.hasError() != QgsVectorFileWriter.WriterError.NoError:
+    if writer.hasError() != QgsVectorFileWriter.NoError:
         print("Error when creating shapefile: ",  writer.errorMessage())
 
     # add a feature

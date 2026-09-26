@@ -23,8 +23,9 @@ __copyright__ = '(C) 2014, Nathan Woodrow'
 
 import typing as _typing
 
-from PyQt5.QtCore import NULL
-from PyQt5.QtCore import Qt as _Qt
+from PyQt6.QtCore import NULL
+from PyQt6.QtCore import Qt as _Qt
+from PyQt6.QtCore import QMetaType as _QMetaType
 from qgis._core import *
 
 """
@@ -99,9 +100,45 @@ Qgis.AuthConfigurationStorageCapability.__doc__ = """Authentication configuratio
 """
 # --
 Qgis.AuthConfigurationStorageCapability.baseClass = Qgis
+Qgis.AuthConfigurationStorageCapabilities = lambda flags=0: Qgis.AuthConfigurationStorageCapability(flags)
 Qgis.AuthConfigurationStorageCapabilities.baseClass = Qgis
 AuthConfigurationStorageCapabilities = Qgis  # dirty hack since SIP seems to introduce the flags in module
 Qgis.MessageLevel.baseClass = Qgis
+# monkey patching scoped based enum
+QgsMessageOutput.MessageType.MessageText = Qgis.StringFormat.PlainText
+QgsMessageOutput.MessageText.__doc__ = "Text message"
+QgsMessageOutput.MessageType.MessageHtml = Qgis.StringFormat.Html
+QgsMessageOutput.MessageHtml.__doc__ = "HTML message"
+Qgis.StringFormat.__doc__ = """Format of log message
+
+.. versionadded:: 4.0.
+
+* ``PlainText``: Text message
+
+  Available as ``QgsMessageOutput.MessageText`` in older QGIS releases.
+
+* ``Html``: HTML message
+
+  Available as ``QgsMessageOutput.MessageHtml`` in older QGIS releases.
+
+
+"""
+# --
+Qgis.StringFormat.baseClass = Qgis
+# monkey patching scoped based enum
+Qgis.NetworkRequestFlag.DisableMessageLogging.__doc__ = "If present, indicates that no message logging should be performed when network errors are encountered"
+Qgis.NetworkRequestFlag.__doc__ = """Flags controlling behavior of network requests.
+
+.. versionadded:: 4.0
+
+* ``DisableMessageLogging``: If present, indicates that no message logging should be performed when network errors are encountered
+
+"""
+# --
+Qgis.NetworkRequestFlag.baseClass = Qgis
+Qgis.NetworkRequestFlags = lambda flags=0: Qgis.NetworkRequestFlag(flags)
+Qgis.NetworkRequestFlags.baseClass = Qgis
+NetworkRequestFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
 QgsMapLayer.LayerType.VectorLayer = Qgis.LayerType.Vector
 QgsMapLayer.VectorLayer.__doc__ = "Vector layer"
@@ -219,6 +256,7 @@ Qgis.LayerFilter.__doc__ = """Filter for layers
 
 """
 # --
+Qgis.LayerFilters = lambda flags=0: Qgis.LayerFilter(flags)
 Qgis.LayerFilters.baseClass = Qgis
 LayerFilters = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -232,6 +270,7 @@ Qgis.LoadStyleFlag.__doc__ = """Flags for loading layer styles.
 """
 # --
 Qgis.LoadStyleFlag.baseClass = Qgis
+Qgis.LoadStyleFlags = lambda flags=0: Qgis.LoadStyleFlag(flags)
 Qgis.LoadStyleFlags.baseClass = Qgis
 LoadStyleFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -251,6 +290,7 @@ QgsWkbTypes.MultiCurve.__doc__ = "MultiCurve"
 QgsWkbTypes.MultiSurface.__doc__ = "MultiSurface"
 QgsWkbTypes.PolyhedralSurface.__doc__ = "PolyhedralSurface \n.. versionadded:: 3.40"
 QgsWkbTypes.TIN.__doc__ = "TIN \n.. versionadded:: 3.40"
+QgsWkbTypes.NurbsCurve.__doc__ = "NurbsCurve \n.. versionadded:: 4.0"
 QgsWkbTypes.NoGeometry.__doc__ = "No geometry"
 QgsWkbTypes.PointZ.__doc__ = "PointZ"
 QgsWkbTypes.LineStringZ.__doc__ = "LineStringZ"
@@ -267,6 +307,7 @@ QgsWkbTypes.MultiCurveZ.__doc__ = "MultiCurveZ"
 QgsWkbTypes.MultiSurfaceZ.__doc__ = "MultiSurfaceZ"
 QgsWkbTypes.PolyhedralSurfaceZ.__doc__ = "PolyhedralSurfaceZ"
 QgsWkbTypes.TINZ.__doc__ = "TINZ"
+QgsWkbTypes.NurbsCurveZ.__doc__ = "NurbsCurveZ \n.. versionadded:: 4.0"
 QgsWkbTypes.PointM.__doc__ = "PointM"
 QgsWkbTypes.LineStringM.__doc__ = "LineStringM"
 QgsWkbTypes.PolygonM.__doc__ = "PolygonM"
@@ -282,6 +323,7 @@ QgsWkbTypes.MultiCurveM.__doc__ = "MultiCurveM"
 QgsWkbTypes.MultiSurfaceM.__doc__ = "MultiSurfaceM"
 QgsWkbTypes.PolyhedralSurfaceM.__doc__ = "PolyhedralSurfaceM"
 QgsWkbTypes.TINM.__doc__ = "TINM"
+QgsWkbTypes.NurbsCurveM.__doc__ = "NurbsCurveM \n.. versionadded:: 4.0"
 QgsWkbTypes.PointZM.__doc__ = "PointZM"
 QgsWkbTypes.LineStringZM.__doc__ = "LineStringZM"
 QgsWkbTypes.PolygonZM.__doc__ = "PolygonZM"
@@ -297,6 +339,7 @@ QgsWkbTypes.MultiSurfaceZM.__doc__ = "MultiSurfaceZM"
 QgsWkbTypes.PolyhedralSurfaceZM.__doc__ = "PolyhedralSurfaceM"
 QgsWkbTypes.TINZM.__doc__ = "TINZM"
 QgsWkbTypes.TriangleZM.__doc__ = "TriangleZM"
+QgsWkbTypes.NurbsCurveZM.__doc__ = "NurbsCurveZM \n.. versionadded:: 4.0"
 QgsWkbTypes.Point25D.__doc__ = "Point25D"
 QgsWkbTypes.LineString25D.__doc__ = "LineString25D"
 QgsWkbTypes.Polygon25D.__doc__ = "Polygon25D"
@@ -353,6 +396,10 @@ a different mode.
 
   .. versionadded:: 3.40
 
+* ``NurbsCurve``: NurbsCurve
+
+  .. versionadded:: 4.0
+
 * ``NoGeometry``: No geometry
 * ``PointZ``: PointZ
 * ``LineStringZ``: LineStringZ
@@ -369,6 +416,10 @@ a different mode.
 * ``MultiSurfaceZ``: MultiSurfaceZ
 * ``PolyhedralSurfaceZ``: PolyhedralSurfaceZ
 * ``TINZ``: TINZ
+* ``NurbsCurveZ``: NurbsCurveZ
+
+  .. versionadded:: 4.0
+
 * ``PointM``: PointM
 * ``LineStringM``: LineStringM
 * ``PolygonM``: PolygonM
@@ -384,6 +435,10 @@ a different mode.
 * ``MultiSurfaceM``: MultiSurfaceM
 * ``PolyhedralSurfaceM``: PolyhedralSurfaceM
 * ``TINM``: TINM
+* ``NurbsCurveM``: NurbsCurveM
+
+  .. versionadded:: 4.0
+
 * ``PointZM``: PointZM
 * ``LineStringZM``: LineStringZM
 * ``PolygonZM``: PolygonZM
@@ -399,6 +454,10 @@ a different mode.
 * ``PolyhedralSurfaceZM``: PolyhedralSurfaceM
 * ``TINZM``: TINZM
 * ``TriangleZM``: TriangleZM
+* ``NurbsCurveZM``: NurbsCurveZM
+
+  .. versionadded:: 4.0
+
 * ``Point25D``: Point25D
 * ``LineString25D``: LineString25D
 * ``Polygon25D``: Polygon25D
@@ -496,6 +555,8 @@ Qgis.CaptureTechnique.StraightSegments.__doc__ = "Default capture mode - capture
 Qgis.CaptureTechnique.CircularString.__doc__ = "Capture in circular strings"
 Qgis.CaptureTechnique.Streaming.__doc__ = "Streaming points digitizing mode (points are automatically added as the mouse cursor moves)."
 Qgis.CaptureTechnique.Shape.__doc__ = "Digitize shapes."
+Qgis.CaptureTechnique.PolyBezier.__doc__ = "Digitizes poly-Bézier curves with anchors and tangent handles (curve passes through anchor points). \n.. versionadded:: 4.0"
+Qgis.CaptureTechnique.NurbsCurve.__doc__ = "Digitizes NURBS curves with control points (curve is attracted to but does not pass through control points). \n.. versionadded:: 4.0"
 Qgis.CaptureTechnique.__doc__ = """Capture technique.
 
 .. versionadded:: 3.26
@@ -504,6 +565,14 @@ Qgis.CaptureTechnique.__doc__ = """Capture technique.
 * ``CircularString``: Capture in circular strings
 * ``Streaming``: Streaming points digitizing mode (points are automatically added as the mouse cursor moves).
 * ``Shape``: Digitize shapes.
+* ``PolyBezier``: Digitizes poly-Bézier curves with anchors and tangent handles (curve passes through anchor points).
+
+  .. versionadded:: 4.0
+
+* ``NurbsCurve``: Digitizes NURBS curves with control points (curve is attracted to but does not pass through control points).
+
+  .. versionadded:: 4.0
+
 
 """
 # --
@@ -519,40 +588,71 @@ Qgis.VectorLayerTypeFlag.__doc__ = """Vector layer type flags.
 """
 # --
 Qgis.VectorLayerTypeFlag.baseClass = Qgis
+Qgis.VectorLayerTypeFlags = lambda flags=0: Qgis.VectorLayerTypeFlag(flags)
 Qgis.VectorLayerTypeFlags.baseClass = Qgis
 VectorLayerTypeFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
-Qgis.Never.__doc__ = "Python embedded never run"
-Qgis.Ask.__doc__ = "User is prompt before running"
-Qgis.SessionOnly.__doc__ = "Only during this session"
-Qgis.Always.__doc__ = "Python embedded is always run"
-Qgis.NotForThisSession.__doc__ = "Python embedded will not be run for this session"
-Qgis.PythonEmbeddedMode.__doc__ = """Authorisation to run Python Embedded in projects
+Qgis.Never.__doc__ = "Embedded scripts never run"
+Qgis.Ask.__doc__ = "User is prompted before running scripts"
+Qgis.SessionOnly.__doc__ = "Only during this session (only used prior to QGIS 4.0)"
+Qgis.Always.__doc__ = "Embedded scripts are always run"
+Qgis.NotForThisSession.__doc__ = "Embedded scripts will not be run for this session (only used prior to QGIS 4.0)"
+Qgis.NeverAsk.__doc__ = "The user is never prompted, embedded scripts are only run on trusted projects and folders \n.. versionadded:: 4.0"
+Qgis.EmbeddedScriptMode.__doc__ = """Authorisation to run script embedded in projects
 
 .. versionadded:: 3.40
 
-* ``Never``: Python embedded never run
-* ``Ask``: User is prompt before running
-* ``SessionOnly``: Only during this session
-* ``Always``: Python embedded is always run
-* ``NotForThisSession``: Python embedded will not be run for this session
+* ``Never``: Embedded scripts never run
+* ``Ask``: User is prompted before running scripts
+* ``SessionOnly``: Only during this session (only used prior to QGIS 4.0)
+* ``Always``: Embedded scripts are always run
+* ``NotForThisSession``: Embedded scripts will not be run for this session (only used prior to QGIS 4.0)
+* ``NeverAsk``: The user is never prompted, embedded scripts are only run on trusted projects and folders
+
+  .. versionadded:: 4.0
+
 
 """
 # --
-Qgis.PythonEmbeddedMode.baseClass = Qgis
+Qgis.EmbeddedScriptMode.baseClass = Qgis
 # monkey patching scoped based enum
-Qgis.PythonEmbeddedType.Macro.__doc__ = ""
-Qgis.PythonEmbeddedType.ExpressionFunction.__doc__ = ""
-Qgis.PythonEmbeddedType.__doc__ = """Type of Python Embedded in projects
+Qgis.EmbeddedScriptType.Macro.__doc__ = "Project macros"
+Qgis.EmbeddedScriptType.ExpressionFunction.__doc__ = "Expression functions"
+Qgis.EmbeddedScriptType.Action.__doc__ = "Map layers' action \n.. versionadded:: 4.0"
+Qgis.EmbeddedScriptType.FormInitCode.__doc__ = "Attribute forms' initiation code \n.. versionadded:: 4.0"
+Qgis.EmbeddedScriptType.__doc__ = """Type of Python Embedded in projects
 
 .. versionadded:: 3.40
 
-* ``Macro``: 
-* ``ExpressionFunction``: 
+* ``Macro``: Project macros
+* ``ExpressionFunction``: Expression functions
+* ``Action``: Map layers' action
+
+  .. versionadded:: 4.0
+
+* ``FormInitCode``: Attribute forms' initiation code
+
+  .. versionadded:: 4.0
+
 
 """
 # --
-Qgis.PythonEmbeddedType.baseClass = Qgis
+Qgis.EmbeddedScriptType.baseClass = Qgis
+# monkey patching scoped based enum
+Qgis.ProjectTrustStatus.Undetermined.__doc__ = "The project trust has not yet been determined by the user"
+Qgis.ProjectTrustStatus.Trusted.__doc__ = "The project has been determined by the user as trusted"
+Qgis.ProjectTrustStatus.Untrusted.__doc__ = "The project has been determined by the user as untrusted"
+Qgis.ProjectTrustStatus.__doc__ = """Project trust status
+
+.. versionadded:: 4.0
+
+* ``Undetermined``: The project trust has not yet been determined by the user
+* ``Trusted``: The project has been determined by the user as trusted
+* ``Untrusted``: The project has been determined by the user as untrusted
+
+"""
+# --
+Qgis.ProjectTrustStatus.baseClass = Qgis
 # monkey patching scoped based enum
 QgsDataProvider.ReadFlag.FlagTrustDataSource = Qgis.DataProviderReadFlag.TrustDataSource
 QgsDataProvider.FlagTrustDataSource.__doc__ = "Trust datasource config (primary key unicity, geometry type and srid, etc). Improves provider load time by skipping expensive checks like primary key unicity, geometry type and srid and by using estimated metadata on data load \n.. versionadded:: 3.16"
@@ -605,6 +705,7 @@ Qgis.DataProviderReadFlag.__doc__ = """Flags which control data provider constru
 """
 # --
 Qgis.DataProviderReadFlag.baseClass = Qgis
+Qgis.DataProviderReadFlags = lambda flags=0: Qgis.DataProviderReadFlag(flags)
 Qgis.DataProviderReadFlags.baseClass = Qgis
 DataProviderReadFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -633,6 +734,8 @@ QgsVectorDataProvider.CreateRenderer.__doc__ = "Provider can create feature rend
 QgsVectorDataProvider.CreateLabeling.__doc__ = "Provider can set labeling settings using backend-specific formatting information. Since QGIS 3.6. See QgsVectorDataProvider.createLabeling()."
 QgsVectorDataProvider.ReloadData.__doc__ = "Provider is able to force reload data"
 QgsVectorDataProvider.FeatureSymbology.__doc__ = "Provider is able retrieve embedded symbology associated with individual features \n.. versionadded:: 3.20"
+QgsVectorDataProvider.CacheData.__doc__ = "Provider caches source data and should force provider data reloads when dependent layers are committed \n.. versionadded:: 4.2"
+QgsVectorDataProvider.ReadFieldDomains.__doc__ = "Provider can read field domains and their properties \n.. versionadded:: 4.2"
 QgsVectorDataProvider.EditingCapabilities.__doc__ = "Bitmask of all editing capabilities"
 Qgis.VectorProviderCapability.__doc__ = """Vector data provider capabilities.
 
@@ -679,13 +782,37 @@ Qgis.VectorProviderCapability.__doc__ = """Vector data provider capabilities.
 
   .. versionadded:: 3.20
 
+* ``CacheData``: Provider caches source data and should force provider data reloads when dependent layers are committed
+
+  .. versionadded:: 4.2
+
+* ``ReadFieldDomains``: Provider can read field domains and their properties
+
+  .. versionadded:: 4.2
+
 * ``EditingCapabilities``: Bitmask of all editing capabilities
 
 """
 # --
 Qgis.VectorProviderCapability.baseClass = Qgis
+Qgis.VectorProviderCapabilities = lambda flags=0: Qgis.VectorProviderCapability(flags)
 Qgis.VectorProviderCapabilities.baseClass = Qgis
 VectorProviderCapabilities = Qgis  # dirty hack since SIP seems to introduce the flags in module
+# monkey patching scoped based enum
+Qgis.CreateLayerActionOnExisting.Abort.__doc__ = "Abort the creation on detecting an existing layer."
+Qgis.CreateLayerActionOnExisting.CreateOrOverwriteFile.__doc__ = "Create or overwrite whole file. For existing file-based datasources the entire datasource will be deleted, including all other layers in it. For non file-based datasources this is treated the same as CreateOrOverwriteLayer."
+Qgis.CreateLayerActionOnExisting.CreateOrOverwriteLayer.__doc__ = "Create or overwrite existing layer only. For existing file-based datasources other layers in the datasource will be untouched."
+Qgis.CreateLayerActionOnExisting.__doc__ = """Actions to take when attempting to create a layer on an existing datasource
+
+.. versionadded:: 4.2
+
+* ``Abort``: Abort the creation on detecting an existing layer.
+* ``CreateOrOverwriteFile``: Create or overwrite whole file. For existing file-based datasources the entire datasource will be deleted, including all other layers in it. For non file-based datasources this is treated the same as CreateOrOverwriteLayer.
+* ``CreateOrOverwriteLayer``: Create or overwrite existing layer only. For existing file-based datasources other layers in the datasource will be untouched.
+
+"""
+# --
+Qgis.CreateLayerActionOnExisting.baseClass = Qgis
 # monkey patching scoped based enum
 QgsVectorDataProvider.Uncounted.__doc__ = "Feature count not yet computed"
 QgsVectorDataProvider.UnknownCount.__doc__ = "Provider returned an unknown feature count"
@@ -767,6 +894,7 @@ Qgis.VectorDataProviderAttributeEditCapability.__doc__ = """Attribute editing ca
 """
 # --
 Qgis.VectorDataProviderAttributeEditCapability.baseClass = Qgis
+Qgis.VectorDataProviderAttributeEditCapabilities = lambda flags=0: Qgis.VectorDataProviderAttributeEditCapability(flags)
 Qgis.VectorDataProviderAttributeEditCapabilities.baseClass = Qgis
 VectorDataProviderAttributeEditCapabilities = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -854,6 +982,7 @@ Qgis.SettingsTreeNodeOption.__doc__ = """Options for named list nodes
 """
 # --
 Qgis.SettingsTreeNodeOption.baseClass = Qgis
+Qgis.SettingsTreeNodeOptions = lambda flags=0: Qgis.SettingsTreeNodeOption(flags)
 Qgis.SettingsTreeNodeOptions.baseClass = Qgis
 SettingsTreeNodeOptions = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -908,6 +1037,7 @@ Qgis.SldExportOption.__doc__ = """SLD export options
 """
 # --
 Qgis.SldExportOption.baseClass = Qgis
+Qgis.SldExportOptions = lambda flags=0: Qgis.SldExportOption(flags)
 Qgis.SldExportOptions.baseClass = Qgis
 SldExportOptions = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -938,6 +1068,7 @@ Qgis.SettingsOption.__doc__ = """Settings options
 """
 # --
 Qgis.SettingsOption.baseClass = Qgis
+Qgis.SettingsOptions = lambda flags=0: Qgis.SettingsOption(flags)
 Qgis.SettingsOptions.baseClass = Qgis
 SettingsOptions = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -1009,6 +1140,7 @@ Qgis.SnappingType.__doc__ = """SnappingTypeFlag defines on what object the snapp
 """
 # --
 Qgis.SnappingType.baseClass = Qgis
+Qgis.SnappingTypes = lambda flags=0: Qgis.SnappingType(flags)
 Qgis.SnappingTypes.baseClass = Qgis
 SnappingTypes = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -1037,8 +1169,25 @@ Qgis.SymbolRenderHint.__doc__ = """Flags controlling behavior of symbols during 
 """
 # --
 Qgis.SymbolRenderHint.baseClass = Qgis
+Qgis.SymbolRenderHints = lambda flags=0: Qgis.SymbolRenderHint(flags)
 Qgis.SymbolRenderHints.baseClass = Qgis
 SymbolRenderHints = Qgis  # dirty hack since SIP seems to introduce the flags in module
+# monkey patching scoped based enum
+Qgis.SymbolConverterCapability.ReadSymbol.__doc__ = "Allows reading symbols from variants"
+Qgis.SymbolConverterCapability.WriteSymbol.__doc__ = "Allows writing symbols to variants"
+Qgis.SymbolConverterCapability.__doc__ = """Symbol converter capabilities.
+
+.. versionadded:: 4.2
+
+* ``ReadSymbol``: Allows reading symbols from variants
+* ``WriteSymbol``: Allows writing symbols to variants
+
+"""
+# --
+Qgis.SymbolConverterCapability.baseClass = Qgis
+Qgis.SymbolConverterCapabilities = lambda flags=0: Qgis.SymbolConverterCapability(flags)
+Qgis.SymbolConverterCapabilities.baseClass = Qgis
+SymbolConverterCapabilities = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
 Qgis.SymbolRotationMode.RespectMapRotation.__doc__ = "Entity is rotated along with the map"
 Qgis.SymbolRotationMode.IgnoreMapRotation.__doc__ = "Entity ignores map rotation"
@@ -1114,6 +1263,7 @@ Qgis.FeatureRendererFlag.__doc__ = """Flags controlling behavior of vector featu
 """
 # --
 Qgis.FeatureRendererFlag.baseClass = Qgis
+Qgis.FeatureRendererFlags = lambda flags=0: Qgis.FeatureRendererFlag(flags)
 Qgis.FeatureRendererFlags.baseClass = Qgis
 FeatureRendererFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -1132,6 +1282,7 @@ Qgis.SymbolFlag.__doc__ = """Flags controlling behavior of symbols
 """
 # --
 Qgis.SymbolFlag.baseClass = Qgis
+Qgis.SymbolFlags = lambda flags=0: Qgis.SymbolFlag(flags)
 Qgis.SymbolFlags.baseClass = Qgis
 SymbolFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -1145,6 +1296,7 @@ Qgis.SymbolPreviewFlag.__doc__ = """Flags for controlling how symbol preview ima
 """
 # --
 Qgis.SymbolPreviewFlag.baseClass = Qgis
+Qgis.SymbolPreviewFlags = lambda flags=0: Qgis.SymbolPreviewFlag(flags)
 Qgis.SymbolPreviewFlags.baseClass = Qgis
 SymbolPreviewFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -1174,6 +1326,7 @@ Qgis.SymbolLayerFlag.__doc__ = """Flags controlling behavior of symbol layers
 """
 # --
 Qgis.SymbolLayerFlag.baseClass = Qgis
+Qgis.SymbolLayerFlags = lambda flags=0: Qgis.SymbolLayerFlag(flags)
 Qgis.SymbolLayerFlags.baseClass = Qgis
 SymbolLayerFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -1193,6 +1346,7 @@ Qgis.SymbolLayerUserFlag.__doc__ = """User-specified flags controlling behavior 
 """
 # --
 Qgis.SymbolLayerUserFlag.baseClass = Qgis
+Qgis.SymbolLayerUserFlags = lambda flags=0: Qgis.SymbolLayerUserFlag(flags)
 Qgis.SymbolLayerUserFlags.baseClass = Qgis
 SymbolLayerUserFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -1239,7 +1393,7 @@ Qgis.BrowserItemState.__doc__ = """Browser item states.
 Qgis.BrowserItemState.baseClass = Qgis
 # monkey patching scoped based enum
 QgsDataItem.NoCapabilities.__doc__ = "Item has no capabilities"
-QgsDataItem.SetCrs.__doc__ = "Can set CRS on layer or group of layers. deprecated since QGIS 3.6 -- no longer used by QGIS and will be removed in QGIS 4.0"
+QgsDataItem.SetCrs.__doc__ = "Can set CRS on layer or group of layers. deprecated since QGIS 3.6 -- no longer used by QGIS and will be removed in QGIS 5.0"
 QgsDataItem.Fertile.__doc__ = "Can create children. Even items without this capability may have children, but cannot create them, it means that children are created by item ancestors."
 QgsDataItem.Fast.__doc__ = "CreateChildren() is fast enough to be run in main thread when refreshing items, most root items (wms,wfs,wcs,postgres...) are considered fast because they are reading data only from QgsSettings"
 QgsDataItem.Collapse.__doc__ = "The collapse/expand status for this items children should be ignored in order to avoid undesired network connections (wms etc.)"
@@ -1253,7 +1407,7 @@ Qgis.BrowserItemCapability.__doc__ = """Browser item capabilities.
 .. versionadded:: 3.20
 
 * ``NoCapabilities``: Item has no capabilities
-* ``SetCrs``: Can set CRS on layer or group of layers. deprecated since QGIS 3.6 -- no longer used by QGIS and will be removed in QGIS 4.0
+* ``SetCrs``: Can set CRS on layer or group of layers. deprecated since QGIS 3.6 -- no longer used by QGIS and will be removed in QGIS 5.0
 * ``Fertile``: Can create children. Even items without this capability may have children, but cannot create them, it means that children are created by item ancestors.
 * ``Fast``: CreateChildren() is fast enough to be run in main thread when refreshing items, most root items (wms,wfs,wcs,postgres...) are considered fast because they are reading data only from QgsSettings
 * ``Collapse``: The collapse/expand status for this items children should be ignored in order to avoid undesired network connections (wms etc.)
@@ -1275,8 +1429,23 @@ Qgis.BrowserItemCapability.__doc__ = """Browser item capabilities.
 """
 # --
 Qgis.BrowserItemCapability.baseClass = Qgis
+Qgis.BrowserItemCapabilities = lambda flags=0: Qgis.BrowserItemCapability(flags)
 Qgis.BrowserItemCapabilities.baseClass = Qgis
 BrowserItemCapabilities = Qgis  # dirty hack since SIP seems to introduce the flags in module
+# monkey patching scoped based enum
+Qgis.BrowserItemFilterFlag.HideWhenNotFilteringByLayerType.__doc__ = "Item should be hidden from the view when no layer type filter is in place"
+Qgis.BrowserItemFilterFlag.__doc__ = """Browser item filter flags.
+
+.. versionadded:: 4.2
+
+* ``HideWhenNotFilteringByLayerType``: Item should be hidden from the view when no layer type filter is in place
+
+"""
+# --
+Qgis.BrowserItemFilterFlag.baseClass = Qgis
+Qgis.BrowserItemFilterFlags = lambda flags=0: Qgis.BrowserItemFilterFlag(flags)
+Qgis.BrowserItemFilterFlags.baseClass = Qgis
+BrowserItemFilterFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
 QgsDataProvider.DataCapability.NoDataCapabilities = Qgis.DataItemProviderCapability.NoCapabilities
 QgsDataProvider.NoDataCapabilities.__doc__ = "No capabilities"
@@ -1320,6 +1489,7 @@ Qgis.DataItemProviderCapability.__doc__ = """Capabilities for data item provider
 """
 # --
 Qgis.DataItemProviderCapability.baseClass = Qgis
+Qgis.DataItemProviderCapabilities = lambda flags=0: Qgis.DataItemProviderCapability(flags)
 Qgis.DataItemProviderCapabilities.baseClass = Qgis
 DataItemProviderCapabilities = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -1499,6 +1669,7 @@ Qgis.VectorFileWriterCapability.__doc__ = """Capabilities supported by a :py:cla
 """
 # --
 Qgis.VectorFileWriterCapability.baseClass = Qgis
+Qgis.VectorFileWriterCapabilities = lambda flags=0: Qgis.VectorFileWriterCapability(flags)
 Qgis.VectorFileWriterCapabilities.baseClass = Qgis
 VectorFileWriterCapabilities = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -1518,6 +1689,7 @@ Qgis.SqlLayerDefinitionCapability.__doc__ = """SqlLayerDefinitionCapability enum
 """
 # --
 Qgis.SqlLayerDefinitionCapability.baseClass = Qgis
+Qgis.SqlLayerDefinitionCapabilities = lambda flags=0: Qgis.SqlLayerDefinitionCapability(flags)
 Qgis.SqlLayerDefinitionCapabilities.baseClass = Qgis
 SqlLayerDefinitionCapabilities = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -1626,6 +1798,19 @@ Qgis.LabelOverlapHandling.__doc__ = """Label overlap handling.
 # --
 Qgis.LabelOverlapHandling.baseClass = Qgis
 # monkey patching scoped based enum
+Qgis.LabelWhitespaceCollisionHandling.TreatWhitespaceAsCollision.__doc__ = "Treat overlapping whitespace text in labels and whitespace overlapping obstacles as collisions"
+Qgis.LabelWhitespaceCollisionHandling.IgnoreWhitespaceCollisions.__doc__ = "Ignore overlapping whitespace text in labels and whitespace overlapping obstacles"
+Qgis.LabelWhitespaceCollisionHandling.__doc__ = """Label whitespace collision handling.
+
+.. versionadded:: 4.0
+
+* ``TreatWhitespaceAsCollision``: Treat overlapping whitespace text in labels and whitespace overlapping obstacles as collisions
+* ``IgnoreWhitespaceCollisions``: Ignore overlapping whitespace text in labels and whitespace overlapping obstacles
+
+"""
+# --
+Qgis.LabelWhitespaceCollisionHandling.baseClass = Qgis
+# monkey patching scoped based enum
 Qgis.LabelPrioritization.PreferCloser.__doc__ = "Prefer closer labels, falling back to alternate positions before larger distances"
 Qgis.LabelPrioritization.PreferPositionOrdering.__doc__ = "Prefer labels follow position ordering, falling back to more distance labels before alternate positions"
 Qgis.LabelPrioritization.__doc__ = """Label prioritization.
@@ -1673,6 +1858,23 @@ Qgis.LabelPlacement.__doc__ = """Placement modes which determine how label candi
 # --
 Qgis.LabelPlacement.baseClass = Qgis
 # monkey patching scoped based enum
+Qgis.CurvedLabelMode.Default.__doc__ = "Default curved placement, characters are placed in an optimal position along the line. Glyphs are placed at regular character and word spacing."
+Qgis.CurvedLabelMode.PlaceCharactersAtVertices.__doc__ = "Each individual character from the label text is placed such that their left-baseline position is located at a corresponding vertex from the line geometry. If the line geometry does not contain sufficient vertices for the characters present in the label text then the excess characters will be ignored."
+Qgis.CurvedLabelMode.StretchCharacterSpacingToFitLine.__doc__ = "Increases (or decreases) the character spacing used for each label in order to fit the entire text over the actual length of the line geometry."
+Qgis.CurvedLabelMode.StretchWordSpacingToFitLine.__doc__ = "Increases (or decreases) the word spacing used for each label in order to fit the entire text over the actual length of the line geometry."
+Qgis.CurvedLabelMode.__doc__ = """Modes which determine how curved labels are generated and placed.
+
+.. versionadded:: 4.0
+
+* ``Default``: Default curved placement, characters are placed in an optimal position along the line. Glyphs are placed at regular character and word spacing.
+* ``PlaceCharactersAtVertices``: Each individual character from the label text is placed such that their left-baseline position is located at a corresponding vertex from the line geometry. If the line geometry does not contain sufficient vertices for the characters present in the label text then the excess characters will be ignored.
+* ``StretchCharacterSpacingToFitLine``: Increases (or decreases) the character spacing used for each label in order to fit the entire text over the actual length of the line geometry.
+* ``StretchWordSpacingToFitLine``: Increases (or decreases) the word spacing used for each label in order to fit the entire text over the actual length of the line geometry.
+
+"""
+# --
+Qgis.CurvedLabelMode.baseClass = Qgis
+# monkey patching scoped based enum
 QgsPalLayerSettings.TopLeft.__doc__ = "Label on top-left of point"
 QgsPalLayerSettings.TopSlightlyLeft.__doc__ = "Label on top of point, slightly left of center"
 QgsPalLayerSettings.TopMiddle.__doc__ = "Label directly above point"
@@ -1714,6 +1916,21 @@ Qgis.LabelPredefinedPointPosition.__doc__ = """Positions for labels when using t
 """
 # --
 Qgis.LabelPredefinedPointPosition.baseClass = Qgis
+# monkey patching scoped based enum
+Qgis.MultiPartLabelingBehavior.LabelLargestPartOnly.__doc__ = "Place a label only on the largest part from the geometry"
+Qgis.MultiPartLabelingBehavior.LabelEveryPartWithEntireLabel.__doc__ = "Place the (same) entire label over every part from the geometry"
+Qgis.MultiPartLabelingBehavior.SplitLabelTextLinesOverParts.__doc__ = "Splits the label text over the parts of the geometry, such that each consecutive part is labeled with the corresponding text line from the label text"
+Qgis.MultiPartLabelingBehavior.__doc__ = """Behavior modifier for labeling features with multi-part geometries.
+
+.. versionadded:: 4.0
+
+* ``LabelLargestPartOnly``: Place a label only on the largest part from the geometry
+* ``LabelEveryPartWithEntireLabel``: Place the (same) entire label over every part from the geometry
+* ``SplitLabelTextLinesOverParts``: Splits the label text over the parts of the geometry, such that each consecutive part is labeled with the corresponding text line from the label text
+
+"""
+# --
+Qgis.MultiPartLabelingBehavior.baseClass = Qgis
 # monkey patching scoped based enum
 QgsPalLayerSettings.FromPoint.__doc__ = "Offset distance applies from point geometry"
 QgsPalLayerSettings.FromSymbolBounds.__doc__ = "Offset distance applies from rendered symbol bounds"
@@ -1820,6 +2037,7 @@ Qgis.LabelLinePlacementFlag.__doc__ = """Line placement flags, which control how
 """
 # --
 Qgis.LabelLinePlacementFlag.baseClass = Qgis
+Qgis.LabelLinePlacementFlags = lambda flags=0: Qgis.LabelLinePlacementFlag(flags)
 Qgis.LabelLinePlacementFlags.baseClass = Qgis
 LabelLinePlacementFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -1839,6 +2057,7 @@ Qgis.LabelPolygonPlacementFlag.__doc__ = """Polygon placement flags, which contr
 """
 # --
 Qgis.LabelPolygonPlacementFlag.baseClass = Qgis
+Qgis.LabelPolygonPlacementFlags = lambda flags=0: Qgis.LabelPolygonPlacementFlag(flags)
 Qgis.LabelPolygonPlacementFlags.baseClass = Qgis
 LabelPolygonPlacementFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -1982,8 +2201,24 @@ Qgis.UriCleaningFlag.__doc__ = """Flags for cleaning layer URIs.
 """
 # --
 Qgis.UriCleaningFlag.baseClass = Qgis
+Qgis.UriCleaningFlags = lambda flags=0: Qgis.UriCleaningFlag(flags)
 Qgis.UriCleaningFlags.baseClass = Qgis
 UriCleaningFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
+# monkey patching scoped based enum
+Qgis.SourceHierarchyLevel.Connection.__doc__ = "The top-level container, e.g. database connection, catalog (for remote services), or file (for file-based databases)."
+Qgis.SourceHierarchyLevel.Group.__doc__ = "An intermediate logical grouping, e.g. a database schema or layer group."
+Qgis.SourceHierarchyLevel.Object.__doc__ = "Represents a specific data entity, e.g. a table, view, or layer."
+Qgis.SourceHierarchyLevel.__doc__ = """Defines the structural levels within a data source hierarchy.
+
+.. versionadded:: 4.0
+
+* ``Connection``: The top-level container, e.g. database connection, catalog (for remote services), or file (for file-based databases).
+* ``Group``: An intermediate logical grouping, e.g. a database schema or layer group.
+* ``Object``: Represents a specific data entity, e.g. a table, view, or layer.
+
+"""
+# --
+Qgis.SourceHierarchyLevel.baseClass = Qgis
 # monkey patching scoped based enum
 Qgis.SublayerQueryFlag.FastScan.__doc__ = "Indicates that the provider must scan for sublayers using the fastest possible approach -- e.g. by first checking that a uri has an extension which is known to be readable by the provider"
 Qgis.SublayerQueryFlag.ResolveGeometryType.__doc__ = "Attempt to resolve the geometry type for vector sublayers"
@@ -2005,6 +2240,7 @@ Qgis.SublayerQueryFlag.__doc__ = """Flags which control how data providers will 
 
 """
 # --
+Qgis.SublayerQueryFlags = lambda flags=0: Qgis.SublayerQueryFlag(flags)
 Qgis.SublayerQueryFlag.baseClass = Qgis
 Qgis.SublayerQueryFlags.baseClass = Qgis
 SublayerQueryFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
@@ -2018,6 +2254,7 @@ Qgis.SublayerFlag.__doc__ = """Flags which reflect the properties of sublayers i
 
 """
 # --
+Qgis.SublayerFlags = lambda flags=0: Qgis.SublayerFlag(flags)
 Qgis.SublayerFlag.baseClass = Qgis
 Qgis.SublayerFlags.baseClass = Qgis
 SublayerFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
@@ -2177,6 +2414,7 @@ Qgis.RasterRendererFlag.__doc__ = """Flags which control behavior of raster rend
 
 """
 # --
+Qgis.RasterRendererFlags = lambda flags=0: Qgis.RasterRendererFlag(flags)
 Qgis.RasterRendererFlag.baseClass = Qgis
 Qgis.RasterRendererFlags.baseClass = Qgis
 RasterRendererFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
@@ -2191,6 +2429,7 @@ Qgis.RasterRendererCapability.__doc__ = """Raster renderer capabilities.
 """
 # --
 Qgis.RasterRendererCapability.baseClass = Qgis
+Qgis.RasterRendererCapabilities = lambda flags=0: Qgis.RasterRendererCapability(flags)
 Qgis.RasterRendererCapabilities.baseClass = Qgis
 RasterRendererCapabilities = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -2506,6 +2745,7 @@ and are not describing any information from the data provider.
 """
 # --
 Qgis.FieldConfigurationFlag.baseClass = Qgis
+Qgis.FieldConfigurationFlags = lambda flags=0: Qgis.FieldConfigurationFlag(flags)
 Qgis.FieldConfigurationFlags.baseClass = Qgis
 FieldConfigurationFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -2580,6 +2820,7 @@ Qgis.SelectionFlag.__doc__ = """Flags which control feature selection behavior.
 
 """
 # --
+Qgis.SelectionFlags = lambda flags=0: Qgis.SelectionFlag(flags)
 Qgis.SelectionFlag.baseClass = Qgis
 Qgis.SelectionFlags.baseClass = Qgis
 SelectionFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
@@ -2808,6 +3049,7 @@ Qgis.GpsInformationComponent.__doc__ = """GPS information component.
 
 """
 # --
+Qgis.GpsInformationComponents = lambda flags=0: Qgis.GpsInformationComponent(flags)
 Qgis.GpsInformationComponent.baseClass = Qgis
 Qgis.GpsInformationComponents.baseClass = Qgis
 GpsInformationComponents = Qgis  # dirty hack since SIP seems to introduce the flags in module
@@ -2829,6 +3071,7 @@ Qgis.BabelFormatCapability.__doc__ = """Babel GPS format capabilities.
 
 """
 # --
+Qgis.BabelFormatCapabilities = lambda flags=0: Qgis.BabelFormatCapability(flags)
 Qgis.BabelFormatCapability.baseClass = Qgis
 Qgis.BabelFormatCapabilities.baseClass = Qgis
 BabelFormatCapabilities = Qgis  # dirty hack since SIP seems to introduce the flags in module
@@ -2843,6 +3086,7 @@ are generated for executing GPSBabel processes.
 
 """
 # --
+Qgis.BabelCommandFlags = lambda flags=0: Qgis.BabelCommandFlag(flags)
 Qgis.BabelCommandFlag.baseClass = Qgis
 Qgis.BabelCommandFlags.baseClass = Qgis
 BabelCommandFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
@@ -2918,6 +3162,7 @@ Qgis.GeometryValidityFlag.__doc__ = """Geometry validity check flags.
 
 """
 # --
+Qgis.GeometryValidityFlags = lambda flags=0: Qgis.GeometryValidityFlag(flags)
 Qgis.GeometryValidityFlag.baseClass = Qgis
 Qgis.GeometryValidityFlags.baseClass = Qgis
 GeometryValidityFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
@@ -3018,6 +3263,34 @@ Qgis.JoinStyle.__doc__ = """Join styles for buffers.
 # --
 Qgis.JoinStyle.baseClass = Qgis
 # monkey patching scoped based enum
+Qgis.JoinStyle3D.Round.__doc__ = "Smooth, rounded buffer around the input geometry"
+Qgis.JoinStyle3D.Flat.__doc__ = "Flat ends and constant width along the linestring"
+Qgis.JoinStyle3D.CylindersAndSpheres.__doc__ = "Cylinders along the linestring segments with spheres at the vertices"
+Qgis.JoinStyle3D.__doc__ = """Join styles for 3D buffers.
+
+.. versionadded:: 4.0
+
+* ``Round``: Smooth, rounded buffer around the input geometry
+* ``Flat``: Flat ends and constant width along the linestring
+* ``CylindersAndSpheres``: Cylinders along the linestring segments with spheres at the vertices
+
+"""
+# --
+Qgis.JoinStyle3D.baseClass = Qgis
+# monkey patching scoped based enum
+Qgis.GeometryBackend.QGIS.__doc__ = "Use internal implementation"
+Qgis.GeometryBackend.GEOS.__doc__ = "Use GEOS implementation"
+Qgis.GeometryBackend.__doc__ = """Geometry backend for :py:class:`QgsGeometry`.
+
+.. versionadded:: 4.2
+
+* ``QGIS``: Use internal implementation
+* ``GEOS``: Use GEOS implementation
+
+"""
+# --
+Qgis.GeometryBackend.baseClass = Qgis
+# monkey patching scoped based enum
 Qgis.GeosCreationFlag.RejectOnInvalidSubGeometry.__doc__ = "Don't allow geometries with invalid sub-geometries to be created"
 Qgis.GeosCreationFlag.SkipEmptyInteriorRings.__doc__ = "Skip any empty polygon interior ring"
 Qgis.GeosCreationFlag.__doc__ = """Flags which control geos geometry creation behavior.
@@ -3030,6 +3303,7 @@ Qgis.GeosCreationFlag.__doc__ = """Flags which control geos geometry creation be
 """
 # --
 Qgis.GeosCreationFlag.baseClass = Qgis
+Qgis.GeosCreationFlags = lambda flags=0: Qgis.GeosCreationFlag(flags)
 Qgis.GeosCreationFlags.baseClass = Qgis
 GeosCreationFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -3091,6 +3365,7 @@ Qgis.FeatureRequestFlag.__doc__ = """Flags for controlling feature requests.
 """
 # --
 Qgis.FeatureRequestFlag.baseClass = Qgis
+Qgis.FeatureRequestFlags = lambda flags=0: Qgis.FeatureRequestFlag(flags)
 Qgis.FeatureRequestFlags.baseClass = Qgis
 FeatureRequestFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -3188,6 +3463,7 @@ Qgis.FileOperationFlag.__doc__ = """File operation flags.
 
 """
 # --
+Qgis.FileOperationFlags = lambda flags=0: Qgis.FileOperationFlag(flags)
 Qgis.FileOperationFlag.baseClass = Qgis
 Qgis.FileOperationFlags.baseClass = Qgis
 FileOperationFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
@@ -3214,6 +3490,7 @@ Qgis.MapLayerProperty.__doc__ = """Generic map layer properties.
 
 """
 # --
+Qgis.MapLayerProperties = lambda flags=0: Qgis.MapLayerProperty(flags)
 Qgis.MapLayerProperty.baseClass = Qgis
 Qgis.MapLayerProperties.baseClass = Qgis
 MapLayerProperties = Qgis  # dirty hack since SIP seems to introduce the flags in module
@@ -3257,6 +3534,7 @@ Qgis.DataProviderFlag.__doc__ = """Generic data provider flags.
 
 """
 # --
+Qgis.DataProviderFlags = lambda flags=0: Qgis.DataProviderFlag(flags)
 Qgis.DataProviderFlag.baseClass = Qgis
 Qgis.DataProviderFlags.baseClass = Qgis
 DataProviderFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
@@ -3490,6 +3768,23 @@ Qgis.CrsWktVariant.__doc__ = """Coordinate reference system WKT formatting varia
 # --
 Qgis.CrsWktVariant.baseClass = Qgis
 # monkey patching scoped based enum
+Qgis.UnknownLayerCrsBehavior.NoAction.__doc__ = "Take no action and leave as unknown CRS"
+Qgis.UnknownLayerCrsBehavior.PromptUserForCrs.__doc__ = "User is prompted for a CRS choice"
+Qgis.UnknownLayerCrsBehavior.UseProjectCrs.__doc__ = "Copy the current project's CRS"
+Qgis.UnknownLayerCrsBehavior.UseDefaultCrs.__doc__ = "Use the default layer CRS set via QGIS options"
+Qgis.UnknownLayerCrsBehavior.__doc__ = """Behavior to use when encountering a layer with an unknown (invalid) CRS.
+
+.. versionadded:: 4.2
+
+* ``NoAction``: Take no action and leave as unknown CRS
+* ``PromptUserForCrs``: User is prompted for a CRS choice
+* ``UseProjectCrs``: Copy the current project's CRS
+* ``UseDefaultCrs``: Use the default layer CRS set via QGIS options
+
+"""
+# --
+Qgis.UnknownLayerCrsBehavior.baseClass = Qgis
+# monkey patching scoped based enum
 Qgis.Axis.X.__doc__ = "X-axis"
 Qgis.Axis.Y.__doc__ = "Y-axis"
 Qgis.Axis.Z.__doc__ = "Z-axis"
@@ -3524,6 +3819,7 @@ Qgis.AnnotationItemFlag.__doc__ = """Flags for annotation items.
 
 """
 # --
+Qgis.AnnotationItemFlags = lambda flags=0: Qgis.AnnotationItemFlag(flags)
 Qgis.AnnotationItemFlag.baseClass = Qgis
 Qgis.AnnotationItemFlags.baseClass = Qgis
 AnnotationItemFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
@@ -3552,6 +3848,7 @@ Qgis.AnnotationItemGuiFlag.__doc__ = """Flags for controlling how an annotation 
 
 """
 # --
+Qgis.AnnotationItemGuiFlags = lambda flags=0: Qgis.AnnotationItemGuiFlag(flags)
 Qgis.AnnotationItemGuiFlag.baseClass = Qgis
 Qgis.AnnotationItemGuiFlags.baseClass = Qgis
 AnnotationItemGuiFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
@@ -3813,6 +4110,7 @@ Qgis.RasterTemporalCapabilityFlag.__doc__ = """Flags for raster layer temporal c
 """
 # --
 Qgis.RasterTemporalCapabilityFlag.baseClass = Qgis
+Qgis.RasterTemporalCapabilityFlags = lambda flags=0: Qgis.RasterTemporalCapabilityFlag(flags)
 Qgis.RasterTemporalCapabilityFlags.baseClass = Qgis
 RasterTemporalCapabilityFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -3849,6 +4147,7 @@ Qgis.CoordinateTransformationFlag.__doc__ = """Flags which adjust the coordinate
 """
 # --
 Qgis.CoordinateTransformationFlag.baseClass = Qgis
+Qgis.CoordinateTransformationFlags = lambda flags=0: Qgis.CoordinateTransformationFlag(flags)
 Qgis.CoordinateTransformationFlags.baseClass = Qgis
 CoordinateTransformationFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -3933,6 +4232,7 @@ Qgis.MapSettingsFlag.__doc__ = """Flags which adjust the way maps are rendered.
 
 """
 # --
+Qgis.MapSettingsFlags = lambda flags=0: Qgis.MapSettingsFlag(flags)
 Qgis.MapSettingsFlag.baseClass = Qgis
 Qgis.MapSettingsFlags.baseClass = Qgis
 MapSettingsFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
@@ -4017,6 +4317,7 @@ Qgis.RenderContextFlag.__doc__ = """Flags which affect rendering operations.
 
 """
 # --
+Qgis.RenderContextFlags = lambda flags=0: Qgis.RenderContextFlag(flags)
 Qgis.RenderContextFlag.baseClass = Qgis
 Qgis.RenderContextFlags.baseClass = Qgis
 RenderContextFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
@@ -4038,6 +4339,7 @@ Qgis.MapLayerRendererFlag.__doc__ = """Flags which control how map layer rendere
 """
 # --
 Qgis.MapLayerRendererFlag.baseClass = Qgis
+Qgis.MapLayerRendererFlags = lambda flags=0: Qgis.MapLayerRendererFlag(flags)
 Qgis.MapLayerRendererFlags.baseClass = Qgis
 MapLayerRendererFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -4051,6 +4353,7 @@ Qgis.PaintEffectFlag.__doc__ = """Flags which control how paint effects behave.
 """
 # --
 Qgis.PaintEffectFlag.baseClass = Qgis
+Qgis.PaintEffectFlags = lambda flags=0: Qgis.PaintEffectFlag(flags)
 Qgis.PaintEffectFlags.baseClass = Qgis
 PaintEffectFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -4112,6 +4415,7 @@ Prior to QGIS 3.30 this was available as :py:class:`QgsLabelingEngineSettings`.F
 """
 # --
 Qgis.LabelingFlag.baseClass = Qgis
+Qgis.LabelingFlags = lambda flags=0: Qgis.LabelingFlag(flags)
 Qgis.LabelingFlags.baseClass = Qgis
 LabelingFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -4226,6 +4530,7 @@ Qgis.TextComponent.__doc__ = """Text components.
 """
 # --
 Qgis.TextComponent.baseClass = Qgis
+Qgis.TextComponents = lambda flags=0: Qgis.TextComponent(flags)
 Qgis.TextComponents.baseClass = Qgis
 TextComponents = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -4337,6 +4642,7 @@ Qgis.CurvedTextFlag.__doc__ = """Flags controlling behavior of curved text gener
 """
 # --
 Qgis.CurvedTextFlag.baseClass = Qgis
+Qgis.CurvedTextFlags = lambda flags=0: Qgis.CurvedTextFlag(flags)
 # monkey patching scoped based enum
 QgsVectorSimplifyMethod.Distance.__doc__ = "The simplification uses the distance between points to remove duplicate points"
 QgsVectorSimplifyMethod.SnapToGrid.__doc__ = "The simplification uses a grid (similar to ST_SnapToGrid) to remove duplicate points"
@@ -4379,6 +4685,7 @@ Qgis.VectorRenderingSimplificationFlag.__doc__ = """Simplification flags for vec
 """
 # --
 Qgis.VectorRenderingSimplificationFlag.baseClass = Qgis
+Qgis.VectorRenderingSimplificationFlags = lambda flags=0: Qgis.VectorRenderingSimplificationFlag(flags)
 Qgis.VectorRenderingSimplificationFlags.baseClass = Qgis
 VectorRenderingSimplificationFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -4399,10 +4706,25 @@ Qgis.RenderSubcomponentProperty.__doc__ = """Rendering subcomponent properties.
 # --
 Qgis.RenderSubcomponentProperty.baseClass = Qgis
 # monkey patching scoped based enum
+Qgis.SelectiveMaskSourceType.SymbolLayer.__doc__ = "A mask generated from a symbol layer"
+Qgis.SelectiveMaskSourceType.Label.__doc__ = "A mask generated from a labeling provider"
+Qgis.SelectiveMaskSourceType.__doc__ = """Selective masking source types.
+
+.. versionadded:: 4.0
+
+* ``SymbolLayer``: A mask generated from a symbol layer
+* ``Label``: A mask generated from a labeling provider
+
+"""
+# --
+Qgis.SelectiveMaskSourceType.baseClass = Qgis
+# monkey patching scoped based enum
 QgsVertexId.VertexType.SegmentVertex = Qgis.VertexType.Segment
 QgsVertexId.SegmentVertex.__doc__ = "The actual start or end point of a segment"
 QgsVertexId.VertexType.CurveVertex = Qgis.VertexType.Curve
 QgsVertexId.CurveVertex.__doc__ = "An intermediate point on a segment defining the curvature of the segment"
+QgsVertexId.VertexType.ControlPointVertex = Qgis.VertexType.ControlPoint
+QgsVertexId.ControlPointVertex.__doc__ = "A NURBS control point (does not lie on the curve) \n.. versionadded:: 4.0"
 Qgis.VertexType.__doc__ = """Types of vertex.
 
 .. versionadded:: 3.22
@@ -4414,6 +4736,13 @@ Qgis.VertexType.__doc__ = """Types of vertex.
 * ``Curve``: An intermediate point on a segment defining the curvature of the segment
 
   Available as ``QgsVertexId.CurveVertex`` in older QGIS releases.
+
+* ``ControlPoint``: A NURBS control point (does not lie on the curve)
+
+  .. versionadded:: 4.0
+
+
+  Available as ``QgsVertexId.ControlPointVertex`` in older QGIS releases.
 
 
 """
@@ -4580,6 +4909,7 @@ Qgis.MarkerLinePlacement.__doc__ = """Defines how/where the symbols should be pl
 """
 # --
 Qgis.MarkerLinePlacement.baseClass = Qgis
+Qgis.MarkerLinePlacements = lambda flags=0: Qgis.MarkerLinePlacement(flags)
 Qgis.MarkerLinePlacements.baseClass = Qgis
 MarkerLinePlacements = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -4823,6 +5153,34 @@ Qgis.PlotAxisSuffixPlacement.__doc__ = """Placement options for suffixes in the 
 # --
 Qgis.PlotAxisSuffixPlacement.baseClass = Qgis
 # monkey patching scoped based enum
+Qgis.PlotAxisType.Interval.__doc__ = "The axis represents a range of values"
+Qgis.PlotAxisType.Categorical.__doc__ = "The axis represents categories"
+Qgis.PlotAxisType.__doc__ = """Plots axis types.
+
+.. versionadded:: 4.0
+
+* ``Interval``: The axis represents a range of values
+* ``Categorical``: The axis represents categories
+
+"""
+# --
+Qgis.PlotAxisType.baseClass = Qgis
+# monkey patching scoped based enum
+Qgis.PieChartLabelType.NoLabels.__doc__ = "Labels are not drawn"
+Qgis.PieChartLabelType.Categories.__doc__ = "Category labels are drawn"
+Qgis.PieChartLabelType.Values.__doc__ = "Value labels are drawn"
+Qgis.PieChartLabelType.__doc__ = """Pie chart label types.
+
+.. versionadded:: 4.0
+
+* ``NoLabels``: Labels are not drawn
+* ``Categories``: Category labels are drawn
+* ``Values``: Value labels are drawn
+
+"""
+# --
+Qgis.PieChartLabelType.baseClass = Qgis
+# monkey patching scoped based enum
 Qgis.DpiMode.All.__doc__ = "All"
 Qgis.DpiMode.Off.__doc__ = "Off"
 Qgis.DpiMode.QGIS.__doc__ = "QGIS"
@@ -4902,6 +5260,7 @@ Qgis.TextRendererFlag.__doc__ = """Flags which control the behavior of rendering
 """
 # --
 Qgis.TextRendererFlag.baseClass = Qgis
+Qgis.TextRendererFlags = lambda flags=0: Qgis.TextRendererFlag(flags)
 Qgis.TextRendererFlags.baseClass = Qgis
 TextRendererFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -4958,6 +5317,7 @@ Qgis.MapCanvasFlag.__doc__ = """Flags controlling behavior of map canvases.
 """
 # --
 Qgis.MapCanvasFlag.baseClass = Qgis
+Qgis.MapCanvasFlags = lambda flags=0: Qgis.MapCanvasFlag(flags)
 Qgis.MapCanvasFlags.baseClass = Qgis
 MapCanvasFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -4973,6 +5333,7 @@ Qgis.ViewSyncModeFlag.__doc__ = """Synchronization of 2D map canvas and 3D view
 """
 # --
 Qgis.ViewSyncModeFlag.baseClass = Qgis
+Qgis.ViewSyncModeFlags = lambda flags=0: Qgis.ViewSyncModeFlag(flags)
 # monkey patching scoped based enum
 Qgis.MapRecenteringMode.Always.__doc__ = "Always recenter map"
 Qgis.MapRecenteringMode.WhenOutsideVisibleExtent.__doc__ = "Only recenter map when new center would be outside of current visible extent"
@@ -4999,6 +5360,7 @@ Qgis.HistoryProviderBackend.__doc__ = """History provider backends.
 """
 # --
 Qgis.HistoryProviderBackend.baseClass = Qgis
+Qgis.HistoryProviderBackends = lambda flags=0: Qgis.HistoryProviderBackend(flags)
 Qgis.HistoryProviderBackends.baseClass = Qgis
 HistoryProviderBackends = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -5153,6 +5515,7 @@ Qgis.ProcessingProviderFlag.__doc__ = """Flags indicating how and when an proces
 """
 # --
 Qgis.ProcessingProviderFlag.baseClass = Qgis
+Qgis.ProcessingProviderFlags = lambda flags=0: Qgis.ProcessingProviderFlag(flags)
 Qgis.ProcessingProviderFlags.baseClass = Qgis
 ProcessingProviderFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -5263,21 +5626,28 @@ Qgis.ProcessingAlgorithmFlag.__doc__ = """Flags indicating how and when an algor
 """
 # --
 Qgis.ProcessingAlgorithmFlag.baseClass = Qgis
+Qgis.ProcessingAlgorithmFlags = lambda flags=0: Qgis.ProcessingAlgorithmFlag(flags)
 Qgis.ProcessingAlgorithmFlags.baseClass = Qgis
 ProcessingAlgorithmFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
 Qgis.ProcessingAlgorithmDocumentationFlag.RegeneratesPrimaryKey.__doc__ = "Algorithm always drops any existing primary keys or FID values and regenerates them in outputs"
 Qgis.ProcessingAlgorithmDocumentationFlag.RegeneratesPrimaryKeyInSomeScenarios.__doc__ = "Algorithm may drop the existing primary keys or FID values in some scenarios, depending on algorithm inputs and parameters"
+Qgis.ProcessingAlgorithmDocumentationFlag.RespectsEllipsoid.__doc__ = "Algorithm respects the context's ellipsoid settings, and uses ellipsoidal based measurements. \n.. versionadded:: 4.0"
 Qgis.ProcessingAlgorithmDocumentationFlag.__doc__ = """Flags describing algorithm behavior for documentation purposes.
 
 .. versionadded:: 3.40
 
 * ``RegeneratesPrimaryKey``: Algorithm always drops any existing primary keys or FID values and regenerates them in outputs
 * ``RegeneratesPrimaryKeyInSomeScenarios``: Algorithm may drop the existing primary keys or FID values in some scenarios, depending on algorithm inputs and parameters
+* ``RespectsEllipsoid``: Algorithm respects the context's ellipsoid settings, and uses ellipsoidal based measurements.
+
+  .. versionadded:: 4.0
+
 
 """
 # --
 Qgis.ProcessingAlgorithmDocumentationFlag.baseClass = Qgis
+Qgis.ProcessingAlgorithmDocumentationFlags = lambda flags=0: Qgis.ProcessingAlgorithmDocumentationFlag(flags)
 Qgis.ProcessingAlgorithmDocumentationFlags.baseClass = Qgis
 ProcessingAlgorithmDocumentationFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -5364,6 +5734,7 @@ Qgis.ProcessingFeatureSourceDefinitionFlag.__doc__ = """Flags which control beha
 """
 # --
 Qgis.ProcessingFeatureSourceDefinitionFlag.baseClass = Qgis
+Qgis.ProcessingFeatureSourceDefinitionFlags = lambda flags=0: Qgis.ProcessingFeatureSourceDefinitionFlag(flags)
 Qgis.ProcessingFeatureSourceDefinitionFlags.baseClass = Qgis
 ProcessingFeatureSourceDefinitionFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -5385,6 +5756,7 @@ Qgis.ProcessingFeatureSourceFlag.__doc__ = """Flags which control how :py:class:
 """
 # --
 Qgis.ProcessingFeatureSourceFlag.baseClass = Qgis
+Qgis.ProcessingFeatureSourceFlags = lambda flags=0: Qgis.ProcessingFeatureSourceFlag(flags)
 Qgis.ProcessingFeatureSourceFlags.baseClass = Qgis
 ProcessingFeatureSourceFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -5405,6 +5777,7 @@ and capabilities.
 """
 # --
 Qgis.ProcessingParameterTypeFlag.baseClass = Qgis
+Qgis.ProcessingParameterTypeFlags = lambda flags=0: Qgis.ProcessingParameterTypeFlag(flags)
 Qgis.ProcessingParameterTypeFlags.baseClass = Qgis
 ProcessingParameterTypeFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -5444,6 +5817,7 @@ Qgis.ProcessingParameterFlag.__doc__ = """Flags which dictate the behavior of Pr
 """
 # --
 Qgis.ProcessingParameterFlag.baseClass = Qgis
+Qgis.ProcessingParameterFlags = lambda flags=0: Qgis.ProcessingParameterFlag(flags)
 Qgis.ProcessingParameterFlags.baseClass = Qgis
 ProcessingParameterFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -5848,6 +6222,21 @@ Qgis.CadConstraintType.__doc__ = """Advanced digitizing constraint type.
 # --
 Qgis.CadConstraintType.baseClass = Qgis
 # monkey patching scoped based enum
+Qgis.CadMeasurementDisplayType.Hidden.__doc__ = "Hide measurement"
+Qgis.CadMeasurementDisplayType.Cartesian.__doc__ = "Use Cartesian measurements"
+Qgis.CadMeasurementDisplayType.Ellipsoidal.__doc__ = "Use Ellipsoidal measurements"
+Qgis.CadMeasurementDisplayType.__doc__ = """Advanced digitizing measurement display types.
+
+.. versionadded:: 4.0
+
+* ``Hidden``: Hide measurement
+* ``Cartesian``: Use Cartesian measurements
+* ``Ellipsoidal``: Use Ellipsoidal measurements
+
+"""
+# --
+Qgis.CadMeasurementDisplayType.baseClass = Qgis
+# monkey patching scoped based enum
 Qgis.ProjectFlag.EvaluateDefaultValuesOnProviderSide.__doc__ = "If set, default values for fields will be evaluated on the provider side when features from the project are created instead of when they are committed."
 Qgis.ProjectFlag.TrustStoredLayerStatistics.__doc__ = "If set, then layer statistics (such as the layer extent) will be read from values stored in the project instead of requesting updated values from the data provider. Additionally, when this flag is set, primary key unicity is not checked for views and materialized views with Postgres provider."
 Qgis.ProjectFlag.RememberLayerEditStatusBetweenSessions.__doc__ = "If set, then any layers set to be editable will be stored in the project and immediately made editable whenever that project is restored"
@@ -5864,6 +6253,7 @@ Qgis.ProjectFlag.__doc__ = """Flags which control the behavior of :py:class:`Qgs
 """
 # --
 Qgis.ProjectFlag.baseClass = Qgis
+Qgis.ProjectFlags = lambda flags=0: Qgis.ProjectFlag(flags)
 Qgis.ProjectFlags.baseClass = Qgis
 ProjectFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -5877,8 +6267,52 @@ Qgis.PlotToolFlag.__doc__ = """Flags that control the way the :py:class:`QgsPlot
 """
 # --
 Qgis.PlotToolFlag.baseClass = Qgis
+Qgis.PlotToolFlags = lambda flags=0: Qgis.PlotToolFlag(flags)
 Qgis.PlotToolFlags.baseClass = Qgis
 PlotToolFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
+# monkey patching scoped based enum
+Qgis.Map3DDebugFlag.ShowTerrainBoundingBoxes.__doc__ = "Displays bounding boxes of terrain tiles."
+Qgis.Map3DDebugFlag.ShowTerrainTileInfo.__doc__ = "Displays extra tile info on top of terrain tiles."
+Qgis.Map3DDebugFlag.ShowCameraViewCenter.__doc__ = "Shows the camera's view center as a sphere."
+Qgis.Map3DDebugFlag.ShowCameraRotationCenter.__doc__ = "Shows the camera's rotation center as a sphere."
+Qgis.Map3DDebugFlag.ShowLightSourceOrigins.__doc__ = "Shows the light source origins as a sphere."
+Qgis.Map3DDebugFlag.ShowFPS.__doc__ = "Shows the frames per second (FPS)."
+Qgis.Map3DDebugFlag.ShowDebugPanel.__doc__ = "Shows the debug panel next to the map."
+Qgis.Map3DDebugFlag.__doc__ = """Flags that control debug options for 3D maps.
+
+.. warning::
+
+   These are debugging options only, and are not considered part of stable API.
+
+.. versionadded:: 4.2
+
+* ``ShowTerrainBoundingBoxes``: Displays bounding boxes of terrain tiles.
+* ``ShowTerrainTileInfo``: Displays extra tile info on top of terrain tiles.
+* ``ShowCameraViewCenter``: Shows the camera's view center as a sphere.
+* ``ShowCameraRotationCenter``: Shows the camera's rotation center as a sphere.
+* ``ShowLightSourceOrigins``: Shows the light source origins as a sphere.
+* ``ShowFPS``: Shows the frames per second (FPS).
+* ``ShowDebugPanel``: Shows the debug panel next to the map.
+
+"""
+# --
+Qgis.Map3DDebugFlag.baseClass = Qgis
+Qgis.Map3DDebugFlags = lambda flags=0: Qgis.Map3DDebugFlag(flags)
+Qgis.Map3DDebugFlags.baseClass = Qgis
+Map3DDebugFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
+# monkey patching scoped based enum
+Qgis.Map3DProjectionType.Orthographic.__doc__ = "Orthogonal projection"
+Qgis.Map3DProjectionType.Perspective.__doc__ = "Perspective projection"
+Qgis.Map3DProjectionType.__doc__ = """3D map projection type
+
+.. versionadded:: 4.2
+
+* ``Orthographic``: Orthogonal projection
+* ``Perspective``: Perspective projection
+
+"""
+# --
+Qgis.Map3DProjectionType.baseClass = Qgis
 # monkey patching scoped based enum
 Qgis.Point3DShape.Cylinder.__doc__ = "Cylinder"
 Qgis.Point3DShape.Sphere.__doc__ = "Sphere"
@@ -5911,18 +6345,141 @@ Qgis.Point3DShape.__doc__ = """3D point shape types.
 # --
 Qgis.Point3DShape.baseClass = Qgis
 # monkey patching scoped based enum
+Qgis.MaterialRenderingTechnique.Triangles.__doc__ = "Triangle based rendering (default)"
+Qgis.MaterialRenderingTechnique.Lines.__doc__ = "Line based rendering, requires line data"
+Qgis.MaterialRenderingTechnique.InstancedPoints.__doc__ = "Instanced based rendering, requiring triangles and point data"
+Qgis.MaterialRenderingTechnique.Points.__doc__ = "Point based rendering, requires point data"
+Qgis.MaterialRenderingTechnique.TrianglesWithFixedTexture.__doc__ = "Triangle based rendering, using a fixed, non-user-configurable texture (e.g. for terrain rendering)"
+Qgis.MaterialRenderingTechnique.TrianglesFromModel.__doc__ = "Triangle based rendering, using a model object source"
+Qgis.MaterialRenderingTechnique.TrianglesDataDefined.__doc__ = "Triangle based rendering with possibility of datadefined color"
+Qgis.MaterialRenderingTechnique.Billboards.__doc__ = "Flat billboard rendering"
+Qgis.MaterialRenderingTechnique.__doc__ = """Material rendering techniques.
+
+.. warning::
+
+   This is not considered stable API, and may change in future QGIS releases. It is
+   exposed to the Python bindings as a tech preview only.
+
+.. versionadded:: 4.2
+
+* ``Triangles``: Triangle based rendering (default)
+* ``Lines``: Line based rendering, requires line data
+* ``InstancedPoints``: Instanced based rendering, requiring triangles and point data
+* ``Points``: Point based rendering, requires point data
+* ``TrianglesWithFixedTexture``: Triangle based rendering, using a fixed, non-user-configurable texture (e.g. for terrain rendering)
+* ``TrianglesFromModel``: Triangle based rendering, using a model object source
+* ``TrianglesDataDefined``: Triangle based rendering with possibility of datadefined color
+* ``Billboards``: Flat billboard rendering
+
+"""
+# --
+Qgis.MaterialRenderingTechnique.baseClass = Qgis
+# monkey patching scoped based enum
+Qgis.InstancedMaterialFlag.DataDefinedScale.__doc__ = "Per-instance data-defined scale"
+Qgis.InstancedMaterialFlag.DataDefinedRotation.__doc__ = "Per-instance data-defined rotation"
+Qgis.InstancedMaterialFlag.__doc__ = """Optional per-instance properties of instanced materials.
+
+.. versionadded:: 4.2
+
+* ``DataDefinedScale``: Per-instance data-defined scale
+* ``DataDefinedRotation``: Per-instance data-defined rotation
+
+"""
+# --
+Qgis.InstancedMaterialFlag.baseClass = Qgis
+Qgis.InstancedMaterialFlags = lambda flags=0: Qgis.InstancedMaterialFlag(flags)
+Qgis.InstancedMaterialFlags.baseClass = Qgis
+InstancedMaterialFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
+# monkey patching scoped based enum
+Qgis.TextureFilterQuality.Trilinear.__doc__ = "Trilinear (LinearMipmapLinear)"
+Qgis.TextureFilterQuality.Anisotropic2x.__doc__ = "Anisotropic filtering (2x)"
+Qgis.TextureFilterQuality.Anisotropic4x.__doc__ = "Anisotropic filtering (4x)"
+Qgis.TextureFilterQuality.Anisotropic8x.__doc__ = "Anisotropic filtering (8x)"
+Qgis.TextureFilterQuality.Anisotropic16x.__doc__ = "Anisotropic filtering (16x)"
+Qgis.TextureFilterQuality.__doc__ = """Texture filtering qualities.
+
+.. versionadded:: 4.2
+
+* ``Trilinear``: Trilinear (LinearMipmapLinear)
+* ``Anisotropic2x``: Anisotropic filtering (2x)
+* ``Anisotropic4x``: Anisotropic filtering (4x)
+* ``Anisotropic8x``: Anisotropic filtering (8x)
+* ``Anisotropic16x``: Anisotropic filtering (16x)
+
+"""
+# --
+Qgis.TextureFilterQuality.baseClass = Qgis
+# monkey patching scoped based enum
+Qgis.ShadowQuality.Low.__doc__ = "Low quality"
+Qgis.ShadowQuality.Medium.__doc__ = "Medium quality"
+Qgis.ShadowQuality.High.__doc__ = "High quality"
+Qgis.ShadowQuality.VeryHigh.__doc__ = "Very high quality"
+Qgis.ShadowQuality.Extreme.__doc__ = "Extremely high quality"
+Qgis.ShadowQuality.__doc__ = """Shadow texture quality.
+
+.. versionadded:: 4.2
+
+* ``Low``: Low quality
+* ``Medium``: Medium quality
+* ``High``: High quality
+* ``VeryHigh``: Very high quality
+* ``Extreme``: Extremely high quality
+
+"""
+# --
+Qgis.ShadowQuality.baseClass = Qgis
+# monkey patching scoped based enum
 Qgis.LightSourceType.Point.__doc__ = "Point light source"
 Qgis.LightSourceType.Directional.__doc__ = "Directional light source"
+Qgis.LightSourceType.Sun.__doc__ = "Sun based light source \n.. versionadded:: 4.2"
 Qgis.LightSourceType.__doc__ = """Light source types for 3D scenes.
 
 .. versionadded:: 3.26
 
 * ``Point``: Point light source
 * ``Directional``: Directional light source
+* ``Sun``: Sun based light source
+
+  .. versionadded:: 4.2
+
 
 """
 # --
 Qgis.LightSourceType.baseClass = Qgis
+# monkey patching scoped based enum
+Qgis.Map3DBackgroundType.NoBackground.__doc__ = "No background"
+Qgis.Map3DBackgroundType.FixedGradientBackground.__doc__ = "Two color gradient, fixed in place"
+Qgis.Map3DBackgroundType.DistinctTextureSkybox.__doc__ = "Skybox with 6 distinct textures for different faces"
+Qgis.Map3DBackgroundType.__doc__ = """Background types for 3D map view.
+
+.. versionadded:: 4.2
+
+* ``NoBackground``: No background
+* ``FixedGradientBackground``: Two color gradient, fixed in place
+* ``DistinctTextureSkybox``: Skybox with 6 distinct textures for different faces
+
+"""
+# --
+Qgis.Map3DBackgroundType.baseClass = Qgis
+# monkey patching scoped based enum
+Qgis.SkyboxCubeMapping.NativeZUp.__doc__ = "Textures exported for Z-up (+X Right, +Y Forward, +Z Up)"
+Qgis.SkyboxCubeMapping.OpenGLYUp.__doc__ = "Standard OpenGL/WebGL standard (+X Right, +Y Top, -Z Forward)"
+Qgis.SkyboxCubeMapping.GodotYUp.__doc__ = "Godot standard (+X Right, +Y Top, -Z Forward, with vertical flip)"
+Qgis.SkyboxCubeMapping.UnrealEngineZUp.__doc__ = "Unreal engine standard (+X Forward, +Y Right, +Z Up, Left-handed)"
+Qgis.SkyboxCubeMapping.LeftHandedYUpMirrored.__doc__ = "Left-Handed, Y-Up coordinate systems (e.g., Unity convention +X Right, +Y Top, +Z Forward, with horizontal mirror)"
+Qgis.SkyboxCubeMapping.__doc__ = """Skybox texture cube mapping for distinct texture skyboxes.
+
+.. versionadded:: 4.2
+
+* ``NativeZUp``: Textures exported for Z-up (+X Right, +Y Forward, +Z Up)
+* ``OpenGLYUp``: Standard OpenGL/WebGL standard (+X Right, +Y Top, -Z Forward)
+* ``GodotYUp``: Godot standard (+X Right, +Y Top, -Z Forward, with vertical flip)
+* ``UnrealEngineZUp``: Unreal engine standard (+X Forward, +Y Right, +Z Up, Left-handed)
+* ``LeftHandedYUpMirrored``: Left-Handed, Y-Up coordinate systems (e.g., Unity convention +X Right, +Y Top, +Z Forward, with horizontal mirror)
+
+"""
+# --
+Qgis.SkyboxCubeMapping.baseClass = Qgis
 # monkey patching scoped based enum
 Qgis.NavigationMode.TerrainBased.__doc__ = "The default navigation based on the terrain"
 Qgis.NavigationMode.Walk.__doc__ = "Uses WASD keys or arrows to navigate in walking (first person) manner"
@@ -5955,20 +6512,74 @@ Qgis.SceneMode.__doc__ = """The 3D scene mode used in 3D map views.
 # --
 Qgis.SceneMode.baseClass = Qgis
 # monkey patching scoped based enum
-Qgis.VerticalAxisInversion.Never.__doc__ = "Never invert vertical axis movements"
-Qgis.VerticalAxisInversion.WhenDragging.__doc__ = "Invert vertical axis movements when dragging in first person modes"
-Qgis.VerticalAxisInversion.Always.__doc__ = "Always invert vertical axis movements"
+Qgis.VerticalAxisInversion.WhenRotatingDragging.__doc__ = "When rotating camera around self with mouse captured \n.. versionadded:: 4.2"
+Qgis.VerticalAxisInversion.WhenRotatingCaptured.__doc__ = "When rotating camera around self with mouse button pressed \n.. versionadded:: 4.2"
+Qgis.VerticalAxisInversion.WhenPivoting.__doc__ = "When pivoting camera around point in terrain \n.. versionadded:: 4.2"
+Qgis.VerticalAxisInversion.Never.__doc__ = "Never invert vertical axis movements \n.. deprecated:: 4.2"
+Qgis.VerticalAxisInversion.WhenDragging.__doc__ = "Invert vertical axis movements when dragging in first person modes \n.. deprecated:: 4.2"
+Qgis.VerticalAxisInversion.Always.__doc__ = "Always invert vertical axis movements \n.. deprecated:: 4.2"
 Qgis.VerticalAxisInversion.__doc__ = """Vertical axis inversion options for 3D views.
 
 .. versionadded:: 3.30
 
+* ``WhenRotatingDragging``: When rotating camera around self with mouse captured
+
+  .. versionadded:: 4.2
+
+* ``WhenRotatingCaptured``: When rotating camera around self with mouse button pressed
+
+  .. versionadded:: 4.2
+
+* ``WhenPivoting``: When pivoting camera around point in terrain
+
+  .. versionadded:: 4.2
+
 * ``Never``: Never invert vertical axis movements
+
+  .. deprecated:: 4.2
+
 * ``WhenDragging``: Invert vertical axis movements when dragging in first person modes
+
+  .. deprecated:: 4.2
+
 * ``Always``: Always invert vertical axis movements
+
+  .. deprecated:: 4.2
+
 
 """
 # --
 Qgis.VerticalAxisInversion.baseClass = Qgis
+Qgis.VerticalAxisInversionFlags = lambda flags=0: Qgis.VerticalAxisInversion(flags)
+Qgis.VerticalAxisInversionFlags.baseClass = Qgis
+VerticalAxisInversionFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
+# monkey patching scoped based enum
+Qgis.ToneMappingMethod.Clamp.__doc__ = "Clamp HDR colors to SDR color ranges, leave SDR colors unchanged. This is computationally cheap and ensures exact reproduction of SDR colors, but causes bright highlights to visibly clip and lose detail."
+Qgis.ToneMappingMethod.Aces.__doc__ = "Applies an approximation to the Academy Color Encoding System (ACES) filmic tone curve. This provides a natural, cinematic highlight roll-off and preserves detail in extreme brightness."
+Qgis.ToneMappingMethod.__doc__ = """Defines the method used to map High Dynamic Range (HDR) scene colors
+to the Standard Dynamic Range (SDR) of a display monitor.
+
+.. versionadded:: 4.2
+
+* ``Clamp``: Clamp HDR colors to SDR color ranges, leave SDR colors unchanged. This is computationally cheap and ensures exact reproduction of SDR colors, but causes bright highlights to visibly clip and lose detail.
+* ``Aces``: Applies an approximation to the Academy Color Encoding System (ACES) filmic tone curve. This provides a natural, cinematic highlight roll-off and preserves detail in extreme brightness.
+
+"""
+# --
+Qgis.ToneMappingMethod.baseClass = Qgis
+# monkey patching scoped based enum
+Qgis.Export3DSceneFormat.Obj.__doc__ = "Wavefront OBJ format."
+Qgis.Export3DSceneFormat.StlAscii.__doc__ = "STL ascii format."
+Qgis.Export3DSceneFormat.__doc__ = """The file format used when exporting a 3D scene.
+
+.. versionadded:: 4.2
+
+* ``Obj``: Wavefront OBJ format.
+* ``StlAscii``: STL ascii format.
+
+"""
+# --
+Qgis.Export3DSceneFormat.baseClass = Qgis
 # monkey patching scoped based enum
 Qgis.ProfileSurfaceSymbology.Line.__doc__ = "The elevation surface will be rendered using a line symbol"
 Qgis.ProfileSurfaceSymbology.FillBelow.__doc__ = "The elevation surface will be rendered using a fill symbol below the surface level"
@@ -6001,6 +6612,19 @@ Qgis.VectorProfileType.__doc__ = """Types of elevation profiles to generate for 
 # --
 Qgis.VectorProfileType.baseClass = Qgis
 # monkey patching scoped based enum
+Qgis.PointCloudProfileType.IndividualPoints.__doc__ = "Sample individual points from the point cloud"
+Qgis.PointCloudProfileType.TriangulatedSurface.__doc__ = "Create a TIN from the point cloud using Delaunay triangulation"
+Qgis.PointCloudProfileType.__doc__ = """Types of elevation profiles to generate for point cloud sources.
+
+.. versionadded:: 4.0
+
+* ``IndividualPoints``: Sample individual points from the point cloud
+* ``TriangulatedSurface``: Create a TIN from the point cloud using Delaunay triangulation
+
+"""
+# --
+Qgis.PointCloudProfileType.baseClass = Qgis
+# monkey patching scoped based enum
 Qgis.ProfileGeneratorFlag.RespectsMaximumErrorMapUnit.__doc__ = "Generated profile respects the QgsProfileGenerationContext.maximumErrorMapUnits() property."
 Qgis.ProfileGeneratorFlag.RespectsDistanceRange.__doc__ = "Generated profile respects the QgsProfileGenerationContext.distanceRange() property."
 Qgis.ProfileGeneratorFlag.RespectsElevationRange.__doc__ = "Generated profile respects the QgsProfileGenerationContext.elevationRange() property."
@@ -6015,6 +6639,7 @@ Qgis.ProfileGeneratorFlag.__doc__ = """Flags that control the way the :py:class:
 """
 # --
 Qgis.ProfileGeneratorFlag.baseClass = Qgis
+Qgis.ProfileGeneratorFlags = lambda flags=0: Qgis.ProfileGeneratorFlag(flags)
 Qgis.ProfileGeneratorFlags.baseClass = Qgis
 ProfileGeneratorFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -6154,6 +6779,7 @@ Qgis.ProjectReadFlag.__doc__ = """Flags which control project read behavior.
 """
 # --
 Qgis.ProjectReadFlag.baseClass = Qgis
+Qgis.ProjectReadFlags = lambda flags=0: Qgis.ProjectReadFlag(flags)
 Qgis.ProjectReadFlags.baseClass = Qgis
 ProjectReadFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -6170,6 +6796,7 @@ be used to selectively enable potentially costly functionality for the project.
 """
 # --
 Qgis.ProjectCapability.baseClass = Qgis
+Qgis.ProjectCapabilities = lambda flags=0: Qgis.ProjectCapability(flags)
 Qgis.ProjectCapabilities.baseClass = Qgis
 ProjectCapabilities = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -6206,6 +6833,7 @@ QgsArcGisPortalUtils.GlobeServer.__doc__ = "GlobeServer"
 QgsArcGisPortalUtils.GPServer.__doc__ = "GPServer"
 QgsArcGisPortalUtils.GeocodeServer.__doc__ = "GeocodeServer"
 QgsArcGisPortalUtils.Unknown.__doc__ = "Other unknown/unsupported type"
+QgsArcGisPortalUtils.SceneServer.__doc__ = "SceneServer"
 Qgis.ArcGisRestServiceType.__doc__ = """Available ArcGIS REST service types.
 
 .. note::
@@ -6230,10 +6858,40 @@ Qgis.ArcGisRestServiceType.__doc__ = """Available ArcGIS REST service types.
 * ``GPServer``: GPServer
 * ``GeocodeServer``: GeocodeServer
 * ``Unknown``: Other unknown/unsupported type
+* ``SceneServer``: SceneServer
 
 """
 # --
 Qgis.ArcGisRestServiceType.baseClass = Qgis
+# monkey patching scoped based enum
+Qgis.ArcGisRestServiceCapability.Map.__doc__ = "Render map"
+Qgis.ArcGisRestServiceCapability.Query.__doc__ = "Query features"
+Qgis.ArcGisRestServiceCapability.Update.__doc__ = "Update features"
+Qgis.ArcGisRestServiceCapability.Delete.__doc__ = "Delete features"
+Qgis.ArcGisRestServiceCapability.Create.__doc__ = "Create features"
+Qgis.ArcGisRestServiceCapability.Image.__doc__ = "Image capabilities"
+Qgis.ArcGisRestServiceCapability.TilesOnly.__doc__ = "Service supports tiled image requests only"
+Qgis.ArcGisRestServiceCapability.__doc__ = """Available ArcGIS REST service capabilities.
+
+This enum contains a subset of the capabilities returned by ArcGIS REST services. May be
+extended in future with additional capabilities when required.
+
+.. versionadded:: 4.2
+
+* ``Map``: Render map
+* ``Query``: Query features
+* ``Update``: Update features
+* ``Delete``: Delete features
+* ``Create``: Create features
+* ``Image``: Image capabilities
+* ``TilesOnly``: Service supports tiled image requests only
+
+"""
+# --
+Qgis.ArcGisRestServiceCapability.baseClass = Qgis
+Qgis.ArcGisRestServiceCapabilities = lambda flags=0: Qgis.ArcGisRestServiceCapability(flags)
+Qgis.ArcGisRestServiceCapabilities.baseClass = Qgis
+ArcGisRestServiceCapabilities = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
 QgsRelation.Normal.__doc__ = "A normal relation"
 QgsRelation.Generated.__doc__ = "A generated relation is a child of a polymorphic relation"
@@ -6300,6 +6958,7 @@ Qgis.RelationshipCapability.__doc__ = """Relationship capabilities.
 """
 # --
 Qgis.RelationshipCapability.baseClass = Qgis
+Qgis.RelationshipCapabilities = lambda flags=0: Qgis.RelationshipCapability(flags)
 Qgis.RelationshipCapabilities.baseClass = Qgis
 RelationshipCapabilities = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -6380,6 +7039,7 @@ The flags reflect the support capabilities of a scripting language.
 """
 # --
 Qgis.ScriptLanguageCapability.baseClass = Qgis
+Qgis.ScriptLanguageCapabilities = lambda flags=0: Qgis.ScriptLanguageCapability(flags)
 Qgis.ScriptLanguageCapabilities.baseClass = Qgis
 ScriptLanguageCapabilities = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -6398,6 +7058,21 @@ Qgis.LayerTreeInsertionMethod.__doc__ = """Layer tree insertion methods
 # --
 Qgis.LayerTreeInsertionMethod.baseClass = Qgis
 # monkey patching scoped based enum
+Qgis.LegendLayerDoubleClickAction.LayerProperties.__doc__ = "Open the layer properties dialog"
+Qgis.LegendLayerDoubleClickAction.AttributeTable.__doc__ = "Open the attribute table"
+Qgis.LegendLayerDoubleClickAction.LayerStyling.__doc__ = "Open the layer styling dock"
+Qgis.LegendLayerDoubleClickAction.__doc__ = """Action performed when double-clicking a layer in the legend.
+
+.. versionadded:: 4.0
+
+* ``LayerProperties``: Open the layer properties dialog
+* ``AttributeTable``: Open the attribute table
+* ``LayerStyling``: Open the layer styling dock
+
+"""
+# --
+Qgis.LegendLayerDoubleClickAction.baseClass = Qgis
+# monkey patching scoped based enum
 Qgis.LayerTreeFilterFlag.SkipVisibilityCheck.__doc__ = "If set, the standard visibility check should be skipped"
 Qgis.LayerTreeFilterFlag.__doc__ = """Layer tree filter flags.
 
@@ -6408,8 +7083,23 @@ Qgis.LayerTreeFilterFlag.__doc__ = """Layer tree filter flags.
 """
 # --
 Qgis.LayerTreeFilterFlag.baseClass = Qgis
+Qgis.LayerTreeFilterFlags = lambda flags=0: Qgis.LayerTreeFilterFlag(flags)
 Qgis.LayerTreeFilterFlags.baseClass = Qgis
 LayerTreeFilterFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
+# monkey patching scoped based enum
+Qgis.MapLayerLegendFlag.ExcludeByDefault.__doc__ = "If set, the layer should not be included in legends by default, and must be manually added by a user"
+Qgis.MapLayerLegendFlag.__doc__ = """Map layer legend flags.
+
+.. versionadded:: 4.0
+
+* ``ExcludeByDefault``: If set, the layer should not be included in legends by default, and must be manually added by a user
+
+"""
+# --
+Qgis.MapLayerLegendFlag.baseClass = Qgis
+Qgis.MapLayerLegendFlags = lambda flags=0: Qgis.MapLayerLegendFlag(flags)
+Qgis.MapLayerLegendFlags.baseClass = Qgis
+MapLayerLegendFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
 QgsLegendStyle.Undefined.__doc__ = "Should not happen, only if corrupted project file"
 QgsLegendStyle.Hidden.__doc__ = "Special style, item is hidden including margins around"
@@ -6436,6 +7126,21 @@ Prior to QGIS 3.42 this was available as :py:class:`QgsLegendStyle`.Style
 # --
 Qgis.LegendComponent.baseClass = Qgis
 # monkey patching scoped based enum
+Qgis.LegendSyncMode.AllProjectLayers.__doc__ = "Synchronize to all project layers."
+Qgis.LegendSyncMode.VisibleLayers.__doc__ = "Synchronize to map layers. The legend will include layers which are included in the linked map only."
+Qgis.LegendSyncMode.Manual.__doc__ = "No automatic synchronization of legend layers. The legend will be manually populated."
+Qgis.LegendSyncMode.__doc__ = """Legend synchronization mode.
+
+.. versionadded:: 4.0
+
+* ``AllProjectLayers``: Synchronize to all project layers.
+* ``VisibleLayers``: Synchronize to map layers. The legend will include layers which are included in the linked map only.
+* ``Manual``: No automatic synchronization of legend layers. The legend will be manually populated.
+
+"""
+# --
+Qgis.LegendSyncMode.baseClass = Qgis
+# monkey patching scoped based enum
 Qgis.LegendJsonRenderFlag.ShowRuleDetails.__doc__ = "If set, the rule expression of a rule based renderer legend item will be added to the JSON"
 Qgis.LegendJsonRenderFlag.__doc__ = """Legend JSON export flags.
 
@@ -6448,6 +7153,7 @@ Flags to control JSON attributes when exporting a legend in JSON format.
 """
 # --
 Qgis.LegendJsonRenderFlag.baseClass = Qgis
+Qgis.LegendJsonRenderFlags = lambda flags=0: Qgis.LegendJsonRenderFlag(flags)
 Qgis.LegendJsonRenderFlags.baseClass = Qgis
 LegendJsonRenderFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -6486,6 +7192,7 @@ Prior to QGIS 3.30 this was available as :py:class:`QgsMapLayerAction`.Target
 """
 # --
 Qgis.MapLayerActionTarget.baseClass = Qgis
+Qgis.MapLayerActionTargets = lambda flags=0: Qgis.MapLayerActionTarget(flags)
 Qgis.MapLayerActionTargets.baseClass = Qgis
 MapLayerActionTargets = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -6506,6 +7213,7 @@ Prior to QGIS 3.30 this was available as :py:class:`QgsMapLayerAction`.Flag
 """
 # --
 Qgis.MapLayerActionFlag.baseClass = Qgis
+Qgis.MapLayerActionFlags = lambda flags=0: Qgis.MapLayerActionFlag(flags)
 Qgis.MapLayerActionFlags.baseClass = Qgis
 MapLayerActionFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -6878,8 +7586,8 @@ Qgis.RasterIdentifyFormat.baseClass = Qgis
 # monkey patching scoped based enum
 QgsRasterInterface.NoCapabilities.__doc__ = "No capabilities"
 QgsRasterInterface.Size.__doc__ = "Original data source size (and thus resolution) is known, it is not always available, for example for WMS"
-QgsRasterInterface.Create.__doc__ = "Create new datasets (Unused and deprecated -- will be removed in QGIS 4)"
-QgsRasterInterface.Remove.__doc__ = "Delete datasets (Unused and deprecated -- will be removed in QGIS 4)"
+QgsRasterInterface.Create.__doc__ = "Create new datasets (Unused and deprecated -- will be removed in QGIS 5)"
+QgsRasterInterface.Remove.__doc__ = "Delete datasets (Unused and deprecated -- will be removed in QGIS 5)"
 QgsRasterInterface.BuildPyramids.__doc__ = "Supports building of pyramids (overviews) (Deprecated since QGIS 3.38 -- use RasterProviderCapability.BuildPyramids instead)"
 QgsRasterInterface.Identify.__doc__ = "At least one identify format supported"
 QgsRasterInterface.IdentifyValue.__doc__ = "Numerical values"
@@ -6897,8 +7605,8 @@ Qgis.RasterInterfaceCapability.__doc__ = """Raster interface capabilities.
 
 * ``NoCapabilities``: No capabilities
 * ``Size``: Original data source size (and thus resolution) is known, it is not always available, for example for WMS
-* ``Create``: Create new datasets (Unused and deprecated -- will be removed in QGIS 4)
-* ``Remove``: Delete datasets (Unused and deprecated -- will be removed in QGIS 4)
+* ``Create``: Create new datasets (Unused and deprecated -- will be removed in QGIS 5)
+* ``Remove``: Delete datasets (Unused and deprecated -- will be removed in QGIS 5)
 * ``BuildPyramids``: Supports building of pyramids (overviews) (Deprecated since QGIS 3.38 -- use RasterProviderCapability.BuildPyramids instead)
 * ``Identify``: At least one identify format supported
 * ``IdentifyValue``: Numerical values
@@ -6910,6 +7618,7 @@ Qgis.RasterInterfaceCapability.__doc__ = """Raster interface capabilities.
 """
 # --
 Qgis.RasterInterfaceCapability.baseClass = Qgis
+Qgis.RasterInterfaceCapabilities = lambda flags=0: Qgis.RasterInterfaceCapability(flags)
 Qgis.RasterInterfaceCapabilities.baseClass = Qgis
 RasterInterfaceCapabilities = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -6955,6 +7664,7 @@ Qgis.RasterProviderCapability.__doc__ = """Raster data provider capabilities.
 """
 # --
 Qgis.RasterProviderCapability.baseClass = Qgis
+Qgis.RasterProviderCapabilities = lambda flags=0: Qgis.RasterProviderCapability(flags)
 Qgis.RasterProviderCapabilities.baseClass = Qgis
 RasterProviderCapabilities = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -8024,6 +8734,7 @@ QgsLayoutRenderContext.Flag.FlagSynchronousLegendGraphics = Qgis.LayoutRenderFla
 QgsLayoutRenderContext.FlagSynchronousLegendGraphics.__doc__ = "Query legend graphics synchronously."
 QgsLayoutRenderContext.Flag.FlagAlwaysUseGlobalMasks = Qgis.LayoutRenderFlag.AlwaysUseGlobalMasks
 QgsLayoutRenderContext.FlagAlwaysUseGlobalMasks.__doc__ = "When applying clipping paths for selective masking, always use global (\"entire map\") paths, instead of calculating local clipping paths per rendered feature. This results in considerably more complex layout exports in all current Qt versions. This flag only applies to vector layout exports. \n.. versionadded:: 3.38"
+QgsLayoutRenderContext.LimitCoverageLayerRenderToCurrentFeature.__doc__ = "Limit coverage layer rendering to the current atlas feature. \n.. versionadded:: 4.0"
 Qgis.LayoutRenderFlag.__doc__ = """Flags for controlling how a layout is rendered.
 
 .. note::
@@ -8089,10 +8800,15 @@ Qgis.LayoutRenderFlag.__doc__ = """Flags for controlling how a layout is rendere
 
   Available as ``QgsLayoutRenderContext.FlagAlwaysUseGlobalMasks`` in older QGIS releases.
 
+* ``LimitCoverageLayerRenderToCurrentFeature``: Limit coverage layer rendering to the current atlas feature.
+
+  .. versionadded:: 4.0
+
 
 """
 # --
 Qgis.LayoutRenderFlag.baseClass = Qgis
+Qgis.LayoutRenderFlags = lambda flags=0: Qgis.LayoutRenderFlag(flags)
 Qgis.LayoutRenderFlags.baseClass = Qgis
 LayoutRenderFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -8255,6 +8971,292 @@ Qgis.ScaleBarDistanceLabelHorizontalPlacement.__doc__ = """Scale bar distance la
 # --
 Qgis.ScaleBarDistanceLabelHorizontalPlacement.baseClass = Qgis
 # monkey patching scoped based enum
+QgsLayoutItemMapGrid.GridUnit.MapUnit = Qgis.MapGridUnit.MapUnits
+QgsLayoutItemMapGrid.MapUnit.__doc__ = "Grid units follow map units"
+QgsLayoutItemMapGrid.GridUnit.MM = Qgis.MapGridUnit.Millimeters
+QgsLayoutItemMapGrid.MM.__doc__ = "Grid units in millimeters"
+QgsLayoutItemMapGrid.GridUnit.CM = Qgis.MapGridUnit.Centimeters
+QgsLayoutItemMapGrid.CM.__doc__ = "Grid units in centimeters"
+QgsLayoutItemMapGrid.DynamicPageSizeBased.__doc__ = "Dynamically sized, based on a on-page size range"
+Qgis.MapGridUnit.__doc__ = """Units for map grid values.
+
+.. note::
+
+   Prior to QGIS 4.0 this was available as :py:class:`QgsLayoutItemMapGrid`.GridUnit.
+
+.. versionadded:: 4.0
+
+* ``MapUnits``: Grid units follow map units
+
+  Available as ``QgsLayoutItemMapGrid.MapUnit`` in older QGIS releases.
+
+* ``Millimeters``: Grid units in millimeters
+
+  Available as ``QgsLayoutItemMapGrid.MM`` in older QGIS releases.
+
+* ``Centimeters``: Grid units in centimeters
+
+  Available as ``QgsLayoutItemMapGrid.CM`` in older QGIS releases.
+
+* ``DynamicPageSizeBased``: Dynamically sized, based on a on-page size range
+
+"""
+# --
+Qgis.MapGridUnit.baseClass = Qgis
+# monkey patching scoped based enum
+QgsLayoutItemMapGrid.GridStyle.Solid = Qgis.MapGridStyle.Lines
+QgsLayoutItemMapGrid.Solid.__doc__ = "Draw lines for grid"
+QgsLayoutItemMapGrid.GridStyle.Cross = Qgis.MapGridStyle.LineCrosses
+QgsLayoutItemMapGrid.Cross.__doc__ = "Draw line crosses at intersections of grid lines"
+QgsLayoutItemMapGrid.Markers.__doc__ = "Draw markers at intersections of grid lines"
+QgsLayoutItemMapGrid.GridStyle.FrameAnnotationsOnly = Qgis.MapGridStyle.FrameAndAnnotationsOnly
+QgsLayoutItemMapGrid.FrameAnnotationsOnly.__doc__ = "No grid lines over the map, only draw frame and annotations"
+Qgis.MapGridStyle.__doc__ = """Map grid drawing styles.
+
+.. note::
+
+   Prior to QGIS 4.0 this was available as :py:class:`QgsLayoutItemMapGrid`.GridStyle.
+
+.. versionadded:: 4.0
+
+* ``Lines``: Draw lines for grid
+
+  Available as ``QgsLayoutItemMapGrid.Solid`` in older QGIS releases.
+
+* ``LineCrosses``: Draw line crosses at intersections of grid lines
+
+  Available as ``QgsLayoutItemMapGrid.Cross`` in older QGIS releases.
+
+* ``Markers``: Draw markers at intersections of grid lines
+* ``FrameAndAnnotationsOnly``: No grid lines over the map, only draw frame and annotations
+
+  Available as ``QgsLayoutItemMapGrid.FrameAnnotationsOnly`` in older QGIS releases.
+
+
+"""
+# --
+Qgis.MapGridStyle.baseClass = Qgis
+# monkey patching scoped based enum
+QgsLayoutItemMapGrid.ShowAll.__doc__ = "Show both latitude and longitude annotations/divisions"
+QgsLayoutItemMapGrid.LatitudeOnly.__doc__ = "Show latitude/y annotations/divisions only"
+QgsLayoutItemMapGrid.LongitudeOnly.__doc__ = "Show longitude/x annotations/divisions only"
+QgsLayoutItemMapGrid.HideAll.__doc__ = "No annotations"
+Qgis.MapGridComponentVisibility.__doc__ = """Visibility display settings for map grid annotations and frames.
+
+.. note::
+
+   Prior to QGIS 4.0 this was available as :py:class:`QgsLayoutItemMapGrid`.DisplayMode.
+
+.. versionadded:: 4.0
+
+* ``ShowAll``: Show both latitude and longitude annotations/divisions
+* ``LatitudeOnly``: Show latitude/y annotations/divisions only
+* ``LongitudeOnly``: Show longitude/x annotations/divisions only
+* ``HideAll``: No annotations
+
+"""
+# --
+Qgis.MapGridComponentVisibility.baseClass = Qgis
+# monkey patching scoped based enum
+QgsLayoutItemMapGrid.InsideMapFrame.__doc__ = "Draw annotations inside the map frame"
+QgsLayoutItemMapGrid.OutsideMapFrame.__doc__ = "Draw annotations outside the map frame"
+Qgis.MapGridAnnotationPosition.__doc__ = """Position for map grid annotations.
+
+.. note::
+
+   Prior to QGIS 4.0 this was available as :py:class:`QgsLayoutItemMapGrid`.AnnotationPosition.
+
+.. versionadded:: 4.0
+
+* ``InsideMapFrame``: Draw annotations inside the map frame
+* ``OutsideMapFrame``: Draw annotations outside the map frame
+
+"""
+# --
+Qgis.MapGridAnnotationPosition.baseClass = Qgis
+# monkey patching scoped based enum
+QgsLayoutItemMapGrid.Horizontal.__doc__ = "Draw annotations horizontally"
+QgsLayoutItemMapGrid.Vertical.__doc__ = "Draw annotations vertically, ascending"
+QgsLayoutItemMapGrid.VerticalDescending.__doc__ = "Draw annotations vertically, descending"
+QgsLayoutItemMapGrid.BoundaryDirection.__doc__ = "Annotations follow the boundary direction"
+QgsLayoutItemMapGrid.AboveTick.__doc__ = "Draw annotations parallel to tick (above the line)"
+QgsLayoutItemMapGrid.OnTick.__doc__ = "Draw annotations parallel to tick (on the line)"
+QgsLayoutItemMapGrid.UnderTick.__doc__ = "Draw annotations parallel to tick (under the line)"
+Qgis.MapGridAnnotationDirection.__doc__ = """Direction of grid annotations.
+
+.. note::
+
+   Prior to QGIS 4.0 this was available as :py:class:`QgsLayoutItemMapGrid`.AnnotationDirection.
+
+.. versionadded:: 4.0
+
+* ``Horizontal``: Draw annotations horizontally
+* ``Vertical``: Draw annotations vertically, ascending
+* ``VerticalDescending``: Draw annotations vertically, descending
+* ``BoundaryDirection``: Annotations follow the boundary direction
+* ``AboveTick``: Draw annotations parallel to tick (above the line)
+* ``OnTick``: Draw annotations parallel to tick (on the line)
+* ``UnderTick``: Draw annotations parallel to tick (under the line)
+
+"""
+# --
+Qgis.MapGridAnnotationDirection.baseClass = Qgis
+# monkey patching scoped based enum
+QgsLayoutItemMapGrid.Decimal.__doc__ = "Decimal degrees, use - for S/W coordinates"
+QgsLayoutItemMapGrid.DegreeMinute.__doc__ = "Degree/minutes, use NSEW suffix"
+QgsLayoutItemMapGrid.DegreeMinuteSecond.__doc__ = "Degree/minutes/seconds, use NSEW suffix"
+QgsLayoutItemMapGrid.DecimalWithSuffix.__doc__ = "Decimal degrees, use NSEW suffix"
+QgsLayoutItemMapGrid.DegreeMinuteNoSuffix.__doc__ = "Degree/minutes, use - for S/W coordinates"
+QgsLayoutItemMapGrid.DegreeMinutePadded.__doc__ = "Degree/minutes, with minutes using leading zeros where required"
+QgsLayoutItemMapGrid.DegreeMinuteSecondNoSuffix.__doc__ = "Degree/minutes/seconds, use - for S/W coordinates"
+QgsLayoutItemMapGrid.DegreeMinuteSecondPadded.__doc__ = "Degree/minutes/seconds, with minutes using leading zeros where required"
+QgsLayoutItemMapGrid.CustomFormat.__doc__ = "Custom expression-based format"
+Qgis.MapGridAnnotationFormat.__doc__ = """Format for displaying map grid annotations.
+
+.. note::
+
+   Prior to QGIS 4.0 this was available as :py:class:`QgsLayoutItemMapGrid`.AnnotationFormat.
+
+.. versionadded:: 4.0
+
+* ``Decimal``: Decimal degrees, use - for S/W coordinates
+* ``DegreeMinute``: Degree/minutes, use NSEW suffix
+* ``DegreeMinuteSecond``: Degree/minutes/seconds, use NSEW suffix
+* ``DecimalWithSuffix``: Decimal degrees, use NSEW suffix
+* ``DegreeMinuteNoSuffix``: Degree/minutes, use - for S/W coordinates
+* ``DegreeMinutePadded``: Degree/minutes, with minutes using leading zeros where required
+* ``DegreeMinuteSecondNoSuffix``: Degree/minutes/seconds, use - for S/W coordinates
+* ``DegreeMinuteSecondPadded``: Degree/minutes/seconds, with minutes using leading zeros where required
+* ``CustomFormat``: Custom expression-based format
+
+"""
+# --
+Qgis.MapGridAnnotationFormat.baseClass = Qgis
+# monkey patching scoped based enum
+QgsLayoutItemMapGrid.Left.__doc__ = "Left border"
+QgsLayoutItemMapGrid.Right.__doc__ = "Right border"
+QgsLayoutItemMapGrid.Bottom.__doc__ = "Bottom border"
+QgsLayoutItemMapGrid.Top.__doc__ = "Top border"
+Qgis.MapGridBorderSide.__doc__ = """Border sides for map grid annotations.
+
+.. note::
+
+   Prior to QGIS 4.0 this was available as :py:class:`QgsLayoutItemMapGrid`.BorderSide.
+
+.. versionadded:: 4.0
+
+* ``Left``: Left border
+* ``Right``: Right border
+* ``Bottom``: Bottom border
+* ``Top``: Top border
+
+"""
+# --
+Qgis.MapGridBorderSide.baseClass = Qgis
+# monkey patching scoped based enum
+QgsLayoutItemMapGrid.NoFrame.__doc__ = "Disable grid frame"
+QgsLayoutItemMapGrid.Zebra.__doc__ = "Black/white pattern"
+QgsLayoutItemMapGrid.InteriorTicks.__doc__ = "Tick markers drawn inside map frame"
+QgsLayoutItemMapGrid.ExteriorTicks.__doc__ = "Tick markers drawn outside map frame"
+QgsLayoutItemMapGrid.InteriorExteriorTicks.__doc__ = "Tick markers drawn both inside and outside the map frame"
+QgsLayoutItemMapGrid.LineBorder.__doc__ = "Simple solid line frame"
+QgsLayoutItemMapGrid.LineBorderNautical.__doc__ = "Simple solid line frame, with nautical style diagonals on corners"
+QgsLayoutItemMapGrid.ZebraNautical.__doc__ = "Black/white pattern, with nautical style diagonals on corners"
+Qgis.MapGridFrameStyle.__doc__ = """Style for map grid frames.
+
+.. note::
+
+   Prior to QGIS 4.0 this was available as :py:class:`QgsLayoutItemMapGrid`.FrameStyle.
+
+.. versionadded:: 4.0
+
+* ``NoFrame``: Disable grid frame
+* ``Zebra``: Black/white pattern
+* ``InteriorTicks``: Tick markers drawn inside map frame
+* ``ExteriorTicks``: Tick markers drawn outside map frame
+* ``InteriorExteriorTicks``: Tick markers drawn both inside and outside the map frame
+* ``LineBorder``: Simple solid line frame
+* ``LineBorderNautical``: Simple solid line frame, with nautical style diagonals on corners
+* ``ZebraNautical``: Black/white pattern, with nautical style diagonals on corners
+
+"""
+# --
+Qgis.MapGridFrameStyle.baseClass = Qgis
+# monkey patching scoped based enum
+QgsLayoutItemMapGrid.OrthogonalTicks.__doc__ = "Align ticks orthogonaly"
+QgsLayoutItemMapGrid.NormalizedTicks.__doc__ = "Constant tick lengths"
+Qgis.MapGridTickLengthMode.__doc__ = """Map grid tick length mode (useful for rotated grids).
+
+.. note::
+
+   Prior to QGIS 4.0 this was available as :py:class:`QgsLayoutItemMapGrid`.TickLengthMode.
+
+.. versionadded:: 4.0
+
+* ``OrthogonalTicks``: Align ticks orthogonaly
+* ``NormalizedTicks``: Constant tick lengths
+
+"""
+# --
+Qgis.MapGridTickLengthMode.baseClass = Qgis
+# monkey patching scoped based enum
+QgsLayoutItemMapGrid.FrameSideFlag.FrameLeft = Qgis.MapGridFrameSideFlag.Left
+QgsLayoutItemMapGrid.FrameLeft.__doc__ = "Left side of map"
+QgsLayoutItemMapGrid.FrameSideFlag.FrameRight = Qgis.MapGridFrameSideFlag.Right
+QgsLayoutItemMapGrid.FrameRight.__doc__ = "Right side of map"
+QgsLayoutItemMapGrid.FrameSideFlag.FrameTop = Qgis.MapGridFrameSideFlag.Top
+QgsLayoutItemMapGrid.FrameTop.__doc__ = "Top side of map"
+QgsLayoutItemMapGrid.FrameSideFlag.FrameBottom = Qgis.MapGridFrameSideFlag.Bottom
+QgsLayoutItemMapGrid.FrameBottom.__doc__ = "Bottom side of map"
+Qgis.MapGridFrameSideFlag.__doc__ = """Flags for controlling which side of the map a frame is drawn on.
+
+.. note::
+
+   Prior to QGIS 4.0 this was available as :py:class:`QgsLayoutItemMapGrid`.FrameSideFlag.
+
+.. versionadded:: 4.0
+
+* ``Left``: Left side of map
+
+  Available as ``QgsLayoutItemMapGrid.FrameLeft`` in older QGIS releases.
+
+* ``Right``: Right side of map
+
+  Available as ``QgsLayoutItemMapGrid.FrameRight`` in older QGIS releases.
+
+* ``Top``: Top side of map
+
+  Available as ``QgsLayoutItemMapGrid.FrameTop`` in older QGIS releases.
+
+* ``Bottom``: Bottom side of map
+
+  Available as ``QgsLayoutItemMapGrid.FrameBottom`` in older QGIS releases.
+
+
+"""
+# --
+Qgis.MapGridFrameSideFlag.baseClass = Qgis
+Qgis.MapGridFrameSideFlags = lambda flags=0: Qgis.MapGridFrameSideFlag(flags)
+Qgis.MapGridFrameSideFlags.baseClass = Qgis
+MapGridFrameSideFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
+# monkey patching scoped based enum
+QgsLayoutItemMapGrid.Longitude.__doc__ = "Coordinate is a longitude value"
+QgsLayoutItemMapGrid.Latitude.__doc__ = "Coordinate is a latitude value"
+Qgis.MapGridAnnotationType.__doc__ = """Annotation coordinate type.
+
+.. note::
+
+   Prior to QGIS 4.0 this was available as :py:class:`QgsLayoutItemMapGrid`.AnnotationCoordinate.
+
+.. versionadded:: 4.0
+
+* ``Longitude``: Coordinate is a longitude value
+* ``Latitude``: Coordinate is a latitude value
+
+"""
+# --
+Qgis.MapGridAnnotationType.baseClass = Qgis
+# monkey patching scoped based enum
 Qgis.InputControllerType.Map2D.__doc__ = "2D map controller"
 Qgis.InputControllerType.Map3D.__doc__ = "3D map controller"
 Qgis.InputControllerType.__doc__ = """Input controller types.
@@ -8302,6 +9304,8 @@ Qgis.PostgresRelKind.baseClass = Qgis
 Qgis.DatabaseProviderConnectionCapability2.SetFieldComment.__doc__ = "Can set comments for fields via setFieldComment()"
 Qgis.DatabaseProviderConnectionCapability2.SetFieldAlias.__doc__ = "Can set aliases for fields via setFieldAlias()"
 Qgis.DatabaseProviderConnectionCapability2.SetTableComment.__doc__ = "Can set comments for tables via setTableComment() \n.. versionadded:: 3.44"
+Qgis.DatabaseProviderConnectionCapability2.EditFieldDomain.__doc__ = "Can edit existing field domain \n.. versionadded:: 4.0"
+Qgis.DatabaseProviderConnectionCapability2.DeleteFieldDomain.__doc__ = "Can delete existing field domain \n.. versionadded:: 4.0"
 Qgis.DatabaseProviderConnectionCapability2.__doc__ = """The Capability enum represents the extended operations supported by the connection.
 
 .. versionadded:: 3.32
@@ -8312,10 +9316,19 @@ Qgis.DatabaseProviderConnectionCapability2.__doc__ = """The Capability enum repr
 
   .. versionadded:: 3.44
 
+* ``EditFieldDomain``: Can edit existing field domain
+
+  .. versionadded:: 4.0
+
+* ``DeleteFieldDomain``: Can delete existing field domain
+
+  .. versionadded:: 4.0
+
 
 """
 # --
 Qgis.DatabaseProviderConnectionCapability2.baseClass = Qgis
+Qgis.DatabaseProviderConnectionCapabilities2 = lambda flags=0: Qgis.DatabaseProviderConnectionCapability2(flags)
 Qgis.DatabaseProviderConnectionCapabilities2.baseClass = Qgis
 DatabaseProviderConnectionCapabilities2 = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -8331,6 +9344,7 @@ Qgis.DatabaseProviderTableImportCapability.__doc__ = """Represents capabilities 
 """
 # --
 Qgis.DatabaseProviderTableImportCapability.baseClass = Qgis
+Qgis.DatabaseProviderTableImportCapabilities = lambda flags=0: Qgis.DatabaseProviderTableImportCapability(flags)
 Qgis.DatabaseProviderTableImportCapabilities.baseClass = Qgis
 DatabaseProviderTableImportCapabilities = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -8348,6 +9362,7 @@ Qgis.ProviderStyleStorageCapability.__doc__ = """The StorageCapability enum repr
 """
 # --
 Qgis.ProviderStyleStorageCapability.baseClass = Qgis
+Qgis.ProviderStyleStorageCapabilities = lambda flags=0: Qgis.ProviderStyleStorageCapability(flags)
 Qgis.ProviderStyleStorageCapabilities.baseClass = Qgis
 ProviderStyleStorageCapabilities = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -8556,6 +9571,21 @@ Qgis.AttributeFormPythonInitCodeSource.__doc__ = """The Python init code source 
 # --
 Qgis.AttributeFormPythonInitCodeSource.baseClass = Qgis
 # monkey patching scoped based enum
+Qgis.AttributeFormReuseLastValuePolicy.NotAllowed.__doc__ = "Reuse of last values not allowed"
+Qgis.AttributeFormReuseLastValuePolicy.AllowedDefaultOn.__doc__ = "Reuse of last values allowed and enabled by default"
+Qgis.AttributeFormReuseLastValuePolicy.AllowedDefaultOff.__doc__ = "Reuse of last values allowed and disabled by default"
+Qgis.AttributeFormReuseLastValuePolicy.__doc__ = """Attribute form policy for reusing last entered values.
+
+.. versionadded:: 4.0
+
+* ``NotAllowed``: Reuse of last values not allowed
+* ``AllowedDefaultOn``: Reuse of last values allowed and enabled by default
+* ``AllowedDefaultOff``: Reuse of last values allowed and disabled by default
+
+"""
+# --
+Qgis.AttributeFormReuseLastValuePolicy.baseClass = Qgis
+# monkey patching scoped based enum
 Qgis.ExpressionType.Qgis.__doc__ = "Native QGIS expression"
 Qgis.ExpressionType.PointCloud.__doc__ = "Point cloud expression"
 Qgis.ExpressionType.RasterCalculator.__doc__ = "Raster calculator expression \n.. versionadded:: 3.34"
@@ -8611,6 +9641,7 @@ Qgis.VectorTileProviderFlag.__doc__ = """Flags for vector tile data providers.
 """
 # --
 Qgis.VectorTileProviderFlag.baseClass = Qgis
+Qgis.VectorTileProviderFlags = lambda flags=0: Qgis.VectorTileProviderFlag(flags)
 Qgis.VectorTileProviderFlags.baseClass = Qgis
 VectorTileProviderFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -8624,6 +9655,7 @@ Qgis.VectorTileProviderCapability.__doc__ = """Enumeration with capabilities tha
 """
 # --
 Qgis.VectorTileProviderCapability.baseClass = Qgis
+Qgis.VectorTileProviderCapabilities = lambda flags=0: Qgis.VectorTileProviderCapability(flags)
 Qgis.VectorTileProviderCapabilities.baseClass = Qgis
 VectorTileProviderCapabilities = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -8654,6 +9686,7 @@ Qgis.TiledSceneProviderCapability.__doc__ = """Tiled scene data provider capabil
 """
 # --
 Qgis.TiledSceneProviderCapability.baseClass = Qgis
+Qgis.TiledSceneProviderCapabilities = lambda flags=0: Qgis.TiledSceneProviderCapability(flags)
 Qgis.TiledSceneProviderCapabilities.baseClass = Qgis
 TiledSceneProviderCapabilities = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -8713,6 +9746,7 @@ Qgis.TiledSceneRequestFlag.__doc__ = """Flags which control how tiled scene requ
 """
 # --
 Qgis.TiledSceneRequestFlag.baseClass = Qgis
+Qgis.TiledSceneRequestFlags = lambda flags=0: Qgis.TiledSceneRequestFlag(flags)
 Qgis.TiledSceneRequestFlags.baseClass = Qgis
 TiledSceneRequestFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -8732,6 +9766,7 @@ Qgis.TiledSceneRendererFlag.__doc__ = """Flags which control how tiled scene 2D 
 """
 # --
 Qgis.TiledSceneRendererFlag.baseClass = Qgis
+Qgis.TiledSceneRendererFlags = lambda flags=0: Qgis.TiledSceneRendererFlag(flags)
 Qgis.TiledSceneRendererFlags.baseClass = Qgis
 TiledSceneRendererFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -8844,6 +9879,7 @@ Qgis.ZonalStatistic.__doc__ = """Statistics to be calculated during a zonal stat
 """
 # --
 Qgis.ZonalStatistic.baseClass = Qgis
+Qgis.ZonalStatistics = lambda flags=0: Qgis.ZonalStatistic(flags)
 Qgis.ZonalStatistics.baseClass = Qgis
 ZonalStatistics = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -8976,6 +10012,7 @@ Qgis.Statistic.__doc__ = """Available generic statistics.
 """
 # --
 Qgis.Statistic.baseClass = Qgis
+Qgis.Statistics = lambda flags=0: Qgis.Statistic(flags)
 Qgis.Statistics.baseClass = Qgis
 Statistics = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -9001,6 +10038,7 @@ Qgis.DateTimeStatistic.__doc__ = """Available date/time statistics.
 """
 # --
 Qgis.DateTimeStatistic.baseClass = Qgis
+Qgis.DateTimeStatistics = lambda flags=0: Qgis.DateTimeStatistic(flags)
 Qgis.DateTimeStatistics.baseClass = Qgis
 DateTimeStatistics = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -9034,6 +10072,7 @@ Qgis.StringStatistic.__doc__ = """Available string statistics.
 """
 # --
 Qgis.StringStatistic.baseClass = Qgis
+Qgis.StringStatistics = lambda flags=0: Qgis.StringStatistic(flags)
 Qgis.StringStatistics.baseClass = Qgis
 StringStatistics = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -9063,8 +10102,42 @@ Qgis.RasterBandStatistic.__doc__ = """Available raster band statistics.
 """
 # --
 Qgis.RasterBandStatistic.baseClass = Qgis
+Qgis.RasterBandStatistics = lambda flags=0: Qgis.RasterBandStatistic(flags)
 Qgis.RasterBandStatistics.baseClass = Qgis
 RasterBandStatistics = Qgis  # dirty hack since SIP seems to introduce the flags in module
+# monkey patching scoped based enum
+Qgis.SensorThingsVersion.Version1_1.__doc__ = "1.1"
+Qgis.SensorThingsVersion.Version2_0.__doc__ = "2.0"
+Qgis.SensorThingsVersion.__doc__ = """OGC SensorThings API versions.
+
+.. versionadded:: 4.2
+
+* ``Version1_1``: 1.1
+* ``Version2_0``: 2.0
+
+"""
+# --
+Qgis.SensorThingsVersion.baseClass = Qgis
+# monkey patching scoped based enum
+Qgis.SensorThingsExtension.MultiDatastream.__doc__ = "MultiDatastream extension"
+Qgis.SensorThingsExtension.SensingExtensionObservationsMeasurements.__doc__ = "Sensing Extension (Observations & Measurements)"
+Qgis.SensorThingsExtension.SensingExtensionSampling.__doc__ = "Sensing Extension (Sampling)"
+Qgis.SensorThingsExtension.SensingExtensionRelations.__doc__ = "Sensing Extension (Relations)"
+Qgis.SensorThingsExtension.__doc__ = """OGC SensorThings extensions.
+
+.. versionadded:: 4.2
+
+* ``MultiDatastream``: MultiDatastream extension
+* ``SensingExtensionObservationsMeasurements``: Sensing Extension (Observations & Measurements)
+* ``SensingExtensionSampling``: Sensing Extension (Sampling)
+* ``SensingExtensionRelations``: Sensing Extension (Relations)
+
+"""
+# --
+Qgis.SensorThingsExtension.baseClass = Qgis
+Qgis.SensorThingsExtensions = lambda flags=0: Qgis.SensorThingsExtension(flags)
+Qgis.SensorThingsExtensions.baseClass = Qgis
+SensorThingsExtensions = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
 Qgis.SensorThingsEntity.Invalid.__doc__ = "An invalid/unknown entity"
 Qgis.SensorThingsEntity.Thing.__doc__ = "A Thing is an object of the physical world (physical things) or the information world (virtual things) that is capable of being identified and integrated into communication networks"
@@ -9076,6 +10149,20 @@ Qgis.SensorThingsEntity.ObservedProperty.__doc__ = "An ObservedProperty specifie
 Qgis.SensorThingsEntity.Observation.__doc__ = "An Observation is the act of measuring or otherwise determining the value of a property"
 Qgis.SensorThingsEntity.FeatureOfInterest.__doc__ = "In the context of the Internet of Things, many Observations’ FeatureOfInterest can be the Location of the Thing. For example, the FeatureOfInterest of a wifi-connect thermostat can be the Location of the thermostat (i.e., the living room where the thermostat is located in). In the case of remote sensing, the FeatureOfInterest can be the geographical area or volume that is being sensed"
 Qgis.SensorThingsEntity.MultiDatastream.__doc__ = "A MultiDatastream groups a collection of Observations and the Observations in a MultiDatastream have a complex result type. Implemented in the SensorThings version 1.1 \"MultiDatastream extension\". \n.. versionadded:: 3.38"
+Qgis.SensorThingsEntity.Feature.__doc__ = "A Feature is an abstraction of real-world phenomena. It acts as an independent entity that can represent the proximate feature (e.g., a physical sample) or the ultimate real-world object being observed, replacing the v1.1 FeatureOfInterest. \n.. versionadded:: 4.2"
+Qgis.SensorThingsEntity.FeatureType.__doc__ = "A FeatureType provides the classification and schema definition for a Feature, describing the common properties and structure expected for a specific category of Features. \n.. versionadded:: 4.2"
+Qgis.SensorThingsEntity.Deployment.__doc__ = "A Deployment is the association of a Sensor to a Thing that hosts this Sensor, and to the Datastreams that contain the Observations produced by the Sensor while it is/was hosted on this Thing. Implemented in the \"Sensing Extension (Observations & Measurements)\". \n.. versionadded:: 4.2"
+Qgis.SensorThingsEntity.ObservingProcedure.__doc__ = "An Observing Procedure. Implemented in the \"Sensing Extension (Observations & Measurements)\". \n.. versionadded:: 4.2"
+Qgis.SensorThingsEntity.Sampling.__doc__ = "The Sampling is the act of taking one or more Samples. The Sampling takes Samples from a SampledFeature. The Sampling is executed by a Sampler, following a SamplingProcedure. The Sampling can be associated with a Thing. Implemented in the \"Sampling Extension\". \n.. versionadded:: 4.2"
+Qgis.SensorThingsEntity.SamplingProcedure.__doc__ = "The SamplingProcedure describes the method, or procedure, that the Sampler uses to create Samples. A Sampler must implement at least one SamplingProcedure, but can implement many. A Sample is created using one SamplingProcedure, though this SamplingProcedure may not be known. Implemented in the \"Sampling Extension\". \n.. versionadded:: 4.2"
+Qgis.SensorThingsEntity.Sampler.__doc__ = "The Sampler describes the machine, device, human or other entity that executed the sampling procedure to produce a sample. Implemented in the \"Sampling Extension\". \n.. versionadded:: 4.2"
+Qgis.SensorThingsEntity.PreparationStep.__doc__ = "When applying a PreparationProcdedure to a Sample, the process is recorded in individual PreparationSteps. For a simple, short PreparationProcedure, a single PreparationStep can be sufficient to record the fact that the preparation procedure was applied to the Sample, and the time at which the procedure was applied. For a complex procedure, that takes a long time, many PreparationSteps may be recorded. Implemented in the \"Sampling Extension\". \n.. versionadded:: 4.2"
+Qgis.SensorThingsEntity.PreparationProcedure.__doc__ = "After a sample is taken, a preparation procedure can be applied to it. The difference with the sampling procedure is that the preparation procedure does not result in one or more new samples, but that an existing sample is modified. The PreparationProcedure stores the generic procedure that can be applied to many samples. Implemented in the \"Sampling Extension\". \n.. versionadded:: 4.2"
+Qgis.SensorThingsEntity.ThingRelation.__doc__ = "A ThingRelation Entity relates a source Thing to a target Thing, or to an external resource, using a RelationRole. Implemented in the \"Relations Extension\". \n.. versionadded:: 4.2"
+Qgis.SensorThingsEntity.RelationRole.__doc__ = "The RelationRole Entity holds a name and definition for both directions of the relation. Implemented in the \"Relations Extension\". \n.. versionadded:: 4.2"
+Qgis.SensorThingsEntity.FeatureRelation.__doc__ = "A FeatureRelation Entity relates a source Feature to a target Feature, or to an external resource, using a RelationRole. Implemented in the \"Relations Extension\". \n.. versionadded:: 4.2"
+Qgis.SensorThingsEntity.DatastreamRelation.__doc__ = "A DatastreamRelation Entity relates a source Datastream to a target Datastream, or to an external resource, using a RelationRole. Implemented in the \"Relations Extension\". \n.. versionadded:: 4.2"
+Qgis.SensorThingsEntity.ObservationRelation.__doc__ = "A ObservationRelation Entity relates a source Observation to a target Observation, or to an external resource, using a RelationRole. Implemented in the \"Relations Extension\". \n.. versionadded:: 4.2"
 Qgis.SensorThingsEntity.__doc__ = """OGC SensorThings API entity types.
 
 .. versionadded:: 3.36
@@ -9092,6 +10179,62 @@ Qgis.SensorThingsEntity.__doc__ = """OGC SensorThings API entity types.
 * ``MultiDatastream``: A MultiDatastream groups a collection of Observations and the Observations in a MultiDatastream have a complex result type. Implemented in the SensorThings version 1.1 \"MultiDatastream extension\".
 
   .. versionadded:: 3.38
+
+* ``Feature``: A Feature is an abstraction of real-world phenomena. It acts as an independent entity that can represent the proximate feature (e.g., a physical sample) or the ultimate real-world object being observed, replacing the v1.1 FeatureOfInterest.
+
+  .. versionadded:: 4.2
+
+* ``FeatureType``: A FeatureType provides the classification and schema definition for a Feature, describing the common properties and structure expected for a specific category of Features.
+
+  .. versionadded:: 4.2
+
+* ``Deployment``: A Deployment is the association of a Sensor to a Thing that hosts this Sensor, and to the Datastreams that contain the Observations produced by the Sensor while it is/was hosted on this Thing. Implemented in the \"Sensing Extension (Observations & Measurements)\".
+
+  .. versionadded:: 4.2
+
+* ``ObservingProcedure``: An Observing Procedure. Implemented in the \"Sensing Extension (Observations & Measurements)\".
+
+  .. versionadded:: 4.2
+
+* ``Sampling``: The Sampling is the act of taking one or more Samples. The Sampling takes Samples from a SampledFeature. The Sampling is executed by a Sampler, following a SamplingProcedure. The Sampling can be associated with a Thing. Implemented in the \"Sampling Extension\".
+
+  .. versionadded:: 4.2
+
+* ``SamplingProcedure``: The SamplingProcedure describes the method, or procedure, that the Sampler uses to create Samples. A Sampler must implement at least one SamplingProcedure, but can implement many. A Sample is created using one SamplingProcedure, though this SamplingProcedure may not be known. Implemented in the \"Sampling Extension\".
+
+  .. versionadded:: 4.2
+
+* ``Sampler``: The Sampler describes the machine, device, human or other entity that executed the sampling procedure to produce a sample. Implemented in the \"Sampling Extension\".
+
+  .. versionadded:: 4.2
+
+* ``PreparationStep``: When applying a PreparationProcdedure to a Sample, the process is recorded in individual PreparationSteps. For a simple, short PreparationProcedure, a single PreparationStep can be sufficient to record the fact that the preparation procedure was applied to the Sample, and the time at which the procedure was applied. For a complex procedure, that takes a long time, many PreparationSteps may be recorded. Implemented in the \"Sampling Extension\".
+
+  .. versionadded:: 4.2
+
+* ``PreparationProcedure``: After a sample is taken, a preparation procedure can be applied to it. The difference with the sampling procedure is that the preparation procedure does not result in one or more new samples, but that an existing sample is modified. The PreparationProcedure stores the generic procedure that can be applied to many samples. Implemented in the \"Sampling Extension\".
+
+  .. versionadded:: 4.2
+
+* ``ThingRelation``: A ThingRelation Entity relates a source Thing to a target Thing, or to an external resource, using a RelationRole. Implemented in the \"Relations Extension\".
+
+  .. versionadded:: 4.2
+
+* ``RelationRole``: The RelationRole Entity holds a name and definition for both directions of the relation. Implemented in the \"Relations Extension\".
+
+  .. versionadded:: 4.2
+
+* ``FeatureRelation``: A FeatureRelation Entity relates a source Feature to a target Feature, or to an external resource, using a RelationRole. Implemented in the \"Relations Extension\".
+
+  .. versionadded:: 4.2
+
+* ``DatastreamRelation``: A DatastreamRelation Entity relates a source Datastream to a target Datastream, or to an external resource, using a RelationRole. Implemented in the \"Relations Extension\".
+
+  .. versionadded:: 4.2
+
+* ``ObservationRelation``: A ObservationRelation Entity relates a source Observation to a target Observation, or to an external resource, using a RelationRole. Implemented in the \"Relations Extension\".
+
+  .. versionadded:: 4.2
 
 
 """
@@ -9150,6 +10293,10 @@ Qgis.MouseHandlesAction.ResizeLeftUp.__doc__ = "Resize left up (Top left handle)
 Qgis.MouseHandlesAction.ResizeRightUp.__doc__ = "Resize right up (Top right handle)"
 Qgis.MouseHandlesAction.ResizeLeftDown.__doc__ = "Resize left down (Bottom left handle)"
 Qgis.MouseHandlesAction.ResizeRightDown.__doc__ = "Resize right down (Bottom right handle)"
+Qgis.MouseHandlesAction.RotateTopLeft.__doc__ = "Rotate from top left handle. \n.. versionadded:: 4.0"
+Qgis.MouseHandlesAction.RotateTopRight.__doc__ = "Rotate from top right handle. \n.. versionadded:: 4.0"
+Qgis.MouseHandlesAction.RotateBottomLeft.__doc__ = "Rotate from bottom left handle. \n.. versionadded:: 4.0"
+Qgis.MouseHandlesAction.RotateBottomRight.__doc__ = "Rotate right bottom right handle. \n.. versionadded:: 4.0"
 Qgis.MouseHandlesAction.SelectItem.__doc__ = "Select item"
 Qgis.MouseHandlesAction.NoAction.__doc__ = "No action"
 Qgis.MouseHandlesAction.__doc__ = """Action to be performed by the mouse handles
@@ -9165,6 +10312,22 @@ Qgis.MouseHandlesAction.__doc__ = """Action to be performed by the mouse handles
 * ``ResizeRightUp``: Resize right up (Top right handle)
 * ``ResizeLeftDown``: Resize left down (Bottom left handle)
 * ``ResizeRightDown``: Resize right down (Bottom right handle)
+* ``RotateTopLeft``: Rotate from top left handle.
+
+  .. versionadded:: 4.0
+
+* ``RotateTopRight``: Rotate from top right handle.
+
+  .. versionadded:: 4.0
+
+* ``RotateBottomLeft``: Rotate from bottom left handle.
+
+  .. versionadded:: 4.0
+
+* ``RotateBottomRight``: Rotate right bottom right handle.
+
+  .. versionadded:: 4.0
+
 * ``SelectItem``: Select item
 * ``NoAction``: No action
 
@@ -9263,43 +10426,110 @@ Qgis.StacObjectType.__doc__ = """Available types of stac objects
 """
 # --
 Qgis.StacObjectType.baseClass = Qgis
-from enum import Enum
+# monkey patching scoped based enum
+Qgis.RasterProcessingParameterCapability.WmsScale.__doc__ = "The parameter supports a reference scale for WMS source layers"
+Qgis.RasterProcessingParameterCapability.WmsDpi.__doc__ = "The parameter supports a server resolution for WMS source layers"
+Qgis.RasterProcessingParameterCapability.__doc__ = """Capabilities of a raster layer processing parameter.
 
+.. versionadded:: 4.0
 
-def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+* ``WmsScale``: The parameter supports a reference scale for WMS source layers
+* ``WmsDpi``: The parameter supports a server resolution for WMS source layers
 
+"""
+# --
+Qgis.RasterProcessingParameterCapability.baseClass = Qgis
+Qgis.RasterProcessingParameterCapabilities = lambda flags=0: Qgis.RasterProcessingParameterCapability(flags)
+Qgis.RasterProcessingParameterCapabilities.baseClass = Qgis
+RasterProcessingParameterCapabilities = Qgis  # dirty hack since SIP seems to introduce the flags in module
+# monkey patching scoped based enum
+Qgis.DevToolsNodeRole.Status.__doc__ = "Request status role"
+Qgis.DevToolsNodeRole.Id.__doc__ = "Request ID role"
+Qgis.DevToolsNodeRole.ElapsedTime.__doc__ = "Elapsed time"
+Qgis.DevToolsNodeRole.MaximumTime.__doc__ = "Maximum encountered elapsed time"
+Qgis.DevToolsNodeRole.Sort.__doc__ = "Sort order role"
+Qgis.DevToolsNodeRole.__doc__ = """Dev tools node custom data roles.
 
-Qgis.BrowserItemCapability.__or__ = lambda flag1, flag2: Qgis.BrowserItemCapabilities(_force_int(flag1) | _force_int(flag2))
-Qgis.GeometryValidityFlag.__or__ = lambda flag1, flag2: Qgis.GeometryValidityFlags(_force_int(flag1) | _force_int(flag2))
-Qgis.LabelingFlag.__or__ = lambda flag1, flag2: Qgis.LabelingFlags(_force_int(flag1) | _force_int(flag2))
-Qgis.LabelLinePlacementFlag.__or__ = lambda flag1, flag2: Qgis.LabelLinePlacementFlags(_force_int(flag1) | _force_int(flag2))
-Qgis.MapSettingsFlag.__or__ = lambda flag1, flag2: Qgis.MapSettingsFlags(_force_int(flag1) | _force_int(flag2))
-Qgis.ProjectReadFlag.__or__ = lambda flag1, flag2: Qgis.ProjectReadFlags(_force_int(flag1) | _force_int(flag2))
-Qgis.RenderContextFlag.__or__ = lambda flag1, flag2: Qgis.RenderContextFlags(_force_int(flag1) | _force_int(flag2))
-Qgis.SnappingType.__or__ = lambda flag1, flag2: Qgis.SnappingTypes(_force_int(flag1) | _force_int(flag2))
-Qgis.SymbolPreviewFlag.__or__ = lambda flag1, flag2: Qgis.SymbolPreviewFlags(_force_int(flag1) | _force_int(flag2))
-Qgis.SymbolRenderHint.__or__ = lambda flag1, flag2: Qgis.SymbolRenderHints(_force_int(flag1) | _force_int(flag2))
-Qgis.FeatureRequestFlag.__or__ = lambda flag1, flag2: Qgis.FeatureRequestFlags(_force_int(flag1) | _force_int(flag2))
-Qgis.ProcessingFeatureSourceDefinitionFlag.__or__ = lambda flag1, flag2: Qgis.ProcessingFeatureSourceDefinitionFlags(_force_int(flag1) | _force_int(flag2))
-Qgis.ZonalStatistic.__or__ = lambda flag1, flag2: Qgis.ZonalStatistics(_force_int(flag1) | _force_int(flag2))
-Qgis.Statistic.__or__ = lambda flag1, flag2: Qgis.Statistics(_force_int(flag1) | _force_int(flag2))
-Qgis.DateTimeStatistic.__or__ = lambda flag1, flag2: Qgis.DateTimeStatistics(_force_int(flag1) | _force_int(flag2))
-Qgis.StringStatistic.__or__ = lambda flag1, flag2: Qgis.StringStatistics(_force_int(flag1) | _force_int(flag2))
-Qgis.RasterBandStatistic.__or__ = lambda flag1, flag2: Qgis.RasterBandStatistics(_force_int(flag1) | _force_int(flag2))
-Qgis.RasterProviderCapability.__or__ = lambda flag1, flag2: Qgis.RasterProviderCapabilities(_force_int(flag1) | _force_int(flag2))
-Qgis.ProcessingProviderFlag.__or__ = lambda flag1, flag2: Qgis.ProcessingProviderFlags(_force_int(flag1) | _force_int(flag2))
-Qgis.ProcessingAlgorithmFlag.__or__ = lambda flag1, flag2: Qgis.ProcessingAlgorithmFlags(_force_int(flag1) | _force_int(flag2))
-Qgis.ProcessingFeatureSourceFlag.__or__ = lambda flag1, flag2: Qgis.ProcessingFeatureSourceFlags(_force_int(flag1) | _force_int(flag2))
-Qgis.ProcessingParameterTypeFlag.__or__ = lambda flag1, flag2: Qgis.ProcessingParameterTypeFlags(_force_int(flag1) | _force_int(flag2))
-Qgis.ProcessingParameterFlag.__or__ = lambda flag1, flag2: Qgis.ProcessingParameterFlags(_force_int(flag1) | _force_int(flag2))
-Qgis.DataItemProviderCapability.__or__ = lambda flag1, flag2: Qgis.DataItemProviderCapabilities(_force_int(flag1) | _force_int(flag2))
-Qgis.VectorRenderingSimplificationFlag.__or__ = lambda flag1, flag2: Qgis.VectorRenderingSimplificationFlags(_force_int(flag1) | _force_int(flag2))
-Qgis.DataProviderReadFlag.__or__ = lambda flag1, flag2: Qgis.DataProviderReadFlags(_force_int(flag1) | _force_int(flag2))
-Qgis.VectorProviderCapability.__or__ = lambda flag1, flag2: Qgis.VectorProviderCapabilities(_force_int(flag1) | _force_int(flag2))
-Qgis.LayoutRenderFlag.__or__ = lambda flag1, flag2: Qgis.LayoutRenderFlags(_force_int(flag1) | _force_int(flag2))
-Qgis.CurvedTextFlag.__or__ = lambda flag1, flag2: Qgis.CurvedTextFlags(_force_int(flag1) | _force_int(flag2))
+.. versionadded:: 4.0
+
+* ``Status``: Request status role
+* ``Id``: Request ID role
+* ``ElapsedTime``: Elapsed time
+* ``MaximumTime``: Maximum encountered elapsed time
+* ``Sort``: Sort order role
+
+"""
+# --
+Qgis.DevToolsNodeRole.baseClass = Qgis
+# monkey patching scoped based enum
+Qgis.ExtrusionFace.NoFace.__doc__ = ""
+Qgis.ExtrusionFace.Walls.__doc__ = ""
+Qgis.ExtrusionFace.Roof.__doc__ = ""
+Qgis.ExtrusionFace.Floor.__doc__ = ""
+Qgis.ExtrusionFace.__doc__ = """Extrusion face types for the :py:class:`QgsTessellator`.
+
+.. versionadded:: 4.0
+
+* ``NoFace``: 
+* ``Walls``: 
+* ``Roof``: 
+* ``Floor``: 
+
+"""
+# --
+Qgis.ExtrusionFace.baseClass = Qgis
+Qgis.ExtrusionFaces = lambda flags=0: Qgis.ExtrusionFace(flags)
+Qgis.ExtrusionFaces.baseClass = Qgis
+ExtrusionFaces = Qgis  # dirty hack since SIP seems to introduce the flags in module
+# monkey patching scoped based enum
+Qgis.TriangulationAlgorithm.ConstrainedDelaunay.__doc__ = ""
+Qgis.TriangulationAlgorithm.Earcut.__doc__ = ""
+Qgis.TriangulationAlgorithm.__doc__ = """Triangulation algorithms.
+
+.. versionadded:: 4.0
+
+* ``ConstrainedDelaunay``: 
+* ``Earcut``: 
+
+"""
+# --
+Qgis.TriangulationAlgorithm.baseClass = Qgis
+# monkey patching scoped based enum
+Qgis.WmsGroupRequestMode.Normal.__doc__ = "Group and children can be requested"
+Qgis.WmsGroupRequestMode.Opaque.__doc__ = "Group can be requested, children cannot (appears like a single layer)"
+Qgis.WmsGroupRequestMode.__doc__ = """Request mode of groups in a WMS context.
+
+When a group is opaque, WMS treats it as a single opaque layer instead
+of a collection of individual layers.
+Its child layers are hidden from GetCapabilities requests.
+Any direct requests (like GetMap or GetFeatureInfo etc.) for a child layer will result in an error.
+Child layers are rendered whenever a request is made for the group itself.
+
+.. versionadded:: 4.2
+
+* ``Normal``: Group and children can be requested
+* ``Opaque``: Group can be requested, children cannot (appears like a single layer)
+
+"""
+# --
+Qgis.WmsGroupRequestMode.baseClass = Qgis
+# monkey patching scoped based enum
+Qgis.DockableWidgetInitialState.RestorePreviousState.__doc__ = "Restore the previous state of this dock"
+Qgis.DockableWidgetInitialState.ForceDocked.__doc__ = "Force the widget to be docked"
+Qgis.DockableWidgetInitialState.ForceDialog.__doc__ = "Force the widget to be shown in a dialog"
+Qgis.DockableWidgetInitialState.__doc__ = """Dockable widget initial states.
+
+.. versionadded:: 4.2
+
+* ``RestorePreviousState``: Restore the previous state of this dock
+* ``ForceDocked``: Force the widget to be docked
+* ``ForceDialog``: Force the widget to be shown in a dialog
+
+"""
+# --
+Qgis.DockableWidgetInitialState.baseClass = Qgis
 try:
-    Qgis.__attribute_docs__ = {'QGIS_DEV_VERSION': 'The development version', 'DEFAULT_SEARCH_RADIUS_MM': 'Identify search radius in mm', 'DEFAULT_MAPTOPIXEL_THRESHOLD': 'Default threshold between map coordinates and device coordinates for map2pixel simplification', 'DEFAULT_HIGHLIGHT_COLOR': 'Default highlight color.  The transparency is expected to only be applied to polygon\nfill. Lines and outlines are rendered opaque.', 'DEFAULT_HIGHLIGHT_BUFFER_MM': 'Default highlight buffer in mm.', 'DEFAULT_HIGHLIGHT_MIN_WIDTH_MM': 'Default highlight line/stroke minimum width in mm.', 'SCALE_PRECISION': 'Fudge factor used to compare two scales. The code is often going from scale to scale\ndenominator. So it looses precision and, when a limit is inclusive, can lead to errors.\nTo avoid that, use this factor instead of using <= or >=.\n\n.. deprecated:: 3.40\n\n   No longer used by QGIS and will be removed in QGIS 4.0.', 'DEFAULT_Z_COORDINATE': 'Default Z coordinate value.\nThis value have to be assigned to the Z coordinate for the vertex.', 'DEFAULT_M_COORDINATE': 'Default M coordinate value.\nThis value have to be assigned to the M coordinate for the vertex.\n\n.. versionadded:: 3.20', 'UI_SCALE_FACTOR': 'UI scaling factor. This should be applied to all widget sizes obtained from font metrics,\nto account for differences in the default font sizes across different platforms.', 'DEFAULT_SNAP_TOLERANCE': 'Default snapping distance tolerance.', 'DEFAULT_SNAP_UNITS': 'Default snapping distance units.', 'USER_CRS_START_ID': 'Minimum ID number for a user-defined projection.', 'DEFAULT_POINT_SIZE': 'The default size (in millimeters) for point marker symbols', 'DEFAULT_LINE_WIDTH': 'The default width (in millimeters) for line symbols', 'DEFAULT_SEGMENT_EPSILON': 'Default snapping tolerance for segments'}
+    Qgis.__attribute_docs__ = {'QGIS_DEV_VERSION': 'The development version', 'DEFAULT_SEARCH_RADIUS_MM': 'Identify search radius in mm', 'DEFAULT_MAPTOPIXEL_THRESHOLD': 'Default threshold between map coordinates and device coordinates for map2pixel simplification', 'DEFAULT_HIGHLIGHT_COLOR': 'Default highlight color.  The transparency is expected to only be applied to polygon\nfill. Lines and outlines are rendered opaque.', 'DEFAULT_HIGHLIGHT_BUFFER_MM': 'Default highlight buffer in mm.', 'DEFAULT_HIGHLIGHT_MIN_WIDTH_MM': 'Default highlight line/stroke minimum width in mm.', 'SCALE_PRECISION': 'Fudge factor used to compare two scales. The code is often going from scale to scale\ndenominator. So it looses precision and, when a limit is inclusive, can lead to errors.\nTo avoid that, use this factor instead of using <= or >=.\n\n.. deprecated:: 3.40\n\n   No longer used by QGIS and will be removed in QGIS 5.0.', 'DEFAULT_Z_COORDINATE': 'Default Z coordinate value.\nThis value have to be assigned to the Z coordinate for the vertex.', 'DEFAULT_M_COORDINATE': 'Default M coordinate value.\nThis value have to be assigned to the M coordinate for the vertex.\n\n.. versionadded:: 3.20', 'UI_SCALE_FACTOR': 'UI scaling factor. This should be applied to all widget sizes obtained from font metrics,\nto account for differences in the default font sizes across different platforms.', 'DEFAULT_SNAP_TOLERANCE': 'Default snapping distance tolerance.', 'DEFAULT_SNAP_UNITS': 'Default snapping distance units.', 'USER_CRS_START_ID': 'Minimum ID number for a user-defined projection.', 'DEFAULT_POINT_SIZE': 'The default size (in millimeters) for point marker symbols', 'DEFAULT_LINE_WIDTH': 'The default width (in millimeters) for line symbols', 'DEFAULT_SEGMENT_EPSILON': 'Default snapping tolerance for segments'}
     Qgis.__annotations__ = {'QGIS_DEV_VERSION': str, 'DEFAULT_SEARCH_RADIUS_MM': float, 'DEFAULT_MAPTOPIXEL_THRESHOLD': float, 'DEFAULT_HIGHLIGHT_COLOR': 'QColor', 'DEFAULT_HIGHLIGHT_BUFFER_MM': float, 'DEFAULT_HIGHLIGHT_MIN_WIDTH_MM': float, 'SCALE_PRECISION': float, 'DEFAULT_Z_COORDINATE': float, 'DEFAULT_M_COORDINATE': float, 'UI_SCALE_FACTOR': float, 'DEFAULT_SNAP_TOLERANCE': float, 'DEFAULT_SNAP_UNITS': 'Qgis.MapToolUnit', 'USER_CRS_START_ID': int, 'DEFAULT_POINT_SIZE': float, 'DEFAULT_LINE_WIDTH': float, 'DEFAULT_SEGMENT_EPSILON': float}
     Qgis.version = staticmethod(Qgis.version)
     Qgis.versionInt = staticmethod(Qgis.versionInt)
@@ -9311,6 +10541,11 @@ try:
     Qgis.geosVersionMinor = staticmethod(Qgis.geosVersionMinor)
     Qgis.geosVersionPatch = staticmethod(Qgis.geosVersionPatch)
     Qgis.geosVersion = staticmethod(Qgis.geosVersion)
+    Qgis.hasSfcgal = staticmethod(Qgis.hasSfcgal)
+    Qgis.sfcgalVersionInt = staticmethod(Qgis.sfcgalVersionInt)
+    Qgis.hasGeographicLib = staticmethod(Qgis.hasGeographicLib)
+    Qgis.geographicLibVersion = staticmethod(Qgis.geographicLibVersion)
+    Qgis.hasQtWebkit = staticmethod(Qgis.hasQtWebkit)
     Qgis.geoNone = staticmethod(Qgis.geoNone)
     Qgis.geographicCrsAuthId = staticmethod(Qgis.geographicCrsAuthId)
     Qgis.geoWkt = staticmethod(Qgis.geoWkt)
@@ -9358,6 +10593,15 @@ QgsAbstract3DSymbol.Property.PropertyHeight = QgsAbstract3DSymbol.Property.Heigh
 QgsAbstract3DSymbol.PropertyHeight.__doc__ = "Height (altitude)"
 QgsAbstract3DSymbol.Property.PropertyExtrusionHeight = QgsAbstract3DSymbol.Property.ExtrusionHeight
 QgsAbstract3DSymbol.PropertyExtrusionHeight.__doc__ = "Extrusion height (zero means no extrusion)"
+QgsAbstract3DSymbol.ScaleX.__doc__ = "X-axis scaling \n.. versionadded:: 4.2"
+QgsAbstract3DSymbol.ScaleY.__doc__ = "Y-axis scaling \n.. versionadded:: 4.2"
+QgsAbstract3DSymbol.ScaleZ.__doc__ = "Z-axis scaling \n.. versionadded:: 4.2"
+QgsAbstract3DSymbol.TranslationX.__doc__ = "X-axis translation \n.. versionadded:: 4.2"
+QgsAbstract3DSymbol.TranslationY.__doc__ = "Y-axis translation \n.. versionadded:: 4.2"
+QgsAbstract3DSymbol.TranslationZ.__doc__ = "Z-axis translation \n.. versionadded:: 4.2"
+QgsAbstract3DSymbol.RotationX.__doc__ = "X-axis rotation \n.. versionadded:: 4.2"
+QgsAbstract3DSymbol.RotationY.__doc__ = "Y-axis rotation \n.. versionadded:: 4.2"
+QgsAbstract3DSymbol.RotationZ.__doc__ = "Z-axis rotation \n.. versionadded:: 4.2"
 QgsAbstract3DSymbol.Property.__doc__ = """Data definable properties.
 
 * ``Height``: Height (altitude)
@@ -9368,12 +10612,48 @@ QgsAbstract3DSymbol.Property.__doc__ = """Data definable properties.
 
   Available as ``QgsAbstract3DSymbol.PropertyExtrusionHeight`` in older QGIS releases.
 
+* ``ScaleX``: X-axis scaling
+
+  .. versionadded:: 4.2
+
+* ``ScaleY``: Y-axis scaling
+
+  .. versionadded:: 4.2
+
+* ``ScaleZ``: Z-axis scaling
+
+  .. versionadded:: 4.2
+
+* ``TranslationX``: X-axis translation
+
+  .. versionadded:: 4.2
+
+* ``TranslationY``: Y-axis translation
+
+  .. versionadded:: 4.2
+
+* ``TranslationZ``: Z-axis translation
+
+  .. versionadded:: 4.2
+
+* ``RotationX``: X-axis rotation
+
+  .. versionadded:: 4.2
+
+* ``RotationY``: Y-axis rotation
+
+  .. versionadded:: 4.2
+
+* ``RotationZ``: Z-axis rotation
+
+  .. versionadded:: 4.2
+
 
 """
 # --
 try:
     QgsAbstract3DSymbol.__virtual_methods__ = ['compatibleGeometryTypes', 'setDefaultPropertiesFromLayer', 'copyBaseSettings']
-    QgsAbstract3DSymbol.__abstract_methods__ = ['type', 'clone', 'writeXml', 'readXml']
+    QgsAbstract3DSymbol.__abstract_methods__ = ['type', 'clone', 'writeXml', 'readXml', 'setMaterialSettings']
     QgsAbstract3DSymbol.__group__ = ['3d']
 except (NameError, AttributeError):
     pass
@@ -9421,14 +10701,27 @@ from :py:func:`~QgsAbstractDatabaseProviderConnection.tables`.
 """
 # --
 QgsAbstractDatabaseProviderConnection.TableFlag.baseClass = QgsAbstractDatabaseProviderConnection
+QgsAbstractDatabaseProviderConnection.TableFlags = lambda flags=0: QgsAbstractDatabaseProviderConnection.TableFlag(flags)
 QgsAbstractDatabaseProviderConnection.TableFlags.baseClass = QgsAbstractDatabaseProviderConnection
 TableFlags = QgsAbstractDatabaseProviderConnection  # dirty hack since SIP seems to introduce the flags in module
 QgsAbstractDatabaseProviderConnection.Capability.baseClass = QgsAbstractDatabaseProviderConnection
+QgsAbstractDatabaseProviderConnection.Capabilities = lambda flags=0: QgsAbstractDatabaseProviderConnection.Capability(flags)
 QgsAbstractDatabaseProviderConnection.Capabilities.baseClass = QgsAbstractDatabaseProviderConnection
 Capabilities = QgsAbstractDatabaseProviderConnection  # dirty hack since SIP seems to introduce the flags in module
 QgsAbstractDatabaseProviderConnection.GeometryColumnCapability.baseClass = QgsAbstractDatabaseProviderConnection
+QgsAbstractDatabaseProviderConnection.GeometryColumnCapabilities = lambda flags=0: QgsAbstractDatabaseProviderConnection.GeometryColumnCapability(flags)
 QgsAbstractDatabaseProviderConnection.GeometryColumnCapabilities.baseClass = QgsAbstractDatabaseProviderConnection
 GeometryColumnCapabilities = QgsAbstractDatabaseProviderConnection  # dirty hack since SIP seems to introduce the flags in module
+from enum import Enum
+
+
+def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+
+QgsAbstractDatabaseProviderConnection.Capability.__bool__ = lambda flag: bool(_force_int(flag))
+QgsAbstractDatabaseProviderConnection.Capability.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsAbstractDatabaseProviderConnection.Capability.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsAbstractDatabaseProviderConnection.Capability.__or__ = lambda flag1, flag2: QgsAbstractDatabaseProviderConnection.Capability(_force_int(flag1) | _force_int(flag2))
 try:
     QgsAbstractDatabaseProviderConnection.SqlVectorLayerOptions.__attribute_docs__ = {'sql': 'The SQL expression that defines the SQL (query) layer', 'filter': 'Additional subset string (provider-side filter), not all data providers support this feature: check support with SqlLayerDefinitionCapability.Filters capability', 'layerName': 'Optional name for the new layer', 'primaryKeyColumns': 'List of primary key column names', 'geometryColumn': 'Name of the geometry column', 'disableSelectAtId': 'If SelectAtId is disabled (default is false), not all data providers support this feature: check support with SqlLayerDefinitionCapability.SelectAtId capability'}
     QgsAbstractDatabaseProviderConnection.SqlVectorLayerOptions.__annotations__ = {'sql': str, 'filter': str, 'layerName': str, 'primaryKeyColumns': 'List[str]', 'geometryColumn': str, 'disableSelectAtId': bool}
@@ -9461,7 +10754,7 @@ try:
 except (NameError, AttributeError):
     pass
 try:
-    QgsAbstractDatabaseProviderConnection.__virtual_methods__ = ['geometryColumnCapabilities', 'sqlLayerDefinitionCapabilities', 'tableUri', 'createVectorTable', 'createVectorLayerExporterDestinationUri', 'tableExists', 'dropVectorTable', 'dropRasterTable', 'renameVectorTable', 'renameRasterTable', 'createSchema', 'dropSchema', 'deleteField', 'addField', 'renameField', 'renameSchema', 'executeSql', 'createSqlVectorLayer', 'validateSqlVectorLayer', 'sqlOptions', 'execSql', 'vacuum', 'createSpatialIndex', 'spatialIndexExists', 'deleteSpatialIndex', 'table', 'SIP_THROW', 'fields', 'sqlDictionary', 'illegalFieldNames', 'defaultPrimaryKeyColumnName', 'defaultGeometryColumnName', 'supportedFieldDomainTypes', 'fieldDomain', 'setFieldDomainName', 'addFieldDomain', 'setFieldAlias', 'setTableComment', 'setFieldComment', 'moveTableToSchema', 'supportedRelationshipCapabilities', 'relatedTableTypes', 'relationships', 'addRelationship', 'updateRelationship', 'deleteRelationship', 'queryBuilder', 'searchLayerMetadata']
+    QgsAbstractDatabaseProviderConnection.__virtual_methods__ = ['geometryColumnCapabilities', 'sqlLayerDefinitionCapabilities', 'tableUri', 'createVectorTable', 'createVectorLayerExporterDestinationUri', 'tableExists', 'dropVectorTable', 'dropRasterTable', 'renameVectorTable', 'renameRasterTable', 'createSchema', 'dropSchema', 'deleteField', 'addField', 'renameField', 'renameSchema', 'executeSql', 'createSqlVectorLayer', 'validateSqlVectorLayer', 'sqlOptions', 'execSql', 'vacuum', 'createSpatialIndex', 'spatialIndexExists', 'deleteSpatialIndex', 'table', 'schemas', 'fields', 'sqlDictionary', 'illegalFieldNames', 'defaultPrimaryKeyColumnName', 'defaultGeometryColumnName', 'fieldDomainNames', 'supportedFieldDomainTypes', 'fieldDomain', 'setFieldDomainName', 'addFieldDomain', 'updateFieldDomain', 'deleteFieldDomain', 'setFieldAlias', 'setTableComment', 'setFieldComment', 'moveTableToSchema', 'supportedRelationshipCapabilities', 'relatedTableTypes', 'relationships', 'addRelationship', 'updateRelationship', 'deleteRelationship', 'queryBuilder', 'searchLayerMetadata']
     QgsAbstractDatabaseProviderConnection.__abstract_methods__ = ['tableImportCapabilities', 'nativeTypes']
     QgsAbstractDatabaseProviderConnection.__group__ = ['providers']
 except (NameError, AttributeError):
@@ -9513,9 +10806,20 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/geometry/qgsabstractgeometry.h
 QgsAbstractGeometry.SegmentationToleranceType.baseClass = QgsAbstractGeometry
+QgsAbstractGeometry.WkbFlags = lambda flags=0: QgsAbstractGeometry.WkbFlag(flags)
+from enum import Enum
+
+
+def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+
+QgsAbstractGeometry.WkbFlag.__bool__ = lambda flag: bool(_force_int(flag))
+QgsAbstractGeometry.WkbFlag.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsAbstractGeometry.WkbFlag.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsAbstractGeometry.WkbFlag.__or__ = lambda flag1, flag2: QgsAbstractGeometry.WkbFlag(_force_int(flag1) | _force_int(flag2))
 try:
-    QgsAbstractGeometry.__virtual_methods__ = ['compareTo', 'boundingBox', 'nCoordinates', 'closestSegment', 'length', 'perimeter', 'area', 'centroid', 'isEmpty', 'hasCurvedSegments', 'boundingBoxIntersects', 'segmentize', 'convertTo', 'hasChildGeometries', 'childCount', 'childGeometry', 'childPoint', 'calculateBoundingBox', 'calculateBoundingBox3D', 'clearCache']
-    QgsAbstractGeometry.__abstract_methods__ = ['operator==', 'operator!=', 'fuzzyEqual', 'fuzzyDistanceEqual', 'clone', 'clear', 'boundingBox3D', 'dimension', 'geometryType', 'boundary', 'normalize', 'fromWkb', 'fromWkt', 'wkbSize', 'asWkb', 'asWkt', 'asGml2', 'asGml3', 'asKml', 'transform', 'draw', 'asQPainterPath', 'vertexNumberFromVertexId', 'nextVertex', 'adjacentVertices', 'coordinateSequence', 'vertexAt', 'closestSegment', 'insertVertex', 'moveVertex', 'deleteVertex', 'segmentLength', 'toCurveType', 'snappedToGrid', 'simplifyByDistance', 'removeDuplicateNodes', 'vertexAngle', 'vertexCount', 'ringCount', 'partCount', 'addZValue', 'addMValue', 'dropZValue', 'dropMValue', 'swapXy', 'isValid', 'createEmptyWithSameType', 'compareToSameClass']
+    QgsAbstractGeometry.__virtual_methods__ = ['compareTo', 'boundingBox', 'nCoordinates', 'closestSegment', 'length', 'perimeter', 'area', 'area3D', 'centroid', 'isEmpty', 'hasCurvedSegments', 'boundingBoxIntersects', 'segmentize', 'convertTo', 'hasChildGeometries', 'childCount', 'childGeometry', 'childPoint', 'calculateBoundingBox', 'calculateBoundingBox3D', 'clearCache']
+    QgsAbstractGeometry.__abstract_methods__ = ['operator==', 'operator!=', 'fuzzyEqual', 'fuzzyDistanceEqual', 'clone', 'clear', 'boundingBox3D', 'dimension', 'geometryType', 'boundary', 'normalize', 'fromWkb', 'fromWkt', 'wkbSize', 'asWkb', 'asWkt', 'asGml2', 'asGml3', 'asKml', 'transform', 'draw', 'asQPainterPath', 'vertexNumberFromVertexId', 'nextVertex', 'adjacentVertices', 'coordinateSequence', 'vertexAt', 'closestSegment', 'insertVertex', 'moveVertex', 'deleteVertex', 'deleteVertices', 'hasVertex', 'segmentLength', 'toCurveType', 'snappedToGrid', 'simplifyByDistance', 'removeDuplicateNodes', 'vertexAngle', 'vertexCount', 'ringCount', 'partCount', 'addZValue', 'addMValue', 'dropZValue', 'dropMValue', 'swapXy', 'isValid', 'createEmptyWithSameType', 'compareToSameClass']
     QgsAbstractGeometry.__group__ = ['geometry']
 except (NameError, AttributeError):
     pass
@@ -9542,6 +10846,7 @@ try:
 except (NameError, AttributeError):
     pass
 try:
+    QgsAbstractLayerMetadataProvider.__virtual_methods__ = ['search']
     QgsAbstractLayerMetadataProvider.__abstract_methods__ = ['id', 'search']
     QgsAbstractLayerMetadataProvider.__group__ = ['metadata']
 except (NameError, AttributeError):
@@ -9558,6 +10863,54 @@ except (NameError, AttributeError):
 try:
     QgsAbstractLayoutIterator.__abstract_methods__ = ['layout', 'beginRender', 'endRender', 'count', 'next', 'filePath']
     QgsAbstractLayoutIterator.__group__ = ['layout']
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/core/./3d/materials/qgsabstractmaterialsettings.h
+# monkey patching scoped based enum
+QgsAbstractMaterialSettings.Diffuse.__doc__ = "Diffuse color (phong material)"
+QgsAbstractMaterialSettings.Ambient.__doc__ = "Ambient color (phong material)"
+QgsAbstractMaterialSettings.Warm.__doc__ = "Warm color (gooch material)"
+QgsAbstractMaterialSettings.Cool.__doc__ = "Cool color (gooch material)"
+QgsAbstractMaterialSettings.Specular.__doc__ = "Specular color"
+QgsAbstractMaterialSettings.BaseColor.__doc__ = "Base color (metal-rough material) \n.. versionadded:: 4.2"
+QgsAbstractMaterialSettings.EmissionColor.__doc__ = "Emission color (metal-rough material) \n.. versionadded:: 4.2"
+QgsAbstractMaterialSettings.TextureScale.__doc__ = "Texture scale \n.. versionadded:: 4.2"
+QgsAbstractMaterialSettings.TextureRotation.__doc__ = "Texture rotation \n.. versionadded:: 4.2"
+QgsAbstractMaterialSettings.TextureOffset.__doc__ = "Texture offset \n.. versionadded:: 4.2"
+QgsAbstractMaterialSettings.Property.__doc__ = """Data definable properties.
+
+* ``Diffuse``: Diffuse color (phong material)
+* ``Ambient``: Ambient color (phong material)
+* ``Warm``: Warm color (gooch material)
+* ``Cool``: Cool color (gooch material)
+* ``Specular``: Specular color
+* ``BaseColor``: Base color (metal-rough material)
+
+  .. versionadded:: 4.2
+
+* ``EmissionColor``: Emission color (metal-rough material)
+
+  .. versionadded:: 4.2
+
+* ``TextureScale``: Texture scale
+
+  .. versionadded:: 4.2
+
+* ``TextureRotation``: Texture rotation
+
+  .. versionadded:: 4.2
+
+* ``TextureOffset``: Texture offset
+
+  .. versionadded:: 4.2
+
+
+"""
+# --
+try:
+    QgsAbstractMaterialSettings.__virtual_methods__ = ['readXml', 'writeXml', 'requiresTextureCoordinates', 'requiresTangents', 'supportedProperties']
+    QgsAbstractMaterialSettings.__abstract_methods__ = ['type', 'clone', 'equals', 'averageColor', 'setColorsFromBase']
+    QgsAbstractMaterialSettings.__group__ = ['3d', 'materials']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/metadata/qgsabstractmetadatabase.h
@@ -9589,7 +10942,7 @@ try:
 except (NameError, AttributeError):
     pass
 try:
-    QgsAbstractMetadataBase.__virtual_methods__ = ['readMetadataXml', 'writeMetadataXml', 'combine']
+    QgsAbstractMetadataBase.__virtual_methods__ = ['readMetadataXml', 'writeMetadataXml', 'combine', 'registerTranslations']
     QgsAbstractMetadataBase.__abstract_methods__ = ['clone']
     QgsAbstractMetadataBase.__group__ = ['metadata']
 except (NameError, AttributeError):
@@ -9624,7 +10977,7 @@ except (NameError, AttributeError):
     pass
 try:
     QgsAbstractProfileGenerator.__virtual_methods__ = ['flags']
-    QgsAbstractProfileGenerator.__abstract_methods__ = ['sourceId', 'generateProfile', 'feedback', 'takeResults']
+    QgsAbstractProfileGenerator.__abstract_methods__ = ['sourceId', 'generateProfile', 'feedback', 'takeResults', 'type']
     QgsAbstractProfileGenerator.__group__ = ['elevation']
 except (NameError, AttributeError):
     pass
@@ -9642,6 +10995,7 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/elevation/qgsabstractprofilesource.h
 try:
+    QgsAbstractProfileSource.__virtual_methods__ = ['profileSourceId', 'profileSourceName']
     QgsAbstractProfileSource.__abstract_methods__ = ['createProfileGenerator']
     QgsAbstractProfileSource.__group__ = ['elevation']
 except (NameError, AttributeError):
@@ -9787,12 +11141,17 @@ QgsAbstractAnnotationItemEditOperation.Type.MoveNode.__doc__ = "Move a node"
 QgsAbstractAnnotationItemEditOperation.Type.DeleteNode.__doc__ = "Delete a node"
 QgsAbstractAnnotationItemEditOperation.Type.AddNode.__doc__ = "Add a node"
 QgsAbstractAnnotationItemEditOperation.Type.TranslateItem.__doc__ = "Translate (move) an item"
+QgsAbstractAnnotationItemEditOperation.Type.RotateItem.__doc__ = "Rotate an item \n.. versionadded:: 4.0"
 QgsAbstractAnnotationItemEditOperation.Type.__doc__ = """Operation type
 
 * ``MoveNode``: Move a node
 * ``DeleteNode``: Delete a node
 * ``AddNode``: Add a node
 * ``TranslateItem``: Translate (move) an item
+* ``RotateItem``: Rotate an item
+
+  .. versionadded:: 4.0
+
 
 """
 # --
@@ -9819,6 +11178,11 @@ except (NameError, AttributeError):
 try:
     QgsAnnotationItemEditOperationTranslateItem.__overridden_methods__ = ['type']
     QgsAnnotationItemEditOperationTranslateItem.__group__ = ['annotations']
+except (NameError, AttributeError):
+    pass
+try:
+    QgsAnnotationItemEditOperationRotateItem.__overridden_methods__ = ['type']
+    QgsAnnotationItemEditOperationRotateItem.__group__ = ['annotations']
 except (NameError, AttributeError):
     pass
 try:
@@ -9926,7 +11290,7 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgsapplication.h
 try:
-    QgsApplication.__attribute_docs__ = {'customVariablesChanged': 'Emitted whenever a custom global variable changes.\n', 'nullRepresentationChanged': 'Emitted when the string representing the `NULL` value is changed.\n\n.. seealso:: :py:func:`setNullRepresentation`\n\n.. seealso:: :py:func:`nullRepresentation`\n', 'requestForTranslatableObjects': 'Emitted when project strings which require translation are being\ncollected for inclusion in a .ts file. In order to register translatable\nstrings, connect to this signal and register the strings within the\nspecified ``translationContext``.\n\n.. versionadded:: 3.4\n', 'localeChanged': 'Emitted when project locale has been changed.\n\n.. versionadded:: 3.22.2\n'}
+    QgsApplication.__attribute_docs__ = {'customVariablesChanged': 'Emitted whenever a custom global variable changes.\n', 'nullRepresentationChanged': 'Emitted when the string representing the `NULL` value is changed.\n\n.. seealso:: :py:func:`setNullRepresentation`\n\n.. seealso:: :py:func:`nullRepresentation`\n', 'requestForTranslatableObjects': 'Emitted when project strings which require translation are being\ncollected for inclusion in a .ts file. In order to register translatable\nstrings, connect to this signal and register the strings within the\nspecified ``translationContext``.\n\n.. versionadded:: 3.4\n', 'localeChanged': 'Emitted when project locale has been changed.\n\n.. versionadded:: 3.22.2\n', 'themeChanged': 'Emitted when the application theme has changed.\n\n.. versionadded:: 4.0\n'}
     QgsApplication.instance = staticmethod(QgsApplication.instance)
     QgsApplication.setFileOpenEventReceiver = staticmethod(QgsApplication.setFileOpenEventReceiver)
     QgsApplication.setThemeName = staticmethod(QgsApplication.setThemeName)
@@ -9936,7 +11300,6 @@ try:
     QgsApplication.uiThemes = staticmethod(QgsApplication.uiThemes)
     QgsApplication.authorsFilePath = staticmethod(QgsApplication.authorsFilePath)
     QgsApplication.contributorsFilePath = staticmethod(QgsApplication.contributorsFilePath)
-    QgsApplication.developersMapFilePath = staticmethod(QgsApplication.developersMapFilePath)
     QgsApplication.sponsorsFilePath = staticmethod(QgsApplication.sponsorsFilePath)
     QgsApplication.donorsFilePath = staticmethod(QgsApplication.donorsFilePath)
     QgsApplication.serverResourcesPath = staticmethod(QgsApplication.serverResourcesPath)
@@ -10037,11 +11400,13 @@ try:
     QgsApplication.defaultStyleModel = staticmethod(QgsApplication.defaultStyleModel)
     QgsApplication.fontManager = staticmethod(QgsApplication.fontManager)
     QgsApplication.sensorRegistry = staticmethod(QgsApplication.sensorRegistry)
+    QgsApplication.plotRegistry = staticmethod(QgsApplication.plotRegistry)
     QgsApplication.messageLog = staticmethod(QgsApplication.messageLog)
     QgsApplication.authManager = staticmethod(QgsApplication.authManager)
     QgsApplication.authConfigurationStorageRegistry = staticmethod(QgsApplication.authConfigurationStorageRegistry)
     QgsApplication.processingRegistry = staticmethod(QgsApplication.processingRegistry)
     QgsApplication.pageSizeRegistry = staticmethod(QgsApplication.pageSizeRegistry)
+    QgsApplication.applicationThemeRegistry = staticmethod(QgsApplication.applicationThemeRegistry)
     QgsApplication.actionScopeRegistry = staticmethod(QgsApplication.actionScopeRegistry)
     QgsApplication.connectionRegistry = staticmethod(QgsApplication.connectionRegistry)
     QgsApplication.profiler = staticmethod(QgsApplication.profiler)
@@ -10049,8 +11414,10 @@ try:
     QgsApplication.fieldFormatterRegistry = staticmethod(QgsApplication.fieldFormatterRegistry)
     QgsApplication.renderer3DRegistry = staticmethod(QgsApplication.renderer3DRegistry)
     QgsApplication.symbol3DRegistry = staticmethod(QgsApplication.symbol3DRegistry)
+    QgsApplication.materialRegistry = staticmethod(QgsApplication.materialRegistry)
     QgsApplication.scaleBarRendererRegistry = staticmethod(QgsApplication.scaleBarRendererRegistry)
     QgsApplication.labelingEngineRuleRegistry = staticmethod(QgsApplication.labelingEngineRuleRegistry)
+    QgsApplication.symbolConverterRegistry = staticmethod(QgsApplication.symbolConverterRegistry)
     QgsApplication.projectStorageRegistry = staticmethod(QgsApplication.projectStorageRegistry)
     QgsApplication.layerMetadataProviderRegistry = staticmethod(QgsApplication.layerMetadataProviderRegistry)
     QgsApplication.externalStorageRegistry = staticmethod(QgsApplication.externalStorageRegistry)
@@ -10061,6 +11428,10 @@ try:
     QgsApplication.customVariables = staticmethod(QgsApplication.customVariables)
     QgsApplication.setCustomVariables = staticmethod(QgsApplication.setCustomVariables)
     QgsApplication.setCustomVariable = staticmethod(QgsApplication.setCustomVariable)
+    QgsApplication.temporarilyTrustedProjectsFolders = staticmethod(QgsApplication.temporarilyTrustedProjectsFolders)
+    QgsApplication.setTemporarilyTrustedProjectsFolders = staticmethod(QgsApplication.setTemporarilyTrustedProjectsFolders)
+    QgsApplication.temporarilyUntrustedProjectsFolders = staticmethod(QgsApplication.temporarilyUntrustedProjectsFolders)
+    QgsApplication.setTemporarilyUntrustedProjectsFolders = staticmethod(QgsApplication.setTemporarilyUntrustedProjectsFolders)
     QgsApplication.scaleIconSize = staticmethod(QgsApplication.scaleIconSize)
     QgsApplication.setTranslation = staticmethod(QgsApplication.setTranslation)
     QgsApplication.__overridden_methods__ = ['event', 'notify']
@@ -10095,6 +11466,7 @@ QgsArcGisRestUtils.FeatureToJsonFlag.__doc__ = """Flags which control the behavi
 """
 # --
 QgsArcGisRestUtils.FeatureToJsonFlag.baseClass = QgsArcGisRestUtils
+QgsArcGisRestUtils.FeatureToJsonFlags = lambda flags=0: QgsArcGisRestUtils.FeatureToJsonFlag(flags)
 QgsArcGisRestUtils.FeatureToJsonFlags.baseClass = QgsArcGisRestUtils
 FeatureToJsonFlags = QgsArcGisRestUtils  # dirty hack since SIP seems to introduce the flags in module
 try:
@@ -10117,6 +11489,10 @@ try:
     QgsArcGisRestUtils.variantToAttributeValue = staticmethod(QgsArcGisRestUtils.variantToAttributeValue)
     QgsArcGisRestUtils.fieldDefinitionToJson = staticmethod(QgsArcGisRestUtils.fieldDefinitionToJson)
     QgsArcGisRestUtils.serviceTypeFromString = staticmethod(QgsArcGisRestUtils.serviceTypeFromString)
+    QgsArcGisRestUtils.serviceCapabilitiesFromString = staticmethod(QgsArcGisRestUtils.serviceCapabilitiesFromString)
+    QgsArcGisRestUtils.dataTypeFromString = staticmethod(QgsArcGisRestUtils.dataTypeFromString)
+    QgsArcGisRestUtils.colorInterpretationFromBandName = staticmethod(QgsArcGisRestUtils.colorInterpretationFromBandName)
+    QgsArcGisRestUtils.defaultNoDataForDataType = staticmethod(QgsArcGisRestUtils.defaultNoDataForDataType)
     QgsArcGisRestUtils.__group__ = ['providers', 'arcgis']
 except (NameError, AttributeError):
     pass
@@ -10131,6 +11507,19 @@ except (NameError, AttributeError):
     pass
 try:
     QgsProjectArchive.__overridden_methods__ = ['unzip']
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/core/qgsarrowiterator.h
+try:
+    QgsArrowSchema.fromArrow = staticmethod(QgsArrowSchema.fromArrow)
+except (NameError, AttributeError):
+    pass
+try:
+    QgsArrowArrayStream.fromArrow = staticmethod(QgsArrowArrayStream.fromArrow)
+except (NameError, AttributeError):
+    pass
+try:
+    QgsArrowIterator.inferSchema = staticmethod(QgsArrowIterator.inferSchema)
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/symbology/qgsarrowsymbollayer.h
@@ -10189,8 +11578,19 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/editform/qgsattributeeditorrelation.h
 QgsAttributeEditorRelation.Button.baseClass = QgsAttributeEditorRelation
+QgsAttributeEditorRelation.Buttons = lambda flags=0: QgsAttributeEditorRelation.Button(flags)
 QgsAttributeEditorRelation.Buttons.baseClass = QgsAttributeEditorRelation
 Buttons = QgsAttributeEditorRelation  # dirty hack since SIP seems to introduce the flags in module
+from enum import Enum
+
+
+def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+
+QgsAttributeEditorRelation.Button.__bool__ = lambda flag: bool(_force_int(flag))
+QgsAttributeEditorRelation.Button.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsAttributeEditorRelation.Button.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsAttributeEditorRelation.Button.__or__ = lambda flag1, flag2: QgsAttributeEditorRelation.Button(_force_int(flag1) | _force_int(flag2))
 try:
     QgsAttributeEditorRelation.__overridden_methods__ = ['clone']
     QgsAttributeEditorRelation.__group__ = ['editform']
@@ -10209,6 +11609,19 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgsattributetableconfig.h
+# monkey patching scoped based enum
+QgsAttributeTableConfig.AddFeatureMethod.Unset.__doc__ = "No method set for current layer"
+QgsAttributeTableConfig.AddFeatureMethod.Form.__doc__ = "Opens a new Attributeform-Dialog"
+QgsAttributeTableConfig.AddFeatureMethod.Table.__doc__ = "Adds a new row (or a form embedded in the attribute table depending on the view)"
+QgsAttributeTableConfig.AddFeatureMethod.__doc__ = """The way to add features in the attribute table
+
+* ``Unset``: No method set for current layer
+* ``Form``: Opens a new Attributeform-Dialog
+* ``Table``: Adds a new row (or a form embedded in the attribute table depending on the view)
+
+"""
+# --
+QgsAttributeTableConfig.AddFeatureMethod.baseClass = QgsAttributeTableConfig
 try:
     QgsAttributeTableConfig.ColumnConfig.__attribute_docs__ = {'type': 'The type of this column.', 'name': 'The name of the attribute if this column represents a field', 'hidden': 'Flag that controls if the column is hidden', 'width': 'Width of column, or -1 for default width'}
     QgsAttributeTableConfig.ColumnConfig.__annotations__ = {'type': 'QgsAttributeTableConfig.Type', 'name': str, 'hidden': bool, 'width': int}
@@ -10276,7 +11689,7 @@ except (NameError, AttributeError):
 try:
     QgsAuthConfigurationStorage.__attribute_docs__ = {'messageLog': 'Custom logging signal to relay to console output and\n:py:class:`QgsMessageLog`\n\n:param message: Message to send\n:param tag: Associated tag (title)\n:param level: Message log level\n\n.. seealso:: :py:class:`QgsMessageLog`\n', 'storageChanged': 'Emitted when the storage was updated.\n\n:param id: The storage id\n\n.. note::\n\n   This is a generic changed signal and it is normally\n   emitted together with the dedicated signals which are\n   provided for specific changes on the individual tables.\n', 'methodConfigChanged': 'Emitted when the storage method config table was changed.\n', 'masterPasswordChanged': 'Emitted when the storage master password table was changed.\n', 'authSettingsChanged': 'Emitted when the storage auth settings table was changed.\n', 'readOnlyChanged': 'Emitted when the storage read-only status was changed.\n', 'certIdentityChanged': 'Emitted when the storage cert identity table was changed.\n', 'certAuthorityChanged': 'Emitted when the storage cert authority table was changed.\n', 'sslCertCustomConfigChanged': 'Emitted when the storage ssl cert custom config table was changed.\n', 'sslCertTrustPolicyChanged': 'Emitted when the storage ssl cert trust policy table was changed.\n'}
     QgsAuthConfigurationStorage.__virtual_methods__ = ['initialize', 'lastError', 'setReadOnly', 'isReadOnly', 'loggerTag']
-    QgsAuthConfigurationStorage.__abstract_methods__ = ['name', 'type', 'description', 'id', 'isReady', 'settingsParameters', 'authMethodConfigs', 'SIP_THROW', 'loadMethodConfig', 'storeMethodConfig', 'removeMethodConfig', 'methodConfigExists', 'storeAuthSetting', 'loadAuthSetting', 'removeAuthSetting', 'authSettingExists', 'storeCertIdentity', 'removeCertIdentity', 'certIdentityExists', 'storeSslCertCustomConfig', 'sslCertCustomConfigExists', 'removeSslCertCustomConfig', 'storeCertAuthority', 'certAuthorityExists', 'removeCertAuthority', 'storeCertTrustPolicy', 'loadCertTrustPolicy', 'removeCertTrustPolicy', 'certTrustPolicyExists', 'storeMasterPassword']
+    QgsAuthConfigurationStorage.__abstract_methods__ = ['name', 'type', 'description', 'id', 'isReady', 'settingsParameters', 'authMethodConfigs', 'authMethodConfigsWithPayload', 'loadMethodConfig', 'storeMethodConfig', 'removeMethodConfig', 'methodConfigExists', 'storeAuthSetting', 'loadAuthSetting', 'removeAuthSetting', 'authSettingExists', 'storeCertIdentity', 'removeCertIdentity', 'certIdentityIds', 'certIdentityExists', 'storeSslCertCustomConfig', 'sslCertCustomConfigIds', 'sslCertCustomConfigExists', 'removeSslCertCustomConfig', 'storeCertAuthority', 'certAuthorityIds', 'certAuthorityExists', 'removeCertAuthority', 'storeCertTrustPolicy', 'loadCertTrustPolicy', 'removeCertTrustPolicy', 'certTrustPolicyExists', 'storeMasterPassword', 'clearMasterPasswords', 'erase', 'clearMethodConfigs']
     QgsAuthConfigurationStorage.__signal_arguments__ = {'messageLog': ['message: str', 'tag: str = QStringLiteral( "Authentication" )', 'level: Qgis.MessageLevel = Qgis.MessageLevel.Info'], 'storageChanged': ['id: str'], 'readOnlyChanged': ['readOnly: bool']}
     QgsAuthConfigurationStorage.__group__ = ['auth']
 except (NameError, AttributeError):
@@ -10319,6 +11732,17 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/auth/qgsauthmethod.h
+QgsAuthMethod.Expansions = lambda flags=0: QgsAuthMethod.Expansion(flags)
+from enum import Enum
+
+
+def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+
+QgsAuthMethod.Expansion.__bool__ = lambda flag: bool(_force_int(flag))
+QgsAuthMethod.Expansion.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsAuthMethod.Expansion.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsAuthMethod.Expansion.__or__ = lambda flag1, flag2: QgsAuthMethod.Expansion(_force_int(flag1) | _force_int(flag2))
 try:
     QgsAuthMethod.authMethodTag = staticmethod(QgsAuthMethod.authMethodTag)
     QgsAuthMethod.__virtual_methods__ = ['editWidget', 'updateNetworkRequest', 'updateNetworkReply', 'updateDataSourceUriItems', 'updateNetworkProxy']
@@ -10365,6 +11789,14 @@ try:
     QgsBabelGpsDeviceFormat.__group__ = ['gps']
 except (NameError, AttributeError):
     pass
+# The following has been generated automatically from src/core/plot/qgsbarchartplot.h
+try:
+    QgsBarChartPlot.create = staticmethod(QgsBarChartPlot.create)
+    QgsBarChartPlot.createDataGatherer = staticmethod(QgsBarChartPlot.createDataGatherer)
+    QgsBarChartPlot.__overridden_methods__ = ['type', 'renderContent', 'writeXml', 'readXml', 'initFromPlot']
+    QgsBarChartPlot.__group__ = ['plot']
+except (NameError, AttributeError):
+    pass
 # The following has been generated automatically from src/core/numericformats/qgsbasicnumericformat.h
 try:
     QgsBasicNumericFormat.__virtual_methods__ = ['setNumberDecimalPlaces', 'setConfiguration']
@@ -10401,6 +11833,7 @@ QgsBlockingNetworkRequest.RequestFlag.__doc__ = """Request flags
 """
 # --
 QgsBlockingNetworkRequest.RequestFlag.baseClass = QgsBlockingNetworkRequest
+QgsBlockingNetworkRequest.RequestFlags = lambda flags=0: QgsBlockingNetworkRequest.RequestFlag(flags)
 QgsBlockingNetworkRequest.RequestFlags.baseClass = QgsBlockingNetworkRequest
 RequestFlags = QgsBlockingNetworkRequest  # dirty hack since SIP seems to introduce the flags in module
 try:
@@ -10498,7 +11931,7 @@ QgsBrowserModel.SortRole.__doc__ = "Custom sort role, see QgsDataItem.sortKey()"
 QgsBrowserModel.ItemDataRole.ProviderKeyRole = QgsBrowserModel.CustomRole.ProviderKey
 QgsBrowserModel.ProviderKeyRole.__doc__ = "Data item provider key that created the item, see QgsDataItem.providerKey() \n.. versionadded:: 3.12"
 QgsBrowserModel.ItemDataRole.LayerMetadataRole = QgsBrowserModel.CustomRole.LayerMetadata
-QgsBrowserModel.LayerMetadataRole.__doc__ = ""
+QgsBrowserModel.LayerMetadataRole.__doc__ = "Data item layer metadata for layer items"
 QgsBrowserModel.CustomRole.__doc__ = """Custom model roles.
 
 .. note::
@@ -10526,7 +11959,7 @@ QgsBrowserModel.CustomRole.__doc__ = """Custom model roles.
 
   Available as ``QgsBrowserModel.ProviderKeyRole`` in older QGIS releases.
 
-* ``LayerMetadata``: 
+* ``LayerMetadata``: Data item layer metadata for layer items
 
   Available as ``QgsBrowserModel.LayerMetadataRole`` in older QGIS releases.
 
@@ -10574,7 +12007,7 @@ try:
 except (NameError, AttributeError):
     pass
 try:
-    QgsCadUtils.AlignMapPointOutput.__attribute_docs__ = {'valid': 'Whether the combination of constraints is actually valid', 'finalMapPoint': 'map point aligned according to the constraints', 'snapMatch': 'Snapped point - only valid if actually used for something\n\n.. versionadded:: 3.14', 'edgeMatch': 'Snapped segment - only valid if actually used for something\n\n.. deprecated:: 3.40\n\n   Will be removed in QGIS 4.0 - use :py:func:`~AlignMapPointOutput.snapMatch` instead.', 'softLockCommonAngle': 'Angle (in degrees) to which we have soft-locked ourselves (if not set it is -1)'}
+    QgsCadUtils.AlignMapPointOutput.__attribute_docs__ = {'valid': 'Whether the combination of constraints is actually valid', 'finalMapPoint': 'map point aligned according to the constraints', 'snapMatch': 'Snapped point - only valid if actually used for something\n\n.. versionadded:: 3.14', 'edgeMatch': 'Snapped segment - only valid if actually used for something\n\n.. deprecated:: 3.40\n\n   Will be removed in QGIS 5.0 - use :py:func:`~AlignMapPointOutput.snapMatch` instead.', 'softLockCommonAngle': 'Angle (in degrees) to which we have soft-locked ourselves (if not set it is -1)'}
     QgsCadUtils.AlignMapPointOutput.__annotations__ = {'valid': bool, 'finalMapPoint': 'QgsPointXY', 'snapMatch': 'QgsPointLocator.Match', 'edgeMatch': 'QgsPointLocator.Match', 'softLockCommonAngle': float}
 except (NameError, AttributeError):
     pass
@@ -10728,7 +12161,7 @@ try:
     QgsCategorizedSymbolRenderer.convertFromRenderer = staticmethod(QgsCategorizedSymbolRenderer.convertFromRenderer)
     QgsCategorizedSymbolRenderer.createCategories = staticmethod(QgsCategorizedSymbolRenderer.createCategories)
     QgsCategorizedSymbolRenderer.displayString = staticmethod(QgsCategorizedSymbolRenderer.displayString)
-    QgsCategorizedSymbolRenderer.__overridden_methods__ = ['flags', 'symbolForFeature', 'originalSymbolForFeature', 'startRender', 'stopRender', 'usedAttributes', 'filterNeedsGeometry', 'dump', 'clone', 'toSld', 'capabilities', 'filter', 'symbols', 'accept', 'save', 'legendSymbolItems', 'legendKeysForFeature', 'legendKeyToExpression', 'legendSymbolItemsCheckable', 'legendSymbolItemChecked', 'setLegendSymbolItem', 'checkLegendSymbolItem', 'legendClassificationAttribute']
+    QgsCategorizedSymbolRenderer.__overridden_methods__ = ['flags', 'symbolForFeature', 'originalSymbolForFeature', 'startRender', 'stopRender', 'usedAttributes', 'filterNeedsGeometry', 'dump', 'clone', 'toSld', 'capabilities', 'filter', 'symbols', 'accept', 'save', 'legendSymbolItems', 'legendKeysForFeature', 'legendKeyToExpression', 'legendSymbolItemsCheckable', 'legendSymbolItemChecked', 'setLegendSymbolItem', 'setLegendSymbolItemLabel', 'checkLegendSymbolItem', 'legendClassificationAttribute']
     QgsCategorizedSymbolRenderer.__group__ = ['symbology']
 except (NameError, AttributeError):
     pass
@@ -10763,6 +12196,9 @@ try:
     QgsCesiumUtils.transformSphere = staticmethod(QgsCesiumUtils.transformSphere)
     QgsCesiumUtils.extractGltfFromB3dm = staticmethod(QgsCesiumUtils.extractGltfFromB3dm)
     QgsCesiumUtils.extractGltfFromTileContent = staticmethod(QgsCesiumUtils.extractGltfFromTileContent)
+    QgsCesiumUtils.extractTileContent = staticmethod(QgsCesiumUtils.extractTileContent)
+    QgsCesiumUtils.boundingVolumeFromRegion = staticmethod(QgsCesiumUtils.boundingVolumeFromRegion)
+    QgsCesiumUtils.appendQueryFromBaseUrl = staticmethod(QgsCesiumUtils.appendQueryFromBaseUrl)
     QgsCesiumUtils.__group__ = ['tiledscene']
 except (NameError, AttributeError):
     pass
@@ -10783,10 +12219,6 @@ try:
     QgsCircle.fromExtent = staticmethod(QgsCircle.fromExtent)
     QgsCircle.minimalCircleFrom3Points = staticmethod(QgsCircle.minimalCircleFrom3Points)
     QgsCircle.calculateSegments = staticmethod(QgsCircle.calculateSegments)
-    QgsCircle.calculateSegmentsStandard = staticmethod(QgsCircle.calculateSegmentsStandard)
-    QgsCircle.calculateSegmentsAdaptive = staticmethod(QgsCircle.calculateSegmentsAdaptive)
-    QgsCircle.calculateSegmentsByAreaError = staticmethod(QgsCircle.calculateSegmentsByAreaError)
-    QgsCircle.calculateSegmentsByConstant = staticmethod(QgsCircle.calculateSegmentsByConstant)
     QgsCircle.__overridden_methods__ = ['area', 'perimeter', 'setSemiMajorAxis', 'setSemiMinorAxis', 'boundingBox', 'toString']
     QgsCircle.__group__ = ['geometry']
 except (NameError, AttributeError):
@@ -10794,7 +12226,7 @@ except (NameError, AttributeError):
 # The following has been generated automatically from src/core/geometry/qgscircularstring.h
 try:
     QgsCircularString.fromTwoPointsAndCenter = staticmethod(QgsCircularString.fromTwoPointsAndCenter)
-    QgsCircularString.__overridden_methods__ = ['fuzzyEqual', 'fuzzyDistanceEqual', 'equals', 'geometryType', 'dimension', 'clone', 'clear', 'fromWkb', 'fromWkt', 'wkbSize', 'asWkb', 'asWkt', 'asGml2', 'asGml3', 'isEmpty', 'isValid', 'numPoints', 'indexOf', 'points', 'length', 'startPoint', 'endPoint', 'curveToLine', 'snappedToGrid', 'simplifyByDistance', 'removeDuplicateNodes', 'draw', 'transform', 'addToPainterPath', 'drawAsPolygon', 'insertVertex', 'moveVertex', 'deleteVertex', 'closestSegment', 'pointAt', 'sumUpArea', 'hasCurvedSegments', 'vertexAngle', 'segmentLength', 'reversed', 'interpolatePoint', 'curveSubstring', 'addZValue', 'addMValue', 'dropZValue', 'dropMValue', 'swapXy', 'xAt', 'yAt', 'zAt', 'mAt', 'scroll', 'createEmptyWithSameType', 'compareToSameClass', 'calculateBoundingBox3D']
+    QgsCircularString.__overridden_methods__ = ['geometryType', 'clone', 'clear', 'asGml2', 'asGml3', 'isValid', 'indexOf', 'length', 'curveToLine', 'snappedToGrid', 'simplifyByDistance', 'removeDuplicateNodes', 'draw', 'addToPainterPath', 'drawAsPolygon', 'insertVertex', 'deleteVertex', 'deleteVertices', 'closestSegment', 'pointAt', 'sumUpArea', 'sumUpArea3D', 'hasCurvedSegments', 'vertexAngle', 'segmentLength', 'distanceBetweenVertices', 'reversed', 'interpolatePoint', 'curveSubstring', 'createEmptyWithSameType', 'calculateBoundingBox3D']
     QgsCircularString.__group__ = ['geometry']
 except (NameError, AttributeError):
     pass
@@ -10829,6 +12261,17 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/classification/qgsclassificationmethod.h
+QgsClassificationMethod.MethodProperties = lambda flags=0: QgsClassificationMethod.MethodProperty(flags)
+from enum import Enum
+
+
+def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+
+QgsClassificationMethod.MethodProperty.__bool__ = lambda flag: bool(_force_int(flag))
+QgsClassificationMethod.MethodProperty.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsClassificationMethod.MethodProperty.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsClassificationMethod.MethodProperty.__or__ = lambda flag1, flag2: QgsClassificationMethod.MethodProperty(_force_int(flag1) | _force_int(flag2))
 try:
     QgsClassificationMethod.rangesToBreaks = staticmethod(QgsClassificationMethod.rangesToBreaks)
     QgsClassificationMethod.create = staticmethod(QgsClassificationMethod.create)
@@ -10950,7 +12393,7 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/layertree/qgscolorramplegendnode.h
 try:
-    QgsColorRampLegendNode.__overridden_methods__ = ['data', 'drawSymbol', 'drawSymbolText', 'exportSymbolToJson']
+    QgsColorRampLegendNode.__overridden_methods__ = ['data', 'drawSymbol', 'drawSymbolText', 'exportSymbolToJson', 'invalidateDisplayData']
     QgsColorRampLegendNode.__group__ = ['layertree']
 except (NameError, AttributeError):
     pass
@@ -10970,6 +12413,17 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgscolorscheme.h
+QgsColorScheme.SchemeFlags = lambda flags=0: QgsColorScheme.SchemeFlag(flags)
+from enum import Enum
+
+
+def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+
+QgsColorScheme.SchemeFlag.__bool__ = lambda flag: bool(_force_int(flag))
+QgsColorScheme.SchemeFlag.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsColorScheme.SchemeFlag.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsColorScheme.SchemeFlag.__or__ = lambda flag1, flag2: QgsColorScheme.SchemeFlag(_force_int(flag1) | _force_int(flag2))
 try:
     QgsRecentColorScheme.addRecentColor = staticmethod(QgsRecentColorScheme.addRecentColor)
     QgsRecentColorScheme.lastUsedColor = staticmethod(QgsRecentColorScheme.lastUsedColor)
@@ -10977,7 +12431,7 @@ try:
 except (NameError, AttributeError):
     pass
 try:
-    QgsColorScheme.__virtual_methods__ = ['flags', 'fetchColors', 'isEditable', 'setColors']
+    QgsColorScheme.__virtual_methods__ = ['flags', 'isEditable', 'setColors']
     QgsColorScheme.__abstract_methods__ = ['schemeName', 'fetchColors', 'clone']
 except (NameError, AttributeError):
     pass
@@ -11021,7 +12475,7 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/geometry/qgscompoundcurve.h
 try:
-    QgsCompoundCurve.__overridden_methods__ = ['fuzzyEqual', 'fuzzyDistanceEqual', 'equals', 'geometryType', 'dimension', 'clone', 'clear', 'fromWkb', 'fromWkt', 'wkbSize', 'asWkb', 'asWkt', 'asGml2', 'asGml3', 'length', 'startPoint', 'endPoint', 'points', 'numPoints', 'isEmpty', 'isValid', 'indexOf', 'curveToLine', 'snappedToGrid', 'simplifyByDistance', 'removeDuplicateNodes', 'boundingBoxIntersects', 'simplifiedTypeRef', 'draw', 'transform', 'addToPainterPath', 'drawAsPolygon', 'insertVertex', 'moveVertex', 'deleteVertex', 'closestSegment', 'pointAt', 'sumUpArea', 'hasCurvedSegments', 'vertexAngle', 'segmentLength', 'reversed', 'interpolatePoint', 'curveSubstring', 'addZValue', 'addMValue', 'dropZValue', 'dropMValue', 'swapXy', 'xAt', 'yAt', 'zAt', 'mAt', 'scroll', 'createEmptyWithSameType', 'compareToSameClass', 'calculateBoundingBox3D']
+    QgsCompoundCurve.__overridden_methods__ = ['fuzzyEqual', 'fuzzyDistanceEqual', 'equals', 'geometryType', 'dimension', 'clone', 'clear', 'fromWkb', 'fromWkt', 'wkbSize', 'asWkb', 'asWkt', 'asGml2', 'asGml3', 'length', 'startPoint', 'endPoint', 'points', 'numPoints', 'isEmpty', 'isValid', 'indexOf', 'curveToLine', 'snappedToGrid', 'simplifyByDistance', 'removeDuplicateNodes', 'boundingBoxIntersects', 'simplifiedTypeRef', 'draw', 'transform', 'addToPainterPath', 'drawAsPolygon', 'insertVertex', 'moveVertex', 'deleteVertex', 'deleteVertices', 'closestSegment', 'pointAt', 'sumUpArea', 'sumUpArea3D', 'hasCurvedSegments', 'vertexAngle', 'segmentLength', 'distanceBetweenVertices', 'reversed', 'interpolatePoint', 'curveSubstring', 'addZValue', 'addMValue', 'dropZValue', 'dropMValue', 'swapXy', 'xAt', 'yAt', 'zAt', 'mAt', 'scroll', 'createEmptyWithSameType', 'compareToSameClass', 'calculateBoundingBox3D']
     QgsCompoundCurve.__group__ = ['geometry']
 except (NameError, AttributeError):
     pass
@@ -11057,6 +12511,17 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgscoordinateformatter.h
+QgsCoordinateFormatter.FormatFlags = lambda flags=0: QgsCoordinateFormatter.FormatFlag(flags)
+from enum import Enum
+
+
+def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+
+QgsCoordinateFormatter.FormatFlag.__bool__ = lambda flag: bool(_force_int(flag))
+QgsCoordinateFormatter.FormatFlag.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsCoordinateFormatter.FormatFlag.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsCoordinateFormatter.FormatFlag.__or__ = lambda flag1, flag2: QgsCoordinateFormatter.FormatFlag(_force_int(flag1) | _force_int(flag2))
 try:
     QgsCoordinateFormatter.formatX = staticmethod(QgsCoordinateFormatter.formatX)
     QgsCoordinateFormatter.formatY = staticmethod(QgsCoordinateFormatter.formatY)
@@ -11229,18 +12694,19 @@ except (NameError, AttributeError):
 # The following has been generated automatically from src/core/geometry/qgscurve.h
 try:
     QgsCurve.__virtual_methods__ = ['isClosed', 'isClosed2D', 'isRing', 'asQPolygonF']
-    QgsCurve.__abstract_methods__ = ['equals', 'clone', 'startPoint', 'endPoint', 'curveToLine', 'addToPainterPath', 'drawAsPolygon', 'points', 'numPoints', 'sumUpArea', 'pointAt', 'indexOf', 'reversed', 'xAt', 'yAt', 'zAt', 'mAt', 'interpolatePoint', 'curveSubstring', 'scroll']
-    QgsCurve.__overridden_methods__ = ['operator==', 'operator!=', 'clone', 'asQPainterPath', 'coordinateSequence', 'nextVertex', 'adjacentVertices', 'vertexNumberFromVertexId', 'boundary', 'asKml', 'segmentize', 'vertexCount', 'ringCount', 'partCount', 'vertexAt', 'toCurveType', 'normalize', 'boundingBox3D', 'isValid', 'clearCache', 'childCount', 'childPoint']
+    QgsCurve.__abstract_methods__ = ['equals', 'clone', 'startPoint', 'endPoint', 'curveToLine', 'addToPainterPath', 'drawAsPolygon', 'points', 'numPoints', 'sumUpArea', 'sumUpArea3D', 'pointAt', 'indexOf', 'reversed', 'xAt', 'yAt', 'zAt', 'mAt', 'interpolatePoint', 'curveSubstring', 'scroll', 'distanceBetweenVertices']
+    QgsCurve.__overridden_methods__ = ['operator==', 'operator!=', 'clone', 'asQPainterPath', 'coordinateSequence', 'nextVertex', 'adjacentVertices', 'vertexNumberFromVertexId', 'boundary', 'asKml', 'segmentize', 'vertexCount', 'ringCount', 'partCount', 'vertexAt', 'hasVertex', 'toCurveType', 'normalize', 'boundingBox3D', 'isValid', 'clearCache', 'childCount', 'childPoint']
     QgsCurve.__group__ = ['geometry']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/geometry/qgscurvepolygon.h
 try:
     QgsCurvePolygon.__virtual_methods__ = ['surfaceToPolygon', 'toPolygon', 'setExteriorRing', 'addInteriorRing']
-    QgsCurvePolygon.__overridden_methods__ = ['fuzzyEqual', 'fuzzyDistanceEqual', 'operator==', 'operator!=', 'geometryType', 'dimension', 'clone', 'clear', 'fromWkb', 'fromWkt', 'wkbSize', 'asWkb', 'asWkt', 'asGml2', 'asGml3', 'asKml', 'normalize', 'area', 'perimeter', 'boundary', 'snappedToGrid', 'simplifyByDistance', 'removeDuplicateNodes', 'boundingBoxIntersects', 'asQPainterPath', 'draw', 'transform', 'insertVertex', 'moveVertex', 'deleteVertex', 'coordinateSequence', 'nCoordinates', 'vertexNumberFromVertexId', 'isEmpty', 'closestSegment', 'nextVertex', 'adjacentVertices', 'hasCurvedSegments', 'segmentize', 'vertexAngle', 'vertexCount', 'ringCount', 'partCount', 'vertexAt', 'segmentLength', 'addZValue', 'addMValue', 'dropZValue', 'dropMValue', 'swapXy', 'toCurveType', 'createEmptyWithSameType', 'childCount', 'childGeometry', 'compareToSameClass', 'calculateBoundingBox3D']
+    QgsCurvePolygon.__overridden_methods__ = ['fuzzyEqual', 'fuzzyDistanceEqual', 'operator==', 'operator!=', 'geometryType', 'dimension', 'clone', 'clear', 'fromWkb', 'fromWkt', 'wkbSize', 'asWkb', 'asWkt', 'asGml2', 'asGml3', 'asKml', 'normalize', 'area', 'area3D', 'perimeter', 'boundary', 'snappedToGrid', 'simplifyByDistance', 'removeDuplicateNodes', 'boundingBoxIntersects', 'asQPainterPath', 'draw', 'transform', 'insertVertex', 'moveVertex', 'deleteVertex', 'deleteVertices', 'hasVertex', 'coordinateSequence', 'nCoordinates', 'vertexNumberFromVertexId', 'isEmpty', 'closestSegment', 'nextVertex', 'adjacentVertices', 'hasCurvedSegments', 'segmentize', 'vertexAngle', 'vertexCount', 'ringCount', 'partCount', 'vertexAt', 'segmentLength', 'addZValue', 'addMValue', 'dropZValue', 'dropMValue', 'swapXy', 'toCurveType', 'createEmptyWithSameType', 'childCount', 'childGeometry', 'compareToSameClass', 'calculateBoundingBox3D']
     QgsCurvePolygon.__group__ = ['geometry']
 except (NameError, AttributeError):
     pass
+# The following has been generated automatically from src/core/qgsdartmeasurement.h
 # The following has been generated automatically from src/core/browser/qgsdatabaseschemaitem.h
 try:
     QgsDatabaseSchemaItem.__overridden_methods__ = ['databaseConnection']
@@ -11363,7 +12829,7 @@ try:
     QgsDataItem.__attribute_docs__ = {'beginInsertItems': 'Emitted before child items are added to this data item.\n\nThis signal *must* be followed by\n:py:func:`~QgsDataItem.endInsertItems`.\n\n:param parent: the parent item having children added, will always be\n               this object\n:param first: index of first child item to be added\n:param last: index last child item, after the addition has occurred\n\n.. seealso:: :py:func:`endInsertItems`\n', 'endInsertItems': 'Emitted after child items have been added to this data item.\n\nThis signal will always be preceded by\n:py:func:`~QgsDataItem.beginInsertItems`.\n\n.. seealso:: :py:func:`beginInsertItems`\n', 'beginRemoveItems': 'Emitted before child items are removed from this data item.\n\nThis signal *must* be followed by\n:py:func:`~QgsDataItem.endRemoveItems`.\n\n:param parent: the parent item having children removed, will always be\n               this object\n:param first: index of first child item to be removed\n:param last: index of the last child item to be removed\n\n.. seealso:: :py:func:`endRemoveItems`\n', 'endRemoveItems': 'Emitted after child items have been removed from this data item.\n\nThis signal will always be preceded by\n:py:func:`~QgsDataItem.beginRemoveItems`.\n\n.. seealso:: :py:func:`beginRemoveItems`\n', 'dataChanged': 'Emitted when data changes for an ``item``.\n', 'stateChanged': "Emitted when an item's state is changed.\n", 'connectionsChanged': 'Emitted when the connections of the provider with the specified\n``providerKey`` have changed.\n\nThis signal is normally forwarded to the app in order to refresh the\nconnection item in the provider dialogs and to refresh the connection\nitems in the other open browsers.\n'}
     QgsDataItem.findItem = staticmethod(QgsDataItem.findItem)
     QgsDataItem.pathComponent = staticmethod(QgsDataItem.pathComponent)
-    QgsDataItem.__virtual_methods__ = ['layerCollection', 'createChildren', 'setState', 'addChildItem', 'deleteChildItem', 'removeChildItem', 'equal', 'paramWidget', 'actions', 'menus', 'acceptDrop', 'handleDrop', 'handleDoubleClick', 'hasDragEnabled', 'mimeUri', 'mimeUris', 'setCrs', 'rename', 'capabilities2', 'SIP_PYNAME', 'icon', 'sortKey', 'databaseConnection', 'populate', 'refresh', 'depopulate', 'refreshConnections', 'childrenCreated']
+    QgsDataItem.__virtual_methods__ = ['layerCollection', 'createChildren', 'setState', 'addChildItem', 'deleteChildItem', 'removeChildItem', 'equal', 'paramWidget', 'actions', 'menus', 'acceptDrop', 'handleDrop', 'handleDoubleClick', 'hasDragEnabled', 'mimeUri', 'mimeUris', 'setCrs', 'rename', 'capabilities2', 'filterFlags', 'icon', 'sortKey', 'databaseConnection', 'populate', 'refresh', 'depopulate', 'refreshConnections', 'childrenCreated']
     QgsDataItem.__signal_arguments__ = {'beginInsertItems': ['parent: QgsDataItem', 'first: int', 'last: int'], 'beginRemoveItems': ['parent: QgsDataItem', 'first: int', 'last: int'], 'dataChanged': ['item: QgsDataItem'], 'stateChanged': ['item: QgsDataItem', 'oldState: Qgis.BrowserItemState'], 'connectionsChanged': ['providerKey: Optional[str] = None']}
     QgsDataItem.__group__ = ['browser']
 except (NameError, AttributeError):
@@ -11403,7 +12869,7 @@ except (NameError, AttributeError):
 try:
     QgsDataProvider.__attribute_docs__ = {'fullExtentCalculated': 'Emitted whenever a deferred extent calculation is completed by the\nprovider.\n\nLayers should connect to this signal and update their cached extents\nwhenever it is emitted.\n', 'dataChanged': "Emitted whenever a change is made to the data provider which may have\ncaused changes in the provider's data OUTSIDE of QGIS.\n\nWhen emitted from a :py:class:`QgsVectorDataProvider`, any cached\ninformation such as feature ids should be invalidated.\n\n.. warning::\n\n   This signal is NOT emitted when changes are made to a provider\n   from INSIDE QGIS -- e.g. when adding features to a vector layer, deleting features\n   or modifying existing features. Instead, the specific :py:class:`QgsVectorLayer` signals\n   should be used to detect these operations.\n", 'notify': 'Emitted when the datasource issues a notification.\n\n.. seealso:: :py:func:`setListening`\n'}
     QgsDataProvider.sublayerSeparator = staticmethod(QgsDataProvider.sublayerSeparator)
-    QgsDataProvider.__virtual_methods__ = ['setDataSourceUri', 'dataSourceUri', 'dataComment', 'htmlMetadata', 'flags', 'temporalCapabilities', 'elevationProperties', 'extent3D', 'updateExtents', 'subsetStringDialect', 'subsetStringHelpUrl', 'setSubsetString', 'supportsSubsetString', 'subsetString', 'subLayers', 'subLayerStyles', 'subLayerCount', 'setLayerOrder', 'setSubLayerVisibility', 'fileVectorFilters', 'fileRasterFilters', 'reloadData', 'timestamp', 'dataTimestamp', 'error', 'invalidateConnections', 'enterUpdateMode', 'leaveUpdateMode', 'setListening', 'layerMetadata', 'writeLayerMetadata', 'styleStorageCapabilities']
+    QgsDataProvider.__virtual_methods__ = ['setDataSourceUri', 'dataSourceUri', 'dataComment', 'htmlMetadata', 'metadata', 'flags', 'temporalCapabilities', 'elevationProperties', 'extent3D', 'updateExtents', 'subsetStringDialect', 'subsetStringHelpUrl', 'setSubsetString', 'supportsSubsetString', 'subsetString', 'subLayers', 'subLayerStyles', 'subLayerCount', 'setLayerOrder', 'setSubLayerVisibility', 'fileVectorFilters', 'fileRasterFilters', 'reloadData', 'timestamp', 'dataTimestamp', 'error', 'invalidateConnections', 'enterUpdateMode', 'leaveUpdateMode', 'setListening', 'layerMetadata', 'writeLayerMetadata', 'styleStorageCapabilities']
     QgsDataProvider.__abstract_methods__ = ['crs', 'extent', 'isValid', 'name', 'description']
     QgsDataProvider.__signal_arguments__ = {'notify': ['msg: str']}
     QgsDataProvider.__group__ = ['providers']
@@ -11537,6 +13003,7 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgsdiagramrenderer.h
+QgsDiagramLayerSettings.LinePlacementFlags = lambda flags=0: QgsDiagramLayerSettings.LinePlacementFlag(flags)
 # monkey patching scoped based enum
 QgsDiagramLayerSettings.BackgroundColor.__doc__ = "Diagram background color"
 QgsDiagramLayerSettings.StrokeColor.__doc__ = "Stroke color"
@@ -11623,6 +13090,7 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/dxf/qgsdxfexport.h
+QgsDxfExport.Flags = lambda flags=0: QgsDxfExport.Flag(flags)
 # monkey patching scoped based enum
 QgsDxfExport.ExportResult.Success.__doc__ = "Successful export"
 QgsDxfExport.ExportResult.InvalidDeviceError.__doc__ = "Invalid device error"
@@ -11675,6 +13143,21 @@ QgsDxfExport.HAlign.__doc__ = """Horizontal alignments.
 
 """
 # --
+QgsDxfExport.DxfPolylineFlags = lambda flags=0: QgsDxfExport.DxfPolylineFlag(flags)
+from enum import Enum
+
+
+def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+
+QgsDxfExport.Flag.__bool__ = lambda flag: bool(_force_int(flag))
+QgsDxfExport.Flag.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsDxfExport.Flag.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsDxfExport.Flag.__or__ = lambda flag1, flag2: QgsDxfExport.Flag(_force_int(flag1) | _force_int(flag2))
+QgsDxfExport.DxfPolylineFlag.__bool__ = lambda flag: bool(_force_int(flag))
+QgsDxfExport.DxfPolylineFlag.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsDxfExport.DxfPolylineFlag.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsDxfExport.DxfPolylineFlag.__or__ = lambda flag1, flag2: QgsDxfExport.DxfPolylineFlag(_force_int(flag1) | _force_int(flag2))
 try:
     QgsDxfExport.closestColorMatch = staticmethod(QgsDxfExport.closestColorMatch)
     QgsDxfExport.mapUnitScaleFactor = staticmethod(QgsDxfExport.mapUnitScaleFactor)
@@ -11685,8 +13168,7 @@ try:
 except (NameError, AttributeError):
     pass
 try:
-    QgsDxfExport.DxfLayer.__doc__ = """Layers and optional attribute index to split
-into multiple layers using attribute value as layer name."""
+    QgsDxfExport.DxfLayer.__doc__ = """Encapsulates the properties of a vector layer containing features that will be exported to the DXF file."""
     QgsDxfExport.DxfLayer.__group__ = ['dxf']
 except (NameError, AttributeError):
     pass
@@ -11696,6 +13178,7 @@ QgsEditFormConfig.NoProperty.__doc__ = "No property"
 QgsEditFormConfig.AllProperties.__doc__ = "All properties for item"
 QgsEditFormConfig.Alias.__doc__ = "Alias"
 QgsEditFormConfig.Editable.__doc__ = "Editable state \n.. versionadded:: 3.30"
+QgsEditFormConfig.CustomComment.__doc__ = "Custom comment \n.. versionadded:: 4.2"
 QgsEditFormConfig.DataDefinedProperty.__doc__ = """Data defined properties.
 Form data defined overrides are stored in a property collection
 and they can be retrieved using the indexes specified in this
@@ -11709,6 +13192,10 @@ enum.
 * ``Editable``: Editable state
 
   .. versionadded:: 3.30
+
+* ``CustomComment``: Custom comment
+
+  .. versionadded:: 4.2
 
 
 """
@@ -11736,6 +13223,39 @@ except (NameError, AttributeError):
 try:
     QgsElevationMap.encodeElevation = staticmethod(QgsElevationMap.encodeElevation)
     QgsElevationMap.decodeElevation = staticmethod(QgsElevationMap.decodeElevation)
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/core/elevation/qgselevationprofile.h
+try:
+    QgsElevationProfile.__attribute_docs__ = {'nameChanged': 'Emitted when the profile is renamed.\n\n.. seealso:: :py:func:`name`\n\n.. seealso:: :py:func:`setName`\n', 'useProjectLayerTreeChanged': 'Emitted when the use project layer tree property is changed.\n\n.. seealso:: :py:func:`setUseProjectLayerTree`\n', 'profileCurveChanged': 'Emitted when the profile curve is changed.\n\n.. seealso:: :py:func:`profileCurve`\n\n.. seealso:: :py:func:`setProfileCurve`\n\n.. versionadded:: 4.2\n', 'toleranceChanged': 'Emitted when the profile tolerance is changed.\n\n.. seealso:: :py:func:`tolerance`\n\n.. seealso:: :py:func:`setTolerance`\n\n.. versionadded:: 4.2\n'}
+    QgsElevationProfile.__signal_arguments__ = {'nameChanged': ['newName: str'], 'useProjectLayerTreeChanged': ['useProjectTree: bool'], 'toleranceChanged': ['tolerance: float']}
+    QgsElevationProfile.__group__ = ['elevation']
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/core/elevation/qgselevationprofilemanager.h
+try:
+    QgsElevationProfileManager.__attribute_docs__ = {'profileAboutToBeAdded': 'Emitted when a profile is about to be added to the manager\n', 'profileAdded': 'Emitted when a profile has been added to the manager\n', 'profileRemoved': 'Emitted when a profile was removed from the manager\n', 'profileAboutToBeRemoved': 'Emitted when a profile is about to be removed from the manager\n', 'profileRenamed': 'Emitted when a profile is renamed\n'}
+    QgsElevationProfileManager.__overridden_methods__ = ['setupObjectConnections']
+    QgsElevationProfileManager.__signal_arguments__ = {'profileAboutToBeAdded': ['name: str'], 'profileAdded': ['name: str'], 'profileRemoved': ['name: str'], 'profileAboutToBeRemoved': ['name: str'], 'profileRenamed': ['profile: QgsElevationProfile', 'newName: str']}
+    QgsElevationProfileManager.__group__ = ['elevation']
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/core/elevation/qgselevationprofilemanagermodel.h
+# monkey patching scoped based enum
+QgsElevationProfileManagerModel.CustomRole.ElevationProfile.__doc__ = "Elevation profile object"
+QgsElevationProfileManagerModel.CustomRole.__doc__ = """Custom model roles.
+
+* ``ElevationProfile``: Elevation profile object
+
+"""
+# --
+QgsElevationProfileManagerModel.CustomRole.baseClass = QgsElevationProfileManagerModel
+try:
+    QgsElevationProfileManagerModel.__group__ = ['elevation']
+except (NameError, AttributeError):
+    pass
+try:
+    QgsElevationProfileManagerProxyModel.__group__ = ['elevation']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgselevationutils.h
@@ -11800,6 +13320,7 @@ try:
     QgsEmbeddedSymbolRenderer.__group__ = ['symbology']
 except (NameError, AttributeError):
     pass
+# The following has been generated automatically from src/core/qgserror.h
 # The following has been generated automatically from src/core/raster/qgsexiftools.h
 try:
     QgsExifTools.GeoTagDetails.__attribute_docs__ = {'elevation': 'GPS elevation, or NaN if elevation is not available.'}
@@ -11818,6 +13339,11 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/expression/qgsexpression.h
+QgsExpression.ParserError.Unknown = QgsExpression.ParserError.ParserErrorType.Unknown
+QgsExpression.ParserError.FunctionUnknown = QgsExpression.ParserError.ParserErrorType.FunctionUnknown
+QgsExpression.ParserError.FunctionWrongArgs = QgsExpression.ParserError.ParserErrorType.FunctionWrongArgs
+QgsExpression.ParserError.FunctionInvalidParams = QgsExpression.ParserError.ParserErrorType.FunctionInvalidParams
+QgsExpression.ParserError.FunctionNamedArgsError = QgsExpression.ParserError.ParserErrorType.FunctionNamedArgsError
 try:
     QgsExpression.ParserError.__attribute_docs__ = {'errorMsg': 'The message for the error at this location.', 'firstLine': "The first line that contained the error in the parser.\nDepending on the error sometimes this doesn't mean anything.", 'firstColumn': "The first column that contained the error in the parser.\nDepending on the error sometimes this doesn't mean anything.", 'lastLine': 'The last line that contained the error in the parser.', 'lastColumn': 'The last column that contained the error in the parser.'}
     QgsExpression.ParserError.__annotations__ = {'errorMsg': str, 'firstLine': int, 'firstColumn': int, 'lastLine': int, 'lastColumn': int}
@@ -11960,12 +13486,12 @@ except (NameError, AttributeError):
 # The following has been generated automatically from src/core/expression/qgsexpressionnodeimpl.h
 try:
     QgsExpressionNodeFunction.validateParams = staticmethod(QgsExpressionNodeFunction.validateParams)
-    QgsExpressionNodeFunction.__overridden_methods__ = ['nodeType', 'prepareNode', 'evalNode', 'dump', 'referencedColumns', 'referencedVariables', 'referencedFunctions', 'clone', 'isStatic']
+    QgsExpressionNodeFunction.__overridden_methods__ = ['nodeType', 'prepareNode', 'evalNode', 'dump', 'referencedColumns', 'referencedVariables', 'referencedFunctions', 'needsGeometry', 'clone', 'isStatic']
     QgsExpressionNodeFunction.__group__ = ['expression']
 except (NameError, AttributeError):
     pass
 try:
-    QgsExpressionNodeUnaryOperator.__overridden_methods__ = ['nodeType', 'prepareNode', 'evalNode', 'dump', 'referencedColumns', 'referencedVariables', 'referencedFunctions', 'clone', 'isStatic']
+    QgsExpressionNodeUnaryOperator.__overridden_methods__ = ['nodeType', 'prepareNode', 'evalNode', 'dump', 'referencedColumns', 'referencedVariables', 'referencedFunctions', 'needsGeometry', 'clone', 'isStatic']
     QgsExpressionNodeUnaryOperator.__group__ = ['expression']
 except (NameError, AttributeError):
     pass
@@ -11980,17 +13506,17 @@ try:
 except (NameError, AttributeError):
     pass
 try:
-    QgsExpressionNodeBetweenOperator.__overridden_methods__ = ['nodeType', 'prepareNode', 'evalNode', 'dump', 'referencedColumns', 'referencedVariables', 'referencedFunctions', 'clone', 'isStatic']
+    QgsExpressionNodeBetweenOperator.__overridden_methods__ = ['nodeType', 'prepareNode', 'evalNode', 'dump', 'referencedColumns', 'referencedVariables', 'referencedFunctions', 'needsGeometry', 'clone', 'isStatic']
     QgsExpressionNodeBetweenOperator.__group__ = ['expression']
 except (NameError, AttributeError):
     pass
 try:
-    QgsExpressionNodeInOperator.__overridden_methods__ = ['nodeType', 'prepareNode', 'evalNode', 'dump', 'referencedColumns', 'referencedVariables', 'referencedFunctions', 'clone', 'isStatic']
+    QgsExpressionNodeInOperator.__overridden_methods__ = ['nodeType', 'prepareNode', 'evalNode', 'dump', 'referencedColumns', 'referencedVariables', 'referencedFunctions', 'needsGeometry', 'clone', 'isStatic']
     QgsExpressionNodeInOperator.__group__ = ['expression']
 except (NameError, AttributeError):
     pass
 try:
-    QgsExpressionNodeLiteral.__overridden_methods__ = ['nodeType', 'prepareNode', 'evalNode', 'dump', 'referencedColumns', 'referencedVariables', 'referencedFunctions', 'clone', 'isStatic']
+    QgsExpressionNodeLiteral.__overridden_methods__ = ['nodeType', 'prepareNode', 'evalNode', 'dump', 'referencedColumns', 'referencedVariables', 'referencedFunctions', 'needsGeometry', 'clone', 'isStatic']
     QgsExpressionNodeLiteral.__group__ = ['expression']
 except (NameError, AttributeError):
     pass
@@ -12057,6 +13583,11 @@ try:
     QgsFavoritesItem.__group__ = ['browser']
 except (NameError, AttributeError):
     pass
+# The following has been generated automatically from src/core/qgsfeatureexpressionfilterprovider.h
+try:
+    QgsFeatureExpressionFilterProvider.__overridden_methods__ = ['filterFeatures', 'layerAttributes', 'clone']
+except (NameError, AttributeError):
+    pass
 # The following has been generated automatically from src/core/qgsfeaturefiltermodel.h
 try:
     QgsFeatureFilterModel.__attribute_docs__ = {'identifierFieldsChanged': 'The identifier field should be a unique field that can be used to\nidentify individual features. It is normally set to the primary key of\nthe layer.\n', 'extraIdentifierValuesChanged': 'Allows specifying one value that does not need to match the filter\ncriteria but will still be available in the model.\n'}
@@ -12065,7 +13596,8 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgsfeaturefilterprovider.h
 try:
-    QgsFeatureFilterProvider.__abstract_methods__ = ['filterFeatures', 'layerAttributes', 'clone']
+    QgsFeatureFilterProvider.__virtual_methods__ = ['isFilterThreadSafe', 'filterFeatures']
+    QgsFeatureFilterProvider.__abstract_methods__ = ['layerAttributes', 'clone']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgsfeatureiterator.h
@@ -12141,7 +13673,7 @@ QgsFeaturePickerModelBase.CustomRole.__doc__ = """Extra roles that can be used t
 # --
 QgsFeaturePickerModelBase.CustomRole.baseClass = QgsFeaturePickerModelBase
 try:
-    QgsFeaturePickerModelBase.__attribute_docs__ = {'currentFeatureChanged': 'Emitted when the current feature in the model has changed This emitted\nboth when the extra value changes and when the extra value status\nchanges. It allows being notified when the feature is fetched after the\nextra value has been set.\n\n.. versionadded:: 3.16.5\n', 'sourceLayerChanged': 'The source layer from which features will be fetched.\n', 'displayExpressionChanged': 'The display expression will be used for\n\n- displaying values in the combobox\n- filtering based on filterValue\n', 'filterValueChanged': 'This value will be used to filter the features available from this\nmodel. Whenever a substring of the displayExpression of a feature\nmatches the filter value, it will be accessible by this model.\n', 'filterExpressionChanged': 'An additional filter expression to apply, next to the filterValue. Can\nbe used for spatial filtering etc.\n', 'formFeatureChanged': 'An attribute form feature to be used alongside the filter expression.\n\n.. versionadded:: 3.42.2\n', 'parentFormFeatureChanged': 'A parent attribute form feature to be used alongside the filter\nexpression.\n\n.. versionadded:: 3.42.2\n', 'isLoadingChanged': 'Indicator if the model is currently performing any feature iteration in\nthe background.\n', 'filterJobCompleted': 'Indicates that a filter job has been completed and new data may be\navailable.\n', 'extraIdentifierValueChanged': 'Allows specifying one value that does not need to match the filter\ncriteria but will still be available in the model.\n', 'extraIdentifierValueIndexChanged': 'The index at which the extra identifier value is available within the\nmodel.\n', 'extraValueDoesNotExistChanged': 'Notification whether the model has ``found`` a feature tied to the\nextraIdentifierValue or not.\n', 'beginUpdate': 'Notification that the model is about to be changed because a job was\ncompleted.\n', 'endUpdate': 'Notification that the model change is finished. Will always be emitted\nin sync with beginUpdate.\n', 'allowNullChanged': 'Add a NULL entry to the list.\n', 'fetchGeometryChanged': 'Emitted when the fetching of the geometry changes\n', 'fetchLimitChanged': 'Emitted when the fetching limit for the feature request changes\n'}
+    QgsFeaturePickerModelBase.__attribute_docs__ = {'currentFeatureChanged': 'Emitted when the current feature in the model has changed This emitted\nboth when the extra value changes and when the extra value status\nchanges. It allows being notified when the feature is fetched after the\nextra value has been set.\n\n.. versionadded:: 3.16.5\n', 'sourceLayerChanged': 'The source layer from which features will be fetched.\n', 'displayExpressionChanged': 'The display expression will be used for\n\n- displaying values in the combobox\n- filtering based on filterValue\n', 'filterValueChanged': 'This value will be used to filter the features available from this\nmodel. Whenever a substring of the displayExpression of a feature\nmatches the filter value, it will be accessible by this model.\n', 'filterExpressionChanged': 'An additional filter expression to apply, next to the filterValue. Can\nbe used for spatial filtering etc.\n', 'orderExpressionChanged': 'An expression for generating values for sorting. Can be used for combo\nboxes etc.\n\n.. versionadded:: 4.0\n', 'sortOrderChanged': 'The direction used for sorting. Can be used for combo boxes etc.\n\n.. versionadded:: 4.0\n', 'formFeatureChanged': 'An attribute form feature to be used alongside the filter expression.\n\n.. versionadded:: 3.42.2\n', 'parentFormFeatureChanged': 'A parent attribute form feature to be used alongside the filter\nexpression.\n\n.. versionadded:: 3.42.2\n', 'isLoadingChanged': 'Indicator if the model is currently performing any feature iteration in\nthe background.\n', 'filterJobCompleted': 'Indicates that a filter job has been completed and new data may be\navailable.\n', 'extraIdentifierValueChanged': 'Allows specifying one value that does not need to match the filter\ncriteria but will still be available in the model.\n', 'extraIdentifierValueIndexChanged': 'The index at which the extra identifier value is available within the\nmodel.\n', 'extraValueDoesNotExistChanged': 'Notification whether the model has ``found`` a feature tied to the\nextraIdentifierValue or not.\n', 'beginUpdate': 'Notification that the model is about to be changed because a job was\ncompleted.\n', 'endUpdate': 'Notification that the model change is finished. Will always be emitted\nin sync with beginUpdate.\n', 'allowNullChanged': 'Add a NULL entry to the list.\n', 'fetchGeometryChanged': 'Emitted when the fetching of the geometry changes\n', 'fetchLimitChanged': 'Emitted when the fetching limit for the feature request changes\n'}
     QgsFeaturePickerModelBase.__abstract_methods__ = ['setExtraIdentifierValueToNull', 'requestToReloadCurrentFeature']
     QgsFeaturePickerModelBase.__overridden_methods__ = ['index', 'parent', 'rowCount', 'columnCount', 'data']
     QgsFeaturePickerModelBase.__signal_arguments__ = {'extraIdentifierValueIndexChanged': ['index: int'], 'extraValueDoesNotExistChanged': ['found: bool']}
@@ -12165,6 +13697,18 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgsfeaturesink.h
+QgsFeatureSink.SinkFlags = lambda flags=0: QgsFeatureSink.SinkFlag(flags)
+QgsFeatureSink.Flags = lambda flags=0: QgsFeatureSink.Flag(flags)
+from enum import Enum
+
+
+def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+
+QgsFeatureSink.Flag.__bool__ = lambda flag: bool(_force_int(flag))
+QgsFeatureSink.Flag.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsFeatureSink.Flag.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsFeatureSink.Flag.__or__ = lambda flag1, flag2: QgsFeatureSink.Flag(_force_int(flag1) | _force_int(flag2))
 try:
     QgsFeatureSink.__virtual_methods__ = ['finalize', 'addFeature', 'flushBuffer', 'lastError']
     QgsFeatureSink.__abstract_methods__ = ['addFeatures']
@@ -12184,6 +13728,7 @@ except (NameError, AttributeError):
 # The following has been generated automatically from src/core/qgsfeedback.h
 try:
     QgsFeedback.__attribute_docs__ = {'canceled': 'Internal routines can connect to this signal if they use event loop\n', 'progressChanged': 'Emitted when the feedback object reports a progress change. Depending on\nhow the feedback object is used progress reporting may not be supported.\nThe ``progress`` argument is in percentage and ranges from 0-100.\n\n.. seealso:: :py:func:`setProgress`\n\n.. seealso:: :py:func:`progress`\n', 'processedCountChanged': 'Emitted when the feedback object reports a change in the number of\nprocessed objects. Depending on how the feedback object is used\nprocessed count reporting may not be supported. The ``processedCount``\nargument is an unsigned long integer and starts from 0.\n\n.. seealso:: :py:func:`setProgress`\n\n.. seealso:: :py:func:`progress`\n\n.. versionadded:: 3.24\n'}
+    QgsFeedback.createScaledFeedback = staticmethod(QgsFeedback.createScaledFeedback)
     QgsFeedback.__signal_arguments__ = {'progressChanged': ['progress: float'], 'processedCountChanged': ['processedCount: int']}
 except (NameError, AttributeError):
     pass
@@ -12192,6 +13737,18 @@ try:
     QgsField.readableConfigurationFlag = staticmethod(QgsField.readableConfigurationFlag)
 except (NameError, AttributeError):
     pass
+# The following has been generated automatically from src/core/qgsfieldconstraints.h
+QgsFieldConstraints.Constraints = lambda flags=0: QgsFieldConstraints.Constraint(flags)
+from enum import Enum
+
+
+def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+
+QgsFieldConstraints.Constraint.__bool__ = lambda flag: bool(_force_int(flag))
+QgsFieldConstraints.Constraint.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsFieldConstraints.Constraint.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsFieldConstraints.Constraint.__or__ = lambda flag1, flag2: QgsFieldConstraints.Constraint(_force_int(flag1) | _force_int(flag2))
 # The following has been generated automatically from src/core/vector/qgsfielddomain.h
 try:
     QgsFieldDomain.__abstract_methods__ = ['clone', 'type', 'typeName']
@@ -12229,6 +13786,7 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgsfieldformatter.h
+QgsFieldFormatter.Flags = lambda flags=0: QgsFieldFormatter.Flag(flags)
 try:
     QgsFieldFormatter.__virtual_methods__ = ['representValue', 'sortValue', 'alignmentFlag', 'createCache', 'availableValues']
     QgsFieldFormatter.__abstract_methods__ = ['id']
@@ -12316,8 +13874,19 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgsfieldproxymodel.h
+QgsFieldProxyModel.Filters = lambda flags=0: QgsFieldProxyModel.Filter(flags)
 QgsFieldProxyModel.Filters.baseClass = QgsFieldProxyModel
 Filters = QgsFieldProxyModel  # dirty hack since SIP seems to introduce the flags in module
+from enum import Enum
+
+
+def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+
+QgsFieldProxyModel.Filter.__bool__ = lambda flag: bool(_force_int(flag))
+QgsFieldProxyModel.Filter.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsFieldProxyModel.Filter.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsFieldProxyModel.Filter.__or__ = lambda flag1, flag2: QgsFieldProxyModel.Filter(_force_int(flag1) | _force_int(flag2))
 try:
     QgsFieldProxyModel.__overridden_methods__ = ['filterAcceptsRow', 'lessThan']
 except (NameError, AttributeError):
@@ -12350,7 +13919,28 @@ try:
     QgsFileFilterGenerator.__abstract_methods__ = ['createFileFilter']
 except (NameError, AttributeError):
     pass
+# The following has been generated automatically from src/core/network/qgsfileuploader.h
+try:
+    QgsFileUploader.__attribute_docs__ = {'uploadCompleted': 'Emitted when the upload has completed successfully\n', 'uploadExited': 'Emitted always when the uploader exits\n', 'uploadCanceled': 'Emitted when the upload was canceled by the user.\n\n.. seealso:: :py:func:`cancelUpload`\n', 'uploadError': 'Emitted when an error makes the upload fail\n', 'uploadProgress': 'Emitted when data are ready to be processed\n'}
+    QgsFileUploader.__signal_arguments__ = {'uploadCompleted': ['url: QUrl'], 'uploadError': ['errorMessages: List[str]'], 'uploadProgress': ['bytesSent: int', 'bytesTotal: int']}
+    QgsFileUploader.__group__ = ['network']
+except (NameError, AttributeError):
+    pass
 # The following has been generated automatically from src/core/qgsfileutils.h
+# monkey patching scoped based enum
+QgsFileUtils.CopyFlag.NoSymLinks.__doc__ = "If present, indicates that symbolic links should be skipped during the copy"
+QgsFileUtils.CopyFlag.__doc__ = """Flags controlling behavior of file copy operations.
+
+.. versionadded:: 4.0.1
+
+* ``NoSymLinks``: If present, indicates that symbolic links should be skipped during the copy
+
+"""
+# --
+QgsFileUtils.CopyFlag.baseClass = QgsFileUtils
+QgsFileUtils.CopyFlags = lambda flags=0: QgsFileUtils.CopyFlag(flags)
+QgsFileUtils.CopyFlags.baseClass = QgsFileUtils
+CopyFlags = QgsFileUtils  # dirty hack since SIP seems to introduce the flags in module
 try:
     QgsFileUtils.representFileSize = staticmethod(QgsFileUtils.representFileSize)
     QgsFileUtils.extensionsFromFilter = staticmethod(QgsFileUtils.extensionsFromFilter)
@@ -12367,6 +13957,8 @@ try:
     QgsFileUtils.renameDataset = staticmethod(QgsFileUtils.renameDataset)
     QgsFileUtils.splitPathToComponents = staticmethod(QgsFileUtils.splitPathToComponents)
     QgsFileUtils.uniquePath = staticmethod(QgsFileUtils.uniquePath)
+    QgsFileUtils.copyDirectory = staticmethod(QgsFileUtils.copyDirectory)
+    QgsFileUtils.replaceTextInFile = staticmethod(QgsFileUtils.replaceTextInFile)
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/symbology/qgsfillsymbol.h
@@ -12428,16 +14020,14 @@ except (NameError, AttributeError):
     pass
 try:
     QgsRandomMarkerFillSymbolLayer.create = staticmethod(QgsRandomMarkerFillSymbolLayer.create)
-    QgsRandomMarkerFillSymbolLayer.__virtual_methods__ = ['setSubSymbol']
-    QgsRandomMarkerFillSymbolLayer.__overridden_methods__ = ['layerType', 'startRender', 'stopRender', 'renderPolygon', 'properties', 'clone', 'canCauseArtifactsBetweenAdjacentTiles', 'setColor', 'color', 'subSymbol', 'setOutputUnit', 'outputUnit', 'usesMapUnits', 'setMapUnitScale', 'mapUnitScale', 'usedAttributes', 'hasDataDefinedProperties', 'startFeatureRender', 'stopFeatureRender']
+    QgsRandomMarkerFillSymbolLayer.__overridden_methods__ = ['layerType', 'startRender', 'stopRender', 'renderPolygon', 'properties', 'clone', 'canCauseArtifactsBetweenAdjacentTiles', 'rendersIdenticallyTo', 'setColor', 'color', 'subSymbol', 'setSubSymbol', 'setOutputUnit', 'outputUnit', 'usesMapUnits', 'setMapUnitScale', 'mapUnitScale', 'usedAttributes', 'hasDataDefinedProperties', 'startFeatureRender', 'stopFeatureRender']
     QgsRandomMarkerFillSymbolLayer.__group__ = ['symbology']
 except (NameError, AttributeError):
     pass
 try:
     QgsCentroidFillSymbolLayer.create = staticmethod(QgsCentroidFillSymbolLayer.create)
     QgsCentroidFillSymbolLayer.createFromSld = staticmethod(QgsCentroidFillSymbolLayer.createFromSld)
-    QgsCentroidFillSymbolLayer.__virtual_methods__ = ['setSubSymbol']
-    QgsCentroidFillSymbolLayer.__overridden_methods__ = ['layerType', 'startRender', 'stopRender', 'renderPolygon', 'properties', 'clone', 'toSld', 'setColor', 'color', 'subSymbol', 'setOutputUnit', 'outputUnit', 'usesMapUnits', 'setMapUnitScale', 'mapUnitScale', 'usedAttributes', 'hasDataDefinedProperties', 'canCauseArtifactsBetweenAdjacentTiles', 'startFeatureRender', 'stopFeatureRender']
+    QgsCentroidFillSymbolLayer.__overridden_methods__ = ['layerType', 'startRender', 'stopRender', 'renderPolygon', 'properties', 'clone', 'toSld', 'setColor', 'color', 'subSymbol', 'setSubSymbol', 'setOutputUnit', 'outputUnit', 'usesMapUnits', 'setMapUnitScale', 'mapUnitScale', 'usedAttributes', 'hasDataDefinedProperties', 'canCauseArtifactsBetweenAdjacentTiles', 'startFeatureRender', 'stopFeatureRender']
     QgsCentroidFillSymbolLayer.__group__ = ['symbology']
 except (NameError, AttributeError):
     pass
@@ -12494,6 +14084,12 @@ try:
     QgsFractionNumericFormat.__group__ = ['numericformats']
 except (NameError, AttributeError):
     pass
+# The following has been generated automatically from src/core/qgsgdalutils.h
+try:
+    QgsGdalUtils.supportsTiffLercCompression = staticmethod(QgsGdalUtils.supportsTiffLercCompression)
+    QgsGdalUtils.supportsMrfLercCompression = staticmethod(QgsGdalUtils.supportsMrfLercCompression)
+except (NameError, AttributeError):
+    pass
 # The following has been generated automatically from src/core/geocoding/qgsgeocoder.h
 # monkey patching scoped based enum
 QgsGeocoderInterface.Flag.GeocodesStrings.__doc__ = "Can geocode string input values"
@@ -12505,6 +14101,7 @@ QgsGeocoderInterface.Flag.__doc__ = """Capability flags for the geocoder.
 
 """
 # --
+QgsGeocoderInterface.Flags = lambda flags=0: QgsGeocoderInterface.Flag(flags)
 try:
     QgsGeocoderInterface.__virtual_methods__ = ['geocodeFeature', 'appendedFields', 'wkbType', 'geocodeString']
     QgsGeocoderInterface.__abstract_methods__ = ['flags']
@@ -12536,6 +14133,7 @@ try:
     QgsGeometry.fromRect = staticmethod(QgsGeometry.fromRect)
     QgsGeometry.fromBox3D = staticmethod(QgsGeometry.fromBox3D)
     QgsGeometry.collectGeometry = staticmethod(QgsGeometry.collectGeometry)
+    QgsGeometry.collectTinPatches = staticmethod(QgsGeometry.collectTinPatches)
     QgsGeometry.createWedgeBuffer = staticmethod(QgsGeometry.createWedgeBuffer)
     QgsGeometry.createWedgeBufferFromAngles = staticmethod(QgsGeometry.createWedgeBufferFromAngles)
     QgsGeometry.unaryUnion = staticmethod(QgsGeometry.unaryUnion)
@@ -12561,21 +14159,21 @@ except (NameError, AttributeError):
 # The following has been generated automatically from src/core/geometry/qgsgeometrycollection.h
 try:
     QgsGeometryCollection.__virtual_methods__ = ['addGeometry', 'addGeometries', 'insertGeometry', 'removeGeometry', 'wktOmitChildType']
-    QgsGeometryCollection.__overridden_methods__ = ['operator==', 'operator!=', 'fuzzyEqual', 'fuzzyDistanceEqual', 'clone', 'isEmpty', 'dimension', 'geometryType', 'clear', 'snappedToGrid', 'removeDuplicateNodes', 'boundary', 'adjacentVertices', 'vertexNumberFromVertexId', 'boundingBoxIntersects', 'normalize', 'transform', 'draw', 'asQPainterPath', 'fromWkb', 'fromWkt', 'wkbSize', 'asWkb', 'asWkt', 'asGml2', 'asGml3', 'asKml', 'boundingBox3D', 'coordinateSequence', 'nCoordinates', 'closestSegment', 'nextVertex', 'insertVertex', 'moveVertex', 'deleteVertex', 'length', 'area', 'perimeter', 'hasCurvedSegments', 'segmentize', 'vertexAngle', 'segmentLength', 'vertexCount', 'ringCount', 'partCount', 'vertexAt', 'isValid', 'addZValue', 'addMValue', 'dropZValue', 'dropMValue', 'swapXy', 'toCurveType', 'simplifiedTypeRef', 'simplifyByDistance', 'createEmptyWithSameType', 'childCount', 'childGeometry', 'compareToSameClass', 'calculateBoundingBox3D', 'clearCache']
+    QgsGeometryCollection.__overridden_methods__ = ['operator==', 'operator!=', 'fuzzyEqual', 'fuzzyDistanceEqual', 'clone', 'isEmpty', 'dimension', 'geometryType', 'clear', 'snappedToGrid', 'removeDuplicateNodes', 'boundary', 'adjacentVertices', 'vertexNumberFromVertexId', 'boundingBoxIntersects', 'normalize', 'transform', 'draw', 'asQPainterPath', 'fromWkb', 'fromWkt', 'wkbSize', 'asWkb', 'asWkt', 'asGml2', 'asGml3', 'asKml', 'boundingBox3D', 'coordinateSequence', 'nCoordinates', 'closestSegment', 'nextVertex', 'insertVertex', 'moveVertex', 'deleteVertex', 'deleteVertices', 'hasVertex', 'length', 'area', 'area3D', 'perimeter', 'hasCurvedSegments', 'segmentize', 'vertexAngle', 'segmentLength', 'vertexCount', 'ringCount', 'partCount', 'vertexAt', 'isValid', 'addZValue', 'addMValue', 'dropZValue', 'dropMValue', 'swapXy', 'toCurveType', 'simplifiedTypeRef', 'simplifyByDistance', 'createEmptyWithSameType', 'childCount', 'childGeometry', 'compareToSameClass', 'calculateBoundingBox3D', 'clearCache']
     QgsGeometryCollection.__group__ = ['geometry']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/geometry/qgsgeometryengine.h
 try:
-    QgsGeometryEngine.__virtual_methods__ = ['splitGeometry']
-    QgsGeometryEngine.__abstract_methods__ = ['geometryChanged', 'prepareGeometry', 'intersection', 'difference', 'combine', 'symDifference', 'buffer', 'simplify', 'interpolate', 'envelope', 'centroid', 'pointOnSurface', 'convexHull', 'distance', 'distanceWithin', 'intersects', 'touches', 'crosses', 'within', 'overlaps', 'contains', 'disjoint', 'relate', 'relatePattern', 'area', 'length', 'isValid', 'isEqual', 'isEmpty', 'isSimple', 'offsetCurve']
+    QgsGeometryEngine.__virtual_methods__ = ['intersection', 'difference', 'symDifference', 'splitGeometry']
+    QgsGeometryEngine.__abstract_methods__ = ['geometryChanged', 'prepareGeometry', 'intersection', 'difference', 'combine', 'symDifference', 'buffer', 'simplify', 'interpolate', 'envelope', 'centroid', 'pointOnSurface', 'convexHull', 'distance', 'distanceWithin', 'intersects', 'touches', 'crosses', 'within', 'overlaps', 'contains', 'disjoint', 'relate', 'relatePattern', 'area', 'length', 'isValid', 'isEqual', 'isFuzzyEqual', 'isEmpty', 'isSimple', 'offsetCurve']
     QgsGeometryEngine.__group__ = ['geometry']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/symbology/qgsgeometrygeneratorsymbollayer.h
 try:
     QgsGeometryGeneratorSymbolLayer.create = staticmethod(QgsGeometryGeneratorSymbolLayer.create)
-    QgsGeometryGeneratorSymbolLayer.__overridden_methods__ = ['layerType', 'startRender', 'stopRender', 'startFeatureRender', 'stopFeatureRender', 'usesMapUnits', 'color', 'outputUnit', 'setOutputUnit', 'mapUnitScale', 'clone', 'properties', 'drawPreviewIcon', 'subSymbol', 'setSubSymbol', 'usedAttributes', 'hasDataDefinedProperties', 'isCompatibleWithSymbol', 'setColor']
+    QgsGeometryGeneratorSymbolLayer.__overridden_methods__ = ['layerType', 'startRender', 'stopRender', 'startFeatureRender', 'stopFeatureRender', 'usesMapUnits', 'color', 'outputUnit', 'setOutputUnit', 'mapUnitScale', 'rendersIdenticallyTo', 'clone', 'properties', 'drawPreviewIcon', 'subSymbol', 'setSubSymbol', 'usedAttributes', 'hasDataDefinedProperties', 'isCompatibleWithSymbol', 'setColor']
     QgsGeometryGeneratorSymbolLayer.__group__ = ['symbology']
 except (NameError, AttributeError):
     pass
@@ -12623,6 +14221,7 @@ try:
     QgsGeometryUtils.projectPointOnSegment = staticmethod(QgsGeometryUtils.projectPointOnSegment)
     QgsGeometryUtils.leftOfLine = staticmethod(QgsGeometryUtils.leftOfLine)
     QgsGeometryUtils.interpolatePointOnArc = staticmethod(QgsGeometryUtils.interpolatePointOnArc)
+    QgsGeometryUtils.interpolatePointOnCubicBezier = staticmethod(QgsGeometryUtils.interpolatePointOnCubicBezier)
     QgsGeometryUtils.segmentMidPoint = staticmethod(QgsGeometryUtils.segmentMidPoint)
     QgsGeometryUtils.segmentMidPointFromCenter = staticmethod(QgsGeometryUtils.segmentMidPointFromCenter)
     QgsGeometryUtils.circleTangentDirection = staticmethod(QgsGeometryUtils.circleTangentDirection)
@@ -12670,7 +14269,19 @@ try:
     QgsGeometryUtils.bisector = staticmethod(QgsGeometryUtils.bisector)
     QgsGeometryUtils.circleCenterRadius = staticmethod(QgsGeometryUtils.circleCenterRadius)
     QgsGeometryUtils.lineIntersection = staticmethod(QgsGeometryUtils.lineIntersection)
+    QgsGeometryUtils.intersectionPointOfLinesByBearing = staticmethod(QgsGeometryUtils.intersectionPointOfLinesByBearing)
     QgsGeometryUtils.segmentIntersection = staticmethod(QgsGeometryUtils.segmentIntersection)
+    QgsGeometryUtils.createPointWithMatchingDimensions = staticmethod(QgsGeometryUtils.createPointWithMatchingDimensions)
+    QgsGeometryUtils.interpolatePointOnSegment = staticmethod(QgsGeometryUtils.interpolatePointOnSegment)
+    QgsGeometryUtils.createChamfer = staticmethod(QgsGeometryUtils.createChamfer)
+    QgsGeometryUtils.createFillet = staticmethod(QgsGeometryUtils.createFillet)
+    QgsGeometryUtils.createChamferGeometry = staticmethod(QgsGeometryUtils.createChamferGeometry)
+    QgsGeometryUtils.createFilletGeometry = staticmethod(QgsGeometryUtils.createFilletGeometry)
+    QgsGeometryUtils.maxFilletRadius = staticmethod(QgsGeometryUtils.maxFilletRadius)
+    QgsGeometryUtils.chamferVertex = staticmethod(QgsGeometryUtils.chamferVertex)
+    QgsGeometryUtils.filletVertex = staticmethod(QgsGeometryUtils.filletVertex)
+    QgsGeometryUtils.checkWeaklyFor3DPlane = staticmethod(QgsGeometryUtils.checkWeaklyFor3DPlane)
+    QgsGeometryUtils.interpolateZ = staticmethod(QgsGeometryUtils.interpolateZ)
     QgsGeometryUtils.__group__ = ['geometry']
 except (NameError, AttributeError):
     pass
@@ -12689,6 +14300,7 @@ try:
     QgsGeometryUtilsBase.circleAngleBetween = staticmethod(QgsGeometryUtilsBase.circleAngleBetween)
     QgsGeometryUtilsBase.angleOnCircle = staticmethod(QgsGeometryUtilsBase.angleOnCircle)
     QgsGeometryUtilsBase.circleLength = staticmethod(QgsGeometryUtilsBase.circleLength)
+    QgsGeometryUtilsBase.calculateArcLength = staticmethod(QgsGeometryUtilsBase.calculateArcLength)
     QgsGeometryUtilsBase.sweepAngle = staticmethod(QgsGeometryUtilsBase.sweepAngle)
     QgsGeometryUtilsBase.interpolateArcValue = staticmethod(QgsGeometryUtilsBase.interpolateArcValue)
     QgsGeometryUtilsBase.normalizedAngle = staticmethod(QgsGeometryUtilsBase.normalizedAngle)
@@ -12705,9 +14317,11 @@ try:
     QgsGeometryUtilsBase.pointFractionAlongLine = staticmethod(QgsGeometryUtilsBase.pointFractionAlongLine)
     QgsGeometryUtilsBase.weightedPointInTriangle = staticmethod(QgsGeometryUtilsBase.weightedPointInTriangle)
     QgsGeometryUtilsBase.pointsAreCollinear = staticmethod(QgsGeometryUtilsBase.pointsAreCollinear)
+    QgsGeometryUtilsBase.points3DAreCollinear = staticmethod(QgsGeometryUtilsBase.points3DAreCollinear)
     QgsGeometryUtilsBase.angleBisector = staticmethod(QgsGeometryUtilsBase.angleBisector)
     QgsGeometryUtilsBase.bisector = staticmethod(QgsGeometryUtilsBase.bisector)
     QgsGeometryUtilsBase.lineIntersection = staticmethod(QgsGeometryUtilsBase.lineIntersection)
+    QgsGeometryUtilsBase.intersectionPointOfLinesByBearing = staticmethod(QgsGeometryUtilsBase.intersectionPointOfLinesByBearing)
     QgsGeometryUtilsBase.segmentIntersection = staticmethod(QgsGeometryUtilsBase.segmentIntersection)
     QgsGeometryUtilsBase.project = staticmethod(QgsGeometryUtilsBase.project)
     QgsGeometryUtilsBase.azimuth = staticmethod(QgsGeometryUtilsBase.azimuth)
@@ -12724,7 +14338,7 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/geometry/qgsgeos.h
 try:
-    QgsGeos.__overridden_methods__ = ['geometryChanged', 'prepareGeometry', 'intersection', 'difference', 'combine', 'symDifference', 'buffer', 'simplify', 'interpolate', 'envelope', 'centroid', 'pointOnSurface', 'convexHull', 'distance', 'distanceWithin', 'intersects', 'touches', 'crosses', 'within', 'overlaps', 'contains', 'disjoint', 'relate', 'relatePattern', 'area', 'length', 'isValid', 'isEqual', 'isEmpty', 'isSimple', 'splitGeometry', 'offsetCurve']
+    QgsGeos.__overridden_methods__ = ['geometryChanged', 'prepareGeometry', 'intersection', 'difference', 'combine', 'symDifference', 'buffer', 'simplify', 'interpolate', 'envelope', 'centroid', 'pointOnSurface', 'convexHull', 'distance', 'distanceWithin', 'intersects', 'touches', 'crosses', 'within', 'overlaps', 'contains', 'disjoint', 'relate', 'relatePattern', 'area', 'length', 'isValid', 'isEqual', 'isFuzzyEqual', 'isEmpty', 'isSimple', 'splitGeometry', 'offsetCurve']
     QgsGeos.__group__ = ['geometry']
 except (NameError, AttributeError):
     pass
@@ -12751,6 +14365,14 @@ except (NameError, AttributeError):
 try:
     QgsGml.__attribute_docs__ = {'dataReadProgress': 'Emitted when data reading progresses.\n\n:param progress: specifies the number of bytes processed so far\n', 'totalStepsUpdate': 'Emitted when the total number of bytes to read changes.\n\n:param totalSteps: specifies the total number of bytes which must be\n                   processed\n', 'dataProgressAndSteps': 'Emitted when data reading progresses or the total number of bytes to\nread changes.\n\n:param progress: specifies the number of bytes processed so far\n:param totalSteps: specifies the total number of bytes which must be\n                   processed\n'}
     QgsGml.__signal_arguments__ = {'dataReadProgress': ['progress: int'], 'totalStepsUpdate': ['totalSteps: int'], 'dataProgressAndSteps': ['progress: int', 'totalSteps: int']}
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/core/./3d/materials/qgsgoochmaterialsettings.h
+try:
+    QgsGoochMaterialSettings.create = staticmethod(QgsGoochMaterialSettings.create)
+    QgsGoochMaterialSettings.supportsTechnique = staticmethod(QgsGoochMaterialSettings.supportsTechnique)
+    QgsGoochMaterialSettings.__overridden_methods__ = ['type', 'clone', 'equals', 'supportedProperties', 'averageColor', 'setColorsFromBase', 'readXml', 'writeXml']
+    QgsGoochMaterialSettings.__group__ = ['3d', 'materials']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/geocoding/qgsgooglemapsgeocoder.h
@@ -12806,8 +14428,13 @@ try:
     QgsGraduatedSymbolRenderer.createRenderer = staticmethod(QgsGraduatedSymbolRenderer.createRenderer)
     QgsGraduatedSymbolRenderer.create = staticmethod(QgsGraduatedSymbolRenderer.create)
     QgsGraduatedSymbolRenderer.convertFromRenderer = staticmethod(QgsGraduatedSymbolRenderer.convertFromRenderer)
-    QgsGraduatedSymbolRenderer.__overridden_methods__ = ['flags', 'symbolForFeature', 'originalSymbolForFeature', 'startRender', 'stopRender', 'usedAttributes', 'filterNeedsGeometry', 'dump', 'clone', 'toSld', 'capabilities', 'symbols', 'accept', 'save', 'legendSymbolItems', 'legendKeysForFeature', 'legendKeyToExpression', 'legendSymbolItemsCheckable', 'legendSymbolItemChecked', 'checkLegendSymbolItem', 'setLegendSymbolItem', 'legendClassificationAttribute']
+    QgsGraduatedSymbolRenderer.__overridden_methods__ = ['flags', 'symbolForFeature', 'originalSymbolForFeature', 'startRender', 'stopRender', 'usedAttributes', 'filterNeedsGeometry', 'dump', 'clone', 'toSld', 'capabilities', 'symbols', 'accept', 'save', 'legendSymbolItems', 'legendKeysForFeature', 'legendKeyToExpression', 'legendSymbolItemsCheckable', 'legendSymbolItemChecked', 'checkLegendSymbolItem', 'setLegendSymbolItem', 'setLegendSymbolItemLabel', 'legendClassificationAttribute']
     QgsGraduatedSymbolRenderer.__group__ = ['symbology']
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/core/qgsgroupedfeaturefilterprovider.h
+try:
+    QgsGroupedFeatureFilterProvider.__overridden_methods__ = ['isFilterThreadSafe', 'filterFeatures', 'layerAttributes', 'clone']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgsgrouplayer.h
@@ -12924,6 +14551,7 @@ try:
     QgsImageOperation.flipImage = staticmethod(QgsImageOperation.flipImage)
     QgsImageOperation.nonTransparentImageRect = staticmethod(QgsImageOperation.nonTransparentImageRect)
     QgsImageOperation.cropTransparent = staticmethod(QgsImageOperation.cropTransparent)
+    QgsImageOperation.floodFill = staticmethod(QgsImageOperation.floodFill)
     QgsImageOperation.__group__ = ['effects']
 except (NameError, AttributeError):
     pass
@@ -13211,7 +14839,7 @@ try:
 except (NameError, AttributeError):
     pass
 try:
-    QgsLayerMetadata.__overridden_methods__ = ['clone', 'readMetadataXml', 'writeMetadataXml', 'combine']
+    QgsLayerMetadata.__overridden_methods__ = ['clone', 'readMetadataXml', 'writeMetadataXml', 'combine', 'registerTranslations']
     QgsLayerMetadata.__group__ = ['metadata']
 except (NameError, AttributeError):
     pass
@@ -13270,10 +14898,18 @@ try:
     QgsLayerTree.__attribute_docs__ = {'customLayerOrderChanged': 'Emitted when the custom layer order has changed.\n', 'layerOrderChanged': 'Emitted when the layer order has changed.\n', 'hasCustomLayerOrderChanged': 'Emitted when the hasCustomLayerOrder flag changes.\n\n.. seealso:: :py:func:`hasCustomLayerOrder`\n'}
     QgsLayerTree.isGroup = staticmethod(QgsLayerTree.isGroup)
     QgsLayerTree.isLayer = staticmethod(QgsLayerTree.isLayer)
+    QgsLayerTree.isCustomNode = staticmethod(QgsLayerTree.isCustomNode)
     QgsLayerTree.readXml = staticmethod(QgsLayerTree.readXml)
     QgsLayerTree.__overridden_methods__ = ['writeXml', 'clone']
     QgsLayerTree.__signal_arguments__ = {'hasCustomLayerOrderChanged': ['hasCustomLayerOrder: bool']}
     QgsLayerTree.__group__ = ['layertree']
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/core/layertree/qgslayertreecustomnode.h
+try:
+    QgsLayerTreeCustomNode.readXml = staticmethod(QgsLayerTreeCustomNode.readXml)
+    QgsLayerTreeCustomNode.__overridden_methods__ = ['name', 'setName', 'writeXml', 'dump', 'clone', 'resolveReferences']
+    QgsLayerTreeCustomNode.__group__ = ['layertree']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/layertree/qgslayertreefilterproxymodel.h
@@ -13304,6 +14940,17 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/layertree/qgslayertreemodel.h
+QgsLayerTreeModel.Flags = lambda flags=0: QgsLayerTreeModel.Flag(flags)
+from enum import Enum
+
+
+def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+
+QgsLayerTreeModel.Flag.__bool__ = lambda flag: bool(_force_int(flag))
+QgsLayerTreeModel.Flag.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsLayerTreeModel.Flag.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsLayerTreeModel.Flag.__or__ = lambda flag1, flag2: QgsLayerTreeModel.Flag(_force_int(flag1) | _force_int(flag2))
 try:
     QgsLayerTreeModel.__attribute_docs__ = {'messageEmitted': 'Emits a message than can be displayed to the user in a GUI class\n\n.. versionadded:: 3.14\n', 'hitTestStarted': 'Emitted when a hit test for visible legend items starts.\n\n.. seealso:: :py:func:`hitTestInProgress`\n\n.. seealso:: :py:func:`hitTestCompleted`\n\n.. versionadded:: 3.32\n', 'hitTestCompleted': 'Emitted when a hit test for visible legend items completes.\n\n.. seealso:: :py:func:`hitTestInProgress`\n\n.. seealso:: :py:func:`hitTestStarted`\n\n.. versionadded:: 3.32\n'}
     QgsLayerTreeModel.index2legendNode = staticmethod(QgsLayerTreeModel.index2legendNode)
@@ -13360,13 +15007,13 @@ except (NameError, AttributeError):
     pass
 try:
     QgsLayerTreeModelLegendNode.__attribute_docs__ = {'dataChanged': 'Emitted on internal data change so the layer tree model can forward the\nsignal to views\n', 'sizeChanged': 'Emitted when the size of this node changes.\n\n.. versionadded:: 3.16\n'}
-    QgsLayerTreeModelLegendNode.__virtual_methods__ = ['flags', 'setData', 'isEmbeddedInParent', 'setEmbeddedInParent', 'userLabel', 'setUserLabel', 'userPatchSize', 'setUserPatchSize', 'setColumnBreak', 'columnBreak', 'isScaleOK', 'invalidateMapBasedData', 'draw', 'drawSymbol', 'exportSymbolToJson', 'drawSymbolText']
+    QgsLayerTreeModelLegendNode.__virtual_methods__ = ['flags', 'setData', 'isEmbeddedInParent', 'setEmbeddedInParent', 'userLabel', 'setUserLabel', 'userPatchSize', 'setUserPatchSize', 'setColumnBreak', 'columnBreak', 'isScaleOK', 'invalidateMapBasedData', 'invalidateDisplayData', 'draw', 'drawSymbol', 'exportSymbolToJson', 'drawSymbolText']
     QgsLayerTreeModelLegendNode.__abstract_methods__ = ['data']
     QgsLayerTreeModelLegendNode.__group__ = ['layertree']
 except (NameError, AttributeError):
     pass
 try:
-    QgsSymbolLegendNode.__overridden_methods__ = ['flags', 'data', 'setData', 'drawSymbol', 'exportSymbolToJson', 'setEmbeddedInParent', 'setUserLabel', 'isScaleOK', 'invalidateMapBasedData']
+    QgsSymbolLegendNode.__overridden_methods__ = ['flags', 'data', 'setData', 'invalidateDisplayData', 'drawSymbol', 'exportSymbolToJson', 'setEmbeddedInParent', 'setUserLabel', 'isScaleOK', 'invalidateMapBasedData']
     QgsSymbolLegendNode.__group__ = ['layertree']
 except (NameError, AttributeError):
     pass
@@ -13391,7 +15038,7 @@ try:
 except (NameError, AttributeError):
     pass
 try:
-    QgsDataDefinedSizeLegendNode.__overridden_methods__ = ['data', 'draw']
+    QgsDataDefinedSizeLegendNode.__overridden_methods__ = ['data', 'invalidateDisplayData', 'draw']
     QgsDataDefinedSizeLegendNode.__group__ = ['layertree']
 except (NameError, AttributeError):
     pass
@@ -13501,8 +15148,8 @@ try:
 except (NameError, AttributeError):
     pass
 try:
-    QgsLayoutExporter.PdfExportSettings.__attribute_docs__ = {'dpi': 'Resolution to export layout at. If dpi <= 0 the default layout dpi will be used.', 'rasterizeWholeImage': 'Set to ``True`` to force whole layout to be rasterized while exporting.\n\nThis option is mutually exclusive with forceVectorOutput.', 'forceVectorOutput': 'Set to ``True`` to force vector object exports, even when the resultant appearance will differ\nfrom the layout. If ``False``, some items may be rasterized in order to maintain their\ncorrect appearance in the output.\n\nThis option is mutually exclusive with rasterizeWholeImage.', 'appendGeoreference': 'Indicates whether PDF export should append georeference data\n\n.. versionadded:: 3.10', 'exportMetadata': "Indicates whether PDF export should include metadata generated\nfrom the layout's project's metadata.\n\n.. versionadded:: 3.2", 'flags': 'Layout context flags, which control how the export will be created.', 'textRenderFormat': 'Text rendering format, which controls how text should be rendered in the export (e.g.\nas paths or real text objects).\n\n.. versionadded:: 3.4.3', 'simplifyGeometries': 'Indicates whether vector geometries should be simplified to avoid redundant extraneous detail,\nsuch as vertices which are not visible at the specified dpi of the output.\n\n.. versionadded:: 3.10', 'writeGeoPdf': '``True`` if geospatial PDF files should be created, instead of normal PDF files.\n\nWhilst geospatial PDF files can include some desirable properties like the ability to interactively\nquery map features, they also can result in lower-quality output files, or forced rasterization\nof layers.\n\n.. note::\n\n   Requires builds based on GDAL 3.0 or greater.\n\n.. versionadded:: 3.10', 'exportLayersAsSeperateFiles': '``True`` if individual layers from the layout should be rendered to separate PDF files.\n\nThis option allows for separation of logic layout layers to individual PDF files. For instance,\nif this option is ``True``, then a separate PDF file will be created per layer per map item in the\nlayout. Additionally, separate PDF files may be created for other complex layout items, resulting\nin a set of PDF files which contain logical atomic components of the layout.\n\nThis option is designed to allow the PDF files to be composited back together in an external\napplication (e.g. Adobe Illustrator) as a non-QGIS, post-production step.\n\n.. versionadded:: 3.14', 'useIso32000ExtensionFormatGeoreferencing': '``True`` if ISO3200 extension format georeferencing should be used.\n\nThis is a recommended setting which results in Geospatial PDF files compatible\nwith the built-in Acrobat geospatial tools.\n\nIf PdfExportSettings.writeGeoPdf is ``False`` than this option has no effect.', 'useOgcBestPracticeFormatGeoreferencing': '``True`` if OGC "best practice" format georeferencing should be used.\n\n.. warning::\n\n   This results in geospatial PDF files compatible with a unnamed suite of tools starting with Terra and ending with Go, but\n   can break compatibility with the built-in Acrobat geospatial tools (yes, Geospatial PDF\n   format is a mess!).\n\nIf PdfExportSettings.writeGeoPdf is ``False`` than this option has no effect.\n\n.. deprecated:: 3.42\n\n   This parameter has no longer any effect. Only ISO 32000 georeferencing is handled.', 'includeGeoPdfFeatures': '``True`` if feature vector information (such as attributes) should be exported during Geospatial PDF exports.\n\nIf PdfExportSettings.writeGeoPdf is ``False`` than this option has no effect.', 'exportThemes': "Optional list of map themes to export as Geospatial PDF layer groups.\n\nIf set, map item's which are not assigned a specific map theme will iterate through all listed\nthemes and a Geospatial PDF layer group will be created for each.\n\nIf PdfExportSettings.writeGeoPdf is ``False`` than this option has no effect.", 'predefinedMapScales': 'A list of predefined scales to use with the layout. This is used\nfor maps which are set to the predefined atlas scaling mode.\n\n.. versionadded:: 3.10'}
-    QgsLayoutExporter.PdfExportSettings.__annotations__ = {'dpi': float, 'rasterizeWholeImage': bool, 'forceVectorOutput': bool, 'appendGeoreference': bool, 'exportMetadata': bool, 'flags': 'Qgis.LayoutRenderFlags', 'textRenderFormat': 'Qgis.TextRenderFormat', 'simplifyGeometries': bool, 'writeGeoPdf': bool, 'exportLayersAsSeperateFiles': bool, 'useIso32000ExtensionFormatGeoreferencing': bool, 'useOgcBestPracticeFormatGeoreferencing': bool, 'includeGeoPdfFeatures': bool, 'exportThemes': 'List[str]', 'predefinedMapScales': 'List[float]'}
+    QgsLayoutExporter.PdfExportSettings.__attribute_docs__ = {'dpi': 'Resolution to export layout at. If dpi <= 0 the default layout dpi will be used.', 'rasterizeWholeImage': 'Set to ``True`` to force whole layout to be rasterized while exporting.\n\nThis option is mutually exclusive with forceVectorOutput.', 'forceVectorOutput': 'Set to ``True`` to force vector object exports, even when the resultant appearance will differ\nfrom the layout. If ``False``, some items may be rasterized in order to maintain their\ncorrect appearance in the output.\n\nThis option is mutually exclusive with rasterizeWholeImage.', 'appendGeoreference': 'Indicates whether PDF export should append georeference data\n\n.. versionadded:: 3.10', 'exportMetadata': "Indicates whether PDF export should include metadata generated\nfrom the layout's project's metadata.\n\n.. versionadded:: 3.2", 'flags': 'Layout context flags, which control how the export will be created.', 'textRenderFormat': 'Text rendering format, which controls how text should be rendered in the export (e.g.\nas paths or real text objects).\n\n.. versionadded:: 3.4.3', 'simplifyGeometries': 'Indicates whether vector geometries should be simplified to avoid redundant extraneous detail,\nsuch as vertices which are not visible at the specified dpi of the output.\n\n.. versionadded:: 3.10', 'writeGeoPdf': '``True`` if geospatial PDF files should be created, instead of normal PDF files.\n\nWhilst geospatial PDF files can include some desirable properties like the ability to interactively\nquery map features, they also can result in lower-quality output files, or forced rasterization\nof layers.\n\n.. note::\n\n   Requires builds based on GDAL 3.0 or greater.\n\n.. versionadded:: 3.10', 'exportLayersAsSeperateFiles': '``True`` if individual layers from the layout should be rendered to separate PDF files.\n\nThis option allows for separation of logic layout layers to individual PDF files. For instance,\nif this option is ``True``, then a separate PDF file will be created per layer per map item in the\nlayout. Additionally, separate PDF files may be created for other complex layout items, resulting\nin a set of PDF files which contain logical atomic components of the layout.\n\nThis option is designed to allow the PDF files to be composited back together in an external\napplication (e.g. Adobe Illustrator) as a non-QGIS, post-production step.\n\n.. versionadded:: 3.14', 'useIso32000ExtensionFormatGeoreferencing': '``True`` if ISO3200 extension format georeferencing should be used.\n\nThis is a recommended setting which results in Geospatial PDF files compatible\nwith the built-in Acrobat geospatial tools.\n\nIf PdfExportSettings.writeGeoPdf is ``False`` then this option has no effect.', 'useOgcBestPracticeFormatGeoreferencing': '``True`` if OGC "best practice" format georeferencing should be used.\n\n.. warning::\n\n   This results in geospatial PDF files compatible with a unnamed suite of tools starting with Terra and ending with Go, but\n   can break compatibility with the built-in Acrobat geospatial tools (yes, Geospatial PDF\n   format is a mess!).\n\nIf PdfExportSettings.writeGeoPdf is ``False`` then this option has no effect.\n\n.. deprecated:: 3.42\n\n   This parameter has no longer any effect. Only ISO 32000 georeferencing is handled.', 'includeGeoPdfFeatures': '``True`` if feature vector information (such as attributes) should be exported during Geospatial PDF exports.\n\nIf PdfExportSettings.writeGeoPdf is ``False`` then this option has no effect.', 'exportThemes': "Optional list of map themes to export as Geospatial PDF layer groups.\n\nIf set, map item's which are not assigned a specific map theme will iterate through all listed\nthemes and a Geospatial PDF layer group will be created for each.\n\nIf PdfExportSettings.writeGeoPdf is ``False`` or PdfExportSettings.useLayerTreeConfig is ``True``\nthen this option has no effect.", 'predefinedMapScales': 'A list of predefined scales to use with the layout. This is used\nfor maps which are set to the predefined atlas scaling mode.\n\n.. versionadded:: 3.10', 'useLayerTreeConfig': 'If set to ``True``, the layer tree from the QGIS project should be used when creating a Geospatial PDF.\nIn that case, layer/group names, order, and visibility from the QGIS project will be reflected in the output PDF.\n\nWhen this option is active, the PdfExportSettings.exportThemes option has no effect.\n\nIf PdfExportSettings.writeGeoPdf is ``False`` then this option has no effect.\n\n.. versionadded:: 4.2'}
+    QgsLayoutExporter.PdfExportSettings.__annotations__ = {'dpi': float, 'rasterizeWholeImage': bool, 'forceVectorOutput': bool, 'appendGeoreference': bool, 'exportMetadata': bool, 'flags': 'Qgis.LayoutRenderFlags', 'textRenderFormat': 'Qgis.TextRenderFormat', 'simplifyGeometries': bool, 'writeGeoPdf': bool, 'exportLayersAsSeperateFiles': bool, 'useIso32000ExtensionFormatGeoreferencing': bool, 'useOgcBestPracticeFormatGeoreferencing': bool, 'includeGeoPdfFeatures': bool, 'exportThemes': 'List[str]', 'predefinedMapScales': 'List[float]', 'useLayerTreeConfig': bool}
     QgsLayoutExporter.PdfExportSettings.__doc__ = """Contains settings relating to exporting layouts to PDF"""
     QgsLayoutExporter.PdfExportSettings.__group__ = ['layout']
 except (NameError, AttributeError):
@@ -13602,6 +15249,17 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/layout/qgslayoutitem.h
+QgsLayoutItem.Flags = lambda flags=0: QgsLayoutItem.Flag(flags)
+from enum import Enum
+
+
+def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+
+QgsLayoutItem.Flag.__bool__ = lambda flag: bool(_force_int(flag))
+QgsLayoutItem.Flag.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsLayoutItem.Flag.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsLayoutItem.Flag.__or__ = lambda flag1, flag2: QgsLayoutItem.Flag(_force_int(flag1) | _force_int(flag2))
 try:
     QgsLayoutItem.ExportLayerDetail.__attribute_docs__ = {'name': 'User-friendly name for the export layer', 'mapLayerId': 'Associated map layer ID, or an empty string if this export layer is not associated with a map layer', 'compositionMode': 'Associated composition mode if this layer is associated with a map layer\n\n.. versionadded:: 3.14', 'opacity': 'Associated opacity, if this layer is associated with a map layer\n\n.. versionadded:: 3.14', 'mapTheme': 'Associated map theme, or an empty string if this export layer does not need to be associated with a map theme', 'groupName': 'Associated group name, if this layer is associated with an export group.\n\n.. versionadded:: 3.40'}
     QgsLayoutItem.ExportLayerDetail.__annotations__ = {'name': str, 'mapLayerId': str, 'compositionMode': 'QPainter.CompositionMode', 'opacity': float, 'mapTheme': str, 'groupName': str}
@@ -13629,6 +15287,17 @@ try:
     QgsLayoutItemAttributeTable.create = staticmethod(QgsLayoutItemAttributeTable.create)
     QgsLayoutItemAttributeTable.__overridden_methods__ = ['type', 'icon', 'displayName', 'getTableContents', 'conditionalCellStyle', 'textFormatForCell', 'scopeForCell', 'createExpressionContext', 'finalizeRestoreFromXml', 'refreshDataDefinedProperty', 'writePropertiesToElement', 'readPropertiesFromElement']
     QgsLayoutItemAttributeTable.__group__ = ['layout']
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/core/layout/qgslayoutitemchart.h
+try:
+    QgsLayoutItemChart.create = staticmethod(QgsLayoutItemChart.create)
+    QgsLayoutItemChart.__overridden_methods__ = ['type', 'icon', 'paint', 'finalizeRestoreFromXml', 'refresh', 'draw', 'writePropertiesToElement', 'readPropertiesFromElement']
+    QgsLayoutItemChart.__group__ = ['layout']
+except (NameError, AttributeError):
+    pass
+try:
+    QgsLayoutItemChart.SeriesDetails.__group__ = ['layout']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/layout/qgslayoutitemelevationprofile.h
@@ -13682,6 +15351,17 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/layout/qgslayoutitemmap.h
+QgsLayoutItemMap.MapItemFlags = lambda flags=0: QgsLayoutItemMap.MapItemFlag(flags)
+from enum import Enum
+
+
+def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+
+QgsLayoutItemMap.MapItemFlag.__bool__ = lambda flag: bool(_force_int(flag))
+QgsLayoutItemMap.MapItemFlag.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsLayoutItemMap.MapItemFlag.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsLayoutItemMap.MapItemFlag.__or__ = lambda flag1, flag2: QgsLayoutItemMap.MapItemFlag(_force_int(flag1) | _force_int(flag2))
 try:
     QgsLayoutItemMapAtlasClippingSettings.__attribute_docs__ = {'changed': 'Emitted when the atlas clipping settings are changed.\n'}
     QgsLayoutItemMapAtlasClippingSettings.__group__ = ['layout']
@@ -13710,6 +15390,11 @@ except (NameError, AttributeError):
 try:
     QgsLayoutItemMapGridStack.__overridden_methods__ = ['readXml']
     QgsLayoutItemMapGridStack.__group__ = ['layout']
+except (NameError, AttributeError):
+    pass
+try:
+    QgsLayoutItemMapGrid.GridLine.__doc__ = """Helper that represents a grid line, for drawing the line itself an the
+anotations on the frame."""
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/layout/qgslayoutitemmapitem.h
@@ -13764,7 +15449,7 @@ except (NameError, AttributeError):
 try:
     QgsLayoutItemPicture.__attribute_docs__ = {'pictureRotationChanged': 'Emitted on picture rotation change\n'}
     QgsLayoutItemPicture.create = staticmethod(QgsLayoutItemPicture.create)
-    QgsLayoutItemPicture.__overridden_methods__ = ['type', 'icon', 'finalizeRestoreFromXml', 'refreshDataDefinedProperty', 'draw', 'applyItemSizeConstraint', 'writePropertiesToElement', 'readPropertiesFromElement']
+    QgsLayoutItemPicture.__overridden_methods__ = ['type', 'icon', 'finalizeRestoreFromXml', 'refreshDataDefinedProperty', 'draw', 'framePath', 'applyItemSizeConstraint', 'writePropertiesToElement', 'readPropertiesFromElement']
     QgsLayoutItemPicture.__signal_arguments__ = {'pictureRotationChanged': ['newRotation: float']}
     QgsLayoutItemPicture.__group__ = ['layout']
 except (NameError, AttributeError):
@@ -13785,8 +15470,8 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/layout/qgslayoutitemregistry.h
 try:
-    QgsLayoutItemRegistry.__attribute_docs__ = {'typeAdded': 'Emitted whenever a new item type is added to the registry, with the\nspecified ``type`` and visible ``name``.\n', 'multiFrameTypeAdded': 'Emitted whenever a new multiframe type is added to the registry, with\nthe specified ``type`` and visible ``name``.\n'}
-    QgsLayoutItemRegistry.__signal_arguments__ = {'typeAdded': ['type: int', 'name: str'], 'multiFrameTypeAdded': ['type: int', 'name: str']}
+    QgsLayoutItemRegistry.__attribute_docs__ = {'typeAdded': 'Emitted whenever a new item type is added to the registry, with the\nspecified ``type`` and visible ``name``.\n', 'typeRemoved': 'Emitted whenever an item type is removed from the registry with the\nspecified ``type``.\n\n.. versionadded:: 4.0\n', 'multiFrameTypeAdded': 'Emitted whenever a new multiframe type is added to the registry, with\nthe specified ``type`` and visible ``name``.\n', 'multiFrameTypeRemoved': 'Emitted whenever an multiframe type is removed from the registry with\nthe specified ``type``.\n\n.. versionadded:: 4.0\n'}
+    QgsLayoutItemRegistry.__signal_arguments__ = {'typeAdded': ['type: int', 'name: str'], 'typeRemoved': ['type: int'], 'multiFrameTypeAdded': ['type: int', 'name: str'], 'multiFrameTypeRemoved': ['type: int']}
     QgsLayoutItemRegistry.__group__ = ['layout']
 except (NameError, AttributeError):
     pass
@@ -13824,6 +15509,14 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/layout/qgslayoutmanager.h
+try:
+    QgsLayoutManager.__attribute_docs__ = {'layoutAboutToBeAdded': 'Emitted when a layout is about to be added to the manager\n', 'layoutAdded': 'Emitted when a layout has been added to the manager\n', 'layoutRemoved': 'Emitted when a layout was removed from the manager\n', 'layoutAboutToBeRemoved': 'Emitted when a layout is about to be removed from the manager\n', 'layoutRenamed': 'Emitted when a layout is renamed\n'}
+    QgsLayoutManager.__overridden_methods__ = ['setupObjectConnections']
+    QgsLayoutManager.__signal_arguments__ = {'layoutAboutToBeAdded': ['name: str'], 'layoutAdded': ['name: str'], 'layoutRemoved': ['name: str'], 'layoutAboutToBeRemoved': ['name: str'], 'layoutRenamed': ['layout: QgsMasterLayoutInterface', 'newName: str']}
+    QgsLayoutManager.__group__ = ['layout']
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/core/layout/qgslayoutmanagermodel.h
 # monkey patching scoped based enum
 QgsLayoutManagerModel.Role.LayoutRole = QgsLayoutManagerModel.CustomRole.Layout
 QgsLayoutManagerModel.LayoutRole.__doc__ = "Layout object"
@@ -13843,22 +15536,26 @@ QgsLayoutManagerModel.CustomRole.__doc__ = """Custom model roles.
 """
 # --
 QgsLayoutManagerModel.CustomRole.baseClass = QgsLayoutManagerModel
+QgsLayoutManagerProxyModel.Filters = lambda flags=0: QgsLayoutManagerProxyModel.Filter(flags)
 QgsLayoutManagerProxyModel.Filters.baseClass = QgsLayoutManagerProxyModel
 Filters = QgsLayoutManagerProxyModel  # dirty hack since SIP seems to introduce the flags in module
+from enum import Enum
+
+
+def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+
+QgsLayoutManagerProxyModel.Filter.__bool__ = lambda flag: bool(_force_int(flag))
+QgsLayoutManagerProxyModel.Filter.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsLayoutManagerProxyModel.Filter.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsLayoutManagerProxyModel.Filter.__or__ = lambda flag1, flag2: QgsLayoutManagerProxyModel.Filter(_force_int(flag1) | _force_int(flag2))
 try:
-    QgsLayoutManager.__attribute_docs__ = {'layoutAboutToBeAdded': 'Emitted when a layout is about to be added to the manager\n', 'layoutAdded': 'Emitted when a layout has been added to the manager\n', 'layoutRemoved': 'Emitted when a layout was removed from the manager\n', 'layoutAboutToBeRemoved': 'Emitted when a layout is about to be removed from the manager\n', 'layoutRenamed': 'Emitted when a layout is renamed\n'}
-    QgsLayoutManager.__signal_arguments__ = {'layoutAboutToBeAdded': ['name: str'], 'layoutAdded': ['name: str'], 'layoutRemoved': ['name: str'], 'layoutAboutToBeRemoved': ['name: str'], 'layoutRenamed': ['layout: QgsMasterLayoutInterface', 'newName: str']}
-    QgsLayoutManager.__group__ = ['layout']
-except (NameError, AttributeError):
-    pass
-try:
-    QgsLayoutManagerModel.__overridden_methods__ = ['rowCount', 'data', 'setData', 'flags']
-    QgsLayoutManagerModel.__group__ = ['layout']
-except (NameError, AttributeError):
-    pass
-try:
-    QgsLayoutManagerProxyModel.__overridden_methods__ = ['lessThan', 'filterAcceptsRow']
+    QgsLayoutManagerProxyModel.__overridden_methods__ = ['filterAcceptsRowInternal']
     QgsLayoutManagerProxyModel.__group__ = ['layout']
+except (NameError, AttributeError):
+    pass
+try:
+    QgsLayoutManagerModel.__group__ = ['layout']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/layout/qgslayoutmeasurement.h
@@ -13953,6 +15650,7 @@ QgsLayoutObject.MapGridFrameDivisionsLeft.__doc__ = "Map frame division display 
 QgsLayoutObject.MapGridFrameDivisionsRight.__doc__ = "Map frame division display right"
 QgsLayoutObject.MapGridFrameDivisionsTop.__doc__ = "Map frame division display top"
 QgsLayoutObject.MapGridFrameDivisionsBottom.__doc__ = "Map frame division display bottom"
+QgsLayoutObject.MapGridDrawAnnotation.__doc__ = "Map annotation visibility (for individual annotations) \n.. versionadded:: 4.0"
 QgsLayoutObject.MapCrs.__doc__ = "Map CRS"
 QgsLayoutObject.StartDateTime.__doc__ = "Temporal range's start DateTime"
 QgsLayoutObject.EndDateTime.__doc__ = "Temporal range's end DateTime"
@@ -14056,6 +15754,10 @@ QgsLayoutObject.DataDefinedProperty.__doc__ = """Data defined properties for dif
 * ``MapGridFrameDivisionsRight``: Map frame division display right
 * ``MapGridFrameDivisionsTop``: Map frame division display top
 * ``MapGridFrameDivisionsBottom``: Map frame division display bottom
+* ``MapGridDrawAnnotation``: Map annotation visibility (for individual annotations)
+
+  .. versionadded:: 4.0
+
 * ``MapCrs``: Map CRS
 * ``StartDateTime``: Temporal range's start DateTime
 * ``EndDateTime``: Temporal range's end DateTime
@@ -14325,6 +16027,14 @@ try:
     QgsLinearReferencingSymbolLayer.__group__ = ['symbology']
 except (NameError, AttributeError):
     pass
+# The following has been generated automatically from src/core/plot/qgslinechartplot.h
+try:
+    QgsLineChartPlot.create = staticmethod(QgsLineChartPlot.create)
+    QgsLineChartPlot.createDataGatherer = staticmethod(QgsLineChartPlot.createDataGatherer)
+    QgsLineChartPlot.__overridden_methods__ = ['type', 'renderContent', 'writeXml', 'readXml', 'initFromPlot']
+    QgsLineChartPlot.__group__ = ['plot']
+except (NameError, AttributeError):
+    pass
 # The following has been generated automatically from src/core/geometry/qgslinesegment.h
 try:
     QgsLineSegment2D.__group__ = ['geometry']
@@ -14334,7 +16044,7 @@ except (NameError, AttributeError):
 try:
     QgsLineString.fromBezierCurve = staticmethod(QgsLineString.fromBezierCurve)
     QgsLineString.fromQPolygonF = staticmethod(QgsLineString.fromQPolygonF)
-    QgsLineString.__overridden_methods__ = ['fuzzyEqual', 'fuzzyDistanceEqual', 'equals', 'xAt', 'yAt', 'zAt', 'mAt', 'toCurveType', 'geometryType', 'dimension', 'clone', 'clear', 'isEmpty', 'indexOf', 'isValid', 'snappedToGrid', 'removeDuplicateNodes', 'isClosed', 'isClosed2D', 'boundingBoxIntersects', 'asQPolygonF', 'simplifyByDistance', 'fromWkb', 'fromWkt', 'wkbSize', 'asWkb', 'asWkt', 'asGml2', 'asGml3', 'asKml', 'length', 'startPoint', 'endPoint', 'curveToLine', 'numPoints', 'nCoordinates', 'points', 'draw', 'transform', 'addToPainterPath', 'drawAsPolygon', 'insertVertex', 'moveVertex', 'deleteVertex', 'reversed', 'interpolatePoint', 'curveSubstring', 'closestSegment', 'pointAt', 'centroid', 'sumUpArea', 'vertexAngle', 'segmentLength', 'addZValue', 'addMValue', 'dropZValue', 'dropMValue', 'swapXy', 'convertTo', 'scroll', 'createEmptyWithSameType', 'calculateBoundingBox3D', 'compareToSameClass']
+    QgsLineString.__overridden_methods__ = ['toCurveType', 'geometryType', 'clone', 'clear', 'indexOf', 'isValid', 'snappedToGrid', 'removeDuplicateNodes', 'isClosed', 'isClosed2D', 'boundingBoxIntersects', 'asQPolygonF', 'simplifyByDistance', 'asGml2', 'asGml3', 'asKml', 'length', 'curveToLine', 'draw', 'addToPainterPath', 'drawAsPolygon', 'insertVertex', 'deleteVertex', 'deleteVertices', 'reversed', 'interpolatePoint', 'curveSubstring', 'closestSegment', 'pointAt', 'centroid', 'sumUpArea', 'sumUpArea3D', 'vertexAngle', 'segmentLength', 'distanceBetweenVertices', 'convertTo', 'createEmptyWithSameType', 'calculateBoundingBox3D']
     QgsLineString.__group__ = ['geometry']
 except (NameError, AttributeError):
     pass
@@ -14355,9 +16065,8 @@ except (NameError, AttributeError):
     pass
 try:
     QgsTemplatedLineSymbolLayerBase.setCommonProperties = staticmethod(QgsTemplatedLineSymbolLayerBase.setCommonProperties)
-    QgsTemplatedLineSymbolLayerBase.__virtual_methods__ = ['renderPolygonStroke', 'outputUnit', 'setMapUnitScale', 'mapUnitScale']
     QgsTemplatedLineSymbolLayerBase.__abstract_methods__ = ['setSymbolLineAngle', 'symbolAngle', 'setSymbolAngle', 'renderSymbol']
-    QgsTemplatedLineSymbolLayerBase.__overridden_methods__ = ['renderPolyline', 'setOutputUnit', 'properties', 'canCauseArtifactsBetweenAdjacentTiles', 'startFeatureRender', 'stopFeatureRender']
+    QgsTemplatedLineSymbolLayerBase.__overridden_methods__ = ['renderPolyline', 'renderPolygonStroke', 'outputUnit', 'setOutputUnit', 'setMapUnitScale', 'mapUnitScale', 'properties', 'canCauseArtifactsBetweenAdjacentTiles', 'startFeatureRender', 'stopFeatureRender']
     QgsTemplatedLineSymbolLayerBase.__group__ = ['symbology']
 except (NameError, AttributeError):
     pass
@@ -14428,8 +16137,19 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/locator/qgslocatorfilter.h
 QgsLocatorFilter.Priority.baseClass = QgsLocatorFilter
+QgsLocatorFilter.Flags = lambda flags=0: QgsLocatorFilter.Flag(flags)
 QgsLocatorFilter.Flags.baseClass = QgsLocatorFilter
 Flags = QgsLocatorFilter  # dirty hack since SIP seems to introduce the flags in module
+from enum import Enum
+
+
+def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+
+QgsLocatorFilter.Flag.__bool__ = lambda flag: bool(_force_int(flag))
+QgsLocatorFilter.Flag.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsLocatorFilter.Flag.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsLocatorFilter.Flag.__or__ = lambda flag1, flag2: QgsLocatorFilter.Flag(_force_int(flag1) | _force_int(flag2))
 try:
     QgsLocatorResult.__attribute_docs__ = {'filter': 'Filter from which the result was obtained. This is automatically set.', 'displayString': 'String displayed for result.', 'description': 'Descriptive text for result.', 'icon': 'Icon for result.', 'score': 'Match score, from 0 - 1, where 1 represents a perfect match.', 'group': 'Group the results by categories\nIf left as empty string, this means that results are all shown without being grouped.\nIf a group is given, the results will be grouped by ``group`` under a header.\n\n.. note::\n\n   This should be translated.\n\n.. versionadded:: 3.2', 'groupScore': 'Specifies the score of the group to allow ordering.\nScore must be positive, higher scores are shown first.\nIf the scores are left to 0 or are identical,\nthe sorting of groups is made alphabetically.\n\n.. versionadded:: 3.40', 'actions': 'Additional actions to be used in a locator widget\nfor the given result. They could be displayed in\na context menu.\n\n.. versionadded:: 3.6'}
     QgsLocatorResult.__annotations__ = {'filter': 'QgsLocatorFilter', 'displayString': str, 'description': str, 'icon': 'QIcon', 'score': float, 'group': str, 'groupScore': float, 'actions': 'List[QgsLocatorResult.ResultAction]'}
@@ -14541,12 +16261,21 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgslogger.h
 try:
+    QgsLogger.debug = staticmethod(QgsLogger.debug)
     QgsLogger.warning = staticmethod(QgsLogger.warning)
     QgsLogger.critical = staticmethod(QgsLogger.critical)
     QgsLogger.fatal = staticmethod(QgsLogger.fatal)
     QgsLogger.debugLevel = staticmethod(QgsLogger.debugLevel)
     QgsLogger.logMessageToFile = staticmethod(QgsLogger.logMessageToFile)
     QgsLogger.logFile = staticmethod(QgsLogger.logFile)
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/core/qgsmagneticmodel.h
+try:
+    QgsMagneticModel.defaultFilePath = staticmethod(QgsMagneticModel.defaultFilePath)
+    QgsMagneticModel.defaultModelName = staticmethod(QgsMagneticModel.defaultModelName)
+    QgsMagneticModel.fieldComponents = staticmethod(QgsMagneticModel.fieldComponents)
+    QgsMagneticModel.fieldComponentsWithTimeDerivatives = staticmethod(QgsMagneticModel.fieldComponentsWithTimeDerivatives)
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/vectortile/qgsmapboxglstyleconverter.h
@@ -14576,6 +16305,25 @@ QgsMapBoxGlStyleConverter.PropertyType.__doc__ = """Property types, for interpol
 """
 # --
 QgsMapBoxGlStyleConverter.PropertyType.baseClass = QgsMapBoxGlStyleConverter
+# monkey patching scoped based enum
+QgsMapBoxGlStyleConverter.InterpolationType.Linear.__doc__ = "Linear interpolation"
+QgsMapBoxGlStyleConverter.InterpolationType.Exponential.__doc__ = "Exponential interpolation"
+QgsMapBoxGlStyleConverter.InterpolationType.CubicBezier.__doc__ = "Cubic-bezier interpolation"
+QgsMapBoxGlStyleConverter.InterpolationType.__doc__ = """Interpolation types, for interpolated value conversion
+
+.. warning::
+
+   This is private API only, and may change in future QGIS versions
+
+.. versionadded:: 4.2
+
+* ``Linear``: Linear interpolation
+* ``Exponential``: Exponential interpolation
+* ``CubicBezier``: Cubic-bezier interpolation
+
+"""
+# --
+QgsMapBoxGlStyleConverter.InterpolationType.baseClass = QgsMapBoxGlStyleConverter
 try:
     QgsMapBoxGlStyleConverter.parseFillLayer = staticmethod(QgsMapBoxGlStyleConverter.parseFillLayer)
     QgsMapBoxGlStyleConverter.parseLineLayer = staticmethod(QgsMapBoxGlStyleConverter.parseLineLayer)
@@ -14676,11 +16424,14 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgsmaplayer.h
 QgsMapLayer.LayerFlag.baseClass = QgsMapLayer
+QgsMapLayer.LayerFlags = lambda flags=0: QgsMapLayer.LayerFlag(flags)
 QgsMapLayer.LayerFlags.baseClass = QgsMapLayer
 LayerFlags = QgsMapLayer  # dirty hack since SIP seems to introduce the flags in module
 QgsMapLayer.StyleCategory.baseClass = QgsMapLayer
+QgsMapLayer.StyleCategories = lambda flags=0: QgsMapLayer.StyleCategory(flags)
 QgsMapLayer.StyleCategories.baseClass = QgsMapLayer
 StyleCategories = QgsMapLayer  # dirty hack since SIP seems to introduce the flags in module
+QgsMapLayer.ReadFlags = lambda flags=0: QgsMapLayer.ReadFlag(flags)
 # monkey patching scoped based enum
 QgsMapLayer.SaveStyleResult.Success.__doc__ = "Both QML and SLD formats were successfully written to the database."
 QgsMapLayer.SaveStyleResult.QmlGenerationFailed.__doc__ = "Generation of the QML failed, and was not written to the database."
@@ -14698,19 +16449,39 @@ QgsMapLayer.SaveStyleResult.__doc__ = """Results of saving styles to database.
 """
 # --
 QgsMapLayer.SaveStyleResult.baseClass = QgsMapLayer
+QgsMapLayer.SaveStyleResults = lambda flags=0: QgsMapLayer.SaveStyleResult(flags)
 QgsMapLayer.SaveStyleResults.baseClass = QgsMapLayer
 SaveStyleResults = QgsMapLayer  # dirty hack since SIP seems to introduce the flags in module
+from enum import Enum
+
+
+def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+
+QgsMapLayer.LayerFlag.__bool__ = lambda flag: bool(_force_int(flag))
+QgsMapLayer.LayerFlag.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsMapLayer.LayerFlag.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsMapLayer.LayerFlag.__or__ = lambda flag1, flag2: QgsMapLayer.LayerFlag(_force_int(flag1) | _force_int(flag2))
+QgsMapLayer.StyleCategory.__bool__ = lambda flag: bool(_force_int(flag))
+QgsMapLayer.StyleCategory.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsMapLayer.StyleCategory.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsMapLayer.StyleCategory.__or__ = lambda flag1, flag2: QgsMapLayer.StyleCategory(_force_int(flag1) | _force_int(flag2))
+QgsMapLayer.ReadFlag.__bool__ = lambda flag: bool(_force_int(flag))
+QgsMapLayer.ReadFlag.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsMapLayer.ReadFlag.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsMapLayer.ReadFlag.__or__ = lambda flag1, flag2: QgsMapLayer.ReadFlag(_force_int(flag1) | _force_int(flag2))
 try:
     QgsMapLayer.__attribute_docs__ = {'beforeResolveReferences': 'Emitted when all layers are loaded and references can be resolved, just\nbefore the references of this layer are resolved.\n\n.. versionadded:: 3.10\n', 'statusChanged': 'Emit a signal with status (e.g. to be caught by QgisApp and display a\nmsg on status bar)\n', 'idChanged': "Emitted when the layer's ID has been changed.\n\n.. seealso:: :py:func:`id`\n\n.. seealso:: :py:func:`setId`\n\n.. versionadded:: 3.38\n", 'nameChanged': 'Emitted when the name has been changed\n', 'crsChanged': 'Emitted when the :py:func:`~QgsMapLayer.crs` of the layer has changed.\n\n.. seealso:: :py:func:`crs`\n\n.. seealso:: :py:func:`setCrs`\n\n.. seealso:: :py:func:`verticalCrsChanged`\n\n.. seealso:: :py:func:`crs3DChanged`\n', 'crs3DChanged': 'Emitted when the :py:func:`~QgsMapLayer.crs3D` of the layer has changed.\n\n.. seealso:: :py:func:`crs3D`\n\n.. seealso:: :py:func:`crsChanged`\n\n.. seealso:: :py:func:`verticalCrsChanged`\n\n.. versionadded:: 3.38\n', 'verticalCrsChanged': 'Emitted when the :py:func:`~QgsMapLayer.verticalCrs` of the layer has\nchanged.\n\nThis signal will be emitted whenever the vertical CRS of the layer is\nchanged, either as a direct result of a call to\n:py:func:`~QgsMapLayer.setVerticalCrs` or when\n:py:func:`~QgsMapLayer.setCrs` is called with a compound CRS.\n\n.. seealso:: :py:func:`crsChanged`\n\n.. seealso:: :py:func:`crs3DChanged`\n\n.. seealso:: :py:func:`setCrs`\n\n.. seealso:: :py:func:`setVerticalCrs`\n\n.. seealso:: :py:func:`verticalCrs`\n\n.. versionadded:: 3.38\n', 'repaintRequested': 'By emitting this signal the layer tells that either appearance or\ncontent have been changed and any view showing the rendered layer should\nrefresh itself. If ``deferredUpdate`` is ``True`` then the layer will\nonly be repainted when the canvas is next re-rendered, and will not\ntrigger any canvas redraws itself.\n', 'recalculateExtents': 'This is used to send a request that any mapcanvas using this layer\nupdate its extents\n', 'dataChanged': 'Data of layer changed\n', 'blendModeChanged': 'Signal emitted when the blend mode is changed, through\n:py:func:`QgsMapLayer.setBlendMode()`\n', 'opacityChanged': "Emitted when the layer's opacity is changed, where ``opacity`` is a\nvalue between 0 (transparent) and 1 (opaque).\n\n.. seealso:: :py:func:`setOpacity`\n\n.. seealso:: :py:func:`opacity`\n\n.. note::\n\n   Prior to QGIS 3.18, this signal was available for vector layers only\n\n.. versionadded:: 3.18\n", 'rendererChanged': 'Signal emitted when renderer is changed.\n\n.. seealso:: :py:func:`styleChanged`\n', 'styleChanged': "Signal emitted whenever a change affects the layer's style. Ie this may\nbe triggered by renderer changes, label style changes, or other style\nchanges such as blend mode or layer opacity changes.\n\n.. warning::\n\n   This signal should never be manually emitted. Instead call the :py:func:`~QgsMapLayer.emitStyleChanged` method\n   to ensure that the signal is only emitted when appropriate.\n\n.. seealso:: :py:func:`rendererChanged`\n", 'legendChanged': 'Signal emitted when legend of the layer has changed\n', 'renderer3DChanged': 'Signal emitted when 3D renderer associated with the layer has changed.\n', 'request3DUpdate': 'Signal emitted when a layer requires an update in any 3D maps.\n\n.. versionadded:: 3.18\n', 'configChanged': 'Emitted whenever the configuration is changed. The project listens to\nthis signal to be marked as dirty.\n', 'dependenciesChanged': 'Emitted when dependencies are changed.\n', 'willBeDeleted': 'Emitted in the destructor when the layer is about to be deleted, but it\nis still in a perfectly valid state: the last chance for other pieces of\ncode for some cleanup if they use the layer.\n', 'autoRefreshIntervalChanged': 'Emitted when the auto refresh interval changes.\n\n.. seealso:: :py:func:`setAutoRefreshInterval`\n', 'metadataChanged': "Emitted when the layer's metadata is changed.\n\n.. seealso:: :py:func:`setMetadata`\n\n.. seealso:: :py:func:`metadata`\n", 'flagsChanged': "Emitted when layer's flags have been modified.\n\n.. seealso:: :py:func:`setFlags`\n\n.. seealso:: :py:func:`flags`\n\n.. versionadded:: 3.4\n", 'dataSourceChanged': "Emitted whenever the layer's data source has been changed.\n\n.. seealso:: :py:func:`setDataSource`\n\n.. versionadded:: 3.5\n", 'styleLoaded': 'Emitted when a style has been loaded\n\n:param categories: style categories\n\n.. versionadded:: 3.12\n', 'isValidChanged': 'Emitted when the validity of this layer changed.\n\n.. versionadded:: 3.16\n', 'customPropertyChanged': 'Emitted when a custom property of the layer has been changed or removed.\n\n.. versionadded:: 3.18\n', 'editingStarted': 'Emitted when editing on this layer has started.\n\n.. versionadded:: 3.22\n', 'editingStopped': 'Emitted when edited changes have been successfully written to the data\nprovider.\n\n.. versionadded:: 3.22\n', 'layerModified': 'Emitted when modifications has been done on layer\n\n.. versionadded:: 3.22\n', 'mapTipTemplateChanged': 'Emitted when the map tip template changes\n\n.. versionadded:: 3.30\n', 'mapTipsEnabledChanged': 'Emitted when map tips are enabled or disabled for the layer.\n\n.. seealso:: :py:func:`setMapTipsEnabled`\n\n.. versionadded:: 3.32\n'}
     QgsMapLayer.extensionPropertyType = staticmethod(QgsMapLayer.extensionPropertyType)
     QgsMapLayer.formatLayerName = staticmethod(QgsMapLayer.formatLayerName)
     QgsMapLayer.generateId = staticmethod(QgsMapLayer.generateId)
     QgsMapLayer.providerReadFlags = staticmethod(QgsMapLayer.providerReadFlags)
-    QgsMapLayer.__virtual_methods__ = ['properties', 'dataProvider', 'setOpacity', 'opacity', 'reload', 'extent', 'extent3D', 'subLayers', 'setLayerOrder', 'setSubLayerVisibility', 'supportsEditing', 'isEditable', 'isModified', 'isSpatial', 'isTemporary', 'resolveReferences', 'listStylesInDatabase', 'getStyleFromDatabase', 'deleteStyleFromDatabase', 'saveStyleToDatabase', 'loadNamedStyle', 'error', 'metadataUri', 'saveDefaultMetadata', 'loadNamedMetadata', 'loadDefaultMetadata', 'styleURI', 'loadDefaultStyle', 'loadNamedStyleFromDatabase', 'importNamedStyle', 'exportNamedStyle', 'exportSldStyle', 'exportSldStyleV2', 'exportSldStyleV3', 'saveDefaultStyle', 'saveNamedStyle', 'saveSldStyle', 'saveSldStyleV2', 'loadSldStyle', 'readSld', 'readSymbology', 'readStyle', 'writeSymbology', 'writeStyle', 'setMetadata', 'htmlMetadata', 'timestamp', 'dependencies', 'accept', 'selectionProperties', 'temporalProperties', 'elevationProperties', 'profileSource', 'hasMapTips', 'setDependencies', 'setExtent', 'setExtent3D', 'readXml', 'writeXml', 'encodedSource', 'decodedSource']
+    QgsMapLayer.__virtual_methods__ = ['properties', 'dataProvider', 'setOpacity', 'opacity', 'reload', 'extent', 'extent3D', 'subLayers', 'setLayerOrder', 'setSubLayerVisibility', 'supportsEditing', 'isEditable', 'isModified', 'isSpatial', 'isTemporary', 'resolveReferences', 'listStylesInDatabase', 'getStyleFromDatabase', 'deleteStyleFromDatabase', 'saveStyleToDatabase', 'loadNamedStyle', 'error', 'metadataUri', 'saveDefaultMetadata', 'loadNamedMetadata', 'loadDefaultMetadata', 'styleURI', 'loadDefaultStyle', 'loadNamedStyleFromDatabase', 'importNamedStyle', 'exportNamedStyle', 'exportSldStyle', 'exportSldStyleV2', 'exportSldStyleV3', 'saveDefaultStyle', 'saveNamedStyle', 'saveSldStyle', 'saveSldStyleV2', 'loadSldStyle', 'readSld', 'readStyle', 'writeStyle', 'setMetadata', 'htmlMetadata', 'timestamp', 'dependencies', 'accept', 'selectionProperties', 'temporalProperties', 'elevationProperties', 'profileSource', 'hasMapTips', 'setDependencies', 'setExtent', 'setExtent3D', 'readXml', 'writeXml', 'encodedSource', 'decodedSource']
     QgsMapLayer.__abstract_methods__ = ['clone', 'createMapRenderer', 'readSymbology', 'writeSymbology', 'setTransformContext']
     QgsMapLayer.__signal_arguments__ = {'beforeResolveReferences': ['project: QgsProject'], 'statusChanged': ['status: str'], 'idChanged': ['id: str'], 'repaintRequested': ['deferredUpdate: bool = False'], 'blendModeChanged': ['blendMode: QPainter.CompositionMode'], 'opacityChanged': ['opacity: float'], 'autoRefreshIntervalChanged': ['interval: int'], 'styleLoaded': ['categories: QgsMapLayer.StyleCategories'], 'customPropertyChanged': ['key: str']}
 except (NameError, AttributeError):
     pass
+# The following has been generated automatically from src/core/qgsmaplayerdependency.h
 # The following has been generated automatically from src/core/qgsmaplayerelevationproperties.h
 # monkey patching scoped based enum
 QgsMapLayerElevationProperties.ZOffset.__doc__ = "Z offset"
@@ -14734,6 +16505,7 @@ QgsMapLayerElevationProperties.Property.__doc__ = """Data definable properties.
 
 """
 # --
+QgsMapLayerElevationProperties.Flags = lambda flags=0: QgsMapLayerElevationProperties.Flag(flags)
 try:
     QgsMapLayerElevationProperties.__attribute_docs__ = {'changed': 'Emitted when any of the elevation properties have changed.\n\nSee :py:func:`~QgsMapLayerElevationProperties.renderingPropertyChanged`\nand\n:py:func:`~QgsMapLayerElevationProperties.profileGenerationPropertyChanged`\nfor more fine-grained signals.\n', 'zOffsetChanged': 'Emitted when the z offset changes.\n\n.. versionadded:: 3.26\n', 'zScaleChanged': 'Emitted when the z scale changes.\n\n.. versionadded:: 3.26\n', 'profileRenderingPropertyChanged': 'Emitted when any of the elevation properties which relate solely to\npresentation of elevation results have changed.\n\n.. seealso:: :py:func:`changed`\n\n.. seealso:: :py:func:`profileGenerationPropertyChanged`\n\n.. versionadded:: 3.26\n', 'profileGenerationPropertyChanged': 'Emitted when any of the elevation properties which relate solely to\ngeneration of elevation profiles have changed.\n\n.. seealso:: :py:func:`changed`\n\n.. seealso:: :py:func:`profileRenderingPropertyChanged`\n\n.. versionadded:: 3.26\n'}
     QgsMapLayerElevationProperties.propertyDefinitions = staticmethod(QgsMapLayerElevationProperties.propertyDefinitions)
@@ -14865,6 +16637,10 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgsmaplayerserverproperties.h
 QgsServerWmsDimensionProperties.PredefinedWmsDimensionName.baseClass = QgsServerWmsDimensionProperties
+QgsServerWmsDimensionProperties.WmsDimensionInfo.AllValues = QgsServerWmsDimensionProperties.WmsDimensionInfo.DefaultDisplay.AllValues
+QgsServerWmsDimensionProperties.WmsDimensionInfo.MinValue = QgsServerWmsDimensionProperties.WmsDimensionInfo.DefaultDisplay.MinValue
+QgsServerWmsDimensionProperties.WmsDimensionInfo.MaxValue = QgsServerWmsDimensionProperties.WmsDimensionInfo.DefaultDisplay.MaxValue
+QgsServerWmsDimensionProperties.WmsDimensionInfo.ReferenceValue = QgsServerWmsDimensionProperties.WmsDimensionInfo.DefaultDisplay.ReferenceValue
 try:
     QgsServerMetadataUrlProperties.MetadataUrl.__attribute_docs__ = {'url': 'URL of the link', 'type': 'Link type. Suggested to use FGDC or TC211.', 'format': 'Format specification of online resource. It is strongly suggested to either use text/plain or text/xml.'}
     QgsServerMetadataUrlProperties.MetadataUrl.__annotations__ = {'url': str, 'type': str, 'format': str}
@@ -14910,10 +16686,14 @@ try:
     QgsMapLayerUtils.combinedExtent = staticmethod(QgsMapLayerUtils.combinedExtent)
     QgsMapLayerUtils.databaseConnection = staticmethod(QgsMapLayerUtils.databaseConnection)
     QgsMapLayerUtils.layerSourceMatchesPath = staticmethod(QgsMapLayerUtils.layerSourceMatchesPath)
+    QgsMapLayerUtils.layerRefersToUri = staticmethod(QgsMapLayerUtils.layerRefersToUri)
     QgsMapLayerUtils.updateLayerSourcePath = staticmethod(QgsMapLayerUtils.updateLayerSourcePath)
     QgsMapLayerUtils.sortLayersByType = staticmethod(QgsMapLayerUtils.sortLayersByType)
     QgsMapLayerUtils.launderLayerName = staticmethod(QgsMapLayerUtils.launderLayerName)
     QgsMapLayerUtils.isOpenStreetMapLayer = staticmethod(QgsMapLayerUtils.isOpenStreetMapLayer)
+    QgsMapLayerUtils.isOpenStreetMapUri = staticmethod(QgsMapLayerUtils.isOpenStreetMapUri)
+    QgsMapLayerUtils.layerTypeToString = staticmethod(QgsMapLayerUtils.layerTypeToString)
+    QgsMapLayerUtils.layerToolTip = staticmethod(QgsMapLayerUtils.layerToolTip)
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/maprenderer/qgsmaprenderercache.h
@@ -14985,6 +16765,7 @@ QgsMapSettingsUtils.EffectsCheckFlag.__doc__ = """Flags for controlling the beha
 
 """
 # --
+QgsMapSettingsUtils.EffectsCheckFlags = lambda flags=0: QgsMapSettingsUtils.EffectsCheckFlag(flags)
 try:
     QgsMapSettingsUtils.containsAdvancedEffects = staticmethod(QgsMapSettingsUtils.containsAdvancedEffects)
     QgsMapSettingsUtils.worldFileParameters = staticmethod(QgsMapSettingsUtils.worldFileParameters)
@@ -15118,6 +16899,27 @@ try:
     QgsMasterLayoutInterface.__group__ = ['layout']
 except (NameError, AttributeError):
     pass
+# The following has been generated automatically from src/core/./3d/materials/qgsmaterialregistry.h
+try:
+    QgsMaterialSettingsAbstractMetadata.__abstract_methods__ = ['create', 'supportsTechnique']
+    QgsMaterialSettingsAbstractMetadata.__group__ = ['3d', 'materials']
+except (NameError, AttributeError):
+    pass
+try:
+    QgsMaterialRegistry.__group__ = ['3d', 'materials']
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/core/qgsmathutils.h
+try:
+    QgsMathUtils.doubleToRational = staticmethod(QgsMathUtils.doubleToRational)
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/core/qgsmeasureutils.h
+try:
+    QgsMeasureUtils.formatAreaForProject = staticmethod(QgsMeasureUtils.formatAreaForProject)
+    QgsMeasureUtils.formatDistanceForProject = staticmethod(QgsMeasureUtils.formatDistanceForProject)
+except (NameError, AttributeError):
+    pass
 # The following has been generated automatically from src/core/providers/memory/qgsmemoryproviderutils.h
 try:
     QgsMemoryProviderUtils.createMemoryLayer = staticmethod(QgsMemoryProviderUtils.createMemoryLayer)
@@ -15130,6 +16932,11 @@ try:
     QgsMergedFeatureRenderer.convertFromRenderer = staticmethod(QgsMergedFeatureRenderer.convertFromRenderer)
     QgsMergedFeatureRenderer.__overridden_methods__ = ['clone', 'startRender', 'flags', 'renderFeature', 'stopRender', 'dump', 'usedAttributes', 'filterNeedsGeometry', 'capabilities', 'symbols', 'symbolForFeature', 'originalSymbolForFeature', 'symbolsForFeature', 'originalSymbolsForFeature', 'legendKeysForFeature', 'legendKeyToExpression', 'legendSymbolItems', 'willRenderFeature', 'save', 'setEmbeddedRenderer', 'embeddedRenderer', 'setLegendSymbolItem', 'legendSymbolItemsCheckable', 'legendSymbolItemChecked', 'checkLegendSymbolItem', 'accept']
     QgsMergedFeatureRenderer.__group__ = ['symbology']
+except (NameError, AttributeError):
+    pass
+try:
+    QgsMergedFeatureRenderer.FeatureDecoration.__doc__ = """Class used to represent features that must be rendered
+with decorations (selection, vertex markers)"""
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/mesh/qgsmesh3daveraging.h
@@ -15208,7 +17015,6 @@ try:
 except (NameError, AttributeError):
     pass
 try:
-    QgsMeshDatasetSourceInterface.__virtual_methods__ = ['persistDatasetGroup']
     QgsMeshDatasetSourceInterface.__abstract_methods__ = ['addDataset', 'extraDatasets', 'datasetGroupCount', 'datasetCount', 'datasetGroupMetadata', 'datasetMetadata', 'datasetValue', 'datasetValues', 'dataset3dValues', 'isFaceActive', 'areFacesActive', 'persistDatasetGroup']
     QgsMeshDatasetSourceInterface.__group__ = ['mesh']
 except (NameError, AttributeError):
@@ -15288,8 +17094,7 @@ except (NameError, AttributeError):
     pass
 try:
     QgsMeshLayer.__attribute_docs__ = {'activeScalarDatasetGroupChanged': 'Emitted when active scalar group dataset is changed\n\n.. versionadded:: 3.14\n', 'activeVectorDatasetGroupChanged': 'Emitted when active vector group dataset is changed\n\n.. versionadded:: 3.14\n', 'timeSettingsChanged': 'Emitted when time format is changed\n\n.. versionadded:: 3.8\n', 'reloaded': 'Emitted when the mesh layer is reloaded, see\n:py:func:`~QgsMeshLayer.reload`\n\n.. versionadded:: 3.28\n'}
-    QgsMeshLayer.__virtual_methods__ = ['loadDefaultStyle']
-    QgsMeshLayer.__overridden_methods__ = ['dataProvider', 'clone', 'extent', 'createMapRenderer', 'profileSource', 'createProfileGenerator', 'readSymbology', 'writeSymbology', 'writeStyle', 'readStyle', 'encodedSource', 'decodedSource', 'readXml', 'writeXml', 'temporalProperties', 'elevationProperties', 'reload', 'subLayers', 'htmlMetadata', 'isEditable', 'supportsEditing', 'isModified', 'setTransformContext']
+    QgsMeshLayer.__overridden_methods__ = ['dataProvider', 'clone', 'extent', 'createMapRenderer', 'profileSource', 'profileSourceId', 'profileSourceName', 'createProfileGenerator', 'readSymbology', 'writeSymbology', 'writeStyle', 'readStyle', 'encodedSource', 'decodedSource', 'readXml', 'writeXml', 'temporalProperties', 'elevationProperties', 'reload', 'subLayers', 'htmlMetadata', 'isEditable', 'supportsEditing', 'loadDefaultStyle', 'isModified', 'loadNamedStyle', 'setTransformContext']
     QgsMeshLayer.__signal_arguments__ = {'activeScalarDatasetGroupChanged': ['index: int'], 'activeVectorDatasetGroupChanged': ['index: int']}
     QgsMeshLayer.__group__ = ['mesh']
 except (NameError, AttributeError):
@@ -15394,9 +17199,9 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgsmessagelog.h
 try:
-    QgsMessageLog.__attribute_docs__ = {'messageReceived': 'Emitted whenever the log receives a message which is not a\n:py:class:`Qgis`.MessageLevel.Info level message and which has the\n``notifyUser`` flag as ``True``.\n\nIf :py:class:`QgsMessageLogNotifyBlocker` objects have been created then\nthis signal may be temporarily suppressed.\n\n.. seealso:: :py:class:`QgsMessageLogNotifyBlocker`\n'}
+    QgsMessageLog.__attribute_docs__ = {'messageReceived': 'Emitted whenever the log receives a message which is not a\n:py:class:`Qgis`.MessageLevel.Info level message and which has the\n``notifyUser`` flag as ``True``.\n\nIf :py:class:`QgsMessageLogNotifyBlocker` objects have been created then\nthis signal may be temporarily suppressed.\n\n.. seealso:: :py:class:`QgsMessageLogNotifyBlocker`\n', 'messageReceivedWithFormat': "Emitted whenever the log receives a ``message``.\n\nThis signal is emitted for all messages received by the log, regardless\nof the ``notifyUser`` flag's value for the message.\n"}
     QgsMessageLog.logMessage = staticmethod(QgsMessageLog.logMessage)
-    QgsMessageLog.__signal_arguments__ = {'messageReceived': ['received: bool']}
+    QgsMessageLog.__signal_arguments__ = {'messageReceivedWithFormat': ['message: str', 'tag: str', 'level: Qgis.MessageLevel', ': Qgis.StringFormat'], 'messageReceived': ['received: bool']}
 except (NameError, AttributeError):
     pass
 try:
@@ -15418,6 +17223,22 @@ except (NameError, AttributeError):
 try:
     QgsMetadataUtils.convertFromEsri = staticmethod(QgsMetadataUtils.convertFromEsri)
     QgsMetadataUtils.__group__ = ['metadata']
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/core/./3d/materials/qgsmetalroughmaterialsettings.h
+try:
+    QgsMetalRoughMaterialSettings.supportsTechnique = staticmethod(QgsMetalRoughMaterialSettings.supportsTechnique)
+    QgsMetalRoughMaterialSettings.create = staticmethod(QgsMetalRoughMaterialSettings.create)
+    QgsMetalRoughMaterialSettings.__overridden_methods__ = ['type', 'supportedProperties', 'clone', 'equals', 'requiresTangents', 'averageColor', 'setColorsFromBase', 'readXml', 'writeXml']
+    QgsMetalRoughMaterialSettings.__group__ = ['3d', 'materials']
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/core/./3d/materials/qgsmetalroughtexturedmaterialsettings.h
+try:
+    QgsMetalRoughTexturedMaterialSettings.supportsTechnique = staticmethod(QgsMetalRoughTexturedMaterialSettings.supportsTechnique)
+    QgsMetalRoughTexturedMaterialSettings.create = staticmethod(QgsMetalRoughTexturedMaterialSettings.create)
+    QgsMetalRoughTexturedMaterialSettings.__overridden_methods__ = ['type', 'clone', 'equals', 'supportedProperties', 'requiresTextureCoordinates', 'requiresTangents', 'readXml', 'writeXml', 'averageColor', 'setColorsFromBase']
+    QgsMetalRoughTexturedMaterialSettings.__group__ = ['3d', 'materials']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgsmimedatautils.h
@@ -15543,6 +17364,7 @@ QgsNewsFeedModel.ImageUrl.__doc__ = "Optional entry image URL"
 QgsNewsFeedModel.Image.__doc__ = "Optional entry image"
 QgsNewsFeedModel.Link.__doc__ = "Optional entry URL link"
 QgsNewsFeedModel.Sticky.__doc__ = "Whether entry is sticky"
+QgsNewsFeedModel.Published.__doc__ = "Entry publication date"
 QgsNewsFeedModel.CustomRole.__doc__ = """Custom model roles.
 
 .. note::
@@ -15558,12 +17380,13 @@ QgsNewsFeedModel.CustomRole.__doc__ = """Custom model roles.
 * ``Image``: Optional entry image
 * ``Link``: Optional entry URL link
 * ``Sticky``: Whether entry is sticky
+* ``Published``: Entry publication date
 
 """
 # --
 QgsNewsFeedModel.CustomRole.baseClass = QgsNewsFeedModel
 try:
-    QgsNewsFeedModel.__overridden_methods__ = ['data', 'flags', 'index', 'parent', 'rowCount', 'columnCount']
+    QgsNewsFeedModel.__overridden_methods__ = ['data', 'flags', 'index', 'parent', 'rowCount', 'columnCount', 'roleNames']
     QgsNewsFeedModel.__group__ = ['network']
 except (NameError, AttributeError):
     pass
@@ -15574,13 +17397,13 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/network/qgsnewsfeedparser.h
 try:
-    QgsNewsFeedParser.Entry.__attribute_docs__ = {'key': 'Unique entry identifier', 'title': 'Entry title', 'imageUrl': 'Optional URL for image associated with entry', 'image': 'Optional image data', 'content': 'HTML content of news entry', 'link': 'Optional URL link for entry', 'sticky': '``True`` if entry is "sticky" and should always be shown at the top', 'expiry': 'Optional auto-expiry time for entry'}
-    QgsNewsFeedParser.Entry.__annotations__ = {'key': int, 'title': str, 'imageUrl': str, 'image': 'QPixmap', 'content': str, 'link': 'QUrl', 'sticky': bool, 'expiry': 'QDateTime'}
+    QgsNewsFeedParser.Entry.__attribute_docs__ = {'key': 'Unique entry identifier', 'title': 'Entry title', 'imageUrl': 'Optional URL for image associated with entry', 'image': 'Optional image data', 'content': 'HTML content of news entry', 'link': 'Optional URL link for entry', 'sticky': '``True`` if entry is "sticky" and should always be shown at the top', 'published': 'Entry publication date', 'expiry': 'Optional auto-expiry time for entry'}
+    QgsNewsFeedParser.Entry.__annotations__ = {'key': int, 'title': str, 'imageUrl': str, 'image': 'QPixmap', 'content': str, 'link': 'QUrl', 'sticky': bool, 'published': 'QDateTime', 'expiry': 'QDateTime'}
     QgsNewsFeedParser.Entry.__group__ = ['network']
 except (NameError, AttributeError):
     pass
 try:
-    QgsNewsFeedParser.__attribute_docs__ = {'fetched': 'Emitted when ``entries`` have been fetched from the feed.\n\n.. seealso:: :py:func:`fetch`\n', 'entryAdded': 'Emitted whenever a new ``entry`` is available from the feed (as a result\nof a call to :py:func:`~QgsNewsFeedParser.fetch`).\n\n.. seealso:: :py:func:`fetch`\n', 'entryUpdated': 'Emitted whenever an existing ``entry`` is available from the feed (as a\nresult of a call to :py:func:`~QgsNewsFeedParser.fetch`).\n\n.. seealso:: :py:func:`fetch`\n\n.. versionadded:: 3.36\n', 'entryDismissed': 'Emitted whenever an ``entry`` is dismissed (as a result of a call to\n:py:func:`~QgsNewsFeedParser.dismissEntry`).\n\n.. seealso:: :py:func:`dismissEntry`\n', 'imageFetched': 'Emitted when the image attached to the entry with the specified ``key``\nhas been fetched and is now available.\n'}
+    QgsNewsFeedParser.__attribute_docs__ = {'fetched': 'Emitted when ``entries`` have been fetched from the feed.\n\n.. seealso:: :py:func:`fetch`\n', 'entryAdded': 'Emitted whenever a new ``entry`` is available from the feed (as a result\nof a call to :py:func:`~QgsNewsFeedParser.fetch`).\n\n.. seealso:: :py:func:`fetch`\n', 'entryUpdated': 'Emitted whenever an existing ``entry`` is available from the feed (as a\nresult of a call to :py:func:`~QgsNewsFeedParser.fetch`).\n\n.. seealso:: :py:func:`fetch`\n\n.. versionadded:: 3.36\n', 'entryDismissed': 'Emitted whenever an ``entry`` is dismissed (as a result of a call to\n:py:func:`~QgsNewsFeedParser.dismissEntry`).\n\n.. seealso:: :py:func:`dismissEntry`\n', 'imageFetched': 'Emitted when the image attached to the entry with the specified ``key``\nhas been fetched and is now available.\n', 'enabledChanged': 'Emitted when the enabled/disabled state of the feed URL associated to\nthe news parser changes.\n\n.. versionadded:: 4.0\n', 'isFetchingChanged': "Emitted when the news parser's fetching state changes.\n\n.. versionadded:: 4.0\n"}
     QgsNewsFeedParser.keyForFeed = staticmethod(QgsNewsFeedParser.keyForFeed)
     QgsNewsFeedParser.__signal_arguments__ = {'fetched': ['entries: List[QgsNewsFeedParser.Entry]'], 'entryAdded': ['entry: QgsNewsFeedParser.Entry'], 'entryUpdated': ['entry: QgsNewsFeedParser.Entry'], 'entryDismissed': ['entry: QgsNewsFeedParser.Entry'], 'imageFetched': ['key: int', 'pixmap: QPixmap']}
     QgsNewsFeedParser.__group__ = ['network']
@@ -15596,6 +17419,14 @@ except (NameError, AttributeError):
 try:
     QgsNominatimGeocoder.__overridden_methods__ = ['flags', 'appendedFields', 'wkbType', 'geocodeString']
     QgsNominatimGeocoder.__group__ = ['geocoding']
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/core/./3d/materials/qgsnullmaterialsettings.h
+try:
+    QgsNullMaterialSettings.supportsTechnique = staticmethod(QgsNullMaterialSettings.supportsTechnique)
+    QgsNullMaterialSettings.create = staticmethod(QgsNullMaterialSettings.create)
+    QgsNullMaterialSettings.__overridden_methods__ = ['type', 'clone', 'equals', 'averageColor', 'setColorsFromBase']
+    QgsNullMaterialSettings.__group__ = ['3d', 'materials']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/painting/qgsnullpainterdevice.h
@@ -15647,6 +17478,30 @@ except (NameError, AttributeError):
 try:
     QgsNumericScaleBarRenderer.__overridden_methods__ = ['id', 'visibleName', 'sortKey', 'flags', 'clone', 'draw', 'calculateBoxSize']
     QgsNumericScaleBarRenderer.__group__ = ['scalebar']
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/core/geometry/qgsnurbscurve.h
+try:
+    QgsNurbsCurve.generateUniformKnots = staticmethod(QgsNurbsCurve.generateUniformKnots)
+    QgsNurbsCurve.generateKnotsForBezierConversion = staticmethod(QgsNurbsCurve.generateKnotsForBezierConversion)
+    QgsNurbsCurve.__overridden_methods__ = ['clone', 'isClosed', 'isClosed2D', 'curveToLine', 'draw', 'drawAsPolygon', 'endPoint', 'equals', 'indexOf', 'interpolatePoint', 'numPoints', 'pointAt', 'points', 'reversed', 'scroll', 'startPoint', 'sumUpArea', 'sumUpArea3D', 'xAt', 'yAt', 'zAt', 'mAt', 'asQPolygonF', 'addToPainterPath', 'curveSubstring', 'length', 'segmentLength', 'distanceBetweenVertices', 'snappedToGrid', 'simplifyByDistance', 'removeDuplicateNodes', 'vertexAngle', 'swapXy', 'transform', 'createEmptyWithSameType', 'closestSegment', 'boundingBox', 'boundingBox3D', 'moveVertex', 'insertVertex', 'wkbSize', 'asWkb', 'asWkt', 'asGml2', 'asGml3', 'asKml', 'dimension', 'isEmpty', 'clear', 'boundingBoxIntersects', 'centroid', 'addZValue', 'addMValue', 'dropZValue', 'dropMValue', 'deleteVertex', 'deleteVertices', 'fromWkb', 'fromWkt', 'fuzzyEqual', 'fuzzyDistanceEqual', 'geometryType', 'hasCurvedSegments', 'partCount', 'toCurveType', 'vertexAt', 'vertexCount', 'vertexNumberFromVertexId', 'isValid', 'clearCache', 'compareToSameClass', 'calculateBoundingBox3D']
+    QgsNurbsCurve.__group__ = ['geometry']
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/core/geometry/qgsnurbsutils.h
+try:
+    QgsNurbsUtils.containsNurbsCurve = staticmethod(QgsNurbsUtils.containsNurbsCurve)
+    QgsNurbsUtils.findNurbsCurveForVertex = staticmethod(QgsNurbsUtils.findNurbsCurveForVertex)
+    QgsNurbsUtils.__group__ = ['geometry']
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/core/qgsobjectvisitor.h
+try:
+    QgsObjectEntityVisitorInterface.__virtual_methods__ = ['visitEmbeddedScript']
+except (NameError, AttributeError):
+    pass
+try:
+    QgsEmbeddedScriptVisitor.__overridden_methods__ = ['visitEmbeddedScript']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgsofflineediting.h
@@ -15878,12 +17733,13 @@ QgsPalLayerSettings.Priority.__doc__ = ""
 QgsPalLayerSettings.PredefinedPositionOrder.__doc__ = ""
 QgsPalLayerSettings.LinePlacementOptions.__doc__ = "Line placement flags"
 QgsPalLayerSettings.OverrunDistance.__doc__ = "Distance which labels can extend past either end of linear features"
-QgsPalLayerSettings.LabelAllParts.__doc__ = "Whether all parts of multi-part features should be labeled"
+QgsPalLayerSettings.LabelAllParts.__doc__ = "Multipart geometry behavior"
 QgsPalLayerSettings.PolygonLabelOutside.__doc__ = "Whether labels outside a polygon feature are permitted, or should be forced \n.. versionadded:: 3.14"
 QgsPalLayerSettings.LineAnchorPercent.__doc__ = "Portion along line at which labels should be anchored \n.. versionadded:: 3.16"
 QgsPalLayerSettings.LineAnchorClipping.__doc__ = "Clipping mode for line anchor calculation \n.. versionadded:: 3.20"
 QgsPalLayerSettings.LineAnchorType.__doc__ = "Line anchor type \n.. versionadded:: 3.26"
 QgsPalLayerSettings.LineAnchorTextPoint.__doc__ = "Line anchor text point \n.. versionadded:: 3.26"
+QgsPalLayerSettings.CurvedLabelMode.__doc__ = "Mode which determine how curved labels are generated and placed \n.. versionadded:: 4.0"
 QgsPalLayerSettings.ScaleVisibility.__doc__ = ""
 QgsPalLayerSettings.MinScale.__doc__ = "Min scale (deprecated, for old project compatibility only)"
 QgsPalLayerSettings.MinimumScale.__doc__ = "Minimum map scale (ie most \"zoomed out\")"
@@ -15898,6 +17754,7 @@ QgsPalLayerSettings.ZIndex.__doc__ = ""
 QgsPalLayerSettings.CalloutDraw.__doc__ = "Show callout"
 QgsPalLayerSettings.AllowDegradedPlacement.__doc__ = "Allow degraded label placements \n.. versionadded:: 3.26"
 QgsPalLayerSettings.OverlapHandling.__doc__ = "Overlap handling technique \n.. versionadded:: 3.26"
+QgsPalLayerSettings.WhitespaceCollisionHandling.__doc__ = "Whitespace collision handling \n.. versionadded:: 4.0"
 QgsPalLayerSettings.LabelMarginDistance.__doc__ = "Minimum distance from labels for this feature to other labels \n.. versionadded:: 3.44"
 QgsPalLayerSettings.RemoveDuplicateLabels.__doc__ = "Whether this feature can cause removal of duplicate labels \n.. versionadded:: 3.44"
 QgsPalLayerSettings.RemoveDuplicateLabelDistance.__doc__ = "Minimum distance from labels for this feature to other labels with duplicate text \n.. versionadded:: 3.44"
@@ -16003,7 +17860,7 @@ QgsPalLayerSettings.Property.__doc__ = """Data definable properties.
 * ``PredefinedPositionOrder``: 
 * ``LinePlacementOptions``: Line placement flags
 * ``OverrunDistance``: Distance which labels can extend past either end of linear features
-* ``LabelAllParts``: Whether all parts of multi-part features should be labeled
+* ``LabelAllParts``: Multipart geometry behavior
 * ``PolygonLabelOutside``: Whether labels outside a polygon feature are permitted, or should be forced
 
   .. versionadded:: 3.14
@@ -16023,6 +17880,10 @@ QgsPalLayerSettings.Property.__doc__ = """Data definable properties.
 * ``LineAnchorTextPoint``: Line anchor text point
 
   .. versionadded:: 3.26
+
+* ``CurvedLabelMode``: Mode which determine how curved labels are generated and placed
+
+  .. versionadded:: 4.0
 
 * ``ScaleVisibility``: 
 * ``MinScale``: Min scale (deprecated, for old project compatibility only)
@@ -16044,6 +17905,10 @@ QgsPalLayerSettings.Property.__doc__ = """Data definable properties.
 
   .. versionadded:: 3.26
 
+* ``WhitespaceCollisionHandling``: Whitespace collision handling
+
+  .. versionadded:: 4.0
+
 * ``LabelMarginDistance``: Minimum distance from labels for this feature to other labels
 
   .. versionadded:: 3.44
@@ -16062,8 +17927,8 @@ QgsPalLayerSettings.Property.__doc__ = """Data definable properties.
 """
 # --
 try:
-    QgsPalLayerSettings.__attribute_docs__ = {'drawLabels': 'Whether to draw labels for this layer. For some layers it may be desirable\nto register their features as obstacles for other labels without requiring\nlabels to be drawn for the layer itself. In this case drawLabels can be set\nto ``False`` and obstacle set to ``True``, which will result in the layer acting\nas an obstacle but having no labels of its own.', 'fieldName': 'Name of field (or an expression) to use for label text.\nIf fieldName is an expression, then isExpression should be set to ``True``.\n\n.. seealso:: :py:func:`isExpression`', 'isExpression': "``True`` if this label is made from a expression string, e.g., FieldName || 'mm'\n\n.. seealso:: :py:func:`fieldName`", 'previewBkgrdColor': '\n.. deprecated:: 3.10\n\n   Use :py:func:`QgsTextFormat.previewBackgroundColor()` instead.', 'substitutions': 'Substitution collection for automatic text substitution with labels', 'useSubstitutions': 'True if substitutions should be applied', 'wrapChar': 'Wrapping character string. If set, any occurrences of this string in the calculated\nlabel text will be replaced with new line characters.', 'autoWrapLength': 'If non-zero, indicates that label text should be automatically wrapped to (ideally) the specified\nnumber of characters. If zero, auto wrapping is disabled.\n\n.. seealso:: :py:func:`useMaxLineLengthForAutoWrap`\n\n.. versionadded:: 3.4', 'useMaxLineLengthForAutoWrap': 'If ``True``, indicates that when auto wrapping label text the autoWrapLength length indicates the maximum\nideal length of text lines. If ``False``, then autoWrapLength indicates the ideal minimum length of text\nlines.\n\nIf autoWrapLength is 0 then this value has no effect.\n\n.. seealso:: :py:func:`autoWrapLength`\n\n.. versionadded:: 3.4', 'multilineAlign': 'Horizontal alignment of multi-line labels.', 'formatNumbers': 'Set to ``True`` to format numeric label text as numbers (e.g. inserting thousand separators\nand fixed number of decimal places).\n\n.. seealso:: :py:func:`decimals`\n\n.. seealso:: :py:func:`plusSign`', 'decimals': 'Number of decimal places to show for numeric labels. formatNumbers must be ``True`` for this\nsetting to have an effect.\n\n.. seealso:: :py:func:`formatNumbers`', 'plusSign': "Whether '+' signs should be prepended to positive numeric labels. formatNumbers must be ``True`` for this\nsetting to have an effect.\n\n.. seealso:: :py:func:`formatNumbers`", 'placement': 'Label placement mode', 'centroidWhole': '``True`` if feature centroid should be calculated from the whole feature, or\n``False`` if only the visible part of the feature should be considered.', 'centroidInside': '``True`` if centroid positioned labels must be placed inside their corresponding\nfeature polygon, or ``False`` if centroids which fall outside the polygon\nare permitted.', 'fitInPolygonOnly': '``True`` if only labels which completely fit within a polygon are allowed.', 'dist': 'Distance from feature to the label. Units are specified via distUnits.\n\n.. seealso:: :py:func:`distUnits`\n\n.. seealso:: :py:func:`distMapUnitScale`', 'distUnits': 'Units the distance from feature to the label.\n\n.. seealso:: :py:func:`dist`\n\n.. seealso:: :py:func:`distMapUnitScale`', 'distMapUnitScale': 'Map unit scale for label feature distance.\n\n.. seealso:: :py:func:`dist`\n\n.. seealso:: :py:func:`distUnits`', 'offsetType': 'Offset type for layer (only applies in certain placement modes)', 'repeatDistance': 'Distance for repeating labels for a single feature.\n\n.. seealso:: :py:func:`repeatDistanceUnit`\n\n.. seealso:: :py:func:`repeatDistanceMapUnitScale`', 'repeatDistanceUnit': 'Units for repeating labels for a single feature.\n\n.. seealso:: :py:func:`repeatDistance`\n\n.. seealso:: :py:func:`repeatDistanceMapUnitScale`', 'repeatDistanceMapUnitScale': 'Map unit scale for repeating labels for a single feature.\n\n.. seealso:: :py:func:`repeatDistance`\n\n.. seealso:: :py:func:`repeatDistanceUnit`', 'xOffset': 'Horizontal offset of label. Units are specified via offsetUnits.\n\n.. seealso:: :py:func:`yOffset`\n\n.. seealso:: :py:func:`offsetUnits`\n\n.. seealso:: :py:func:`labelOffsetMapUnitScale`', 'yOffset': 'Vertical offset of label. Units are specified via offsetUnits.\n\n.. seealso:: :py:func:`xOffset`\n\n.. seealso:: :py:func:`offsetUnits`\n\n.. seealso:: :py:func:`labelOffsetMapUnitScale`', 'offsetUnits': 'Units for offsets of label.\n\n.. seealso:: :py:func:`xOffset`\n\n.. seealso:: :py:func:`yOffset`\n\n.. seealso:: :py:func:`labelOffsetMapUnitScale`', 'labelOffsetMapUnitScale': 'Map unit scale for label offset.\n\n.. seealso:: :py:func:`xOffset`\n\n.. seealso:: :py:func:`yOffset`\n\n.. seealso:: :py:func:`offsetUnits`', 'angleOffset': 'Label rotation, in degrees clockwise', 'preserveRotation': 'True if label rotation should be preserved during label pin/unpin operations.', 'maxCurvedCharAngleIn': 'Maximum angle between inside curved label characters (valid range 20.0 to 60.0).\n\n.. seealso:: :py:func:`maxCurvedCharAngleOut`', 'maxCurvedCharAngleOut': 'Maximum angle between outside curved label characters (valid range -20.0 to -95.0)\n\n.. seealso:: :py:func:`maxCurvedCharAngleIn`', 'priority': 'Label priority. Valid ranges are from 0 to 10, where 0 = lowest priority\nand 10 = highest priority.', 'scaleVisibility': 'Set to ``True`` to limit label visibility to a range of scales.\n\n.. seealso:: :py:func:`maximumScale`\n\n.. seealso:: :py:func:`minimumScale`', 'maximumScale': 'The maximum map scale (i.e. most "zoomed in" scale) at which the labels will be visible.\nThe scale value indicates the scale denominator, e.g. 1000.0 for a 1:1000 map.\nA scale of 0 indicates no maximum scale visibility.\n\nThis setting is only considered if scaleVisibility is ``True``.\n\n.. seealso:: :py:func:`minimumScale`\n\n.. seealso:: :py:func:`scaleVisibility`', 'minimumScale': 'The minimum map scale (i.e. most "zoomed out" scale) at which the labels will be visible.\nThe scale value indicates the scale denominator, e.g. 1000.0 for a 1:1000 map.\nA scale of 0 indicates no minimum scale visibility.\n\nThis setting is only considered if scaleVisibility is ``True``.\n\n.. seealso:: :py:func:`maximumScale`\n\n.. seealso:: :py:func:`scaleVisibility`', 'fontLimitPixelSize': '``True`` if label sizes should be limited by pixel size.\n\n.. seealso:: :py:func:`fontMinPixelSize`\n\n.. seealso:: :py:func:`fontMaxPixelSize`', 'fontMinPixelSize': 'Minimum pixel size for showing rendered map unit labels (1 - 1000).\n\n.. seealso:: :py:func:`fontLimitPixelSize`\n\n.. seealso:: :py:func:`fontMaxPixelSize`', 'fontMaxPixelSize': 'Maximum pixel size for showing rendered map unit labels (1 - 10000).\n\n.. seealso:: :py:func:`fontLimitPixelSize`\n\n.. seealso:: :py:func:`fontMinPixelSize`', 'upsidedownLabels': 'Controls whether upside down labels are displayed and how they are handled.', 'labelPerPart': '``True`` if every part of a multi-part feature should be labeled. If ``False``,\nonly the largest part will be labeled.', 'zIndex': 'Z-Index of label, where labels with a higher z-index are rendered on top of labels with a lower z-index', 'geometryGenerator': 'The geometry generator expression. Null if disabled.', 'geometryGeneratorType': 'The type of the result geometry of the geometry generator.', 'geometryGeneratorEnabled': 'Defines if the geometry generator is enabled or not. If disabled, the standard geometry will be taken.', 'layerType': 'Geometry type of layers associated with these settings.\n\n.. versionadded:: 3.10'}
-    QgsPalLayerSettings.__annotations__ = {'drawLabels': bool, 'fieldName': str, 'isExpression': bool, 'previewBkgrdColor': 'QColor', 'substitutions': 'QgsStringReplacementCollection', 'useSubstitutions': bool, 'wrapChar': str, 'autoWrapLength': int, 'useMaxLineLengthForAutoWrap': bool, 'multilineAlign': 'Qgis.LabelMultiLineAlignment', 'formatNumbers': bool, 'decimals': int, 'plusSign': bool, 'placement': 'Qgis.LabelPlacement', 'centroidWhole': bool, 'centroidInside': bool, 'fitInPolygonOnly': bool, 'dist': float, 'distUnits': 'Qgis.RenderUnit', 'distMapUnitScale': 'QgsMapUnitScale', 'offsetType': 'Qgis.LabelOffsetType', 'repeatDistance': float, 'repeatDistanceUnit': 'Qgis.RenderUnit', 'repeatDistanceMapUnitScale': 'QgsMapUnitScale', 'xOffset': float, 'yOffset': float, 'offsetUnits': 'Qgis.RenderUnit', 'labelOffsetMapUnitScale': 'QgsMapUnitScale', 'angleOffset': float, 'preserveRotation': bool, 'maxCurvedCharAngleIn': float, 'maxCurvedCharAngleOut': float, 'priority': int, 'scaleVisibility': bool, 'maximumScale': float, 'minimumScale': float, 'fontLimitPixelSize': bool, 'fontMinPixelSize': int, 'fontMaxPixelSize': int, 'upsidedownLabels': 'Qgis.UpsideDownLabelHandling', 'labelPerPart': bool, 'zIndex': float, 'geometryGenerator': str, 'geometryGeneratorType': 'Qgis.GeometryType', 'geometryGeneratorEnabled': bool, 'layerType': 'Qgis.GeometryType'}
+    QgsPalLayerSettings.__attribute_docs__ = {'drawLabels': 'Whether to draw labels for this layer. For some layers it may be desirable\nto register their features as obstacles for other labels without requiring\nlabels to be drawn for the layer itself. In this case drawLabels can be set\nto ``False`` and obstacle set to ``True``, which will result in the layer acting\nas an obstacle but having no labels of its own.', 'fieldName': 'Name of field (or an expression) to use for label text.\nIf fieldName is an expression, then isExpression should be set to ``True``.\n\n.. seealso:: :py:func:`isExpression`', 'isExpression': "``True`` if this label is made from a expression string, e.g., FieldName || 'mm'\n\n.. seealso:: :py:func:`fieldName`", 'previewBkgrdColor': '\n.. deprecated:: 3.10\n\n   Use :py:func:`QgsTextFormat.previewBackgroundColor()` instead.', 'substitutions': 'Substitution collection for automatic text substitution with labels', 'useSubstitutions': 'True if substitutions should be applied', 'wrapChar': 'Wrapping character string. If set, any occurrences of this string in the calculated\nlabel text will be replaced with new line characters.', 'autoWrapLength': 'If non-zero, indicates that label text should be automatically wrapped to (ideally) the specified\nnumber of characters. If zero, auto wrapping is disabled.\n\n.. seealso:: :py:func:`useMaxLineLengthForAutoWrap`\n\n.. versionadded:: 3.4', 'useMaxLineLengthForAutoWrap': 'If ``True``, indicates that when auto wrapping label text the autoWrapLength length indicates the maximum\nideal length of text lines. If ``False``, then autoWrapLength indicates the ideal minimum length of text\nlines.\n\nIf autoWrapLength is 0 then this value has no effect.\n\n.. seealso:: :py:func:`autoWrapLength`\n\n.. versionadded:: 3.4', 'multilineAlign': 'Horizontal alignment of multi-line labels.', 'formatNumbers': 'Set to ``True`` to format numeric label text as numbers (e.g. inserting thousand separators\nand fixed number of decimal places).\n\n.. seealso:: :py:func:`decimals`\n\n.. seealso:: :py:func:`plusSign`', 'decimals': 'Number of decimal places to show for numeric labels. formatNumbers must be ``True`` for this\nsetting to have an effect.\n\n.. seealso:: :py:func:`formatNumbers`', 'plusSign': "Whether '+' signs should be prepended to positive numeric labels. formatNumbers must be ``True`` for this\nsetting to have an effect.\n\n.. seealso:: :py:func:`formatNumbers`", 'placement': 'Label placement mode', 'centroidWhole': '``True`` if feature centroid should be calculated from the whole feature, or\n``False`` if only the visible part of the feature should be considered.', 'centroidInside': '``True`` if centroid positioned labels must be placed inside their corresponding\nfeature polygon, or ``False`` if centroids which fall outside the polygon\nare permitted.', 'fitInPolygonOnly': '``True`` if only labels which completely fit within a polygon are allowed.', 'dist': 'Distance from feature to the label. Units are specified via distUnits.\n\n.. seealso:: :py:func:`distUnits`\n\n.. seealso:: :py:func:`distMapUnitScale`', 'distUnits': 'Units the distance from feature to the label.\n\n.. seealso:: :py:func:`dist`\n\n.. seealso:: :py:func:`distMapUnitScale`', 'distMapUnitScale': 'Map unit scale for label feature distance.\n\n.. seealso:: :py:func:`dist`\n\n.. seealso:: :py:func:`distUnits`', 'offsetType': 'Offset type for layer (only applies in certain placement modes)', 'repeatDistance': 'Distance for repeating labels for a single feature.\n\n.. seealso:: :py:func:`repeatDistanceUnit`\n\n.. seealso:: :py:func:`repeatDistanceMapUnitScale`', 'repeatDistanceUnit': 'Units for repeating labels for a single feature.\n\n.. seealso:: :py:func:`repeatDistance`\n\n.. seealso:: :py:func:`repeatDistanceMapUnitScale`', 'repeatDistanceMapUnitScale': 'Map unit scale for repeating labels for a single feature.\n\n.. seealso:: :py:func:`repeatDistance`\n\n.. seealso:: :py:func:`repeatDistanceUnit`', 'xOffset': 'Horizontal offset of label. Units are specified via offsetUnits.\n\n.. seealso:: :py:func:`yOffset`\n\n.. seealso:: :py:func:`offsetUnits`\n\n.. seealso:: :py:func:`labelOffsetMapUnitScale`', 'yOffset': 'Vertical offset of label. Units are specified via offsetUnits.\n\n.. seealso:: :py:func:`xOffset`\n\n.. seealso:: :py:func:`offsetUnits`\n\n.. seealso:: :py:func:`labelOffsetMapUnitScale`', 'offsetUnits': 'Units for offsets of label.\n\n.. seealso:: :py:func:`xOffset`\n\n.. seealso:: :py:func:`yOffset`\n\n.. seealso:: :py:func:`labelOffsetMapUnitScale`', 'labelOffsetMapUnitScale': 'Map unit scale for label offset.\n\n.. seealso:: :py:func:`xOffset`\n\n.. seealso:: :py:func:`yOffset`\n\n.. seealso:: :py:func:`offsetUnits`', 'angleOffset': 'Label rotation, in degrees clockwise', 'preserveRotation': 'True if label rotation should be preserved during label pin/unpin operations.', 'maxCurvedCharAngleIn': 'Maximum angle between inside curved label characters (valid range 20.0 to 60.0).\n\n.. seealso:: :py:func:`maxCurvedCharAngleOut`', 'maxCurvedCharAngleOut': 'Maximum angle between outside curved label characters (valid range -20.0 to -95.0)\n\n.. seealso:: :py:func:`maxCurvedCharAngleIn`', 'priority': 'Label priority. Valid ranges are from 0 to 10, where 0 = lowest priority\nand 10 = highest priority.', 'scaleVisibility': 'Set to ``True`` to limit label visibility to a range of scales.\n\n.. seealso:: :py:func:`maximumScale`\n\n.. seealso:: :py:func:`minimumScale`', 'maximumScale': 'The maximum map scale (i.e. most "zoomed in" scale) at which the labels will be visible.\nThe scale value indicates the scale denominator, e.g. 1000.0 for a 1:1000 map.\nA scale of 0 indicates no maximum scale visibility.\n\nThis setting is only considered if scaleVisibility is ``True``.\n\n.. seealso:: :py:func:`minimumScale`\n\n.. seealso:: :py:func:`scaleVisibility`', 'minimumScale': 'The minimum map scale (i.e. most "zoomed out" scale) at which the labels will be visible.\nThe scale value indicates the scale denominator, e.g. 1000.0 for a 1:1000 map.\nA scale of 0 indicates no minimum scale visibility.\n\nThis setting is only considered if scaleVisibility is ``True``.\n\n.. seealso:: :py:func:`maximumScale`\n\n.. seealso:: :py:func:`scaleVisibility`', 'fontLimitPixelSize': '``True`` if label sizes should be limited by pixel size.\n\n.. seealso:: :py:func:`fontMinPixelSize`\n\n.. seealso:: :py:func:`fontMaxPixelSize`', 'fontMinPixelSize': 'Minimum pixel size for showing rendered map unit labels (1 - 1000).\n\n.. seealso:: :py:func:`fontLimitPixelSize`\n\n.. seealso:: :py:func:`fontMaxPixelSize`', 'fontMaxPixelSize': 'Maximum pixel size for showing rendered map unit labels (1 - 10000).\n\n.. seealso:: :py:func:`fontLimitPixelSize`\n\n.. seealso:: :py:func:`fontMinPixelSize`', 'upsidedownLabels': 'Controls whether upside down labels are displayed and how they are handled.', 'zIndex': 'Z-Index of label, where labels with a higher z-index are rendered on top of labels with a lower z-index', 'geometryGenerator': 'The geometry generator expression. Null if disabled.', 'geometryGeneratorType': 'The type of the result geometry of the geometry generator.', 'geometryGeneratorEnabled': 'Defines if the geometry generator is enabled or not. If disabled, the standard geometry will be taken.', 'layerType': 'Geometry type of layers associated with these settings.\n\n.. versionadded:: 3.10'}
+    QgsPalLayerSettings.__annotations__ = {'drawLabels': bool, 'fieldName': str, 'isExpression': bool, 'previewBkgrdColor': 'QColor', 'substitutions': 'QgsStringReplacementCollection', 'useSubstitutions': bool, 'wrapChar': str, 'autoWrapLength': int, 'useMaxLineLengthForAutoWrap': bool, 'multilineAlign': 'Qgis.LabelMultiLineAlignment', 'formatNumbers': bool, 'decimals': int, 'plusSign': bool, 'placement': 'Qgis.LabelPlacement', 'centroidWhole': bool, 'centroidInside': bool, 'fitInPolygonOnly': bool, 'dist': float, 'distUnits': 'Qgis.RenderUnit', 'distMapUnitScale': 'QgsMapUnitScale', 'offsetType': 'Qgis.LabelOffsetType', 'repeatDistance': float, 'repeatDistanceUnit': 'Qgis.RenderUnit', 'repeatDistanceMapUnitScale': 'QgsMapUnitScale', 'xOffset': float, 'yOffset': float, 'offsetUnits': 'Qgis.RenderUnit', 'labelOffsetMapUnitScale': 'QgsMapUnitScale', 'angleOffset': float, 'preserveRotation': bool, 'maxCurvedCharAngleIn': float, 'maxCurvedCharAngleOut': float, 'priority': int, 'scaleVisibility': bool, 'maximumScale': float, 'minimumScale': float, 'fontLimitPixelSize': bool, 'fontMinPixelSize': int, 'fontMaxPixelSize': int, 'upsidedownLabels': 'Qgis.UpsideDownLabelHandling', 'zIndex': float, 'geometryGenerator': str, 'geometryGeneratorType': 'Qgis.GeometryType', 'geometryGeneratorEnabled': bool, 'layerType': 'Qgis.GeometryType'}
     QgsPalLayerSettings.labelSettingsPreviewPixmap = staticmethod(QgsPalLayerSettings.labelSettingsPreviewPixmap)
     QgsPalLayerSettings.fromMimeData = staticmethod(QgsPalLayerSettings.fromMimeData)
     QgsPalLayerSettings.__group__ = ['labeling']
@@ -16097,6 +17962,30 @@ try:
     QgsPercentageNumericFormat.__group__ = ['numericformats']
 except (NameError, AttributeError):
     pass
+# The following has been generated automatically from src/core/./3d/materials/qgsphongmaterialsettings.h
+try:
+    QgsPhongMaterialSettings.supportsTechnique = staticmethod(QgsPhongMaterialSettings.supportsTechnique)
+    QgsPhongMaterialSettings.create = staticmethod(QgsPhongMaterialSettings.create)
+    QgsPhongMaterialSettings.__overridden_methods__ = ['type', 'clone', 'equals', 'supportedProperties', 'averageColor', 'setColorsFromBase', 'readXml', 'writeXml']
+    QgsPhongMaterialSettings.__group__ = ['3d', 'materials']
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/core/./3d/materials/qgsphongtexturedmaterialsettings.h
+try:
+    QgsPhongTexturedMaterialSettings.supportsTechnique = staticmethod(QgsPhongTexturedMaterialSettings.supportsTechnique)
+    QgsPhongTexturedMaterialSettings.create = staticmethod(QgsPhongTexturedMaterialSettings.create)
+    QgsPhongTexturedMaterialSettings.__overridden_methods__ = ['type', 'clone', 'equals', 'supportedProperties', 'requiresTextureCoordinates', 'averageColor', 'setColorsFromBase', 'readXml', 'writeXml']
+    QgsPhongTexturedMaterialSettings.__group__ = ['3d', 'materials']
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/core/plot/qgspiechartplot.h
+try:
+    QgsPieChartPlot.create = staticmethod(QgsPieChartPlot.create)
+    QgsPieChartPlot.createDataGatherer = staticmethod(QgsPieChartPlot.createDataGatherer)
+    QgsPieChartPlot.__overridden_methods__ = ['type', 'renderContent', 'writeXml', 'readXml', 'initFromPlot']
+    QgsPieChartPlot.__group__ = ['plot']
+except (NameError, AttributeError):
+    pass
 # The following has been generated automatically from src/core/diagram/qgspiediagram.h
 try:
     QgsPieDiagram.__overridden_methods__ = ['clone', 'renderDiagram', 'diagramSize', 'legendSize', 'diagramName']
@@ -16104,28 +17993,106 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/plot/qgsplot.h
+# monkey patching scoped based enum
+QgsPlot.MarginLeft.__doc__ = "Left margin"
+QgsPlot.MarginTop.__doc__ = "Top margin"
+QgsPlot.MarginRight.__doc__ = "Right margin"
+QgsPlot.MarginBottom.__doc__ = "Bottom margin"
+QgsPlot.XAxisMajorInterval.__doc__ = "Major grid line interval for X axis"
+QgsPlot.XAxisMinorInterval.__doc__ = "Minor grid line interval for X axis"
+QgsPlot.XAxisLabelInterval.__doc__ = "Label interval for X axis"
+QgsPlot.YAxisMajorInterval.__doc__ = "Major grid line interval for Y axis"
+QgsPlot.YAxisMinorInterval.__doc__ = "Minor grid line interval for Y axis"
+QgsPlot.YAxisLabelInterval.__doc__ = "Label interval for Y axis"
+QgsPlot.XAxisMinimum.__doc__ = "Minimum X axis value"
+QgsPlot.XAxisMaximum.__doc__ = "Maximum X axis value"
+QgsPlot.YAxisMinimum.__doc__ = "Minimum Y axis value"
+QgsPlot.YAxisMaximum.__doc__ = "Maximum Y axis value"
+QgsPlot.DataDefinedProperty.__doc__ = """Data defined properties for different plot types
+
+.. versionadded:: 4.0
+
+* ``MarginLeft``: Left margin
+* ``MarginTop``: Top margin
+* ``MarginRight``: Right margin
+* ``MarginBottom``: Bottom margin
+* ``XAxisMajorInterval``: Major grid line interval for X axis
+* ``XAxisMinorInterval``: Minor grid line interval for X axis
+* ``XAxisLabelInterval``: Label interval for X axis
+* ``YAxisMajorInterval``: Major grid line interval for Y axis
+* ``YAxisMinorInterval``: Minor grid line interval for Y axis
+* ``YAxisLabelInterval``: Label interval for Y axis
+* ``XAxisMinimum``: Minimum X axis value
+* ``XAxisMaximum``: Maximum X axis value
+* ``YAxisMinimum``: Minimum Y axis value
+* ``YAxisMaximum``: Maximum Y axis value
+
+"""
+# --
+try:
+    QgsPlotAxis.copyProperties = staticmethod(QgsPlotAxis.copyProperties)
+    QgsPlotAxis.__group__ = ['plot']
+except (NameError, AttributeError):
+    pass
 try:
     QgsPlotDefaultSettings.axisLabelNumericFormat = staticmethod(QgsPlotDefaultSettings.axisLabelNumericFormat)
     QgsPlotDefaultSettings.axisGridMajorSymbol = staticmethod(QgsPlotDefaultSettings.axisGridMajorSymbol)
     QgsPlotDefaultSettings.axisGridMinorSymbol = staticmethod(QgsPlotDefaultSettings.axisGridMinorSymbol)
     QgsPlotDefaultSettings.chartBackgroundSymbol = staticmethod(QgsPlotDefaultSettings.chartBackgroundSymbol)
     QgsPlotDefaultSettings.chartBorderSymbol = staticmethod(QgsPlotDefaultSettings.chartBorderSymbol)
+    QgsPlotDefaultSettings.lineChartMarkerSymbol = staticmethod(QgsPlotDefaultSettings.lineChartMarkerSymbol)
+    QgsPlotDefaultSettings.lineChartLineSymbol = staticmethod(QgsPlotDefaultSettings.lineChartLineSymbol)
+    QgsPlotDefaultSettings.barChartFillSymbol = staticmethod(QgsPlotDefaultSettings.barChartFillSymbol)
+    QgsPlotDefaultSettings.pieChartFillSymbol = staticmethod(QgsPlotDefaultSettings.pieChartFillSymbol)
+    QgsPlotDefaultSettings.pieChartColorRamp = staticmethod(QgsPlotDefaultSettings.pieChartColorRamp)
+    QgsPlotDefaultSettings.pieChartNumericFormat = staticmethod(QgsPlotDefaultSettings.pieChartNumericFormat)
     QgsPlotDefaultSettings.__group__ = ['plot']
 except (NameError, AttributeError):
     pass
 try:
-    QgsPlot.__virtual_methods__ = ['writeXml', 'readXml']
+    QgsPlot.__virtual_methods__ = ['type', 'writeXml', 'readXml', 'initFromPlot']
     QgsPlot.__group__ = ['plot']
 except (NameError, AttributeError):
     pass
 try:
-    Qgs2DPlot.__virtual_methods__ = ['renderContent']
+    Qgs2DPlot.__virtual_methods__ = ['render', 'renderContent', 'interiorPlotArea']
     Qgs2DPlot.__overridden_methods__ = ['writeXml', 'readXml']
     Qgs2DPlot.__group__ = ['plot']
 except (NameError, AttributeError):
     pass
 try:
-    QgsPlotAxis.__group__ = ['plot']
+    QgsAbstractPlotSeries.__abstract_methods__ = ['clone']
+    QgsAbstractPlotSeries.__group__ = ['plot']
+except (NameError, AttributeError):
+    pass
+try:
+    QgsXyPlotSeries.__overridden_methods__ = ['clone']
+    QgsXyPlotSeries.__group__ = ['plot']
+except (NameError, AttributeError):
+    pass
+try:
+    Qgs2DXyPlot.__overridden_methods__ = ['writeXml', 'readXml', 'render', 'interiorPlotArea']
+    Qgs2DXyPlot.__group__ = ['plot']
+except (NameError, AttributeError):
+    pass
+try:
+    QgsPlotRenderContext.__group__ = ['plot']
+except (NameError, AttributeError):
+    pass
+try:
+    QgsPlotData.__group__ = ['plot']
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/core/plot/qgsplotregistry.h
+try:
+    QgsPlotRegistry.__attribute_docs__ = {'plotAdded': 'Emitted whenever a new plot type is added to the registry, with the\nspecified ``type`` and visible ``name``.\n', 'plotAboutToBeRemoved': 'Emitted whenever a plot type is about to be remove from the registry,\nwith the specified ``type`` and visible ``name``.\n'}
+    QgsPlotRegistry.__signal_arguments__ = {'plotAdded': ['type: str', 'name: str'], 'plotAboutToBeRemoved': ['type: str']}
+    QgsPlotRegistry.__group__ = ['plot']
+except (NameError, AttributeError):
+    pass
+try:
+    QgsPlotAbstractMetadata.__abstract_methods__ = ['createPlot', 'createPlotDataGatherer', 'createPlotWidget']
+    QgsPlotAbstractMetadata.__group__ = ['plot']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgspluginlayer.h
@@ -16142,7 +18109,7 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/geometry/qgspoint.h
 try:
-    QgsPoint.__overridden_methods__ = ['fuzzyEqual', 'fuzzyDistanceEqual', 'operator==', 'operator!=', 'normalize', 'isEmpty', 'boundingBox3D', 'geometryType', 'dimension', 'clone', 'snappedToGrid', 'simplifyByDistance', 'removeDuplicateNodes', 'clear', 'fromWkb', 'fromWkt', 'wkbSize', 'asWkb', 'asWkt', 'asGml2', 'asGml3', 'asKml', 'draw', 'asQPainterPath', 'transform', 'coordinateSequence', 'nCoordinates', 'vertexNumberFromVertexId', 'boundary', 'isValid', 'insertVertex', 'moveVertex', 'deleteVertex', 'closestSegment', 'nextVertex', 'adjacentVertices', 'vertexAngle', 'vertexCount', 'ringCount', 'partCount', 'vertexAt', 'toCurveType', 'segmentLength', 'boundingBoxIntersects', 'addZValue', 'addMValue', 'dropZValue', 'dropMValue', 'swapXy', 'convertTo', 'createEmptyWithSameType', 'compareToSameClass', 'childCount', 'childPoint']
+    QgsPoint.__overridden_methods__ = ['fuzzyEqual', 'fuzzyDistanceEqual', 'operator==', 'operator!=', 'normalize', 'isEmpty', 'boundingBox3D', 'geometryType', 'dimension', 'clone', 'snappedToGrid', 'simplifyByDistance', 'removeDuplicateNodes', 'clear', 'fromWkb', 'fromWkt', 'wkbSize', 'asWkb', 'asWkt', 'asGml2', 'asGml3', 'asKml', 'draw', 'asQPainterPath', 'transform', 'coordinateSequence', 'nCoordinates', 'vertexNumberFromVertexId', 'boundary', 'isValid', 'insertVertex', 'moveVertex', 'deleteVertex', 'deleteVertices', 'hasVertex', 'closestSegment', 'nextVertex', 'adjacentVertices', 'vertexAngle', 'vertexCount', 'ringCount', 'partCount', 'vertexAt', 'toCurveType', 'segmentLength', 'boundingBoxIntersects', 'addZValue', 'addMValue', 'dropZValue', 'dropMValue', 'swapXy', 'convertTo', 'createEmptyWithSameType', 'compareToSameClass', 'childCount', 'childPoint']
     QgsPoint.__group__ = ['geometry']
 except (NameError, AttributeError):
     pass
@@ -16213,8 +18180,19 @@ QgsPointCloudAttributeModel.CustomRole.__doc__ = """Custom model roles.
 """
 # --
 QgsPointCloudAttributeModel.CustomRole.baseClass = QgsPointCloudAttributeModel
+QgsPointCloudAttributeProxyModel.Filters = lambda flags=0: QgsPointCloudAttributeProxyModel.Filter(flags)
 QgsPointCloudAttributeProxyModel.Filters.baseClass = QgsPointCloudAttributeProxyModel
 Filters = QgsPointCloudAttributeProxyModel  # dirty hack since SIP seems to introduce the flags in module
+from enum import Enum
+
+
+def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+
+QgsPointCloudAttributeProxyModel.Filter.__bool__ = lambda flag: bool(_force_int(flag))
+QgsPointCloudAttributeProxyModel.Filter.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsPointCloudAttributeProxyModel.Filter.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsPointCloudAttributeProxyModel.Filter.__or__ = lambda flag1, flag2: QgsPointCloudAttributeProxyModel.Filter(_force_int(flag1) | _force_int(flag2))
 try:
     QgsPointCloudAttributeModel.attributeToolTip = staticmethod(QgsPointCloudAttributeModel.attributeToolTip)
     QgsPointCloudAttributeModel.iconForAttributeType = staticmethod(QgsPointCloudAttributeModel.iconForAttributeType)
@@ -16245,13 +18223,14 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/pointcloud/qgspointclouddataprovider.h
+QgsPointCloudDataProvider.Capabilities = lambda flags=0: QgsPointCloudDataProvider.Capability(flags)
 try:
     QgsPointCloudDataProvider.__attribute_docs__ = {'indexGenerationStateChanged': 'Emitted when point cloud generation state is changed\n'}
     QgsPointCloudDataProvider.lasClassificationCodes = staticmethod(QgsPointCloudDataProvider.lasClassificationCodes)
     QgsPointCloudDataProvider.translatedLasClassificationCodes = staticmethod(QgsPointCloudDataProvider.translatedLasClassificationCodes)
     QgsPointCloudDataProvider.dataFormatIds = staticmethod(QgsPointCloudDataProvider.dataFormatIds)
     QgsPointCloudDataProvider.translatedDataFormatIds = staticmethod(QgsPointCloudDataProvider.translatedDataFormatIds)
-    QgsPointCloudDataProvider.__virtual_methods__ = ['capabilities', 'index', 'polygonBounds', 'originalMetadata', 'createRenderer']
+    QgsPointCloudDataProvider.__virtual_methods__ = ['capabilities', 'index', 'subIndexes', 'loadSubIndex', 'polygonBounds', 'originalMetadata', 'createRenderer']
     QgsPointCloudDataProvider.__abstract_methods__ = ['attributes', 'loadIndex', 'generateIndex', 'indexingState', 'pointCount']
     QgsPointCloudDataProvider.__overridden_methods__ = ['supportsSubsetString', 'subsetStringDialect', 'subsetStringHelpUrl', 'subsetString', 'setSubsetString']
     QgsPointCloudDataProvider.__signal_arguments__ = {'indexGenerationStateChanged': ['state: QgsPointCloudDataProvider.PointCloudIndexGenerationState']}
@@ -16305,9 +18284,8 @@ except (NameError, AttributeError):
     pass
 try:
     QgsPointCloudLayer.__attribute_docs__ = {'subsetStringChanged': "Emitted when the layer's subset string has changed.\n\n.. versionadded:: 3.26\n", 'raiseError': 'Signals an error related to this point cloud layer.\n\n.. versionadded:: 3.26\n', 'statisticsCalculationStateChanged': 'Emitted when statistics calculation state has changed\n\n.. versionadded:: 3.26\n', 'chunkAttributeValuesChanged': 'Emitted when a node gets some attribute values of some points changed\n\n.. versionadded:: 3.42\n'}
-    QgsPointCloudLayer.__virtual_methods__ = ['readStyle', 'writeStyle', 'loadDefaultStyle']
-    QgsPointCloudLayer.__overridden_methods__ = ['clone', 'extent', 'createMapRenderer', 'profileSource', 'createProfileGenerator', 'dataProvider', 'supportsEditing', 'isEditable', 'isModified', 'readXml', 'writeXml', 'readSymbology', 'writeSymbology', 'setTransformContext', 'encodedSource', 'decodedSource', 'htmlMetadata', 'elevationProperties']
-    QgsPointCloudLayer.__signal_arguments__ = {'raiseError': ['msg: str'], 'statisticsCalculationStateChanged': ['state: QgsPointCloudLayer.PointCloudStatisticsCalculationState'], 'chunkAttributeValuesChanged': ['n: QgsPointCloudNodeId']}
+    QgsPointCloudLayer.__overridden_methods__ = ['clone', 'extent', 'createMapRenderer', 'profileSource', 'profileSourceId', 'profileSourceName', 'createProfileGenerator', 'dataProvider', 'supportsEditing', 'isEditable', 'isModified', 'readXml', 'writeXml', 'readSymbology', 'readStyle', 'writeSymbology', 'writeStyle', 'setTransformContext', 'encodedSource', 'decodedSource', 'loadDefaultStyle', 'htmlMetadata', 'elevationProperties']
+    QgsPointCloudLayer.__signal_arguments__ = {'raiseError': ['msg: str'], 'statisticsCalculationStateChanged': ['state: QgsPointCloudLayer.PointCloudStatisticsCalculationState'], 'chunkAttributeValuesChanged': ['n: QgsPointCloudNodeId', 'position: int']}
     QgsPointCloudLayer.__group__ = ['pointcloud']
 except (NameError, AttributeError):
     pass
@@ -16347,6 +18325,16 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/pointcloud/qgspointcloudrenderer.h
+# monkey patching scoped based enum
+QgsPointCloudRenderer.Property.Color.__doc__ = "Point color"
+QgsPointCloudRenderer.Property.__doc__ = """Data-defined properties that can be set on the renderer.
+
+.. versionadded:: 4.2
+
+* ``Color``: Point color
+
+"""
+# --
 try:
     QgsPointCloudRenderer.load = staticmethod(QgsPointCloudRenderer.load)
     QgsPointCloudRenderer.pointXY = staticmethod(QgsPointCloudRenderer.pointXY)
@@ -16398,6 +18386,11 @@ Stores statistics of one attribute of a point cloud dataset.
     QgsPointCloudAttributeStatistics.__group__ = ['pointcloud']
 except (NameError, AttributeError):
     pass
+# The following has been generated automatically from src/core/pointcloud/qgspointcloudsubindex.h
+try:
+    QgsPointCloudSubIndex.__group__ = ['pointcloud']
+except (NameError, AttributeError):
+    pass
 # The following has been generated automatically from src/core/symbology/qgspointclusterrenderer.h
 try:
     QgsPointClusterRenderer.create = staticmethod(QgsPointClusterRenderer.create)
@@ -16429,6 +18422,7 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgspointlocator.h
+QgsPointLocator.Types = lambda flags=0: QgsPointLocator.Type(flags)
 try:
     QgsPointLocator.__attribute_docs__ = {'initFinished': 'Emitted whenever index has been built and initialization is finished\n\n:param ok: ``False`` if the creation of index has been prematurely\n           stopped due to the limit of features, otherwise ``True``\n'}
     QgsPointLocator.__abstract_methods__ = ['acceptMatch']
@@ -16450,7 +18444,7 @@ except (NameError, AttributeError):
 # The following has been generated automatically from src/core/geometry/qgspolyhedralsurface.h
 try:
     QgsPolyhedralSurface.__virtual_methods__ = ['setPatches', 'addPatch']
-    QgsPolyhedralSurface.__overridden_methods__ = ['fuzzyEqual', 'fuzzyDistanceEqual', 'operator==', 'operator!=', 'geometryType', 'dimension', 'clone', 'clear', 'fromWkb', 'fromWkt', 'isValid', 'wkbSize', 'asWkb', 'asWkt', 'asGml2', 'asGml3', 'asKml', 'normalize', 'area', 'perimeter', 'boundary', 'snappedToGrid', 'simplifyByDistance', 'removeDuplicateNodes', 'boundingBoxIntersects', 'asQPainterPath', 'draw', 'transform', 'insertVertex', 'moveVertex', 'deleteVertex', 'coordinateSequence', 'nCoordinates', 'vertexNumberFromVertexId', 'isEmpty', 'closestSegment', 'nextVertex', 'adjacentVertices', 'hasCurvedSegments', 'segmentize', 'vertexAngle', 'vertexCount', 'ringCount', 'partCount', 'vertexAt', 'segmentLength', 'addZValue', 'addMValue', 'dropZValue', 'dropMValue', 'swapXy', 'toCurveType', 'createEmptyWithSameType', 'childCount', 'childGeometry', 'compareToSameClass', 'calculateBoundingBox3D']
+    QgsPolyhedralSurface.__overridden_methods__ = ['fuzzyEqual', 'fuzzyDistanceEqual', 'operator==', 'operator!=', 'geometryType', 'dimension', 'clone', 'clear', 'fromWkb', 'fromWkt', 'isValid', 'wkbSize', 'asWkb', 'asWkt', 'asGml2', 'asGml3', 'asKml', 'normalize', 'area', 'area3D', 'perimeter', 'boundary', 'snappedToGrid', 'simplifyByDistance', 'removeDuplicateNodes', 'boundingBoxIntersects', 'asQPainterPath', 'draw', 'transform', 'insertVertex', 'moveVertex', 'deleteVertex', 'deleteVertices', 'hasVertex', 'coordinateSequence', 'nCoordinates', 'vertexNumberFromVertexId', 'isEmpty', 'closestSegment', 'nextVertex', 'adjacentVertices', 'hasCurvedSegments', 'segmentize', 'vertexAngle', 'vertexCount', 'ringCount', 'partCount', 'vertexAt', 'segmentLength', 'addZValue', 'addMValue', 'dropZValue', 'dropMValue', 'swapXy', 'toCurveType', 'createEmptyWithSameType', 'childCount', 'childGeometry', 'compareToSameClass', 'calculateBoundingBox3D']
     QgsPolyhedralSurface.__group__ = ['geometry']
 except (NameError, AttributeError):
     pass
@@ -16494,6 +18488,7 @@ QgsProcessing.LayerOptionsFlag.__doc__ = """Layer options flags
 """
 # --
 QgsProcessing.LayerOptionsFlag.baseClass = QgsProcessing
+QgsProcessing.LayerOptionsFlags = lambda flags=0: QgsProcessing.LayerOptionsFlag(flags)
 QgsProcessing.LayerOptionsFlags.baseClass = QgsProcessing
 LayerOptionsFlags = QgsProcessing  # dirty hack since SIP seems to introduce the flags in module
 try:
@@ -16547,6 +18542,7 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/processing/qgsprocessingcontext.h
+QgsProcessingContext.Flags = lambda flags=0: QgsProcessingContext.Flag(flags)
 # monkey patching scoped based enum
 QgsProcessingContext.ProcessArgumentFlag.IncludeProjectPath.__doc__ = "Include the associated project path argument"
 QgsProcessingContext.ProcessArgumentFlag.__doc__ = """Flags controlling the results given by :py:func:`~QgsProcessingContext.asQgisProcessArguments`.
@@ -16557,6 +18553,17 @@ QgsProcessingContext.ProcessArgumentFlag.__doc__ = """Flags controlling the resu
 
 """
 # --
+QgsProcessingContext.ProcessArgumentFlags = lambda flags=0: QgsProcessingContext.ProcessArgumentFlag(flags)
+from enum import Enum
+
+
+def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+
+QgsProcessingContext.Flag.__bool__ = lambda flag: bool(_force_int(flag))
+QgsProcessingContext.Flag.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsProcessingContext.Flag.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsProcessingContext.Flag.__or__ = lambda flag1, flag2: QgsProcessingContext.Flag(_force_int(flag1) | _force_int(flag2))
 try:
     QgsProcessingContext.LayerDetails.__attribute_docs__ = {'name': "Friendly name for layer, possibly for use when loading layer into project.\n\n.. warning::\n\n   Instead of directly using this value, prefer to call :py:func:`~LayerDetails.setOutputLayerName` to\n   generate a layer name which respects the user's local Processing settings.", 'forceName': "Set to ``True`` if LayerDetails.name should always be used as the loaded layer name, regardless\nof the user's local Processing settings.\n\n.. versionadded:: 3.16", 'outputName': 'Associated output name from algorithm which generated the layer.', 'groupName': 'Optional name for a layer tree group under which to place the layer when loading it into a project.\n\n.. versionadded:: 3.32', 'layerSortKey': 'Optional sorting key for sorting output layers when loading them into a project.\n\nLayers with a greater sort key will be placed over layers with a lesser sort key.\n\n.. versionadded:: 3.32', 'layerTypeHint': 'Layer type hint.\n\n.. versionadded:: 3.4', 'project': 'Destination project'}
     QgsProcessingContext.LayerDetails.__annotations__ = {'name': str, 'forceName': bool, 'outputName': str, 'groupName': str, 'layerSortKey': int, 'layerTypeHint': 'QgsProcessingUtils.LayerHint', 'project': 'QgsProject'}
@@ -16574,7 +18581,9 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/processing/qgsprocessingfeedback.h
 try:
+    QgsProcessingFeedback.__attribute_docs__ = {'progressTextChanged': 'Emitted when the progress ``text`` is changed.\n\n.. seealso:: :py:func:`setProgressText`\n\n.. versionadded:: 4.2\n', 'errorReported': 'Emitted when an error is reported.\n\n.. seealso:: :py:func:`reportError`\n\n.. versionadded:: 4.2\n', 'warningPushed': 'Emitted when an warning is pushed.\n\n.. seealso:: :py:func:`pushWarning`\n\n.. versionadded:: 4.2\n', 'infoPushed': 'Emitted when information ``text`` is pushed.\n\n.. seealso:: :py:func:`pushInfo`\n\n.. versionadded:: 4.2\n', 'commandInfoPushed': 'Emitted when command information ``text`` is pushed.\n\n.. seealso:: :py:func:`pushCommandInfo`\n\n.. versionadded:: 4.2\n', 'debugInfoPushed': 'Emitted when debug information ``text`` is pushed.\n\n.. seealso:: :py:func:`pushDebugInfo`\n\n.. versionadded:: 4.2\n', 'consoleInfoPushed': 'Emitted when console information ``text`` is pushed.\n\n.. seealso:: :py:func:`pushConsoleInfo`\n\n.. versionadded:: 4.2\n', 'formattedMessagePushed': 'Emitted when a formatted ``html`` message is pushed.\n\n.. seealso:: :py:func:`pushFormattedMessage`\n\n.. versionadded:: 4.2\n', 'sinkFeatureCountChanged': 'Emitted when the count of features pushed to a sink has changed.\n\nThe ``output`` argument specifies the associated algorithm output name.\n\n.. note::\n\n   For performance, this signal is not emitted for every individual feature\n   added to the sink. It is instead emitted only once for every 100 features added.\n\n.. seealso:: :py:func:`featureAddedToSink`\n\n.. seealso:: :py:func:`featureSinkFinalized`\n\n.. versionadded:: 4.2\n', 'sourceLoaded': 'Emitted when a feature source was retrieved for the specified algorithm\ninput parameter.\n\n.. seealso:: :py:func:`reportSourceLoaded`\n\n.. versionadded:: 4.2\n'}
     QgsProcessingFeedback.__virtual_methods__ = ['setProgressText', 'reportError', 'pushWarning', 'pushInfo', 'pushFormattedMessage', 'pushCommandInfo', 'pushDebugInfo', 'pushConsoleInfo', 'htmlLog', 'textLog']
+    QgsProcessingFeedback.__signal_arguments__ = {'progressTextChanged': ['text: str'], 'errorReported': ['text: str', 'fatalError: bool'], 'warningPushed': ['text: str'], 'infoPushed': ['text: str'], 'commandInfoPushed': ['text: str'], 'debugInfoPushed': ['text: str'], 'consoleInfoPushed': ['text: str'], 'formattedMessagePushed': ['html: str'], 'sinkFeatureCountChanged': ['output: str', 'featureCount: int'], 'sourceLoaded': ['parameterName: str', 'featureCount: int']}
     QgsProcessingFeedback.__group__ = ['processing']
 except (NameError, AttributeError):
     pass
@@ -16662,37 +18671,37 @@ except (NameError, AttributeError):
 # The following has been generated automatically from src/core/processing/qgsprocessingoutputs.h
 try:
     QgsProcessingOutputMapLayer.typeName = staticmethod(QgsProcessingOutputMapLayer.typeName)
-    QgsProcessingOutputMapLayer.__overridden_methods__ = ['type']
+    QgsProcessingOutputMapLayer.__overridden_methods__ = ['modelColor', 'type', 'isMapLayer']
     QgsProcessingOutputMapLayer.__group__ = ['processing']
 except (NameError, AttributeError):
     pass
 try:
     QgsProcessingOutputVectorLayer.typeName = staticmethod(QgsProcessingOutputVectorLayer.typeName)
-    QgsProcessingOutputVectorLayer.__overridden_methods__ = ['type']
+    QgsProcessingOutputVectorLayer.__overridden_methods__ = ['modelColor', 'type', 'isMapLayer']
     QgsProcessingOutputVectorLayer.__group__ = ['processing']
 except (NameError, AttributeError):
     pass
 try:
     QgsProcessingOutputRasterLayer.typeName = staticmethod(QgsProcessingOutputRasterLayer.typeName)
-    QgsProcessingOutputRasterLayer.__overridden_methods__ = ['type']
+    QgsProcessingOutputRasterLayer.__overridden_methods__ = ['modelColor', 'type', 'isMapLayer']
     QgsProcessingOutputRasterLayer.__group__ = ['processing']
 except (NameError, AttributeError):
     pass
 try:
     QgsProcessingOutputPointCloudLayer.typeName = staticmethod(QgsProcessingOutputPointCloudLayer.typeName)
-    QgsProcessingOutputPointCloudLayer.__overridden_methods__ = ['type']
+    QgsProcessingOutputPointCloudLayer.__overridden_methods__ = ['type', 'isMapLayer']
     QgsProcessingOutputPointCloudLayer.__group__ = ['processing']
 except (NameError, AttributeError):
     pass
 try:
     QgsProcessingOutputMultipleLayers.typeName = staticmethod(QgsProcessingOutputMultipleLayers.typeName)
-    QgsProcessingOutputMultipleLayers.__overridden_methods__ = ['type', 'valueAsString']
+    QgsProcessingOutputMultipleLayers.__overridden_methods__ = ['type', 'modelColor', 'valueAsString', 'isMapLayer']
     QgsProcessingOutputMultipleLayers.__group__ = ['processing']
 except (NameError, AttributeError):
     pass
 try:
     QgsProcessingOutputHtml.typeName = staticmethod(QgsProcessingOutputHtml.typeName)
-    QgsProcessingOutputHtml.__overridden_methods__ = ['type', 'valueAsFormattedString']
+    QgsProcessingOutputHtml.__overridden_methods__ = ['type', 'modelColor', 'valueAsFormattedString']
     QgsProcessingOutputHtml.__group__ = ['processing']
 except (NameError, AttributeError):
     pass
@@ -16704,31 +18713,31 @@ except (NameError, AttributeError):
     pass
 try:
     QgsProcessingOutputNumber.typeName = staticmethod(QgsProcessingOutputNumber.typeName)
-    QgsProcessingOutputNumber.__overridden_methods__ = ['type', 'valueAsString']
+    QgsProcessingOutputNumber.__overridden_methods__ = ['modelColor', 'type', 'valueAsString']
     QgsProcessingOutputNumber.__group__ = ['processing']
 except (NameError, AttributeError):
     pass
 try:
     QgsProcessingOutputString.typeName = staticmethod(QgsProcessingOutputString.typeName)
-    QgsProcessingOutputString.__overridden_methods__ = ['type']
+    QgsProcessingOutputString.__overridden_methods__ = ['modelColor', 'type']
     QgsProcessingOutputString.__group__ = ['processing']
 except (NameError, AttributeError):
     pass
 try:
     QgsProcessingOutputBoolean.typeName = staticmethod(QgsProcessingOutputBoolean.typeName)
-    QgsProcessingOutputBoolean.__overridden_methods__ = ['type', 'valueAsString']
+    QgsProcessingOutputBoolean.__overridden_methods__ = ['modelColor', 'type', 'valueAsString']
     QgsProcessingOutputBoolean.__group__ = ['processing']
 except (NameError, AttributeError):
     pass
 try:
     QgsProcessingOutputFolder.typeName = staticmethod(QgsProcessingOutputFolder.typeName)
-    QgsProcessingOutputFolder.__overridden_methods__ = ['type', 'valueAsFormattedString']
+    QgsProcessingOutputFolder.__overridden_methods__ = ['type', 'modelColor', 'valueAsFormattedString']
     QgsProcessingOutputFolder.__group__ = ['processing']
 except (NameError, AttributeError):
     pass
 try:
     QgsProcessingOutputFile.typeName = staticmethod(QgsProcessingOutputFile.typeName)
-    QgsProcessingOutputFile.__overridden_methods__ = ['type', 'valueAsFormattedString']
+    QgsProcessingOutputFile.__overridden_methods__ = ['type', 'modelColor', 'valueAsFormattedString']
     QgsProcessingOutputFile.__group__ = ['processing']
 except (NameError, AttributeError):
     pass
@@ -16740,12 +18749,12 @@ except (NameError, AttributeError):
     pass
 try:
     QgsProcessingOutputVectorTileLayer.typeName = staticmethod(QgsProcessingOutputVectorTileLayer.typeName)
-    QgsProcessingOutputVectorTileLayer.__overridden_methods__ = ['type']
+    QgsProcessingOutputVectorTileLayer.__overridden_methods__ = ['modelColor', 'type', 'isMapLayer']
     QgsProcessingOutputVectorTileLayer.__group__ = ['processing']
 except (NameError, AttributeError):
     pass
 try:
-    QgsProcessingOutputDefinition.__virtual_methods__ = ['valueAsString', 'valueAsFormattedString']
+    QgsProcessingOutputDefinition.__virtual_methods__ = ['modelColor', 'valueAsString', 'valueAsFormattedString', 'isMapLayer']
     QgsProcessingOutputDefinition.__abstract_methods__ = ['type']
     QgsProcessingOutputDefinition.__group__ = ['processing']
 except (NameError, AttributeError):
@@ -16784,6 +18793,13 @@ try:
     QgsProcessingParameterFieldMapping.__group__ = ['processing']
 except (NameError, AttributeError):
     pass
+# The following has been generated automatically from src/core/processing/qgsprocessingparameterheatmappixelsize.h
+try:
+    QgsProcessingParameterHeatmapPixelSize.typeName = staticmethod(QgsProcessingParameterHeatmapPixelSize.typeName)
+    QgsProcessingParameterHeatmapPixelSize.__overridden_methods__ = ['clone', 'type', 'asPythonString']
+    QgsProcessingParameterHeatmapPixelSize.__group__ = ['processing']
+except (NameError, AttributeError):
+    pass
 # The following has been generated automatically from src/core/processing/qgsprocessingparametermeshdataset.h
 try:
     QgsProcessingParameterMeshDatasetGroups.typeName = staticmethod(QgsProcessingParameterMeshDatasetGroups.typeName)
@@ -16801,11 +18817,25 @@ try:
     QgsProcessingParameterMeshDatasetTime.__group__ = ['processing']
 except (NameError, AttributeError):
     pass
+# The following has been generated automatically from src/core/processing/qgsprocessingparameterreliefcolors.h
+try:
+    QgsProcessingParameterReliefColors.typeName = staticmethod(QgsProcessingParameterReliefColors.typeName)
+    QgsProcessingParameterReliefColors.colorsAsVariant = staticmethod(QgsProcessingParameterReliefColors.colorsAsVariant)
+    QgsProcessingParameterReliefColors.__overridden_methods__ = ['clone', 'type', 'asPythonString', 'checkValueIsAcceptable', 'toVariantMap', 'fromVariantMap']
+    QgsProcessingParameterReliefColors.__group__ = ['processing']
+except (NameError, AttributeError):
+    pass
 # The following has been generated automatically from src/core/processing/qgsprocessingparameters.h
 try:
     QgsProcessingFeatureSourceDefinition.__attribute_docs__ = {'source': "Source definition. Usually a static property set to a source layer's ID or file name.", 'selectedFeaturesOnly': '``True`` if only selected features in the source should be used by algorithms.', 'featureLimit': 'If set to a value > 0, places a limit on the maximum number of features which will be\nread from the source.\n\n.. versionadded:: 3.14', 'filterExpression': 'Optional expression filter to use for filtering features which will be read from the source.\n\n.. versionadded:: 3.32', 'flags': 'Flags which dictate source behavior.\n\n.. versionadded:: 3.14', 'geometryCheck': 'Geometry check method to apply to this source. This setting is only\nutilized if the :py:class:`Qgis`.ProcessingFeatureSourceDefinitionFlag.OverrideDefaultGeometryCheck is\nset in QgsProcessingFeatureSourceDefinition.flags.\n\n.. versionadded:: 3.14'}
     QgsProcessingFeatureSourceDefinition.__annotations__ = {'source': 'QgsProperty', 'selectedFeaturesOnly': bool, 'featureLimit': int, 'filterExpression': str, 'flags': 'Qgis.ProcessingFeatureSourceDefinitionFlags', 'geometryCheck': 'Qgis.InvalidGeometryCheck'}
     QgsProcessingFeatureSourceDefinition.__group__ = ['processing']
+except (NameError, AttributeError):
+    pass
+try:
+    QgsProcessingRasterLayerDefinition.__attribute_docs__ = {'source': "Source definition. Usually a static property set to a source layer's ID or file name.", 'referenceScale': 'If set to a value > 0, sets a scale at which a raster (e.g., a WMS) should be requested or rendered.', 'dpi': 'Indicates the resolution of the raster source (e.g., a WMS server). By default 96 DPI.'}
+    QgsProcessingRasterLayerDefinition.__annotations__ = {'source': 'QgsProperty', 'referenceScale': float, 'dpi': int}
+    QgsProcessingRasterLayerDefinition.__group__ = ['processing']
 except (NameError, AttributeError):
     pass
 try:
@@ -16837,6 +18867,7 @@ try:
     QgsProcessingParameters.parameterAsLayer = staticmethod(QgsProcessingParameters.parameterAsLayer)
     QgsProcessingParameters.parameterAsRasterLayer = staticmethod(QgsProcessingParameters.parameterAsRasterLayer)
     QgsProcessingParameters.parameterAsOutputLayer = staticmethod(QgsProcessingParameters.parameterAsOutputLayer)
+    QgsProcessingParameters.parameterAsOutputFormat = staticmethod(QgsProcessingParameters.parameterAsOutputFormat)
     QgsProcessingParameters.parameterAsFileOutput = staticmethod(QgsProcessingParameters.parameterAsFileOutput)
     QgsProcessingParameters.parameterAsVectorLayer = staticmethod(QgsProcessingParameters.parameterAsVectorLayer)
     QgsProcessingParameters.parameterAsMeshLayer = staticmethod(QgsProcessingParameters.parameterAsMeshLayer)
@@ -16879,7 +18910,7 @@ except (NameError, AttributeError):
 try:
     QgsProcessingParameterCrs.typeName = staticmethod(QgsProcessingParameterCrs.typeName)
     QgsProcessingParameterCrs.fromScriptCode = staticmethod(QgsProcessingParameterCrs.fromScriptCode)
-    QgsProcessingParameterCrs.__overridden_methods__ = ['clone', 'type', 'checkValueIsAcceptable', 'valueAsPythonString', 'valueAsString', 'valueAsJsonObject']
+    QgsProcessingParameterCrs.__overridden_methods__ = ['userFriendlyString', 'clone', 'type', 'checkValueIsAcceptable', 'valueAsPythonString', 'valueAsString', 'valueAsJsonObject']
     QgsProcessingParameterCrs.__group__ = ['processing']
 except (NameError, AttributeError):
     pass
@@ -16900,7 +18931,7 @@ except (NameError, AttributeError):
 try:
     QgsProcessingParameterGeometry.typeName = staticmethod(QgsProcessingParameterGeometry.typeName)
     QgsProcessingParameterGeometry.fromScriptCode = staticmethod(QgsProcessingParameterGeometry.fromScriptCode)
-    QgsProcessingParameterGeometry.__overridden_methods__ = ['clone', 'type', 'checkValueIsAcceptable', 'valueAsPythonString', 'asScriptCode', 'asPythonString', 'toVariantMap', 'fromVariantMap']
+    QgsProcessingParameterGeometry.__overridden_methods__ = ['clone', 'type', 'checkValueIsAcceptable', 'valueAsPythonString', 'asScriptCode', 'asPythonString', 'toVariantMap', 'fromVariantMap', 'userFriendlyString']
     QgsProcessingParameterGeometry.__group__ = ['processing']
 except (NameError, AttributeError):
     pass
@@ -16934,25 +18965,25 @@ except (NameError, AttributeError):
     pass
 try:
     QgsProcessingParameterDistance.typeName = staticmethod(QgsProcessingParameterDistance.typeName)
-    QgsProcessingParameterDistance.__overridden_methods__ = ['clone', 'type', 'dependsOnOtherParameters', 'asPythonString', 'toVariantMap', 'fromVariantMap']
+    QgsProcessingParameterDistance.__overridden_methods__ = ['userFriendlyString', 'clone', 'type', 'dependsOnOtherParameters', 'asPythonString', 'toVariantMap', 'fromVariantMap']
     QgsProcessingParameterDistance.__group__ = ['processing']
 except (NameError, AttributeError):
     pass
 try:
     QgsProcessingParameterArea.typeName = staticmethod(QgsProcessingParameterArea.typeName)
-    QgsProcessingParameterArea.__overridden_methods__ = ['clone', 'type', 'dependsOnOtherParameters', 'asPythonString', 'toVariantMap', 'fromVariantMap']
+    QgsProcessingParameterArea.__overridden_methods__ = ['clone', 'type', 'dependsOnOtherParameters', 'asPythonString', 'toVariantMap', 'fromVariantMap', 'userFriendlyString']
     QgsProcessingParameterArea.__group__ = ['processing']
 except (NameError, AttributeError):
     pass
 try:
     QgsProcessingParameterVolume.typeName = staticmethod(QgsProcessingParameterVolume.typeName)
-    QgsProcessingParameterVolume.__overridden_methods__ = ['clone', 'type', 'dependsOnOtherParameters', 'asPythonString', 'toVariantMap', 'fromVariantMap']
+    QgsProcessingParameterVolume.__overridden_methods__ = ['clone', 'type', 'dependsOnOtherParameters', 'asPythonString', 'toVariantMap', 'fromVariantMap', 'userFriendlyString']
     QgsProcessingParameterVolume.__group__ = ['processing']
 except (NameError, AttributeError):
     pass
 try:
     QgsProcessingParameterDuration.typeName = staticmethod(QgsProcessingParameterDuration.typeName)
-    QgsProcessingParameterDuration.__overridden_methods__ = ['clone', 'type', 'asPythonString', 'toVariantMap', 'fromVariantMap']
+    QgsProcessingParameterDuration.__overridden_methods__ = ['clone', 'type', 'asPythonString', 'toVariantMap', 'fromVariantMap', 'userFriendlyString']
     QgsProcessingParameterDuration.__group__ = ['processing']
 except (NameError, AttributeError):
     pass
@@ -16980,7 +19011,7 @@ except (NameError, AttributeError):
 try:
     QgsProcessingParameterEnum.typeName = staticmethod(QgsProcessingParameterEnum.typeName)
     QgsProcessingParameterEnum.fromScriptCode = staticmethod(QgsProcessingParameterEnum.fromScriptCode)
-    QgsProcessingParameterEnum.__overridden_methods__ = ['clone', 'type', 'checkValueIsAcceptable', 'valueAsPythonString', 'valueAsPythonComment', 'asScriptCode', 'asPythonString', 'toVariantMap', 'fromVariantMap']
+    QgsProcessingParameterEnum.__overridden_methods__ = ['userFriendlyString', 'clone', 'type', 'checkValueIsAcceptable', 'valueAsPythonString', 'valueAsPythonComment', 'asScriptCode', 'asPythonString', 'toVariantMap', 'fromVariantMap']
     QgsProcessingParameterEnum.__group__ = ['processing']
 except (NameError, AttributeError):
     pass
@@ -17059,7 +19090,7 @@ except (NameError, AttributeError):
 try:
     QgsProcessingParameterRasterDestination.typeName = staticmethod(QgsProcessingParameterRasterDestination.typeName)
     QgsProcessingParameterRasterDestination.fromScriptCode = staticmethod(QgsProcessingParameterRasterDestination.fromScriptCode)
-    QgsProcessingParameterRasterDestination.__virtual_methods__ = ['supportedOutputRasterLayerExtensions']
+    QgsProcessingParameterRasterDestination.__virtual_methods__ = ['supportedOutputRasterLayerExtensions', 'supportedOutputRasterLayerFormatAndExtensions']
     QgsProcessingParameterRasterDestination.__overridden_methods__ = ['clone', 'type', 'checkValueIsAcceptable', 'valueAsPythonString', 'toOutputDefinition', 'defaultFileExtension', 'createFileFilter']
     QgsProcessingParameterRasterDestination.__group__ = ['processing']
 except (NameError, AttributeError):
@@ -17123,7 +19154,7 @@ except (NameError, AttributeError):
 try:
     QgsProcessingParameterDateTime.typeName = staticmethod(QgsProcessingParameterDateTime.typeName)
     QgsProcessingParameterDateTime.fromScriptCode = staticmethod(QgsProcessingParameterDateTime.fromScriptCode)
-    QgsProcessingParameterDateTime.__overridden_methods__ = ['clone', 'type', 'checkValueIsAcceptable', 'valueAsPythonString', 'toolTip', 'asPythonString', 'toVariantMap', 'fromVariantMap']
+    QgsProcessingParameterDateTime.__overridden_methods__ = ['clone', 'type', 'checkValueIsAcceptable', 'valueAsPythonString', 'toolTip', 'asPythonString', 'toVariantMap', 'fromVariantMap', 'userFriendlyString']
     QgsProcessingParameterDateTime.__group__ = ['processing']
 except (NameError, AttributeError):
     pass
@@ -17186,7 +19217,7 @@ try:
 except (NameError, AttributeError):
     pass
 try:
-    QgsProcessingParameterDefinition.__virtual_methods__ = ['isDestination', 'checkValueIsAcceptable', 'valueAsPythonString', 'valueAsJsonObject', 'valueAsString', 'valueAsStringList', 'valueAsPythonComment', 'asScriptCode', 'asPythonString', 'toVariantMap', 'fromVariantMap', 'dependsOnOtherParameters', 'toolTip']
+    QgsProcessingParameterDefinition.__virtual_methods__ = ['modelColor', 'userFriendlyString', 'isDestination', 'checkValueIsAcceptable', 'valueAsPythonString', 'valueAsJsonObject', 'valueAsString', 'valueAsStringList', 'valueAsPythonComment', 'asScriptCode', 'asPythonString', 'toVariantMap', 'fromVariantMap', 'dependsOnOtherParameters', 'toolTip']
     QgsProcessingParameterDefinition.__abstract_methods__ = ['clone', 'type']
     QgsProcessingParameterDefinition.__group__ = ['processing']
 except (NameError, AttributeError):
@@ -17216,7 +19247,8 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/processing/qgsprocessingparametertype.h
 try:
-    QgsProcessingParameterType.__virtual_methods__ = ['pythonImportString', 'className', 'flags', 'metadata', 'acceptedPythonTypes', 'acceptedStringValues', 'acceptedDataTypes']
+    QgsProcessingParameterType.defaultModelColor = staticmethod(QgsProcessingParameterType.defaultModelColor)
+    QgsProcessingParameterType.__virtual_methods__ = ['pythonImportString', 'className', 'flags', 'metadata', 'acceptedPythonTypes', 'acceptedStringValues', 'acceptedDataTypes', 'modelColor']
     QgsProcessingParameterType.__abstract_methods__ = ['create', 'description', 'name', 'id', 'acceptedParameterTypes', 'acceptedOutputTypes']
     QgsProcessingParameterType.__group__ = ['processing']
 except (NameError, AttributeError):
@@ -17234,7 +19266,7 @@ except (NameError, AttributeError):
 # The following has been generated automatically from src/core/processing/qgsprocessingprovider.h
 try:
     QgsProcessingProvider.__attribute_docs__ = {'algorithmsLoaded': 'Emitted when the provider has loaded (or refreshed) its list of\navailable algorithms.\n\n.. seealso:: :py:func:`refreshAlgorithms`\n'}
-    QgsProcessingProvider.__virtual_methods__ = ['icon', 'svgIconPath', 'flags', 'helpId', 'longName', 'versionInfo', 'canBeActivated', 'warningMessage', 'isActive', 'supportedOutputRasterLayerExtensions', 'supportedOutputVectorLayerExtensions', 'supportedOutputPointCloudLayerExtensions', 'supportedOutputVectorTileLayerExtensions', 'supportedOutputTableExtensions', 'isSupportedOutputValue', 'defaultVectorFileExtension', 'defaultRasterFileExtension', 'defaultPointCloudFileExtension', 'defaultVectorTileFileExtension', 'supportsNonFileBasedOutput', 'load', 'unload']
+    QgsProcessingProvider.__virtual_methods__ = ['icon', 'svgIconPath', 'flags', 'helpId', 'longName', 'versionInfo', 'canBeActivated', 'warningMessage', 'isActive', 'supportedOutputRasterLayerFormatAndExtensions', 'supportedOutputVectorLayerExtensions', 'supportedOutputPointCloudLayerExtensions', 'supportedOutputVectorTileLayerExtensions', 'supportedOutputTableExtensions', 'isSupportedOutputValue', 'defaultVectorFileExtension', 'defaultRasterFileFormat', 'defaultPointCloudFileExtension', 'defaultVectorTileFileExtension', 'supportsNonFileBasedOutput', 'load', 'unload']
     QgsProcessingProvider.__abstract_methods__ = ['id', 'name', 'loadAlgorithms']
     QgsProcessingProvider.__group__ = ['processing']
 except (NameError, AttributeError):
@@ -17303,6 +19335,7 @@ try:
     QgsProcessingUtils.tempFolder = staticmethod(QgsProcessingUtils.tempFolder)
     QgsProcessingUtils.generateTempFilename = staticmethod(QgsProcessingUtils.generateTempFilename)
     QgsProcessingUtils.formatHelpMapAsHtml = staticmethod(QgsProcessingUtils.formatHelpMapAsHtml)
+    QgsProcessingUtils.parameterDefinitionIndex = staticmethod(QgsProcessingUtils.parameterDefinitionIndex)
     QgsProcessingUtils.outputDefinitionIndex = staticmethod(QgsProcessingUtils.outputDefinitionIndex)
     QgsProcessingUtils.convertToCompatibleFormat = staticmethod(QgsProcessingUtils.convertToCompatibleFormat)
     QgsProcessingUtils.convertToCompatibleFormatAndLayerName = staticmethod(QgsProcessingUtils.convertToCompatibleFormatAndLayerName)
@@ -17310,6 +19343,7 @@ try:
     QgsProcessingUtils.fieldNamesToIndices = staticmethod(QgsProcessingUtils.fieldNamesToIndices)
     QgsProcessingUtils.indicesToFields = staticmethod(QgsProcessingUtils.indicesToFields)
     QgsProcessingUtils.defaultVectorExtension = staticmethod(QgsProcessingUtils.defaultVectorExtension)
+    QgsProcessingUtils.defaultRasterFormat = staticmethod(QgsProcessingUtils.defaultRasterFormat)
     QgsProcessingUtils.defaultRasterExtension = staticmethod(QgsProcessingUtils.defaultRasterExtension)
     QgsProcessingUtils.defaultPointCloudExtension = staticmethod(QgsProcessingUtils.defaultPointCloudExtension)
     QgsProcessingUtils.defaultVectorTileExtension = staticmethod(QgsProcessingUtils.defaultVectorTileExtension)
@@ -17387,6 +19421,8 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/elevation/qgsprofilesourceregistry.h
 try:
+    QgsProfileSourceRegistry.__attribute_docs__ = {'profileSourceRegistered': 'Signal emitted once a profile source is registered.\n\n:param sourceId: Unique identifier of the profile source that has been\n                 registered.\n:param sourceName: Name of the profile source that has been registered.\n\n.. versionadded:: 4.0\n', 'profileSourceUnregistered': 'Signal emitted once a profile source is unregistered.\n\n:param sourceId: Unique identifier of the profile source that has been\n                 unregistered.\n\n.. versionadded:: 4.0\n'}
+    QgsProfileSourceRegistry.__signal_arguments__ = {'profileSourceRegistered': ['sourceId: str', 'sourceName: str'], 'profileSourceUnregistered': ['sourceId: str']}
     QgsProfileSourceRegistry.__group__ = ['elevation']
 except (NameError, AttributeError):
     pass
@@ -17409,11 +19445,9 @@ indexes specified in this enum.
 """
 # --
 try:
-    QgsProject.__attribute_docs__ = {'cleared': 'Emitted when the project is cleared (and additionally when an open\nproject is cleared just before a new project is read).\n\n.. seealso:: :py:func:`clear`\n\n.. versionadded:: 3.2\n', 'aboutToBeCleared': 'Emitted when the project is about to be cleared.\n\n.. seealso:: :py:func:`clear`\n\n.. versionadded:: 3.34\n', 'readProject': 'Emitted when a project is being read.\n', 'readProjectWithContext': 'Emitted when a project is being read. And passing the /a context\n', 'writeProject': 'Emitted when the project is being written.\n', 'readMapLayer': 'Emitted after the basic initialization of a layer from the project file\nis done. You can use this signal to read additional information from the\nproject file.\n\n:param mapLayer: The map layer which is being initialized\n:param layerNode: The layer node from the project file\n', 'writeMapLayer': 'Emitted when a layer is being saved. You can use this method to save\nadditional information to the layer.\n\n:param mapLayer: The map layer which is being initialized\n:param layerElem: The layer element from the project file\n:param doc: The document\n', 'projectSaved': 'Emitted when the project file has been written and closed.\n', 'oldProjectVersionWarning': 'Emitted when an old project file is read.\n\n.. deprecated:: 3.40\n\n   Use :py:func:`~QgsProject.readVersionMismatchOccurred` instead.\n', 'readVersionMismatchOccurred': 'Emitted when a project is read and the version of QGIS used to save the\nproject differs from the current QGIS version.\n\nThe ``fileVersion`` argument indicates the version of QGIS used to save\nthe project.\n\n.. note::\n\n   Not available in Python bindings\n\n.. versionadded:: 3.26\n', 'layerLoaded': 'Emitted when a layer from a projects was read.\n\n:param i: current layer\n:param n: number of layers\n', 'loadingLayer': 'Emitted when a layer is loaded\n', 'loadingLayerMessageReceived': 'Emitted when loading layers has produced some messages\n\n:param layerName: the layer name\n:param messages: a list of pairs of :py:class:`Qgis`.MessageLevel and\n                 messages\n\n.. versionadded:: 3.2\n', 'nonIdentifiableLayersChanged': 'Emitted when the list of layer which are excluded from map\nidentification changes\n\n.. deprecated:: 3.4\n', 'titleChanged': 'Emitted when the title of the project changes.\n\n.. versionadded:: 4.0\n', 'fileNameChanged': 'Emitted when the file name of the project changes\n', 'homePathChanged': 'Emitted when the home path of the project changes.\n\n.. seealso:: :py:func:`setPresetHomePath`\n\n.. seealso:: :py:func:`homePath`\n\n.. seealso:: :py:func:`presetHomePath`\n', 'snappingConfigChanged': 'Emitted whenever the configuration for snapping has changed.\n', 'avoidIntersectionsModeChanged': 'Emitted whenever the avoid intersections mode has changed.\n\n.. versionadded:: 3.14\n', 'customVariablesChanged': 'Emitted whenever the expression variables stored in the project have\nbeen changed.\n', 'crsChanged': 'Emitted when the :py:func:`~QgsProject.crs` of the project has changed.\n\n.. seealso:: :py:func:`crs`\n\n.. seealso:: :py:func:`setCrs`\n\n.. seealso:: :py:func:`verticalCrsChanged`\n\n.. seealso:: :py:func:`ellipsoidChanged`\n', 'crs3DChanged': 'Emitted when the :py:func:`~QgsProject.crs3D` of the project has\nchanged.\n\n.. seealso:: :py:func:`crs3D`\n\n.. seealso:: :py:func:`crsChanged`\n\n.. seealso:: :py:func:`verticalCrsChanged`\n\n.. seealso:: :py:func:`ellipsoidChanged`\n\n.. versionadded:: 3.38\n', 'verticalCrsChanged': 'Emitted when the :py:func:`~QgsProject.verticalCrs` of the project has\nchanged.\n\nThis signal will be emitted whenever the vertical CRS of the project is\nchanged, either as a direct result of a call to\n:py:func:`~QgsProject.setVerticalCrs` or when\n:py:func:`~QgsProject.setCrs` is called with a compound CRS.\n\n.. seealso:: :py:func:`crsChanged`\n\n.. seealso:: :py:func:`crs3DChanged`\n\n.. seealso:: :py:func:`setCrs`\n\n.. seealso:: :py:func:`setVerticalCrs`\n\n.. seealso:: :py:func:`verticalCrs`\n\n.. versionadded:: 3.38\n', 'ellipsoidChanged': 'Emitted when the project ``ellipsoid`` is changed.\n\n.. seealso:: :py:func:`setEllipsoid`\n\n.. seealso:: :py:func:`ellipsoid`\n', 'distanceUnitsChanged': 'Emitted when the default distance units changes.\n\n.. seealso:: :py:func:`setDistanceUnits`\n\n.. versionadded:: 3.28\n', 'areaUnitsChanged': 'Emitted when the default area units changes.\n\n.. seealso:: :py:func:`setAreaUnits`\n\n.. versionadded:: 3.28\n', 'scaleMethodChanged': "Emitted when the project's scale method is changed.\n\n.. seealso:: :py:func:`scaleMethod`\n\n.. seealso:: :py:func:`setScaleMethod`\n\n.. versionadded:: 3.44\n", 'transformContextChanged': 'Emitted when the project :py:func:`~QgsProject.transformContext` is\nchanged.\n\n.. seealso:: :py:func:`transformContext`\n', 'missingDatumTransforms': 'Emitted when datum transforms stored in the project are not available\nlocally.\n', 'transactionModeChanged': 'Emitted when the transaction mode has changed.\n\n.. versionadded:: 3.38\n', 'transactionGroupsChanged': 'Emitted whenever a new transaction group has been created or a\ntransaction group has been removed.\n', 'topologicalEditingChanged': 'Emitted when the topological editing flag has changed.\n', 'avoidIntersectionsLayersChanged': 'Emitted whenever avoidIntersectionsLayers has changed.\n', 'mapThemeCollectionChanged': 'Emitted when the map theme collection changes. This only happens when\nthe map theme collection is reset. Any pointer previously received from\n:py:func:`~QgsProject.mapThemeCollection` must no longer be used after\nthis signal is emitted. You must still connect to signals from the map\ntheme collection if you want to be notified about new map themes being\nadded and map themes being removed.\n', 'labelingEngineSettingsChanged': 'Emitted when global configuration of the labeling engine changes.\n', 'metadataChanged': "Emitted when the project's metadata is changed.\n\n.. seealso:: :py:func:`setMetadata`\n\n.. seealso:: :py:func:`metadata`\n\n.. versionadded:: 3.2\n", 'projectColorsChanged': "Emitted whenever the project's color scheme has been changed.\n\n.. seealso:: :py:func:`setProjectColors`\n\n.. versionadded:: 3.6\n", 'backgroundColorChanged': "Emitted whenever the project's canvas background color has been changed.\n\n.. seealso:: :py:func:`setBackgroundColor`\n\n.. versionadded:: 3.10\n", 'selectionColorChanged': "Emitted whenever the project's selection color has been changed.\n\n.. seealso:: :py:func:`setSelectionColor`\n\n.. versionadded:: 3.10\n", 'layersWillBeRemoved': 'Emitted when one or more layers are about to be removed from the\nregistry.\n\n:param layers: A list of layers which are to be removed.\n\n.. seealso:: :py:func:`layerWillBeRemoved`\n\n.. seealso:: :py:func:`layersRemoved`\n', 'layerWillBeRemoved': 'Emitted when a layer is about to be removed from the registry.\n\n:param layer: The layer to be removed.\n\n.. note::\n\n   Consider using :py:func:`~QgsProject.layersWillBeRemoved` instead\n\n.. seealso:: :py:func:`layersWillBeRemoved`\n\n.. seealso:: :py:func:`layerRemoved`\n', 'layersRemoved': 'Emitted after one or more layers were removed from the registry.\n\n:param layerIds: A list of IDs of the layers which were removed.\n\n.. seealso:: :py:func:`layersWillBeRemoved`\n', 'layerRemoved': 'Emitted after a layer was removed from the registry.\n\n:param layerId: The ID of the layer removed.\n\n.. note::\n\n   Consider using :py:func:`~QgsProject.layersRemoved` instead\n\n.. seealso:: :py:func:`layerWillBeRemoved`\n', 'removeAll': 'Emitted when all layers are removed, before\n:py:func:`~QgsProject.layersWillBeRemoved` and\n:py:func:`~QgsProject.layerWillBeRemoved` signals are emitted. The\n:py:func:`~QgsProject.layersWillBeRemoved` and\n:py:func:`~QgsProject.layerWillBeRemoved` signals will still be emitted\nfollowing this signal. You can use this signal to do easy (and fast)\ncleanup.\n', 'layersAdded': 'Emitted when one or more layers were added to the registry. This signal\nis also emitted for layers added to the registry, but not to the legend.\n\n:param layers: List of layers which have been added.\n\n.. seealso:: :py:func:`legendLayersAdded`\n\n.. seealso:: :py:func:`layerWasAdded`\n', 'layerWasAdded': 'Emitted when a layer was added to the registry.\n\n.. note::\n\n   Consider using :py:func:`~QgsProject.layersAdded` instead\n\n.. seealso:: :py:func:`layersAdded`\n', 'legendLayersAdded': 'Emitted, when a layer was added to the registry and the legend. Layers\ncan also be private layers, which are signalled by\n:py:func:`~QgsProject.layersAdded` and\n:py:func:`~QgsProject.layerWasAdded` but will not be advertised by this\nsignal.\n\n:param layers: List of :py:class:`QgsMapLayer` which were added to the\n               legend.\n', 'isDirtyChanged': 'Emitted when the project dirty status changes.\n\n:param dirty: ``True`` if the project is in a dirty state and has\n              pending unsaved changes.\n\n.. versionadded:: 3.2\n', 'dirtySet': 'Emitted when setDirty(true) is called.\n\n.. note::\n\n   As opposed to :py:func:`~QgsProject.isDirtyChanged`, this signal is invoked every time setDirty(true)\n   is called, regardless of whether the project was already dirty.\n\n.. versionadded:: 3.20\n', 'mapScalesChanged': 'Emitted when the list of custom project map scales changes.\n\n.. seealso:: :py:func:`mapScales`\n\n.. seealso:: :py:func:`setMapScales`\n\n.. deprecated:: 3.40\n\n   Use :py:func:`~QgsProject.viewSettings` instead.\n', 'elevationShadingRendererChanged': 'Emitted when the map shading renderer changes\n\n.. versionadded:: 3.30\n'}
     QgsProject.instance = staticmethod(QgsProject.instance)
     QgsProject.setInstance = staticmethod(QgsProject.setInstance)
     QgsProject.__overridden_methods__ = ['createExpressionContext', 'createExpressionContextScope', 'translate']
-    QgsProject.__signal_arguments__ = {'readProject': ['document: QDomDocument'], 'readProjectWithContext': ['document: QDomDocument', 'context: QgsReadWriteContext'], 'writeProject': ['document: QDomDocument'], 'readMapLayer': ['mapLayer: QgsMapLayer', 'layerNode: QDomElement'], 'writeMapLayer': ['mapLayer: QgsMapLayer', 'layerElem: QDomElement', 'doc: QDomDocument'], 'readVersionMismatchOccurred': ['fileVersion: str'], 'layerLoaded': ['i: int', 'n: int'], 'loadingLayer': ['layerName: str'], 'loadingLayerMessageReceived': ['layerName: str', 'messages: List[QgsReadWriteContext.ReadWriteMessage]'], 'nonIdentifiableLayersChanged': ['nonIdentifiableLayers: List[str]'], 'snappingConfigChanged': ['config: QgsSnappingConfig'], 'ellipsoidChanged': ['ellipsoid: str'], 'missingDatumTransforms': ['missingTransforms: List[str]'], 'layersWillBeRemoved': ['layers: List[QgsMapLayer]'], 'layerWillBeRemoved': ['layer: QgsMapLayer'], 'layersRemoved': ['layerIds: List[str]'], 'layerRemoved': ['layerId: str'], 'layersAdded': ['layers: List[QgsMapLayer]'], 'layerWasAdded': ['layer: QgsMapLayer'], 'legendLayersAdded': ['layers: List[QgsMapLayer]'], 'isDirtyChanged': ['dirty: bool']}
     QgsProject.__group__ = ['project']
 except (NameError, AttributeError):
     pass
@@ -17467,21 +19501,20 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/metadata/qgsprojectmetadata.h
 try:
-    QgsProjectMetadata.__overridden_methods__ = ['clone', 'readMetadataXml', 'writeMetadataXml', 'combine']
+    QgsProjectMetadata.__overridden_methods__ = ['clone', 'readMetadataXml', 'writeMetadataXml', 'combine', 'registerTranslations']
     QgsProjectMetadata.__group__ = ['metadata']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/project/qgsprojectproperty.h
 try:
-    QgsProjectProperty.__virtual_methods__ = ['writeXml']
-    QgsProjectProperty.__abstract_methods__ = ['dump', 'isKey', 'isValue', 'isLeaf', 'readXml', 'writeXml', 'value']
-    QgsProjectProperty.__group__ = ['project']
-except (NameError, AttributeError):
-    pass
-try:
     QgsProjectPropertyKey.__virtual_methods__ = ['clear', 'clearKeys']
     QgsProjectPropertyKey.__overridden_methods__ = ['value', 'dump', 'readXml', 'writeXml', 'isKey', 'isValue', 'isLeaf']
     QgsProjectPropertyKey.__group__ = ['project']
+except (NameError, AttributeError):
+    pass
+try:
+    QgsProjectProperty.__abstract_methods__ = ['dump', 'isKey', 'isValue', 'isLeaf', 'readXml', 'writeXml', 'value']
+    QgsProjectProperty.__group__ = ['project']
 except (NameError, AttributeError):
     pass
 try:
@@ -17521,6 +19554,54 @@ try:
     QgsProjectStorageRegistry.__group__ = ['project']
 except (NameError, AttributeError):
     pass
+# The following has been generated automatically from src/core/project/qgsprojectstoredobjectmanager.h
+try:
+    QgsProjectStoredObjectManagerBase.__attribute_docs__ = {'objectAboutToBeAdded': 'Emitted when an object is about to be added to the manager\n', 'objectAdded': 'Emitted when an object has been added to the manager\n', 'objectRemoved': 'Emitted when an object was removed from the manager\n', 'objectAboutToBeRemoved': 'Emitted when an object is about to be removed from the manager\n'}
+    QgsProjectStoredObjectManagerBase.__signal_arguments__ = {'objectAboutToBeAdded': ['name: str'], 'objectAdded': ['name: str'], 'objectRemoved': ['name: str'], 'objectAboutToBeRemoved': ['name: str']}
+    QgsProjectStoredObjectManagerBase.__group__ = ['project']
+except (NameError, AttributeError):
+    pass
+try:
+    QgsAbstractProjectStoredObjectManager.__virtual_methods__ = ['setupObjectConnections']
+    QgsAbstractProjectStoredObjectManager.__group__ = ['project']
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/core/project/qgsprojectstoredobjectmanagermodel.h
+# monkey patching scoped based enum
+QgsProjectStoredObjectManagerModelBase.CustomRole.Object.__doc__ = "Object"
+QgsProjectStoredObjectManagerModelBase.CustomRole.IsEmptyObject.__doc__ = "``True`` if row represents the empty object \n.. versionadded:: 4.0"
+QgsProjectStoredObjectManagerModelBase.CustomRole.__doc__ = """Custom model roles.
+
+* ``Object``: Object
+* ``IsEmptyObject``: ``True`` if row represents the empty object
+
+  .. versionadded:: 4.0
+
+
+"""
+# --
+QgsProjectStoredObjectManagerModelBase.CustomRole.baseClass = QgsProjectStoredObjectManagerModelBase
+try:
+    QgsProjectStoredObjectManagerProxyModelBase.__virtual_methods__ = ['filterAcceptsRowInternal']
+    QgsProjectStoredObjectManagerProxyModelBase.__overridden_methods__ = ['lessThan', 'filterAcceptsRow']
+    QgsProjectStoredObjectManagerProxyModelBase.__group__ = ['project']
+except (NameError, AttributeError):
+    pass
+try:
+    QgsProjectStoredObjectManagerModelBase.__overridden_methods__ = ['rowCount', 'data', 'setData', 'flags']
+    QgsProjectStoredObjectManagerModelBase.__group__ = ['project']
+except (NameError, AttributeError):
+    pass
+try:
+    QgsProjectStoredObjectManagerModel.__overridden_methods__ = ['rowCountInternal', 'dataInternal', 'setDataInternal', 'flagsInternal', 'objectAboutToBeAddedInternal', 'objectAboutToBeRemovedInternal', 'objectAddedInternal', 'objectRemovedInternal']
+    QgsProjectStoredObjectManagerModel.__group__ = ['project']
+except (NameError, AttributeError):
+    pass
+try:
+    QgsProjectStoredObjectManagerProxyModel.__overridden_methods__ = ['filterAcceptsRowInternal']
+    QgsProjectStoredObjectManagerProxyModel.__group__ = ['project']
+except (NameError, AttributeError):
+    pass
 # The following has been generated automatically from src/core/project/qgsprojectstylesettings.h
 # monkey patching scoped based enum
 QgsProjectStyleDatabaseModel.Role.StyleRole = QgsProjectStyleDatabaseModel.CustomRole.Style
@@ -17556,6 +19637,7 @@ QgsProjectStyleDatabaseProxyModel.Filter.__doc__ = """Available filter flags for
 """
 # --
 QgsProjectStyleDatabaseProxyModel.Filter.baseClass = QgsProjectStyleDatabaseProxyModel
+QgsProjectStyleDatabaseProxyModel.Filters = lambda flags=0: QgsProjectStyleDatabaseProxyModel.Filter(flags)
 QgsProjectStyleDatabaseProxyModel.Filters.baseClass = QgsProjectStyleDatabaseProxyModel
 Filters = QgsProjectStyleDatabaseProxyModel  # dirty hack since SIP seems to introduce the flags in module
 try:
@@ -17588,8 +19670,10 @@ except (NameError, AttributeError):
 # The following has been generated automatically from src/core/project/qgsprojectutils.h
 try:
     QgsProjectUtils.layersMatchingPath = staticmethod(QgsProjectUtils.layersMatchingPath)
+    QgsProjectUtils.layersMatchingUri = staticmethod(QgsProjectUtils.layersMatchingUri)
     QgsProjectUtils.updateLayerPath = staticmethod(QgsProjectUtils.updateLayerPath)
     QgsProjectUtils.layerIsContainedInGroupLayer = staticmethod(QgsProjectUtils.layerIsContainedInGroupLayer)
+    QgsProjectUtils.checkUserTrust = staticmethod(QgsProjectUtils.checkUserTrust)
     QgsProjectUtils.__group__ = ['project']
 except (NameError, AttributeError):
     pass
@@ -17635,17 +19719,16 @@ except (NameError, AttributeError):
 # The following has been generated automatically from src/core/qgspropertycollection.h
 try:
     QgsAbstractPropertyCollection.__virtual_methods__ = ['writeXml', 'readXml']
-    QgsAbstractPropertyCollection.__abstract_methods__ = ['propertyKeys', 'clear', 'hasProperty', 'property', 'value', 'prepare', 'referencedFields', 'isActive', 'hasActiveProperties', 'hasDynamicProperties', 'toVariant', 'loadVariant']
+    QgsAbstractPropertyCollection.__abstract_methods__ = ['propertyKeys', 'clear', 'hasProperty', 'property', 'value', 'prepare', 'referencedFields', 'referencedVariables', 'isActive', 'hasActiveProperties', 'hasDynamicProperties', 'toVariant', 'loadVariant']
 except (NameError, AttributeError):
     pass
 try:
     QgsPropertyCollection.__virtual_methods__ = ['property']
-    QgsPropertyCollection.__overridden_methods__ = ['propertyKeys', 'clear', 'hasProperty', 'value', 'prepare', 'referencedFields', 'isActive', 'hasActiveProperties', 'hasDynamicProperties', 'toVariant', 'loadVariant']
+    QgsPropertyCollection.__overridden_methods__ = ['propertyKeys', 'clear', 'hasProperty', 'value', 'prepare', 'referencedFields', 'referencedVariables', 'isActive', 'hasActiveProperties', 'hasDynamicProperties', 'toVariant', 'loadVariant']
 except (NameError, AttributeError):
     pass
 try:
-    QgsPropertyCollectionStack.__virtual_methods__ = ['clear']
-    QgsPropertyCollectionStack.__overridden_methods__ = ['hasActiveProperties', 'hasDynamicProperties', 'isActive', 'property', 'value', 'referencedFields', 'prepare', 'propertyKeys', 'hasProperty', 'toVariant', 'loadVariant']
+    QgsPropertyCollectionStack.__overridden_methods__ = ['clear', 'hasActiveProperties', 'hasDynamicProperties', 'isActive', 'property', 'value', 'referencedFields', 'referencedVariables', 'prepare', 'propertyKeys', 'hasProperty', 'toVariant', 'loadVariant']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgspropertytransformer.h
@@ -17714,19 +19797,42 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/providers/qgsprovidermetadata.h
 QgsMeshDriverMetadata.MeshDriverCapability.baseClass = QgsMeshDriverMetadata
+QgsMeshDriverMetadata.MeshDriverCapabilities = lambda flags=0: QgsMeshDriverMetadata.MeshDriverCapability(flags)
 QgsMeshDriverMetadata.MeshDriverCapabilities.baseClass = QgsMeshDriverMetadata
 MeshDriverCapabilities = QgsMeshDriverMetadata  # dirty hack since SIP seems to introduce the flags in module
+from enum import Enum
+
+
+def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+
+QgsMeshDriverMetadata.MeshDriverCapability.__bool__ = lambda flag: bool(_force_int(flag))
+QgsMeshDriverMetadata.MeshDriverCapability.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsMeshDriverMetadata.MeshDriverCapability.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsMeshDriverMetadata.MeshDriverCapability.__or__ = lambda flag1, flag2: QgsMeshDriverMetadata.MeshDriverCapability(_force_int(flag1) | _force_int(flag2))
+QgsProviderMetadata.ProviderMetadataCapabilities = lambda flags=0: QgsProviderMetadata.ProviderMetadataCapability(flags)
+QgsProviderMetadata.ProviderCapabilities = lambda flags=0: QgsProviderMetadata.ProviderCapability(flags)
+QgsProviderMetadata.ProviderMetadataCapability.__bool__ = lambda flag: bool(_force_int(flag))
+QgsProviderMetadata.ProviderMetadataCapability.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsProviderMetadata.ProviderMetadataCapability.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsProviderMetadata.ProviderMetadataCapability.__or__ = lambda flag1, flag2: QgsProviderMetadata.ProviderMetadataCapability(_force_int(flag1) | _force_int(flag2))
+QgsProviderMetadata.ProviderCapability.__bool__ = lambda flag: bool(_force_int(flag))
+QgsProviderMetadata.ProviderCapability.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsProviderMetadata.ProviderCapability.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsProviderMetadata.ProviderCapability.__or__ = lambda flag1, flag2: QgsProviderMetadata.ProviderCapability(_force_int(flag1) | _force_int(flag2))
 try:
-    QgsProviderMetadata.__attribute_docs__ = {'connectionCreated': 'Emitted when a connection with the specified ``name`` is created.\n\n.. note::\n\n   Only providers which implement the connection handling API will emit this signal.\n\n.. versionadded:: 3.14\n', 'connectionDeleted': 'Emitted when the connection with the specified ``name`` was deleted.\n\n.. note::\n\n   Only providers which implement the connection handling API will emit this signal.\n\n.. versionadded:: 3.14\n', 'connectionChanged': 'Emitted when the connection with the specified ``name`` is changed, e.g.\nthe settings relating to the connection have been updated.\n\n.. note::\n\n   Only providers which implement the connection handling API will emit this signal.\n\n.. versionadded:: 3.14\n'}
     QgsProviderMetadata.setBoolParameter = staticmethod(QgsProviderMetadata.setBoolParameter)
     QgsProviderMetadata.boolParameter = staticmethod(QgsProviderMetadata.boolParameter)
-    QgsProviderMetadata.__virtual_methods__ = ['icon', 'capabilities', 'providerCapabilities', 'initProvider', 'cleanupProvider', 'filters', 'meshDriversMetadata', 'priorityForUri', 'validLayerTypesForUri', 'uriIsBlocklisted', 'sidecarFilesForUri', 'querySublayers', 'suggestGroupNameForUri', 'createProvider', 'createDatabase', 'createRasterDataProvider', 'createMeshData', 'pyramidResamplingMethods', 'decodeUri', 'encodeUri', 'absoluteToRelativeUri', 'relativeToAbsoluteUri', 'cleanUri', 'dataItemProviders', 'listStyles', 'styleExists', 'getStyleById', 'deleteStyleById', 'saveStyle', 'loadStyle', 'loadStoredStyle', 'saveLayerMetadata', 'createDb', 'createTransaction', 'connections', 'createConnection', 'deleteConnection', 'saveConnection']
-    QgsProviderMetadata.__signal_arguments__ = {'connectionCreated': ['name: str'], 'connectionDeleted': ['name: str'], 'connectionChanged': ['name: str']}
+    QgsProviderMetadata.__virtual_methods__ = ['icon', 'capabilities', 'providerCapabilities', 'initProvider', 'cleanupProvider', 'filters', 'meshDriversMetadata', 'priorityForUri', 'validLayerTypesForUri', 'uriIsBlocklisted', 'sidecarFilesForUri', 'querySublayers', 'suggestGroupNameForUri', 'createProvider', 'createEmptyLayer', 'createDatabase', 'createRasterDataProvider', 'createMeshData', 'pyramidResamplingMethods', 'decodeUri', 'encodeUri', 'absoluteToRelativeUri', 'relativeToAbsoluteUri', 'cleanUri', 'urisReferToSame', 'dataItemProviders', 'listStyles', 'styleExists', 'getStyleById', 'deleteStyleById', 'saveStyle', 'loadStyle', 'loadStoredStyle', 'saveLayerMetadata', 'createDb', 'createTransaction', 'connections', 'createConnection', 'deleteConnection', 'saveConnection']
     QgsProviderMetadata.__group__ = ['providers']
 except (NameError, AttributeError):
     pass
 try:
     QgsMeshDriverMetadata.__group__ = ['providers']
+except (NameError, AttributeError):
+    pass
+try:
+    QgsEmptyLayerCreationResult.__group__ = ['providers']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/providers/qgsproviderregistry.h
@@ -17842,6 +19948,7 @@ QgsProviderUtils.SublayerCompletenessFlag.__doc__ = """Flags which control how :
 
 """
 # --
+QgsProviderUtils.SublayerCompletenessFlags = lambda flags=0: QgsProviderUtils.SublayerCompletenessFlag(flags)
 try:
     QgsProviderUtils.sublayerDetailsAreIncomplete = staticmethod(QgsProviderUtils.sublayerDetailsAreIncomplete)
     QgsProviderUtils.suggestLayerNameFromFilePath = staticmethod(QgsProviderUtils.suggestLayerNameFromFilePath)
@@ -17868,12 +19975,6 @@ try:
     QgsPythonRunner.setArgv = staticmethod(QgsPythonRunner.setArgv)
     QgsPythonRunner.setInstance = staticmethod(QgsPythonRunner.setInstance)
     QgsPythonRunner.__abstract_methods__ = ['runCommand', 'runFileCommand', 'evalCommand', 'setArgvCommand']
-except (NameError, AttributeError):
-    pass
-# The following has been generated automatically from src/core/gps/qgsqtlocationconnection.h
-try:
-    QgsQtLocationConnection.__overridden_methods__ = ['parseData']
-    QgsQtLocationConnection.__group__ = ['gps']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/geometry/qgsquadrilateral.h
@@ -17973,6 +20074,7 @@ except (NameError, AttributeError):
     pass
 try:
     QgsRasterDataProvider.__attribute_docs__ = {'statusChanged': 'Emit a message to be displayed on status bar, usually used by network\nproviders (WMS,WCS)\n'}
+    QgsRasterDataProvider.colorName = staticmethod(QgsRasterDataProvider.colorName)
     QgsRasterDataProvider.create = staticmethod(QgsRasterDataProvider.create)
     QgsRasterDataProvider.pyramidResamplingMethods = staticmethod(QgsRasterDataProvider.pyramidResamplingMethods)
     QgsRasterDataProvider.decodeVirtualRasterProviderUri = staticmethod(QgsRasterDataProvider.decodeVirtualRasterProviderUri)
@@ -18023,6 +20125,7 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/raster/qgsrasterfilewriter.h
+QgsRasterFileWriter.RasterFormatOptions = lambda flags=0: QgsRasterFileWriter.RasterFormatOption(flags)
 try:
     QgsRasterFileWriter.FilterFormatDetails.__attribute_docs__ = {'driverName': 'Unique driver name', 'filterString': 'Filter string for file picker dialogs'}
     QgsRasterFileWriter.FilterFormatDetails.__annotations__ = {'driverName': str, 'filterString': str}
@@ -18100,8 +20203,8 @@ try:
     QgsRasterLayer.__annotations__ = {'SAMPLE_SIZE': float, 'SINGLE_BAND_ENHANCEMENT_ALGORITHM': 'QgsContrastEnhancement.ContrastEnhancementAlgorithm', 'MULTIPLE_BAND_SINGLE_BYTE_ENHANCEMENT_ALGORITHM': 'QgsContrastEnhancement.ContrastEnhancementAlgorithm', 'MULTIPLE_BAND_MULTI_BYTE_ENHANCEMENT_ALGORITHM': 'QgsContrastEnhancement.ContrastEnhancementAlgorithm', 'SINGLE_BAND_MIN_MAX_LIMITS': 'Qgis.RasterRangeLimit', 'MULTIPLE_BAND_SINGLE_BYTE_MIN_MAX_LIMITS': 'Qgis.RasterRangeLimit', 'MULTIPLE_BAND_MULTI_BYTE_MIN_MAX_LIMITS': 'Qgis.RasterRangeLimit'}
     QgsRasterLayer.isValidRasterFileName = staticmethod(QgsRasterLayer.isValidRasterFileName)
     QgsRasterLayer.lastModified = staticmethod(QgsRasterLayer.lastModified)
-    QgsRasterLayer.__virtual_methods__ = ['setOpacity', 'opacity', 'subsetString', 'setSubsetString']
-    QgsRasterLayer.__overridden_methods__ = ['clone', 'profileSource', 'createProfileGenerator', 'dataProvider', 'reload', 'createMapRenderer', 'isSpatial', 'htmlMetadata', 'properties', 'subLayers', 'setLayerOrder', 'setSubLayerVisibility', 'timestamp', 'accept', 'temporalProperties', 'elevationProperties', 'setTransformContext', 'readSymbology', 'readStyle', 'readXml', 'writeSymbology', 'writeStyle', 'writeXml', 'encodedSource', 'decodedSource']
+    QgsRasterLayer.__virtual_methods__ = ['subsetString', 'setSubsetString']
+    QgsRasterLayer.__overridden_methods__ = ['clone', 'profileSource', 'profileSourceId', 'profileSourceName', 'createProfileGenerator', 'dataProvider', 'reload', 'createMapRenderer', 'isSpatial', 'htmlMetadata', 'properties', 'setOpacity', 'opacity', 'subLayers', 'setLayerOrder', 'setSubLayerVisibility', 'timestamp', 'accept', 'temporalProperties', 'elevationProperties', 'setTransformContext', 'readSymbology', 'readStyle', 'readXml', 'writeSymbology', 'writeStyle', 'writeXml', 'encodedSource', 'decodedSource']
     QgsRasterLayer.__group__ = ['raster']
 except (NameError, AttributeError):
     pass
@@ -18127,8 +20230,16 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/raster/qgsrasterlayerutils.h
 try:
+    QgsRasterReliefColor.__attribute_docs__ = {'color': 'Color', 'minElevation': 'Elevation range minimum', 'maxElevation': 'Elevation range maximum'}
+    QgsRasterReliefColor.__annotations__ = {'color': 'QColor', 'minElevation': float, 'maxElevation': float}
+    QgsRasterReliefColor.__group__ = ['raster']
+except (NameError, AttributeError):
+    pass
+try:
     QgsRasterLayerUtils.renderedBandForElevationAndTemporalRange = staticmethod(QgsRasterLayerUtils.renderedBandForElevationAndTemporalRange)
+    QgsRasterLayerUtils.computeMinMax = staticmethod(QgsRasterLayerUtils.computeMinMax)
     QgsRasterLayerUtils.alignRasterExtent = staticmethod(QgsRasterLayerUtils.alignRasterExtent)
+    QgsRasterLayerUtils.calculateOptimizedReliefClasses = staticmethod(QgsRasterLayerUtils.calculateOptimizedReliefClasses)
     QgsRasterLayerUtils.__group__ = ['raster']
 except (NameError, AttributeError):
     pass
@@ -18289,6 +20400,7 @@ try:
 .. versionadded:: 3.2"""
 except (NameError, AttributeError):
     pass
+# The following has been generated automatically from src/core/qgsreadwritelocker.h
 # The following has been generated automatically from src/core/geometry/qgsrectangle.h
 try:
     QgsRectangle.fromWkt = staticmethod(QgsRectangle.fromWkt)
@@ -18372,6 +20484,7 @@ QgsRenderChecker.Flag.__doc__ = """Render checker flags.
 """
 # --
 QgsRenderChecker.Flag.baseClass = QgsRenderChecker
+QgsRenderChecker.Flags = lambda flags=0: QgsRenderChecker.Flag(flags)
 QgsRenderChecker.Flags.baseClass = QgsRenderChecker
 Flags = QgsRenderChecker  # dirty hack since SIP seems to introduce the flags in module
 try:
@@ -18416,6 +20529,17 @@ QgsFeatureRenderer.Property.__doc__ = """Data definable properties for renderers
 
 """
 # --
+QgsFeatureRenderer.Capabilities = lambda flags=0: QgsFeatureRenderer.Capability(flags)
+from enum import Enum
+
+
+def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+
+QgsFeatureRenderer.Capability.__bool__ = lambda flag: bool(_force_int(flag))
+QgsFeatureRenderer.Capability.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsFeatureRenderer.Capability.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsFeatureRenderer.Capability.__or__ = lambda flag1, flag2: QgsFeatureRenderer.Capability(_force_int(flag1) | _force_int(flag2))
 try:
     QgsFeatureRenderer.defaultRenderer = staticmethod(QgsFeatureRenderer.defaultRenderer)
     QgsFeatureRenderer.load = staticmethod(QgsFeatureRenderer.load)
@@ -18423,7 +20547,7 @@ try:
     QgsFeatureRenderer._getPoint = staticmethod(QgsFeatureRenderer._getPoint)
     QgsFeatureRenderer.convertSymbolSizeScale = staticmethod(QgsFeatureRenderer.convertSymbolSizeScale)
     QgsFeatureRenderer.convertSymbolRotation = staticmethod(QgsFeatureRenderer.convertSymbolRotation)
-    QgsFeatureRenderer.__virtual_methods__ = ['originalSymbolForFeature', 'legendKeysForFeature', 'startRender', 'stopRender', 'canSkipRender', 'filter', 'usesEmbeddedSymbols', 'filterNeedsGeometry', 'renderFeature', 'dump', 'capabilities', 'flags', 'symbols', 'save', 'writeSld', 'toSld', 'legendSymbolItemsCheckable', 'legendSymbolItemChecked', 'checkLegendSymbolItem', 'setLegendSymbolItem', 'legendKeyToExpression', 'legendSymbolItems', 'createLegendNodes', 'legendClassificationAttribute', 'willRenderFeature', 'symbolsForFeature', 'originalSymbolsForFeature', 'modifyRequestExtent', 'setEmbeddedRenderer', 'accept']
+    QgsFeatureRenderer.__virtual_methods__ = ['originalSymbolForFeature', 'legendKeysForFeature', 'startRender', 'stopRender', 'canSkipRender', 'filter', 'usesEmbeddedSymbols', 'filterNeedsGeometry', 'renderFeature', 'dump', 'capabilities', 'flags', 'symbols', 'save', 'writeSld', 'toSld', 'legendSymbolItemsCheckable', 'legendSymbolItemChecked', 'checkLegendSymbolItem', 'setLegendSymbolItem', 'setLegendSymbolItemLabel', 'legendKeyToExpression', 'legendSymbolItems', 'createLegendNodes', 'legendClassificationAttribute', 'willRenderFeature', 'symbolsForFeature', 'originalSymbolsForFeature', 'modifyRequestExtent', 'setEmbeddedRenderer', 'accept']
     QgsFeatureRenderer.__abstract_methods__ = ['symbolForFeature', 'usedAttributes', 'clone']
     QgsFeatureRenderer.__group__ = ['symbology']
 except (NameError, AttributeError):
@@ -18442,6 +20566,17 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/symbology/qgsrendererregistry.h
+QgsRendererAbstractMetadata.LayerTypes = lambda flags=0: QgsRendererAbstractMetadata.LayerType(flags)
+from enum import Enum
+
+
+def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+
+QgsRendererAbstractMetadata.LayerType.__bool__ = lambda flag: bool(_force_int(flag))
+QgsRendererAbstractMetadata.LayerType.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsRendererAbstractMetadata.LayerType.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsRendererAbstractMetadata.LayerType.__or__ = lambda flag1, flag2: QgsRendererAbstractMetadata.LayerType(_force_int(flag1) | _force_int(flag2))
 try:
     QgsRendererAbstractMetadata.__virtual_methods__ = ['compatibleLayerTypes', 'createRendererWidget', 'createRendererFromSld']
     QgsRendererAbstractMetadata.__abstract_methods__ = ['createRenderer']
@@ -18478,6 +20613,9 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/labeling/qgsrulebasedlabeling.h
+QgsRuleBasedLabeling.Rule.Filtered = QgsRuleBasedLabeling.Rule.RegisterResult.Filtered
+QgsRuleBasedLabeling.Rule.Inactive = QgsRuleBasedLabeling.Rule.RegisterResult.Inactive
+QgsRuleBasedLabeling.Rule.Registered = QgsRuleBasedLabeling.Rule.RegisterResult.Registered
 try:
     QgsRuleBasedLabeling.Rule.create = staticmethod(QgsRuleBasedLabeling.Rule.create)
     QgsRuleBasedLabeling.Rule.__group__ = ['labeling']
@@ -18490,6 +20628,9 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/symbology/qgsrulebasedrenderer.h
+QgsRuleBasedRenderer.Rule.Filtered = QgsRuleBasedRenderer.Rule.RenderResult.Filtered
+QgsRuleBasedRenderer.Rule.Inactive = QgsRuleBasedRenderer.Rule.RenderResult.Inactive
+QgsRuleBasedRenderer.Rule.Rendered = QgsRuleBasedRenderer.Rule.RenderResult.Rendered
 try:
     QgsRuleBasedRenderer.RenderJob.__attribute_docs__ = {'ftr': 'Feature to render', 'symbol': 'Symbol to render feature with (not owned by this object).'}
     QgsRuleBasedRenderer.RenderJob.__annotations__ = {'ftr': 'QgsRuleBasedRenderer.FeatureToRender', 'symbol': 'QgsSymbol'}
@@ -18512,7 +20653,7 @@ try:
     QgsRuleBasedRenderer.refineRuleScales = staticmethod(QgsRuleBasedRenderer.refineRuleScales)
     QgsRuleBasedRenderer.convertFromRenderer = staticmethod(QgsRuleBasedRenderer.convertFromRenderer)
     QgsRuleBasedRenderer.convertToDataDefinedSymbology = staticmethod(QgsRuleBasedRenderer.convertToDataDefinedSymbology)
-    QgsRuleBasedRenderer.__overridden_methods__ = ['symbolForFeature', 'flags', 'renderFeature', 'startRender', 'canSkipRender', 'stopRender', 'filter', 'usedAttributes', 'filterNeedsGeometry', 'clone', 'toSld', 'symbols', 'save', 'legendSymbolItemsCheckable', 'legendSymbolItemChecked', 'checkLegendSymbolItem', 'legendKeyToExpression', 'setLegendSymbolItem', 'legendSymbolItems', 'dump', 'willRenderFeature', 'symbolsForFeature', 'originalSymbolsForFeature', 'legendKeysForFeature', 'capabilities', 'accept']
+    QgsRuleBasedRenderer.__overridden_methods__ = ['symbolForFeature', 'flags', 'renderFeature', 'startRender', 'canSkipRender', 'stopRender', 'filter', 'usedAttributes', 'filterNeedsGeometry', 'clone', 'toSld', 'symbols', 'save', 'legendSymbolItemsCheckable', 'legendSymbolItemChecked', 'checkLegendSymbolItem', 'legendKeyToExpression', 'setLegendSymbolItem', 'setLegendSymbolItemLabel', 'legendSymbolItems', 'dump', 'willRenderFeature', 'symbolsForFeature', 'originalSymbolsForFeature', 'legendKeysForFeature', 'capabilities', 'accept']
     QgsRuleBasedRenderer.__group__ = ['symbology']
 except (NameError, AttributeError):
     pass
@@ -18585,6 +20726,7 @@ QgsScaleBarRenderer.Flag.__doc__ = """Flags which control scalebar renderer beha
 
 """
 # --
+QgsScaleBarRenderer.Flags = lambda flags=0: QgsScaleBarRenderer.Flag(flags)
 try:
     QgsScaleBarRenderer.ScaleBarContext.__attribute_docs__ = {'segmentWidth': 'The width, in millimeters, of each individual segment drawn.\n\n.. note::\n\n   The number of map units per segment needs to be set via :py:class:`QgsScaleBarSettings`.setUnitsPerSegment.', 'size': 'Destination size for scalebar. This is used for scalebars which\nalter their appearance or alignment based on the desired scalebar\nsize (e.g. correctly aligning text in a numeric scale bar).', 'scale': 'Scale denominator', 'flags': 'Scalebar renderer flags'}
     QgsScaleBarRenderer.ScaleBarContext.__annotations__ = {'segmentWidth': float, 'size': 'QSizeF', 'scale': float, 'flags': 'QgsScaleBarRenderer.Flags'}
@@ -18597,7 +20739,7 @@ try:
 except (NameError, AttributeError):
     pass
 try:
-    QgsScaleBarRenderer.__virtual_methods__ = ['flags', 'sortKey', 'draw', 'calculateBoxSize', 'applyDefaultSettings']
+    QgsScaleBarRenderer.__virtual_methods__ = ['flags', 'sortKey', 'calculateBoxSize', 'applyDefaultSettings']
     QgsScaleBarRenderer.__abstract_methods__ = ['id', 'visibleName', 'clone', 'draw']
     QgsScaleBarRenderer.__group__ = ['scalebar']
 except (NameError, AttributeError):
@@ -18624,6 +20766,46 @@ except (NameError, AttributeError):
 try:
     QgsScientificNumericFormat.__overridden_methods__ = ['id', 'visibleName', 'sortKey', 'formatDouble', 'clone', 'create', 'configuration', 'setNumberDecimalPlaces']
     QgsScientificNumericFormat.__group__ = ['numericformats']
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/core/symbology/qgsselectivemaskingsource.h
+try:
+    QgsSelectiveMaskSource.__group__ = ['symbology']
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/core/symbology/qgsselectivemaskingsourceset.h
+try:
+    QgsSelectiveMaskingSourceSet.__group__ = ['symbology']
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/core/project/qgsselectivemaskingsourcesetmanager.h
+try:
+    QgsSelectiveMaskingSourceSetManager.__attribute_docs__ = {'changed': 'Emitted whenever sets stored within the manager are changed\n', 'setAboutToBeAdded': 'Emitted when a set is about to be added to the manager\n', 'setAdded': 'Emitted when a set has been added to the manager\n', 'setRemoved': 'Emitted when a set was removed from the manager\n', 'setAboutToBeRemoved': 'Emitted when a set is about to be removed from the manager\n', 'setRenamed': 'Emitted when a set is renamed\n'}
+    QgsSelectiveMaskingSourceSetManager.__signal_arguments__ = {'setAboutToBeAdded': ['name: str'], 'setAdded': ['name: str'], 'setRemoved': ['name: str'], 'setAboutToBeRemoved': ['name: str'], 'setRenamed': ['oldName: str', 'newName: str']}
+    QgsSelectiveMaskingSourceSetManager.__group__ = ['project']
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/core/project/qgsselectivemaskingsourcesetmanagermodel.h
+# monkey patching scoped based enum
+QgsSelectiveMaskingSourceSetManagerModel.CustomRole.Object.__doc__ = "Object"
+QgsSelectiveMaskingSourceSetManagerModel.CustomRole.IsEmptyObject.__doc__ = "``True`` if row represents the empty object"
+QgsSelectiveMaskingSourceSetManagerModel.CustomRole.SetId.__doc__ = "Selective masking source set unique ID"
+QgsSelectiveMaskingSourceSetManagerModel.CustomRole.__doc__ = """Custom model roles.
+
+* ``Object``: Object
+* ``IsEmptyObject``: ``True`` if row represents the empty object
+* ``SetId``: Selective masking source set unique ID
+
+"""
+# --
+QgsSelectiveMaskingSourceSetManagerModel.CustomRole.baseClass = QgsSelectiveMaskingSourceSetManagerModel
+try:
+    QgsSelectiveMaskingSourceSetManagerModel.__overridden_methods__ = ['data']
+    QgsSelectiveMaskingSourceSetManagerModel.__group__ = ['project']
+except (NameError, AttributeError):
+    pass
+try:
+    QgsSelectiveMaskingSourceSetManagerProxyModel.__group__ = ['project']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/sensor/qgssensormanager.h
@@ -18690,6 +20872,13 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/providers/sensorthings/qgssensorthingsutils.h
 try:
+    QgsSensorThingsUtils.ServiceCapabilities.__attribute_docs__ = {'version': 'SensorThings API version', 'availableExtensions': 'Available SensorThings extensions', 'availableEntities': 'Available SensorThings entities'}
+    QgsSensorThingsUtils.ServiceCapabilities.__annotations__ = {'version': 'Qgis.SensorThingsVersion', 'availableExtensions': 'Qgis.SensorThingsExtensions', 'availableEntities': 'Set[Qgis.SensorThingsEntity]'}
+    QgsSensorThingsUtils.ServiceCapabilities.__doc__ = """SensorThings service capabilities"""
+    QgsSensorThingsUtils.ServiceCapabilities.__group__ = ['providers', 'sensorthings']
+except (NameError, AttributeError):
+    pass
+try:
     QgsSensorThingsUtils.stringToEntity = staticmethod(QgsSensorThingsUtils.stringToEntity)
     QgsSensorThingsUtils.displayString = staticmethod(QgsSensorThingsUtils.displayString)
     QgsSensorThingsUtils.entitySetStringToEntity = staticmethod(QgsSensorThingsUtils.entitySetStringToEntity)
@@ -18703,6 +20892,7 @@ try:
     QgsSensorThingsUtils.filterForWkbType = staticmethod(QgsSensorThingsUtils.filterForWkbType)
     QgsSensorThingsUtils.filterForExtent = staticmethod(QgsSensorThingsUtils.filterForExtent)
     QgsSensorThingsUtils.combineFilters = staticmethod(QgsSensorThingsUtils.combineFilters)
+    QgsSensorThingsUtils.determineServiceCapabilities = staticmethod(QgsSensorThingsUtils.determineServiceCapabilities)
     QgsSensorThingsUtils.availableGeometryTypes = staticmethod(QgsSensorThingsUtils.availableGeometryTypes)
     QgsSensorThingsUtils.expandableTargets = staticmethod(QgsSensorThingsUtils.expandableTargets)
     QgsSensorThingsUtils.relationshipCardinality = staticmethod(QgsSensorThingsUtils.relationshipCardinality)
@@ -18810,6 +21000,19 @@ try:
     QgsSettingsTreeNamedListNode.__group__ = ['settings']
 except (NameError, AttributeError):
     pass
+# The following has been generated automatically from src/core/geometry/qgssfcgalgeometry.h
+try:
+    QgsSfcgalGeometry.fromWkb = staticmethod(QgsSfcgalGeometry.fromWkb)
+    QgsSfcgalGeometry.fromWkt = staticmethod(QgsSfcgalGeometry.fromWkt)
+    QgsSfcgalGeometry.createBox = staticmethod(QgsSfcgalGeometry.createBox)
+    QgsSfcgalGeometry.createCone = staticmethod(QgsSfcgalGeometry.createCone)
+    QgsSfcgalGeometry.createCube = staticmethod(QgsSfcgalGeometry.createCube)
+    QgsSfcgalGeometry.createCylinder = staticmethod(QgsSfcgalGeometry.createCylinder)
+    QgsSfcgalGeometry.createSphere = staticmethod(QgsSfcgalGeometry.createSphere)
+    QgsSfcgalGeometry.createTorus = staticmethod(QgsSfcgalGeometry.createTorus)
+    QgsSfcgalGeometry.__group__ = ['geometry']
+except (NameError, AttributeError):
+    pass
 # The following has been generated automatically from src/core/effects/qgsshadoweffect.h
 try:
     QgsDropShadowEffect.create = staticmethod(QgsDropShadowEffect.create)
@@ -18827,6 +21030,20 @@ try:
     QgsShadowEffect.__abstract_methods__ = ['exteriorShadow']
     QgsShadowEffect.__overridden_methods__ = ['flags', 'properties', 'readProperties', 'boundingRect', 'draw']
     QgsShadowEffect.__group__ = ['effects']
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/core/geometry/qgssimplecurve.h
+try:
+    QgsSimpleCurve.__overridden_methods__ = ['fuzzyEqual', 'fuzzyDistanceEqual', 'equals', 'xAt', 'yAt', 'zAt', 'mAt', 'wkbSize', 'asWkb', 'asWkt', 'fromWkb', 'fromWkt', 'clear', 'isEmpty', 'numPoints', 'nCoordinates', 'dimension', 'addMValue', 'addZValue', 'dropMValue', 'dropZValue', 'startPoint', 'endPoint', 'points', 'scroll', 'swapXy', 'moveVertex', 'reversed', 'transform', 'compareToSameClass']
+    QgsSimpleCurve.__group__ = ['geometry']
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/core/./3d/materials/qgssimplelinematerialsettings.h
+try:
+    QgsSimpleLineMaterialSettings.supportsTechnique = staticmethod(QgsSimpleLineMaterialSettings.supportsTechnique)
+    QgsSimpleLineMaterialSettings.create = staticmethod(QgsSimpleLineMaterialSettings.create)
+    QgsSimpleLineMaterialSettings.__overridden_methods__ = ['type', 'clone', 'equals', 'supportedProperties', 'averageColor', 'setColorsFromBase', 'readXml', 'writeXml']
+    QgsSimpleLineMaterialSettings.__group__ = ['3d', 'materials']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgssimplifymethod.h
@@ -18909,6 +21126,17 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgsspatialindex.h
+QgsSpatialIndex.Flags = lambda flags=0: QgsSpatialIndex.Flag(flags)
+from enum import Enum
+
+
+def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+
+QgsSpatialIndex.Flag.__bool__ = lambda flag: bool(_force_int(flag))
+QgsSpatialIndex.Flag.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsSpatialIndex.Flag.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsSpatialIndex.Flag.__or__ = lambda flag1, flag2: QgsSpatialIndex.Flag(_force_int(flag1) | _force_int(flag2))
 try:
     QgsSpatialIndex.__overridden_methods__ = ['addFeature', 'addFeatures']
 except (NameError, AttributeError):
@@ -19133,10 +21361,8 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgsstringutils.h
 try:
-    QgsStringReplacement.fromProperties = staticmethod(QgsStringReplacement.fromProperties)
-except (NameError, AttributeError):
-    pass
-try:
+    QgsStringUtils.__attribute_docs__ = {'UNACCENT_MAP': "Lookup table used by :py:func:`~QgsStringUtils.unaccent`. Generated at build time from\nPostgreSQL's unaccent rules.\n\nThis hash map contains mappings from accented/special characters to their\nASCII equivalents. The table includes:\n\n- Diacritical marks (é→e, ñ→n, ü→u, etc.)\n- Ligatures (Æ→AE, œ→oe, etc.)\n- Special letters (ß→ss, ł→l, etc.)\n- Compatibility characters (℃→°C, ℗→(P), etc.)\n- Full-width characters (＃→#, etc.)"}
+    QgsStringUtils.__annotations__ = {'UNACCENT_MAP': 'Dict[str, str]'}
     QgsStringUtils.capitalize = staticmethod(QgsStringUtils.capitalize)
     QgsStringUtils.ampersandEncode = staticmethod(QgsStringUtils.ampersandEncode)
     QgsStringUtils.levenshteinDistance = staticmethod(QgsStringUtils.levenshteinDistance)
@@ -19152,6 +21378,12 @@ try:
     QgsStringUtils.qRegExpEscape = staticmethod(QgsStringUtils.qRegExpEscape)
     QgsStringUtils.truncateMiddleOfString = staticmethod(QgsStringUtils.truncateMiddleOfString)
     QgsStringUtils.containsByWord = staticmethod(QgsStringUtils.containsByWord)
+    QgsStringUtils.createUnaccentMap = staticmethod(QgsStringUtils.createUnaccentMap)
+    QgsStringUtils.unaccent = staticmethod(QgsStringUtils.unaccent)
+except (NameError, AttributeError):
+    pass
+try:
+    QgsStringReplacement.fromProperties = staticmethod(QgsStringReplacement.fromProperties)
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/symbology/qgsstyle.h
@@ -19318,6 +21550,11 @@ try:
     QgsStyleSymbol3DEntity.__group__ = ['symbology']
 except (NameError, AttributeError):
     pass
+try:
+    QgsStyleMaterialSettingsEntity.__overridden_methods__ = ['type']
+    QgsStyleMaterialSettingsEntity.__group__ = ['symbology']
+except (NameError, AttributeError):
+    pass
 # The following has been generated automatically from src/core/symbology/qgsstyleentityvisitor.h
 # monkey patching scoped based enum
 QgsStyleEntityVisitorInterface.NodeType.Project.__doc__ = "QGIS Project node"
@@ -19388,6 +21625,7 @@ QgsStyleModel.StyleName.__doc__ = "Name of associated QgsStyle (QgsStyle.name())
 QgsStyleModel.StyleFileName.__doc__ = "File name of associated QgsStyle (QgsStyle.fileName()) \n.. versionadded:: 3.26"
 QgsStyleModel.Role.IsTitleRole = QgsStyleModel.CustomRole.IsTitle
 QgsStyleModel.IsTitleRole.__doc__ = "True if the index corresponds to a title item \n.. versionadded:: 3.26"
+QgsStyleModel.MaterialType.__doc__ = "Material type (for material entities) \n.. versionadded:: 4.2"
 QgsStyleModel.CustomRole.__doc__ = """Custom model roles.
 
 .. note::
@@ -19439,6 +21677,10 @@ QgsStyleModel.CustomRole.__doc__ = """Custom model roles.
 
   Available as ``QgsStyleModel.IsTitleRole`` in older QGIS releases.
 
+* ``MaterialType``: Material type (for material entities)
+
+  .. versionadded:: 4.2
+
 
 """
 # --
@@ -19451,6 +21693,19 @@ except (NameError, AttributeError):
 try:
     QgsStyleProxyModel.__overridden_methods__ = ['filterAcceptsRow', 'lessThan']
     QgsStyleProxyModel.__group__ = ['symbology']
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/core/qgssunpositioncalculator.h
+try:
+    QgsSunPositionResult.__attribute_docs__ = {'azimuth': 'Azimuth angle in degrees clockwise from North.', 'apparentElevation': 'Apparent topocentric elevation angle in degrees (corrected for atmospheric refraction).', 'solarMidnightBefore': 'The datetime of the solar midnight preceding the calculation time (in UTC).', 'solarTransit': 'The datetime of solar transit (solar noon) when the sun reaches its highest elevation (in UTC).', 'solarMidnightAfter': 'The datetime of the solar midnight following the calculation time (in UTC).', 'sunrise': "The datetime of sunrise, defined as the moment the upper edge of the sun's disk becomes visible above the horizon (in UTC).", 'sunset': "The datetime of sunset, defined as the moment the upper edge of the sun's disk disappears below the horizon (in UTC).", 'civilDawn': 'The datetime of civil dawn, when the geometric center of the sun is 6 degrees below the horizon in the morning (in UTC).', 'civilDusk': 'The datetime of civil dusk, when the geometric center of the sun is 6 degrees below the horizon in the evening (in UTC).', 'nauticalDawn': 'The datetime of nautical dawn, when the geometric center of the sun is 12 degrees below the horizon in the morning (in UTC).', 'nauticalDusk': 'The datetime of nautical dusk, when the geometric center of the sun is 12 degrees below the horizon in the evening (in UTC).', 'astronomicalDawn': 'The datetime of astronomical dawn, when the geometric center of the sun is 18 degrees below the horizon in the morning (in UTC).', 'astronomicalDusk': 'The datetime of astronomical dusk, when the geometric center of the sun is 18 degrees below the horizon in the evening (in UTC).'}
+    QgsSunPositionResult.__annotations__ = {'azimuth': float, 'apparentElevation': float, 'solarMidnightBefore': 'QDateTime', 'solarTransit': 'QDateTime', 'solarMidnightAfter': 'QDateTime', 'sunrise': 'QDateTime', 'sunset': 'QDateTime', 'civilDawn': 'QDateTime', 'civilDusk': 'QDateTime', 'nauticalDawn': 'QDateTime', 'nauticalDusk': 'QDateTime', 'astronomicalDawn': 'QDateTime', 'astronomicalDusk': 'QDateTime'}
+    QgsSunPositionResult.__doc__ = """Contains the results of a solar position calculation.
+
+.. versionadded:: 4.2"""
+except (NameError, AttributeError):
+    pass
+try:
+    QgsSunPositionCalculator.calculate = staticmethod(QgsSunPositionCalculator.calculate)
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/geometry/qgssurface.h
@@ -19512,6 +21767,21 @@ except (NameError, AttributeError):
     pass
 try:
     QgsSymbolBufferSettings.__group__ = ['symbology']
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/core/symbology/converters/qgssymbolconverter.h
+try:
+    QgsAbstractSymbolConverter.__abstract_methods__ = ['capabilities', 'name', 'formatName', 'toVariant', 'createSymbol']
+    QgsAbstractSymbolConverter.__group__ = ['symbology', 'converters']
+except (NameError, AttributeError):
+    pass
+try:
+    QgsSymbolConverterContext.__group__ = ['symbology', 'converters']
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/core/symbology/converters/qgssymbolconverterregistry.h
+try:
+    QgsSymbolConverterRegistry.__group__ = ['symbology', 'converters']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/symbology/qgssymbollayer.h
@@ -19658,6 +21928,8 @@ QgsSymbolLayer.Property.PropertyLineClipping = QgsSymbolLayer.Property.LineClipp
 QgsSymbolLayer.PropertyLineClipping.__doc__ = "Line clipping mode \n.. versionadded:: 3.24"
 QgsSymbolLayer.SkipMultiples.__doc__ = "Skip multiples of \n.. versionadded:: 3.40"
 QgsSymbolLayer.ShowMarker.__doc__ = "Show markers \n.. versionadded:: 3.40"
+QgsSymbolLayer.BlankSegments.__doc__ = "String list of distance to define blank segments along line for templated line symbol layers. \n.. versionadded:: 4.0"
+QgsSymbolLayer.ExtraItems.__doc__ = "String list of tuple (x, y and rotation angle) to define extra items to be rendered for templated line symbol layers. \n.. versionadded:: 4.2"
 QgsSymbolLayer.Property.__doc__ = """Data definable properties.
 
 * ``Size``: Symbol size
@@ -19978,6 +22250,14 @@ QgsSymbolLayer.Property.__doc__ = """Data definable properties.
 
   .. versionadded:: 3.40
 
+* ``BlankSegments``: String list of distance to define blank segments along line for templated line symbol layers.
+
+  .. versionadded:: 4.0
+
+* ``ExtraItems``: String list of tuple (x, y and rotation angle) to define extra items to be rendered for templated line symbol layers.
+
+  .. versionadded:: 4.2
+
 
 """
 # --
@@ -19990,7 +22270,7 @@ try:
 except (NameError, AttributeError):
     pass
 try:
-    QgsSymbolLayer.__virtual_methods__ = ['flags', 'color', 'setColor', 'setStrokeColor', 'strokeColor', 'setFillColor', 'fillColor', 'startFeatureRender', 'stopFeatureRender', 'toSld', 'ogrFeatureStyle', 'subSymbol', 'setSubSymbol', 'isCompatibleWithSymbol', 'canCauseArtifactsBetweenAdjacentTiles', 'estimateMaxBleed', 'setOutputUnit', 'outputUnit', 'usesMapUnits', 'setMapUnitScale', 'mapUnitScale', 'usedAttributes', 'setDataDefinedProperty', 'writeDxf', 'dxfWidth', 'dxfSize', 'dxfOffset', 'dxfColor', 'dxfAngle', 'dxfCustomDashPattern', 'dxfPenStyle', 'dxfBrushColor', 'dxfBrushStyle', 'prepareExpressions', 'hasDataDefinedProperties', 'masks', 'prepareMasks']
+    QgsSymbolLayer.__virtual_methods__ = ['flags', 'color', 'setColor', 'setStrokeColor', 'strokeColor', 'setFillColor', 'fillColor', 'startFeatureRender', 'stopFeatureRender', 'toSld', 'ogrFeatureStyle', 'subSymbol', 'setSubSymbol', 'isCompatibleWithSymbol', 'rendersIdenticallyTo', 'canCauseArtifactsBetweenAdjacentTiles', 'estimateMaxBleed', 'setOutputUnit', 'outputUnit', 'usesMapUnits', 'setMapUnitScale', 'mapUnitScale', 'usedAttributes', 'setDataDefinedProperty', 'writeDxf', 'dxfWidth', 'dxfSize', 'dxfOffset', 'dxfColor', 'dxfAngle', 'dxfCustomDashPattern', 'dxfPenStyle', 'dxfBrushColor', 'dxfBrushStyle', 'prepareExpressions', 'hasDataDefinedProperties', 'masks', 'prepareMasks']
     QgsSymbolLayer.__abstract_methods__ = ['layerType', 'startRender', 'stopRender', 'clone', 'properties', 'drawPreviewIcon']
     QgsSymbolLayer.__group__ = ['symbology']
 except (NameError, AttributeError):
@@ -20213,6 +22493,17 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgstaskmanager.h
 QgsTask.TaskStatus.baseClass = QgsTask
+QgsTask.Flags = lambda flags=0: QgsTask.Flag(flags)
+from enum import Enum
+
+
+def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+
+QgsTask.Flag.__bool__ = lambda flag: bool(_force_int(flag))
+QgsTask.Flag.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsTask.Flag.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsTask.Flag.__or__ = lambda flag1, flag2: QgsTask.Flag(_force_int(flag1) | _force_int(flag2))
 try:
     QgsTask.__attribute_docs__ = {'progressChanged': 'Will be emitted by task when its progress changes.\n\n:param progress: percent of progress, from 0.0 - 100.0\n\n.. note::\n\n   derived classes should not emit this signal directly, instead they should call\n   :py:func:`~QgsTask.setProgress`\n', 'statusChanged': 'Will be emitted by task when its status changes.\n\n:param status: new task status\n\n.. note::\n\n   derived classes should not emit this signal directly, it will automatically\n   be emitted\n', 'begun': 'Will be emitted by task to indicate its commencement.\n\n.. note::\n\n   derived classes should not emit this signal directly, it will automatically\n   be emitted when the task begins\n', 'taskCompleted': 'Will be emitted by task to indicate its successful completion.\n\n.. note::\n\n   derived classes should not emit this signal directly, it will automatically\n   be emitted\n', 'taskTerminated': 'Will be emitted by task if it has terminated for any reason other then\ncompletion (e.g., when a task has been canceled or encountered an\ninternal error).\n\n.. note::\n\n   derived classes should not emit this signal directly, it will automatically\n   be emitted\n'}
     QgsTask.__virtual_methods__ = ['cancel', 'finished']
@@ -20249,6 +22540,7 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgstemporalproperty.h
+QgsTemporalProperty.Flags = lambda flags=0: QgsTemporalProperty.Flag(flags)
 try:
     QgsTemporalProperty.__attribute_docs__ = {'changed': 'Emitted when the temporal properties have changed.\n'}
     QgsTemporalProperty.__virtual_methods__ = ['flags']
@@ -20296,6 +22588,7 @@ except (NameError, AttributeError):
 try:
     QgsTestUtils.testProviderIteratorThreadSafety = staticmethod(QgsTestUtils.testProviderIteratorThreadSafety)
     QgsTestUtils.compareDomElements = staticmethod(QgsTestUtils.compareDomElements)
+    QgsTestUtils.sanitizeFakeHttpEndpoint = staticmethod(QgsTestUtils.sanitizeFakeHttpEndpoint)
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/annotations/qgstextannotation.h
@@ -20470,8 +22763,7 @@ try:
 except (NameError, AttributeError):
     pass
 try:
-    QgsTiledSceneLayer.__virtual_methods__ = ['readStyle', 'writeStyle', 'loadDefaultStyle']
-    QgsTiledSceneLayer.__overridden_methods__ = ['clone', 'extent', 'dataProvider', 'readXml', 'writeXml', 'readSymbology', 'writeSymbology', 'setTransformContext', 'encodedSource', 'decodedSource', 'htmlMetadata', 'createMapRenderer', 'loadDefaultMetadata', 'elevationProperties', 'properties']
+    QgsTiledSceneLayer.__overridden_methods__ = ['clone', 'extent', 'dataProvider', 'readXml', 'writeXml', 'readSymbology', 'readStyle', 'writeSymbology', 'writeStyle', 'setTransformContext', 'encodedSource', 'decodedSource', 'loadDefaultStyle', 'htmlMetadata', 'createMapRenderer', 'loadDefaultMetadata', 'elevationProperties', 'properties']
     QgsTiledSceneLayer.__group__ = ['tiledscene']
 except (NameError, AttributeError):
     pass
@@ -20605,15 +22897,20 @@ try:
     QgsTransformEffect.__group__ = ['effects']
 except (NameError, AttributeError):
     pass
+# The following has been generated automatically from src/core/qgstranslationcontext.h
+try:
+    QgsTranslationContext.TranslatableObject.__doc__ = """Object that could be translated by the QTranslator with the qm file."""
+except (NameError, AttributeError):
+    pass
 # The following has been generated automatically from src/core/geometry/qgstriangle.h
 try:
-    QgsTriangle.__overridden_methods__ = ['operator==', 'operator!=', 'geometryType', 'clone', 'clear', 'fromWkb', 'fromWkt', 'asGml3', 'surfaceToPolygon', 'toCurveType', 'addInteriorRing', 'deleteVertex', 'insertVertex', 'moveVertex', 'setExteriorRing', 'boundary', 'vertexAt', 'createEmptyWithSameType']
+    QgsTriangle.__overridden_methods__ = ['operator==', 'operator!=', 'geometryType', 'clone', 'clear', 'fromWkb', 'fromWkt', 'asGml3', 'surfaceToPolygon', 'toCurveType', 'addInteriorRing', 'deleteVertex', 'deleteVertices', 'insertVertex', 'moveVertex', 'setExteriorRing', 'boundary', 'vertexAt', 'createEmptyWithSameType']
     QgsTriangle.__group__ = ['geometry']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/geometry/qgstriangulatedsurface.h
 try:
-    QgsTriangulatedSurface.__overridden_methods__ = ['fuzzyEqual', 'fuzzyDistanceEqual', 'operator==', 'operator!=', 'geometryType', 'clone', 'clear', 'fromWkb', 'fromWkt', 'asGml2', 'asGml3', 'asKml', 'normalize', 'snappedToGrid', 'insertVertex', 'deleteVertex', 'addPatch', 'createEmptyWithSameType', 'compareToSameClass']
+    QgsTriangulatedSurface.__overridden_methods__ = ['fuzzyEqual', 'fuzzyDistanceEqual', 'operator==', 'operator!=', 'geometryType', 'clone', 'clear', 'fromWkb', 'fromWkt', 'asGml2', 'asGml3', 'asKml', 'normalize', 'snappedToGrid', 'insertVertex', 'deleteVertex', 'deleteVertices', 'addPatch', 'createEmptyWithSameType', 'compareToSameClass']
     QgsTriangulatedSurface.__group__ = ['geometry']
 except (NameError, AttributeError):
     pass
@@ -20718,6 +23015,7 @@ try:
     QgsVariantUtils.typeToDisplayString = staticmethod(QgsVariantUtils.typeToDisplayString)
     QgsVariantUtils.isNull = staticmethod(QgsVariantUtils.isNull)
     QgsVariantUtils.isNumericType = staticmethod(QgsVariantUtils.isNumericType)
+    QgsVariantUtils.displayString = staticmethod(QgsVariantUtils.displayString)
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgsvector3d.h
@@ -20733,7 +23031,7 @@ try:
     QgsVectorDataProvider.__annotations__ = {'EditingCapabilities': int}
     QgsVectorDataProvider.availableEncodings = staticmethod(QgsVectorDataProvider.availableEncodings)
     QgsVectorDataProvider.convertValue = staticmethod(QgsVectorDataProvider.convertValue)
-    QgsVectorDataProvider.__virtual_methods__ = ['storageType', 'empty', 'isSqlQuery', 'vectorLayerTypeFlags', 'uniqueStringsMatching', 'aggregate', 'enumValues', 'deleteFeatures', 'truncate', 'cancelReload', 'addAttributes', 'deleteAttributes', 'renameAttributes', 'changeAttributeValues', 'changeFeatures', 'defaultValue', 'defaultValueClause', 'skipConstraintCheck', 'changeGeometryValues', 'createSpatialIndex', 'createAttributeIndex', 'capabilities', 'attributeEditCapabilities', 'setEncoding', 'attributeIndexes', 'pkAttributeIndexes', 'geometryColumnName', 'doesStrictFeatureTypeCheck', 'createRenderer', 'createLabeling', 'transaction', 'forceReload', 'dependencies', 'discoverRelations', 'metadata', 'translateMetadataKey', 'translateMetadataValue', 'hasMetadata', 'handlePostCloneOperations']
+    QgsVectorDataProvider.__virtual_methods__ = ['storageType', 'empty', 'isSqlQuery', 'vectorLayerTypeFlags', 'uniqueStringsMatching', 'aggregate', 'enumValues', 'deleteFeatures', 'truncate', 'cancelReload', 'addAttributes', 'deleteAttributes', 'renameAttributes', 'changeAttributeValues', 'changeFeatures', 'defaultValue', 'defaultValueClause', 'skipConstraintCheck', 'changeGeometryValues', 'createSpatialIndex', 'createAttributeIndex', 'capabilities', 'attributeEditCapabilities', 'setEncoding', 'attributeIndexes', 'pkAttributeIndexes', 'geometryColumnName', 'doesStrictFeatureTypeCheck', 'createRenderer', 'createLabeling', 'transaction', 'forceReload', 'dependencies', 'discoverRelations', 'translateMetadataKey', 'translateMetadataValue', 'hasMetadata', 'handlePostCloneOperations']
     QgsVectorDataProvider.__abstract_methods__ = ['featureSource', 'getFeatures', 'wkbType', 'featureCount', 'fields']
     QgsVectorDataProvider.__overridden_methods__ = ['getFeatures', 'wkbType', 'featureCount', 'hasFeatures', 'fields', 'sourceCrs', 'sourceExtent', 'sourceExtent3D', 'sourceName', 'dataComment', 'minimumValue', 'maximumValue', 'addFeatures', 'lastError', 'temporalCapabilities', 'elevationProperties']
     QgsVectorDataProvider.__group__ = ['vector']
@@ -20757,13 +23055,29 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgsvectorfilewriter.h
+QgsVectorFileWriter.VectorFormatOptions = lambda flags=0: QgsVectorFileWriter.VectorFormatOption(flags)
+QgsVectorFileWriter.EditionCapabilities = lambda flags=0: QgsVectorFileWriter.EditionCapability(flags)
+from enum import Enum
+
+
+def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+
+QgsVectorFileWriter.EditionCapability.__bool__ = lambda flag: bool(_force_int(flag))
+QgsVectorFileWriter.EditionCapability.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsVectorFileWriter.EditionCapability.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsVectorFileWriter.EditionCapability.__or__ = lambda flag1, flag2: QgsVectorFileWriter.EditionCapability(_force_int(flag1) | _force_int(flag2))
+QgsVectorFileWriter.VectorFormatOption.__bool__ = lambda flag: bool(_force_int(flag))
+QgsVectorFileWriter.VectorFormatOption.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsVectorFileWriter.VectorFormatOption.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsVectorFileWriter.VectorFormatOption.__or__ = lambda flag1, flag2: QgsVectorFileWriter.VectorFormatOption(_force_int(flag1) | _force_int(flag2))
 try:
     QgsVectorFileWriter.MetaData.__attribute_docs__ = {'compulsoryEncoding': 'Some formats require a compulsory encoding, typically UTF-8. If no compulsory encoding, empty string'}
     QgsVectorFileWriter.MetaData.__annotations__ = {'compulsoryEncoding': str}
 except (NameError, AttributeError):
     pass
 try:
-    QgsVectorFileWriter.SaveVectorOptions.__attribute_docs__ = {'driverName': 'OGR driver to use', 'layerName': 'Layer name. If let empty, it will be derived from the filename', 'actionOnExistingFile': 'Action on existing file', 'fileEncoding': 'Encoding to use', 'ct': 'Transform to reproject exported geometries with, or invalid transform\nfor no transformation', 'onlySelectedFeatures': 'Write only selected features of layer', 'datasourceOptions': 'List of OGR data source creation options', 'layerOptions': 'List of OGR layer creation options', 'skipAttributeCreation': 'Only write geometries', 'attributes': 'Attributes to export (empty means all unless skipAttributeCreation is set)', 'attributesExportNames': 'Attributes export names', 'symbologyExport': 'Symbology to export', 'symbologyScale': 'Scale of symbology', 'filterExtent': 'If not empty, only features intersecting the extent will be saved', 'overrideGeometryType': 'Set to a valid geometry type to override the default geometry type for the layer. This parameter\nallows for conversion of geometryless tables to null geometries, etc.', 'forceMulti': 'Sets to ``True`` to force creation of multipart geometries', 'includeZ': 'Sets to ``True`` to include z dimension in output. This option is only valid if overrideGeometryType is set', 'fieldValueConverter': 'Field value converter.\n\nOwnership is not transferred and callers must ensure that the lifetime of fieldValueConverter\nexceeds the lifetime of the :py:class:`QgsVectorFileWriter` object.', 'feedback': 'Optional feedback object allowing cancellation of layer save', 'fieldNameSource': 'Source for exported field names.\n\n.. versionadded:: 3.18', 'saveMetadata': 'Set to ``True`` to save layer metadata for the exported vector file.\n\n.. seealso:: :py:func:`layerMetadata`\n\n.. versionadded:: 3.20', 'layerMetadata': 'Layer metadata to save for the exported vector file. This will only be used if saveMetadata is ``True``.\n\n.. seealso:: :py:func:`saveMetadata`\n\n.. versionadded:: 3.20', 'includeConstraints': 'Set to ``True`` to transfer field constraints to the exported vector file.\n\nSupport for field constraints depends on the output file format.\n\n.. versionadded:: 3.34', 'setFieldDomains': 'Set to ``True`` to transfer field domains to the exported vector file.\n\nSupport for field domains depends on the output file format.\n\n.. note::\n\n   Only available in builds based on GDAL 3.5 or later\n\n.. versionadded:: 3.36', 'sourceDatabaseProviderConnection': 'Source database provider connection, for field domains.\n\nOwnership is not transferred and callers must ensure that the lifetime of sourceDatabaseProviderConnection\nexceeds the lifetime of the :py:class:`QgsVectorFileWriter` object.\n\n.. versionadded:: 3.36'}
+    QgsVectorFileWriter.SaveVectorOptions.__attribute_docs__ = {'driverName': 'OGR driver to use', 'layerName': 'Layer name. If let empty, it will be derived from the filename', 'actionOnExistingFile': 'Action on existing file', 'fileEncoding': 'Encoding to use', 'ct': 'Transform to reproject exported geometries with, or invalid transform\nfor no transformation', 'onlySelectedFeatures': 'Write only selected features of layer', 'datasourceOptions': 'List of OGR data source creation options', 'layerOptions': 'List of OGR layer creation options', 'skipAttributeCreation': 'Only write geometries', 'attributes': 'Attributes to export (empty means all unless skipAttributeCreation is set)', 'attributesExportNames': 'Attributes export names', 'symbologyExport': 'Symbology to export', 'symbologyScale': 'Scale of symbology', 'filterExtent': "If not empty, only features intersecting the extent will be saved.\n\nThe filter extent should be in the destination CRS (if transforming), or the layer's\nCRS if no valid transform is set.", 'overrideGeometryType': 'Set to a valid geometry type to override the default geometry type for the layer. This parameter\nallows for conversion of geometryless tables to null geometries, etc.', 'forceMulti': 'Sets to ``True`` to force creation of multipart geometries', 'includeZ': 'Sets to ``True`` to include z dimension in output. This option is only valid if overrideGeometryType is set', 'fieldValueConverter': 'Field value converter.\n\nOwnership is not transferred and callers must ensure that the lifetime of fieldValueConverter\nexceeds the lifetime of the :py:class:`QgsVectorFileWriter` object.', 'feedback': 'Optional feedback object allowing cancellation of layer save', 'fieldNameSource': 'Source for exported field names.\n\n.. versionadded:: 3.18', 'saveMetadata': 'Set to ``True`` to save layer metadata for the exported vector file.\n\n.. seealso:: :py:func:`layerMetadata`\n\n.. versionadded:: 3.20', 'layerMetadata': 'Layer metadata to save for the exported vector file. This will only be used if saveMetadata is ``True``.\n\n.. seealso:: :py:func:`saveMetadata`\n\n.. versionadded:: 3.20', 'includeConstraints': 'Set to ``True`` to transfer field constraints to the exported vector file.\n\nSupport for field constraints depends on the output file format.\n\n.. versionadded:: 3.34', 'setFieldDomains': 'Set to ``True`` to transfer field domains to the exported vector file.\n\nSupport for field domains depends on the output file format.\n\n.. note::\n\n   Only available in builds based on GDAL 3.5 or later\n\n.. versionadded:: 3.36', 'sourceDatabaseProviderConnection': 'Source database provider connection, for field domains.\n\nOwnership is not transferred and callers must ensure that the lifetime of sourceDatabaseProviderConnection\nexceeds the lifetime of the :py:class:`QgsVectorFileWriter` object.\n\n.. versionadded:: 3.36'}
     QgsVectorFileWriter.SaveVectorOptions.__annotations__ = {'driverName': str, 'layerName': str, 'actionOnExistingFile': 'QgsVectorFileWriter.ActionOnExistingFile', 'fileEncoding': str, 'ct': 'QgsCoordinateTransform', 'onlySelectedFeatures': bool, 'datasourceOptions': 'List[str]', 'layerOptions': 'List[str]', 'skipAttributeCreation': bool, 'attributes': 'QgsAttributeList', 'attributesExportNames': 'List[str]', 'symbologyExport': 'Qgis.FeatureSymbologyExport', 'symbologyScale': float, 'filterExtent': 'QgsRectangle', 'overrideGeometryType': 'Qgis.WkbType', 'forceMulti': bool, 'includeZ': bool, 'fieldValueConverter': 'QgsVectorFileWriter.FieldValueConverter', 'feedback': 'QgsFeedback', 'fieldNameSource': 'QgsVectorFileWriter.FieldNameSource', 'saveMetadata': bool, 'layerMetadata': 'QgsLayerMetadata', 'includeConstraints': bool, 'setFieldDomains': bool, 'sourceDatabaseProviderConnection': 'QgsAbstractDatabaseProviderConnection'}
 except (NameError, AttributeError):
     pass
@@ -20823,8 +23137,8 @@ except (NameError, AttributeError):
 try:
     QgsVectorLayer.__attribute_docs__ = {'selectionChanged': 'Emitted when selection was changed\n\n:param selected: Newly selected feature ids\n:param deselected: Ids of all features which have previously been\n                   selected but are not any more\n:param clearAndSelect: In case this is set to ``True``, the old\n                       selection was dismissed and the new selection\n                       corresponds to selected\n', 'allowCommitChanged': 'Emitted whenever the :py:func:`~QgsVectorLayer.allowCommit` property of\nthis layer changes.\n\n.. versionadded:: 3.4\n', 'beforeModifiedCheck': 'Emitted when the layer is checked for modifications. Use for last-minute\nadditions.\n', 'beforeEditingStarted': 'Emitted before editing on this layer is started.\n', 'beforeCommitChanges': 'Emitted before changes are committed to the data provider.\n\nThe ``stopEditing`` flag specifies if the editing mode shall be left\nafter this commit.\n', 'beforeRollBack': 'Emitted before changes are rolled back.\n', 'afterCommitChanges': 'Emitted after changes are committed to the data provider.\n\n.. versionadded:: 3.16\n', 'afterRollBack': 'Emitted after changes are rolled back.\n\n.. versionadded:: 3.4\n', 'attributeAdded': 'Will be emitted, when a new attribute has been added to this vector\nlayer. Applies only to types :py:class:`QgsFields`.OriginEdit,\n:py:class:`QgsFields`.OriginProvider and\n:py:class:`QgsFields`.OriginExpression\n\n:param idx: The index of the new attribute\n\n.. seealso:: :py:func:`updatedFields`\n', 'beforeAddingExpressionField': 'Will be emitted, when an expression field is going to be added to this\nvector layer. Applies only to types\n:py:class:`QgsFields`.OriginExpression\n\n:param fieldName: The name of the attribute to be added\n', 'attributeDeleted': 'Will be emitted, when an attribute has been deleted from this vector\nlayer. Applies only to types :py:class:`QgsFields`.OriginEdit,\n:py:class:`QgsFields`.OriginProvider and\n:py:class:`QgsFields`.OriginExpression\n\n:param idx: The index of the deleted attribute\n\n.. seealso:: :py:func:`updatedFields`\n', 'beforeRemovingExpressionField': 'Will be emitted, when an expression field is going to be deleted from\nthis vector layer. Applies only to types\n:py:class:`QgsFields`.OriginExpression\n\n:param idx: The index of the attribute to be deleted\n', 'featureAdded': 'Emitted when a new feature has been added to the layer\n\n:param fid: The id of the new feature\n', 'featureDeleted': 'Emitted when a feature has been deleted.\n\nIf you do expensive operations in a slot connected to this, you should\nprefer to use :py:func:`~QgsVectorLayer.featuresDeleted`.\n\n:param fid: The id of the feature which has been deleted\n', 'featuresDeleted': 'Emitted when features have been deleted.\n\nIf features are deleted within an edit command, this will only be\nemitted once at the end to allow connected slots to minimize the\noverhead. If features are deleted outside of an edit command, this\nsignal will be emitted once per feature.\n\n:param fids: The feature ids that have been deleted.\n', 'updatedFields': 'Emitted whenever the fields available from this layer have been changed.\nThis can be due to manually adding attributes or due to a join.\n', 'subsetStringChanged': "Emitted when the layer's subset string has changed.\n\n.. versionadded:: 3.2\n", 'attributeValueChanged': 'Emitted whenever an attribute value change is done in the edit buffer.\nNote that at this point the attribute change is not yet saved to the\nprovider.\n\n:param fid: The id of the changed feature\n:param idx: The attribute index of the changed attribute\n:param value: The new value of the attribute\n', 'geometryChanged': 'Emitted whenever a geometry change is done in the edit buffer. Note that\nat this point the geometry change is not yet saved to the provider.\n\n:param fid: The id of the changed feature\n:param geometry: The new geometry\n', 'committedAttributesDeleted': 'Emitted when attributes are deleted from the provider if not in\ntransaction mode.\n', 'committedAttributesAdded': 'Emitted when attributes are added to the provider if not in transaction\nmode.\n', 'committedFeaturesAdded': 'Emitted when features are added to the provider if not in transaction\nmode.\n', 'committedFeaturesRemoved': 'Emitted when features are deleted from the provider if not in\ntransaction mode.\n', 'committedAttributeValuesChanges': 'Emitted when attribute value changes are saved to the provider if not in\ntransaction mode.\n', 'committedGeometriesChanges': 'Emitted when geometry changes are saved to the provider if not in\ntransaction mode.\n', 'labelingFontNotFound': 'Emitted when the font family defined for labeling layer is not found on\nsystem\n', 'featureBlendModeChanged': 'Signal emitted when :py:func:`~QgsVectorLayer.setFeatureBlendMode` is\ncalled\n', 'editCommandStarted': 'Signal emitted when a new edit command has been started\n\n:param text: Description for this edit command\n', 'editCommandEnded': 'Signal emitted, when an edit command successfully ended\n\n.. note::\n\n   This does not mean it is also committed, only that it is written\n   to the edit buffer. See :py:func:`~QgsVectorLayer.beforeCommitChanges`\n', 'editCommandDestroyed': 'Signal emitted, when an edit command is destroyed\n\n.. note::\n\n   This is not a rollback, it is only related to the current edit command.\n   See :py:func:`~QgsVectorLayer.beforeRollBack`\n', 'readCustomSymbology': 'Signal emitted whenever the symbology (QML-file) for this layer is being\nread. If there is custom style information saved in the file, you can\nconnect to this signal and update the layer style accordingly.\n\n:param element: The XML layer style element.\n\n:param errorMessage: Write error messages into this string.\n', 'writeCustomSymbology': 'Signal emitted whenever the symbology (QML-file) for this layer is being\nwritten. If there is custom style information you want to save to the\nfile, you can connect to this signal and update the element accordingly.\n\n:param element: The XML element where you can add additional style\n                information to.\n:param doc: The XML document that you can use to create new XML nodes.\n:param errorMessage: Write error messages into this string.\n', 'displayExpressionChanged': 'Emitted when the display expression changes\n', 'raiseError': 'Signals an error related to this vector layer.\n', 'editFormConfigChanged': 'Will be emitted whenever the edit form configuration of this layer\nchanges.\n', 'readOnlyChanged': 'Emitted when the read only state of this layer is changed. Only applies\nto manually set readonly state, not to the edit mode.\n\n.. seealso:: :py:func:`setReadOnly`\n', 'supportsEditingChanged': 'Emitted when the read only state or the data provider of this layer is\nchanged.\n\n.. versionadded:: 3.18\n', 'symbolFeatureCountMapChanged': 'Emitted when the feature count for symbols on this layer has been\nrecalculated.\n'}
     QgsVectorLayer.drawVertexMarker = staticmethod(QgsVectorLayer.drawVertexMarker)
-    QgsVectorLayer.__virtual_methods__ = ['hasMapTips', 'dataProvider', 'setDependencies', 'dependencies', 'wkbType', 'sourceCrs', 'sourceName', 'readXml', 'writeXml', 'encodedSource', 'decodedSource', 'resolveReferences', 'readSld', 'hasFeatures', 'loadDefaultStyle', 'setSubsetString', 'subsetString', 'addFeature', 'isEditable', 'isSpatial', 'reload', 'createMapRenderer', 'extent', 'sourceExtent', 'extent3D', 'sourceExtent3D', 'fields', 'deleteAttribute', 'addFeatures', 'uniqueValues', 'minimumValue', 'maximumValue', 'htmlMetadata', 'createExpressionContext', 'createExpressionContextScope', 'updateExtents', 'setExtent', 'setExtent3D']
-    QgsVectorLayer.__overridden_methods__ = ['clone', 'selectionProperties', 'temporalProperties', 'elevationProperties', 'profileSource', 'createProfileGenerator', 'isModified', 'supportsEditing', 'setTransformContext', 'hasSpatialIndex', 'accept']
+    QgsVectorLayer.__virtual_methods__ = ['setSubsetString', 'subsetString', 'deleteAttribute', 'updateExtents']
+    QgsVectorLayer.__overridden_methods__ = ['clone', 'hasMapTips', 'dataProvider', 'selectionProperties', 'temporalProperties', 'elevationProperties', 'profileSource', 'profileSourceId', 'profileSourceName', 'createProfileGenerator', 'setDependencies', 'dependencies', 'wkbType', 'sourceCrs', 'sourceName', 'readXml', 'writeXml', 'encodedSource', 'decodedSource', 'resolveReferences', 'readSymbology', 'readStyle', 'writeSymbology', 'writeStyle', 'readSld', 'hasFeatures', 'loadDefaultStyle', 'getFeatures', 'addFeature', 'isEditable', 'isSpatial', 'isModified', 'reload', 'createMapRenderer', 'extent', 'sourceExtent', 'extent3D', 'sourceExtent3D', 'fields', 'featureCount', 'supportsEditing', 'addFeatures', 'uniqueValues', 'minimumValue', 'maximumValue', 'htmlMetadata', 'createExpressionContext', 'createExpressionContextScope', 'setTransformContext', 'hasSpatialIndex', 'accept', 'setExtent', 'setExtent3D']
     QgsVectorLayer.__signal_arguments__ = {'selectionChanged': ['selected: QgsFeatureIds', 'deselected: QgsFeatureIds', 'clearAndSelect: bool'], 'beforeCommitChanges': ['stopEditing: bool'], 'attributeAdded': ['idx: int'], 'beforeAddingExpressionField': ['fieldName: str'], 'attributeDeleted': ['idx: int'], 'beforeRemovingExpressionField': ['idx: int'], 'featureAdded': ['fid: QgsFeatureId'], 'featureDeleted': ['fid: QgsFeatureId'], 'featuresDeleted': ['fids: QgsFeatureIds'], 'attributeValueChanged': ['fid: QgsFeatureId', 'idx: int', 'value: object'], 'geometryChanged': ['fid: QgsFeatureId', 'geometry: QgsGeometry'], 'committedAttributesDeleted': ['layerId: str', 'deletedAttributes: QgsAttributeList'], 'committedAttributesAdded': ['layerId: str', 'addedAttributes: List[QgsField]'], 'committedFeaturesAdded': ['layerId: str', 'addedFeatures: QgsFeatureList'], 'committedFeaturesRemoved': ['layerId: str', 'deletedFeatureIds: QgsFeatureIds'], 'committedAttributeValuesChanges': ['layerId: str', 'changedAttributesValues: QgsChangedAttributesMap'], 'committedGeometriesChanges': ['layerId: str', 'changedGeometries: QgsGeometryMap'], 'labelingFontNotFound': ['layer: QgsVectorLayer', 'fontfamily: str'], 'featureBlendModeChanged': ['blendMode: QPainter.CompositionMode'], 'editCommandStarted': ['text: str'], 'readCustomSymbology': ['element: QDomElement', 'errorMessage: str'], 'raiseError': ['msg: str']}
     QgsVectorLayer.__group__ = ['vector']
 except (NameError, AttributeError):
@@ -20966,6 +23280,22 @@ try:
     QgsVectorLayerSimpleLabeling.__group__ = ['labeling']
 except (NameError, AttributeError):
     pass
+# The following has been generated automatically from src/core/plot/qgsvectorlayerplotdatagatherer.h
+try:
+    QgsVectorLayerAbstractPlotDataGatherer.__abstract_methods__ = ['data']
+    QgsVectorLayerAbstractPlotDataGatherer.__group__ = ['plot']
+except (NameError, AttributeError):
+    pass
+try:
+    QgsVectorLayerXyPlotDataGatherer.__overridden_methods__ = ['run', 'data']
+    QgsVectorLayerXyPlotDataGatherer.__group__ = ['plot']
+except (NameError, AttributeError):
+    pass
+try:
+    QgsVectorLayerXyPlotDataGatherer.XySeriesDetails.__doc__ = """XY series details"""
+    QgsVectorLayerXyPlotDataGatherer.XySeriesDetails.__group__ = ['plot']
+except (NameError, AttributeError):
+    pass
 # The following has been generated automatically from src/core/vector/qgsvectorlayerselectionproperties.h
 try:
     QgsVectorLayerSelectionProperties.__attribute_docs__ = {'selectionRenderingModeChanged': 'Emitted whenever the selection rendering mode changes.\n\n.. versionadded:: 4.0\n', 'selectionColorChanged': 'Emitted whenever the selection color changes.\n\n.. versionadded:: 4.0\n', 'selectionSymbolChanged': 'Emitted whenever the selection symbol changes.\n\n.. versionadded:: 4.0\n'}
@@ -21087,9 +23417,22 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/vector/qgsvectorlayerutils.h
+# monkey patching scoped based enum
+QgsVectorLayerUtils.FieldIsEditableFlag.IgnoreLayerEditability.__doc__ = "Ignores the vector layer's editable state"
+QgsVectorLayerUtils.FieldIsEditableFlag.__doc__ = """Flags used with the :py:func:`~QgsVectorLayerUtils.fieldIsEditable` function
+
+.. versionadded:: 4.0
+
+* ``IgnoreLayerEditability``: Ignores the vector layer's editable state
+
+"""
+# --
+QgsVectorLayerUtils.FieldIsEditableFlags = lambda flags=0: QgsVectorLayerUtils.FieldIsEditableFlag(flags)
+QgsVectorLayerUtils.CascadedFeatureFlags = lambda flags=0: QgsVectorLayerUtils.CascadedFeatureFlag(flags)
 try:
     QgsVectorLayerUtils.getValuesIterator = staticmethod(QgsVectorLayerUtils.getValuesIterator)
     QgsVectorLayerUtils.getValues = staticmethod(QgsVectorLayerUtils.getValues)
+    QgsVectorLayerUtils.uniqueValues = staticmethod(QgsVectorLayerUtils.uniqueValues)
     QgsVectorLayerUtils.getDoubleValues = staticmethod(QgsVectorLayerUtils.getDoubleValues)
     QgsVectorLayerUtils.valueExists = staticmethod(QgsVectorLayerUtils.valueExists)
     QgsVectorLayerUtils.createUniqueValue = staticmethod(QgsVectorLayerUtils.createUniqueValue)
@@ -21108,6 +23451,8 @@ try:
     QgsVectorLayerUtils.getFeatureDisplayString = staticmethod(QgsVectorLayerUtils.getFeatureDisplayString)
     QgsVectorLayerUtils.impactsCascadeFeatures = staticmethod(QgsVectorLayerUtils.impactsCascadeFeatures)
     QgsVectorLayerUtils.guessFriendlyIdentifierField = staticmethod(QgsVectorLayerUtils.guessFriendlyIdentifierField)
+    QgsVectorLayerUtils.filterValidFeatureIds = staticmethod(QgsVectorLayerUtils.filterValidFeatureIds)
+    QgsVectorLayerUtils.fieldToDataArray = staticmethod(QgsVectorLayerUtils.fieldToDataArray)
     QgsVectorLayerUtils.__group__ = ['vector']
 except (NameError, AttributeError):
     pass
@@ -21160,8 +23505,7 @@ except (NameError, AttributeError):
     pass
 try:
     QgsVectorTileLayer.__attribute_docs__ = {'selectionChanged': 'Emitted whenever the selected features in the layer are changed.\n\n.. versionadded:: 3.28\n'}
-    QgsVectorTileLayer.__virtual_methods__ = ['encodedSource', 'decodedSource']
-    QgsVectorTileLayer.__overridden_methods__ = ['clone', 'dataProvider', 'createMapRenderer', 'readXml', 'writeXml', 'readSymbology', 'writeSymbology', 'setTransformContext', 'loadDefaultStyle', 'properties', 'loadDefaultMetadata', 'htmlMetadata']
+    QgsVectorTileLayer.__overridden_methods__ = ['clone', 'dataProvider', 'createMapRenderer', 'readXml', 'writeXml', 'readSymbology', 'writeSymbology', 'setTransformContext', 'loadDefaultStyle', 'properties', 'loadDefaultMetadata', 'encodedSource', 'decodedSource', 'htmlMetadata']
     QgsVectorTileLayer.__group__ = ['vectortile']
 except (NameError, AttributeError):
     pass
@@ -21213,6 +23557,13 @@ try:
     QgsVertexId.__annotations__ = {'part': int, 'ring': int, 'vertex': int, 'type': 'Qgis.VertexType'}
     QgsVertexId.__doc__ = """Utility class for identifying a unique vertex within a geometry."""
     QgsVertexId.__group__ = ['geometry']
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/core/multimedia/qgsvideoexporter.h
+try:
+    QgsVideoExporter.__attribute_docs__ = {'finished': 'Emitted when the video export finishes.\n'}
+    QgsVideoExporter.isAvailable = staticmethod(QgsVideoExporter.isAvailable)
+    QgsVideoExporter.__group__ = ['multimedia']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgsvirtuallayerdefinition.h
@@ -21270,6 +23621,7 @@ try:
     QgsWkbTypes.isSingleType = staticmethod(QgsWkbTypes.isSingleType)
     QgsWkbTypes.isMultiType = staticmethod(QgsWkbTypes.isMultiType)
     QgsWkbTypes.isCurvedType = staticmethod(QgsWkbTypes.isCurvedType)
+    QgsWkbTypes.isNurbsType = staticmethod(QgsWkbTypes.isNurbsType)
     QgsWkbTypes.wkbDimensions = staticmethod(QgsWkbTypes.wkbDimensions)
     QgsWkbTypes.coordDimensions = staticmethod(QgsWkbTypes.coordDimensions)
     QgsWkbTypes.geometryType = staticmethod(QgsWkbTypes.geometryType)
@@ -21284,6 +23636,12 @@ try:
     QgsWkbTypes.dropM = staticmethod(QgsWkbTypes.dropM)
     QgsWkbTypes.to25D = staticmethod(QgsWkbTypes.to25D)
     QgsWkbTypes.__group__ = ['geometry']
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/core/qgswmsutils.h
+try:
+    QgsWmsUtils.isWmsLayer = staticmethod(QgsWmsUtils.isWmsLayer)
+    QgsWmsUtils.wmsVersion = staticmethod(QgsWmsUtils.wmsVersion)
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgsxmlutils.h
@@ -21312,11 +23670,11 @@ try:
     QgsZipUtils.isZipFile = staticmethod(QgsZipUtils.isZipFile)
     QgsZipUtils.unzip = staticmethod(QgsZipUtils.unzip)
     QgsZipUtils.zip = staticmethod(QgsZipUtils.zip)
+    QgsZipUtils.extractFileFromZip = staticmethod(QgsZipUtils.extractFileFromZip)
 except (NameError, AttributeError):
     pass
 
 
-from .additions.edit import edit
 # Typed wrapper over core.additions.edit
 from .additions.edit import edit as edit_
 def edit(layer: 'QgsVectorLayer') -> '_typing.ContextManager[QgsVectorLayer]':
@@ -21343,7 +23701,6 @@ QgsGeometry.__bool__ = _geometryNonZero
 QgsGeometry.__geo_interface__ = property(_mapping_geometry)
 QgsGeometry.__nonzero__ = _geometryNonZero
 
-
 # add some __repr__ methods to QGIS range classes. We can't do this via sip because they are template based classes
 
 def _datetime_range_repr(self):
@@ -21357,8 +23714,6 @@ def _date_range_repr(self):
 QgsDateTimeRange.__repr__ = _datetime_range_repr
 QgsDateRange.__repr__ = _date_range_repr
 
-# add docstrings for QgsDateRange/QgsDateTimeRange. These can't be done via sip as sip gets tripped up on the
-# constructor docstrings for the templated class and creates malformed docstrings
 
 QgsDateRange.__doc__ = """Stores a date range.
 
@@ -21433,6 +23788,76 @@ QgsProcessingFeatureSourceDefinition.__repr__ = _processing_source_repr
 QgsProcessingOutputLayerDefinition.__repr__ = _processing_output_layer_repr
 
 
+# Wrap QgsArrowIterator.setSchema to accept objects with __arrow_c_schema__
+_original_setSchema = QgsArrowIterator.setSchema
+
+
+def _arrow_iterator_set_schema(self, schema):
+    """
+    Set the ArrowSchema for the output of all future batches.
+
+    Accepts either a QgsArrowSchema or any object implementing __arrow_c_schema__()
+    (e.g., pyarrow.Schema).
+    """
+    if not isinstance(schema, QgsArrowSchema):
+        schema = QgsArrowSchema.fromArrow(schema)
+
+    return _original_setSchema(self, schema)
+
+
+
+
+def _arrow_iterator_stream_export(self, requested_schema=None):
+    """
+    Export this iterator as an Arrow PyCapsule stream.
+
+    This implements the Arrow PyCapsule interface (__arrow_c_stream__),
+    allowing QgsArrowIterator to be consumed directly by pyarrow,
+    geopandas, and other Arrow-compatible libraries.
+
+    :param requested_schema: Optional schema to request. If provided, a copy of
+                             this iterator will have its schema set to avoid
+                             mutating the original.
+    :returns: A PyCapsule containing the ArrowArrayStream pointer.
+    """
+    if requested_schema is not None:
+        # Use SIP copy constructor to avoid mutating the original iterator's schema
+        iterator_copy = QgsArrowIterator(self)
+        iterator_copy.setSchema(requested_schema)
+        return iterator_copy.toArrayStream().__arrow_c_stream__()
+
+    return self.toArrayStream().__arrow_c_stream__()
+
+
+QgsArrowIterator.__arrow_c_stream__ = _arrow_iterator_stream_export
+
+
+def _vector_layer_stream_export(self, requested_schema=None):
+    """
+    Export this layer as an Arrow PyCapsule stream.
+
+    This implements the Arrow PyCapsule interface (__arrow_c_stream__),
+    allowing QgsVectorLayer to be consumed directly by pyarrow,
+    geopandas, and other Arrow-compatible libraries.
+
+    :param requested_schema: Optional schema to request. If not provided,
+                             the schema will be inferred from the layer.
+    :returns: A PyCapsule containing the ArrowArrayStream pointer.
+    """
+    iterator = QgsArrowIterator(self.getFeatures())
+
+    if requested_schema is not None:
+        iterator.setSchema(requested_schema)
+    else:
+        inferred = QgsArrowIterator.inferSchema(self)
+        iterator.setSchema(inferred)
+
+    return iterator.toArrayStream().__arrow_c_stream__()
+
+
+QgsVectorLayer.__arrow_c_stream__ = _vector_layer_stream_export
+
+
 # Classes patched
 QgsSettingsEntryEnumFlag = PyQgsSettingsEntryEnumFlag
 
@@ -21440,7 +23865,7 @@ QgsSettingsEntryEnumFlag = PyQgsSettingsEntryEnumFlag
 QgsProviderMetadata = PyProviderMetadata
 
 # monkey patch deprecated enum values to maintain API
-# TODO - remove for QGIS 4.0
+# TODO - remove for QGIS 5.0
 
 
 
@@ -21448,7 +23873,6 @@ QgsProviderMetadata = PyProviderMetadata
 QgsVectorLayer.SemiTransparentCircle.__doc__ = "Semi-transparent circle marker"
 QgsVectorLayer.Cross.__doc__ = "Cross marker"
 QgsVectorLayer.NoMarker.__doc__ = "No marker"
-
 
 
 SymbolTable = QgsStyle.SymbolTableColumn
@@ -21511,7 +23935,6 @@ SmartgroupName = QgsStyle.SmartGroupTableColumn.Name.value
 SmartgroupTable.SmartgroupXML = QgsStyle.SmartGroupTableColumn.XML.value
 SmartgroupXML = QgsStyle.SmartGroupTableColumn.XML.value
 
-
 # Monkey patch static const "QgsDataProvider.SUBLAYER_SEPARATOR" which was removed for QGIS 3.12
 QgsDataProvider.SUBLAYER_SEPARATOR = QgsDataProvider.sublayerSeparator()
 
@@ -21562,13 +23985,13 @@ DEFAULT_LINE_WIDTH = Qgis.DEFAULT_LINE_WIDTH
 DEFAULT_SEGMENT_EPSILON = Qgis.DEFAULT_SEGMENT_EPSILON
 PROJECT_SCALES = Qgis.defaultProjectScales()
 
-# TODO QGIS 4.0 - remove, require use of explicit getter/setter
+# TODO QGIS 5.0 - remove, require use of explicit getter/setter
 
 QgsAbstractMetadataBaseValidator.ValidationResult.identifier = property(QgsAbstractMetadataBaseValidator.ValidationResult._identifier)
 QgsAbstractMetadataBaseValidator.ValidationResult.identifier = QgsAbstractMetadataBaseValidator.ValidationResult.identifier.setter(QgsAbstractMetadataBaseValidator.ValidationResult.setIdentifier)
 
 
-# TODO QGIS 4.0 - remove, replaced by Qgis.LinePlacementFlags
+# TODO QGIS 5.0 - remove, replaced by Qgis.LinePlacementFlags
 class _LinePlacementFlags:
   OnLine = 1
   AboveLine = 2
@@ -21578,7 +24001,7 @@ class _LinePlacementFlags:
 
 
 def _get_placement_flags(self):
-    return int(self.lineSettings().placementFlags())
+    return self.lineSettings().placementFlags()
 
 
 def _set_placement_flags(self, flags):
@@ -21599,6 +24022,17 @@ def _set_merge_lines(self, merge):
 
 QgsPalLayerSettings.mergeLines = property(_get_merge_lines)
 QgsPalLayerSettings.mergeLines = QgsPalLayerSettings.mergeLines.setter(_set_merge_lines)
+
+def _get_label_per_part(self):
+    return self.placementSettings().multiPartBehavior() == Qgis.MultiPartLabelingBehavior.LabelEveryPartWithEntireLabel
+
+
+def _set_label_per_part(self, label_per_part):
+    self.placementSettings().setMultiPartBehavior(Qgis.MultiPartLabelingBehavior.LabelEveryPartWithEntireLabel if label_per_part else Qgis.MultiPartLabelingBehavior.LabelLargestPartOnly)
+
+
+QgsPalLayerSettings.labelPerPart = property(_get_label_per_part)
+QgsPalLayerSettings.labelPerPart = QgsPalLayerSettings.labelPerPart.setter(_set_label_per_part)
 
 
 def _get_add_direction_symbol(self):
@@ -21649,7 +24083,7 @@ QgsPalLayerSettings.reverseDirectionSymbol = property(_get_reverse_direction_sym
 QgsPalLayerSettings.reverseDirectionSymbol = QgsPalLayerSettings.reverseDirectionSymbol.setter(_set_reverse_direction_symbol)
 
 
-# TODO QGIS 4.0 - remove, replaced by QgsLabelLineSettings.DirectionSymbolPlacement
+# TODO QGIS 5.0 - remove, replaced by QgsLabelLineSettings.DirectionSymbolPlacement
 class _DirectionSymbols:
   SymbolLeftRight = 0
   SymbolAbove = 1
@@ -21781,7 +24215,7 @@ QgsPalLayerSettings.obstacleFactor = QgsPalLayerSettings.obstacleFactor.setter(_
 
 
 
-# TODO QGIS 4.0 - remove, replaced by QgsLabelObstacleSettings.ObstacleType
+# TODO QGIS 5.0 - remove, replaced by QgsLabelObstacleSettings.ObstacleType
 
 
 
@@ -21831,6 +24265,8 @@ QgsProcessingException.__doc__ = "Custom exception class for processing related 
 QgsProviderConnectionException.__doc__ = "Custom exception class for provider connection related exceptions."
 QgsNotSupportedException.__doc__ = "Custom exception class which is raised when an operation is not supported."
 QgsSettingsException.__doc__ = "Custom exception class for settings related exceptions."
+QgsSfcgalException.__doc__ = "Custom exception class for SfCGAL related operations."
+QgsInvalidArgumentException.__doc__ = "Custom exception class when argument are invalid.\n\nIe. algorithms or processing can not continue computation."
 QgsException.__doc__ = "Defines a QGIS exception class."
 
 try:
@@ -21854,6 +24290,21 @@ try:
        Qgis.DataType.ARGB32_Premultiplied: None
        }
       return qgis_to_numpy_dtype_dict[dataType]
+
+   def _qvariant_type_to_numeric_data_type(dataType: _QMetaType.Type) -> _typing.Optional[_numpy.dtype]:
+      qmetatype_to_numpy_dtype_dict = {
+        _QMetaType.Type.Int: _numpy.int32,
+            _QMetaType.Type.UInt: _numpy.uint32,
+            _QMetaType.Type.LongLong:_numpy.int64,
+            _QMetaType.Type.ULongLong: _numpy.uint64,
+            _QMetaType.Type.Short: _numpy.int16,
+            _QMetaType.Type.UShort: _numpy.uint16,
+            _QMetaType.Type.Long: _numpy.int64,
+            _QMetaType.Type.ULong: _numpy.uint64,
+            _QMetaType.Type.Float: _numpy.float32,
+            _QMetaType.Type.Double: _numpy.float64,
+       }
+      return qmetatype_to_numpy_dtype_dict.get(dataType)
 
    def _raster_block_as_numpy(self, use_masking:bool = True) -> _typing.Union[_numpy.ndarray, _numpy.ma.MaskedArray]:
       raster_dtype = _qgis_data_type_to_numeric_data_type(self.dataType())
@@ -21888,6 +24339,26 @@ try:
           return _numpy.array(arrays)
 
    QgsRasterLayer.as_numpy = _raster_layer_as_numpy
+
+   def _field_as_numpy(self, field_name: str, null_value: object, request: _typing.Optional[QgsFeatureRequest] = None) -> _numpy.ma.MaskedArray:
+      field_index = self.fields().lookupField(field_name)
+      if field_index < 0:
+         raise KeyError(f"Field '{field_name}' does not exist.")
+      field = self.fields().at(field_index)
+      numpy_dtype = _qvariant_type_to_numeric_data_type(field.type())
+      if numpy_dtype is None:
+         raise TypeError(f"The field data type '{str(field.type())}' is not compatible with NumPy arrays.")
+
+      if request is None:
+         request = QgsFeatureRequest().setFlags(Qgis.FeatureRequestFlag.NoGeometry).setSubsetOfAttributes([
+        field_index
+      ])
+
+      src_array = QgsVectorLayerUtils.fieldToDataArray(self.fields(), field_name, self.getFeatures(request), null_value)
+      numpy_array = _numpy.frombuffer(src_array.data(), dtype=numpy_dtype)
+      return _numpy.ma.masked_equal(numpy_array, null_value)
+
+   QgsVectorLayer.field_as_numpy = _field_as_numpy
 
    def _qgsgeometry_as_numpy(self) -> _typing.Union[_numpy.ndarray, _typing.List[_numpy.ndarray]]:
        wkb_type = self.wkbType()
@@ -21962,6 +24433,10 @@ except ModuleNotFoundError:
 
    QgsGeometry.as_numpy = _geometry_as_numpy
 
+   def _field_as_numpy(self, field_name: str, null_value, request: _typing.Optional[QgsFeatureRequest] = None):
+      raise QgsNotSupportedException('QgsVectorLayer.field_as_numpy is not available, numpy is not installed on the system')
+
+   QgsVectorLayer.field_as_numpy = _field_as_numpy
 try:
    import shapely as _shapely
    import shapely.geometry as _sg
@@ -21994,6 +24469,34 @@ except ModuleNotFoundError:
        raise QgsNotSupportedException('QgsGeometry.from_shapely is not available, shapely is not installed on the system')
 
    QgsGeometry.from_shapely = _geometry_from_shapely
+
+try:
+   import geopandas as _gpd
+
+   def _vector_layer_as_geopandas(self) -> _gpd.GeoDataFrame:
+       """
+       Returns the vector layer as a GeoPandas GeoDataFrame.
+
+       :raises QgsNotSupportedException: if geopandas is not available on the system
+
+       .. versionadded:: 4.0
+       """
+       features = list(self.getFeatures())
+
+       geometries = [feat.geometry().as_shapely() if not feat.geometry().isEmpty() else None for feat in features]
+
+       field_names = [field.name() for field in self.fields()]
+       data = {field_name: [feat[field_index] for feat in features] for field_index, field_name in enumerate(field_names)}
+
+       return _gpd.GeoDataFrame(data, geometry=geometries, crs=self.crs().authid())
+
+   QgsVectorLayer.as_geopandas = _vector_layer_as_geopandas
+
+except ModuleNotFoundError:
+   def _vector_layer_as_geopandas(self):
+       raise QgsNotSupportedException('QgsVectorLayer.as_geopandas is not available, geopandas is not installed on the system')
+
+   QgsVectorLayer.as_geopandas = _vector_layer_as_geopandas
 
 QgsRasterBlock.as_numpy.__doc__ = """
 Returns the block data as a numpy array.
@@ -22039,4 +24542,41 @@ Creates a new geometry from a shapely object.
 :raises QgsNotSupportedException: if shapely is not available on the system
 
 .. versionadded:: 3.44
+"""
+
+QgsVectorLayer.as_geopandas.__doc__ = """
+Returns the vector layer as a GeoPandas GeoDataFrame.
+
+All features from the layer are converted to a GeoDataFrame, including their geometries
+(converted to shapely objects) and all attribute values. The CRS is preserved from the
+original layer.
+
+:raises QgsNotSupportedException: if geopandas is not available on the system
+
+.. versionadded:: 4.0
+"""
+
+QgsVectorLayer.field_as_numpy.__doc__ = """
+Returns the values from a field as a numpy masked array.
+
+:param field_name: field name to source values from
+:param null_value: value to use when original field value is a null. Must
+                   be of the same data type as the source field. This value will be
+                   used as the mask when converting the array to a numpy masked array, and must
+                   be carefully selected to avoid conflicts with valid, existing field values.
+:param request: optional QgsFeatureRequest to control which features to source values from.
+                If not specified, an optimized feature request over all layer features will
+                be used.
+
+.. warning::
+
+   Only numeric field types are supported.
+
+:raises KeyError: if the field name is not found
+
+:raises TypeError: if the field is of a non-supported type
+
+:raises QgsNotSupportedException: if numpy is not available on the system
+
+.. versionadded:: 4.0
 """

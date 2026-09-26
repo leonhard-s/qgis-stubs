@@ -15,15 +15,10 @@
 ***************************************************************************
 """
 
-from PyQt5.QtCore import QVariant
-
 
 def _mapping_feature(feature):
     geom = feature.geometry()
-    properties = {
-        k: None if (v is None or (isinstance(v, QVariant) and v.isNull())) else v
-        for k, v in feature.attributeMap().items()
-    }
+    properties = feature.attributeMap()
     return {
         "type": "Feature",
         "properties": properties,

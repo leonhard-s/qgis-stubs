@@ -1,11 +1,11 @@
 # Adapted from:
-# https://docs.qgis.org/3.44/en/docs/pyqgis_developer_cookbook/composer.html
+# https://docs.qgis.org/4.2/en/docs/pyqgis_developer_cookbook/composer.html
 
 import os
 from qgis.core import QgsProject, QgsMapRendererParallelJob, QgsMapSettings
 from qgis.gui import QgisInterface
-from PyQt5.QtCore import QEventLoop, QSize
-from PyQt5.QtGui import QColor
+from PyQt6.QtCore import QEventLoop, QSize
+from PyQt6.QtGui import QColor
 
 iface = QgisInterface()
 
@@ -38,4 +38,4 @@ def simple_rendering() -> None:
     # are using it here because this is a standalone example.
     loop = QEventLoop()
     render.finished.connect(loop.quit)
-    loop.exec_()
+    loop.exec()

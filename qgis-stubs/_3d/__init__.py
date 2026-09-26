@@ -21,8 +21,10 @@ __author__ = 'Nathan Woodrow'
 __date__ = 'May 2014'
 __copyright__ = '(C) 2014, Nathan Woodrow'
 
-from PyQt5 import QtCore
+from PyQt6 import QtCore
 from qgis._3d_p import *
+
+from qgis.core import Qgis as _Qgis
 
 """
 This folder is completed using sipify.py script
@@ -56,8 +58,13 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/3d/qgs3dmapsettings.h
 try:
-    Qgs3DMapSettings.__attribute_docs__ = {'settingsChanged': 'Emitted when one of the configuration settings has changed\n\n.. versionadded:: 3.24\n', 'backgroundColorChanged': 'Emitted when the background color has changed\n', 'selectionColorChanged': 'Emitted when the selection color has changed\n', 'layersChanged': 'Emitted when the list of map layers for 3d rendering has changed.\n\n.. seealso:: :py:func:`setLayers`\n\n.. seealso:: :py:func:`layers`\n', 'terrainGeneratorChanged': 'Emitted when the terrain generator has changed\n', 'terrainSettingsChanged': 'Emitted when the terrain settings are changed.\n\n.. versionadded:: 3.42\n', 'terrainVerticalScaleChanged': 'Emitted when the vertical scale of the terrain has changed\n\n.. deprecated:: 3.42\n\n   Use :py:func:`~Qgs3DMapSettings.terrainSettingsChanged` instead.\n', 'mapTileResolutionChanged': 'Emitted when the map tile resoulution has changed\n\n.. deprecated:: 3.42\n\n   Use :py:func:`~Qgs3DMapSettings.terrainSettingsChanged` instead.\n', 'maxTerrainScreenErrorChanged': 'Emitted when the maximum terrain screen error has changed\n\n.. deprecated:: 3.42\n\n   Use :py:func:`~Qgs3DMapSettings.terrainSettingsChanged` instead.\n', 'maxTerrainGroundErrorChanged': 'Emitted when the maximum terrain ground error has changed\n\n.. deprecated:: 3.42\n\n   Use :py:func:`~Qgs3DMapSettings.terrainSettingsChanged` instead.\n', 'terrainElevationOffsetChanged': 'Emitted when the terrain elevation offset is changed\n\n.. deprecated:: 3.42\n\n   Use :py:func:`~Qgs3DMapSettings.terrainSettingsChanged` instead.\n', 'terrainShadingChanged': 'Emitted when terrain shading enabled flag or terrain shading material\nhas changed\n\n.. versionadded:: 3.6\n', 'terrainMapThemeChanged': "Emitted when terrain's map theme has changed\n\n.. versionadded:: 3.6\n", 'renderersChanged': "Emitted when the list of map's extra renderers have been modified\n\n.. versionadded:: 3.10\n", 'showTerrainBoundingBoxesChanged': "Emitted when the flag whether terrain's bounding boxes are shown has\nchanged\n", 'showTerrainTilesInfoChanged': "Emitted when the flag whether terrain's tile info is shown has changed\n", 'showCameraViewCenterChanged': "Emitted when the flag whether camera's view center is shown has changed\n\n.. versionadded:: 3.4\n", 'showCameraRotationCenterChanged': "Emitted when the flag whether camera's rotation center is shown has\nchanged\n\n.. versionadded:: 3.24\n", 'showLightSourceOriginsChanged': 'Emitted when the flag whether light source origins are shown has\nchanged.\n\n.. versionadded:: 3.15\n', 'showLabelsChanged': 'Emitted when the flag whether labels are displayed on terrain tiles has\nchanged\n', 'stopUpdatesChanged': 'Emitted when the flag whether to keep updating scene has changed\n\n.. versionadded:: 3.42\n', 'eyeDomeLightingEnabledChanged': 'Emitted when the flag whether eye dome lighting is used has changed\n\n.. versionadded:: 3.18\n', 'eyeDomeLightingStrengthChanged': 'Emitted when the eye dome lighting strength has changed\n\n.. versionadded:: 3.18\n', 'eyeDomeLightingDistanceChanged': 'Emitted when the eye dome lighting distance has changed\n\n.. versionadded:: 3.18\n', 'debugShadowMapSettingsChanged': 'Emitted when shadow map debugging has changed\n\n.. versionadded:: 3.18\n', 'debugDepthMapSettingsChanged': 'Emitted when depth map debugging has changed\n\n.. versionadded:: 3.18\n', 'pointLightsChanged': 'Emitted when the list of point lights changes\n\n.. versionadded:: 3.6\n', 'lightSourcesChanged': 'Emitted when any of the light source settings in the map changes.\n\n.. versionadded:: 3.26\n', 'directionalLightsChanged': 'Emitted when the list of directional lights changes\n\n.. versionadded:: 3.16\n', 'fieldOfViewChanged': 'Emitted when the camera lens field of view changes\n\n.. versionadded:: 3.8\n', 'projectionTypeChanged': 'Emitted when the camera lens projection type changes\n\n.. versionadded:: 3.18\n', 'cameraNavigationModeChanged': 'Emitted when the camera navigation mode was changed\n\n.. versionadded:: 3.18\n', 'cameraMovementSpeedChanged': 'Emitted when the camera movement speed was changed\n\n.. versionadded:: 3.18\n', 'skyboxSettingsChanged': 'Emitted when skybox settings are changed\n\n.. versionadded:: 3.16\n', 'shadowSettingsChanged': 'Emitted when shadow rendering settings are changed\n\n.. versionadded:: 3.16\n', 'ambientOcclusionSettingsChanged': 'Emitted when ambient occlusion rendering settings are changed\n\n.. versionadded:: 3.28\n', 'fpsCounterEnabledChanged': 'Emitted when the FPS counter is enabled or disabled\n\n.. versionadded:: 3.18\n', 'viewFrustumVisualizationEnabledChanged': "Emitted when the camera's view frustum visualization on the main 2D map\ncanvas is enabled or disabled\n\n.. versionadded:: 3.26\n", 'axisSettingsChanged': 'Emitted when 3d axis rendering settings are changed\n\n.. versionadded:: 3.26\n', 'debugOverlayEnabledChanged': 'Emitted when the debug overaly is enabled or disabled\n\n.. versionadded:: 3.26\n', 'extentChanged': "Emitted when the 3d view's 2d extent has changed\n\n.. seealso:: :py:func:`setExtent`\n\n.. versionadded:: 3.30\n", 'showExtentIn2DViewChanged': "Emitted when the parameter to display 3d view's extent in the 2D canvas\nhas changed\n\n.. seealso:: :py:func:`setShowExtentIn2DView`\n\n.. versionadded:: 3.32\n", 'showDebugPanelChanged': 'Emitted when the Show debug panel checkbox changes value\n\n.. seealso:: :py:func:`setShowDebugPanel`\n\n.. versionadded:: 3.42\n', 'originChanged': "Emitted when the world's origin point has been shifted\n\n.. seealso:: :py:func:`setOrigin`\n\n.. versionadded:: 3.42\n"}
+    Qgs3DMapSettings.__attribute_docs__ = {'settingsChanged': 'Emitted when one of the configuration settings has changed\n\n.. versionadded:: 3.24\n', 'backgroundColorChanged': 'Emitted when the background color has changed\n', 'selectionColorChanged': 'Emitted when the selection color has changed\n', 'layersChanged': 'Emitted when the list of map layers for 3d rendering has changed.\n\n.. seealso:: :py:func:`setLayers`\n\n.. seealso:: :py:func:`layers`\n', 'terrainGeneratorChanged': 'Emitted when the terrain generator has changed\n', 'terrainSettingsChanged': 'Emitted when the terrain settings are changed.\n\n.. versionadded:: 3.42\n', 'terrainVerticalScaleChanged': 'Emitted when the vertical scale of the terrain has changed\n\n.. deprecated:: 3.42\n\n   Use :py:func:`~Qgs3DMapSettings.terrainSettingsChanged` instead.\n', 'mapTileResolutionChanged': 'Emitted when the map tile resoulution has changed\n\n.. deprecated:: 3.42\n\n   Use :py:func:`~Qgs3DMapSettings.terrainSettingsChanged` instead.\n', 'maxTerrainScreenErrorChanged': 'Emitted when the maximum terrain screen error has changed\n\n.. deprecated:: 3.42\n\n   Use :py:func:`~Qgs3DMapSettings.terrainSettingsChanged` instead.\n', 'maxTerrainGroundErrorChanged': 'Emitted when the maximum terrain ground error has changed\n\n.. deprecated:: 3.42\n\n   Use :py:func:`~Qgs3DMapSettings.terrainSettingsChanged` instead.\n', 'terrainElevationOffsetChanged': 'Emitted when the terrain elevation offset is changed\n\n.. deprecated:: 3.42\n\n   Use :py:func:`~Qgs3DMapSettings.terrainSettingsChanged` instead.\n', 'terrainShadingChanged': 'Emitted when terrain shading enabled flag or terrain shading material\nhas changed\n\n.. versionadded:: 3.6\n', 'terrainMapThemeChanged': "Emitted when terrain's map theme has changed\n\n.. versionadded:: 3.6\n", 'renderersChanged': "Emitted when the list of map's extra renderers have been modified\n\n.. versionadded:: 3.10\n", 'showTerrainBoundingBoxesChanged': "Emitted when the flag whether terrain's bounding boxes are shown has\nchanged\n", 'showTerrainTilesInfoChanged': "Emitted when the flag whether terrain's tile info is shown has changed\n", 'showCameraViewCenterChanged': "Emitted when the flag whether camera's view center is shown has changed\n\n.. versionadded:: 3.4\n", 'showCameraRotationCenterChanged': "Emitted when the flag whether camera's rotation center is shown has\nchanged\n\n.. versionadded:: 3.24\n", 'showLightSourceOriginsChanged': 'Emitted when the flag whether light source origins are shown has\nchanged.\n\n.. versionadded:: 3.15\n', 'showLabelsChanged': 'Emitted when the flag whether labels are displayed on terrain tiles has\nchanged\n', 'stopUpdatesChanged': 'Emitted when the flag whether to keep updating scene has changed\n\n.. versionadded:: 3.42\n', 'eyeDomeLightingEnabledChanged': 'Emitted when the flag whether eye dome lighting is used has changed\n\n.. versionadded:: 3.18\n', 'eyeDomeLightingStrengthChanged': 'Emitted when the eye dome lighting strength has changed\n\n.. versionadded:: 3.18\n', 'eyeDomeLightingDistanceChanged': 'Emitted when the eye dome lighting distance has changed\n\n.. versionadded:: 3.18\n', 'msaaEnabledChanged': 'Emitted when the MSAA enabled flag has changed\n\n.. versionadded:: 4.2\n', 'debugShadowMapSettingsChanged': 'Emitted when shadow map debugging has changed\n\n.. deprecated:: 4.2\n\n   Shadow debugging is no longer supported.\n', 'debugDepthMapSettingsChanged': 'Emitted when depth map debugging has changed\n\n.. versionadded:: 3.18\n', 'pointLightsChanged': 'Emitted when the list of point lights changes\n\n.. versionadded:: 3.6\n', 'lightSourcesChanged': 'Emitted when any of the light source settings in the map changes.\n\n.. versionadded:: 3.26\n', 'directionalLightsChanged': 'Emitted when the list of directional lights changes\n\n.. versionadded:: 3.16\n', 'fieldOfViewChanged': 'Emitted when the camera lens field of view changes\n\n.. versionadded:: 3.8\n', 'projectionTypeChanged': 'Emitted when the camera lens projection type changes\n\n.. versionadded:: 3.18\n', 'cameraNavigationModeChanged': 'Emitted when the camera navigation mode was changed\n\n.. versionadded:: 3.18\n', 'cameraMovementSpeedChanged': 'Emitted when the camera movement speed was changed\n\n.. versionadded:: 3.18\n', 'skyboxSettingsChanged': 'Emitted when skybox settings are changed\n\n.. versionadded:: 3.16\n\n.. deprecated:: 4.2\n\n   Use :py:func:`~Qgs3DMapSettings.backgroundSettingsChanged` instead.\n', 'backgroundSettingsChanged': 'Emitted when background settings are changed.\n\n.. versionadded:: 4.2\n', 'shadowSettingsChanged': 'Emitted when shadow rendering settings are changed\n\n.. versionadded:: 3.16\n', 'ambientOcclusionSettingsChanged': 'Emitted when ambient occlusion rendering settings are changed\n\n.. versionadded:: 3.28\n', 'bloomSettingsChanged': 'Emitted when the bloom lighting effect settings are changed.\n\n.. seealso:: :py:func:`bloomSettings`\n\n.. seealso:: :py:func:`setBloomSettings`\n\n.. versionadded:: 4.2\n', 'colorGradingSettingsChanged': 'Emitted when the color grading settings are changed.\n\n.. seealso:: :py:func:`colorGradingSettings`\n\n.. seealso:: :py:func:`setColorGradingSettings`\n\n.. versionadded:: 4.2\n', 'fpsCounterEnabledChanged': 'Emitted when the FPS counter is enabled or disabled\n\n.. versionadded:: 3.18\n', 'viewFrustumVisualizationEnabledChanged': "Emitted when the camera's view frustum visualization on the main 2D map\ncanvas is enabled or disabled\n\n.. versionadded:: 3.26\n", 'axisSettingsChanged': 'Emitted when 3d axis rendering settings are changed\n\n.. versionadded:: 3.26\n', 'debugOverlayEnabledChanged': 'Emitted when the debug overaly is enabled or disabled\n\n.. versionadded:: 3.26\n', 'extentChanged': "Emitted when the 3d view's 2d extent has changed\n\n.. seealso:: :py:func:`setExtent`\n\n.. versionadded:: 3.30\n", 'showExtentIn2DViewChanged': "Emitted when the parameter to display 3d view's extent in the 2D canvas\nhas changed\n\n.. seealso:: :py:func:`setShowExtentIn2DView`\n\n.. versionadded:: 3.32\n", 'showDebugPanelChanged': 'Emitted when the Show debug panel checkbox changes value\n\n.. seealso:: :py:func:`setShowDebugPanel`\n\n.. versionadded:: 3.42\n', 'originChanged': "Emitted when the world's origin point has been shifted\n\n.. seealso:: :py:func:`setOrigin`\n\n.. versionadded:: 3.42\n", 'show2DMapOverlayChanged': 'Emitted when the 2D map overlay is enabled or disabled\n\n.. seealso:: :py:func:`setIs2DMapOverlayEnabled`\n\n.. versionadded:: 4.0\n'}
     Qgs3DMapSettings.__signal_arguments__ = {'fpsCounterEnabledChanged': ['fpsCounterEnabled: bool'], 'debugOverlayEnabledChanged': ['debugOverlayEnabled: bool'], 'showDebugPanelChanged': ['shown: bool']}
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/3d/qgs3dmaptool.h
+try:
+    Qgs3DMapTool.__virtual_methods__ = ['mousePressEvent', 'mouseReleaseEvent', 'mouseMoveEvent', 'keyPressEvent', 'keyReleaseEvent', 'mouseWheelEvent', 'activate', 'deactivate', 'cursor']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/3d/terrain/qgs3dterrainregistry.h
@@ -76,40 +83,9 @@ try:
     Qgs3DTypes.__annotations__ = {'PROP_NAME_3D_RENDERER_FLAG': str}
 except (NameError, AttributeError):
     pass
-# The following has been generated automatically from src/3d/materials/qgsabstractmaterialsettings.h
-# monkey patching scoped based enum
-QgsAbstractMaterialSettings.Triangles.__doc__ = "Triangle based rendering (default)"
-QgsAbstractMaterialSettings.Lines.__doc__ = "Line based rendering, requires line data"
-QgsAbstractMaterialSettings.InstancedPoints.__doc__ = "Instanced based rendering, requiring triangles and point data"
-QgsAbstractMaterialSettings.Points.__doc__ = "Point based rendering, requires point data"
-QgsAbstractMaterialSettings.TrianglesWithFixedTexture.__doc__ = "Triangle based rendering, using a fixed, non-user-configurable texture (e.g. for terrain rendering)"
-QgsAbstractMaterialSettings.TrianglesFromModel.__doc__ = "Triangle based rendering, using a model object source"
-QgsAbstractMaterialSettings.TrianglesDataDefined.__doc__ = "Triangle based rendering with possibility of datadefined color \n.. versionadded:: 3.18"
-QgsMaterialSettingsRenderingTechnique.__doc__ = """Material rendering techniques
-
-.. versionadded:: 3.16
-
-* ``Triangles``: Triangle based rendering (default)
-* ``Lines``: Line based rendering, requires line data
-* ``InstancedPoints``: Instanced based rendering, requiring triangles and point data
-* ``Points``: Point based rendering, requires point data
-* ``TrianglesWithFixedTexture``: Triangle based rendering, using a fixed, non-user-configurable texture (e.g. for terrain rendering)
-* ``TrianglesFromModel``: Triangle based rendering, using a model object source
-* ``TrianglesDataDefined``: Triangle based rendering with possibility of datadefined color
-
-  .. versionadded:: 3.18
-
-
-"""
-# --
+# The following has been generated automatically from src/3d/qgsabstract3dmapbackgroundsettings.h
 try:
-    QgsAbstractMaterialSettings.__virtual_methods__ = ['readXml', 'writeXml']
-    QgsAbstractMaterialSettings.__abstract_methods__ = ['type', 'clone', 'equals']
-    QgsAbstractMaterialSettings.__group__ = ['materials']
-except (NameError, AttributeError):
-    pass
-try:
-    QgsMaterialContext.__group__ = ['materials']
+    QgsAbstract3DMapBackgroundSettings.__abstract_methods__ = ['type', 'clone', 'readXml', 'writeXml']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/3d/terrain/qgsabstractterrainsettings.h
@@ -124,10 +100,29 @@ try:
     QgsAbstractVectorLayer3DRenderer.__overridden_methods__ = ['resolveReferences']
 except (NameError, AttributeError):
     pass
+# The following has been generated automatically from src/3d/qgsannotationlayer3drenderer.h
+try:
+    QgsAnnotationLayer3DRendererMetadata.__overridden_methods__ = ['createRenderer']
+except (NameError, AttributeError):
+    pass
+try:
+    QgsAnnotationLayer3DRenderer.__overridden_methods__ = ['type', 'clone', 'writeXml', 'readXml', 'resolveReferences']
+except (NameError, AttributeError):
+    pass
 # The following has been generated automatically from src/3d/qgscameracontroller.h
 try:
-    QgsCameraController.__attribute_docs__ = {'cameraChanged': 'Emitted when camera has been updated\n', 'navigationModeChanged': 'Emitted when the navigation mode is changed using the hotkey ctrl + ~\n', 'cameraMovementSpeedChanged': 'Emitted whenever the camera movement speed is changed by the controller.\n', 'setCursorPosition': 'Emitted when the mouse cursor position should be moved to the specified\n``point`` on the map viewport.\n', 'requestDepthBufferCapture': 'Emitted to ask for the depth buffer image\n\n.. versionadded:: 3.24\n', 'cameraRotationCenterChanged': 'Emitted when the camera rotation center changes\n\n.. versionadded:: 3.24\n'}
+    QgsCameraController.__attribute_docs__ = {'cameraChanged': 'Emitted when camera has been updated\n', 'navigationModeChanged': 'Emitted when the navigation mode is changed using the hotkey ctrl + ~\n', 'cameraMovementSpeedChanged': 'Emitted whenever the camera movement speed is changed by the controller.\n', 'setCursorPosition': 'Emitted when the mouse cursor position should be moved to the specified\n``point`` on the map viewport.\n', 'requestDepthBufferCapture': 'Emitted to ask for the depth buffer image\n\n.. versionadded:: 3.24\n', 'cameraRotationCenterChanged': 'Emitted when the camera rotation center changes\n\n.. versionadded:: 3.24\n', 'depthBufferReady': 'Emitted after the depth buffer has been captured and is ready to sample.\n\n.. versionadded:: 4.2\n'}
     QgsCameraController.__signal_arguments__ = {'navigationModeChanged': ['mode: Qgis.NavigationMode'], 'cameraMovementSpeedChanged': ['speed: float'], 'setCursorPosition': ['point: QPoint'], 'cameraRotationCenterChanged': ['position: QVector3D']}
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/3d/qgscategorized3drenderer.h
+try:
+    QgsCategorized3DRenderer.createCategories = staticmethod(QgsCategorized3DRenderer.createCategories)
+    QgsCategorized3DRenderer.__overridden_methods__ = ['type', 'clone', 'writeXml', 'readXml']
+except (NameError, AttributeError):
+    pass
+try:
+    QgsCategorized3DRendererMetadata.__overridden_methods__ = ['createRenderer']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/3d/terrain/qgsdemterrainsettings.h
@@ -143,6 +138,11 @@ try:
     QgsDirectionalLightSettings.__group__ = ['lights']
 except (NameError, AttributeError):
     pass
+# The following has been generated automatically from src/3d/qgsfixedgradientbackgroundsettings.h
+try:
+    QgsFixedGradientBackgroundSettings.__overridden_methods__ = ['type', 'clone', 'readXml', 'writeXml']
+except (NameError, AttributeError):
+    pass
 # The following has been generated automatically from src/3d/terrain/qgsflatterrainsettings.h
 try:
     QgsFlatTerrainSettings.create = staticmethod(QgsFlatTerrainSettings.create)
@@ -150,12 +150,9 @@ try:
     QgsFlatTerrainSettings.__group__ = ['terrain']
 except (NameError, AttributeError):
     pass
-# The following has been generated automatically from src/3d/materials/qgsgoochmaterialsettings.h
+# The following has been generated automatically from src/3d/qgsfonttextureatlasgenerator.h
 try:
-    QgsGoochMaterialSettings.create = staticmethod(QgsGoochMaterialSettings.create)
-    QgsGoochMaterialSettings.supportsTechnique = staticmethod(QgsGoochMaterialSettings.supportsTechnique)
-    QgsGoochMaterialSettings.__overridden_methods__ = ['type', 'clone', 'equals', 'readXml', 'writeXml', 'toExportParameters']
-    QgsGoochMaterialSettings.__group__ = ['materials']
+    QgsFontTextureAtlasGenerator.create = staticmethod(QgsFontTextureAtlasGenerator.create)
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/3d/qgslayoutitem3dmap.h
@@ -175,18 +172,8 @@ except (NameError, AttributeError):
 # The following has been generated automatically from src/3d/symbols/qgsline3dsymbol.h
 try:
     QgsLine3DSymbol.create = staticmethod(QgsLine3DSymbol.create)
-    QgsLine3DSymbol.__overridden_methods__ = ['type', 'clone', 'writeXml', 'readXml', 'compatibleGeometryTypes', 'setDefaultPropertiesFromLayer']
+    QgsLine3DSymbol.__overridden_methods__ = ['type', 'clone', 'writeXml', 'readXml', 'compatibleGeometryTypes', 'setDefaultPropertiesFromLayer', 'materialSettings', 'setMaterialSettings']
     QgsLine3DSymbol.__group__ = ['symbols']
-except (NameError, AttributeError):
-    pass
-# The following has been generated automatically from src/3d/materials/qgsmaterialregistry.h
-try:
-    QgsMaterialSettingsAbstractMetadata.__abstract_methods__ = ['create', 'supportsTechnique']
-    QgsMaterialSettingsAbstractMetadata.__group__ = ['materials']
-except (NameError, AttributeError):
-    pass
-try:
-    QgsMaterialRegistry.__group__ = ['materials']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/3d/symbols/qgsmesh3dsymbol.h
@@ -217,7 +204,7 @@ QgsMesh3DSymbol.ZValueType.__doc__ = """How to render the Z value of the mesh
 """
 # --
 try:
-    QgsMesh3DSymbol.__overridden_methods__ = ['type', 'clone', 'writeXml', 'readXml']
+    QgsMesh3DSymbol.__overridden_methods__ = ['type', 'clone', 'writeXml', 'readXml', 'materialSettings', 'setMaterialSettings']
     QgsMesh3DSymbol.__group__ = ['symbols']
 except (NameError, AttributeError):
     pass
@@ -228,22 +215,6 @@ try:
     QgsMeshTerrainSettings.__group__ = ['terrain']
 except (NameError, AttributeError):
     pass
-# The following has been generated automatically from src/3d/materials/qgsmetalroughmaterialsettings.h
-try:
-    QgsMetalRoughMaterialSettings.supportsTechnique = staticmethod(QgsMetalRoughMaterialSettings.supportsTechnique)
-    QgsMetalRoughMaterialSettings.create = staticmethod(QgsMetalRoughMaterialSettings.create)
-    QgsMetalRoughMaterialSettings.__overridden_methods__ = ['type', 'clone', 'equals', 'toExportParameters', 'readXml', 'writeXml']
-    QgsMetalRoughMaterialSettings.__group__ = ['materials']
-except (NameError, AttributeError):
-    pass
-# The following has been generated automatically from src/3d/materials/qgsnullmaterialsettings.h
-try:
-    QgsNullMaterialSettings.supportsTechnique = staticmethod(QgsNullMaterialSettings.supportsTechnique)
-    QgsNullMaterialSettings.create = staticmethod(QgsNullMaterialSettings.create)
-    QgsNullMaterialSettings.__overridden_methods__ = ['type', 'clone', 'equals', 'toExportParameters']
-    QgsNullMaterialSettings.__group__ = ['materials']
-except (NameError, AttributeError):
-    pass
 # The following has been generated automatically from src/3d/terrain/qgsonlinedemterrainsettings.h
 try:
     QgsOnlineDemTerrainSettings.create = staticmethod(QgsOnlineDemTerrainSettings.create)
@@ -251,28 +222,12 @@ try:
     QgsOnlineDemTerrainSettings.__group__ = ['terrain']
 except (NameError, AttributeError):
     pass
-# The following has been generated automatically from src/3d/materials/qgsphongmaterialsettings.h
-try:
-    QgsPhongMaterialSettings.supportsTechnique = staticmethod(QgsPhongMaterialSettings.supportsTechnique)
-    QgsPhongMaterialSettings.create = staticmethod(QgsPhongMaterialSettings.create)
-    QgsPhongMaterialSettings.__overridden_methods__ = ['type', 'clone', 'equals', 'toExportParameters', 'readXml', 'writeXml']
-    QgsPhongMaterialSettings.__group__ = ['materials']
-except (NameError, AttributeError):
-    pass
-# The following has been generated automatically from src/3d/materials/qgsphongtexturedmaterialsettings.h
-try:
-    QgsPhongTexturedMaterialSettings.supportsTechnique = staticmethod(QgsPhongTexturedMaterialSettings.supportsTechnique)
-    QgsPhongTexturedMaterialSettings.create = staticmethod(QgsPhongTexturedMaterialSettings.create)
-    QgsPhongTexturedMaterialSettings.__overridden_methods__ = ['type', 'clone', 'equals', 'toExportParameters', 'readXml', 'writeXml']
-    QgsPhongTexturedMaterialSettings.__group__ = ['materials']
-except (NameError, AttributeError):
-    pass
 # The following has been generated automatically from src/3d/symbols/qgspoint3dsymbol.h
 try:
     QgsPoint3DSymbol.create = staticmethod(QgsPoint3DSymbol.create)
     QgsPoint3DSymbol.shapeFromString = staticmethod(QgsPoint3DSymbol.shapeFromString)
     QgsPoint3DSymbol.shapeToString = staticmethod(QgsPoint3DSymbol.shapeToString)
-    QgsPoint3DSymbol.__overridden_methods__ = ['type', 'clone', 'writeXml', 'readXml', 'compatibleGeometryTypes', 'setDefaultPropertiesFromLayer']
+    QgsPoint3DSymbol.__overridden_methods__ = ['type', 'clone', 'writeXml', 'readXml', 'compatibleGeometryTypes', 'setDefaultPropertiesFromLayer', 'materialSettings', 'setMaterialSettings']
     QgsPoint3DSymbol.__group__ = ['symbols']
 except (NameError, AttributeError):
     pass
@@ -317,7 +272,7 @@ except (NameError, AttributeError):
 # The following has been generated automatically from src/3d/symbols/qgspolygon3dsymbol.h
 try:
     QgsPolygon3DSymbol.create = staticmethod(QgsPolygon3DSymbol.create)
-    QgsPolygon3DSymbol.__overridden_methods__ = ['type', 'clone', 'writeXml', 'readXml', 'compatibleGeometryTypes', 'setDefaultPropertiesFromLayer']
+    QgsPolygon3DSymbol.__overridden_methods__ = ['type', 'clone', 'writeXml', 'readXml', 'compatibleGeometryTypes', 'setDefaultPropertiesFromLayer', 'materialSettings', 'setMaterialSettings']
     QgsPolygon3DSymbol.__group__ = ['symbols']
 except (NameError, AttributeError):
     pass
@@ -329,24 +284,32 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/3d/qgsrulebased3drenderer.h
+QgsRuleBased3DRenderer.Rule.Filtered = QgsRuleBased3DRenderer.Rule.RegisterResult.Filtered
+QgsRuleBased3DRenderer.Rule.Inactive = QgsRuleBased3DRenderer.Rule.RegisterResult.Inactive
+QgsRuleBased3DRenderer.Rule.Registered = QgsRuleBased3DRenderer.Rule.RegisterResult.Registered
 try:
     QgsRuleBased3DRenderer.Rule.create = staticmethod(QgsRuleBased3DRenderer.Rule.create)
+except (NameError, AttributeError):
+    pass
+try:
+    QgsRuleBased3DRenderer.convertFromRenderer = staticmethod(QgsRuleBased3DRenderer.convertFromRenderer)
+    QgsRuleBased3DRenderer.__overridden_methods__ = ['type', 'clone', 'writeXml', 'readXml']
 except (NameError, AttributeError):
     pass
 try:
     QgsRuleBased3DRendererMetadata.__overridden_methods__ = ['createRenderer']
 except (NameError, AttributeError):
     pass
+# The following has been generated automatically from src/3d/lights/qgssunlightsettings.h
 try:
-    QgsRuleBased3DRenderer.__overridden_methods__ = ['type', 'clone', 'writeXml', 'readXml']
+    QgsSunLightSettings.__overridden_methods__ = ['type', 'clone', 'writeXml', 'readXml']
+    QgsSunLightSettings.__group__ = ['lights']
 except (NameError, AttributeError):
     pass
-# The following has been generated automatically from src/3d/materials/qgssimplelinematerialsettings.h
+# The following has been generated automatically from src/3d/qgstextureatlasgenerator.h
 try:
-    QgsSimpleLineMaterialSettings.supportsTechnique = staticmethod(QgsSimpleLineMaterialSettings.supportsTechnique)
-    QgsSimpleLineMaterialSettings.create = staticmethod(QgsSimpleLineMaterialSettings.create)
-    QgsSimpleLineMaterialSettings.__overridden_methods__ = ['type', 'clone', 'equals', 'toExportParameters', 'readXml', 'writeXml']
-    QgsSimpleLineMaterialSettings.__group__ = ['materials']
+    QgsTextureAtlasGenerator.createFromRects = staticmethod(QgsTextureAtlasGenerator.createFromRects)
+    QgsTextureAtlasGenerator.createFromImages = staticmethod(QgsTextureAtlasGenerator.createFromImages)
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/3d/qgstiledscenelayer3drenderer.h
@@ -360,17 +323,18 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/3d/qgsvectorlayer3drenderer.h
 try:
-    QgsVectorLayer3DRendererMetadata.__overridden_methods__ = ['createRenderer']
-except (NameError, AttributeError):
-    pass
-try:
+    QgsVectorLayer3DRenderer.convertFromRenderer = staticmethod(QgsVectorLayer3DRenderer.convertFromRenderer)
     QgsVectorLayer3DRenderer.__overridden_methods__ = ['type', 'clone', 'writeXml', 'readXml']
 except (NameError, AttributeError):
     pass
+try:
+    QgsVectorLayer3DRendererMetadata.__overridden_methods__ = ['createRenderer']
+except (NameError, AttributeError):
+    pass
 
-
-from qgis.core import Qgis as _Qgis
 
 # manual monkey patching for old enum values
 
 
+
+from qgis.core import QgsAbstractMaterialSettings, QgsGoochMaterialSettings, QgsMaterialSettingsAbstractMetadata, QgsMaterialRegistry, QgsMetalRoughMaterialSettings, QgsNullMaterialSettings, QgsPhongMaterialSettings, QgsPhongTexturedMaterialSettings, QgsSimpleLineMaterialSettings

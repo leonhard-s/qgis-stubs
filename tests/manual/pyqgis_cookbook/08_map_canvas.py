@@ -1,12 +1,13 @@
 # Adapted from:
-# https://docs.qgis.org/3.44/en/docs/pyqgis_developer_cookbook/canvas.html
+# https://docs.qgis.org/4.2/en/docs/pyqgis_developer_cookbook/canvas.html
 
 # pylint: disable=missing-class-docstring
 
 from qgis.core import QgsMapLayer
 from qgis.gui import QgsMapCanvas, QgsMapToolPan, QgsMapToolZoom
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QAction, QMainWindow
+from PyQt6.QtCore import Qt
+from PyQt6.QtGui import QAction
+from PyQt6.QtWidgets import QMainWindow
 
 
 class MyWnd(QMainWindow):
@@ -14,7 +15,7 @@ class MyWnd(QMainWindow):
         QMainWindow.__init__(self)
 
         self.canvas = QgsMapCanvas()
-        self.canvas.setCanvasColor(Qt.white)
+        self.canvas.setCanvasColor(Qt.GlobalColor.white)
 
         self.canvas.setExtent(layer.extent())
         self.canvas.setLayers([layer])
@@ -34,6 +35,7 @@ class MyWnd(QMainWindow):
         self.actionPan.triggered.connect(self.pan)
 
         self.toolbar = self.addToolBar("Canvas actions")
+        assert self.toolbar is not None
         self.toolbar.addAction(self.actionZoomIn)
         self.toolbar.addAction(self.actionZoomOut)
         self.toolbar.addAction(self.actionPan)

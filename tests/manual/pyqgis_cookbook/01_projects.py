@@ -1,5 +1,5 @@
 # Adapted from:
-# https://docs.qgis.org/3.44/en/docs/pyqgis_developer_cookbook/loadproject.html#loading-projects
+# https://docs.qgis.org/4.2/en/docs/pyqgis_developer_cookbook/loadproject.html
 
 from qgis.core import QgsProject
 

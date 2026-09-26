@@ -21,7 +21,7 @@ __author__ = 'Nathan Woodrow'
 __date__ = 'May 2014'
 __copyright__ = '(C) 2014, Nathan Woodrow'
 
-from PyQt5 import QtCore
+from PyQt6 import QtCore
 from qgis._gui import *
 from qgis.core import Qgis as _Qgis
 from .additions.qgssettingsenumflageditorwrapper import PyQgsSettingsEnumEditorWidgetWrapper
@@ -40,9 +40,9 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgisinterface.h
 try:
-    QgisInterface.__attribute_docs__ = {'currentLayerChanged': 'Emitted whenever current (selected) layer changes. The pointer to layer\ncan be ``None`` if no layer is selected.\n', 'currentThemeChanged': 'Emitted when the current ``theme`` is changed so plugins can change\ntheir tool button icons.\n', 'layoutDesignerOpened': 'Emitted when a new layout ``designer`` has been opened.\n\n.. seealso:: :py:func:`layoutDesignerWillBeClosed`\n', 'layoutDesignerWillBeClosed': 'Emitted before a layout ``designer`` is going to be closed and deleted.\n\n.. seealso:: :py:func:`layoutDesignerClosed`\n\n.. seealso:: :py:func:`layoutDesignerOpened`\n', 'layoutDesignerClosed': 'Emitted after a layout designer window is closed.\n\n.. seealso:: :py:func:`layoutDesignerWillBeClosed`\n\n.. seealso:: :py:func:`layoutDesignerOpened`\n', 'initializationCompleted': 'Emitted when the initialization is complete.\n', 'projectRead': 'Emitted when a project file is successfully read.\n\n.. note::\n\n   This is useful for plugins that store properties with project files.\n   A plugin can connect to this signal. When it is emitted the plugin\n   knows to then check the project properties for any relevant state.\n', 'newProjectCreated': "Emitted when starting an entirely new project.\n\n.. note::\n\n   This is similar to :py:func:`~QgisInterface.projectRead`; plugins might want to be notified\n   that they're in a new project. Yes, :py:func:`~QgisInterface.projectRead` could have been\n   overloaded to be used in the case of new projects instead. However,\n   it's probably more semantically correct to have an entirely separate\n   signal for when this happens.\n", 'layerSavedAs': 'Emitted when a layer has been saved using save as.\n'}
-    QgisInterface.__virtual_methods__ = ['actionCircle2Points', 'actionCircle3Points', 'actionCircle3Tangents', 'actionCircle2TangentsPoint', 'actionCircleCenterPoint', 'actionEllipseCenter2Points', 'actionEllipseCenterPoint', 'actionEllipseExtent', 'actionEllipseFoci', 'actionRectangleCenterPoint', 'actionRectangleExtent', 'actionRectangle3PointsDistance', 'actionRectangle3PointsProjected', 'actionRegularPolygon2Points', 'actionRegularPolygonCenterPoint', 'actionRegularPolygonCenterCorner', 'takeAppScreenShots']
-    QgisInterface.__abstract_methods__ = ['pluginManagerInterface', 'layerTreeView', 'gpsTools', 'addCustomActionForLayerType', 'addCustomActionForLayer', 'removeCustomActionForLayerType', 'mapCanvases', 'createNewMapCanvas', 'closeMapCanvas', 'mapCanvases3D', 'createNewMapCanvas3D', 'closeMapCanvas3D', 'iconSize', 'editableLayers', 'activeLayer', 'mapCanvas', 'activeDecorations', 'layerTreeCanvasBridge', 'mainWindow', 'messageBar', 'openLayoutDesigners', 'defaultStyleSheetOptions', 'defaultStyleSheetFont', 'cadDockWidget', 'projectMenu', 'projectImportExportMenu', 'addProjectImportAction', 'removeProjectImportAction', 'addProjectExportAction', 'removeProjectExportAction', 'projectModelsMenu', 'createProjectModelSubMenu', 'editMenu', 'viewMenu', 'layerMenu', 'newLayerMenu', 'addLayerMenu', 'settingsMenu', 'pluginMenu', 'pluginHelpMenu', 'rasterMenu', 'databaseMenu', 'vectorMenu', 'webMenu', 'meshMenu', 'firstRightStandardMenu', 'windowMenu', 'helpMenu', 'fileToolBar', 'layerToolBar', 'dataSourceManagerToolBar', 'openDataSourceManagerPage', 'mapNavToolToolBar', 'digitizeToolBar', 'advancedDigitizeToolBar', 'shapeDigitizeToolBar', 'attributesToolBar', 'selectionToolBar', 'pluginToolBar', 'helpToolBar', 'rasterToolBar', 'vectorToolBar', 'databaseToolBar', 'webToolBar', 'actionNewProject', 'actionOpenProject', 'actionSaveProject', 'actionSaveProjectAs', 'actionSaveMapAsImage', 'actionProjectProperties', 'actionCreatePrintLayout', 'actionShowLayoutManager', 'actionExit', 'actionCutFeatures', 'actionCopyFeatures', 'actionPasteFeatures', 'actionAddFeature', 'actionDeleteSelected', 'actionMoveFeature', 'actionSplitFeatures', 'actionSplitParts', 'actionAddRing', 'actionAddPart', 'actionSimplifyFeature', 'actionDeleteRing', 'actionDeletePart', 'actionVertexTool', 'actionVertexToolActiveLayer', 'mapToolActionGroup', 'actionPan', 'actionPanToSelected', 'actionZoomIn', 'actionZoomOut', 'actionSelect', 'actionSelectRectangle', 'actionSelectPolygon', 'actionSelectFreehand', 'actionSelectRadius', 'actionIdentify', 'actionFeatureAction', 'actionMeasure', 'actionMeasureArea', 'actionZoomFullExtent', 'actionZoomToLayer', 'actionZoomToLayers', 'actionZoomToSelected', 'actionZoomLast', 'actionZoomNext', 'actionZoomActualSize', 'actionMapTips', 'actionNewBookmark', 'actionShowBookmarks', 'actionDraw', 'actionNewVectorLayer', 'actionAddOgrLayer', 'actionAddRasterLayer', 'actionAddPgLayer', 'actionAddWmsLayer', 'actionAddXyzLayer', 'actionAddVectorTileLayer', 'actionAddPointCloudLayer', 'actionAddAfsLayer', 'actionAddAmsLayer', 'actionCopyLayerStyle', 'actionPasteLayerStyle', 'actionOpenTable', 'actionOpenFieldCalculator', 'actionOpenStatisticalSummary', 'actionToggleEditing', 'actionSaveActiveLayerEdits', 'actionAllEdits', 'actionSaveEdits', 'actionSaveAllEdits', 'actionRollbackEdits', 'actionRollbackAllEdits', 'actionCancelEdits', 'actionCancelAllEdits', 'actionLayerSaveAs', 'actionDuplicateLayer', 'actionLayerProperties', 'actionAddToOverview', 'actionAddAllToOverview', 'actionRemoveAllFromOverview', 'actionHideAllLayers', 'actionShowAllLayers', 'actionHideSelectedLayers', 'actionToggleSelectedLayers', 'actionToggleSelectedLayersIndependently', 'actionHideDeselectedLayers', 'actionShowSelectedLayers', 'actionManagePlugins', 'actionPluginListSeparator', 'actionShowPythonDialog', 'actionToggleFullScreen', 'actionOptions', 'actionCustomProjection', 'actionHelpContents', 'actionQgisHomePage', 'actionCheckQgisVersion', 'actionAbout', 'vectorLayerTools', 'messageTimeout', 'statusBarIface', 'layerTreeInsertionPoint', 'userProfileManager', 'zoomFull', 'zoomToPrevious', 'zoomToNext', 'zoomToActiveLayer', 'addVectorLayer', 'addRasterLayer', 'addMeshLayer', 'addVectorTileLayer', 'addPointCloudLayer', 'addTiledSceneLayer', 'addProject', 'newProject', 'reloadConnections', 'setActiveLayer', 'copySelectionToClipboard', 'pasteFromClipboard', 'addToolBarIcon', 'addToolBarWidget', 'removeToolBarIcon', 'addRasterToolBarWidget', 'addRasterToolBarIcon', 'removeRasterToolBarIcon', 'addVectorToolBarIcon', 'addVectorToolBarWidget', 'removeVectorToolBarIcon', 'addDatabaseToolBarIcon', 'addDatabaseToolBarWidget', 'removeDatabaseToolBarIcon', 'addWebToolBarIcon', 'addWebToolBarWidget', 'removeWebToolBarIcon', 'addToolBar', 'openMessageLog', 'addUserInputWidget', 'showLayoutManager', 'openLayoutDesigner', 'showOptionsDialog', 'showProjectPropertiesDialog', 'buildStyleSheet', 'saveStyleSheetOptions', 'addPluginToMenu', 'removePluginMenu', 'insertAddLayerAction', 'removeAddLayerAction', 'addPluginToDatabaseMenu', 'removePluginDatabaseMenu', 'addPluginToRasterMenu', 'removePluginRasterMenu', 'addPluginToVectorMenu', 'removePluginVectorMenu', 'addPluginToWebMenu', 'removePluginWebMenu', 'addPluginToMeshMenu', 'removePluginMeshMenu', 'addDockWidget', 'addTabifiedDockWidget', 'removeDockWidget', 'showLayerProperties', 'showAttributeTable', 'addWindow', 'removeWindow', 'registerMainWindowAction', 'unregisterMainWindowAction', 'registerMapLayerConfigWidgetFactory', 'unregisterMapLayerConfigWidgetFactory', 'registerOptionsWidgetFactory', 'unregisterOptionsWidgetFactory', 'registerProjectPropertiesWidgetFactory', 'unregisterProjectPropertiesWidgetFactory', 'registerDevToolWidgetFactory', 'unregisterDevToolWidgetFactory', 'showApiDocumentation', 'registerApplicationExitBlocker', 'unregisterApplicationExitBlocker', 'registerMapToolHandler', 'unregisterMapToolHandler', 'registerCustomDropHandler', 'unregisterCustomDropHandler', 'registerCustomProjectOpenHandler', 'unregisterCustomProjectOpenHandler', 'registerCustomLayoutDropHandler', 'unregisterCustomLayoutDropHandler', 'openURL', 'openFeatureForm', 'getFeatureForm', 'preloadForm', 'locatorSearch', 'registerLocatorFilter', 'deregisterLocatorFilter', 'invalidateLocatorResults', 'askForDatumTransform', 'browserModel', 'setGpsPanelConnection', 'blockActiveLayerChanges']
+    QgisInterface.__attribute_docs__ = {'currentLayerChanged': 'Emitted whenever current (selected) layer changes.\n\nThe pointer to layer can be ``None`` if no layer is selected.\n', 'currentThemeChanged': 'Emitted when the current ``theme`` is changed so plugins can change\ntheir tool button icons.\n', 'layoutDesignerOpened': 'Emitted when a new layout ``designer`` has been opened.\n\n.. seealso:: :py:func:`layoutDesignerWillBeClosed`\n', 'layoutDesignerWillBeClosed': 'Emitted before a layout ``designer`` is going to be closed and deleted.\n\n.. seealso:: :py:func:`layoutDesignerClosed`\n\n.. seealso:: :py:func:`layoutDesignerOpened`\n', 'layoutDesignerClosed': 'Emitted after a layout designer window is closed.\n\n.. seealso:: :py:func:`layoutDesignerWillBeClosed`\n\n.. seealso:: :py:func:`layoutDesignerOpened`\n', 'initializationCompleted': 'Emitted when the initialization is complete.\n', 'projectRead': 'Emitted when a project file is successfully read.\n\n.. note::\n\n   This is useful for plugins that store properties with project files.\n   A plugin can connect to this signal. When it is emitted the plugin\n   knows to then check the project properties for any relevant state.\n', 'newProjectCreated': "Emitted when starting an entirely new project.\n\n.. note::\n\n   This is similar to :py:func:`~QgisInterface.projectRead`; plugins might want to be notified\n   that they're in a new project. Yes, :py:func:`~QgisInterface.projectRead` could have been\n   overloaded to be used in the case of new projects instead. However,\n   it's probably more semantically correct to have an entirely separate\n   signal for when this happens.\n", 'layerSavedAs': 'Emitted when a layer has been saved using save as.\n'}
+    QgisInterface.__virtual_methods__ = ['actionCircle2Points', 'actionCircle3Points', 'actionCircle3Tangents', 'actionCircle2TangentsPoint', 'actionCircleCenterPoint', 'actionEllipseCenter2Points', 'actionEllipseCenterPoint', 'actionEllipseExtent', 'actionEllipseFoci', 'actionRectangleCenterPoint', 'actionRectangleExtent', 'actionRectangle3PointsDistance', 'actionRectangle3PointsProjected', 'actionRegularPolygon2Points', 'actionRegularPolygonCenterPoint', 'actionRegularPolygonCenterCorner', 'takeAppScreenShots', 'showApiDocumentation']
+    QgisInterface.__abstract_methods__ = ['pluginManagerInterface', 'showPluginManager', 'layerTreeView', 'gpsTools', 'addCustomActionForLayerType', 'addCustomActionForLayer', 'removeCustomActionForLayerType', 'mapCanvases', 'createNewMapCanvas', 'closeMapCanvas', 'mapCanvases3D', 'createNewMapCanvas3D', 'closeMapCanvas3D', 'iconSize', 'editableLayers', 'activeLayer', 'mapCanvas', 'activeDecorations', 'layerTreeCanvasBridge', 'mainWindow', 'messageBar', 'openLayoutDesigners', 'defaultStyleSheetOptions', 'defaultStyleSheetFont', 'cadDockWidget', 'projectMenu', 'projectImportExportMenu', 'addProjectImportAction', 'removeProjectImportAction', 'addProjectExportAction', 'removeProjectExportAction', 'projectModelsMenu', 'createProjectModelSubMenu', 'editMenu', 'viewMenu', 'layerMenu', 'newLayerMenu', 'addLayerMenu', 'settingsMenu', 'pluginMenu', 'pluginHelpMenu', 'rasterMenu', 'databaseMenu', 'vectorMenu', 'webMenu', 'meshMenu', 'firstRightStandardMenu', 'windowMenu', 'helpMenu', 'fileToolBar', 'layerToolBar', 'dataSourceManagerToolBar', 'openDataSourceManagerPage', 'mapNavToolToolBar', 'digitizeToolBar', 'advancedDigitizeToolBar', 'shapeDigitizeToolBar', 'attributesToolBar', 'selectionToolBar', 'pluginToolBar', 'helpToolBar', 'rasterToolBar', 'vectorToolBar', 'databaseToolBar', 'webToolBar', 'actionNewProject', 'actionOpenProject', 'actionSaveProject', 'actionSaveProjectAs', 'actionSaveMapAsImage', 'actionProjectProperties', 'actionCreatePrintLayout', 'actionShowLayoutManager', 'actionExit', 'actionCutFeatures', 'actionCopyFeatures', 'actionPasteFeatures', 'actionAddFeature', 'actionDeleteSelected', 'actionMoveFeature', 'actionSplitFeatures', 'actionSplitParts', 'actionAddRing', 'actionAddPart', 'actionSimplifyFeature', 'actionDeleteRing', 'actionDeletePart', 'actionVertexTool', 'actionVertexToolActiveLayer', 'mapToolActionGroup', 'actionPan', 'actionPanToSelected', 'actionZoomIn', 'actionZoomOut', 'actionSelect', 'actionSelectRectangle', 'actionSelectPolygon', 'actionSelectFreehand', 'actionSelectRadius', 'actionIdentify', 'actionFeatureAction', 'actionMeasure', 'actionMeasureArea', 'actionZoomFullExtent', 'actionZoomToLayer', 'actionZoomToLayers', 'actionZoomToSelected', 'actionZoomLast', 'actionZoomNext', 'actionZoomActualSize', 'actionMapTips', 'actionNewBookmark', 'actionShowBookmarks', 'actionDraw', 'actionNewVectorLayer', 'actionAddOgrLayer', 'actionAddRasterLayer', 'actionAddPgLayer', 'actionAddWmsLayer', 'actionAddXyzLayer', 'actionAddVectorTileLayer', 'actionAddPointCloudLayer', 'actionAddAfsLayer', 'actionAddAmsLayer', 'actionCopyLayerStyle', 'actionPasteLayerStyle', 'actionOpenTable', 'actionOpenFieldCalculator', 'actionOpenStatisticalSummary', 'actionToggleEditing', 'actionSaveActiveLayerEdits', 'actionAllEdits', 'actionSaveEdits', 'actionSaveAllEdits', 'actionRollbackEdits', 'actionRollbackAllEdits', 'actionCancelEdits', 'actionCancelAllEdits', 'actionLayerSaveAs', 'actionDuplicateLayer', 'actionLayerProperties', 'actionAddToOverview', 'actionAddAllToOverview', 'actionRemoveAllFromOverview', 'actionHideAllLayers', 'actionShowAllLayers', 'actionHideSelectedLayers', 'actionToggleSelectedLayers', 'actionToggleSelectedLayersIndependently', 'actionHideDeselectedLayers', 'actionShowSelectedLayers', 'actionManagePlugins', 'actionPluginListSeparator', 'actionShowPythonDialog', 'actionToggleFullScreen', 'actionOptions', 'actionCustomProjection', 'actionHelpContents', 'actionQgisHomePage', 'actionCheckQgisVersion', 'actionAbout', 'vectorLayerTools', 'messageTimeout', 'statusBarIface', 'layerTreeInsertionPoint', 'userProfileManager', 'zoomFull', 'zoomToPrevious', 'zoomToNext', 'zoomToActiveLayer', 'addVectorLayer', 'addRasterLayer', 'addMeshLayer', 'addVectorTileLayer', 'addPointCloudLayer', 'addTiledSceneLayer', 'addProject', 'newProject', 'reloadConnections', 'setActiveLayer', 'copySelectionToClipboard', 'pasteFromClipboard', 'addToolBarIcon', 'addToolBarWidget', 'removeToolBarIcon', 'addRasterToolBarWidget', 'addRasterToolBarIcon', 'removeRasterToolBarIcon', 'addVectorToolBarIcon', 'addVectorToolBarWidget', 'removeVectorToolBarIcon', 'addDatabaseToolBarIcon', 'addDatabaseToolBarWidget', 'removeDatabaseToolBarIcon', 'addWebToolBarIcon', 'addWebToolBarWidget', 'removeWebToolBarIcon', 'addToolBar', 'openMessageLog', 'addUserInputWidget', 'showLayoutManager', 'openLayoutDesigner', 'showOptionsDialog', 'showProjectPropertiesDialog', 'buildStyleSheet', 'saveStyleSheetOptions', 'addPluginToMenu', 'removePluginMenu', 'insertAddLayerAction', 'removeAddLayerAction', 'addPluginToDatabaseMenu', 'removePluginDatabaseMenu', 'addPluginToRasterMenu', 'removePluginRasterMenu', 'addPluginToVectorMenu', 'removePluginVectorMenu', 'addPluginToWebMenu', 'removePluginWebMenu', 'addPluginToMeshMenu', 'removePluginMeshMenu', 'addDockWidget', 'addTabifiedDockWidget', 'removeDockWidget', 'showLayerProperties', 'showAttributeTable', 'addWindow', 'removeWindow', 'registerMainWindowAction', 'unregisterMainWindowAction', 'registerMapLayerConfigWidgetFactory', 'unregisterMapLayerConfigWidgetFactory', 'registerOptionsWidgetFactory', 'unregisterOptionsWidgetFactory', 'registerProjectPropertiesWidgetFactory', 'unregisterProjectPropertiesWidgetFactory', 'registerDevToolWidgetFactory', 'unregisterDevToolWidgetFactory', 'showApiDocumentation', 'registerApplicationExitBlocker', 'unregisterApplicationExitBlocker', 'registerMapToolHandler', 'unregisterMapToolHandler', 'registerCustomDropHandler', 'unregisterCustomDropHandler', 'registerCustomProjectOpenHandler', 'unregisterCustomProjectOpenHandler', 'registerCustomLayoutDropHandler', 'unregisterCustomLayoutDropHandler', 'openURL', 'openFeatureForm', 'getFeatureForm', 'preloadForm', 'locatorSearch', 'registerLocatorFilter', 'deregisterLocatorFilter', 'invalidateLocatorResults', 'askForDatumTransform', 'browserModel', 'setGpsPanelConnection', 'blockActiveLayerChanges']
     QgisInterface.__signal_arguments__ = {'currentLayerChanged': ['layer: QgsMapLayer'], 'currentThemeChanged': ['theme: str'], 'layoutDesignerOpened': ['designer: QgsLayoutDesignerInterface'], 'layoutDesignerWillBeClosed': ['designer: QgsLayoutDesignerInterface'], 'layerSavedAs': ['l: QgsMapLayer', 'path: str']}
 except (NameError, AttributeError):
     pass
@@ -83,8 +83,8 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgs3dsymbolwidget.h
 try:
-    Qgs3DSymbolWidget.__attribute_docs__ = {'changed': 'Emitted when the symbol is changed.\n'}
-    Qgs3DSymbolWidget.__abstract_methods__ = ['setSymbol', 'symbol', 'symbolType']
+    Qgs3DSymbolWidget.__attribute_docs__ = {'changed': 'Emitted when the symbol is changed.\n', 'renderingTechniqueChanged': 'Emitted when the rendering technique associated with the symbol is\nchanged.\n\n.. warning::\n\n   This is not considered stable API, and may change in future QGIS releases. It is\n   exposed to the Python bindings as a tech preview only.\n\n.. versionadded:: 4.2\n'}
+    Qgs3DSymbolWidget.__abstract_methods__ = ['setSymbol', 'symbol', 'symbolType', 'renderingTechnique']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsabstractdatasourcewidget.h
@@ -126,6 +126,7 @@ try:
     QgsAbstractRelationEditorWidget.__attribute_docs__ = {'relatedFeaturesChanged': 'Emit this signal, whenever the related features changed. This happens\nfor example when related features are added, removed, linked or\nunlinked.\n\n.. versionadded:: 3.22\n'}
     QgsAbstractRelationEditorWidget.__virtual_methods__ = ['setEditorContext', 'updateUi', 'setTitle', 'beforeSetRelationFeature', 'afterSetRelationFeature', 'beforeSetRelations', 'afterSetRelations']
     QgsAbstractRelationEditorWidget.__abstract_methods__ = ['config', 'setConfig', 'parentFormValueChanged']
+    QgsAbstractRelationEditorWidget.__overridden_methods__ = ['showEvent']
 except (NameError, AttributeError):
     pass
 try:
@@ -139,7 +140,8 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/actions/qgsactionmenu.h
 try:
-    QgsActionMenu.__attribute_docs__ = {'reinit': 'Emitted after actions have been reloaded.\n'}
+    QgsActionMenu.__attribute_docs__ = {'reinit': 'Emitted after actions have been reloaded.\n', 'messageEmitted': 'Emitted when a ``message`` should be shown to the user in the\napplication message bar.\n\n.. seealso:: :py:func:`messageDiscarded`\n\n.. versionadded:: 4.0\n', 'messageDiscarded': 'Emitted when the previous message from the tool should be cleared from\nthe application message bar.\n\n.. seealso:: :py:func:`messageEmitted`\n\n.. versionadded:: 4.0\n'}
+    QgsActionMenu.__signal_arguments__ = {'messageEmitted': ['message: str', 'level: Qgis.MessageLevel = Qgis.MessageLevel.Info']}
     QgsActionMenu.__group__ = ['actions']
 except (NameError, AttributeError):
     pass
@@ -159,12 +161,26 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsadvanceddigitizingdockwidget.h
+QgsAdvancedDigitizingDockWidget.CadCapacities = lambda flags=0: QgsAdvancedDigitizingDockWidget.CadCapacity(flags)
 QgsAdvancedDigitizingDockWidget.CadCapacities.baseClass = QgsAdvancedDigitizingDockWidget
 CadCapacities = QgsAdvancedDigitizingDockWidget  # dirty hack since SIP seems to introduce the flags in module
+QgsAdvancedDigitizingDockWidget.CadConstraint.NoLock = QgsAdvancedDigitizingDockWidget.CadConstraint.LockMode.NoLock
+QgsAdvancedDigitizingDockWidget.CadConstraint.SoftLock = QgsAdvancedDigitizingDockWidget.CadConstraint.LockMode.SoftLock
+QgsAdvancedDigitizingDockWidget.CadConstraint.HardLock = QgsAdvancedDigitizingDockWidget.CadConstraint.LockMode.HardLock
+from enum import Enum
+
+
+def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+
+QgsAdvancedDigitizingDockWidget.CadCapacity.__bool__ = lambda flag: bool(_force_int(flag))
+QgsAdvancedDigitizingDockWidget.CadCapacity.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsAdvancedDigitizingDockWidget.CadCapacity.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsAdvancedDigitizingDockWidget.CadCapacity.__or__ = lambda flag1, flag2: QgsAdvancedDigitizingDockWidget.CadCapacity(_force_int(flag1) | _force_int(flag2))
 try:
-    QgsAdvancedDigitizingDockWidget.__attribute_docs__ = {'pushWarning': 'Push a warning\n\n:param message: An informative message\n', 'popWarning': 'Remove any previously emitted warnings (if any)\n', 'pointChangedV2': 'Sometimes a constraint may change the current point out of a mouse\nevent. This happens normally when a constraint is toggled.\n\n:param point: The last known digitizing point. Can be used to emulate a\n              mouse event.\n\n.. versionadded:: 3.22\n', 'pointChanged': 'Sometimes a constraint may change the current point out of a mouse\nevent. This happens normally when a constraint is toggled.\n\n:param point: The last known digitizing point. Can be used to emulate a\n              mouse event.\n\n.. deprecated:: 3.22\n\n   No longer used, will be removed in QGIS 4.0. Use :py:func:`~QgsAdvancedDigitizingDockWidget.pointChangedV2` instead.\n', 'cadEnabledChanged': 'Emitted whenever CAD is enabled or disabled\n\n:param enabled: Whether CAD is enabled or not\n\n.. note::\n\n   unstable API (will likely change).\n\n.. versionadded:: 3.8\n', 'valueXChanged': 'Emitted whenever the X ``value`` changes (either the mouse moved, or the\nuser changed the input). Could be used by widgets that must reflect the\ncurrent advanced digitizing state.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'valueYChanged': 'Emitted whenever the Y ``value`` changes (either the mouse moved, or the\nuser changed the input). Could be used by widgets that must reflect the\ncurrent advanced digitizing state.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'valueZChanged': 'Emitted whenever the Z ``value`` changes (either the mouse moved, or the\nuser changed the input). Could be used by widgets that must reflect the\ncurrent advanced digitizing state.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.22\n', 'valueMChanged': 'Emitted whenever the M ``value`` changes (either the mouse moved, or the\nuser changed the input). Could be used by widgets that must reflect the\ncurrent advanced digitizing state.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.22\n', 'valueAngleChanged': 'Emitted whenever the angle ``value`` changes (either the mouse moved, or\nthe user changed the input). Could be used by widgets that must reflect\nthe current advanced digitizing state.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'valueDistanceChanged': 'Emitted whenever the distance ``value`` changes (either the mouse moved,\nor the user changed the input). Could be used by widgets that must\nreflect the current advanced digitizing state.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'valueBearingChanged': 'Emitted whenever the bearing ``value`` changes. Could be used by widgets\nthat must reflect the current advanced digitizing state.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.32\n', 'lockXChanged': 'Emitted whenever the X parameter is ``locked``. Could be used by widgets\nthat must reflect the current advanced digitizing state.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'lockYChanged': 'Emitted whenever the Y parameter is ``locked``. Could be used by widgets\nthat must reflect the current advanced digitizing state.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'lockZChanged': 'Emitted whenever the Z parameter is ``locked``. Could be used by widgets\nthat must reflect the current advanced digitizing state.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.22\n', 'lockMChanged': 'Emitted whenever the M parameter is ``locked``. Could be used by widgets\nthat must reflect the current advanced digitizing state.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.22\n', 'lockAngleChanged': 'Emitted whenever the angle parameter is ``locked``. Could be used by\nwidgets that must reflect the current advanced digitizing state.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'lockDistanceChanged': 'Emitted whenever the distance parameter is ``locked``. Could be used by\nwidgets that must reflect the current advanced digitizing state.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'relativeXChanged': 'Emitted whenever the X parameter is toggled between absolute and\nrelative. Could be used by widgets that must reflect the current\nadvanced digitizing state.\n\n:param relative: Whether the X parameter is relative or not.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'relativeYChanged': 'Emitted whenever the Y parameter is toggled between absolute and\nrelative. Could be used by widgets that must reflect the current\nadvanced digitizing state.\n\n:param relative: Whether the Y parameter is relative or not.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'relativeZChanged': 'Emitted whenever the Z parameter is toggled between absolute and\nrelative. Could be used by widgets that must reflect the current\nadvanced digitizing state.\n\n:param relative: Whether the Z parameter is relative or not.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.22\n', 'relativeMChanged': 'Emitted whenever the M parameter is toggled between absolute and\nrelative. Could be used by widgets that must reflect the current\nadvanced digitizing state.\n\n:param relative: Whether the M parameter is relative or not.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.22\n', 'relativeAngleChanged': 'Emitted whenever the angleX parameter is toggled between absolute and\nrelative. Could be used by widgets that must reflect the current\nadvanced digitizing state.\n\n:param relative: Whether the angle parameter is relative or not.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'softLockLineExtensionChanged': 'Emitted whenever the soft line extension parameter is ``locked``. Could\nbe used by widgets that must reflect the current advanced digitizing\nstate.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.26\n', 'softLockXyChanged': 'Emitted whenever the soft x/y extension parameter is ``locked``. Could\nbe used by widgets that must reflect the current advanced digitizing\nstate.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.26\n', 'enabledChangedX': 'Emitted whenever the X field is enabled or disabled. Depending on the\ncontext, some parameters do not make sense (e.g. you need a previous\npoint to define a distance). Could be used by widgets that must reflect\nthe current advanced digitizing state.\n\n:param enabled: Whether the X parameter is enabled or not.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'enabledChangedY': 'Emitted whenever the Y field is enabled or disabled. Depending on the\ncontext, some parameters do not make sense (e.g. you need a previous\npoint to define a distance). Could be used by widgets that must reflect\nthe current advanced digitizing state.\n\n:param enabled: Whether the Y parameter is enabled or not.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'enabledChangedZ': 'Emitted whenever the Z field is enabled or disabled. Depending on the\ncontext, some parameters do not make sense (e.g. you need a previous\npoint to define a distance). Could be used by widgets that must reflect\nthe current advanced digitizing state.\n\n:param enabled: Whether the Z parameter is enabled or not.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.22\n', 'enabledChangedM': 'Emitted whenever the M field is enabled or disabled. Depending on the\ncontext, some parameters do not make sense (e.g. you need a previous\npoint to define a distance). Could be used by widgets that must reflect\nthe current advanced digitizing state.\n\n:param enabled: Whether the M parameter is enabled or not.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.22\n', 'enabledChangedAngle': 'Emitted whenever the angle field is enabled or disabled. Depending on\nthe context, some parameters do not make sense (e.g. you need a previous\npoint to define a distance). Could be used by widgets that must reflect\nthe current advanced digitizing state.\n\n:param enabled: Whether the angle parameter is enabled or not.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'enabledChangedDistance': 'Emitted whenever the distance field is enabled or disabled. Depending on\nthe context, some parameters do not make sense (e.g. you need a previous\npoint to define a distance). Could be used by widgets that must reflect\nthe current advanced digitizing state.\n\n:param enabled: Whether the distance parameter is enabled or not.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'focusOnXRequested': 'Emitted whenever the X field should get the focus using the shortcuts\n(X). Could be used by widgets to capture the focus when a field is being\nedited.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'focusOnYRequested': 'Emitted whenever the Y field should get the focus using the shortcuts\n(Y). Could be used by widgets to capture the focus when a field is being\nedited.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'focusOnZRequested': 'Emitted whenever the Z field should get the focus using the shortcuts\n(Z). Could be used by widgets to capture the focus when a field is being\nedited.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.22\n', 'focusOnMRequested': 'Emitted whenever the M field should get the focus using the shortcuts\n(M). Could be used by widgets to capture the focus when a field is being\nedited.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.22\n', 'focusOnAngleRequested': 'Emitted whenever the angle field should get the focus using the\nshortcuts (A). Could be used by widgets to capture the focus when a\nfield is being edited.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'focusOnDistanceRequested': 'Emitted whenever the distance field should get the focus using the\nshortcuts (D). Could be used by widgets to capture the focus when a\nfield is being edited.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'valueCommonAngleSnappingChanged': 'Emitted whenever the snapping to common angle option changes, angle = 0\nmeans that the functionality is disabled.\n\n.. versionadded:: 3.32\n'}
+    QgsAdvancedDigitizingDockWidget.__attribute_docs__ = {'pushWarning': 'Push a warning\n\n:param message: An informative message\n', 'popWarning': 'Remove any previously emitted warnings (if any)\n', 'pointChangedV2': 'Sometimes a constraint may change the current point out of a mouse\nevent. This happens normally when a constraint is toggled.\n\n:param point: The last known digitizing point. Can be used to emulate a\n              mouse event.\n\n.. versionadded:: 3.22\n', 'pointChanged': 'Sometimes a constraint may change the current point out of a mouse\nevent. This happens normally when a constraint is toggled.\n\n:param point: The last known digitizing point. Can be used to emulate a\n              mouse event.\n\n.. deprecated:: 3.22\n\n   No longer used, will be removed in QGIS 5.0. Use :py:func:`~QgsAdvancedDigitizingDockWidget.pointChangedV2` instead.\n', 'cadEnabledChanged': 'Emitted whenever CAD is enabled or disabled\n\n:param enabled: Whether CAD is enabled or not\n\n.. note::\n\n   unstable API (will likely change).\n\n.. versionadded:: 3.8\n', 'valueXChanged': 'Emitted whenever the X ``value`` changes (either the mouse moved, or the\nuser changed the input). Could be used by widgets that must reflect the\ncurrent advanced digitizing state.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'valueYChanged': 'Emitted whenever the Y ``value`` changes (either the mouse moved, or the\nuser changed the input). Could be used by widgets that must reflect the\ncurrent advanced digitizing state.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'valueZChanged': 'Emitted whenever the Z ``value`` changes (either the mouse moved, or the\nuser changed the input). Could be used by widgets that must reflect the\ncurrent advanced digitizing state.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.22\n', 'valueMChanged': 'Emitted whenever the M ``value`` changes (either the mouse moved, or the\nuser changed the input). Could be used by widgets that must reflect the\ncurrent advanced digitizing state.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.22\n', 'valueAngleChanged': 'Emitted whenever the angle ``value`` changes (either the mouse moved, or\nthe user changed the input). Could be used by widgets that must reflect\nthe current advanced digitizing state.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'valueDistanceChanged': 'Emitted whenever the distance ``value`` changes (either the mouse moved,\nor the user changed the input). Could be used by widgets that must\nreflect the current advanced digitizing state.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'valueBearingChanged': 'Emitted whenever the bearing ``value`` changes. Could be used by widgets\nthat must reflect the current advanced digitizing state.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.32\n', 'valueWeightChanged': 'Emitted whenever the weight ``value`` changes for NURBS curves. Could be\nused by widgets that must reflect the current weight value.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 4.0\n', 'valueAreaChanged': 'Emitted whenever the total summed area ``value`` changes. Could be used\nby widgets that must reflect the current advanced digitizing state.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 4.0\n', 'valueTotalLengthChanged': 'Emitted whenever the total length (or perimeter) ``value`` changes.\nCould be used by widgets that must reflect the current advanced\ndigitizing state.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 4.0\n', 'lockXChanged': 'Emitted whenever the X parameter is ``locked``. Could be used by widgets\nthat must reflect the current advanced digitizing state.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'lockYChanged': 'Emitted whenever the Y parameter is ``locked``. Could be used by widgets\nthat must reflect the current advanced digitizing state.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'lockZChanged': 'Emitted whenever the Z parameter is ``locked``. Could be used by widgets\nthat must reflect the current advanced digitizing state.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.22\n', 'lockMChanged': 'Emitted whenever the M parameter is ``locked``. Could be used by widgets\nthat must reflect the current advanced digitizing state.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.22\n', 'lockAngleChanged': 'Emitted whenever the angle parameter is ``locked``. Could be used by\nwidgets that must reflect the current advanced digitizing state.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'lockDistanceChanged': 'Emitted whenever the distance parameter is ``locked``. Could be used by\nwidgets that must reflect the current advanced digitizing state.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'relativeXChanged': 'Emitted whenever the X parameter is toggled between absolute and\nrelative. Could be used by widgets that must reflect the current\nadvanced digitizing state.\n\n:param relative: Whether the X parameter is relative or not.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'relativeYChanged': 'Emitted whenever the Y parameter is toggled between absolute and\nrelative. Could be used by widgets that must reflect the current\nadvanced digitizing state.\n\n:param relative: Whether the Y parameter is relative or not.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'relativeZChanged': 'Emitted whenever the Z parameter is toggled between absolute and\nrelative. Could be used by widgets that must reflect the current\nadvanced digitizing state.\n\n:param relative: Whether the Z parameter is relative or not.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.22\n', 'relativeMChanged': 'Emitted whenever the M parameter is toggled between absolute and\nrelative. Could be used by widgets that must reflect the current\nadvanced digitizing state.\n\n:param relative: Whether the M parameter is relative or not.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.22\n', 'relativeAngleChanged': 'Emitted whenever the angleX parameter is toggled between absolute and\nrelative. Could be used by widgets that must reflect the current\nadvanced digitizing state.\n\n:param relative: Whether the angle parameter is relative or not.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'softLockLineExtensionChanged': 'Emitted whenever the soft line extension parameter is ``locked``. Could\nbe used by widgets that must reflect the current advanced digitizing\nstate.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.26\n', 'softLockXyChanged': 'Emitted whenever the soft x/y extension parameter is ``locked``. Could\nbe used by widgets that must reflect the current advanced digitizing\nstate.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.26\n', 'enabledChangedX': 'Emitted whenever the X field is enabled or disabled. Depending on the\ncontext, some parameters do not make sense (e.g. you need a previous\npoint to define a distance). Could be used by widgets that must reflect\nthe current advanced digitizing state.\n\n:param enabled: Whether the X parameter is enabled or not.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'enabledChangedY': 'Emitted whenever the Y field is enabled or disabled. Depending on the\ncontext, some parameters do not make sense (e.g. you need a previous\npoint to define a distance). Could be used by widgets that must reflect\nthe current advanced digitizing state.\n\n:param enabled: Whether the Y parameter is enabled or not.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'enabledChangedZ': 'Emitted whenever the Z field is enabled or disabled. Depending on the\ncontext, some parameters do not make sense (e.g. you need a previous\npoint to define a distance). Could be used by widgets that must reflect\nthe current advanced digitizing state.\n\n:param enabled: Whether the Z parameter is enabled or not.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.22\n', 'enabledChangedM': 'Emitted whenever the M field is enabled or disabled. Depending on the\ncontext, some parameters do not make sense (e.g. you need a previous\npoint to define a distance). Could be used by widgets that must reflect\nthe current advanced digitizing state.\n\n:param enabled: Whether the M parameter is enabled or not.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.22\n', 'enabledChangedAngle': 'Emitted whenever the angle field is enabled or disabled. Depending on\nthe context, some parameters do not make sense (e.g. you need a previous\npoint to define a distance). Could be used by widgets that must reflect\nthe current advanced digitizing state.\n\n:param enabled: Whether the angle parameter is enabled or not.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'enabledChangedDistance': 'Emitted whenever the distance field is enabled or disabled. Depending on\nthe context, some parameters do not make sense (e.g. you need a previous\npoint to define a distance). Could be used by widgets that must reflect\nthe current advanced digitizing state.\n\n:param enabled: Whether the distance parameter is enabled or not.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'enabledChangedWeight': 'Emitted whenever the weight field is enabled or disabled for NURBS\ncurves. Could be used by widgets that must reflect the current weight\nediting state.\n\n:param enabled: Whether the weight parameter is enabled or not.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 4.0\n', 'focusOnXRequested': 'Emitted whenever the X field should get the focus using the shortcuts\n(X). Could be used by widgets to capture the focus when a field is being\nedited.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'focusOnYRequested': 'Emitted whenever the Y field should get the focus using the shortcuts\n(Y). Could be used by widgets to capture the focus when a field is being\nedited.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'focusOnZRequested': 'Emitted whenever the Z field should get the focus using the shortcuts\n(Z). Could be used by widgets to capture the focus when a field is being\nedited.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.22\n', 'focusOnMRequested': 'Emitted whenever the M field should get the focus using the shortcuts\n(M). Could be used by widgets to capture the focus when a field is being\nedited.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.22\n', 'focusOnAngleRequested': 'Emitted whenever the angle field should get the focus using the\nshortcuts (A). Could be used by widgets to capture the focus when a\nfield is being edited.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'focusOnDistanceRequested': 'Emitted whenever the distance field should get the focus using the\nshortcuts (D). Could be used by widgets to capture the focus when a\nfield is being edited.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 3.8\n', 'focusOnWeightRequested': 'Emitted whenever the weight field should get the focus using the\nshortcuts (W). Could be used by widgets to capture the focus when a\nfield is being edited.\n\n.. note::\n\n   unstable API (will likely change)\n\n.. versionadded:: 4.0\n', 'valueCommonAngleSnappingChanged': 'Emitted whenever the snapping to common angle option changes, angle = 0\nmeans that the functionality is disabled.\n\n.. versionadded:: 3.32\n'}
     QgsAdvancedDigitizingDockWidget.__overridden_methods__ = ['keyPressEvent']
-    QgsAdvancedDigitizingDockWidget.__signal_arguments__ = {'pushWarning': ['message: str'], 'pointChangedV2': ['point: QgsPoint'], 'cadEnabledChanged': ['enabled: bool'], 'valueXChanged': ['value: str'], 'valueYChanged': ['value: str'], 'valueZChanged': ['value: str'], 'valueMChanged': ['value: str'], 'valueAngleChanged': ['value: str'], 'valueDistanceChanged': ['value: str'], 'valueBearingChanged': ['value: str'], 'lockXChanged': ['locked: bool'], 'lockYChanged': ['locked: bool'], 'lockZChanged': ['locked: bool'], 'lockMChanged': ['locked: bool'], 'lockAngleChanged': ['locked: bool'], 'lockDistanceChanged': ['locked: bool'], 'relativeXChanged': ['relative: bool'], 'relativeYChanged': ['relative: bool'], 'relativeZChanged': ['relative: bool'], 'relativeMChanged': ['relative: bool'], 'relativeAngleChanged': ['relative: bool'], 'softLockLineExtensionChanged': ['locked: bool'], 'softLockXyChanged': ['locked: bool'], 'enabledChangedX': ['enabled: bool'], 'enabledChangedY': ['enabled: bool'], 'enabledChangedZ': ['enabled: bool'], 'enabledChangedM': ['enabled: bool'], 'enabledChangedAngle': ['enabled: bool'], 'enabledChangedDistance': ['enabled: bool'], 'valueCommonAngleSnappingChanged': ['angle: float']}
+    QgsAdvancedDigitizingDockWidget.__signal_arguments__ = {'pushWarning': ['message: str'], 'pointChangedV2': ['point: QgsPoint'], 'cadEnabledChanged': ['enabled: bool'], 'valueXChanged': ['value: str'], 'valueYChanged': ['value: str'], 'valueZChanged': ['value: str'], 'valueMChanged': ['value: str'], 'valueAngleChanged': ['value: str'], 'valueDistanceChanged': ['value: str'], 'valueBearingChanged': ['value: str'], 'valueWeightChanged': ['value: str'], 'valueAreaChanged': ['value: str'], 'valueTotalLengthChanged': ['value: str'], 'lockXChanged': ['locked: bool'], 'lockYChanged': ['locked: bool'], 'lockZChanged': ['locked: bool'], 'lockMChanged': ['locked: bool'], 'lockAngleChanged': ['locked: bool'], 'lockDistanceChanged': ['locked: bool'], 'relativeXChanged': ['relative: bool'], 'relativeYChanged': ['relative: bool'], 'relativeZChanged': ['relative: bool'], 'relativeMChanged': ['relative: bool'], 'relativeAngleChanged': ['relative: bool'], 'softLockLineExtensionChanged': ['locked: bool'], 'softLockXyChanged': ['locked: bool'], 'enabledChangedX': ['enabled: bool'], 'enabledChangedY': ['enabled: bool'], 'enabledChangedZ': ['enabled: bool'], 'enabledChangedM': ['enabled: bool'], 'enabledChangedAngle': ['enabled: bool'], 'enabledChangedDistance': ['enabled: bool'], 'enabledChangedWeight': ['enabled: bool'], 'valueCommonAngleSnappingChanged': ['angle: float']}
 except (NameError, AttributeError):
     pass
 try:
@@ -173,30 +189,47 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsadvanceddigitizingfloater.h
 # monkey patching scoped based enum
-QgsAdvancedDigitizingFloater.FloaterItem.XCoordinate.__doc__ = ""
-QgsAdvancedDigitizingFloater.FloaterItem.YCoordinate.__doc__ = ""
-QgsAdvancedDigitizingFloater.FloaterItem.MCoordinate.__doc__ = ""
-QgsAdvancedDigitizingFloater.FloaterItem.ZCoordinate.__doc__ = ""
-QgsAdvancedDigitizingFloater.FloaterItem.Angle.__doc__ = ""
-QgsAdvancedDigitizingFloater.FloaterItem.CommonAngleSnapping.__doc__ = ""
-QgsAdvancedDigitizingFloater.FloaterItem.Distance.__doc__ = ""
-QgsAdvancedDigitizingFloater.FloaterItem.Bearing.__doc__ = ""
+QgsAdvancedDigitizingFloater.FloaterItem.XCoordinate.__doc__ = "X coordinate"
+QgsAdvancedDigitizingFloater.FloaterItem.YCoordinate.__doc__ = "Y coordinate"
+QgsAdvancedDigitizingFloater.FloaterItem.MCoordinate.__doc__ = "M coordinate"
+QgsAdvancedDigitizingFloater.FloaterItem.ZCoordinate.__doc__ = "Z coordinate"
+QgsAdvancedDigitizingFloater.FloaterItem.Angle.__doc__ = "Angle between segments"
+QgsAdvancedDigitizingFloater.FloaterItem.CommonAngleSnapping.__doc__ = "Common angles"
+QgsAdvancedDigitizingFloater.FloaterItem.Distance.__doc__ = "Distance (segment length)"
+QgsAdvancedDigitizingFloater.FloaterItem.Bearing.__doc__ = "Segment bearing"
+QgsAdvancedDigitizingFloater.FloaterItem.Weight.__doc__ = "Weight for NURBSCurve \n.. versionadded:: 4.0"
+QgsAdvancedDigitizingFloater.FloaterItem.Area.__doc__ = "Total area \n.. versionadded:: 4.0"
+QgsAdvancedDigitizingFloater.FloaterItem.TotalLength.__doc__ = "Total length (or perimeter) \n.. versionadded:: 4.0"
 QgsAdvancedDigitizingFloater.FloaterItem.__doc__ = """Available floater items
 
-* ``XCoordinate``: 
-* ``YCoordinate``: 
-* ``MCoordinate``: 
-* ``ZCoordinate``: 
-* ``Angle``: 
-* ``CommonAngleSnapping``: 
-* ``Distance``: 
-* ``Bearing``: 
+* ``XCoordinate``: X coordinate
+* ``YCoordinate``: Y coordinate
+* ``MCoordinate``: M coordinate
+* ``ZCoordinate``: Z coordinate
+* ``Angle``: Angle between segments
+* ``CommonAngleSnapping``: Common angles
+* ``Distance``: Distance (segment length)
+* ``Bearing``: Segment bearing
+* ``Weight``: Weight for NURBSCurve
+
+  .. versionadded:: 4.0
+
+* ``Area``: Total area
+
+  .. versionadded:: 4.0
+
+* ``TotalLength``: Total length (or perimeter)
+
+  .. versionadded:: 4.0
+
 
 """
 # --
+QgsAdvancedDigitizingFloater.FloaterItems = lambda flags=0: QgsAdvancedDigitizingFloater.FloaterItem(flags)
 QgsAdvancedDigitizingFloater.FloaterItem.baseClass = QgsAdvancedDigitizingFloater
 FloaterItem = QgsAdvancedDigitizingFloater  # dirty hack since SIP seems to introduce the flags in module
 try:
+    QgsAdvancedDigitizingFloater.itemSupportsMeasurementType = staticmethod(QgsAdvancedDigitizingFloater.itemSupportsMeasurementType)
     QgsAdvancedDigitizingFloater.__overridden_methods__ = ['eventFilter']
 except (NameError, AttributeError):
     pass
@@ -274,16 +307,17 @@ except (NameError, AttributeError):
 QgsAttributeEditorContext.Mode.baseClass = QgsAttributeEditorContext
 # The following has been generated automatically from src/gui/qgsattributeform.h
 try:
-    QgsAttributeForm.__attribute_docs__ = {'attributeChanged': 'Notifies about changes of attributes, this signal is not emitted when\nthe value is set back to the original one.\n\n:param attribute: The name of the attribute that changed.\n:param value: The new value of the attribute.\n\n.. deprecated:: 3.0\n', 'widgetValueChanged': 'Notifies about changes of attributes\n\n:param attribute: The name of the attribute that changed.\n:param value: The new value of the attribute.\n:param attributeChanged: If ``True``, it corresponds to an actual change\n                         of the feature attribute\n', 'featureSaved': 'Emitted when a feature is changed or added\n', 'filterExpressionSet': 'Emitted when a filter expression is set using the form.\n\n:param expression: filter expression\n:param type: filter type\n', 'modeChanged': 'Emitted when the form changes mode.\n\n:param mode: new mode\n', 'closed': "Emitted when the user selects the close option from the form's button\nbar.\n", 'zoomToFeatures': 'Emitted when the user chooses to zoom to a filtered set of features.\n', 'flashFeatures': 'Emitted when the user chooses to flash a filtered set of features.\n', 'openFilteredFeaturesAttributeTable': 'Emitted when the user chooses to open the attribute table dialog with a\nfiltered set of features.\n\n.. versionadded:: 3.24\n'}
+    QgsAttributeForm.__attribute_docs__ = {'attributeChanged': 'Notifies about changes of attributes, this signal is not emitted when\nthe value is set back to the original one.\n\n:param attribute: The name of the attribute that changed.\n:param value: The new value of the attribute.\n\n.. deprecated:: 3.0\n', 'widgetValueChanged': 'Notifies about changes of attributes\n\n:param attribute: The name of the attribute that changed.\n:param value: The new value of the attribute.\n:param attributeChanged: If ``True``, it corresponds to an actual change\n                         of the feature attribute\n', 'rememberLastWidgetValueChanged': "Notifies about changes to remembrance of attributes' last value\n\n:param attribute: The name of the attribute.\n:param remember: Whether the last value should be remembered or not.\n\n.. versionadded:: 4.0\n", 'featureSaved': 'Emitted when a feature is changed or added\n', 'filterExpressionSet': 'Emitted when a filter expression is set using the form.\n\n:param expression: filter expression\n:param type: filter type\n', 'modeChanged': 'Emitted when the form changes mode.\n\n:param mode: new mode\n', 'closed': "Emitted when the user selects the close option from the form's button\nbar.\n", 'zoomToFeatures': 'Emitted when the user chooses to zoom to a filtered set of features.\n', 'flashFeatures': 'Emitted when the user chooses to flash a filtered set of features.\n', 'openFilteredFeaturesAttributeTable': 'Emitted when the user chooses to open the attribute table dialog with a\nfiltered set of features.\n\n.. versionadded:: 3.24\n'}
+    QgsAttributeForm.createFeature = staticmethod(QgsAttributeForm.createFeature)
     QgsAttributeForm.__overridden_methods__ = ['eventFilter']
-    QgsAttributeForm.__signal_arguments__ = {'widgetValueChanged': ['attribute: str', 'value: object', 'attributeChanged: bool'], 'featureSaved': ['feature: QgsFeature'], 'filterExpressionSet': ['expression: str', 'type: QgsAttributeForm.FilterType'], 'modeChanged': ['mode: QgsAttributeEditorContext.Mode'], 'zoomToFeatures': ['filter: str'], 'flashFeatures': ['filter: str'], 'openFilteredFeaturesAttributeTable': ['filter: str']}
+    QgsAttributeForm.__signal_arguments__ = {'widgetValueChanged': ['attribute: str', 'value: object', 'attributeChanged: bool'], 'rememberLastWidgetValueChanged': ['attribute: str', 'remember: bool'], 'featureSaved': ['feature: QgsFeature'], 'filterExpressionSet': ['expression: str', 'type: QgsAttributeForm.FilterType'], 'modeChanged': ['mode: QgsAttributeEditorContext.Mode'], 'zoomToFeatures': ['filter: str'], 'flashFeatures': ['filter: str'], 'openFilteredFeaturesAttributeTable': ['filter: str']}
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsattributeformeditorwidget.h
 try:
-    QgsAttributeFormEditorWidget.__attribute_docs__ = {'valueChanged': "Emitted when the widget's value changes\n\n:param value: new widget value\n\n.. deprecated:: 3.10\n\n   Use :py:func:`~QgsAttributeFormEditorWidget.valuesChanged` instead.\n", 'valuesChanged': "Emitted when the widget's value changes\n\n:param value: new widget value\n:param additionalFieldValues: of the potential additional fields\n\n.. versionadded:: 3.10\n"}
+    QgsAttributeFormEditorWidget.__attribute_docs__ = {'valueChanged': "Emitted when the widget's value changes\n\n:param value: new widget value\n\n.. deprecated:: 3.10\n\n   Use :py:func:`~QgsAttributeFormEditorWidget.valuesChanged` instead.\n", 'valuesChanged': "Emitted when the widget's value changes\n\n:param value: new widget value\n:param additionalFieldValues: of the potential additional fields\n\n.. versionadded:: 3.10\n", 'rememberLastValueChanged': "Emitted when the widget's remember last value toggle changes\n\n:param index: the field index\n:param remember: the value is ``True`` when the last value should be\n                 remembered\n\n.. versionadded:: 4.0\n"}
     QgsAttributeFormEditorWidget.__overridden_methods__ = ['createSearchWidgetWrappers']
-    QgsAttributeFormEditorWidget.__signal_arguments__ = {'valueChanged': ['value: object'], 'valuesChanged': ['value: object', 'additionalFieldValues: List[object]']}
+    QgsAttributeFormEditorWidget.__signal_arguments__ = {'valueChanged': ['value: object'], 'valuesChanged': ['value: object', 'additionalFieldValues: List[object]'], 'rememberLastValueChanged': ['index: int', 'remember: bool']}
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsattributeforminterface.h
@@ -388,10 +422,10 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/attributetable/qgsattributetableview.h
 try:
-    QgsAttributeTableView.__attribute_docs__ = {'willShowContextMenu': 'Emitted in order to provide a hook to add additional* menu entries to\nthe context menu.\n\n:param menu: If additional QMenuItems are added, they will show up in\n             the context menu.\n:param atIndex: The QModelIndex, to which the context menu belongs.\n                Relative to the source model. In most cases, this will\n                be a :py:class:`QgsAttributeTableFilterModel`\n', 'columnResized': 'Emitted when a column in the view has been resized.\n\n:param column: column index (starts at 0)\n:param width: new width in pixel\n', 'finished': '.. deprecated:: 3.40\n\n   No longer used.\n'}
+    QgsAttributeTableView.__attribute_docs__ = {'willShowContextMenu': 'Emitted in order to provide a hook to add additional* menu entries to\nthe context menu.\n\n:param menu: If additional QMenuItems are added, they will show up in\n             the context menu.\n:param atIndex: The QModelIndex, to which the context menu belongs.\n                Relative to the source model. In most cases, this will\n                be a :py:class:`QgsAttributeTableFilterModel`\n', 'columnResized': 'Emitted when a column in the view has been resized.\n\n:param column: column index (starts at 0)\n:param width: new width in pixel\n', 'finished': '.. deprecated:: 3.40\n\n   No longer used.\n', 'rowHeaderDoubleClicked': 'Emitted when a row header is double-clicked.\n\n:param fid: the feature ID of the double-clicked row.\n\n.. versionadded:: 4.0\n'}
     QgsAttributeTableView.__virtual_methods__ = ['setModel', 'selectRow', '_q_selectRow']
     QgsAttributeTableView.__overridden_methods__ = ['eventFilter', 'mousePressEvent', 'mouseReleaseEvent', 'mouseMoveEvent', 'keyPressEvent', 'contextMenuEvent', 'closeEvent', 'selectAll']
-    QgsAttributeTableView.__signal_arguments__ = {'willShowContextMenu': ['menu: QMenu', 'atIndex: QModelIndex'], 'columnResized': ['column: int', 'width: int']}
+    QgsAttributeTableView.__signal_arguments__ = {'willShowContextMenu': ['menu: QMenu', 'atIndex: QModelIndex'], 'columnResized': ['column: int', 'width: int'], 'rowHeaderDoubleClicked': ['fid: QgsFeatureId']}
     QgsAttributeTableView.__group__ = ['attributetable']
 except (NameError, AttributeError):
     pass
@@ -651,6 +685,7 @@ QgsCodeEditor.Flag.__doc__ = """Flags controlling behavior of code editor
 """
 # --
 QgsCodeEditor.Flag.baseClass = QgsCodeEditor
+QgsCodeEditor.Flags = lambda flags=0: QgsCodeEditor.Flag(flags)
 QgsCodeEditor.Flags.baseClass = QgsCodeEditor
 Flags = QgsCodeEditor  # dirty hack since SIP seems to introduce the flags in module
 try:
@@ -663,7 +698,7 @@ try:
     QgsCodeEditor.getMonospaceFont = staticmethod(QgsCodeEditor.getMonospaceFont)
     QgsCodeEditor.isFixedPitch = staticmethod(QgsCodeEditor.isFixedPitch)
     QgsCodeEditor.__virtual_methods__ = ['language', 'languageCapabilities', 'moveCursorToStart', 'moveCursorToEnd', 'checkSyntax', 'toggleComment', 'initializeLexer', 'populateContextMenu', 'reformatCodeString', 'showMessage']
-    QgsCodeEditor.__overridden_methods__ = ['callTip', 'setText', 'focusOutEvent', 'keyPressEvent', 'contextMenuEvent', 'eventFilter']
+    QgsCodeEditor.__overridden_methods__ = ['callTip', 'setText', 'focusOutEvent', 'keyPressEvent', 'contextMenuEvent', 'event', 'eventFilter']
     QgsCodeEditor.__signal_arguments__ = {'helpRequested': ['word: str']}
     QgsCodeEditor.__group__ = ['codeeditors']
 except (NameError, AttributeError):
@@ -805,7 +840,7 @@ except (NameError, AttributeError):
 # The following has been generated automatically from src/gui/codeeditors/qgscodeeditorpython.h
 try:
     QgsCodeEditorPython.__virtual_methods__ = ['showApiDocumentation']
-    QgsCodeEditorPython.__overridden_methods__ = ['language', 'languageCapabilities', 'checkSyntax', 'toggleComment', 'initializeLexer', 'keyPressEvent', 'reformatCodeString', 'populateContextMenu']
+    QgsCodeEditorPython.__overridden_methods__ = ['language', 'languageCapabilities', 'checkSyntax', 'toggleComment', 'initializeLexer', 'keyPressEvent', 'showEvent', 'reformatCodeString', 'populateContextMenu']
     QgsCodeEditorPython.__group__ = ['codeeditors']
 except (NameError, AttributeError):
     pass
@@ -904,6 +939,7 @@ QgsColorRampLegendNodeWidget.Capability.__doc__ = """Capabilities to expose in t
 """
 # --
 QgsColorRampLegendNodeWidget.Capability.baseClass = QgsColorRampLegendNodeWidget
+QgsColorRampLegendNodeWidget.Capabilities = lambda flags=0: QgsColorRampLegendNodeWidget.Capability(flags)
 QgsColorRampLegendNodeWidget.Capabilities.baseClass = QgsColorRampLegendNodeWidget
 Capabilities = QgsColorRampLegendNodeWidget  # dirty hack since SIP seems to introduce the flags in module
 # The following has been generated automatically from src/gui/raster/qgscolorrampshaderwidget.h
@@ -1103,8 +1139,19 @@ QgsCoordinateReferenceSystemModel.CustomRole.__doc__ = """Custom model roles.
 """
 # --
 QgsCoordinateReferenceSystemModel.CustomRole.baseClass = QgsCoordinateReferenceSystemModel
+QgsCoordinateReferenceSystemProxyModel.Filters = lambda flags=0: QgsCoordinateReferenceSystemProxyModel.Filter(flags)
 QgsCoordinateReferenceSystemProxyModel.Filters.baseClass = QgsCoordinateReferenceSystemProxyModel
 Filters = QgsCoordinateReferenceSystemProxyModel  # dirty hack since SIP seems to introduce the flags in module
+from enum import Enum
+
+
+def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+
+QgsCoordinateReferenceSystemProxyModel.Filter.__bool__ = lambda flag: bool(_force_int(flag))
+QgsCoordinateReferenceSystemProxyModel.Filter.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsCoordinateReferenceSystemProxyModel.Filter.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsCoordinateReferenceSystemProxyModel.Filter.__or__ = lambda flag1, flag2: QgsCoordinateReferenceSystemProxyModel.Filter(_force_int(flag1) | _force_int(flag2))
 try:
     QgsCoordinateReferenceSystemModel.__overridden_methods__ = ['flags', 'data', 'headerData', 'rowCount', 'columnCount', 'index', 'parent']
     QgsCoordinateReferenceSystemModel.__group__ = ['proj']
@@ -1412,7 +1459,7 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/elevation/qgselevationprofilecanvas.h
 try:
-    QgsElevationProfileCanvas.__attribute_docs__ = {'activeJobCountChanged': 'Emitted when the number of active background jobs changes.\n', 'canvasPointHovered': 'Emitted when the mouse hovers over the specified point (in canvas\ncoordinates).\n\nThe ``profilePoint`` argument gives the hovered profile point, which may\nbe snapped.\n'}
+    QgsElevationProfileCanvas.__attribute_docs__ = {'activeJobCountChanged': 'Emitted when the number of active background jobs changes.\n', 'canvasPointHovered': 'Emitted when the mouse hovers over the specified point (in canvas\ncoordinates).\n\nThe ``profilePoint`` argument gives the hovered profile point, which may\nbe snapped.\n', 'scaleChanged': 'Emitted when the plot scale is changed.\n\n.. versionadded:: 4.0\n'}
     QgsElevationProfileCanvas.__overridden_methods__ = ['crs', 'toMapCoordinates', 'toCanvasCoordinates', 'resizeEvent', 'paintEvent', 'panContentsBy', 'centerPlotOn', 'scalePlot', 'snapToPlot', 'zoomToRect', 'wheelZoom', 'mouseMoveEvent', 'refresh']
     QgsElevationProfileCanvas.__signal_arguments__ = {'activeJobCountChanged': ['count: int'], 'canvasPointHovered': ['point: QgsPointXY', 'profilePoint: QgsProfilePoint']}
     QgsElevationProfileCanvas.__group__ = ['elevation']
@@ -1444,11 +1491,11 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsexpressionbuilderwidget.h
+QgsExpressionBuilderWidget.Flags = lambda flags=0: QgsExpressionBuilderWidget.Flag(flags)
 QgsExpressionBuilderWidget.Flag.baseClass = QgsExpressionBuilderWidget
 Flag = QgsExpressionBuilderWidget  # dirty hack since SIP seems to introduce the flags in module
 try:
     QgsExpressionBuilderWidget.__attribute_docs__ = {'expressionParsed': 'Emitted when the user changes the expression in the widget. Users of\nthis widget should connect to this signal to decide if to let the user\ncontinue.\n\n:param isValid: Is ``True`` if the expression the user has typed is\n                valid.\n', 'evalErrorChanged': 'Will be set to ``True`` if the current expression text reported an eval\nerror with the context.\n', 'parserErrorChanged': 'Will be set to ``True`` if the current expression text reported a parser\nerror with the context.\n'}
-    QgsExpressionBuilderWidget.__overridden_methods__ = ['showEvent']
     QgsExpressionBuilderWidget.__signal_arguments__ = {'expressionParsed': ['isValid: bool']}
 except (NameError, AttributeError):
     pass
@@ -1803,6 +1850,17 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsgui.h
 QgsGui.ProjectCrsBehavior.baseClass = QgsGui
+QgsGui.HigFlags = lambda flags=0: QgsGui.HigFlag(flags)
+from enum import Enum
+
+
+def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+
+QgsGui.HigFlag.__bool__ = lambda flag: bool(_force_int(flag))
+QgsGui.HigFlag.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsGui.HigFlag.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsGui.HigFlag.__or__ = lambda flag1, flag2: QgsGui.HigFlag(_force_int(flag1) | _force_int(flag2))
 try:
     QgsGui.__attribute_docs__ = {'optionsChanged': 'This signal is emitted whenever the application options have been\nchanged.\n\nThis signal is a "blanket" signal, and will be emitted whenever the\noptions dialog has been accepted regardless of whether or not individual\nsettings are changed. It is designed as a "last resort" fallback only,\nallowing widgets to respond to possible settings changes.\n\n.. versionadded:: 3.16\n'}
     QgsGui.instance = staticmethod(QgsGui.instance)
@@ -1896,7 +1954,7 @@ try:
 except (NameError, AttributeError):
     pass
 try:
-    QgsHistoryEntryGroup.__virtual_methods__ = ['childCount']
+    QgsHistoryEntryGroup.__overridden_methods__ = ['childCount']
     QgsHistoryEntryGroup.__group__ = ['history']
 except (NameError, AttributeError):
     pass
@@ -1939,9 +1997,11 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsidentifymenu.h
 try:
+    QgsIdentifyMenu.__attribute_docs__ = {'messageEmitted': 'Emitted when a ``message`` should be shown to the user in the\napplication message bar.\n\n.. seealso:: :py:func:`messageDiscarded`\n\n.. versionadded:: 4.0\n', 'messageDiscarded': 'Emitted when the previous message from the tool should be cleared from\nthe application message bar.\n\n.. seealso:: :py:func:`messageEmitted`\n\n.. versionadded:: 4.0\n'}
     QgsIdentifyMenu.findFeaturesOnCanvas = staticmethod(QgsIdentifyMenu.findFeaturesOnCanvas)
     QgsIdentifyMenu.styleHighlight = staticmethod(QgsIdentifyMenu.styleHighlight)
     QgsIdentifyMenu.__overridden_methods__ = ['closeEvent']
+    QgsIdentifyMenu.__signal_arguments__ = {'messageEmitted': ['message: str', 'level: Qgis.MessageLevel = Qgis.MessageLevel.Info']}
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/attributetable/qgsifeatureselectionmanager.h
@@ -2121,9 +2181,15 @@ except (NameError, AttributeError):
 # The following has been generated automatically from src/gui/layertree/qgslayertreeview.h
 try:
     QgsLayerTreeView.__attribute_docs__ = {'currentLayerChanged': 'Emitted when a current layer is changed\n', 'datasetsDropped': 'Emitted when datasets are dropped onto the layer tree view\n', 'contextMenuAboutToShow': 'Emitted when the context menu is about to show.\n\nAllows customization of the menu.\n\n.. versionadded:: 3.32\n'}
-    QgsLayerTreeView.__overridden_methods__ = ['setModel', 'contextMenuEvent', 'mouseDoubleClickEvent', 'mouseReleaseEvent', 'keyPressEvent', 'dragEnterEvent', 'dragMoveEvent', 'dropEvent', 'resizeEvent']
+    QgsLayerTreeView.__overridden_methods__ = ['setModel', 'contextMenuEvent', 'mouseReleaseEvent', 'keyPressEvent', 'dragEnterEvent', 'dragMoveEvent', 'dropEvent', 'resizeEvent']
     QgsLayerTreeView.__signal_arguments__ = {'currentLayerChanged': ['layer: QgsMapLayer'], 'datasetsDropped': ['event: QDropEvent'], 'contextMenuAboutToShow': ['menu: QMenu']}
     QgsLayerTreeView.__group__ = ['layertree']
+except (NameError, AttributeError):
+    pass
+try:
+    QgsLayerTreeProxyModel.__virtual_methods__ = ['nodeShown']
+    QgsLayerTreeProxyModel.__overridden_methods__ = ['filterAcceptsRow']
+    QgsLayerTreeProxyModel.__group__ = ['layertree']
 except (NameError, AttributeError):
     pass
 try:
@@ -2132,8 +2198,8 @@ try:
 except (NameError, AttributeError):
     pass
 try:
-    QgsLayerTreeProxyModel.__overridden_methods__ = ['filterAcceptsRow']
-    QgsLayerTreeProxyModel.__group__ = ['layertree']
+    QgsLayerTreeViewBase.__overridden_methods__ = ['mouseDoubleClickEvent']
+    QgsLayerTreeViewBase.__group__ = ['layertree']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/layertree/qgslayertreeviewdefaultactions.h
@@ -2183,6 +2249,7 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/layout/qgslayoutitemguiregistry.h
+QgsLayoutItemAbstractGuiMetadata.Flags = lambda flags=0: QgsLayoutItemAbstractGuiMetadata.Flag(flags)
 try:
     QgsLayoutItemGuiGroup.__attribute_docs__ = {'id': 'Unique (untranslated) group ID string.', 'name': 'Translated group name.', 'icon': 'Icon for group.'}
     QgsLayoutItemGuiGroup.__annotations__ = {'id': str, 'name': str, 'icon': 'QIcon'}
@@ -2190,8 +2257,8 @@ try:
 except (NameError, AttributeError):
     pass
 try:
-    QgsLayoutItemGuiRegistry.__attribute_docs__ = {'typeAdded': 'Emitted whenever a new item type is added to the registry, with the\nspecified ``metadataId``.\n'}
-    QgsLayoutItemGuiRegistry.__signal_arguments__ = {'typeAdded': ['metadataId: int']}
+    QgsLayoutItemGuiRegistry.__attribute_docs__ = {'typeAdded': 'Emitted whenever a new item type is added to the registry, with the\nspecified ``metadataId``.\n', 'typeRemoved': 'Emitted whenever an item type is removed from the registry, with the\nspecified ``metadataId``.\n\n.. versionadded:: 4.0\n', 'groupRemoved': 'Emitted whenever an item group is removed from the registry.\n\n.. versionadded:: 4.0\n'}
+    QgsLayoutItemGuiRegistry.__signal_arguments__ = {'typeAdded': ['metadataId: int'], 'typeRemoved': ['metadataId: int'], 'groupRemoved': ['groupId: str']}
     QgsLayoutItemGuiRegistry.__group__ = ['layout']
 except (NameError, AttributeError):
     pass
@@ -2276,6 +2343,7 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/layout/qgslayoutviewtool.h
+QgsLayoutViewTool.Flags = lambda flags=0: QgsLayoutViewTool.Flag(flags)
 try:
     QgsLayoutViewTool.__attribute_docs__ = {'activated': 'Emitted when the tool is activated.\n', 'deactivated': 'Emitted when the tool is deactivated.\n', 'itemFocused': 'Emitted when an ``item`` is "focused" by the tool, i.e. it should become\nthe active item and should have its properties displayed in any designer\nwindows.\n'}
     QgsLayoutViewTool.__virtual_methods__ = ['layoutMoveEvent', 'layoutDoubleClickEvent', 'layoutPressEvent', 'layoutReleaseEvent', 'wheelEvent', 'keyPressEvent', 'keyReleaseEvent', 'activate', 'deactivate', 'ignoredSnapItems']
@@ -2388,6 +2456,7 @@ try:
     QgsLongLongValidator.__overridden_methods__ = ['validate']
 except (NameError, AttributeError):
     pass
+# The following has been generated automatically from src/gui/qgsmanageconnectionsdialog.h
 # The following has been generated automatically from src/gui/qgsmapcanvas.h
 try:
     QgsMapCanvas.__attribute_docs__ = {'xyCoordinates': 'Emits current mouse position\n\n.. note::\n\n   changed in 1.3\n', 'scaleChanged': 'Emitted when the scale of the map changes\n', 'scaleLockChanged': 'Emitted when the scale locked state of the map changes\n\n:param locked: true if the scale is locked\n\n.. seealso:: :py:func:`setScaleLocked`\n\n.. versionadded:: 3.18\n', 'extentsChanged': 'Emitted when the extents of the map change\n', 'rotationChanged': 'Emitted when the rotation of the map changes\n', 'magnificationChanged': 'Emitted when the scale of the map changes\n', 'canvasColorChanged': 'Emitted when canvas background color changes\n', 'renderComplete': 'Emitted when the canvas has rendered. Passes a pointer to the painter on\nwhich the map was drawn. This is useful for plugins that wish to draw on\nthe map after it has been rendered. Passing the painter allows plugins\nto work when the map is being rendered onto a pixmap other than the\nmapCanvas own pixmap member.\n\n- anything related to rendering progress is not visible outside of map canvas\n- additional drawing shall be done directly within the renderer job or independently as a map canvas item\n', 'mapCanvasRefreshed': 'Emitted when canvas finished a refresh request.\n', 'renderStarting': 'Emitted when the canvas is about to be rendered.\n', 'mapRefreshCanceled': 'Emitted when the pending map refresh has been canceled\n\n.. versionadded:: 3.18\n', 'layersChanged': 'Emitted when a new set of layers has been received\n', 'keyPressed': 'Emit key press event\n', 'keyReleased': 'Emit key release event\n', 'mapToolSet': 'Emit map tool changed with the old tool\n', 'selectionChanged': 'Emitted when selection in any ``layer`` gets changed.\n\n.. note::\n\n   Since QGIS 3.28 this signal is emitted for multiple layer types, including :py:class:`QgsVectorLayer` and :py:class:`QgsVectorTileLayer`\n', 'zoomLastStatusChanged': 'Emitted when zoom last status changed\n', 'zoomNextStatusChanged': 'Emitted when zoom next status changed\n', 'destinationCrsChanged': 'Emitted when map CRS has changed\n', 'transformContextChanged': 'Emitted when the canvas transform context is changed.\n', 'currentLayerChanged': 'Emitted when the current layer is changed\n', 'layerStyleOverridesChanged': 'Emitted when the configuration of overridden layer styles changes\n', 'themeChanged': 'Emitted when the canvas has been assigned a different map theme.\n\n.. seealso:: :py:func:`setTheme`\n', 'messageEmitted': 'emit a message (usually to be displayed in a message bar)\n', 'renderErrorOccurred': 'Emitted whenever an error is encountered during a map render operation.\n\nThe ``layer`` argument indicates the associated map layer, if available.\n\n.. versionadded:: 3.10.0\n', 'panDistanceBearingChanged': 'Emitted whenever the distance or bearing of an in-progress panning\noperation is changed.\n\nThis signal will be emitted during a pan operation as the user moves the\nmap, giving the total distance and bearing between the map position at\nthe start of the pan and the current pan position.\n\n.. versionadded:: 3.12\n', 'tapAndHoldGestureOccurred': 'Emitted whenever a tap and hold ``gesture`` occurs at the specified map\npoint.\n\n.. versionadded:: 3.12\n', 'temporalRangeChanged': 'Emitted when the map canvas temporal range changes.\n\n.. versionadded:: 3.14\n', 'zRangeChanged': 'Emitted when the map canvas z (elevation) range changes.\n\n.. seealso:: :py:func:`zRange`\n\n.. seealso:: :py:func:`setZRange`\n\n.. versionadded:: 3.18\n', 'contextMenuAboutToShow': 'Emitted before the map canvas context menu will be shown. Can be used to\nextend the context menu.\n\n.. versionadded:: 3.16\n'}
@@ -2529,26 +2598,62 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/maptools/qgsmaptool.h
+QgsMapTool.Flags = lambda flags=0: QgsMapTool.Flag(flags)
+# monkey patching scoped based enum
+QgsMapTool.PropertyStatus.Valid.__doc__ = "Property is valid"
+QgsMapTool.PropertyStatus.DoesNotExist.__doc__ = "Property does not exist"
+QgsMapTool.PropertyStatus.CurrentExpressionInvalid.__doc__ = "Property is an invalid expression"
+QgsMapTool.PropertyStatus.__doc__ = """Property status used in method dealing with property
+
+* ``Valid``: Property is valid
+* ``DoesNotExist``: Property does not exist
+* ``CurrentExpressionInvalid``: Property is an invalid expression
+
+"""
+# --
+from enum import Enum
+
+
+def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+
+QgsMapTool.Flag.__bool__ = lambda flag: bool(_force_int(flag))
+QgsMapTool.Flag.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsMapTool.Flag.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsMapTool.Flag.__or__ = lambda flag1, flag2: QgsMapTool.Flag(_force_int(flag1) | _force_int(flag2))
 try:
     QgsMapTool.__attribute_docs__ = {'messageEmitted': 'Emitted when a ``message`` should be shown to the user in the\napplication message bar.\n\n.. seealso:: :py:func:`messageDiscarded`\n', 'messageDiscarded': 'Emitted when the previous message from the tool should be cleared from\nthe application message bar.\n\n.. seealso:: :py:func:`messageEmitted`\n', 'activated': 'Emitted when the map tool is activated.\n\n.. seealso:: :py:func:`deactivated`\n', 'deactivated': 'Emitted when the map tool is deactivated.\n\n.. seealso:: :py:func:`activated`\n', 'reactivated': 'Emitted when the map tool is activated, while it is already active.\n\n.. versionadded:: 3.32\n'}
     QgsMapTool.searchRadiusMM = staticmethod(QgsMapTool.searchRadiusMM)
     QgsMapTool.searchRadiusMU = staticmethod(QgsMapTool.searchRadiusMU)
-    QgsMapTool.__virtual_methods__ = ['flags', 'canvasMoveEvent', 'canvasDoubleClickEvent', 'canvasPressEvent', 'canvasReleaseEvent', 'wheelEvent', 'keyPressEvent', 'keyReleaseEvent', 'gestureEvent', 'canvasToolTipEvent', 'setCursor', 'activate', 'deactivate', 'reactivate', 'clean', 'populateContextMenu', 'populateContextMenuWithEvent']
+    QgsMapTool.__virtual_methods__ = ['flags', 'canvasMoveEvent', 'canvasDoubleClickEvent', 'canvasPressEvent', 'canvasReleaseEvent', 'wheelEvent', 'keyPressEvent', 'keyReleaseEvent', 'gestureEvent', 'canvasToolTipEvent', 'shortcutEvent', 'setCursor', 'activate', 'deactivate', 'reactivate', 'clean', 'populateContextMenu', 'populateContextMenuWithEvent']
     QgsMapTool.__signal_arguments__ = {'messageEmitted': ['message: str', 'level: Qgis.MessageLevel = Qgis.MessageLevel.Info']}
     QgsMapTool.__group__ = ['maptools']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/maptools/qgsmaptooladvanceddigitizing.h
 try:
+    QgsMapToolAdvancedDigitizing.__attribute_docs__ = {'transientGeometryChanged': "Emitted whenever the ``geometry`` associated with the tool is changed,\nincluding transient (i.e. non-finalized, hover state) changes.\n\nConnections to this signal should take care to check the CRS of\n``geometry``, as it may be either in the canvas CRS or an associated\nlayer's CRS.\n\n.. versionadded:: 4.0\n"}
     QgsMapToolAdvancedDigitizing.__virtual_methods__ = ['layer', 'cadCanvasPressEvent', 'cadCanvasReleaseEvent', 'cadCanvasMoveEvent']
     QgsMapToolAdvancedDigitizing.__overridden_methods__ = ['canvasPressEvent', 'canvasReleaseEvent', 'canvasMoveEvent', 'activate', 'deactivate']
+    QgsMapToolAdvancedDigitizing.__signal_arguments__ = {'transientGeometryChanged': ['geometry: QgsReferencedGeometry']}
     QgsMapToolAdvancedDigitizing.__group__ = ['maptools']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/maptools/qgsmaptoolcapture.h
+QgsMapToolCapture.Capabilities = lambda flags=0: QgsMapToolCapture.Capability(flags)
+from enum import Enum
+
+
+def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+
+QgsMapToolCapture.Capability.__bool__ = lambda flag: bool(_force_int(flag))
+QgsMapToolCapture.Capability.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsMapToolCapture.Capability.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsMapToolCapture.Capability.__or__ = lambda flag1, flag2: QgsMapToolCapture.Capability(_force_int(flag1) | _force_int(flag2))
 try:
     QgsMapToolCapture.__virtual_methods__ = ['capabilities', 'supportsTechnique', 'geometryCaptured', 'pointCaptured', 'lineCaptured', 'polygonCaptured']
-    QgsMapToolCapture.__overridden_methods__ = ['activate', 'deactivate', 'cadCanvasMoveEvent', 'cadCanvasReleaseEvent', 'keyPressEvent', 'clean']
+    QgsMapToolCapture.__overridden_methods__ = ['activate', 'deactivate', 'cadCanvasPressEvent', 'cadCanvasMoveEvent', 'cadCanvasReleaseEvent', 'keyPressEvent', 'keyReleaseEvent', 'wheelEvent', 'clean']
     QgsMapToolCapture.__group__ = ['maptools']
 except (NameError, AttributeError):
     pass
@@ -2562,8 +2667,8 @@ except (NameError, AttributeError):
 # The following has been generated automatically from src/gui/maptools/qgsmaptooldigitizefeature.h
 try:
     QgsMapToolDigitizeFeature.__attribute_docs__ = {'digitizingCompleted': 'Emitted whenever the digitizing has been successfully completed\n\n:param feature: the new digitized feature\n', 'digitizingFinished': 'Emitted whenever the digitizing has been ended without digitizing any\nfeature\n', 'digitizingCanceled': 'Emitted when the digitizing process was interrupted by the user.\n\n.. versionadded:: 3.28\n'}
-    QgsMapToolDigitizeFeature.__virtual_methods__ = ['layerGeometryCaptured', 'featureDigitized']
-    QgsMapToolDigitizeFeature.__overridden_methods__ = ['capabilities', 'supportsTechnique', 'cadCanvasReleaseEvent', 'activate', 'deactivate', 'reactivate', 'keyPressEvent']
+    QgsMapToolDigitizeFeature.__virtual_methods__ = ['featureDigitized']
+    QgsMapToolDigitizeFeature.__overridden_methods__ = ['capabilities', 'supportsTechnique', 'cadCanvasReleaseEvent', 'activate', 'deactivate', 'reactivate', 'keyPressEvent', 'layerGeometryCaptured']
     QgsMapToolDigitizeFeature.__signal_arguments__ = {'digitizingCompleted': ['feature: QgsFeature']}
     QgsMapToolDigitizeFeature.__group__ = ['maptools']
 except (NameError, AttributeError):
@@ -2597,8 +2702,19 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/maptools/qgsmaptoolidentify.h
 QgsMapToolIdentify.IdentifyMode.baseClass = QgsMapToolIdentify
+QgsMapToolIdentify.LayerType = lambda flags=0: QgsMapToolIdentify.Type(flags)
 QgsMapToolIdentify.LayerType.baseClass = QgsMapToolIdentify
 LayerType = QgsMapToolIdentify  # dirty hack since SIP seems to introduce the flags in module
+from enum import Enum
+
+
+def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+
+QgsMapToolIdentify.Type.__bool__ = lambda flag: bool(_force_int(flag))
+QgsMapToolIdentify.Type.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsMapToolIdentify.Type.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsMapToolIdentify.Type.__or__ = lambda flag1, flag2: QgsMapToolIdentify.Type(_force_int(flag1) | _force_int(flag2))
 try:
     QgsMapToolIdentify.IdentifyProperties.__attribute_docs__ = {'searchRadiusMapUnits': 'Identify search radius is map units. Use negative value to ignore', 'skip3DLayers': 'Skip identify results from layers that have a 3d renderer set'}
     QgsMapToolIdentify.IdentifyProperties.__annotations__ = {'searchRadiusMapUnits': float, 'skip3DLayers': bool}
@@ -2661,7 +2777,7 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/mesh/qgsmeshlayerproperties.h
 try:
-    QgsMeshLayerProperties.__virtual_methods__ = ['syncToLayer', 'apply', 'rollback']
+    QgsMeshLayerProperties.__overridden_methods__ = ['syncToLayer', 'apply', 'rollback']
     QgsMeshLayerProperties.__group__ = ['mesh']
 except (NameError, AttributeError):
     pass
@@ -2708,23 +2824,34 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/processing/models/qgsmodelcomponentgraphicitem.h
+QgsModelComponentGraphicItem.Flags = lambda flags=0: QgsModelComponentGraphicItem.Flag(flags)
+from enum import Enum
+
+
+def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+
+QgsModelComponentGraphicItem.Flag.__bool__ = lambda flag: bool(_force_int(flag))
+QgsModelComponentGraphicItem.Flag.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsModelComponentGraphicItem.Flag.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsModelComponentGraphicItem.Flag.__or__ = lambda flag1, flag2: QgsModelComponentGraphicItem.Flag(_force_int(flag1) | _force_int(flag2))
 try:
     QgsModelComponentGraphicItem.__attribute_docs__ = {'requestModelRepaint': 'Emitted by the item to request a repaint of the parent model scene.\n', 'aboutToChange': 'Emitted when the definition of the associated component is about to be\nchanged by the item.\n\nThe ``text`` argument gives the translated text describing the change\nabout to occur, and the optional ``id`` can be used to group the\nassociated undo commands.\n', 'changed': 'Emitted when the definition of the associated component is changed by\nthe item.\n', 'repaintArrows': 'Emitted when item requests that all connected arrows are repainted.\n', 'updateArrowPaths': 'Emitted when item requires that all connected arrow paths are\nrecalculated.\n', 'sizePositionChanged': "Emitted when the item's size or position changes.\n"}
-    QgsModelComponentGraphicItem.__virtual_methods__ = ['flags', 'linkPointCount', 'linkPointText', 'editComment', 'canDeleteComponent', 'deleteComponent', 'editComponent', 'strokeStyle', 'titleAlignment', 'iconPicture', 'iconPixmap']
+    QgsModelComponentGraphicItem.__virtual_methods__ = ['flags', 'linkPointCount', 'linkPointText', 'editComment', 'canDeleteComponent', 'deleteComponent', 'editComponent', 'paintBackground', 'strokeStyle', 'outlineColor', 'titleAlignment', 'iconPicture', 'iconPixmap']
     QgsModelComponentGraphicItem.__abstract_methods__ = ['fillColor', 'strokeColor', 'textColor', 'updateStoredComponentPosition']
     QgsModelComponentGraphicItem.__overridden_methods__ = ['mouseDoubleClickEvent', 'hoverEnterEvent', 'hoverMoveEvent', 'hoverLeaveEvent', 'itemChange', 'boundingRect', 'contains', 'paint']
-    QgsModelComponentGraphicItem.__signal_arguments__ = {'aboutToChange': ['text: str', 'id: int = 0']}
+    QgsModelComponentGraphicItem.__signal_arguments__ = {'aboutToChange': ['text: str', 'id: Optional[str] = None']}
     QgsModelComponentGraphicItem.__group__ = ['processing', 'models']
 except (NameError, AttributeError):
     pass
 try:
-    QgsModelChildAlgorithmGraphicItem.__attribute_docs__ = {'runFromHere': 'Emitted when the user opts to run the model from this child algorithm.\n\n.. versionadded:: 3.38\n', 'runSelected': 'Emitted when the user opts to run selected steps from the model.\n\n.. versionadded:: 3.38\n', 'showPreviousResults': 'Emitted when the user opts to view previous results from this child\nalgorithm.\n\n.. versionadded:: 3.38\n', 'showLog': 'Emitted when the user opts to view the previous log from this child\nalgorithm.\n\n.. versionadded:: 3.38\n'}
-    QgsModelChildAlgorithmGraphicItem.__overridden_methods__ = ['contextMenuEvent', 'canDeleteComponent', 'fillColor', 'strokeColor', 'textColor', 'iconPixmap', 'iconPicture', 'linkPointCount', 'linkPointText', 'updateStoredComponentPosition', 'deleteComponent']
+    QgsModelChildAlgorithmGraphicItem.__attribute_docs__ = {'runFromHere': 'Emitted when the user opts to run the model from this child algorithm.\n\n.. versionadded:: 3.38\n', 'runSelected': 'Emitted when the user opts to run selected steps from the model.\n\n.. versionadded:: 3.38\n', 'showPreviousResults': 'Emitted when the user opts to view previous results from this child\nalgorithm.\n\n.. versionadded:: 3.38\n', 'showLog': 'Emitted when the user opts to view the previous log from this child\nalgorithm.\n\n.. versionadded:: 3.38\n', 'rebuildConfigurationDockWidget': 'Requests that any associated configuration dock widget is rebuilt to\nreflect the current state of the child algorithm.\n\n.. versionadded:: 4.2\n'}
+    QgsModelChildAlgorithmGraphicItem.__overridden_methods__ = ['contextMenuEvent', 'canDeleteComponent', 'paintBackground', 'fillColor', 'strokeColor', 'textColor', 'outlineColor', 'iconPixmap', 'iconPicture', 'linkPointCount', 'linkPointText', 'updateStoredComponentPosition', 'deleteComponent']
     QgsModelChildAlgorithmGraphicItem.__group__ = ['processing', 'models']
 except (NameError, AttributeError):
     pass
 try:
-    QgsModelParameterGraphicItem.__overridden_methods__ = ['contextMenuEvent', 'canDeleteComponent', 'fillColor', 'strokeColor', 'textColor', 'iconPicture', 'linkPointCount', 'linkPointText', 'updateStoredComponentPosition', 'deleteComponent']
+    QgsModelParameterGraphicItem.__overridden_methods__ = ['contextMenuEvent', 'canDeleteComponent', 'linkColor', 'fillColor', 'strokeColor', 'textColor', 'iconPicture', 'linkPointCount', 'linkPointText', 'updateStoredComponentPosition', 'deleteComponent']
     QgsModelParameterGraphicItem.__group__ = ['processing', 'models']
 except (NameError, AttributeError):
     pass
@@ -2743,6 +2870,16 @@ try:
     QgsModelGroupBoxGraphicItem.__group__ = ['processing', 'models']
 except (NameError, AttributeError):
     pass
+# The following has been generated automatically from src/gui/processing/models/qgsmodeldesignerconfigwidget.h
+try:
+    QgsProcessingModelConfigWidgetFactory.__abstract_methods__ = ['supportsComponent', 'createWidget']
+    QgsProcessingModelConfigWidgetFactory.__group__ = ['processing', 'models']
+except (NameError, AttributeError):
+    pass
+try:
+    QgsProcessingModelConfigWidget.__group__ = ['processing', 'models']
+except (NameError, AttributeError):
+    pass
 # The following has been generated automatically from src/gui/processing/models/qgsmodeldesignerdialog.h
 # monkey patching scoped based enum
 QgsModelDesignerDialog.SaveAction.SaveAsFile.__doc__ = "Save model as a file"
@@ -2757,8 +2894,8 @@ QgsModelDesignerDialog.SaveAction.__doc__ = """Save action.
 """
 # --
 try:
-    QgsModelDesignerDialog.__abstract_methods__ = ['repaintModel', 'addAlgorithm', 'addInput', 'exportAsScriptAlgorithm', 'saveModel', 'createExecutionDialog']
-    QgsModelDesignerDialog.__overridden_methods__ = ['closeEvent']
+    QgsModelDesignerDialog.__abstract_methods__ = ['repaintModel', 'addAlgorithm', 'addInput', 'exportAsScriptAlgorithm', 'saveModel', 'createExecutionWidget', 'createWidgetContext']
+    QgsModelDesignerDialog.__overridden_methods__ = ['closeEvent', 'createFeedback']
     QgsModelDesignerDialog.__group__ = ['processing', 'models']
 except (NameError, AttributeError):
     pass
@@ -2786,17 +2923,18 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/processing/models/qgsmodelgraphicsscene.h
+QgsModelGraphicsScene.Flags = lambda flags=0: QgsModelGraphicsScene.Flag(flags)
 try:
     QgsModelGraphicsScene.__attribute_docs__ = {'rebuildRequired': 'Emitted when a change in the model requires a full rebuild of the scene.\n', 'componentAboutToChange': 'Emitted whenever a component of the model is about to be changed.\n\nThe ``text`` argument gives the translated text describing the change\nabout to occur, and the optional ``id`` can be used to group the\nassociated undo commands.\n', 'componentChanged': 'Emitted whenever a component of the model is changed.\n', 'selectedItemChanged': 'Emitted whenever the selected item changes. If ``None``, no item is\nselected.\n', 'runSelected': 'Emitted when the user opts to run selected steps from the model.\n\n.. versionadded:: 3.38\n', 'runFromChild': 'Emitted when the user opts to run the part of the model starting from\nthe specified child algorithm.\n\n.. versionadded:: 3.38\n', 'showChildAlgorithmOutputs': 'Emitted when the user opts to view previous results from the child\nalgorithm with matching ID.\n\n.. versionadded:: 3.38\n', 'showChildAlgorithmLog': 'Emitted when the user opts to view the previous log from the child\nalgorithm with matching ID.\n\n.. versionadded:: 3.38\n'}
     QgsModelGraphicsScene.__virtual_methods__ = ['createParameterGraphicItem', 'createChildAlgGraphicItem', 'createOutputGraphicItem', 'createCommentGraphicItem']
     QgsModelGraphicsScene.__overridden_methods__ = ['mousePressEvent']
-    QgsModelGraphicsScene.__signal_arguments__ = {'componentAboutToChange': ['text: str', 'id: int = 0'], 'selectedItemChanged': ['selected: QgsModelComponentGraphicItem'], 'runFromChild': ['childId: str'], 'showChildAlgorithmOutputs': ['childId: str'], 'showChildAlgorithmLog': ['childId: str']}
+    QgsModelGraphicsScene.__signal_arguments__ = {'componentAboutToChange': ['text: str', 'id: Optional[str] = None'], 'selectedItemChanged': ['selected: QgsModelComponentGraphicItem'], 'runFromChild': ['childId: str'], 'showChildAlgorithmOutputs': ['childId: str'], 'showChildAlgorithmLog': ['childId: str']}
     QgsModelGraphicsScene.__group__ = ['processing', 'models']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/processing/models/qgsmodelgraphicsview.h
 try:
-    QgsModelGraphicsView.__attribute_docs__ = {'algorithmDropped': 'Emitted when an algorithm is dropped onto the view.\n', 'inputDropped': 'Emitted when an input parameter is dropped onto the view.\n', 'itemFocused': 'Emitted when an ``item`` is "focused" in the view, i.e. it becomes the\nactive item and should have its properties displayed in any designer\nwindows.\n', 'willBeDeleted': 'Emitted in the destructor when the view is about to be deleted, but is\nstill in a perfectly valid state.\n', 'macroCommandStarted': 'Emitted when a macro command containing a group of interactions is\nstarted in the view.\n', 'macroCommandEnded': 'Emitted when a macro command containing a group of interactions in the\nview has ended.\n', 'commandBegun': 'Emitted when an undo command is started in the view.\n', 'commandEnded': 'Emitted when an undo command in the view has ended.\n', 'deleteSelectedItems': 'Emitted when the selected items should be deleted;\n'}
+    QgsModelGraphicsView.__attribute_docs__ = {'algorithmDropped': 'Emitted when an algorithm is dropped onto the view.\n', 'inputDropped': 'Emitted when an input parameter is dropped onto the view.\n', 'itemFocused': 'Emitted when an ``item`` is "focused" in the view, i.e. it becomes the\nactive item and should have its properties displayed in any designer\nwindows.\n', 'willBeDeleted': 'Emitted in the destructor when the view is about to be deleted, but is\nstill in a perfectly valid state.\n', 'macroCommandStarted': 'Emitted when a macro command containing a group of interactions is\nstarted in the view.\n', 'macroCommandEnded': 'Emitted when a macro command containing a group of interactions in the\nview has ended.\n', 'commandBegun': 'Emitted when an undo command is started in the view.\n', 'commandEnded': 'Emitted when an undo command in the view has ended.\n', 'commandAborted': 'Emitted when an undo command in the view was aborted.\n\n.. versionadded:: 4.0\n', 'deleteSelectedItems': 'Emitted when the selected items should be deleted;\n'}
     QgsModelGraphicsView.__overridden_methods__ = ['dragEnterEvent', 'dropEvent', 'dragMoveEvent', 'wheelEvent', 'mousePressEvent', 'mouseReleaseEvent', 'mouseMoveEvent', 'mouseDoubleClickEvent', 'keyPressEvent', 'keyReleaseEvent']
     QgsModelGraphicsView.__signal_arguments__ = {'algorithmDropped': ['algorithmId: str', 'pos: QPointF'], 'inputDropped': ['inputId: str', 'pos: QPointF'], 'itemFocused': ['item: QgsModelComponentGraphicItem'], 'macroCommandStarted': ['text: str'], 'commandBegun': ['text: str']}
     QgsModelGraphicsView.__group__ = ['processing', 'models']
@@ -2837,7 +2975,24 @@ try:
     QgsNewDatabaseTableNameWidget.__signal_arguments__ = {'validationChanged': ['isValid: bool'], 'schemaNameChanged': ['schemaName: str'], 'tableNameChanged': ['tableName: str'], 'providerKeyChanged': ['providerKey: str'], 'uriChanged': ['uri: str']}
 except (NameError, AttributeError):
     pass
+# The following has been generated automatically from src/gui/qgsnewgeopackagelayerdialog.h
 # The following has been generated automatically from src/gui/qgsnewhttpconnection.h
+QgsNewHttpConnection.ConnectionTypes = lambda flags=0: QgsNewHttpConnection.ConnectionType(flags)
+QgsNewHttpConnection.Flags = lambda flags=0: QgsNewHttpConnection.Flag(flags)
+from enum import Enum
+
+
+def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+
+QgsNewHttpConnection.ConnectionType.__bool__ = lambda flag: bool(_force_int(flag))
+QgsNewHttpConnection.ConnectionType.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsNewHttpConnection.ConnectionType.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsNewHttpConnection.ConnectionType.__or__ = lambda flag1, flag2: QgsNewHttpConnection.ConnectionType(_force_int(flag1) | _force_int(flag2))
+QgsNewHttpConnection.Flag.__bool__ = lambda flag: bool(_force_int(flag))
+QgsNewHttpConnection.Flag.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsNewHttpConnection.Flag.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsNewHttpConnection.Flag.__or__ = lambda flag1, flag2: QgsNewHttpConnection.Flag(_force_int(flag1) | _force_int(flag2))
 try:
     QgsNewHttpConnection.__virtual_methods__ = ['validate', 'wfsSettingsKey', 'wmsSettingsKey']
     QgsNewHttpConnection.__overridden_methods__ = ['accept', 'showEvent']
@@ -2853,6 +3008,7 @@ except (NameError, AttributeError):
 try:
     QgsNewNameDialog.__attribute_docs__ = {'newNameChanged': 'Emitted when the name is changed in the dialog.\n\n.. versionadded:: 3.2\n'}
     QgsNewNameDialog.exists = staticmethod(QgsNewNameDialog.exists)
+    QgsNewNameDialog.highlightText = staticmethod(QgsNewNameDialog.highlightText)
     QgsNewNameDialog.fullNames = staticmethod(QgsNewNameDialog.fullNames)
     QgsNewNameDialog.matching = staticmethod(QgsNewNameDialog.matching)
 except (NameError, AttributeError):
@@ -3200,6 +3356,31 @@ try:
     QgsPlotToolTemporaryKeyZoom.__group__ = ['plot']
 except (NameError, AttributeError):
     pass
+# The following has been generated automatically from src/gui/plot/qgsplotwidget.h
+try:
+    QgsBarChartPlotWidget.create = staticmethod(QgsBarChartPlotWidget.create)
+    QgsBarChartPlotWidget.__overridden_methods__ = ['setPlot', 'createPlot']
+    QgsBarChartPlotWidget.__group__ = ['plot']
+except (NameError, AttributeError):
+    pass
+try:
+    QgsLineChartPlotWidget.create = staticmethod(QgsLineChartPlotWidget.create)
+    QgsLineChartPlotWidget.__overridden_methods__ = ['setPlot', 'createPlot']
+    QgsLineChartPlotWidget.__group__ = ['plot']
+except (NameError, AttributeError):
+    pass
+try:
+    QgsPieChartPlotWidget.create = staticmethod(QgsPieChartPlotWidget.create)
+    QgsPieChartPlotWidget.__overridden_methods__ = ['setPlot', 'createPlot']
+    QgsPieChartPlotWidget.__group__ = ['plot']
+except (NameError, AttributeError):
+    pass
+try:
+    QgsPlotWidget.__abstract_methods__ = ['setPlot', 'createPlot']
+    QgsPlotWidget.__overridden_methods__ = ['createExpressionContext']
+    QgsPlotWidget.__group__ = ['plot']
+except (NameError, AttributeError):
+    pass
 # The following has been generated automatically from src/gui/qgspluginmanagerinterface.h
 try:
     QgsPluginManagerInterface.__abstract_methods__ = ['clearPythonPluginMetadata', 'addPluginMetadata', 'reloadModel', 'clearRepositoryList', 'addToRepositoryList', 'showPluginManager', 'pushMessage']
@@ -3218,7 +3399,7 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/pointcloud/qgspointcloudrendererpropertieswidget.h
 try:
-    QgsPointCloudRendererPropertiesWidget.__overridden_methods__ = ['syncToLayer', 'setDockMode', 'apply']
+    QgsPointCloudRendererPropertiesWidget.__overridden_methods__ = ['syncToLayer', 'setDockMode', 'createExpressionContext', 'apply']
     QgsPointCloudRendererPropertiesWidget.__group__ = ['pointcloud']
 except (NameError, AttributeError):
     pass
@@ -3309,11 +3490,23 @@ try:
     QgsProcessingAlgorithmConfigurationWidgetFactory.__group__ = ['processing']
 except (NameError, AttributeError):
     pass
-# The following has been generated automatically from src/gui/processing/qgsprocessingalgorithmdialogbase.h
+# The following has been generated automatically from src/gui/processing/qgsprocessingalgorithmwidgetbase.h
 # monkey patching scoped based enum
-QgsProcessingAlgorithmDialogBase.DialogMode.Single.__doc__ = "Single algorithm execution mode"
-QgsProcessingAlgorithmDialogBase.DialogMode.Batch.__doc__ = "Batch processing mode"
-QgsProcessingAlgorithmDialogBase.DialogMode.__doc__ = """Dialog modes.
+QgsProcessingAlgorithmWidgetBase.LogFormat.FormatPlainText.__doc__ = "Plain text file (.txt)"
+QgsProcessingAlgorithmWidgetBase.LogFormat.FormatHtml.__doc__ = "HTML file (.html)"
+QgsProcessingAlgorithmWidgetBase.LogFormat.__doc__ = """Log format options.
+
+.. versionadded:: 3.2
+
+* ``FormatPlainText``: Plain text file (.txt)
+* ``FormatHtml``: HTML file (.html)
+
+"""
+# --
+# monkey patching scoped based enum
+QgsProcessingAlgorithmWidgetBase.WidgetMode.Single.__doc__ = "Single algorithm execution mode"
+QgsProcessingAlgorithmWidgetBase.WidgetMode.Batch.__doc__ = "Batch processing mode"
+QgsProcessingAlgorithmWidgetBase.WidgetMode.__doc__ = """Widget modes.
 
 .. versionadded:: 3.24
 
@@ -3322,13 +3515,32 @@ QgsProcessingAlgorithmDialogBase.DialogMode.__doc__ = """Dialog modes.
 
 """
 # --
+# monkey patching scoped based enum
+QgsProcessingAlgorithmWidgetBase.WidgetFlag.NoDocking.__doc__ = "Widget cannot be docked, must be shown as a dialog"
+QgsProcessingAlgorithmWidgetBase.WidgetFlag.__doc__ = """Flags controlling the widget behavior.
+
+.. versionadded:: 4.2
+
+* ``NoDocking``: Widget cannot be docked, must be shown as a dialog
+
+"""
+# --
+QgsProcessingAlgorithmWidgetBase.WidgetFlag.baseClass = QgsProcessingAlgorithmWidgetBase
+QgsProcessingAlgorithmWidgetBase.WidgetFlags = lambda flags=0: QgsProcessingAlgorithmWidgetBase.WidgetFlag(flags)
+QgsProcessingAlgorithmWidgetBase.WidgetFlags.baseClass = QgsProcessingAlgorithmWidgetBase
+WidgetFlags = QgsProcessingAlgorithmWidgetBase  # dirty hack since SIP seems to introduce the flags in module
 try:
-    QgsProcessingAlgorithmDialogBase.__attribute_docs__ = {'algorithmAboutToRun': 'Emitted when the algorithm is about to run in the specified ``context``.\n\nThis signal can be used to tweak the ``context`` prior to the algorithm\nexecution.\n\n.. versionadded:: 3.38\n', 'algorithmFinished': 'Emitted whenever an algorithm has finished executing in the dialog.\n\n.. versionadded:: 3.14\n'}
-    QgsProcessingAlgorithmDialogBase.formatStringForLog = staticmethod(QgsProcessingAlgorithmDialogBase.formatStringForLog)
-    QgsProcessingAlgorithmDialogBase.__virtual_methods__ = ['setParameters', 'resetAdditionalGui', 'blockAdditionalControlsWhileRunning', 'isFinalized', 'finished', 'runAlgorithm', 'algExecuted']
-    QgsProcessingAlgorithmDialogBase.__overridden_methods__ = ['reject', 'closeEvent']
-    QgsProcessingAlgorithmDialogBase.__signal_arguments__ = {'algorithmAboutToRun': ['context: QgsProcessingContext'], 'algorithmFinished': ['successful: bool', 'result: Dict[str, object]']}
-    QgsProcessingAlgorithmDialogBase.__group__ = ['processing']
+    QgsProcessingAlgorithmWidgetBase.__attribute_docs__ = {'algorithmAboutToRun': 'Emitted when the algorithm is about to run in the specified ``context``.\n\nThis signal can be used to tweak the ``context`` prior to the algorithm\nexecution.\n\n.. versionadded:: 3.38\n', 'algorithmFinished': 'Emitted whenever an algorithm has finished executing in the widget.\n\n.. versionadded:: 3.14\n'}
+    QgsProcessingAlgorithmWidgetBase.formatStringForLog = staticmethod(QgsProcessingAlgorithmWidgetBase.formatStringForLog)
+    QgsProcessingAlgorithmWidgetBase.__virtual_methods__ = ['setParameters', 'isRunning', 'resetAdditionalGui', 'blockAdditionalControlsWhileRunning', 'isFinalized', 'finished', 'runAlgorithm', 'algExecuted']
+    QgsProcessingAlgorithmWidgetBase.__overridden_methods__ = ['closeEvent']
+    QgsProcessingAlgorithmWidgetBase.__signal_arguments__ = {'algorithmAboutToRun': ['context: QgsProcessingContext'], 'algorithmFinished': ['successful: bool', 'result: Dict[str, object]']}
+    QgsProcessingAlgorithmWidgetBase.__group__ = ['processing']
+except (NameError, AttributeError):
+    pass
+try:
+    QgsProcessingFeedbackGenerator.__abstract_methods__ = ['createFeedback']
+    QgsProcessingFeedbackGenerator.__group__ = ['processing']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/processing/qgsprocessingbatchalgorithmdialogbase.h
@@ -3342,6 +3554,11 @@ except (NameError, AttributeError):
 try:
     QgsProcessingFavoriteAlgorithmManager.__attribute_docs__ = {'changed': 'Emitted when the list of favorite algorithms is changed, e.g. when a new\nalgorithm ID is added to the list or an existing algorithm ID is removed\nfrom the list.\n'}
     QgsProcessingFavoriteAlgorithmManager.__group__ = ['processing']
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/gui/processing/qgsprocessinggui.h
+try:
+    QgsProcessingGui.__group__ = ['processing']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/processing/qgsprocessingguiregistry.h
@@ -3365,9 +3582,9 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/processing/qgsprocessinghistoryprovider.h
 try:
-    QgsProcessingHistoryProvider.__attribute_docs__ = {'executePython': 'Emitted when the provider needs to execute python ``commands`` in the\nProcessing context.\n\n.. versionadded:: 3.32\n', 'createTest': 'Emitted when the provider needs to create a Processing test with the\ngiven python ``command``.\n\n.. versionadded:: 3.32\n'}
+    QgsProcessingHistoryProvider.__attribute_docs__ = {'executePython': 'Emitted when the provider needs to execute python ``commands`` in the\nProcessing context.\n\n.. versionadded:: 3.32\n', 'createTest': 'Emitted when the provider needs to create a Processing test with the\ngiven python ``command``.\n\n.. versionadded:: 3.32\n', 'showMessage': 'Emitted when the provider needs to display a ``message``.\n\n.. versionadded:: 4.0\n'}
     QgsProcessingHistoryProvider.__overridden_methods__ = ['id', 'createNodeForEntry', 'updateNodeForEntry']
-    QgsProcessingHistoryProvider.__signal_arguments__ = {'executePython': ['commands: str'], 'createTest': ['command: str']}
+    QgsProcessingHistoryProvider.__signal_arguments__ = {'executePython': ['commands: str'], 'createTest': ['command: str'], 'showMessage': ['message: str']}
     QgsProcessingHistoryProvider.__group__ = ['processing']
 except (NameError, AttributeError):
     pass
@@ -3389,6 +3606,7 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/processing/qgsprocessingmodelerparameterwidget.h
 try:
+    QgsProcessingModelerParameterWidget.__attribute_docs__ = {'changed': 'Emitted whenever the definition of the parameter is changed in the\nwidget.\n\n.. versionadded:: 4.0\n'}
     QgsProcessingModelerParameterWidget.__virtual_methods__ = ['value']
     QgsProcessingModelerParameterWidget.__overridden_methods__ = ['createExpressionContext']
     QgsProcessingModelerParameterWidget.__group__ = ['processing']
@@ -3424,10 +3642,16 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/processing/qgsprocessingparameterdefinitionwidget.h
 try:
+    QgsProcessingAbstractParameterDefinitionWidget.__attribute_docs__ = {'changed': 'Emitted whenever the definition of the parameter is changed in the\nwidget.\n\n.. versionadded:: 4.0\n'}
     QgsProcessingAbstractParameterDefinitionWidget.__virtual_methods__ = ['setWidgetContext']
     QgsProcessingAbstractParameterDefinitionWidget.__abstract_methods__ = ['createParameter']
     QgsProcessingAbstractParameterDefinitionWidget.__overridden_methods__ = ['createExpressionContext']
     QgsProcessingAbstractParameterDefinitionWidget.__group__ = ['processing']
+except (NameError, AttributeError):
+    pass
+try:
+    QgsProcessingParameterDefinitionWidget.__attribute_docs__ = {'changed': 'Emitted whenever the definition of the parameter is changed in the\nwidget.\n\n.. versionadded:: 4.0\n'}
+    QgsProcessingParameterDefinitionWidget.__group__ = ['processing']
 except (NameError, AttributeError):
     pass
 try:
@@ -3436,7 +3660,7 @@ try:
 except (NameError, AttributeError):
     pass
 try:
-    QgsProcessingParameterDefinitionWidget.__group__ = ['processing']
+    QgsProcessingParameterDefinitionPanelWidget.__group__ = ['processing']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/processing/qgsprocessingparameterswidget.h
@@ -3589,6 +3813,7 @@ QgsProcessingToolboxProxyModel.Filter.__doc__ = """Available filter flags for fi
 """
 # --
 QgsProcessingToolboxProxyModel.Filter.baseClass = QgsProcessingToolboxProxyModel
+QgsProcessingToolboxProxyModel.Filters = lambda flags=0: QgsProcessingToolboxProxyModel.Filter(flags)
 QgsProcessingToolboxProxyModel.Filters.baseClass = QgsProcessingToolboxProxyModel
 Filters = QgsProcessingToolboxProxyModel  # dirty hack since SIP seems to introduce the flags in module
 try:
@@ -3664,6 +3889,7 @@ QgsProcessingParametersGenerator.Flag.__doc__ = """Flags controlling parameter g
 
 """
 # --
+QgsProcessingParametersGenerator.Flags = lambda flags=0: QgsProcessingParametersGenerator.Flag(flags)
 try:
     QgsAbstractProcessingParameterWidgetWrapper.__attribute_docs__ = {'widgetValueHasChanged': 'Emitted whenever the parameter value (as defined by the wrapped widget)\nis changed.\n'}
     QgsAbstractProcessingParameterWidgetWrapper.__virtual_methods__ = ['setWidgetContext', 'customProperties', 'registerProcessingContextGenerator', 'postInitialize', 'stretch', 'setDialog', 'createLabel']
@@ -3877,8 +4103,7 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/raster/qgsrasterlayerproperties.h
 try:
-    QgsRasterLayerProperties.__virtual_methods__ = ['addPropertiesPageFactory', 'optionsStackedWidget_CurrentChanged', 'apply', 'rollback']
-    QgsRasterLayerProperties.__overridden_methods__ = ['createExpressionContext', 'eventFilter']
+    QgsRasterLayerProperties.__overridden_methods__ = ['addPropertiesPageFactory', 'createExpressionContext', 'eventFilter', 'optionsStackedWidget_CurrentChanged', 'apply', 'rollback']
     QgsRasterLayerProperties.__group__ = ['raster']
 except (NameError, AttributeError):
     pass
@@ -3963,6 +4188,7 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsrelationeditorwidget.h
 QgsRelationEditorWidget.Button.baseClass = QgsRelationEditorWidget
+QgsRelationEditorWidget.Buttons = lambda flags=0: QgsRelationEditorWidget.Button(flags)
 QgsRelationEditorWidget.Buttons.baseClass = QgsRelationEditorWidget
 Buttons = QgsRelationEditorWidget  # dirty hack since SIP seems to introduce the flags in module
 try:
@@ -4092,12 +4318,25 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsscalecombobox.h
+# monkey patching scoped based enum
+QgsScaleComboBox.RatioMode.ForceUnitNumerator.__doc__ = "Default mode, forces the scale numerator to be 1, e.g. \"1:1000\""
+QgsScaleComboBox.RatioMode.Flexible.__doc__ = "Allows numerator values other than 1, e.g: \"2:3\"."
+QgsScaleComboBox.RatioMode.__doc__ = """Scale ratio modes.
+
+.. versionadded:: 4.0
+
+* ``ForceUnitNumerator``: Default mode, forces the scale numerator to be 1, e.g. \"1:1000\"
+* ``Flexible``: Allows numerator values other than 1, e.g: \"2:3\".
+
+"""
+# --
+QgsScaleComboBox.RatioMode.baseClass = QgsScaleComboBox
 try:
-    QgsScaleComboBox.__attribute_docs__ = {'scaleChanged': 'Emitted when *user* has finished editing/selecting a new scale. The\n``scale`` value indicates the scale denominator, e.g. 1000.0 for a\n1:1000 map.\n'}
+    QgsScaleComboBox.__attribute_docs__ = {'scaleChanged': 'Emitted when *user* has finished editing/selecting a new scale. The\n``scale`` value indicates the scale denominator, e.g. 1000.0 for a\n1:1000 map.\n', 'ratioModeChanged': 'Emitted when the ratio mode for the widget is changed.\n\n.. versionadded:: 4.0\n'}
     QgsScaleComboBox.toString = staticmethod(QgsScaleComboBox.toString)
     QgsScaleComboBox.toDouble = staticmethod(QgsScaleComboBox.toDouble)
     QgsScaleComboBox.__overridden_methods__ = ['showPopup']
-    QgsScaleComboBox.__signal_arguments__ = {'scaleChanged': ['scale: float']}
+    QgsScaleComboBox.__signal_arguments__ = {'scaleChanged': ['scale: float'], 'ratioModeChanged': ['mode: QgsScaleComboBox.RatioMode']}
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsscalemethodwidget.h
@@ -4139,6 +4378,17 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/editorwidgets/core/qgssearchwidgetwrapper.h
+QgsSearchWidgetWrapper.FilterFlags = lambda flags=0: QgsSearchWidgetWrapper.FilterFlag(flags)
+from enum import Enum
+
+
+def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+
+QgsSearchWidgetWrapper.FilterFlag.__bool__ = lambda flag: bool(_force_int(flag))
+QgsSearchWidgetWrapper.FilterFlag.__eq__ = lambda flag1, flag2: _force_int(flag1) == _force_int(flag2)
+QgsSearchWidgetWrapper.FilterFlag.__and__ = lambda flag1, flag2: _force_int(flag1) & _force_int(flag2)
+QgsSearchWidgetWrapper.FilterFlag.__or__ = lambda flag1, flag2: QgsSearchWidgetWrapper.FilterFlag(_force_int(flag1) | _force_int(flag2))
 try:
     QgsSearchWidgetWrapper.__attribute_docs__ = {'expressionChanged': 'Emitted whenever the expression changes\n\n:param exp: The new search expression\n', 'valueChanged': 'Emitted when a user changes the value of the search widget.\n', 'valueCleared': 'Emitted when a user changes the value of the search widget back to an\nempty, default state.\n'}
     QgsSearchWidgetWrapper.exclusiveFilterFlags = staticmethod(QgsSearchWidgetWrapper.exclusiveFilterFlags)
@@ -4216,6 +4466,11 @@ try:
 except (NameError, AttributeError):
     pass
 try:
+    QgsSettingsBoolGroupBoxWrapper.__overridden_methods__ = ['createWrapper', 'id', 'setSettingFromWidget', 'valueFromWidget', 'setWidgetValue', 'enableAutomaticUpdatePrivate', 'configureEditorPrivateImplementation']
+    QgsSettingsBoolGroupBoxWrapper.__group__ = ['settings']
+except (NameError, AttributeError):
+    pass
+try:
     QgsSettingsIntegerSpinBoxWrapper.__overridden_methods__ = ['createWrapper', 'id', 'setSettingFromWidget', 'valueFromWidget', 'setWidgetValue', 'enableAutomaticUpdatePrivate']
     QgsSettingsIntegerSpinBoxWrapper.__group__ = ['settings']
 except (NameError, AttributeError):
@@ -4264,6 +4519,24 @@ try:
     QgsSettingsTreeWidget.__group__ = ['settings']
 except (NameError, AttributeError):
     pass
+# The following has been generated automatically from src/gui/qgsshortcutsmanager.h
+# monkey patching scoped based enum
+QgsShortcutsManager.CommonAction.CodeToggleComment.__doc__ = "Toggle code comments"
+QgsShortcutsManager.CommonAction.CodeReformat.__doc__ = "Reformat code"
+QgsShortcutsManager.CommonAction.CodeRunScript.__doc__ = "Run script"
+QgsShortcutsManager.CommonAction.CodeRunSelection.__doc__ = "Run selection from script"
+QgsShortcutsManager.CommonAction.__doc__ = """Contains common actions which are used across a variety of classes.
+
+.. versionadded:: 4.0
+
+* ``CodeToggleComment``: Toggle code comments
+* ``CodeReformat``: Reformat code
+* ``CodeRunScript``: Run script
+* ``CodeRunSelection``: Run selection from script
+
+"""
+# --
+QgsShortcutsManager.CommonAction.baseClass = QgsShortcutsManager
 # The following has been generated automatically from src/gui/raster/qgssinglebandgrayrendererwidget.h
 try:
     QgsSingleBandGrayRendererWidget.create = staticmethod(QgsSingleBandGrayRendererWidget.create)
@@ -4321,10 +4594,11 @@ QgsSourceSelectProvider.Capability.__doc__ = """The Capability enum describes th
 """
 # --
 QgsSourceSelectProvider.Capability.baseClass = QgsSourceSelectProvider
+QgsSourceSelectProvider.Capabilities = lambda flags=0: QgsSourceSelectProvider.Capability(flags)
 QgsSourceSelectProvider.Capabilities.baseClass = QgsSourceSelectProvider
 Capabilities = QgsSourceSelectProvider  # dirty hack since SIP seems to introduce the flags in module
 try:
-    QgsSourceSelectProvider.__virtual_methods__ = ['name', 'toolTip', 'ordering', 'capabilities']
+    QgsSourceSelectProvider.__virtual_methods__ = ['name', 'toolTip', 'ordering', 'createDataSourceWidget', 'capabilities']
     QgsSourceSelectProvider.__abstract_methods__ = ['providerKey', 'text', 'icon', 'createDataSourceWidget']
 except (NameError, AttributeError):
     pass
@@ -4472,6 +4746,16 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/symbology/qgssymbollayerwidget.h
+# monkey patching scoped based enum
+QgsTemplatedLineSymbolLayerWidget.TemplatedSymbolType.Hash.__doc__ = "Hash symbol type"
+QgsTemplatedLineSymbolLayerWidget.TemplatedSymbolType.Marker.__doc__ = "Marker symbol type"
+QgsTemplatedLineSymbolLayerWidget.TemplatedSymbolType.__doc__ = """Templated symbol type
+
+* ``Hash``: Hash symbol type
+* ``Marker``: Marker symbol type
+
+"""
+# --
 try:
     QgsSymbolLayerWidget.__attribute_docs__ = {'changed': 'Should be emitted whenever configuration changes happened on this symbol\nlayer configuration. If the subsymbol is changed,\n:py:func:`~QgsSymbolLayerWidget.symbolChanged` should be emitted\ninstead.\n', 'symbolChanged': 'Should be emitted whenever the sub symbol changed on this symbol layer\nconfiguration. Normally :py:func:`~QgsSymbolLayerWidget.changed` should\nbe preferred.\n\n.. seealso:: :py:func:`changed`\n'}
     QgsSymbolLayerWidget.__virtual_methods__ = ['setContext']
@@ -4518,13 +4802,11 @@ except (NameError, AttributeError):
     pass
 try:
     QgsMarkerLineSymbolLayerWidget.create = staticmethod(QgsMarkerLineSymbolLayerWidget.create)
-    QgsMarkerLineSymbolLayerWidget.__overridden_methods__ = ['setSymbolLayer', 'symbolLayer', 'setContext']
     QgsMarkerLineSymbolLayerWidget.__group__ = ['symbology']
 except (NameError, AttributeError):
     pass
 try:
     QgsHashedLineSymbolLayerWidget.create = staticmethod(QgsHashedLineSymbolLayerWidget.create)
-    QgsHashedLineSymbolLayerWidget.__overridden_methods__ = ['setSymbolLayer', 'symbolLayer', 'setContext']
     QgsHashedLineSymbolLayerWidget.__group__ = ['symbology']
 except (NameError, AttributeError):
     pass
@@ -4616,6 +4898,11 @@ try:
     QgsGeometryGeneratorSymbolLayerWidget.create = staticmethod(QgsGeometryGeneratorSymbolLayerWidget.create)
     QgsGeometryGeneratorSymbolLayerWidget.__overridden_methods__ = ['setSymbolLayer', 'symbolLayer']
     QgsGeometryGeneratorSymbolLayerWidget.__group__ = ['symbology']
+except (NameError, AttributeError):
+    pass
+try:
+    QgsTemplatedLineSymbolLayerWidget.__overridden_methods__ = ['event', 'setSymbolLayer', 'symbolLayer', 'setContext']
+    QgsTemplatedLineSymbolLayerWidget.__group__ = ['symbology']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/symbology/qgssymbollevelsdialog.h
@@ -4823,8 +5110,7 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/vector/qgsvectorlayerproperties.h
 try:
-    QgsVectorLayerProperties.__virtual_methods__ = ['syncToLayer', 'apply', 'rollback']
-    QgsVectorLayerProperties.__overridden_methods__ = ['eventFilter', 'optionsStackedWidget_CurrentChanged']
+    QgsVectorLayerProperties.__overridden_methods__ = ['eventFilter', 'optionsStackedWidget_CurrentChanged', 'syncToLayer', 'apply', 'rollback']
     QgsVectorLayerProperties.__group__ = ['vector']
 except (NameError, AttributeError):
     pass
@@ -4854,6 +5140,7 @@ QgsVectorLayerSaveAsDialog.Option.__doc__ = """Available dialog options.
 """
 # --
 QgsVectorLayerSaveAsDialog.Option.baseClass = QgsVectorLayerSaveAsDialog
+QgsVectorLayerSaveAsDialog.Options = lambda flags=0: QgsVectorLayerSaveAsDialog.Option(flags)
 QgsVectorLayerSaveAsDialog.Options.baseClass = QgsVectorLayerSaveAsDialog
 Options = QgsVectorLayerSaveAsDialog  # dirty hack since SIP seems to introduce the flags in module
 try:
@@ -4933,14 +5220,6 @@ QgsMapLayerAction.EnabledOnlyWhenEditable.__doc__ = "Action should be shown only
 QgsProcessingGui.Standard.__doc__ = "Standard (single-run) algorithm mode"
 QgsProcessingGui.Batch.__doc__ = "Batch processing mode"
 QgsProcessingGui.Modeler.__doc__ = "Modeler mode"
-
-
-# monkey patch old settings wrappers
-QgsSettingsStringEditorWidgetWrapper = QgsSettingsStringLineEditWrapper
-QgsSettingsBoolEditorWidgetWrapper = QgsSettingsBoolCheckBoxWrapper
-QgsSettingsIntegerEditorWidgetWrapper = QgsSettingsIntegerSpinBoxWrapper
-QgsSettingsDoubleEditorWidgetWrapper = QgsSettingsDoubleSpinBoxWrapper
-QgsSettingsColorEditorWidgetWrapper = QgsSettingsColorButtonWrapper
 
 # Classes patched
 QgsSettingsEnumEditorWidgetWrapper = PyQgsSettingsEnumEditorWidgetWrapper

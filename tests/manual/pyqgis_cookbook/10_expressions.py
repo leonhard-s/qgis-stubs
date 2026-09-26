@@ -1,11 +1,11 @@
 # Adapted from:
-# https://docs.qgis.org/3.44/en/docs/pyqgis_developer_cookbook/expressions.html
+# https://docs.qgis.org/4.2/en/docs/pyqgis_developer_cookbook/expressions.html
 
 import typing
 from qgis.core import (
     QgsExpression, QgsExpressionContext, QgsExpressionContextUtils, QgsFeature,
     QgsField, QgsGeometry, QgsPointXY, QgsProject, QgsVectorLayer, edit)
-from PyQt5.QtCore import QMetaType, QVariant
+from PyQt6.QtCore import QMetaType
 
 
 def expressions_with_features() -> None:
@@ -13,14 +13,12 @@ def expressions_with_features() -> None:
     vl = QgsVectorLayer("Point", "Companies", "memory")
     pr = vl.dataProvider()
     assert pr is not None
-    raw_args = (("Name", QMetaType.Type.QString),
-                ("Employees",  QMetaType.Type.Int),
-                ("Revenue", QMetaType.Type.Double),
-                ("Rev. per employee", QMetaType.Type.Double),
-                ("Sum", QMetaType.Type.Double),
-                ("Fun", QMetaType.Type.Double))
-    pr.addAttributes([
-        QgsField(n, typing.cast(QVariant.Type, t)) for n, t in raw_args])
+    pr.addAttributes([QgsField("Name", QMetaType.Type.QString),
+                    QgsField("Employees",  QMetaType.Type.Int),
+                    QgsField("Revenue", QMetaType.Type.Double),
+                    QgsField("Rev. per employee", QMetaType.Type.Double),
+                    QgsField("Sum", QMetaType.Type.Double),
+                    QgsField("Fun", QMetaType.Type.Double)])
     vl.updateFields()
 
     # add data to the first three fields

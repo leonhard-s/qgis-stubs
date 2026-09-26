@@ -21,7 +21,7 @@ __author__ = 'Alessandro Pasotti'
 __date__ = 'October 2014'
 __copyright__ = '(C) 2014, Alessandro Pasotti'
 
-from PyQt5 import QtCore     # NOQA
+from PyQt6 import QtCore     # NOQA
 
 from qgis._server import *  # NOQA
 
@@ -31,7 +31,7 @@ It is not aimed to be manually edited
 """
 # The following has been generated automatically from src/server/qgsaccesscontrol.h
 try:
-    QgsAccessControl.__overridden_methods__ = ['filterFeatures', 'clone', 'layerAttributes']
+    QgsAccessControl.__overridden_methods__ = ['isFilterThreadSafe', 'filterFeatures', 'layerAttributes', 'clone']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/server/qgsaccesscontrolfilter.h
@@ -50,7 +50,7 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/server/qgsbufferserverresponse.h
 try:
-    QgsBufferServerResponse.__overridden_methods__ = ['setHeader', 'removeHeader', 'header', 'headers', 'headersSent', 'setStatusCode', 'statusCode', 'sendError', 'io', 'finish', 'flush', 'clear', 'data', 'truncate']
+    QgsBufferServerResponse.__overridden_methods__ = ['setHeader', 'addHeader', 'removeHeader', 'header', 'fullHeaders', 'fullHeader', 'headers', 'headersSent', 'setStatusCode', 'statusCode', 'sendError', 'io', 'finish', 'flush', 'clear', 'data', 'truncate']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/server/qgsconfigcache.h
@@ -68,12 +68,12 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/server/qgsfeaturefilter.h
 try:
-    QgsFeatureFilter.__overridden_methods__ = ['filterFeatures', 'layerAttributes', 'clone']
+    QgsFeatureFilter.__overridden_methods__ = ['isFilterThreadSafe', 'filterFeatures', 'layerAttributes', 'clone']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/server/qgsfeaturefilterprovidergroup.h
 try:
-    QgsFeatureFilterProviderGroup.__overridden_methods__ = ['filterFeatures', 'layerAttributes', 'clone']
+    QgsFeatureFilterProviderGroup.__overridden_methods__ = ['isFilterThreadSafe', 'filterFeatures', 'layerAttributes', 'clone']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/server/qgsserverapi.h
@@ -139,6 +139,17 @@ except (NameError, AttributeError):
 # The following has been generated automatically from src/server/qgsserverogcapi.h
 QgsServerOgcApi.Rel.baseClass = QgsServerOgcApi
 QgsServerOgcApi.ContentType.baseClass = QgsServerOgcApi
+# monkey patching scoped based enum
+QgsServerOgcApi.Profile.NONE.__doc__ = "No profile"
+QgsServerOgcApi.Profile.RFC7946.__doc__ = "GeoJSON profile according to RFC7946"
+QgsServerOgcApi.Profile.__doc__ = """JSON profile
+
+* ``NONE``: No profile
+* ``RFC7946``: GeoJSON profile according to RFC7946
+
+"""
+# --
+QgsServerOgcApi.Profile.baseClass = QgsServerOgcApi
 try:
     QgsServerOgcApi.sanitizeUrl = staticmethod(QgsServerOgcApi.sanitizeUrl)
     QgsServerOgcApi.relToString = staticmethod(QgsServerOgcApi.relToString)
@@ -199,6 +210,7 @@ try:
     QgsServerProjectUtils.wmsInfoFormatSia2045 = staticmethod(QgsServerProjectUtils.wmsInfoFormatSia2045)
     QgsServerProjectUtils.wmsFeatureInfoAddWktGeometry = staticmethod(QgsServerProjectUtils.wmsFeatureInfoAddWktGeometry)
     QgsServerProjectUtils.wmsFeatureInfoUseAttributeFormSettings = staticmethod(QgsServerProjectUtils.wmsFeatureInfoUseAttributeFormSettings)
+    QgsServerProjectUtils.wmsHTMLFeatureInfoUseOnlyMaptip = staticmethod(QgsServerProjectUtils.wmsHTMLFeatureInfoUseOnlyMaptip)
     QgsServerProjectUtils.wmsFeatureInfoSegmentizeWktGeometry = staticmethod(QgsServerProjectUtils.wmsFeatureInfoSegmentizeWktGeometry)
     QgsServerProjectUtils.wmsAddLegendGroupsLegendGraphic = staticmethod(QgsServerProjectUtils.wmsAddLegendGroupsLegendGraphic)
     QgsServerProjectUtils.wmsSkipNameForGroup = staticmethod(QgsServerProjectUtils.wmsSkipNameForGroup)
@@ -218,6 +230,7 @@ try:
     QgsServerProjectUtils.wmsRootName = staticmethod(QgsServerProjectUtils.wmsRootName)
     QgsServerProjectUtils.wmsRestrictedLayers = staticmethod(QgsServerProjectUtils.wmsRestrictedLayers)
     QgsServerProjectUtils.wmsOutputCrsList = staticmethod(QgsServerProjectUtils.wmsOutputCrsList)
+    QgsServerProjectUtils.wmsOutputCrsListAsOgcUrn = staticmethod(QgsServerProjectUtils.wmsOutputCrsListAsOgcUrn)
     QgsServerProjectUtils.wmsExtent = staticmethod(QgsServerProjectUtils.wmsExtent)
     QgsServerProjectUtils.wfsServiceUrl = staticmethod(QgsServerProjectUtils.wfsServiceUrl)
     QgsServerProjectUtils.wfsLayerIds = staticmethod(QgsServerProjectUtils.wfsLayerIds)
@@ -264,8 +277,8 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/server/qgsserverresponse.h
 try:
-    QgsServerResponse.__virtual_methods__ = ['write', 'SIP_VIRTUALERRORHANDLER', 'feedback']
-    QgsServerResponse.__abstract_methods__ = ['setHeader', 'removeHeader', 'header', 'headers', 'headersSent', 'setStatusCode', 'statusCode', 'sendError', 'io', 'clear', 'data', 'truncate']
+    QgsServerResponse.__virtual_methods__ = ['write', 'finish', 'flush', 'feedback']
+    QgsServerResponse.__abstract_methods__ = ['setHeader', 'addHeader', 'removeHeader', 'header', 'fullHeader', 'headers', 'fullHeaders', 'headersSent', 'setStatusCode', 'statusCode', 'sendError', 'io', 'clear', 'data', 'truncate']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/server/qgsserversettings.h
@@ -288,6 +301,11 @@ except (NameError, AttributeError):
 # The following has been generated automatically from src/server/qgsservicemodule.h
 try:
     QgsServiceModule.__abstract_methods__ = ['registerSelf']
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/server/qgsstorebadlayerinfo.h
+try:
+    QgsStoreBadLayerInfo.__overridden_methods__ = ['handleBadLayers']
 except (NameError, AttributeError):
     pass
 

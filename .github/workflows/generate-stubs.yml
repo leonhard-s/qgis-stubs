@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       qgis_image:
-        description: "QGIS Docker image (e.g. qgis/qgis:3.44-questing)"
+        description: "QGIS Docker image (e.g. qgis/qgis:4.2-questing)"
         required: true
         type: string
 
@@ -29,13 +29,12 @@ jobs:
 
       - name: Extract Python modules from QGIS image
         run: |
-          docker run --rm ${{ inputs.qgis_image }} tar -C /usr/lib/python3/dist-packages -czf - qgis | tar -xzf -
+          docker run --rm ${{ inputs.qgis_image }} tar -C /usr/share/qgis/python/qgis -czf - qgis | tar -xzf -
 
       - name: Delete non-stub files
         run: |
           find qgis -name "*.so" -delete
           find qgis -name "*.yaml" -delete
-          find qgis -name "poetry.lock" -delete
 
       - name: Delete __pycache__ directories
         run: find qgis -type d -name "__pycache__" -exec rm -rf {} +

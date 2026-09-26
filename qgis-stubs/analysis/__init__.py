@@ -21,15 +21,19 @@ __author__ = 'Nathan Woodrow'
 __date__ = 'May 2014'
 __copyright__ = '(C) 2014, Nathan Woodrow'
 
-from PyQt5 import QtCore
+from PyQt6 import QtCore
 
 from qgis._analysis import *
 from qgis.core import Qgis as _Qgis
 
 # preserve API compatibility following QgsExifTools moved to core
 from qgis.core import QgsExifTools
+
 # preserve API compatibility as QgsAlignRaster.Item moved to QgsAlignRasterData.RasterItem
 from qgis.core import QgsAlignRasterData
+
+# preserve API compatibility as QgsRelief.ReliefColor moved to core as QgsRasterReliefColor
+from qgis.core import QgsRasterReliefColor as _QgsRasterReliefColor
 
 
 # monkey patching scoped based enum
@@ -80,6 +84,7 @@ QgsZonalStatistics.Canceled.__doc__ = "Algorithm was canceled"
 _Qgis.ZonalStatisticResult.__doc__ = "Zonal statistics result codes.\n\n.. versionadded:: 3.36.\n\n" + '* ``Success``: ' + _Qgis.ZonalStatisticResult.Success.__doc__ + '\n' + '* ``LayerTypeWrong``: ' + _Qgis.ZonalStatisticResult.LayerTypeWrong.__doc__ + '\n' + '* ``LayerInvalid``: ' + _Qgis.ZonalStatisticResult.LayerInvalid.__doc__ + '\n' + '* ``RasterInvalid``: ' + _Qgis.ZonalStatisticResult.RasterInvalid.__doc__ + '\n' + '* ``RasterBandInvalid``: ' + _Qgis.ZonalStatisticResult.RasterBandInvalid.__doc__ + '\n' + '* ``FailedToCreateField``: ' + _Qgis.ZonalStatisticResult.FailedToCreateField.__doc__ + '\n' + '* ``Canceled``: ' + _Qgis.ZonalStatisticResult.Canceled.__doc__
 # --
 _Qgis.ZonalStatisticResult.baseClass = _Qgis
+
 
 """
 This folder is completed using sipify.py script
@@ -204,6 +209,7 @@ QgsGeometryCheck.Result.__doc__ = """
 
 """
 # --
+QgsGeometryCheck.Flags = lambda flags=0: QgsGeometryCheck.Flag(flags)
 QgsGeometryCheck.Flags.baseClass = QgsGeometryCheck
 Flags = QgsGeometryCheck  # dirty hack since SIP seems to introduce the flags in module
 try:
@@ -587,7 +593,7 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/analysis/processing/pdal/qgspdalalgorithms.h
 try:
-    QgsPdalAlgorithms.__overridden_methods__ = ['icon', 'svgIconPath', 'id', 'helpId', 'name', 'supportsNonFileBasedOutput', 'supportedOutputVectorLayerExtensions', 'supportedOutputRasterLayerExtensions', 'supportedOutputPointCloudLayerExtensions', 'loadAlgorithms']
+    QgsPdalAlgorithms.__overridden_methods__ = ['icon', 'svgIconPath', 'id', 'helpId', 'name', 'supportsNonFileBasedOutput', 'supportedOutputVectorLayerExtensions', 'supportedOutputRasterLayerFormatAndExtensions', 'supportedOutputPointCloudLayerExtensions', 'loadAlgorithms']
     QgsPdalAlgorithms.__group__ = ['processing', 'pdal']
 except (NameError, AttributeError):
     pass
@@ -607,7 +613,7 @@ QgsRasterCalculator.ParserError.__doc__ = "Error parsing formula"
 QgsRasterCalculator.MemoryError.__doc__ = "Error allocating memory for result"
 QgsRasterCalculator.BandError.__doc__ = "Invalid band number for input"
 QgsRasterCalculator.CalculationError.__doc__ = "Error occurred while performing calculation"
-QgsRasterCalculator.OpenCLKernelBuildError.__doc__ = "Error building OpenCL kernel"
+QgsRasterCalculator.OpenCLKernelBuildError.__doc__ = "Error building OpenCL kernel. \n.. versionadded:: 4.0"
 QgsRasterCalculator.Result.__doc__ = """Result of the calculation
 
 * ``Success``: Calculation successful
@@ -618,7 +624,10 @@ QgsRasterCalculator.Result.__doc__ = """Result of the calculation
 * ``MemoryError``: Error allocating memory for result
 * ``BandError``: Invalid band number for input
 * ``CalculationError``: Error occurred while performing calculation
-* ``OpenCLKernelBuildError``: Error building OpenCL kernel
+* ``OpenCLKernelBuildError``: Error building OpenCL kernel.
+
+  .. versionadded:: 4.0
+
 
 """
 # --
@@ -639,12 +648,26 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/analysis/raster/qgsrelief.h
+# monkey patching scoped based enum
+QgsRelief.Result.Success.__doc__ = "Calculation succeeded"
+QgsRelief.Result.InvalidInput.__doc__ = "Invalid input layer"
+QgsRelief.Result.OutputCreationFailed.__doc__ = "Creation of output layer failed"
+QgsRelief.Result.InvalidInputSize.__doc__ = "Input raster was too small (at least 3 rows are required)"
+QgsRelief.Result.Canceled.__doc__ = "Operation was canceled"
+QgsRelief.Result.__doc__ = """Calculation results.
+
+.. versionadded:: 4.2
+
+* ``Success``: Calculation succeeded
+* ``InvalidInput``: Invalid input layer
+* ``OutputCreationFailed``: Creation of output layer failed
+* ``InvalidInputSize``: Input raster was too small (at least 3 rows are required)
+* ``Canceled``: Operation was canceled
+
+"""
+# --
 try:
     QgsRelief.__group__ = ['raster']
-except (NameError, AttributeError):
-    pass
-try:
-    QgsRelief.ReliefColor.__group__ = ['raster']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/analysis/raster/qgsruggednessfilter.h
@@ -660,8 +683,8 @@ try:
 except (NameError, AttributeError):
     pass
 try:
-    QgsSingleGeometryCheck.__virtual_methods__ = ['collectErrors']
     QgsSingleGeometryCheck.__abstract_methods__ = ['processGeometry']
+    QgsSingleGeometryCheck.__overridden_methods__ = ['collectErrors']
     QgsSingleGeometryCheck.__group__ = ['vector', 'geometry_checker']
 except (NameError, AttributeError):
     pass
