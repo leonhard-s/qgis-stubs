@@ -13164,7 +13164,7 @@ class QgsStatisticalSummary(PyQt5.sip.wrapper):
     First: Qgis.Statistic
     Last: Qgis.Statistic
     All: Qgis.Statistic
-    Statistics: typing.Type[Qgis.Statistics]
+    Statistics: Qgis
 
 
 class QgsStoredExpression(PyQt5.sip.wrapper):
@@ -39297,7 +39297,7 @@ class QgsSymbol(PyQt5.sip.wrapper):
     RenderHints: typing.Type[Qgis.SymbolRenderHints]
     PreviewFlag: typing.Type[Qgis.SymbolPreviewFlag]
     FlagIncludeCrosshairsForMarkerSymbols: Qgis.SymbolPreviewFlag
-    SymbolPreviewFlags: typing.Type[Qgis.SymbolPreviewFlags]
+    SymbolPreviewFlags: Qgis
     PropertyOpacity: QgsSymbol.Property
     ExtentBuffer: QgsSymbol.Property
     PreviewFlags: typing.Type[Qgis.SymbolPreviewFlags]
@@ -43163,7 +43163,7 @@ class QgsTextRendererUtils(PyQt5.sip.wrapper):
     UseBaselinePlacement: Qgis.CurvedTextFlag
     UprightCharactersOnly: Qgis.CurvedTextFlag
     ExtendLineToFitText: Qgis.CurvedTextFlag
-    CurvedTextFlags: typing.Type[Qgis.CurvedTextFlags]
+    CurvedTextFlags: Qgis
 
 
 class QgsTextShadowSettings(PyQt5.sip.wrapper):

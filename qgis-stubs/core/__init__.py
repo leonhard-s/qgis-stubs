@@ -102,42 +102,23 @@ Qgis.AuthConfigurationStorageCapability.baseClass = Qgis
 Qgis.AuthConfigurationStorageCapabilities.baseClass = Qgis
 AuthConfigurationStorageCapabilities = Qgis  # dirty hack since SIP seems to introduce the flags in module
 Qgis.MessageLevel.baseClass = Qgis
-QgsMapLayer.LayerType = Qgis.LayerType
 # monkey patching scoped based enum
-QgsMapLayer.VectorLayer = Qgis.LayerType.Vector
 QgsMapLayer.LayerType.VectorLayer = Qgis.LayerType.Vector
-QgsMapLayer.VectorLayer.is_monkey_patched = True
 QgsMapLayer.VectorLayer.__doc__ = "Vector layer"
-QgsMapLayer.RasterLayer = Qgis.LayerType.Raster
 QgsMapLayer.LayerType.RasterLayer = Qgis.LayerType.Raster
-QgsMapLayer.RasterLayer.is_monkey_patched = True
 QgsMapLayer.RasterLayer.__doc__ = "Raster layer"
-QgsMapLayer.PluginLayer = Qgis.LayerType.Plugin
 QgsMapLayer.LayerType.PluginLayer = Qgis.LayerType.Plugin
-QgsMapLayer.PluginLayer.is_monkey_patched = True
 QgsMapLayer.PluginLayer.__doc__ = "Plugin based layer"
-QgsMapLayer.MeshLayer = Qgis.LayerType.Mesh
 QgsMapLayer.LayerType.MeshLayer = Qgis.LayerType.Mesh
-QgsMapLayer.MeshLayer.is_monkey_patched = True
 QgsMapLayer.MeshLayer.__doc__ = "Mesh layer. Added in QGIS 3.2"
-QgsMapLayer.VectorTileLayer = Qgis.LayerType.VectorTile
 QgsMapLayer.LayerType.VectorTileLayer = Qgis.LayerType.VectorTile
-QgsMapLayer.VectorTileLayer.is_monkey_patched = True
 QgsMapLayer.VectorTileLayer.__doc__ = "Vector tile layer. Added in QGIS 3.14"
-QgsMapLayer.AnnotationLayer = Qgis.LayerType.Annotation
 QgsMapLayer.LayerType.AnnotationLayer = Qgis.LayerType.Annotation
-QgsMapLayer.AnnotationLayer.is_monkey_patched = True
 QgsMapLayer.AnnotationLayer.__doc__ = "Contains freeform, georeferenced annotations. Added in QGIS 3.16"
-QgsMapLayer.PointCloudLayer = Qgis.LayerType.PointCloud
 QgsMapLayer.LayerType.PointCloudLayer = Qgis.LayerType.PointCloud
-QgsMapLayer.PointCloudLayer.is_monkey_patched = True
 QgsMapLayer.PointCloudLayer.__doc__ = "Point cloud layer. Added in QGIS 3.18"
-QgsMapLayer.GroupLayer = Qgis.LayerType.Group
 QgsMapLayer.LayerType.GroupLayer = Qgis.LayerType.Group
-QgsMapLayer.GroupLayer.is_monkey_patched = True
 QgsMapLayer.GroupLayer.__doc__ = "Composite group layer. Added in QGIS 3.24"
-QgsMapLayer.TiledScene = Qgis.LayerType.TiledScene
-QgsMapLayer.TiledScene.is_monkey_patched = True
 QgsMapLayer.TiledScene.__doc__ = "Tiled scene layer. Added in QGIS 3.34"
 Qgis.LayerType.__doc__ = """Types of layers that can be added to a map
 
@@ -180,55 +161,22 @@ Qgis.LayerType.__doc__ = """Types of layers that can be added to a map
 """
 # --
 Qgis.LayerType.baseClass = Qgis
-QgsMapLayerProxyModel.Filter = Qgis.LayerFilter
 # monkey patching scoped based enum
-QgsMapLayerProxyModel.RasterLayer = Qgis.LayerFilter.RasterLayer
-QgsMapLayerProxyModel.RasterLayer.is_monkey_patched = True
 QgsMapLayerProxyModel.RasterLayer.__doc__ = ""
-QgsMapLayerProxyModel.NoGeometry = Qgis.LayerFilter.NoGeometry
-QgsMapLayerProxyModel.NoGeometry.is_monkey_patched = True
 QgsMapLayerProxyModel.NoGeometry.__doc__ = ""
-QgsMapLayerProxyModel.PointLayer = Qgis.LayerFilter.PointLayer
-QgsMapLayerProxyModel.PointLayer.is_monkey_patched = True
 QgsMapLayerProxyModel.PointLayer.__doc__ = ""
-QgsMapLayerProxyModel.LineLayer = Qgis.LayerFilter.LineLayer
-QgsMapLayerProxyModel.LineLayer.is_monkey_patched = True
 QgsMapLayerProxyModel.LineLayer.__doc__ = ""
-QgsMapLayerProxyModel.PolygonLayer = Qgis.LayerFilter.PolygonLayer
-QgsMapLayerProxyModel.PolygonLayer.is_monkey_patched = True
 QgsMapLayerProxyModel.PolygonLayer.__doc__ = ""
-QgsMapLayerProxyModel.HasGeometry = Qgis.LayerFilter.HasGeometry
-QgsMapLayerProxyModel.HasGeometry.is_monkey_patched = True
 QgsMapLayerProxyModel.HasGeometry.__doc__ = ""
-QgsMapLayerProxyModel.VectorLayer = Qgis.LayerFilter.VectorLayer
-QgsMapLayerProxyModel.VectorLayer.is_monkey_patched = True
 QgsMapLayerProxyModel.VectorLayer.__doc__ = ""
-QgsMapLayerProxyModel.PluginLayer = Qgis.LayerFilter.PluginLayer
-QgsMapLayerProxyModel.PluginLayer.is_monkey_patched = True
 QgsMapLayerProxyModel.PluginLayer.__doc__ = ""
-QgsMapLayerProxyModel.WritableLayer = Qgis.LayerFilter.WritableLayer
-QgsMapLayerProxyModel.WritableLayer.is_monkey_patched = True
 QgsMapLayerProxyModel.WritableLayer.__doc__ = ""
-QgsMapLayerProxyModel.MeshLayer = Qgis.LayerFilter.MeshLayer
-QgsMapLayerProxyModel.MeshLayer.is_monkey_patched = True
 QgsMapLayerProxyModel.MeshLayer.__doc__ = "QgsMeshLayer \n.. versionadded:: 3.6"
-QgsMapLayerProxyModel.VectorTileLayer = Qgis.LayerFilter.VectorTileLayer
-QgsMapLayerProxyModel.VectorTileLayer.is_monkey_patched = True
 QgsMapLayerProxyModel.VectorTileLayer.__doc__ = "QgsVectorTileLayer \n.. versionadded:: 3.14"
-QgsMapLayerProxyModel.PointCloudLayer = Qgis.LayerFilter.PointCloudLayer
-QgsMapLayerProxyModel.PointCloudLayer.is_monkey_patched = True
 QgsMapLayerProxyModel.PointCloudLayer.__doc__ = "QgsPointCloudLayer \n.. versionadded:: 3.18"
-QgsMapLayerProxyModel.AnnotationLayer = Qgis.LayerFilter.AnnotationLayer
-QgsMapLayerProxyModel.AnnotationLayer.is_monkey_patched = True
 QgsMapLayerProxyModel.AnnotationLayer.__doc__ = "QgsAnnotationLayer \n.. versionadded:: 3.22"
-QgsMapLayerProxyModel.TiledSceneLayer = Qgis.LayerFilter.TiledSceneLayer
-QgsMapLayerProxyModel.TiledSceneLayer.is_monkey_patched = True
 QgsMapLayerProxyModel.TiledSceneLayer.__doc__ = "QgsTiledSceneLayer \n.. versionadded:: 3.34"
-QgsMapLayerProxyModel.All = Qgis.LayerFilter.All
-QgsMapLayerProxyModel.All.is_monkey_patched = True
 QgsMapLayerProxyModel.All.__doc__ = "All layers"
-QgsMapLayerProxyModel.SpatialLayer = Qgis.LayerFilter.SpatialLayer
-QgsMapLayerProxyModel.SpatialLayer.is_monkey_patched = True
 QgsMapLayerProxyModel.SpatialLayer.__doc__ = "All spatial layers. \n.. versionadded:: 3.24"
 Qgis.LayerFilter.__doc__ = """Filter for layers
 
@@ -286,211 +234,74 @@ Qgis.LoadStyleFlag.__doc__ = """Flags for loading layer styles.
 Qgis.LoadStyleFlag.baseClass = Qgis
 Qgis.LoadStyleFlags.baseClass = Qgis
 LoadStyleFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsWkbTypes.Type = Qgis.WkbType
 # monkey patching scoped based enum
-QgsWkbTypes.Unknown = Qgis.WkbType.Unknown
-QgsWkbTypes.Unknown.is_monkey_patched = True
 QgsWkbTypes.Unknown.__doc__ = "Unknown"
-QgsWkbTypes.Point = Qgis.WkbType.Point
-QgsWkbTypes.Point.is_monkey_patched = True
 QgsWkbTypes.Point.__doc__ = "Point"
-QgsWkbTypes.LineString = Qgis.WkbType.LineString
-QgsWkbTypes.LineString.is_monkey_patched = True
 QgsWkbTypes.LineString.__doc__ = "LineString"
-QgsWkbTypes.Polygon = Qgis.WkbType.Polygon
-QgsWkbTypes.Polygon.is_monkey_patched = True
 QgsWkbTypes.Polygon.__doc__ = "Polygon"
-QgsWkbTypes.Triangle = Qgis.WkbType.Triangle
-QgsWkbTypes.Triangle.is_monkey_patched = True
 QgsWkbTypes.Triangle.__doc__ = "Triangle"
-QgsWkbTypes.MultiPoint = Qgis.WkbType.MultiPoint
-QgsWkbTypes.MultiPoint.is_monkey_patched = True
 QgsWkbTypes.MultiPoint.__doc__ = "MultiPoint"
-QgsWkbTypes.MultiLineString = Qgis.WkbType.MultiLineString
-QgsWkbTypes.MultiLineString.is_monkey_patched = True
 QgsWkbTypes.MultiLineString.__doc__ = "MultiLineString"
-QgsWkbTypes.MultiPolygon = Qgis.WkbType.MultiPolygon
-QgsWkbTypes.MultiPolygon.is_monkey_patched = True
 QgsWkbTypes.MultiPolygon.__doc__ = "MultiPolygon"
-QgsWkbTypes.GeometryCollection = Qgis.WkbType.GeometryCollection
-QgsWkbTypes.GeometryCollection.is_monkey_patched = True
 QgsWkbTypes.GeometryCollection.__doc__ = "GeometryCollection"
-QgsWkbTypes.CircularString = Qgis.WkbType.CircularString
-QgsWkbTypes.CircularString.is_monkey_patched = True
 QgsWkbTypes.CircularString.__doc__ = "CircularString"
-QgsWkbTypes.CompoundCurve = Qgis.WkbType.CompoundCurve
-QgsWkbTypes.CompoundCurve.is_monkey_patched = True
 QgsWkbTypes.CompoundCurve.__doc__ = "CompoundCurve"
-QgsWkbTypes.CurvePolygon = Qgis.WkbType.CurvePolygon
-QgsWkbTypes.CurvePolygon.is_monkey_patched = True
 QgsWkbTypes.CurvePolygon.__doc__ = "CurvePolygon"
-QgsWkbTypes.MultiCurve = Qgis.WkbType.MultiCurve
-QgsWkbTypes.MultiCurve.is_monkey_patched = True
 QgsWkbTypes.MultiCurve.__doc__ = "MultiCurve"
-QgsWkbTypes.MultiSurface = Qgis.WkbType.MultiSurface
-QgsWkbTypes.MultiSurface.is_monkey_patched = True
 QgsWkbTypes.MultiSurface.__doc__ = "MultiSurface"
-QgsWkbTypes.PolyhedralSurface = Qgis.WkbType.PolyhedralSurface
-QgsWkbTypes.PolyhedralSurface.is_monkey_patched = True
 QgsWkbTypes.PolyhedralSurface.__doc__ = "PolyhedralSurface \n.. versionadded:: 3.40"
-QgsWkbTypes.TIN = Qgis.WkbType.TIN
-QgsWkbTypes.TIN.is_monkey_patched = True
 QgsWkbTypes.TIN.__doc__ = "TIN \n.. versionadded:: 3.40"
-QgsWkbTypes.NoGeometry = Qgis.WkbType.NoGeometry
-QgsWkbTypes.NoGeometry.is_monkey_patched = True
 QgsWkbTypes.NoGeometry.__doc__ = "No geometry"
-QgsWkbTypes.PointZ = Qgis.WkbType.PointZ
-QgsWkbTypes.PointZ.is_monkey_patched = True
 QgsWkbTypes.PointZ.__doc__ = "PointZ"
-QgsWkbTypes.LineStringZ = Qgis.WkbType.LineStringZ
-QgsWkbTypes.LineStringZ.is_monkey_patched = True
 QgsWkbTypes.LineStringZ.__doc__ = "LineStringZ"
-QgsWkbTypes.PolygonZ = Qgis.WkbType.PolygonZ
-QgsWkbTypes.PolygonZ.is_monkey_patched = True
 QgsWkbTypes.PolygonZ.__doc__ = "PolygonZ"
-QgsWkbTypes.TriangleZ = Qgis.WkbType.TriangleZ
-QgsWkbTypes.TriangleZ.is_monkey_patched = True
 QgsWkbTypes.TriangleZ.__doc__ = "TriangleZ"
-QgsWkbTypes.MultiPointZ = Qgis.WkbType.MultiPointZ
-QgsWkbTypes.MultiPointZ.is_monkey_patched = True
 QgsWkbTypes.MultiPointZ.__doc__ = "MultiPointZ"
-QgsWkbTypes.MultiLineStringZ = Qgis.WkbType.MultiLineStringZ
-QgsWkbTypes.MultiLineStringZ.is_monkey_patched = True
 QgsWkbTypes.MultiLineStringZ.__doc__ = "MultiLineStringZ"
-QgsWkbTypes.MultiPolygonZ = Qgis.WkbType.MultiPolygonZ
-QgsWkbTypes.MultiPolygonZ.is_monkey_patched = True
 QgsWkbTypes.MultiPolygonZ.__doc__ = "MultiPolygonZ"
-QgsWkbTypes.GeometryCollectionZ = Qgis.WkbType.GeometryCollectionZ
-QgsWkbTypes.GeometryCollectionZ.is_monkey_patched = True
 QgsWkbTypes.GeometryCollectionZ.__doc__ = "GeometryCollectionZ"
-QgsWkbTypes.CircularStringZ = Qgis.WkbType.CircularStringZ
-QgsWkbTypes.CircularStringZ.is_monkey_patched = True
 QgsWkbTypes.CircularStringZ.__doc__ = "CircularStringZ"
-QgsWkbTypes.CompoundCurveZ = Qgis.WkbType.CompoundCurveZ
-QgsWkbTypes.CompoundCurveZ.is_monkey_patched = True
 QgsWkbTypes.CompoundCurveZ.__doc__ = "CompoundCurveZ"
-QgsWkbTypes.CurvePolygonZ = Qgis.WkbType.CurvePolygonZ
-QgsWkbTypes.CurvePolygonZ.is_monkey_patched = True
 QgsWkbTypes.CurvePolygonZ.__doc__ = "CurvePolygonZ"
-QgsWkbTypes.MultiCurveZ = Qgis.WkbType.MultiCurveZ
-QgsWkbTypes.MultiCurveZ.is_monkey_patched = True
 QgsWkbTypes.MultiCurveZ.__doc__ = "MultiCurveZ"
-QgsWkbTypes.MultiSurfaceZ = Qgis.WkbType.MultiSurfaceZ
-QgsWkbTypes.MultiSurfaceZ.is_monkey_patched = True
 QgsWkbTypes.MultiSurfaceZ.__doc__ = "MultiSurfaceZ"
-QgsWkbTypes.PolyhedralSurfaceZ = Qgis.WkbType.PolyhedralSurfaceZ
-QgsWkbTypes.PolyhedralSurfaceZ.is_monkey_patched = True
 QgsWkbTypes.PolyhedralSurfaceZ.__doc__ = "PolyhedralSurfaceZ"
-QgsWkbTypes.TINZ = Qgis.WkbType.TINZ
-QgsWkbTypes.TINZ.is_monkey_patched = True
 QgsWkbTypes.TINZ.__doc__ = "TINZ"
-QgsWkbTypes.PointM = Qgis.WkbType.PointM
-QgsWkbTypes.PointM.is_monkey_patched = True
 QgsWkbTypes.PointM.__doc__ = "PointM"
-QgsWkbTypes.LineStringM = Qgis.WkbType.LineStringM
-QgsWkbTypes.LineStringM.is_monkey_patched = True
 QgsWkbTypes.LineStringM.__doc__ = "LineStringM"
-QgsWkbTypes.PolygonM = Qgis.WkbType.PolygonM
-QgsWkbTypes.PolygonM.is_monkey_patched = True
 QgsWkbTypes.PolygonM.__doc__ = "PolygonM"
-QgsWkbTypes.TriangleM = Qgis.WkbType.TriangleM
-QgsWkbTypes.TriangleM.is_monkey_patched = True
 QgsWkbTypes.TriangleM.__doc__ = "TriangleM"
-QgsWkbTypes.MultiPointM = Qgis.WkbType.MultiPointM
-QgsWkbTypes.MultiPointM.is_monkey_patched = True
 QgsWkbTypes.MultiPointM.__doc__ = "MultiPointM"
-QgsWkbTypes.MultiLineStringM = Qgis.WkbType.MultiLineStringM
-QgsWkbTypes.MultiLineStringM.is_monkey_patched = True
 QgsWkbTypes.MultiLineStringM.__doc__ = "MultiLineStringM"
-QgsWkbTypes.MultiPolygonM = Qgis.WkbType.MultiPolygonM
-QgsWkbTypes.MultiPolygonM.is_monkey_patched = True
 QgsWkbTypes.MultiPolygonM.__doc__ = "MultiPolygonM"
-QgsWkbTypes.GeometryCollectionM = Qgis.WkbType.GeometryCollectionM
-QgsWkbTypes.GeometryCollectionM.is_monkey_patched = True
 QgsWkbTypes.GeometryCollectionM.__doc__ = "GeometryCollectionM"
-QgsWkbTypes.CircularStringM = Qgis.WkbType.CircularStringM
-QgsWkbTypes.CircularStringM.is_monkey_patched = True
 QgsWkbTypes.CircularStringM.__doc__ = "CircularStringM"
-QgsWkbTypes.CompoundCurveM = Qgis.WkbType.CompoundCurveM
-QgsWkbTypes.CompoundCurveM.is_monkey_patched = True
 QgsWkbTypes.CompoundCurveM.__doc__ = "CompoundCurveM"
-QgsWkbTypes.CurvePolygonM = Qgis.WkbType.CurvePolygonM
-QgsWkbTypes.CurvePolygonM.is_monkey_patched = True
 QgsWkbTypes.CurvePolygonM.__doc__ = "CurvePolygonM"
-QgsWkbTypes.MultiCurveM = Qgis.WkbType.MultiCurveM
-QgsWkbTypes.MultiCurveM.is_monkey_patched = True
 QgsWkbTypes.MultiCurveM.__doc__ = "MultiCurveM"
-QgsWkbTypes.MultiSurfaceM = Qgis.WkbType.MultiSurfaceM
-QgsWkbTypes.MultiSurfaceM.is_monkey_patched = True
 QgsWkbTypes.MultiSurfaceM.__doc__ = "MultiSurfaceM"
-QgsWkbTypes.PolyhedralSurfaceM = Qgis.WkbType.PolyhedralSurfaceM
-QgsWkbTypes.PolyhedralSurfaceM.is_monkey_patched = True
 QgsWkbTypes.PolyhedralSurfaceM.__doc__ = "PolyhedralSurfaceM"
-QgsWkbTypes.TINM = Qgis.WkbType.TINM
-QgsWkbTypes.TINM.is_monkey_patched = True
 QgsWkbTypes.TINM.__doc__ = "TINM"
-QgsWkbTypes.PointZM = Qgis.WkbType.PointZM
-QgsWkbTypes.PointZM.is_monkey_patched = True
 QgsWkbTypes.PointZM.__doc__ = "PointZM"
-QgsWkbTypes.LineStringZM = Qgis.WkbType.LineStringZM
-QgsWkbTypes.LineStringZM.is_monkey_patched = True
 QgsWkbTypes.LineStringZM.__doc__ = "LineStringZM"
-QgsWkbTypes.PolygonZM = Qgis.WkbType.PolygonZM
-QgsWkbTypes.PolygonZM.is_monkey_patched = True
 QgsWkbTypes.PolygonZM.__doc__ = "PolygonZM"
-QgsWkbTypes.MultiPointZM = Qgis.WkbType.MultiPointZM
-QgsWkbTypes.MultiPointZM.is_monkey_patched = True
 QgsWkbTypes.MultiPointZM.__doc__ = "MultiPointZM"
-QgsWkbTypes.MultiLineStringZM = Qgis.WkbType.MultiLineStringZM
-QgsWkbTypes.MultiLineStringZM.is_monkey_patched = True
 QgsWkbTypes.MultiLineStringZM.__doc__ = "MultiLineStringZM"
-QgsWkbTypes.MultiPolygonZM = Qgis.WkbType.MultiPolygonZM
-QgsWkbTypes.MultiPolygonZM.is_monkey_patched = True
 QgsWkbTypes.MultiPolygonZM.__doc__ = "MultiPolygonZM"
-QgsWkbTypes.GeometryCollectionZM = Qgis.WkbType.GeometryCollectionZM
-QgsWkbTypes.GeometryCollectionZM.is_monkey_patched = True
 QgsWkbTypes.GeometryCollectionZM.__doc__ = "GeometryCollectionZM"
-QgsWkbTypes.CircularStringZM = Qgis.WkbType.CircularStringZM
-QgsWkbTypes.CircularStringZM.is_monkey_patched = True
 QgsWkbTypes.CircularStringZM.__doc__ = "CircularStringZM"
-QgsWkbTypes.CompoundCurveZM = Qgis.WkbType.CompoundCurveZM
-QgsWkbTypes.CompoundCurveZM.is_monkey_patched = True
 QgsWkbTypes.CompoundCurveZM.__doc__ = "CompoundCurveZM"
-QgsWkbTypes.CurvePolygonZM = Qgis.WkbType.CurvePolygonZM
-QgsWkbTypes.CurvePolygonZM.is_monkey_patched = True
 QgsWkbTypes.CurvePolygonZM.__doc__ = "CurvePolygonZM"
-QgsWkbTypes.MultiCurveZM = Qgis.WkbType.MultiCurveZM
-QgsWkbTypes.MultiCurveZM.is_monkey_patched = True
 QgsWkbTypes.MultiCurveZM.__doc__ = "MultiCurveZM"
-QgsWkbTypes.MultiSurfaceZM = Qgis.WkbType.MultiSurfaceZM
-QgsWkbTypes.MultiSurfaceZM.is_monkey_patched = True
 QgsWkbTypes.MultiSurfaceZM.__doc__ = "MultiSurfaceZM"
-QgsWkbTypes.PolyhedralSurfaceZM = Qgis.WkbType.PolyhedralSurfaceZM
-QgsWkbTypes.PolyhedralSurfaceZM.is_monkey_patched = True
 QgsWkbTypes.PolyhedralSurfaceZM.__doc__ = "PolyhedralSurfaceM"
-QgsWkbTypes.TINZM = Qgis.WkbType.TINZM
-QgsWkbTypes.TINZM.is_monkey_patched = True
 QgsWkbTypes.TINZM.__doc__ = "TINZM"
-QgsWkbTypes.TriangleZM = Qgis.WkbType.TriangleZM
-QgsWkbTypes.TriangleZM.is_monkey_patched = True
 QgsWkbTypes.TriangleZM.__doc__ = "TriangleZM"
-QgsWkbTypes.Point25D = Qgis.WkbType.Point25D
-QgsWkbTypes.Point25D.is_monkey_patched = True
 QgsWkbTypes.Point25D.__doc__ = "Point25D"
-QgsWkbTypes.LineString25D = Qgis.WkbType.LineString25D
-QgsWkbTypes.LineString25D.is_monkey_patched = True
 QgsWkbTypes.LineString25D.__doc__ = "LineString25D"
-QgsWkbTypes.Polygon25D = Qgis.WkbType.Polygon25D
-QgsWkbTypes.Polygon25D.is_monkey_patched = True
 QgsWkbTypes.Polygon25D.__doc__ = "Polygon25D"
-QgsWkbTypes.MultiPoint25D = Qgis.WkbType.MultiPoint25D
-QgsWkbTypes.MultiPoint25D.is_monkey_patched = True
 QgsWkbTypes.MultiPoint25D.__doc__ = "MultiPoint25D"
-QgsWkbTypes.MultiLineString25D = Qgis.WkbType.MultiLineString25D
-QgsWkbTypes.MultiLineString25D.is_monkey_patched = True
 QgsWkbTypes.MultiLineString25D.__doc__ = "MultiLineString25D"
-QgsWkbTypes.MultiPolygon25D = Qgis.WkbType.MultiPolygon25D
-QgsWkbTypes.MultiPolygon25D.is_monkey_patched = True
 QgsWkbTypes.MultiPolygon25D.__doc__ = "MultiPolygon25D"
 Qgis.WkbType.__doc__ = """The WKB type describes the number of dimensions a geometry has
 
@@ -598,27 +409,16 @@ a different mode.
 """
 # --
 Qgis.WkbType.baseClass = Qgis
-QgsWkbTypes.GeometryType = Qgis.GeometryType
 # monkey patching scoped based enum
-QgsWkbTypes.PointGeometry = Qgis.GeometryType.Point
 QgsWkbTypes.GeometryType.PointGeometry = Qgis.GeometryType.Point
-QgsWkbTypes.PointGeometry.is_monkey_patched = True
 QgsWkbTypes.PointGeometry.__doc__ = "Points"
-QgsWkbTypes.LineGeometry = Qgis.GeometryType.Line
 QgsWkbTypes.GeometryType.LineGeometry = Qgis.GeometryType.Line
-QgsWkbTypes.LineGeometry.is_monkey_patched = True
 QgsWkbTypes.LineGeometry.__doc__ = "Lines"
-QgsWkbTypes.PolygonGeometry = Qgis.GeometryType.Polygon
 QgsWkbTypes.GeometryType.PolygonGeometry = Qgis.GeometryType.Polygon
-QgsWkbTypes.PolygonGeometry.is_monkey_patched = True
 QgsWkbTypes.PolygonGeometry.__doc__ = "Polygons"
-QgsWkbTypes.UnknownGeometry = Qgis.GeometryType.Unknown
 QgsWkbTypes.GeometryType.UnknownGeometry = Qgis.GeometryType.Unknown
-QgsWkbTypes.UnknownGeometry.is_monkey_patched = True
 QgsWkbTypes.UnknownGeometry.__doc__ = "Unknown types"
-QgsWkbTypes.NullGeometry = Qgis.GeometryType.Null
 QgsWkbTypes.GeometryType.NullGeometry = Qgis.GeometryType.Null
-QgsWkbTypes.NullGeometry.is_monkey_patched = True
 QgsWkbTypes.NullGeometry.__doc__ = "No geometry"
 Qgis.GeometryType.__doc__ = """The geometry types are used to group Qgis.WkbType in a
 coarse way.
@@ -654,50 +454,20 @@ coarse way.
 # --
 Qgis.GeometryType.baseClass = Qgis
 # monkey patching scoped based enum
-Qgis.UnknownDataType = Qgis.DataType.UnknownDataType
-Qgis.UnknownDataType.is_monkey_patched = True
 Qgis.UnknownDataType.__doc__ = "Unknown or unspecified type"
-Qgis.Byte = Qgis.DataType.Byte
-Qgis.Byte.is_monkey_patched = True
 Qgis.Byte.__doc__ = "Eight bit unsigned integer (quint8)"
-Qgis.Int8 = Qgis.DataType.Int8
-Qgis.Int8.is_monkey_patched = True
 Qgis.Int8.__doc__ = "Eight bit signed integer (qint8) (added in QGIS 3.30)"
-Qgis.UInt16 = Qgis.DataType.UInt16
-Qgis.UInt16.is_monkey_patched = True
 Qgis.UInt16.__doc__ = "Sixteen bit unsigned integer (quint16)"
-Qgis.Int16 = Qgis.DataType.Int16
-Qgis.Int16.is_monkey_patched = True
 Qgis.Int16.__doc__ = "Sixteen bit signed integer (qint16)"
-Qgis.UInt32 = Qgis.DataType.UInt32
-Qgis.UInt32.is_monkey_patched = True
 Qgis.UInt32.__doc__ = "Thirty two bit unsigned integer (quint32)"
-Qgis.Int32 = Qgis.DataType.Int32
-Qgis.Int32.is_monkey_patched = True
 Qgis.Int32.__doc__ = "Thirty two bit signed integer (qint32)"
-Qgis.Float32 = Qgis.DataType.Float32
-Qgis.Float32.is_monkey_patched = True
 Qgis.Float32.__doc__ = "Thirty two bit floating point (float)"
-Qgis.Float64 = Qgis.DataType.Float64
-Qgis.Float64.is_monkey_patched = True
 Qgis.Float64.__doc__ = "Sixty four bit floating point (double)"
-Qgis.CInt16 = Qgis.DataType.CInt16
-Qgis.CInt16.is_monkey_patched = True
 Qgis.CInt16.__doc__ = "Complex Int16"
-Qgis.CInt32 = Qgis.DataType.CInt32
-Qgis.CInt32.is_monkey_patched = True
 Qgis.CInt32.__doc__ = "Complex Int32"
-Qgis.CFloat32 = Qgis.DataType.CFloat32
-Qgis.CFloat32.is_monkey_patched = True
 Qgis.CFloat32.__doc__ = "Complex Float32"
-Qgis.CFloat64 = Qgis.DataType.CFloat64
-Qgis.CFloat64.is_monkey_patched = True
 Qgis.CFloat64.__doc__ = "Complex Float64"
-Qgis.ARGB32 = Qgis.DataType.ARGB32
-Qgis.ARGB32.is_monkey_patched = True
 Qgis.ARGB32.__doc__ = "Color, alpha, red, green, blue, 4 bytes the same as QImage.Format_ARGB32"
-Qgis.ARGB32_Premultiplied = Qgis.DataType.ARGB32_Premultiplied
-Qgis.ARGB32_Premultiplied.is_monkey_patched = True
 Qgis.ARGB32_Premultiplied.__doc__ = "Color, alpha, red, green, blue, 4 bytes  the same as QImage.Format_ARGB32_Premultiplied"
 Qgis.DataType.__doc__ = """Raster data types.
 This is modified and extended copy of GDALDataType.
@@ -751,22 +521,11 @@ Qgis.VectorLayerTypeFlag.__doc__ = """Vector layer type flags.
 Qgis.VectorLayerTypeFlag.baseClass = Qgis
 Qgis.VectorLayerTypeFlags.baseClass = Qgis
 VectorLayerTypeFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
-Qgis.PythonMacroMode = Qgis.PythonEmbeddedMode
 # monkey patching scoped based enum
-Qgis.Never = Qgis.PythonEmbeddedMode.Never
-Qgis.Never.is_monkey_patched = True
 Qgis.Never.__doc__ = "Python embedded never run"
-Qgis.Ask = Qgis.PythonEmbeddedMode.Ask
-Qgis.Ask.is_monkey_patched = True
 Qgis.Ask.__doc__ = "User is prompt before running"
-Qgis.SessionOnly = Qgis.PythonEmbeddedMode.SessionOnly
-Qgis.SessionOnly.is_monkey_patched = True
 Qgis.SessionOnly.__doc__ = "Only during this session"
-Qgis.Always = Qgis.PythonEmbeddedMode.Always
-Qgis.Always.is_monkey_patched = True
 Qgis.Always.__doc__ = "Python embedded is always run"
-Qgis.NotForThisSession = Qgis.PythonEmbeddedMode.NotForThisSession
-Qgis.NotForThisSession.is_monkey_patched = True
 Qgis.NotForThisSession.__doc__ = "Python embedded will not be run for this session"
 Qgis.PythonEmbeddedMode.__doc__ = """Authorisation to run Python Embedded in projects
 
@@ -794,33 +553,16 @@ Qgis.PythonEmbeddedType.__doc__ = """Type of Python Embedded in projects
 """
 # --
 Qgis.PythonEmbeddedType.baseClass = Qgis
-QgsDataProvider.ReadFlag = Qgis.DataProviderReadFlag
 # monkey patching scoped based enum
-QgsDataProvider.FlagTrustDataSource = Qgis.DataProviderReadFlag.TrustDataSource
 QgsDataProvider.ReadFlag.FlagTrustDataSource = Qgis.DataProviderReadFlag.TrustDataSource
-QgsDataProvider.FlagTrustDataSource.is_monkey_patched = True
 QgsDataProvider.FlagTrustDataSource.__doc__ = "Trust datasource config (primary key unicity, geometry type and srid, etc). Improves provider load time by skipping expensive checks like primary key unicity, geometry type and srid and by using estimated metadata on data load \n.. versionadded:: 3.16"
-QgsDataProvider.SkipFeatureCount = Qgis.DataProviderReadFlag.SkipFeatureCount
-QgsDataProvider.SkipFeatureCount.is_monkey_patched = True
 QgsDataProvider.SkipFeatureCount.__doc__ = "Make featureCount() return -1 to indicate unknown, and subLayers() to return a unknown feature count as well. Since QGIS 3.18. Only implemented by OGR provider at time of writing."
-QgsDataProvider.FlagLoadDefaultStyle = Qgis.DataProviderReadFlag.LoadDefaultStyle
 QgsDataProvider.ReadFlag.FlagLoadDefaultStyle = Qgis.DataProviderReadFlag.LoadDefaultStyle
-QgsDataProvider.FlagLoadDefaultStyle.is_monkey_patched = True
 QgsDataProvider.FlagLoadDefaultStyle.__doc__ = "Reset the layer's style to the default for the datasource"
-QgsDataProvider.SkipGetExtent = Qgis.DataProviderReadFlag.SkipGetExtent
-QgsDataProvider.SkipGetExtent.is_monkey_patched = True
 QgsDataProvider.SkipGetExtent.__doc__ = "Skip the extent from provider"
-QgsDataProvider.SkipFullScan = Qgis.DataProviderReadFlag.SkipFullScan
-QgsDataProvider.SkipFullScan.is_monkey_patched = True
 QgsDataProvider.SkipFullScan.__doc__ = "Skip expensive full scan on files (i.e. on delimited text) \n.. versionadded:: 3.24"
-QgsDataProvider.ForceReadOnly = Qgis.DataProviderReadFlag.ForceReadOnly
-QgsDataProvider.ForceReadOnly.is_monkey_patched = True
 QgsDataProvider.ForceReadOnly.__doc__ = "Open layer in a read-only mode \n.. versionadded:: 3.28"
-QgsDataProvider.SkipCredentialsRequest = Qgis.DataProviderReadFlag.SkipCredentialsRequest
-QgsDataProvider.SkipCredentialsRequest.is_monkey_patched = True
 QgsDataProvider.SkipCredentialsRequest.__doc__ = "Skip credentials if the provided one are not valid, let the provider be invalid, avoiding to block the thread creating the provider if it is not the main thread \n.. versionadded:: 3.32"
-QgsDataProvider.ParallelThreadLoading = Qgis.DataProviderReadFlag.ParallelThreadLoading
-QgsDataProvider.ParallelThreadLoading.is_monkey_patched = True
 QgsDataProvider.ParallelThreadLoading.__doc__ = "Provider is created in a parallel thread than the one where it will live \n.. versionadded:: 3.32.1"
 Qgis.DataProviderReadFlag.__doc__ = """Flags which control data provider construction.
 
@@ -863,88 +605,34 @@ Qgis.DataProviderReadFlag.__doc__ = """Flags which control data provider constru
 """
 # --
 Qgis.DataProviderReadFlag.baseClass = Qgis
-QgsDataProvider.ReadFlags = Qgis.DataProviderReadFlags
 Qgis.DataProviderReadFlags.baseClass = Qgis
 DataProviderReadFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsVectorDataProvider.Capability = Qgis.VectorProviderCapability
 # monkey patching scoped based enum
-QgsVectorDataProvider.NoCapabilities = Qgis.VectorProviderCapability.NoCapabilities
-QgsVectorDataProvider.NoCapabilities.is_monkey_patched = True
 QgsVectorDataProvider.NoCapabilities.__doc__ = "Provider has no capabilities"
-QgsVectorDataProvider.AddFeatures = Qgis.VectorProviderCapability.AddFeatures
-QgsVectorDataProvider.AddFeatures.is_monkey_patched = True
 QgsVectorDataProvider.AddFeatures.__doc__ = "Allows adding features"
-QgsVectorDataProvider.DeleteFeatures = Qgis.VectorProviderCapability.DeleteFeatures
-QgsVectorDataProvider.DeleteFeatures.is_monkey_patched = True
 QgsVectorDataProvider.DeleteFeatures.__doc__ = "Allows deletion of features"
-QgsVectorDataProvider.ChangeAttributeValues = Qgis.VectorProviderCapability.ChangeAttributeValues
-QgsVectorDataProvider.ChangeAttributeValues.is_monkey_patched = True
 QgsVectorDataProvider.ChangeAttributeValues.__doc__ = "Allows modification of attribute values"
-QgsVectorDataProvider.AddAttributes = Qgis.VectorProviderCapability.AddAttributes
-QgsVectorDataProvider.AddAttributes.is_monkey_patched = True
 QgsVectorDataProvider.AddAttributes.__doc__ = "Allows addition of new attributes (fields)"
-QgsVectorDataProvider.DeleteAttributes = Qgis.VectorProviderCapability.DeleteAttributes
-QgsVectorDataProvider.DeleteAttributes.is_monkey_patched = True
 QgsVectorDataProvider.DeleteAttributes.__doc__ = "Allows deletion of attributes (fields)"
-QgsVectorDataProvider.CreateSpatialIndex = Qgis.VectorProviderCapability.CreateSpatialIndex
-QgsVectorDataProvider.CreateSpatialIndex.is_monkey_patched = True
 QgsVectorDataProvider.CreateSpatialIndex.__doc__ = "Allows creation of spatial index"
-QgsVectorDataProvider.SelectAtId = Qgis.VectorProviderCapability.SelectAtId
-QgsVectorDataProvider.SelectAtId.is_monkey_patched = True
 QgsVectorDataProvider.SelectAtId.__doc__ = "Fast access to features using their ID"
-QgsVectorDataProvider.ChangeGeometries = Qgis.VectorProviderCapability.ChangeGeometries
-QgsVectorDataProvider.ChangeGeometries.is_monkey_patched = True
 QgsVectorDataProvider.ChangeGeometries.__doc__ = "Allows modifications of geometries"
-QgsVectorDataProvider.SelectEncoding = Qgis.VectorProviderCapability.SelectEncoding
-QgsVectorDataProvider.SelectEncoding.is_monkey_patched = True
 QgsVectorDataProvider.SelectEncoding.__doc__ = "Allows user to select encoding"
-QgsVectorDataProvider.CreateAttributeIndex = Qgis.VectorProviderCapability.CreateAttributeIndex
-QgsVectorDataProvider.CreateAttributeIndex.is_monkey_patched = True
 QgsVectorDataProvider.CreateAttributeIndex.__doc__ = "Can create indexes on provider's fields"
-QgsVectorDataProvider.SimplifyGeometries = Qgis.VectorProviderCapability.SimplifyGeometries
-QgsVectorDataProvider.SimplifyGeometries.is_monkey_patched = True
 QgsVectorDataProvider.SimplifyGeometries.__doc__ = "Supports simplification of geometries on provider side according to a distance tolerance"
-QgsVectorDataProvider.SimplifyGeometriesWithTopologicalValidation = Qgis.VectorProviderCapability.SimplifyGeometriesWithTopologicalValidation
-QgsVectorDataProvider.SimplifyGeometriesWithTopologicalValidation.is_monkey_patched = True
 QgsVectorDataProvider.SimplifyGeometriesWithTopologicalValidation.__doc__ = "Supports topological simplification of geometries on provider side according to a distance tolerance"
-QgsVectorDataProvider.TransactionSupport = Qgis.VectorProviderCapability.TransactionSupport
-QgsVectorDataProvider.TransactionSupport.is_monkey_patched = True
 QgsVectorDataProvider.TransactionSupport.__doc__ = "Supports transactions"
-QgsVectorDataProvider.CircularGeometries = Qgis.VectorProviderCapability.CircularGeometries
-QgsVectorDataProvider.CircularGeometries.is_monkey_patched = True
 QgsVectorDataProvider.CircularGeometries.__doc__ = "Supports circular geometry types (circularstring, compoundcurve, curvepolygon)"
-QgsVectorDataProvider.ChangeFeatures = Qgis.VectorProviderCapability.ChangeFeatures
-QgsVectorDataProvider.ChangeFeatures.is_monkey_patched = True
 QgsVectorDataProvider.ChangeFeatures.__doc__ = "Supports joint updates for attributes and geometry. Providers supporting this should still define ChangeGeometries | ChangeAttributeValues."
-QgsVectorDataProvider.RenameAttributes = Qgis.VectorProviderCapability.RenameAttributes
-QgsVectorDataProvider.RenameAttributes.is_monkey_patched = True
 QgsVectorDataProvider.RenameAttributes.__doc__ = "Supports renaming attributes (fields) \n.. versionadded:: 2.16"
-QgsVectorDataProvider.FastTruncate = Qgis.VectorProviderCapability.FastTruncate
-QgsVectorDataProvider.FastTruncate.is_monkey_patched = True
 QgsVectorDataProvider.FastTruncate.__doc__ = "Supports fast truncation of the layer (removing all features) \n.. versionadded:: 3.0"
-QgsVectorDataProvider.ReadLayerMetadata = Qgis.VectorProviderCapability.ReadLayerMetadata
-QgsVectorDataProvider.ReadLayerMetadata.is_monkey_patched = True
 QgsVectorDataProvider.ReadLayerMetadata.__doc__ = "Provider can read layer metadata from data store. Since QGIS 3.0. See QgsDataProvider.layerMetadata()"
-QgsVectorDataProvider.WriteLayerMetadata = Qgis.VectorProviderCapability.WriteLayerMetadata
-QgsVectorDataProvider.WriteLayerMetadata.is_monkey_patched = True
 QgsVectorDataProvider.WriteLayerMetadata.__doc__ = "Provider can write layer metadata to the data store. Since QGIS 3.0. See QgsDataProvider.writeLayerMetadata()"
-QgsVectorDataProvider.CancelSupport = Qgis.VectorProviderCapability.CancelSupport
-QgsVectorDataProvider.CancelSupport.is_monkey_patched = True
 QgsVectorDataProvider.CancelSupport.__doc__ = "Supports interruption of pending queries from a separated thread \n.. versionadded:: 3.2"
-QgsVectorDataProvider.CreateRenderer = Qgis.VectorProviderCapability.CreateRenderer
-QgsVectorDataProvider.CreateRenderer.is_monkey_patched = True
 QgsVectorDataProvider.CreateRenderer.__doc__ = "Provider can create feature renderers using backend-specific formatting information. Since QGIS 3.2. See QgsVectorDataProvider.createRenderer()."
-QgsVectorDataProvider.CreateLabeling = Qgis.VectorProviderCapability.CreateLabeling
-QgsVectorDataProvider.CreateLabeling.is_monkey_patched = True
 QgsVectorDataProvider.CreateLabeling.__doc__ = "Provider can set labeling settings using backend-specific formatting information. Since QGIS 3.6. See QgsVectorDataProvider.createLabeling()."
-QgsVectorDataProvider.ReloadData = Qgis.VectorProviderCapability.ReloadData
-QgsVectorDataProvider.ReloadData.is_monkey_patched = True
 QgsVectorDataProvider.ReloadData.__doc__ = "Provider is able to force reload data"
-QgsVectorDataProvider.FeatureSymbology = Qgis.VectorProviderCapability.FeatureSymbology
-QgsVectorDataProvider.FeatureSymbology.is_monkey_patched = True
 QgsVectorDataProvider.FeatureSymbology.__doc__ = "Provider is able retrieve embedded symbology associated with individual features \n.. versionadded:: 3.20"
-QgsVectorDataProvider.EditingCapabilities = Qgis.VectorProviderCapability.EditingCapabilities
-QgsVectorDataProvider.EditingCapabilities.is_monkey_patched = True
 QgsVectorDataProvider.EditingCapabilities.__doc__ = "Bitmask of all editing capabilities"
 Qgis.VectorProviderCapability.__doc__ = """Vector data provider capabilities.
 
@@ -996,16 +684,10 @@ Qgis.VectorProviderCapability.__doc__ = """Vector data provider capabilities.
 """
 # --
 Qgis.VectorProviderCapability.baseClass = Qgis
-QgsVectorDataProvider.Capabilities = Qgis.VectorProviderCapabilities
 Qgis.VectorProviderCapabilities.baseClass = Qgis
 VectorProviderCapabilities = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsVectorDataProvider.FeatureCountState = Qgis.FeatureCountState
 # monkey patching scoped based enum
-QgsVectorDataProvider.Uncounted = Qgis.FeatureCountState.Uncounted
-QgsVectorDataProvider.Uncounted.is_monkey_patched = True
 QgsVectorDataProvider.Uncounted.__doc__ = "Feature count not yet computed"
-QgsVectorDataProvider.UnknownCount = Qgis.FeatureCountState.UnknownCount
-QgsVectorDataProvider.UnknownCount.is_monkey_patched = True
 QgsVectorDataProvider.UnknownCount.__doc__ = "Provider returned an unknown feature count"
 Qgis.FeatureCountState.__doc__ = """Enumeration of feature count states
 
@@ -1017,19 +699,12 @@ Qgis.FeatureCountState.__doc__ = """Enumeration of feature count states
 """
 # --
 Qgis.FeatureCountState.baseClass = Qgis
-QgsFeatureSource.SpatialIndexPresence = Qgis.SpatialIndexPresence
 # monkey patching scoped based enum
-QgsFeatureSource.SpatialIndexUnknown = Qgis.SpatialIndexPresence.Unknown
 QgsFeatureSource.SpatialIndexPresence.SpatialIndexUnknown = Qgis.SpatialIndexPresence.Unknown
-QgsFeatureSource.SpatialIndexUnknown.is_monkey_patched = True
 QgsFeatureSource.SpatialIndexUnknown.__doc__ = "Spatial index presence cannot be determined, index may or may not exist"
-QgsFeatureSource.SpatialIndexNotPresent = Qgis.SpatialIndexPresence.NotPresent
 QgsFeatureSource.SpatialIndexPresence.SpatialIndexNotPresent = Qgis.SpatialIndexPresence.NotPresent
-QgsFeatureSource.SpatialIndexNotPresent.is_monkey_patched = True
 QgsFeatureSource.SpatialIndexNotPresent.__doc__ = "No spatial index exists for the source"
-QgsFeatureSource.SpatialIndexPresent = Qgis.SpatialIndexPresence.Present
 QgsFeatureSource.SpatialIndexPresence.SpatialIndexPresent = Qgis.SpatialIndexPresence.Present
-QgsFeatureSource.SpatialIndexPresent.is_monkey_patched = True
 QgsFeatureSource.SpatialIndexPresent.__doc__ = "A valid spatial index exists for the source"
 Qgis.SpatialIndexPresence.__doc__ = """Enumeration of spatial index presence states.
 
@@ -1055,16 +730,9 @@ Qgis.SpatialIndexPresence.__doc__ = """Enumeration of spatial index presence sta
 """
 # --
 Qgis.SpatialIndexPresence.baseClass = Qgis
-QgsFeatureSource.FeatureAvailability = Qgis.FeatureAvailability
 # monkey patching scoped based enum
-QgsFeatureSource.NoFeaturesAvailable = Qgis.FeatureAvailability.NoFeaturesAvailable
-QgsFeatureSource.NoFeaturesAvailable.is_monkey_patched = True
 QgsFeatureSource.NoFeaturesAvailable.__doc__ = "There are certainly no features available in this source"
-QgsFeatureSource.FeaturesAvailable = Qgis.FeatureAvailability.FeaturesAvailable
-QgsFeatureSource.FeaturesAvailable.is_monkey_patched = True
 QgsFeatureSource.FeaturesAvailable.__doc__ = "There is at least one feature available in this source"
-QgsFeatureSource.FeaturesMaybeAvailable = Qgis.FeatureAvailability.FeaturesMaybeAvailable
-QgsFeatureSource.FeaturesMaybeAvailable.is_monkey_patched = True
 QgsFeatureSource.FeaturesMaybeAvailable.__doc__ = "There may be features available in this source"
 Qgis.FeatureAvailability.__doc__ = """Possible return value for :py:func:`QgsFeatureSource.hasFeatures()` to determine if a source is empty.
 
@@ -1101,19 +769,10 @@ Qgis.VectorDataProviderAttributeEditCapability.__doc__ = """Attribute editing ca
 Qgis.VectorDataProviderAttributeEditCapability.baseClass = Qgis
 Qgis.VectorDataProviderAttributeEditCapabilities.baseClass = Qgis
 VectorDataProviderAttributeEditCapabilities = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsSymbol.SymbolType = Qgis.SymbolType
 # monkey patching scoped based enum
-QgsSymbol.Marker = Qgis.SymbolType.Marker
-QgsSymbol.Marker.is_monkey_patched = True
 QgsSymbol.Marker.__doc__ = "Marker symbol"
-QgsSymbol.Line = Qgis.SymbolType.Line
-QgsSymbol.Line.is_monkey_patched = True
 QgsSymbol.Line.__doc__ = "Line symbol"
-QgsSymbol.Fill = Qgis.SymbolType.Fill
-QgsSymbol.Fill.is_monkey_patched = True
 QgsSymbol.Fill.__doc__ = "Fill symbol"
-QgsSymbol.Hybrid = Qgis.SymbolType.Hybrid
-QgsSymbol.Hybrid.is_monkey_patched = True
 QgsSymbol.Hybrid.__doc__ = "Hybrid symbol"
 Qgis.SymbolType.__doc__ = """Symbol types
 
@@ -1127,13 +786,8 @@ Qgis.SymbolType.__doc__ = """Symbol types
 """
 # --
 Qgis.SymbolType.baseClass = Qgis
-QgsSymbol.ScaleMethod = Qgis.ScaleMethod
 # monkey patching scoped based enum
-QgsSymbol.ScaleArea = Qgis.ScaleMethod.ScaleArea
-QgsSymbol.ScaleArea.is_monkey_patched = True
 QgsSymbol.ScaleArea.__doc__ = "Calculate scale by the area"
-QgsSymbol.ScaleDiameter = Qgis.ScaleMethod.ScaleDiameter
-QgsSymbol.ScaleDiameter.is_monkey_patched = True
 QgsSymbol.ScaleDiameter.__doc__ = "Calculate scale by the diameter"
 Qgis.ScaleMethod.__doc__ = """Scale methods
 
@@ -1145,37 +799,16 @@ Qgis.ScaleMethod.__doc__ = """Scale methods
 """
 # --
 Qgis.ScaleMethod.baseClass = Qgis
-QgsSettingsEntryBase.SettingsType = Qgis.SettingsType
 # monkey patching scoped based enum
-QgsSettingsEntryBase.Custom = Qgis.SettingsType.Custom
-QgsSettingsEntryBase.Custom.is_monkey_patched = True
 QgsSettingsEntryBase.Custom.__doc__ = "Custom implementation"
-QgsSettingsEntryBase.Variant = Qgis.SettingsType.Variant
-QgsSettingsEntryBase.Variant.is_monkey_patched = True
 QgsSettingsEntryBase.Variant.__doc__ = "Generic variant"
-QgsSettingsEntryBase.String = Qgis.SettingsType.String
-QgsSettingsEntryBase.String.is_monkey_patched = True
 QgsSettingsEntryBase.String.__doc__ = "String"
-QgsSettingsEntryBase.StringList = Qgis.SettingsType.StringList
-QgsSettingsEntryBase.StringList.is_monkey_patched = True
 QgsSettingsEntryBase.StringList.__doc__ = "List of strings"
-QgsSettingsEntryBase.VariantMap = Qgis.SettingsType.VariantMap
-QgsSettingsEntryBase.VariantMap.is_monkey_patched = True
 QgsSettingsEntryBase.VariantMap.__doc__ = "Map of strings"
-QgsSettingsEntryBase.Bool = Qgis.SettingsType.Bool
-QgsSettingsEntryBase.Bool.is_monkey_patched = True
 QgsSettingsEntryBase.Bool.__doc__ = "Boolean"
-QgsSettingsEntryBase.Integer = Qgis.SettingsType.Integer
-QgsSettingsEntryBase.Integer.is_monkey_patched = True
 QgsSettingsEntryBase.Integer.__doc__ = "Integer"
-QgsSettingsEntryBase.Double = Qgis.SettingsType.Double
-QgsSettingsEntryBase.Double.is_monkey_patched = True
 QgsSettingsEntryBase.Double.__doc__ = "Double precision number"
-QgsSettingsEntryBase.EnumFlag = Qgis.SettingsType.EnumFlag
-QgsSettingsEntryBase.EnumFlag.is_monkey_patched = True
 QgsSettingsEntryBase.EnumFlag.__doc__ = "Enum or Flag"
-QgsSettingsEntryBase.Color = Qgis.SettingsType.Color
-QgsSettingsEntryBase.Color.is_monkey_patched = True
 QgsSettingsEntryBase.Color.__doc__ = "Color"
 Qgis.SettingsType.__doc__ = """Types of settings entries
 
@@ -1223,23 +856,14 @@ Qgis.SettingsTreeNodeOption.__doc__ = """Options for named list nodes
 Qgis.SettingsTreeNodeOption.baseClass = Qgis
 Qgis.SettingsTreeNodeOptions.baseClass = Qgis
 SettingsTreeNodeOptions = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsProperty.Type = Qgis.PropertyType
 # monkey patching scoped based enum
-QgsProperty.InvalidProperty = Qgis.PropertyType.Invalid
 QgsProperty.Type.InvalidProperty = Qgis.PropertyType.Invalid
-QgsProperty.InvalidProperty.is_monkey_patched = True
 QgsProperty.InvalidProperty.__doc__ = "Invalid (not set) property"
-QgsProperty.StaticProperty = Qgis.PropertyType.Static
 QgsProperty.Type.StaticProperty = Qgis.PropertyType.Static
-QgsProperty.StaticProperty.is_monkey_patched = True
 QgsProperty.StaticProperty.__doc__ = "Static property"
-QgsProperty.FieldBasedProperty = Qgis.PropertyType.Field
 QgsProperty.Type.FieldBasedProperty = Qgis.PropertyType.Field
-QgsProperty.FieldBasedProperty.is_monkey_patched = True
 QgsProperty.FieldBasedProperty.__doc__ = "Field based property"
-QgsProperty.ExpressionBasedProperty = Qgis.PropertyType.Expression
 QgsProperty.Type.ExpressionBasedProperty = Qgis.PropertyType.Expression
-QgsProperty.ExpressionBasedProperty.is_monkey_patched = True
 QgsProperty.ExpressionBasedProperty.__doc__ = "Expression based property"
 Qgis.PropertyType.__doc__ = """Property types
 
@@ -1316,16 +940,9 @@ Qgis.SettingsOption.__doc__ = """Settings options
 Qgis.SettingsOption.baseClass = Qgis
 Qgis.SettingsOptions.baseClass = Qgis
 SettingsOptions = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsSnappingConfig.SnappingMode = Qgis.SnappingMode
 # monkey patching scoped based enum
-QgsSnappingConfig.ActiveLayer = Qgis.SnappingMode.ActiveLayer
-QgsSnappingConfig.ActiveLayer.is_monkey_patched = True
 QgsSnappingConfig.ActiveLayer.__doc__ = "On the active layer"
-QgsSnappingConfig.AllLayers = Qgis.SnappingMode.AllLayers
-QgsSnappingConfig.AllLayers.is_monkey_patched = True
 QgsSnappingConfig.AllLayers.__doc__ = "On all vector layers"
-QgsSnappingConfig.AdvancedConfiguration = Qgis.SnappingMode.AdvancedConfiguration
-QgsSnappingConfig.AdvancedConfiguration.is_monkey_patched = True
 QgsSnappingConfig.AdvancedConfiguration.__doc__ = "On a per layer configuration basis"
 Qgis.SnappingMode.__doc__ = """SnappingMode defines on which layer the snapping is performed
 
@@ -1338,35 +955,20 @@ Qgis.SnappingMode.__doc__ = """SnappingMode defines on which layer the snapping 
 """
 # --
 Qgis.SnappingMode.baseClass = Qgis
-QgsSnappingConfig.SnappingTypes = Qgis.SnappingType
 # monkey patching scoped based enum
-QgsSnappingConfig.NoSnapFlag = Qgis.SnappingType.NoSnap
 QgsSnappingConfig.SnappingTypes.NoSnapFlag = Qgis.SnappingType.NoSnap
-QgsSnappingConfig.NoSnapFlag.is_monkey_patched = True
 QgsSnappingConfig.NoSnapFlag.__doc__ = "No snapping"
-QgsSnappingConfig.VertexFlag = Qgis.SnappingType.Vertex
 QgsSnappingConfig.SnappingTypes.VertexFlag = Qgis.SnappingType.Vertex
-QgsSnappingConfig.VertexFlag.is_monkey_patched = True
 QgsSnappingConfig.VertexFlag.__doc__ = "On vertices"
-QgsSnappingConfig.SegmentFlag = Qgis.SnappingType.Segment
 QgsSnappingConfig.SnappingTypes.SegmentFlag = Qgis.SnappingType.Segment
-QgsSnappingConfig.SegmentFlag.is_monkey_patched = True
 QgsSnappingConfig.SegmentFlag.__doc__ = "On segments"
-QgsSnappingConfig.AreaFlag = Qgis.SnappingType.Area
 QgsSnappingConfig.SnappingTypes.AreaFlag = Qgis.SnappingType.Area
-QgsSnappingConfig.AreaFlag.is_monkey_patched = True
 QgsSnappingConfig.AreaFlag.__doc__ = "On Area"
-QgsSnappingConfig.CentroidFlag = Qgis.SnappingType.Centroid
 QgsSnappingConfig.SnappingTypes.CentroidFlag = Qgis.SnappingType.Centroid
-QgsSnappingConfig.CentroidFlag.is_monkey_patched = True
 QgsSnappingConfig.CentroidFlag.__doc__ = "On centroid"
-QgsSnappingConfig.MiddleOfSegmentFlag = Qgis.SnappingType.MiddleOfSegment
 QgsSnappingConfig.SnappingTypes.MiddleOfSegmentFlag = Qgis.SnappingType.MiddleOfSegment
-QgsSnappingConfig.MiddleOfSegmentFlag.is_monkey_patched = True
 QgsSnappingConfig.MiddleOfSegmentFlag.__doc__ = "On Middle segment"
-QgsSnappingConfig.LineEndpointFlag = Qgis.SnappingType.LineEndpoint
 QgsSnappingConfig.SnappingTypes.LineEndpointFlag = Qgis.SnappingType.LineEndpoint
-QgsSnappingConfig.LineEndpointFlag.is_monkey_patched = True
 QgsSnappingConfig.LineEndpointFlag.__doc__ = "Start or end points of lines, or first vertex in polygon rings only \n.. versionadded:: 3.20"
 Qgis.SnappingType.__doc__ = """SnappingTypeFlag defines on what object the snapping is performed
 
@@ -1407,22 +1009,12 @@ Qgis.SnappingType.__doc__ = """SnappingTypeFlag defines on what object the snapp
 """
 # --
 Qgis.SnappingType.baseClass = Qgis
-QgsSnappingConfig.SnappingTypeFlag = Qgis.SnappingTypes
 Qgis.SnappingTypes.baseClass = Qgis
 SnappingTypes = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsSymbol.RenderHint = Qgis.SymbolRenderHint
 # monkey patching scoped based enum
-QgsSymbol.DynamicRotation = Qgis.SymbolRenderHint.DynamicRotation
-QgsSymbol.DynamicRotation.is_monkey_patched = True
 QgsSymbol.DynamicRotation.__doc__ = "Rotation of symbol may be changed during rendering and symbol should not be cached"
-QgsSymbol.IsSymbolLayerSubSymbol = Qgis.SymbolRenderHint.IsSymbolLayerSubSymbol
-QgsSymbol.IsSymbolLayerSubSymbol.is_monkey_patched = True
 QgsSymbol.IsSymbolLayerSubSymbol.__doc__ = "Symbol is being rendered as a sub-symbol of a QgsSymbolLayer \n.. versionadded:: 3.38"
-QgsSymbol.ForceVectorRendering = Qgis.SymbolRenderHint.ForceVectorRendering
-QgsSymbol.ForceVectorRendering.is_monkey_patched = True
 QgsSymbol.ForceVectorRendering.__doc__ = "Symbol must be rendered using vector methods, and optimisations like pre-rendered images must be disabled \n.. versionadded:: 3.40"
-QgsSymbol.ExcludeSymbolBuffers = Qgis.SymbolRenderHint.ExcludeSymbolBuffers
-QgsSymbol.ExcludeSymbolBuffers.is_monkey_patched = True
 QgsSymbol.ExcludeSymbolBuffers.__doc__ = "Do not render symbol buffers. \n.. versionadded:: 3.40"
 Qgis.SymbolRenderHint.__doc__ = """Flags controlling behavior of symbols during rendering
 
@@ -1445,7 +1037,6 @@ Qgis.SymbolRenderHint.__doc__ = """Flags controlling behavior of symbols during 
 """
 # --
 Qgis.SymbolRenderHint.baseClass = Qgis
-QgsSymbol.RenderHints = Qgis.SymbolRenderHints
 Qgis.SymbolRenderHints.baseClass = Qgis
 SymbolRenderHints = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -1461,17 +1052,10 @@ Qgis.SymbolRotationMode.__doc__ = """Modes for handling how symbol and text enti
 """
 # --
 Qgis.SymbolRotationMode.baseClass = Qgis
-QgsMarkerSymbolLayer.HorizontalAnchorPoint = Qgis.HorizontalAnchorPoint
 # monkey patching scoped based enum
-QgsMarkerSymbolLayer.Left = Qgis.HorizontalAnchorPoint.Left
-QgsMarkerSymbolLayer.Left.is_monkey_patched = True
 QgsMarkerSymbolLayer.Left.__doc__ = "Align to left side of symbol"
-QgsMarkerSymbolLayer.HCenter = Qgis.HorizontalAnchorPoint.Center
 QgsMarkerSymbolLayer.HorizontalAnchorPoint.HCenter = Qgis.HorizontalAnchorPoint.Center
-QgsMarkerSymbolLayer.HCenter.is_monkey_patched = True
 QgsMarkerSymbolLayer.HCenter.__doc__ = "Align to horizontal center of symbol"
-QgsMarkerSymbolLayer.Right = Qgis.HorizontalAnchorPoint.Right
-QgsMarkerSymbolLayer.Right.is_monkey_patched = True
 QgsMarkerSymbolLayer.Right.__doc__ = "Align to right side of symbol"
 Qgis.HorizontalAnchorPoint.__doc__ = """Marker symbol horizontal anchor points.
 
@@ -1491,20 +1075,11 @@ Qgis.HorizontalAnchorPoint.__doc__ = """Marker symbol horizontal anchor points.
 """
 # --
 Qgis.HorizontalAnchorPoint.baseClass = Qgis
-QgsMarkerSymbolLayer.VerticalAnchorPoint = Qgis.VerticalAnchorPoint
 # monkey patching scoped based enum
-QgsMarkerSymbolLayer.Top = Qgis.VerticalAnchorPoint.Top
-QgsMarkerSymbolLayer.Top.is_monkey_patched = True
 QgsMarkerSymbolLayer.Top.__doc__ = "Align to top of symbol"
-QgsMarkerSymbolLayer.VCenter = Qgis.VerticalAnchorPoint.Center
 QgsMarkerSymbolLayer.VerticalAnchorPoint.VCenter = Qgis.VerticalAnchorPoint.Center
-QgsMarkerSymbolLayer.VCenter.is_monkey_patched = True
 QgsMarkerSymbolLayer.VCenter.__doc__ = "Align to vertical center of symbol"
-QgsMarkerSymbolLayer.Bottom = Qgis.VerticalAnchorPoint.Bottom
-QgsMarkerSymbolLayer.Bottom.is_monkey_patched = True
 QgsMarkerSymbolLayer.Bottom.__doc__ = "Align to bottom of symbol"
-QgsMarkerSymbolLayer.Baseline = Qgis.VerticalAnchorPoint.Baseline
-QgsMarkerSymbolLayer.Baseline.is_monkey_patched = True
 QgsMarkerSymbolLayer.Baseline.__doc__ = "Align to baseline of symbol, e.g. font baseline for font marker symbol layers. Treated as Bottom if no baseline is available for the symbol layer type. \n.. versionadded:: 3.44"
 Qgis.VerticalAnchorPoint.__doc__ = """Marker symbol vertical anchor points.
 
@@ -1559,10 +1134,7 @@ Qgis.SymbolFlag.__doc__ = """Flags controlling behavior of symbols
 Qgis.SymbolFlag.baseClass = Qgis
 Qgis.SymbolFlags.baseClass = Qgis
 SymbolFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsSymbol.PreviewFlag = Qgis.SymbolPreviewFlag
 # monkey patching scoped based enum
-QgsSymbol.FlagIncludeCrosshairsForMarkerSymbols = Qgis.SymbolPreviewFlag.FlagIncludeCrosshairsForMarkerSymbols
-QgsSymbol.FlagIncludeCrosshairsForMarkerSymbols.is_monkey_patched = True
 QgsSymbol.FlagIncludeCrosshairsForMarkerSymbols.__doc__ = "Include a crosshairs reference image in the background of marker symbol previews"
 Qgis.SymbolPreviewFlag.__doc__ = """Flags for controlling how symbol preview images are generated.
 
@@ -1573,7 +1145,6 @@ Qgis.SymbolPreviewFlag.__doc__ = """Flags for controlling how symbol preview ima
 """
 # --
 Qgis.SymbolPreviewFlag.baseClass = Qgis
-QgsSymbol.SymbolPreviewFlags = Qgis.SymbolPreviewFlags
 Qgis.SymbolPreviewFlags.baseClass = Qgis
 SymbolPreviewFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -1624,34 +1195,15 @@ Qgis.SymbolLayerUserFlag.__doc__ = """User-specified flags controlling behavior 
 Qgis.SymbolLayerUserFlag.baseClass = Qgis
 Qgis.SymbolLayerUserFlags.baseClass = Qgis
 SymbolLayerUserFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsDataItem.Type = Qgis.BrowserItemType
 # monkey patching scoped based enum
-QgsDataItem.Collection = Qgis.BrowserItemType.Collection
-QgsDataItem.Collection.is_monkey_patched = True
 QgsDataItem.Collection.__doc__ = "A collection of items"
-QgsDataItem.Directory = Qgis.BrowserItemType.Directory
-QgsDataItem.Directory.is_monkey_patched = True
 QgsDataItem.Directory.__doc__ = "Represents a file directory"
-QgsDataItem.Layer = Qgis.BrowserItemType.Layer
-QgsDataItem.Layer.is_monkey_patched = True
 QgsDataItem.Layer.__doc__ = "Represents a map layer"
-QgsDataItem.Error = Qgis.BrowserItemType.Error
-QgsDataItem.Error.is_monkey_patched = True
 QgsDataItem.Error.__doc__ = "Contains an error message"
-QgsDataItem.Favorites = Qgis.BrowserItemType.Favorites
-QgsDataItem.Favorites.is_monkey_patched = True
 QgsDataItem.Favorites.__doc__ = "Represents a favorite item"
-QgsDataItem.Project = Qgis.BrowserItemType.Project
-QgsDataItem.Project.is_monkey_patched = True
 QgsDataItem.Project.__doc__ = "Represents a QGIS project"
-QgsDataItem.Custom = Qgis.BrowserItemType.Custom
-QgsDataItem.Custom.is_monkey_patched = True
 QgsDataItem.Custom.__doc__ = "Custom item type"
-QgsDataItem.Fields = Qgis.BrowserItemType.Fields
-QgsDataItem.Fields.is_monkey_patched = True
 QgsDataItem.Fields.__doc__ = "Collection of fields"
-QgsDataItem.Field = Qgis.BrowserItemType.Field
-QgsDataItem.Field.is_monkey_patched = True
 QgsDataItem.Field.__doc__ = "Vector layer field"
 Qgis.BrowserItemType.__doc__ = """Browser item types.
 
@@ -1670,16 +1222,9 @@ Qgis.BrowserItemType.__doc__ = """Browser item types.
 """
 # --
 Qgis.BrowserItemType.baseClass = Qgis
-QgsDataItem.State = Qgis.BrowserItemState
 # monkey patching scoped based enum
-QgsDataItem.NotPopulated = Qgis.BrowserItemState.NotPopulated
-QgsDataItem.NotPopulated.is_monkey_patched = True
 QgsDataItem.NotPopulated.__doc__ = "Children not yet created"
-QgsDataItem.Populating = Qgis.BrowserItemState.Populating
-QgsDataItem.Populating.is_monkey_patched = True
 QgsDataItem.Populating.__doc__ = "Creating children in separate thread (populating or refreshing)"
-QgsDataItem.Populated = Qgis.BrowserItemState.Populated
-QgsDataItem.Populated.is_monkey_patched = True
 QgsDataItem.Populated.__doc__ = "Children created"
 Qgis.BrowserItemState.__doc__ = """Browser item states.
 
@@ -1692,37 +1237,16 @@ Qgis.BrowserItemState.__doc__ = """Browser item states.
 """
 # --
 Qgis.BrowserItemState.baseClass = Qgis
-QgsDataItem.Capability = Qgis.BrowserItemCapability
 # monkey patching scoped based enum
-QgsDataItem.NoCapabilities = Qgis.BrowserItemCapability.NoCapabilities
-QgsDataItem.NoCapabilities.is_monkey_patched = True
 QgsDataItem.NoCapabilities.__doc__ = "Item has no capabilities"
-QgsDataItem.SetCrs = Qgis.BrowserItemCapability.SetCrs
-QgsDataItem.SetCrs.is_monkey_patched = True
 QgsDataItem.SetCrs.__doc__ = "Can set CRS on layer or group of layers. deprecated since QGIS 3.6 -- no longer used by QGIS and will be removed in QGIS 4.0"
-QgsDataItem.Fertile = Qgis.BrowserItemCapability.Fertile
-QgsDataItem.Fertile.is_monkey_patched = True
 QgsDataItem.Fertile.__doc__ = "Can create children. Even items without this capability may have children, but cannot create them, it means that children are created by item ancestors."
-QgsDataItem.Fast = Qgis.BrowserItemCapability.Fast
-QgsDataItem.Fast.is_monkey_patched = True
 QgsDataItem.Fast.__doc__ = "CreateChildren() is fast enough to be run in main thread when refreshing items, most root items (wms,wfs,wcs,postgres...) are considered fast because they are reading data only from QgsSettings"
-QgsDataItem.Collapse = Qgis.BrowserItemCapability.Collapse
-QgsDataItem.Collapse.is_monkey_patched = True
 QgsDataItem.Collapse.__doc__ = "The collapse/expand status for this items children should be ignored in order to avoid undesired network connections (wms etc.)"
-QgsDataItem.Rename = Qgis.BrowserItemCapability.Rename
-QgsDataItem.Rename.is_monkey_patched = True
 QgsDataItem.Rename.__doc__ = "Item can be renamed"
-QgsDataItem.Delete = Qgis.BrowserItemCapability.Delete
-QgsDataItem.Delete.is_monkey_patched = True
 QgsDataItem.Delete.__doc__ = "Item can be deleted"
-QgsDataItem.ItemRepresentsFile = Qgis.BrowserItemCapability.ItemRepresentsFile
-QgsDataItem.ItemRepresentsFile.is_monkey_patched = True
 QgsDataItem.ItemRepresentsFile.__doc__ = "Item's path() directly represents a file on disk \n.. versionadded:: 3.22"
-QgsDataItem.RefreshChildrenWhenItemIsRefreshed = Qgis.BrowserItemCapability.RefreshChildrenWhenItemIsRefreshed
-QgsDataItem.RefreshChildrenWhenItemIsRefreshed.is_monkey_patched = True
 QgsDataItem.RefreshChildrenWhenItemIsRefreshed.__doc__ = "When the item is refreshed, all its populated children will also be refreshed in turn \n.. versionadded:: 3.26"
-QgsDataItem.ReadOnly = Qgis.BrowserItemCapability.ReadOnly
-QgsDataItem.ReadOnly.is_monkey_patched = True
 QgsDataItem.ReadOnly.__doc__ = "Item is read only \n.. versionadded:: 3.40"
 Qgis.BrowserItemCapability.__doc__ = """Browser item capabilities.
 
@@ -1751,30 +1275,18 @@ Qgis.BrowserItemCapability.__doc__ = """Browser item capabilities.
 """
 # --
 Qgis.BrowserItemCapability.baseClass = Qgis
-QgsDataItem.Capabilities = Qgis.BrowserItemCapabilities
 Qgis.BrowserItemCapabilities.baseClass = Qgis
 BrowserItemCapabilities = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsDataProvider.DataCapability = Qgis.DataItemProviderCapability
 # monkey patching scoped based enum
-QgsDataProvider.NoDataCapabilities = Qgis.DataItemProviderCapability.NoCapabilities
 QgsDataProvider.DataCapability.NoDataCapabilities = Qgis.DataItemProviderCapability.NoCapabilities
-QgsDataProvider.NoDataCapabilities.is_monkey_patched = True
 QgsDataProvider.NoDataCapabilities.__doc__ = "No capabilities"
-QgsDataProvider.File = Qgis.DataItemProviderCapability.Files
 QgsDataProvider.DataCapability.File = Qgis.DataItemProviderCapability.Files
-QgsDataProvider.File.is_monkey_patched = True
 QgsDataProvider.File.__doc__ = "Can provides items which corresponds to files"
-QgsDataProvider.Dir = Qgis.DataItemProviderCapability.Directories
 QgsDataProvider.DataCapability.Dir = Qgis.DataItemProviderCapability.Directories
-QgsDataProvider.Dir.is_monkey_patched = True
 QgsDataProvider.Dir.__doc__ = "Can provides items which corresponds to directories"
-QgsDataProvider.Database = Qgis.DataItemProviderCapability.Databases
 QgsDataProvider.DataCapability.Database = Qgis.DataItemProviderCapability.Databases
-QgsDataProvider.Database.is_monkey_patched = True
 QgsDataProvider.Database.__doc__ = "Can provides items which corresponds to databases"
-QgsDataProvider.Net = Qgis.DataItemProviderCapability.NetworkSources
 QgsDataProvider.DataCapability.Net = Qgis.DataItemProviderCapability.NetworkSources
-QgsDataProvider.Net.is_monkey_patched = True
 QgsDataProvider.Net.__doc__ = "Network/internet source"
 Qgis.DataItemProviderCapability.__doc__ = """Capabilities for data item providers.
 
@@ -1808,52 +1320,22 @@ Qgis.DataItemProviderCapability.__doc__ = """Capabilities for data item provider
 """
 # --
 Qgis.DataItemProviderCapability.baseClass = Qgis
-QgsDataProvider.DataCapabilities = Qgis.DataItemProviderCapabilities
 Qgis.DataItemProviderCapabilities.baseClass = Qgis
 DataItemProviderCapabilities = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsLayerItem.LayerType = Qgis.BrowserLayerType
 # monkey patching scoped based enum
-QgsLayerItem.NoType = Qgis.BrowserLayerType.NoType
-QgsLayerItem.NoType.is_monkey_patched = True
 QgsLayerItem.NoType.__doc__ = "No type"
-QgsLayerItem.Vector = Qgis.BrowserLayerType.Vector
-QgsLayerItem.Vector.is_monkey_patched = True
 QgsLayerItem.Vector.__doc__ = "Generic vector layer"
-QgsLayerItem.Raster = Qgis.BrowserLayerType.Raster
-QgsLayerItem.Raster.is_monkey_patched = True
 QgsLayerItem.Raster.__doc__ = "Raster layer"
-QgsLayerItem.Point = Qgis.BrowserLayerType.Point
-QgsLayerItem.Point.is_monkey_patched = True
 QgsLayerItem.Point.__doc__ = "Vector point layer"
-QgsLayerItem.Line = Qgis.BrowserLayerType.Line
-QgsLayerItem.Line.is_monkey_patched = True
 QgsLayerItem.Line.__doc__ = "Vector line layer"
-QgsLayerItem.Polygon = Qgis.BrowserLayerType.Polygon
-QgsLayerItem.Polygon.is_monkey_patched = True
 QgsLayerItem.Polygon.__doc__ = "Vector polygon layer"
-QgsLayerItem.TableLayer = Qgis.BrowserLayerType.TableLayer
-QgsLayerItem.TableLayer.is_monkey_patched = True
 QgsLayerItem.TableLayer.__doc__ = "Vector non-spatial layer"
-QgsLayerItem.Database = Qgis.BrowserLayerType.Database
-QgsLayerItem.Database.is_monkey_patched = True
 QgsLayerItem.Database.__doc__ = "Database layer"
-QgsLayerItem.Table = Qgis.BrowserLayerType.Table
-QgsLayerItem.Table.is_monkey_patched = True
 QgsLayerItem.Table.__doc__ = "Database table"
-QgsLayerItem.Plugin = Qgis.BrowserLayerType.Plugin
-QgsLayerItem.Plugin.is_monkey_patched = True
 QgsLayerItem.Plugin.__doc__ = "Plugin based layer"
-QgsLayerItem.Mesh = Qgis.BrowserLayerType.Mesh
-QgsLayerItem.Mesh.is_monkey_patched = True
 QgsLayerItem.Mesh.__doc__ = "Mesh layer"
-QgsLayerItem.VectorTile = Qgis.BrowserLayerType.VectorTile
-QgsLayerItem.VectorTile.is_monkey_patched = True
 QgsLayerItem.VectorTile.__doc__ = "Vector tile layer"
-QgsLayerItem.PointCloud = Qgis.BrowserLayerType.PointCloud
-QgsLayerItem.PointCloud.is_monkey_patched = True
 QgsLayerItem.PointCloud.__doc__ = "Point cloud layer"
-QgsLayerItem.TiledScene = Qgis.BrowserLayerType.TiledScene
-QgsLayerItem.TiledScene.is_monkey_patched = True
 QgsLayerItem.TiledScene.__doc__ = "Tiled scene layer \n.. versionadded:: 3.34"
 Qgis.BrowserLayerType.__doc__ = """Browser item layer types
 
@@ -1923,55 +1405,30 @@ Qgis.HttpMethod.__doc__ = """Different methods of HTTP requests
 """
 # --
 Qgis.HttpMethod.baseClass = Qgis
-QgsVectorLayerExporter.ExportError = Qgis.VectorExportResult
 # monkey patching scoped based enum
-QgsVectorLayerExporter.NoError = Qgis.VectorExportResult.Success
 QgsVectorLayerExporter.ExportError.NoError = Qgis.VectorExportResult.Success
-QgsVectorLayerExporter.NoError.is_monkey_patched = True
 QgsVectorLayerExporter.NoError.__doc__ = "No errors were encountered"
-QgsVectorLayerExporter.ErrCreateDataSource = Qgis.VectorExportResult.ErrorCreatingDataSource
 QgsVectorLayerExporter.ExportError.ErrCreateDataSource = Qgis.VectorExportResult.ErrorCreatingDataSource
-QgsVectorLayerExporter.ErrCreateDataSource.is_monkey_patched = True
 QgsVectorLayerExporter.ErrCreateDataSource.__doc__ = "Could not create the destination data source"
-QgsVectorLayerExporter.ErrCreateLayer = Qgis.VectorExportResult.ErrorCreatingLayer
 QgsVectorLayerExporter.ExportError.ErrCreateLayer = Qgis.VectorExportResult.ErrorCreatingLayer
-QgsVectorLayerExporter.ErrCreateLayer.is_monkey_patched = True
 QgsVectorLayerExporter.ErrCreateLayer.__doc__ = "Could not create destination layer"
-QgsVectorLayerExporter.ErrAttributeTypeUnsupported = Qgis.VectorExportResult.ErrorAttributeTypeUnsupported
 QgsVectorLayerExporter.ExportError.ErrAttributeTypeUnsupported = Qgis.VectorExportResult.ErrorAttributeTypeUnsupported
-QgsVectorLayerExporter.ErrAttributeTypeUnsupported.is_monkey_patched = True
 QgsVectorLayerExporter.ErrAttributeTypeUnsupported.__doc__ = "Source layer has an attribute type which could not be handled by destination"
-QgsVectorLayerExporter.ErrAttributeCreationFailed = Qgis.VectorExportResult.ErrorAttributeCreationFailed
 QgsVectorLayerExporter.ExportError.ErrAttributeCreationFailed = Qgis.VectorExportResult.ErrorAttributeCreationFailed
-QgsVectorLayerExporter.ErrAttributeCreationFailed.is_monkey_patched = True
 QgsVectorLayerExporter.ErrAttributeCreationFailed.__doc__ = "Destination provider was unable to create an attribute"
-QgsVectorLayerExporter.ErrProjection = Qgis.VectorExportResult.ErrorProjectingFeatures
 QgsVectorLayerExporter.ExportError.ErrProjection = Qgis.VectorExportResult.ErrorProjectingFeatures
-QgsVectorLayerExporter.ErrProjection.is_monkey_patched = True
 QgsVectorLayerExporter.ErrProjection.__doc__ = "An error occurred while reprojecting features to destination CRS"
-QgsVectorLayerExporter.ErrFeatureWriteFailed = Qgis.VectorExportResult.ErrorFeatureWriteFailed
 QgsVectorLayerExporter.ExportError.ErrFeatureWriteFailed = Qgis.VectorExportResult.ErrorFeatureWriteFailed
-QgsVectorLayerExporter.ErrFeatureWriteFailed.is_monkey_patched = True
 QgsVectorLayerExporter.ErrFeatureWriteFailed.__doc__ = "An error occurred while writing a feature to the destination"
-QgsVectorLayerExporter.ErrInvalidLayer = Qgis.VectorExportResult.ErrorInvalidLayer
 QgsVectorLayerExporter.ExportError.ErrInvalidLayer = Qgis.VectorExportResult.ErrorInvalidLayer
-QgsVectorLayerExporter.ErrInvalidLayer.is_monkey_patched = True
 QgsVectorLayerExporter.ErrInvalidLayer.__doc__ = "Could not access newly created destination layer"
-QgsVectorLayerExporter.ErrInvalidProvider = Qgis.VectorExportResult.ErrorInvalidProvider
 QgsVectorLayerExporter.ExportError.ErrInvalidProvider = Qgis.VectorExportResult.ErrorInvalidProvider
-QgsVectorLayerExporter.ErrInvalidProvider.is_monkey_patched = True
 QgsVectorLayerExporter.ErrInvalidProvider.__doc__ = "Could not find a matching provider key"
-QgsVectorLayerExporter.ErrProviderUnsupportedFeature = Qgis.VectorExportResult.ErrorProviderUnsupportedFeature
 QgsVectorLayerExporter.ExportError.ErrProviderUnsupportedFeature = Qgis.VectorExportResult.ErrorProviderUnsupportedFeature
-QgsVectorLayerExporter.ErrProviderUnsupportedFeature.is_monkey_patched = True
 QgsVectorLayerExporter.ErrProviderUnsupportedFeature.__doc__ = "Provider does not support creation of empty layers"
-QgsVectorLayerExporter.ErrConnectionFailed = Qgis.VectorExportResult.ErrorConnectionFailed
 QgsVectorLayerExporter.ExportError.ErrConnectionFailed = Qgis.VectorExportResult.ErrorConnectionFailed
-QgsVectorLayerExporter.ErrConnectionFailed.is_monkey_patched = True
 QgsVectorLayerExporter.ErrConnectionFailed.__doc__ = "Could not connect to destination"
-QgsVectorLayerExporter.ErrUserCanceled = Qgis.VectorExportResult.UserCanceled
 QgsVectorLayerExporter.ExportError.ErrUserCanceled = Qgis.VectorExportResult.UserCanceled
-QgsVectorLayerExporter.ErrUserCanceled.is_monkey_patched = True
 QgsVectorLayerExporter.ErrUserCanceled.__doc__ = "User canceled the export"
 Qgis.VectorExportResult.__doc__ = """Vector layer export result codes.
 
@@ -2119,15 +1576,10 @@ Qgis.DriveType.__doc__ = """Drive types
 """
 # --
 Qgis.DriveType.baseClass = Qgis
-QgsNetworkContentFetcherRegistry.FetchingMode = Qgis.ActionStart
 # monkey patching scoped based enum
-QgsNetworkContentFetcherRegistry.DownloadLater = Qgis.ActionStart.Deferred
 QgsNetworkContentFetcherRegistry.FetchingMode.DownloadLater = Qgis.ActionStart.Deferred
-QgsNetworkContentFetcherRegistry.DownloadLater.is_monkey_patched = True
 QgsNetworkContentFetcherRegistry.DownloadLater.__doc__ = "Do not start immediately the action"
-QgsNetworkContentFetcherRegistry.DownloadImmediately = Qgis.ActionStart.Immediate
 QgsNetworkContentFetcherRegistry.FetchingMode.DownloadImmediately = Qgis.ActionStart.Immediate
-QgsNetworkContentFetcherRegistry.DownloadImmediately.is_monkey_patched = True
 QgsNetworkContentFetcherRegistry.DownloadImmediately.__doc__ = "Action will start immediately"
 Qgis.ActionStart.__doc__ = """Enum to determine when an operation would begin
 
@@ -2186,34 +1638,15 @@ Qgis.LabelPrioritization.__doc__ = """Label prioritization.
 """
 # --
 Qgis.LabelPrioritization.baseClass = Qgis
-QgsPalLayerSettings.Placement = Qgis.LabelPlacement
 # monkey patching scoped based enum
-QgsPalLayerSettings.AroundPoint = Qgis.LabelPlacement.AroundPoint
-QgsPalLayerSettings.AroundPoint.is_monkey_patched = True
 QgsPalLayerSettings.AroundPoint.__doc__ = "Arranges candidates in a circle around a point (or centroid of a polygon). Applies to point or polygon layers only."
-QgsPalLayerSettings.OverPoint = Qgis.LabelPlacement.OverPoint
-QgsPalLayerSettings.OverPoint.is_monkey_patched = True
 QgsPalLayerSettings.OverPoint.__doc__ = "Arranges candidates over a point (or centroid of a polygon), or at a preset offset from the point. Applies to point or polygon layers only."
-QgsPalLayerSettings.Line = Qgis.LabelPlacement.Line
-QgsPalLayerSettings.Line.is_monkey_patched = True
 QgsPalLayerSettings.Line.__doc__ = "Arranges candidates parallel to a generalised line representing the feature or parallel to a polygon's perimeter. Applies to line or polygon layers only."
-QgsPalLayerSettings.Curved = Qgis.LabelPlacement.Curved
-QgsPalLayerSettings.Curved.is_monkey_patched = True
 QgsPalLayerSettings.Curved.__doc__ = "Arranges candidates following the curvature of a line feature. Applies to line layers only."
-QgsPalLayerSettings.Horizontal = Qgis.LabelPlacement.Horizontal
-QgsPalLayerSettings.Horizontal.is_monkey_patched = True
 QgsPalLayerSettings.Horizontal.__doc__ = "Arranges horizontal candidates scattered throughout a polygon feature. Applies to polygon layers only."
-QgsPalLayerSettings.Free = Qgis.LabelPlacement.Free
-QgsPalLayerSettings.Free.is_monkey_patched = True
 QgsPalLayerSettings.Free.__doc__ = "Arranges candidates scattered throughout a polygon feature. Candidates are rotated to respect the polygon's orientation. Applies to polygon layers only."
-QgsPalLayerSettings.OrderedPositionsAroundPoint = Qgis.LabelPlacement.OrderedPositionsAroundPoint
-QgsPalLayerSettings.OrderedPositionsAroundPoint.is_monkey_patched = True
 QgsPalLayerSettings.OrderedPositionsAroundPoint.__doc__ = "Candidates are placed in predefined positions around a point. Preference is given to positions with greatest cartographic appeal, e.g., top right, bottom right, etc. Applies to point layers only."
-QgsPalLayerSettings.PerimeterCurved = Qgis.LabelPlacement.PerimeterCurved
-QgsPalLayerSettings.PerimeterCurved.is_monkey_patched = True
 QgsPalLayerSettings.PerimeterCurved.__doc__ = "Arranges candidates following the curvature of a polygon's boundary. Applies to polygon layers only."
-QgsPalLayerSettings.OutsidePolygons = Qgis.LabelPlacement.OutsidePolygons
-QgsPalLayerSettings.OutsidePolygons.is_monkey_patched = True
 QgsPalLayerSettings.OutsidePolygons.__doc__ = "Candidates are placed outside of polygon boundaries. Applies to polygon layers only \n.. versionadded:: 3.14"
 Qgis.LabelPlacement.__doc__ = """Placement modes which determine how label candidates are generated for a feature.
 
@@ -2239,46 +1672,19 @@ Qgis.LabelPlacement.__doc__ = """Placement modes which determine how label candi
 """
 # --
 Qgis.LabelPlacement.baseClass = Qgis
-QgsPalLayerSettings.PredefinedPointPosition = Qgis.LabelPredefinedPointPosition
 # monkey patching scoped based enum
-QgsPalLayerSettings.TopLeft = Qgis.LabelPredefinedPointPosition.TopLeft
-QgsPalLayerSettings.TopLeft.is_monkey_patched = True
 QgsPalLayerSettings.TopLeft.__doc__ = "Label on top-left of point"
-QgsPalLayerSettings.TopSlightlyLeft = Qgis.LabelPredefinedPointPosition.TopSlightlyLeft
-QgsPalLayerSettings.TopSlightlyLeft.is_monkey_patched = True
 QgsPalLayerSettings.TopSlightlyLeft.__doc__ = "Label on top of point, slightly left of center"
-QgsPalLayerSettings.TopMiddle = Qgis.LabelPredefinedPointPosition.TopMiddle
-QgsPalLayerSettings.TopMiddle.is_monkey_patched = True
 QgsPalLayerSettings.TopMiddle.__doc__ = "Label directly above point"
-QgsPalLayerSettings.TopSlightlyRight = Qgis.LabelPredefinedPointPosition.TopSlightlyRight
-QgsPalLayerSettings.TopSlightlyRight.is_monkey_patched = True
 QgsPalLayerSettings.TopSlightlyRight.__doc__ = "Label on top of point, slightly right of center"
-QgsPalLayerSettings.TopRight = Qgis.LabelPredefinedPointPosition.TopRight
-QgsPalLayerSettings.TopRight.is_monkey_patched = True
 QgsPalLayerSettings.TopRight.__doc__ = "Label on top-right of point"
-QgsPalLayerSettings.MiddleLeft = Qgis.LabelPredefinedPointPosition.MiddleLeft
-QgsPalLayerSettings.MiddleLeft.is_monkey_patched = True
 QgsPalLayerSettings.MiddleLeft.__doc__ = "Label on left of point"
-QgsPalLayerSettings.MiddleRight = Qgis.LabelPredefinedPointPosition.MiddleRight
-QgsPalLayerSettings.MiddleRight.is_monkey_patched = True
 QgsPalLayerSettings.MiddleRight.__doc__ = "Label on right of point"
-QgsPalLayerSettings.BottomLeft = Qgis.LabelPredefinedPointPosition.BottomLeft
-QgsPalLayerSettings.BottomLeft.is_monkey_patched = True
 QgsPalLayerSettings.BottomLeft.__doc__ = "Label on bottom-left of point"
-QgsPalLayerSettings.BottomSlightlyLeft = Qgis.LabelPredefinedPointPosition.BottomSlightlyLeft
-QgsPalLayerSettings.BottomSlightlyLeft.is_monkey_patched = True
 QgsPalLayerSettings.BottomSlightlyLeft.__doc__ = "Label below point, slightly left of center"
-QgsPalLayerSettings.BottomMiddle = Qgis.LabelPredefinedPointPosition.BottomMiddle
-QgsPalLayerSettings.BottomMiddle.is_monkey_patched = True
 QgsPalLayerSettings.BottomMiddle.__doc__ = "Label directly below point"
-QgsPalLayerSettings.BottomSlightlyRight = Qgis.LabelPredefinedPointPosition.BottomSlightlyRight
-QgsPalLayerSettings.BottomSlightlyRight.is_monkey_patched = True
 QgsPalLayerSettings.BottomSlightlyRight.__doc__ = "Label below point, slightly right of center"
-QgsPalLayerSettings.BottomRight = Qgis.LabelPredefinedPointPosition.BottomRight
-QgsPalLayerSettings.BottomRight.is_monkey_patched = True
 QgsPalLayerSettings.BottomRight.__doc__ = "Label on bottom right of point"
-QgsPalLayerSettings.OverPoint = Qgis.LabelPredefinedPointPosition.OverPoint
-QgsPalLayerSettings.OverPoint.is_monkey_patched = True
 QgsPalLayerSettings.OverPoint.__doc__ = "Label directly centered over point \n.. versionadded:: 3.38"
 Qgis.LabelPredefinedPointPosition.__doc__ = """Positions for labels when using the Qgis.LabelPlacement.OrderedPositionsAroundPoint placement mode.
 
@@ -2308,13 +1714,8 @@ Qgis.LabelPredefinedPointPosition.__doc__ = """Positions for labels when using t
 """
 # --
 Qgis.LabelPredefinedPointPosition.baseClass = Qgis
-QgsPalLayerSettings.OffsetType = Qgis.LabelOffsetType
 # monkey patching scoped based enum
-QgsPalLayerSettings.FromPoint = Qgis.LabelOffsetType.FromPoint
-QgsPalLayerSettings.FromPoint.is_monkey_patched = True
 QgsPalLayerSettings.FromPoint.__doc__ = "Offset distance applies from point geometry"
-QgsPalLayerSettings.FromSymbolBounds = Qgis.LabelOffsetType.FromSymbolBounds
-QgsPalLayerSettings.FromSymbolBounds.is_monkey_patched = True
 QgsPalLayerSettings.FromSymbolBounds.__doc__ = "Offset distance applies from rendered symbol bounds"
 Qgis.LabelOffsetType.__doc__ = """Behavior modifier for label offset and distance, only applies in some
 label placement modes.
@@ -2331,43 +1732,24 @@ label placement modes.
 """
 # --
 Qgis.LabelOffsetType.baseClass = Qgis
-QgsPalLayerSettings.QuadrantPosition = Qgis.LabelQuadrantPosition
 # monkey patching scoped based enum
-QgsPalLayerSettings.QuadrantAboveLeft = Qgis.LabelQuadrantPosition.AboveLeft
 QgsPalLayerSettings.QuadrantPosition.QuadrantAboveLeft = Qgis.LabelQuadrantPosition.AboveLeft
-QgsPalLayerSettings.QuadrantAboveLeft.is_monkey_patched = True
 QgsPalLayerSettings.QuadrantAboveLeft.__doc__ = "Above left"
-QgsPalLayerSettings.QuadrantAbove = Qgis.LabelQuadrantPosition.Above
 QgsPalLayerSettings.QuadrantPosition.QuadrantAbove = Qgis.LabelQuadrantPosition.Above
-QgsPalLayerSettings.QuadrantAbove.is_monkey_patched = True
 QgsPalLayerSettings.QuadrantAbove.__doc__ = "Above center"
-QgsPalLayerSettings.QuadrantAboveRight = Qgis.LabelQuadrantPosition.AboveRight
 QgsPalLayerSettings.QuadrantPosition.QuadrantAboveRight = Qgis.LabelQuadrantPosition.AboveRight
-QgsPalLayerSettings.QuadrantAboveRight.is_monkey_patched = True
 QgsPalLayerSettings.QuadrantAboveRight.__doc__ = "Above right"
-QgsPalLayerSettings.QuadrantLeft = Qgis.LabelQuadrantPosition.Left
 QgsPalLayerSettings.QuadrantPosition.QuadrantLeft = Qgis.LabelQuadrantPosition.Left
-QgsPalLayerSettings.QuadrantLeft.is_monkey_patched = True
 QgsPalLayerSettings.QuadrantLeft.__doc__ = "Left middle"
-QgsPalLayerSettings.QuadrantOver = Qgis.LabelQuadrantPosition.Over
 QgsPalLayerSettings.QuadrantPosition.QuadrantOver = Qgis.LabelQuadrantPosition.Over
-QgsPalLayerSettings.QuadrantOver.is_monkey_patched = True
 QgsPalLayerSettings.QuadrantOver.__doc__ = "Center middle"
-QgsPalLayerSettings.QuadrantRight = Qgis.LabelQuadrantPosition.Right
 QgsPalLayerSettings.QuadrantPosition.QuadrantRight = Qgis.LabelQuadrantPosition.Right
-QgsPalLayerSettings.QuadrantRight.is_monkey_patched = True
 QgsPalLayerSettings.QuadrantRight.__doc__ = "Right middle"
-QgsPalLayerSettings.QuadrantBelowLeft = Qgis.LabelQuadrantPosition.BelowLeft
 QgsPalLayerSettings.QuadrantPosition.QuadrantBelowLeft = Qgis.LabelQuadrantPosition.BelowLeft
-QgsPalLayerSettings.QuadrantBelowLeft.is_monkey_patched = True
 QgsPalLayerSettings.QuadrantBelowLeft.__doc__ = "Below left"
-QgsPalLayerSettings.QuadrantBelow = Qgis.LabelQuadrantPosition.Below
 QgsPalLayerSettings.QuadrantPosition.QuadrantBelow = Qgis.LabelQuadrantPosition.Below
-QgsPalLayerSettings.QuadrantBelow.is_monkey_patched = True
 QgsPalLayerSettings.QuadrantBelow.__doc__ = "Below center"
-QgsPalLayerSettings.QuadrantBelowRight = Qgis.LabelQuadrantPosition.BelowRight
 QgsPalLayerSettings.QuadrantPosition.QuadrantBelowRight = Qgis.LabelQuadrantPosition.BelowRight
-QgsPalLayerSettings.QuadrantBelowRight.is_monkey_patched = True
 QgsPalLayerSettings.QuadrantBelowRight.__doc__ = "Below right"
 Qgis.LabelQuadrantPosition.__doc__ = """Label quadrant positions
 
@@ -2417,19 +1799,10 @@ Qgis.LabelQuadrantPosition.__doc__ = """Label quadrant positions
 """
 # --
 Qgis.LabelQuadrantPosition.baseClass = Qgis
-QgsLabeling.LinePlacementFlag = Qgis.LabelLinePlacementFlag
 # monkey patching scoped based enum
-QgsLabeling.OnLine = Qgis.LabelLinePlacementFlag.OnLine
-QgsLabeling.OnLine.is_monkey_patched = True
 QgsLabeling.OnLine.__doc__ = "Labels can be placed directly over a line feature."
-QgsLabeling.AboveLine = Qgis.LabelLinePlacementFlag.AboveLine
-QgsLabeling.AboveLine.is_monkey_patched = True
 QgsLabeling.AboveLine.__doc__ = "Labels can be placed above a line feature. Unless MapOrientation is also specified this mode respects the direction of the line feature, so a line from right to left labels will have labels placed placed below the line feature."
-QgsLabeling.BelowLine = Qgis.LabelLinePlacementFlag.BelowLine
-QgsLabeling.BelowLine.is_monkey_patched = True
 QgsLabeling.BelowLine.__doc__ = "Labels can be placed below a line feature. Unless MapOrientation is also specified this mode respects the direction of the line feature, so a line from right to left labels will have labels placed placed above the line feature."
-QgsLabeling.MapOrientation = Qgis.LabelLinePlacementFlag.MapOrientation
-QgsLabeling.MapOrientation.is_monkey_patched = True
 QgsLabeling.MapOrientation.__doc__ = "Signifies that the AboveLine and BelowLine flags should respect the map's orientation rather than the feature's orientation. For example, AboveLine will always result in label's being placed above a line, regardless of the line's direction."
 Qgis.LabelLinePlacementFlag.__doc__ = """Line placement flags, which control how candidates are generated for a linear feature.
 
@@ -2447,16 +1820,10 @@ Qgis.LabelLinePlacementFlag.__doc__ = """Line placement flags, which control how
 """
 # --
 Qgis.LabelLinePlacementFlag.baseClass = Qgis
-QgsLabeling.LinePlacementFlags = Qgis.LabelLinePlacementFlags
 Qgis.LabelLinePlacementFlags.baseClass = Qgis
 LabelLinePlacementFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsLabeling.PolygonPlacementFlag = Qgis.LabelPolygonPlacementFlag
 # monkey patching scoped based enum
-QgsLabeling.AllowPlacementOutsideOfPolygon = Qgis.LabelPolygonPlacementFlag.AllowPlacementOutsideOfPolygon
-QgsLabeling.AllowPlacementOutsideOfPolygon.is_monkey_patched = True
 QgsLabeling.AllowPlacementOutsideOfPolygon.__doc__ = "Labels can be placed outside of a polygon feature"
-QgsLabeling.AllowPlacementInsideOfPolygon = Qgis.LabelPolygonPlacementFlag.AllowPlacementInsideOfPolygon
-QgsLabeling.AllowPlacementInsideOfPolygon.is_monkey_patched = True
 QgsLabeling.AllowPlacementInsideOfPolygon.__doc__ = "Labels can be placed inside a polygon feature"
 Qgis.LabelPolygonPlacementFlag.__doc__ = """Polygon placement flags, which control how candidates are generated for a polygon feature.
 
@@ -2474,19 +1841,12 @@ Qgis.LabelPolygonPlacementFlag.__doc__ = """Polygon placement flags, which contr
 Qgis.LabelPolygonPlacementFlag.baseClass = Qgis
 Qgis.LabelPolygonPlacementFlags.baseClass = Qgis
 LabelPolygonPlacementFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsPalLayerSettings.UpsideDownLabels = Qgis.UpsideDownLabelHandling
 # monkey patching scoped based enum
-QgsPalLayerSettings.Upright = Qgis.UpsideDownLabelHandling.FlipUpsideDownLabels
 QgsPalLayerSettings.UpsideDownLabels.Upright = Qgis.UpsideDownLabelHandling.FlipUpsideDownLabels
-QgsPalLayerSettings.Upright.is_monkey_patched = True
 QgsPalLayerSettings.Upright.__doc__ = "Upside-down labels (90 <= angle < 270) are shown upright"
-QgsPalLayerSettings.ShowDefined = Qgis.UpsideDownLabelHandling.AllowUpsideDownWhenRotationIsDefined
 QgsPalLayerSettings.UpsideDownLabels.ShowDefined = Qgis.UpsideDownLabelHandling.AllowUpsideDownWhenRotationIsDefined
-QgsPalLayerSettings.ShowDefined.is_monkey_patched = True
 QgsPalLayerSettings.ShowDefined.__doc__ = "Show upside down when rotation is layer- or data-defined"
-QgsPalLayerSettings.ShowAll = Qgis.UpsideDownLabelHandling.AlwaysAllowUpsideDown
 QgsPalLayerSettings.UpsideDownLabels.ShowAll = Qgis.UpsideDownLabelHandling.AlwaysAllowUpsideDown
-QgsPalLayerSettings.ShowAll.is_monkey_patched = True
 QgsPalLayerSettings.ShowAll.__doc__ = "Show upside down for all labels, including dynamic ones"
 Qgis.UpsideDownLabelHandling.__doc__ = """Handling techniques for upside down labels.
 
@@ -2512,27 +1872,16 @@ Qgis.UpsideDownLabelHandling.__doc__ = """Handling techniques for upside down la
 """
 # --
 Qgis.UpsideDownLabelHandling.baseClass = Qgis
-QgsPalLayerSettings.MultiLineAlign = Qgis.LabelMultiLineAlignment
 # monkey patching scoped based enum
-QgsPalLayerSettings.MultiLeft = Qgis.LabelMultiLineAlignment.Left
 QgsPalLayerSettings.MultiLineAlign.MultiLeft = Qgis.LabelMultiLineAlignment.Left
-QgsPalLayerSettings.MultiLeft.is_monkey_patched = True
 QgsPalLayerSettings.MultiLeft.__doc__ = "Left align"
-QgsPalLayerSettings.MultiCenter = Qgis.LabelMultiLineAlignment.Center
 QgsPalLayerSettings.MultiLineAlign.MultiCenter = Qgis.LabelMultiLineAlignment.Center
-QgsPalLayerSettings.MultiCenter.is_monkey_patched = True
 QgsPalLayerSettings.MultiCenter.__doc__ = "Center align"
-QgsPalLayerSettings.MultiRight = Qgis.LabelMultiLineAlignment.Right
 QgsPalLayerSettings.MultiLineAlign.MultiRight = Qgis.LabelMultiLineAlignment.Right
-QgsPalLayerSettings.MultiRight.is_monkey_patched = True
 QgsPalLayerSettings.MultiRight.__doc__ = "Right align"
-QgsPalLayerSettings.MultiFollowPlacement = Qgis.LabelMultiLineAlignment.FollowPlacement
 QgsPalLayerSettings.MultiLineAlign.MultiFollowPlacement = Qgis.LabelMultiLineAlignment.FollowPlacement
-QgsPalLayerSettings.MultiFollowPlacement.is_monkey_patched = True
 QgsPalLayerSettings.MultiFollowPlacement.__doc__ = "Alignment follows placement of label, e.g., labels to the left of a feature will be drawn with right alignment"
-QgsPalLayerSettings.MultiJustify = Qgis.LabelMultiLineAlignment.Justify
 QgsPalLayerSettings.MultiLineAlign.MultiJustify = Qgis.LabelMultiLineAlignment.Justify
-QgsPalLayerSettings.MultiJustify.is_monkey_patched = True
 QgsPalLayerSettings.MultiJustify.__doc__ = "Justified"
 Qgis.LabelMultiLineAlignment.__doc__ = """Text alignment for multi-line labels.
 
@@ -2566,33 +1915,18 @@ Qgis.LabelMultiLineAlignment.__doc__ = """Text alignment for multi-line labels.
 """
 # --
 Qgis.LabelMultiLineAlignment.baseClass = Qgis
-QgsProviderMetadata.FilterType = Qgis.FileFilterType
 # monkey patching scoped based enum
-QgsProviderMetadata.FilterVector = Qgis.FileFilterType.Vector
 QgsProviderMetadata.FilterType.FilterVector = Qgis.FileFilterType.Vector
-QgsProviderMetadata.FilterVector.is_monkey_patched = True
 QgsProviderMetadata.FilterVector.__doc__ = "Vector layers"
-QgsProviderMetadata.FilterRaster = Qgis.FileFilterType.Raster
 QgsProviderMetadata.FilterType.FilterRaster = Qgis.FileFilterType.Raster
-QgsProviderMetadata.FilterRaster.is_monkey_patched = True
 QgsProviderMetadata.FilterRaster.__doc__ = "Raster layers"
-QgsProviderMetadata.FilterMesh = Qgis.FileFilterType.Mesh
 QgsProviderMetadata.FilterType.FilterMesh = Qgis.FileFilterType.Mesh
-QgsProviderMetadata.FilterMesh.is_monkey_patched = True
 QgsProviderMetadata.FilterMesh.__doc__ = "Mesh layers"
-QgsProviderMetadata.FilterMeshDataset = Qgis.FileFilterType.MeshDataset
 QgsProviderMetadata.FilterType.FilterMeshDataset = Qgis.FileFilterType.MeshDataset
-QgsProviderMetadata.FilterMeshDataset.is_monkey_patched = True
 QgsProviderMetadata.FilterMeshDataset.__doc__ = "Mesh datasets"
-QgsProviderMetadata.FilterPointCloud = Qgis.FileFilterType.PointCloud
 QgsProviderMetadata.FilterType.FilterPointCloud = Qgis.FileFilterType.PointCloud
-QgsProviderMetadata.FilterPointCloud.is_monkey_patched = True
 QgsProviderMetadata.FilterPointCloud.__doc__ = "Point clouds \n.. versionadded:: 3.18"
-QgsProviderMetadata.VectorTile = Qgis.FileFilterType.VectorTile
-QgsProviderMetadata.VectorTile.is_monkey_patched = True
 QgsProviderMetadata.VectorTile.__doc__ = "Vector tile layers \n.. versionadded:: 3.32"
-QgsProviderMetadata.TiledScene = Qgis.FileFilterType.TiledScene
-QgsProviderMetadata.TiledScene.is_monkey_patched = True
 QgsProviderMetadata.TiledScene.__doc__ = "Tiled scene layers \n.. versionadded:: 3.34"
 Qgis.FileFilterType.__doc__ = """Type of file filters
 
@@ -2687,17 +2021,10 @@ Qgis.SublayerFlag.__doc__ = """Flags which reflect the properties of sublayers i
 Qgis.SublayerFlag.baseClass = Qgis
 Qgis.SublayerFlags.baseClass = Qgis
 SublayerFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsColorRampShader.Type = Qgis.ShaderInterpolationMethod
 # monkey patching scoped based enum
-QgsColorRampShader.Interpolated = Qgis.ShaderInterpolationMethod.Linear
 QgsColorRampShader.Type.Interpolated = Qgis.ShaderInterpolationMethod.Linear
-QgsColorRampShader.Interpolated.is_monkey_patched = True
 QgsColorRampShader.Interpolated.__doc__ = "Interpolates the color between two class breaks linearly"
-QgsColorRampShader.Discrete = Qgis.ShaderInterpolationMethod.Discrete
-QgsColorRampShader.Discrete.is_monkey_patched = True
 QgsColorRampShader.Discrete.__doc__ = "Assigns the color of the higher class for every pixel between two class breaks"
-QgsColorRampShader.Exact = Qgis.ShaderInterpolationMethod.Exact
-QgsColorRampShader.Exact.is_monkey_patched = True
 QgsColorRampShader.Exact.__doc__ = "Assigns the color of the exact matching value in the color ramp item list"
 Qgis.ShaderInterpolationMethod.__doc__ = """Color ramp shader interpolation methods.
 
@@ -2717,16 +2044,9 @@ Qgis.ShaderInterpolationMethod.__doc__ = """Color ramp shader interpolation meth
 """
 # --
 Qgis.ShaderInterpolationMethod.baseClass = Qgis
-QgsColorRampShader.ClassificationMode = Qgis.ShaderClassificationMethod
 # monkey patching scoped based enum
-QgsColorRampShader.Continuous = Qgis.ShaderClassificationMethod.Continuous
-QgsColorRampShader.Continuous.is_monkey_patched = True
 QgsColorRampShader.Continuous.__doc__ = "Uses breaks from color palette"
-QgsColorRampShader.EqualInterval = Qgis.ShaderClassificationMethod.EqualInterval
-QgsColorRampShader.EqualInterval.is_monkey_patched = True
 QgsColorRampShader.EqualInterval.__doc__ = "Uses equal interval"
-QgsColorRampShader.Quantile = Qgis.ShaderClassificationMethod.Quantile
-QgsColorRampShader.Quantile.is_monkey_patched = True
 QgsColorRampShader.Quantile.__doc__ = "Uses quantile (i.e. equal pixel) count"
 Qgis.ShaderClassificationMethod.__doc__ = """Color ramp shader classification methods.
 
@@ -2743,39 +2063,22 @@ Qgis.ShaderClassificationMethod.__doc__ = """Color ramp shader classification me
 """
 # --
 Qgis.ShaderClassificationMethod.baseClass = Qgis
-QgsRasterPipe.Role = Qgis.RasterPipeInterfaceRole
 # monkey patching scoped based enum
-QgsRasterPipe.UnknownRole = Qgis.RasterPipeInterfaceRole.Unknown
 QgsRasterPipe.Role.UnknownRole = Qgis.RasterPipeInterfaceRole.Unknown
-QgsRasterPipe.UnknownRole.is_monkey_patched = True
 QgsRasterPipe.UnknownRole.__doc__ = "Unknown role"
-QgsRasterPipe.ProviderRole = Qgis.RasterPipeInterfaceRole.Provider
 QgsRasterPipe.Role.ProviderRole = Qgis.RasterPipeInterfaceRole.Provider
-QgsRasterPipe.ProviderRole.is_monkey_patched = True
 QgsRasterPipe.ProviderRole.__doc__ = "Data provider role"
-QgsRasterPipe.RendererRole = Qgis.RasterPipeInterfaceRole.Renderer
 QgsRasterPipe.Role.RendererRole = Qgis.RasterPipeInterfaceRole.Renderer
-QgsRasterPipe.RendererRole.is_monkey_patched = True
 QgsRasterPipe.RendererRole.__doc__ = "Raster renderer role"
-QgsRasterPipe.BrightnessRole = Qgis.RasterPipeInterfaceRole.Brightness
 QgsRasterPipe.Role.BrightnessRole = Qgis.RasterPipeInterfaceRole.Brightness
-QgsRasterPipe.BrightnessRole.is_monkey_patched = True
 QgsRasterPipe.BrightnessRole.__doc__ = "Brightness filter role"
-QgsRasterPipe.ResamplerRole = Qgis.RasterPipeInterfaceRole.Resampler
 QgsRasterPipe.Role.ResamplerRole = Qgis.RasterPipeInterfaceRole.Resampler
-QgsRasterPipe.ResamplerRole.is_monkey_patched = True
 QgsRasterPipe.ResamplerRole.__doc__ = "Resampler role"
-QgsRasterPipe.ProjectorRole = Qgis.RasterPipeInterfaceRole.Projector
 QgsRasterPipe.Role.ProjectorRole = Qgis.RasterPipeInterfaceRole.Projector
-QgsRasterPipe.ProjectorRole.is_monkey_patched = True
 QgsRasterPipe.ProjectorRole.__doc__ = "Projector role"
-QgsRasterPipe.NullerRole = Qgis.RasterPipeInterfaceRole.Nuller
 QgsRasterPipe.Role.NullerRole = Qgis.RasterPipeInterfaceRole.Nuller
-QgsRasterPipe.NullerRole.is_monkey_patched = True
 QgsRasterPipe.NullerRole.__doc__ = "Raster nuller role"
-QgsRasterPipe.HueSaturationRole = Qgis.RasterPipeInterfaceRole.HueSaturation
 QgsRasterPipe.Role.HueSaturationRole = Qgis.RasterPipeInterfaceRole.HueSaturation
-QgsRasterPipe.HueSaturationRole.is_monkey_patched = True
 QgsRasterPipe.HueSaturationRole.__doc__ = "Hue/saturation filter role (also applies grayscale/color inversion)"
 Qgis.RasterPipeInterfaceRole.__doc__ = """Raster pipe interface roles.
 
@@ -2817,13 +2120,8 @@ Qgis.RasterPipeInterfaceRole.__doc__ = """Raster pipe interface roles.
 """
 # --
 Qgis.RasterPipeInterfaceRole.baseClass = Qgis
-QgsRasterPipe.ResamplingStage = Qgis.RasterResamplingStage
 # monkey patching scoped based enum
-QgsRasterPipe.ResampleFilter = Qgis.RasterResamplingStage.ResampleFilter
-QgsRasterPipe.ResampleFilter.is_monkey_patched = True
 QgsRasterPipe.ResampleFilter.__doc__ = "Resampling occurs in ResamplingFilter"
-QgsRasterPipe.Provider = Qgis.RasterResamplingStage.Provider
-QgsRasterPipe.Provider.is_monkey_patched = True
 QgsRasterPipe.Provider.__doc__ = "Resampling occurs in Provider"
 Qgis.RasterResamplingStage.__doc__ = """Stage at which raster resampling occurs.
 
@@ -2835,31 +2133,14 @@ Qgis.RasterResamplingStage.__doc__ = """Stage at which raster resampling occurs.
 """
 # --
 Qgis.RasterResamplingStage.baseClass = Qgis
-QgsRasterDataProvider.ResamplingMethod = Qgis.RasterResamplingMethod
 # monkey patching scoped based enum
-QgsRasterDataProvider.Nearest = Qgis.RasterResamplingMethod.Nearest
-QgsRasterDataProvider.Nearest.is_monkey_patched = True
 QgsRasterDataProvider.Nearest.__doc__ = "Nearest-neighbour resampling"
-QgsRasterDataProvider.Bilinear = Qgis.RasterResamplingMethod.Bilinear
-QgsRasterDataProvider.Bilinear.is_monkey_patched = True
 QgsRasterDataProvider.Bilinear.__doc__ = "Bilinear (2x2 kernel) resampling"
-QgsRasterDataProvider.Cubic = Qgis.RasterResamplingMethod.Cubic
-QgsRasterDataProvider.Cubic.is_monkey_patched = True
 QgsRasterDataProvider.Cubic.__doc__ = "Cubic Convolution Approximation (4x4 kernel) resampling"
-QgsRasterDataProvider.CubicSpline = Qgis.RasterResamplingMethod.CubicSpline
-QgsRasterDataProvider.CubicSpline.is_monkey_patched = True
 QgsRasterDataProvider.CubicSpline.__doc__ = "Cubic B-Spline Approximation (4x4 kernel)"
-QgsRasterDataProvider.Lanczos = Qgis.RasterResamplingMethod.Lanczos
-QgsRasterDataProvider.Lanczos.is_monkey_patched = True
 QgsRasterDataProvider.Lanczos.__doc__ = "Lanczos windowed sinc interpolation (6x6 kernel)"
-QgsRasterDataProvider.Average = Qgis.RasterResamplingMethod.Average
-QgsRasterDataProvider.Average.is_monkey_patched = True
 QgsRasterDataProvider.Average.__doc__ = "Average resampling"
-QgsRasterDataProvider.Mode = Qgis.RasterResamplingMethod.Mode
-QgsRasterDataProvider.Mode.is_monkey_patched = True
 QgsRasterDataProvider.Mode.__doc__ = "Mode (selects the value which appears most often of all the sampled points)"
-QgsRasterDataProvider.Gauss = Qgis.RasterResamplingMethod.Gauss
-QgsRasterDataProvider.Gauss.is_monkey_patched = True
 QgsRasterDataProvider.Gauss.__doc__ = "Gauss blurring"
 Qgis.RasterResamplingMethod.__doc__ = """Resampling method for raster provider-level resampling.
 
@@ -2912,21 +2193,12 @@ Qgis.RasterRendererCapability.__doc__ = """Raster renderer capabilities.
 Qgis.RasterRendererCapability.baseClass = Qgis
 Qgis.RasterRendererCapabilities.baseClass = Qgis
 RasterRendererCapabilities = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsRasterMinMaxOrigin.Limits = Qgis.RasterRangeLimit
 # monkey patching scoped based enum
-QgsRasterMinMaxOrigin.None_ = Qgis.RasterRangeLimit.NotSet
 QgsRasterMinMaxOrigin.Limits.None_ = Qgis.RasterRangeLimit.NotSet
-QgsRasterMinMaxOrigin.None_.is_monkey_patched = True
 QgsRasterMinMaxOrigin.None_.__doc__ = "User defined"
-QgsRasterMinMaxOrigin.MinMax = Qgis.RasterRangeLimit.MinimumMaximum
 QgsRasterMinMaxOrigin.Limits.MinMax = Qgis.RasterRangeLimit.MinimumMaximum
-QgsRasterMinMaxOrigin.MinMax.is_monkey_patched = True
 QgsRasterMinMaxOrigin.MinMax.__doc__ = "Real min-max values"
-QgsRasterMinMaxOrigin.StdDev = Qgis.RasterRangeLimit.StdDev
-QgsRasterMinMaxOrigin.StdDev.is_monkey_patched = True
 QgsRasterMinMaxOrigin.StdDev.__doc__ = "Range is [ mean - stdDevFactor() * stddev, mean + stdDevFactor() * stddev ]"
-QgsRasterMinMaxOrigin.CumulativeCut = Qgis.RasterRangeLimit.CumulativeCut
-QgsRasterMinMaxOrigin.CumulativeCut.is_monkey_patched = True
 QgsRasterMinMaxOrigin.CumulativeCut.__doc__ = "Range is [ min + cumulativeCutLower() * (max - min), min + cumulativeCutUpper() * (max - min) ]"
 Qgis.RasterRangeLimit.__doc__ = """Describes the limits used to compute raster ranges (min/max values).
 
@@ -2950,18 +2222,11 @@ Qgis.RasterRangeLimit.__doc__ = """Describes the limits used to compute raster r
 """
 # --
 Qgis.RasterRangeLimit.baseClass = Qgis
-QgsRasterMinMaxOrigin.Extent = Qgis.RasterRangeExtent
 # monkey patching scoped based enum
-QgsRasterMinMaxOrigin.None_ = Qgis.RasterRangeExtent.WholeRaster
 QgsRasterMinMaxOrigin.Extent.None_ = Qgis.RasterRangeExtent.WholeRaster
-QgsRasterMinMaxOrigin.None_.is_monkey_patched = True
 QgsRasterMinMaxOrigin.None_.__doc__ = "Whole raster is used to compute statistics"
-QgsRasterMinMaxOrigin.CurrentCanvas = Qgis.RasterRangeExtent.FixedCanvas
 QgsRasterMinMaxOrigin.Extent.CurrentCanvas = Qgis.RasterRangeExtent.FixedCanvas
-QgsRasterMinMaxOrigin.CurrentCanvas.is_monkey_patched = True
 QgsRasterMinMaxOrigin.CurrentCanvas.__doc__ = "Current extent of the canvas (at the time of computation) is used to compute statistics"
-QgsRasterMinMaxOrigin.UpdatedCanvas = Qgis.RasterRangeExtent.UpdatedCanvas
-QgsRasterMinMaxOrigin.UpdatedCanvas.is_monkey_patched = True
 QgsRasterMinMaxOrigin.UpdatedCanvas.__doc__ = "Constantly updated extent of the canvas is used to compute statistics"
 Qgis.RasterRangeExtent.__doc__ = """Describes the extent used to compute raster ranges (min/max values).
 
@@ -2984,13 +2249,8 @@ Qgis.RasterRangeExtent.__doc__ = """Describes the extent used to compute raster 
 """
 # --
 Qgis.RasterRangeExtent.baseClass = Qgis
-QgsRasterMinMaxOrigin.StatAccuracy = Qgis.RasterRangeAccuracy
 # monkey patching scoped based enum
-QgsRasterMinMaxOrigin.Exact = Qgis.RasterRangeAccuracy.Exact
-QgsRasterMinMaxOrigin.Exact.is_monkey_patched = True
 QgsRasterMinMaxOrigin.Exact.__doc__ = "Exact statistics"
-QgsRasterMinMaxOrigin.Estimated = Qgis.RasterRangeAccuracy.Estimated
-QgsRasterMinMaxOrigin.Estimated.is_monkey_patched = True
 QgsRasterMinMaxOrigin.Estimated.__doc__ = "Approximated statistics"
 Qgis.RasterRangeAccuracy.__doc__ = """Describes the accuracy used to compute raster ranges (min/max values).
 
@@ -3071,14 +2331,9 @@ note Directly mapped from GDALRATTableType enum values.
 """
 # --
 Qgis.RasterAttributeTableType.baseClass = Qgis
-QgsRasterFileWriter.Mode = Qgis.RasterExportType
 # monkey patching scoped based enum
-QgsRasterFileWriter.Raw = Qgis.RasterExportType.Raw
-QgsRasterFileWriter.Raw.is_monkey_patched = True
 QgsRasterFileWriter.Raw.__doc__ = "Raw data"
-QgsRasterFileWriter.Image = Qgis.RasterExportType.RenderedImage
 QgsRasterFileWriter.Mode.Image = Qgis.RasterExportType.RenderedImage
-QgsRasterFileWriter.Image.is_monkey_patched = True
 QgsRasterFileWriter.Image.__doc__ = "Rendered image"
 Qgis.RasterExportType.__doc__ = """Raster file export types.
 
@@ -3095,31 +2350,16 @@ Prior to QGIS 3.32 this was available as :py:class:`QgsRasterFileWriter`.Mode
 """
 # --
 Qgis.RasterExportType.baseClass = Qgis
-QgsRasterFileWriter.WriterError = Qgis.RasterFileWriterResult
 # monkey patching scoped based enum
-QgsRasterFileWriter.NoError = Qgis.RasterFileWriterResult.Success
 QgsRasterFileWriter.WriterError.NoError = Qgis.RasterFileWriterResult.Success
-QgsRasterFileWriter.NoError.is_monkey_patched = True
 QgsRasterFileWriter.NoError.__doc__ = "Successful export"
-QgsRasterFileWriter.SourceProviderError = Qgis.RasterFileWriterResult.SourceProviderError
-QgsRasterFileWriter.SourceProviderError.is_monkey_patched = True
 QgsRasterFileWriter.SourceProviderError.__doc__ = "Source data provider error"
-QgsRasterFileWriter.DestProviderError = Qgis.RasterFileWriterResult.DestinationProviderError
 QgsRasterFileWriter.WriterError.DestProviderError = Qgis.RasterFileWriterResult.DestinationProviderError
-QgsRasterFileWriter.DestProviderError.is_monkey_patched = True
 QgsRasterFileWriter.DestProviderError.__doc__ = "Destination data provider error"
-QgsRasterFileWriter.CreateDatasourceError = Qgis.RasterFileWriterResult.CreateDatasourceError
-QgsRasterFileWriter.CreateDatasourceError.is_monkey_patched = True
 QgsRasterFileWriter.CreateDatasourceError.__doc__ = "Data source creation error"
-QgsRasterFileWriter.WriteError = Qgis.RasterFileWriterResult.WriteError
-QgsRasterFileWriter.WriteError.is_monkey_patched = True
 QgsRasterFileWriter.WriteError.__doc__ = "Write error"
-QgsRasterFileWriter.NoDataConflict = Qgis.RasterFileWriterResult.NoDataConflict
-QgsRasterFileWriter.NoDataConflict.is_monkey_patched = True
 QgsRasterFileWriter.NoDataConflict.__doc__ = "Internal error if a value used for 'no data' was found in input"
-QgsRasterFileWriter.WriteCanceled = Qgis.RasterFileWriterResult.Canceled
 QgsRasterFileWriter.WriterError.WriteCanceled = Qgis.RasterFileWriterResult.Canceled
-QgsRasterFileWriter.WriteCanceled.is_monkey_patched = True
 QgsRasterFileWriter.WriteCanceled.__doc__ = "Writing was manually canceled"
 Qgis.RasterFileWriterResult.__doc__ = """Raster file export results.
 
@@ -3200,27 +2440,16 @@ Qgis.SublayerPromptMode.__doc__ = """Specifies how to handle layer sources with 
 """
 # --
 Qgis.SublayerPromptMode.baseClass = Qgis
-QgsFields.FieldOrigin = Qgis.FieldOrigin
 # monkey patching scoped based enum
-QgsFields.OriginUnknown = Qgis.FieldOrigin.Unknown
 QgsFields.FieldOrigin.OriginUnknown = Qgis.FieldOrigin.Unknown
-QgsFields.OriginUnknown.is_monkey_patched = True
 QgsFields.OriginUnknown.__doc__ = "The field origin has not been specified"
-QgsFields.OriginProvider = Qgis.FieldOrigin.Provider
 QgsFields.FieldOrigin.OriginProvider = Qgis.FieldOrigin.Provider
-QgsFields.OriginProvider.is_monkey_patched = True
 QgsFields.OriginProvider.__doc__ = "Field originates from the underlying data provider of the vector layer"
-QgsFields.OriginJoin = Qgis.FieldOrigin.Join
 QgsFields.FieldOrigin.OriginJoin = Qgis.FieldOrigin.Join
-QgsFields.OriginJoin.is_monkey_patched = True
 QgsFields.OriginJoin.__doc__ = "Field originates from a joined layer"
-QgsFields.OriginEdit = Qgis.FieldOrigin.Edit
 QgsFields.FieldOrigin.OriginEdit = Qgis.FieldOrigin.Edit
-QgsFields.OriginEdit.is_monkey_patched = True
 QgsFields.OriginEdit.__doc__ = "Field has been temporarily added in editing mode"
-QgsFields.OriginExpression = Qgis.FieldOrigin.Expression
 QgsFields.FieldOrigin.OriginExpression = Qgis.FieldOrigin.Expression
-QgsFields.OriginExpression.is_monkey_patched = True
 QgsFields.OriginExpression.__doc__ = "Field is calculated from an expression"
 Qgis.FieldOrigin.__doc__ = """Field origin.
 
@@ -3309,19 +2538,10 @@ Qgis.SelectionRenderingMode.__doc__ = """Specifies how a selection should be ren
 """
 # --
 Qgis.SelectionRenderingMode.baseClass = Qgis
-QgsVectorLayer.SelectBehavior = Qgis.SelectBehavior
 # monkey patching scoped based enum
-QgsVectorLayer.SetSelection = Qgis.SelectBehavior.SetSelection
-QgsVectorLayer.SetSelection.is_monkey_patched = True
 QgsVectorLayer.SetSelection.__doc__ = "Set selection, removing any existing selection"
-QgsVectorLayer.AddToSelection = Qgis.SelectBehavior.AddToSelection
-QgsVectorLayer.AddToSelection.is_monkey_patched = True
 QgsVectorLayer.AddToSelection.__doc__ = "Add selection to current selection"
-QgsVectorLayer.IntersectSelection = Qgis.SelectBehavior.IntersectSelection
-QgsVectorLayer.IntersectSelection.is_monkey_patched = True
 QgsVectorLayer.IntersectSelection.__doc__ = "Modify current selection to include only select features which match"
-QgsVectorLayer.RemoveFromSelection = Qgis.SelectBehavior.RemoveFromSelection
-QgsVectorLayer.RemoveFromSelection.is_monkey_patched = True
 QgsVectorLayer.RemoveFromSelection.__doc__ = "Remove from current selection"
 Qgis.SelectBehavior.__doc__ = """Specifies how a selection should be applied.
 
@@ -3363,22 +2583,11 @@ Qgis.SelectionFlag.__doc__ = """Flags which control feature selection behavior.
 Qgis.SelectionFlag.baseClass = Qgis
 Qgis.SelectionFlags.baseClass = Qgis
 SelectionFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsVectorLayer.EditResult = Qgis.VectorEditResult
 # monkey patching scoped based enum
-QgsVectorLayer.Success = Qgis.VectorEditResult.Success
-QgsVectorLayer.Success.is_monkey_patched = True
 QgsVectorLayer.Success.__doc__ = "Edit operation was successful"
-QgsVectorLayer.EmptyGeometry = Qgis.VectorEditResult.EmptyGeometry
-QgsVectorLayer.EmptyGeometry.is_monkey_patched = True
 QgsVectorLayer.EmptyGeometry.__doc__ = "Edit operation resulted in an empty geometry"
-QgsVectorLayer.EditFailed = Qgis.VectorEditResult.EditFailed
-QgsVectorLayer.EditFailed.is_monkey_patched = True
 QgsVectorLayer.EditFailed.__doc__ = "Edit operation failed"
-QgsVectorLayer.FetchFeatureFailed = Qgis.VectorEditResult.FetchFeatureFailed
-QgsVectorLayer.FetchFeatureFailed.is_monkey_patched = True
 QgsVectorLayer.FetchFeatureFailed.__doc__ = "Unable to fetch requested feature"
-QgsVectorLayer.InvalidLayer = Qgis.VectorEditResult.InvalidLayer
-QgsVectorLayer.InvalidLayer.is_monkey_patched = True
 QgsVectorLayer.InvalidLayer.__doc__ = "Edit failed due to invalid layer"
 Qgis.VectorEditResult.__doc__ = """Specifies the result of a vector layer edit operation
 
@@ -3393,16 +2602,9 @@ Qgis.VectorEditResult.__doc__ = """Specifies the result of a vector layer edit o
 """
 # --
 Qgis.VectorEditResult.baseClass = Qgis
-QgsSymbolLayerUtils.VertexMarkerType = Qgis.VertexMarkerType
 # monkey patching scoped based enum
-QgsSymbolLayerUtils.SemiTransparentCircle = Qgis.VertexMarkerType.SemiTransparentCircle
-QgsSymbolLayerUtils.SemiTransparentCircle.is_monkey_patched = True
 QgsSymbolLayerUtils.SemiTransparentCircle.__doc__ = "Semi-transparent circle marker"
-QgsSymbolLayerUtils.Cross = Qgis.VertexMarkerType.Cross
-QgsSymbolLayerUtils.Cross.is_monkey_patched = True
 QgsSymbolLayerUtils.Cross.__doc__ = "Cross marker"
-QgsSymbolLayerUtils.NoMarker = Qgis.VertexMarkerType.NoMarker
-QgsSymbolLayerUtils.NoMarker.is_monkey_patched = True
 QgsSymbolLayerUtils.NoMarker.__doc__ = "No marker"
 Qgis.VertexMarkerType.__doc__ = """Editing vertex markers, used for showing vertices during a edit operation.
 
@@ -3451,16 +2653,9 @@ Qgis.GpsConnectionType.__doc__ = """GPS connection types.
 """
 # --
 Qgis.GpsConnectionType.baseClass = Qgis
-Qgis.GpsConnectionStatus = Qgis.DeviceConnectionStatus
 # monkey patching scoped based enum
-Qgis.Disconnected = Qgis.DeviceConnectionStatus.Disconnected
-Qgis.Disconnected.is_monkey_patched = True
 Qgis.Disconnected.__doc__ = "Device is disconnected"
-Qgis.Connecting = Qgis.DeviceConnectionStatus.Connecting
-Qgis.Connecting.is_monkey_patched = True
 Qgis.Connecting.__doc__ = "Device is connecting"
-Qgis.Connected = Qgis.DeviceConnectionStatus.Connected
-Qgis.Connected.is_monkey_patched = True
 Qgis.Connected.__doc__ = "Device is successfully connected"
 Qgis.DeviceConnectionStatus.__doc__ = """GPS connection status.
 
@@ -3473,19 +2668,10 @@ Qgis.DeviceConnectionStatus.__doc__ = """GPS connection status.
 """
 # --
 Qgis.DeviceConnectionStatus.baseClass = Qgis
-QgsGpsInformation.FixStatus = Qgis.GpsFixStatus
 # monkey patching scoped based enum
-QgsGpsInformation.NoData = Qgis.GpsFixStatus.NoData
-QgsGpsInformation.NoData.is_monkey_patched = True
 QgsGpsInformation.NoData.__doc__ = "No fix data available"
-QgsGpsInformation.NoFix = Qgis.GpsFixStatus.NoFix
-QgsGpsInformation.NoFix.is_monkey_patched = True
 QgsGpsInformation.NoFix.__doc__ = "GPS is not fixed"
-QgsGpsInformation.Fix2D = Qgis.GpsFixStatus.Fix2D
-QgsGpsInformation.Fix2D.is_monkey_patched = True
 QgsGpsInformation.Fix2D.__doc__ = "2D fix"
-QgsGpsInformation.Fix3D = Qgis.GpsFixStatus.Fix3D
-QgsGpsInformation.Fix3D.is_monkey_patched = True
 QgsGpsInformation.Fix3D.__doc__ = "3D fix"
 Qgis.GpsFixStatus.__doc__ = """GPS fix status.
 
@@ -3675,55 +2861,22 @@ Qgis.GpsFeatureType.__doc__ = """GPS feature types.
 """
 # --
 Qgis.GpsFeatureType.baseClass = Qgis
-QgsGeometry.OperationResult = Qgis.GeometryOperationResult
 # monkey patching scoped based enum
-QgsGeometry.Success = Qgis.GeometryOperationResult.Success
-QgsGeometry.Success.is_monkey_patched = True
 QgsGeometry.Success.__doc__ = "Operation succeeded"
-QgsGeometry.NothingHappened = Qgis.GeometryOperationResult.NothingHappened
-QgsGeometry.NothingHappened.is_monkey_patched = True
 QgsGeometry.NothingHappened.__doc__ = "Nothing happened, without any error"
-QgsGeometry.InvalidBaseGeometry = Qgis.GeometryOperationResult.InvalidBaseGeometry
-QgsGeometry.InvalidBaseGeometry.is_monkey_patched = True
 QgsGeometry.InvalidBaseGeometry.__doc__ = "The base geometry on which the operation is done is invalid or empty"
-QgsGeometry.InvalidInputGeometryType = Qgis.GeometryOperationResult.InvalidInputGeometryType
-QgsGeometry.InvalidInputGeometryType.is_monkey_patched = True
 QgsGeometry.InvalidInputGeometryType.__doc__ = "The input geometry (ring, part, split line, etc.) has not the correct geometry type"
-QgsGeometry.SelectionIsEmpty = Qgis.GeometryOperationResult.SelectionIsEmpty
-QgsGeometry.SelectionIsEmpty.is_monkey_patched = True
 QgsGeometry.SelectionIsEmpty.__doc__ = "No features were selected"
-QgsGeometry.SelectionIsGreaterThanOne = Qgis.GeometryOperationResult.SelectionIsGreaterThanOne
-QgsGeometry.SelectionIsGreaterThanOne.is_monkey_patched = True
 QgsGeometry.SelectionIsGreaterThanOne.__doc__ = "More than one features were selected"
-QgsGeometry.GeometryEngineError = Qgis.GeometryOperationResult.GeometryEngineError
-QgsGeometry.GeometryEngineError.is_monkey_patched = True
 QgsGeometry.GeometryEngineError.__doc__ = "Geometry engine misses a method implemented or an error occurred in the geometry engine"
-QgsGeometry.LayerNotEditable = Qgis.GeometryOperationResult.LayerNotEditable
-QgsGeometry.LayerNotEditable.is_monkey_patched = True
 QgsGeometry.LayerNotEditable.__doc__ = "Cannot edit layer"
-QgsGeometry.AddPartSelectedGeometryNotFound = Qgis.GeometryOperationResult.AddPartSelectedGeometryNotFound
-QgsGeometry.AddPartSelectedGeometryNotFound.is_monkey_patched = True
 QgsGeometry.AddPartSelectedGeometryNotFound.__doc__ = "The selected geometry cannot be found"
-QgsGeometry.AddPartNotMultiGeometry = Qgis.GeometryOperationResult.AddPartNotMultiGeometry
-QgsGeometry.AddPartNotMultiGeometry.is_monkey_patched = True
 QgsGeometry.AddPartNotMultiGeometry.__doc__ = "The source geometry is not multi"
-QgsGeometry.AddRingNotClosed = Qgis.GeometryOperationResult.AddRingNotClosed
-QgsGeometry.AddRingNotClosed.is_monkey_patched = True
 QgsGeometry.AddRingNotClosed.__doc__ = "The input ring is not closed"
-QgsGeometry.AddRingNotValid = Qgis.GeometryOperationResult.AddRingNotValid
-QgsGeometry.AddRingNotValid.is_monkey_patched = True
 QgsGeometry.AddRingNotValid.__doc__ = "The input ring is not valid"
-QgsGeometry.AddRingCrossesExistingRings = Qgis.GeometryOperationResult.AddRingCrossesExistingRings
-QgsGeometry.AddRingCrossesExistingRings.is_monkey_patched = True
 QgsGeometry.AddRingCrossesExistingRings.__doc__ = "The input ring crosses existing rings (it is not disjoint)"
-QgsGeometry.AddRingNotInExistingFeature = Qgis.GeometryOperationResult.AddRingNotInExistingFeature
-QgsGeometry.AddRingNotInExistingFeature.is_monkey_patched = True
 QgsGeometry.AddRingNotInExistingFeature.__doc__ = "The input ring doesn't have any existing ring to fit into"
-QgsGeometry.SplitCannotSplitPoint = Qgis.GeometryOperationResult.SplitCannotSplitPoint
-QgsGeometry.SplitCannotSplitPoint.is_monkey_patched = True
 QgsGeometry.SplitCannotSplitPoint.__doc__ = "Cannot split points"
-QgsGeometry.GeometryTypeHasChanged = Qgis.GeometryOperationResult.GeometryTypeHasChanged
-QgsGeometry.GeometryTypeHasChanged.is_monkey_patched = True
 QgsGeometry.GeometryTypeHasChanged.__doc__ = "Operation has changed geometry type"
 Qgis.GeometryOperationResult.__doc__ = """Success or failure of a geometry operation.
 
@@ -3751,11 +2904,8 @@ This enum gives details about cause of failure.
 """
 # --
 Qgis.GeometryOperationResult.baseClass = Qgis
-QgsGeometry.ValidityFlag = Qgis.GeometryValidityFlag
 # monkey patching scoped based enum
-QgsGeometry.FlagAllowSelfTouchingHoles = Qgis.GeometryValidityFlag.AllowSelfTouchingHoles
 QgsGeometry.ValidityFlag.FlagAllowSelfTouchingHoles = Qgis.GeometryValidityFlag.AllowSelfTouchingHoles
-QgsGeometry.FlagAllowSelfTouchingHoles.is_monkey_patched = True
 QgsGeometry.FlagAllowSelfTouchingHoles.__doc__ = "Indicates that self-touching holes are permitted. OGC validity states that self-touching holes are NOT permitted, whilst other vendor validity checks (e.g. ESRI) permit self-touching holes."
 Qgis.GeometryValidityFlag.__doc__ = """Geometry validity check flags.
 
@@ -3768,19 +2918,13 @@ Qgis.GeometryValidityFlag.__doc__ = """Geometry validity check flags.
 
 """
 # --
-QgsGeometry.ValidityFlags = Qgis.GeometryValidityFlags
 Qgis.GeometryValidityFlag.baseClass = Qgis
 Qgis.GeometryValidityFlags.baseClass = Qgis
 GeometryValidityFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsGeometry.ValidationMethod = Qgis.GeometryValidationEngine
 # monkey patching scoped based enum
-QgsGeometry.ValidatorQgisInternal = Qgis.GeometryValidationEngine.QgisInternal
 QgsGeometry.ValidationMethod.ValidatorQgisInternal = Qgis.GeometryValidationEngine.QgisInternal
-QgsGeometry.ValidatorQgisInternal.is_monkey_patched = True
 QgsGeometry.ValidatorQgisInternal.__doc__ = "Use internal QgsGeometryValidator method"
-QgsGeometry.ValidatorGeos = Qgis.GeometryValidationEngine.Geos
 QgsGeometry.ValidationMethod.ValidatorGeos = Qgis.GeometryValidationEngine.Geos
-QgsGeometry.ValidatorGeos.is_monkey_patched = True
 QgsGeometry.ValidatorGeos.__doc__ = "Use GEOS validation methods"
 Qgis.GeometryValidationEngine.__doc__ = """Available engines for validating geometries.
 
@@ -3798,15 +2942,10 @@ Qgis.GeometryValidationEngine.__doc__ = """Available engines for validating geom
 """
 # --
 Qgis.GeometryValidationEngine.baseClass = Qgis
-QgsGeometry.BufferSide = Qgis.BufferSide
 # monkey patching scoped based enum
-QgsGeometry.SideLeft = Qgis.BufferSide.Left
 QgsGeometry.BufferSide.SideLeft = Qgis.BufferSide.Left
-QgsGeometry.SideLeft.is_monkey_patched = True
 QgsGeometry.SideLeft.__doc__ = "Buffer to left of line"
-QgsGeometry.SideRight = Qgis.BufferSide.Right
 QgsGeometry.BufferSide.SideRight = Qgis.BufferSide.Right
-QgsGeometry.SideRight.is_monkey_patched = True
 QgsGeometry.SideRight.__doc__ = "Buffer to right of line"
 Qgis.BufferSide.__doc__ = """Side of line to buffer.
 
@@ -3824,19 +2963,12 @@ Qgis.BufferSide.__doc__ = """Side of line to buffer.
 """
 # --
 Qgis.BufferSide.baseClass = Qgis
-QgsGeometry.EndCapStyle = Qgis.EndCapStyle
 # monkey patching scoped based enum
-QgsGeometry.CapRound = Qgis.EndCapStyle.Round
 QgsGeometry.EndCapStyle.CapRound = Qgis.EndCapStyle.Round
-QgsGeometry.CapRound.is_monkey_patched = True
 QgsGeometry.CapRound.__doc__ = "Round cap"
-QgsGeometry.CapFlat = Qgis.EndCapStyle.Flat
 QgsGeometry.EndCapStyle.CapFlat = Qgis.EndCapStyle.Flat
-QgsGeometry.CapFlat.is_monkey_patched = True
 QgsGeometry.CapFlat.__doc__ = "Flat cap (in line with start/end of line)"
-QgsGeometry.CapSquare = Qgis.EndCapStyle.Square
 QgsGeometry.EndCapStyle.CapSquare = Qgis.EndCapStyle.Square
-QgsGeometry.CapSquare.is_monkey_patched = True
 QgsGeometry.CapSquare.__doc__ = "Square cap (extends past start/end of line by buffer distance)"
 Qgis.EndCapStyle.__doc__ = """End cap styles for buffers.
 
@@ -3858,19 +2990,12 @@ Qgis.EndCapStyle.__doc__ = """End cap styles for buffers.
 """
 # --
 Qgis.EndCapStyle.baseClass = Qgis
-QgsGeometry.JoinStyle = Qgis.JoinStyle
 # monkey patching scoped based enum
-QgsGeometry.JoinStyleRound = Qgis.JoinStyle.Round
 QgsGeometry.JoinStyle.JoinStyleRound = Qgis.JoinStyle.Round
-QgsGeometry.JoinStyleRound.is_monkey_patched = True
 QgsGeometry.JoinStyleRound.__doc__ = "Use rounded joins"
-QgsGeometry.JoinStyleMiter = Qgis.JoinStyle.Miter
 QgsGeometry.JoinStyle.JoinStyleMiter = Qgis.JoinStyle.Miter
-QgsGeometry.JoinStyleMiter.is_monkey_patched = True
 QgsGeometry.JoinStyleMiter.__doc__ = "Use mitered joins"
-QgsGeometry.JoinStyleBevel = Qgis.JoinStyle.Bevel
 QgsGeometry.JoinStyle.JoinStyleBevel = Qgis.JoinStyle.Bevel
-QgsGeometry.JoinStyleBevel.is_monkey_patched = True
 QgsGeometry.JoinStyleBevel.__doc__ = "Use beveled joins"
 Qgis.JoinStyle.__doc__ = """Join styles for buffers.
 
@@ -3935,25 +3060,12 @@ Qgis.MakeValidMethod.__doc__ = """Algorithms to use when repairing invalid geome
 """
 # --
 Qgis.MakeValidMethod.baseClass = Qgis
-QgsFeatureRequest.Flag = Qgis.FeatureRequestFlag
 # monkey patching scoped based enum
-QgsFeatureRequest.NoFlags = Qgis.FeatureRequestFlag.NoFlags
-QgsFeatureRequest.NoFlags.is_monkey_patched = True
 QgsFeatureRequest.NoFlags.__doc__ = "No flags are set"
-QgsFeatureRequest.NoGeometry = Qgis.FeatureRequestFlag.NoGeometry
-QgsFeatureRequest.NoGeometry.is_monkey_patched = True
 QgsFeatureRequest.NoGeometry.__doc__ = "Geometry is not required. It may still be returned if e.g. required for a filter condition."
-QgsFeatureRequest.SubsetOfAttributes = Qgis.FeatureRequestFlag.SubsetOfAttributes
-QgsFeatureRequest.SubsetOfAttributes.is_monkey_patched = True
 QgsFeatureRequest.SubsetOfAttributes.__doc__ = "Fetch only a subset of attributes (setSubsetOfAttributes sets this flag)"
-QgsFeatureRequest.ExactIntersect = Qgis.FeatureRequestFlag.ExactIntersect
-QgsFeatureRequest.ExactIntersect.is_monkey_patched = True
 QgsFeatureRequest.ExactIntersect.__doc__ = "Use exact geometry intersection (slower) instead of bounding boxes"
-QgsFeatureRequest.IgnoreStaticNodesDuringExpressionCompilation = Qgis.FeatureRequestFlag.IgnoreStaticNodesDuringExpressionCompilation
-QgsFeatureRequest.IgnoreStaticNodesDuringExpressionCompilation.is_monkey_patched = True
 QgsFeatureRequest.IgnoreStaticNodesDuringExpressionCompilation.__doc__ = "If a feature request uses a filter expression which can be partially precalculated due to static nodes in the expression, setting this flag will prevent these precalculated values from being utilized during compilation of the filter for the backend provider. This flag significantly slows down feature requests and should be used for debugging purposes only. \n.. versionadded:: 3.18"
-QgsFeatureRequest.EmbeddedSymbols = Qgis.FeatureRequestFlag.EmbeddedSymbols
-QgsFeatureRequest.EmbeddedSymbols.is_monkey_patched = True
 QgsFeatureRequest.EmbeddedSymbols.__doc__ = "Retrieve any embedded feature symbology \n.. versionadded:: 3.20"
 Qgis.FeatureRequestFlag.__doc__ = """Flags for controlling feature requests.
 
@@ -3979,26 +3091,16 @@ Qgis.FeatureRequestFlag.__doc__ = """Flags for controlling feature requests.
 """
 # --
 Qgis.FeatureRequestFlag.baseClass = Qgis
-QgsFeatureRequest.Flags = Qgis.FeatureRequestFlags
 Qgis.FeatureRequestFlags.baseClass = Qgis
 FeatureRequestFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsFeatureRequest.FilterType = Qgis.FeatureRequestFilterType
 # monkey patching scoped based enum
-QgsFeatureRequest.FilterNone = Qgis.FeatureRequestFilterType.NoFilter
 QgsFeatureRequest.FilterType.FilterNone = Qgis.FeatureRequestFilterType.NoFilter
-QgsFeatureRequest.FilterNone.is_monkey_patched = True
 QgsFeatureRequest.FilterNone.__doc__ = "No filter is applied"
-QgsFeatureRequest.FilterFid = Qgis.FeatureRequestFilterType.Fid
 QgsFeatureRequest.FilterType.FilterFid = Qgis.FeatureRequestFilterType.Fid
-QgsFeatureRequest.FilterFid.is_monkey_patched = True
 QgsFeatureRequest.FilterFid.__doc__ = "Filter using feature ID"
-QgsFeatureRequest.FilterExpression = Qgis.FeatureRequestFilterType.Expression
 QgsFeatureRequest.FilterType.FilterExpression = Qgis.FeatureRequestFilterType.Expression
-QgsFeatureRequest.FilterExpression.is_monkey_patched = True
 QgsFeatureRequest.FilterExpression.__doc__ = "Filter using expression"
-QgsFeatureRequest.FilterFids = Qgis.FeatureRequestFilterType.Fids
 QgsFeatureRequest.FilterType.FilterFids = Qgis.FeatureRequestFilterType.Fids
-QgsFeatureRequest.FilterFids.is_monkey_patched = True
 QgsFeatureRequest.FilterFids.__doc__ = "Filter using feature IDs"
 Qgis.FeatureRequestFilterType.__doc__ = """Types of feature request filters.
 
@@ -4028,19 +3130,12 @@ Qgis.FeatureRequestFilterType.__doc__ = """Types of feature request filters.
 """
 # --
 Qgis.FeatureRequestFilterType.baseClass = Qgis
-QgsFeatureRequest.InvalidGeometryCheck = Qgis.InvalidGeometryCheck
 # monkey patching scoped based enum
-QgsFeatureRequest.GeometryNoCheck = Qgis.InvalidGeometryCheck.NoCheck
 QgsFeatureRequest.InvalidGeometryCheck.GeometryNoCheck = Qgis.InvalidGeometryCheck.NoCheck
-QgsFeatureRequest.GeometryNoCheck.is_monkey_patched = True
 QgsFeatureRequest.GeometryNoCheck.__doc__ = "No invalid geometry checking"
-QgsFeatureRequest.GeometrySkipInvalid = Qgis.InvalidGeometryCheck.SkipInvalid
 QgsFeatureRequest.InvalidGeometryCheck.GeometrySkipInvalid = Qgis.InvalidGeometryCheck.SkipInvalid
-QgsFeatureRequest.GeometrySkipInvalid.is_monkey_patched = True
 QgsFeatureRequest.GeometrySkipInvalid.__doc__ = "Skip any features with invalid geometry. This requires a slow geometry validity check for every feature."
-QgsFeatureRequest.GeometryAbortOnInvalid = Qgis.InvalidGeometryCheck.AbortOnInvalid
 QgsFeatureRequest.InvalidGeometryCheck.GeometryAbortOnInvalid = Qgis.InvalidGeometryCheck.AbortOnInvalid
-QgsFeatureRequest.GeometryAbortOnInvalid.is_monkey_patched = True
 QgsFeatureRequest.GeometryAbortOnInvalid.__doc__ = "Close iterator on encountering any features with invalid geometry. This requires a slow geometry validity check for every feature."
 Qgis.InvalidGeometryCheck.__doc__ = """Methods for handling of features with invalid geometries
 
@@ -4308,16 +3403,9 @@ Qgis.CoordinateOrder.__doc__ = """Order of coordinates.
 """
 # --
 Qgis.CoordinateOrder.baseClass = Qgis
-QgsCoordinateReferenceSystem.IdentifierType = Qgis.CrsIdentifierType
 # monkey patching scoped based enum
-QgsCoordinateReferenceSystem.ShortString = Qgis.CrsIdentifierType.ShortString
-QgsCoordinateReferenceSystem.ShortString.is_monkey_patched = True
 QgsCoordinateReferenceSystem.ShortString.__doc__ = "A heavily abbreviated string, for use when a compact representation is required"
-QgsCoordinateReferenceSystem.MediumString = Qgis.CrsIdentifierType.MediumString
-QgsCoordinateReferenceSystem.MediumString.is_monkey_patched = True
 QgsCoordinateReferenceSystem.MediumString.__doc__ = "A medium-length string, recommended for general purpose use"
-QgsCoordinateReferenceSystem.FullString = Qgis.CrsIdentifierType.FullString
-QgsCoordinateReferenceSystem.FullString.is_monkey_patched = True
 QgsCoordinateReferenceSystem.FullString.__doc__ = "Full definition -- possibly a very lengthy string, e.g. with no truncation of custom WKT definitions"
 Qgis.CrsIdentifierType.__doc__ = """Available identifier string types for representing coordinate reference systems
 
@@ -4334,43 +3422,24 @@ Qgis.CrsIdentifierType.__doc__ = """Available identifier string types for repres
 """
 # --
 Qgis.CrsIdentifierType.baseClass = Qgis
-QgsCoordinateReferenceSystem.WktVariant = Qgis.CrsWktVariant
 # monkey patching scoped based enum
-QgsCoordinateReferenceSystem.WKT1_GDAL = Qgis.CrsWktVariant.Wkt1Gdal
 QgsCoordinateReferenceSystem.WktVariant.WKT1_GDAL = Qgis.CrsWktVariant.Wkt1Gdal
-QgsCoordinateReferenceSystem.WKT1_GDAL.is_monkey_patched = True
 QgsCoordinateReferenceSystem.WKT1_GDAL.__doc__ = "WKT1 as traditionally output by GDAL, deriving from OGC 01-009. A notable departure from WKT1_GDAL with respect to OGC 01-009 is that in WKT1_GDAL, the unit of the PRIMEM value is always degrees."
-QgsCoordinateReferenceSystem.WKT1_ESRI = Qgis.CrsWktVariant.Wkt1Esri
 QgsCoordinateReferenceSystem.WktVariant.WKT1_ESRI = Qgis.CrsWktVariant.Wkt1Esri
-QgsCoordinateReferenceSystem.WKT1_ESRI.is_monkey_patched = True
 QgsCoordinateReferenceSystem.WKT1_ESRI.__doc__ = "WKT1 as traditionally output by ESRI software, deriving from OGC 99-049."
-QgsCoordinateReferenceSystem.WKT2_2015 = Qgis.CrsWktVariant.Wkt2_2015
 QgsCoordinateReferenceSystem.WktVariant.WKT2_2015 = Qgis.CrsWktVariant.Wkt2_2015
-QgsCoordinateReferenceSystem.WKT2_2015.is_monkey_patched = True
 QgsCoordinateReferenceSystem.WKT2_2015.__doc__ = "Full WKT2 string, conforming to ISO 19162:2015(E) / OGC 12-063r5 with all possible nodes and new keyword names."
-QgsCoordinateReferenceSystem.WKT2_2015_SIMPLIFIED = Qgis.CrsWktVariant.Wkt2_2015Simplified
 QgsCoordinateReferenceSystem.WktVariant.WKT2_2015_SIMPLIFIED = Qgis.CrsWktVariant.Wkt2_2015Simplified
-QgsCoordinateReferenceSystem.WKT2_2015_SIMPLIFIED.is_monkey_patched = True
 QgsCoordinateReferenceSystem.WKT2_2015_SIMPLIFIED.__doc__ = "Same as WKT2_2015 with the following exceptions: UNIT keyword used. ID node only on top element. No ORDER element in AXIS element. PRIMEM node omitted if it is Greenwich.  ELLIPSOID.UNIT node omitted if it is UnitOfMeasure.METRE. PARAMETER.UNIT / PRIMEM.UNIT omitted if same as AXIS. AXIS.UNIT omitted and replaced by a common GEODCRS.UNIT if they are all the same on all axis."
-QgsCoordinateReferenceSystem.WKT2_2019 = Qgis.CrsWktVariant.Wkt2_2019
 QgsCoordinateReferenceSystem.WktVariant.WKT2_2019 = Qgis.CrsWktVariant.Wkt2_2019
-QgsCoordinateReferenceSystem.WKT2_2019.is_monkey_patched = True
 QgsCoordinateReferenceSystem.WKT2_2019.__doc__ = "Full WKT2 string, conforming to ISO 19162:2019 / OGC 18-010, with all possible nodes and new keyword names. Non-normative list of differences: WKT2_2019 uses GEOGCRS / BASEGEOGCRS keywords for GeographicCRS."
-QgsCoordinateReferenceSystem.WKT2_2019_SIMPLIFIED = Qgis.CrsWktVariant.Wkt2_2019Simplified
 QgsCoordinateReferenceSystem.WktVariant.WKT2_2019_SIMPLIFIED = Qgis.CrsWktVariant.Wkt2_2019Simplified
-QgsCoordinateReferenceSystem.WKT2_2019_SIMPLIFIED.is_monkey_patched = True
 QgsCoordinateReferenceSystem.WKT2_2019_SIMPLIFIED.__doc__ = "WKT2_2019 with the simplification rule of WKT2_SIMPLIFIED"
-QgsCoordinateReferenceSystem.WKT_PREFERRED = Qgis.CrsWktVariant.Preferred
 QgsCoordinateReferenceSystem.WktVariant.WKT_PREFERRED = Qgis.CrsWktVariant.Preferred
-QgsCoordinateReferenceSystem.WKT_PREFERRED.is_monkey_patched = True
 QgsCoordinateReferenceSystem.WKT_PREFERRED.__doc__ = "Preferred format, matching the most recent WKT ISO standard. Currently an alias to WKT2_2019, but may change in future versions."
-QgsCoordinateReferenceSystem.WKT_PREFERRED_SIMPLIFIED = Qgis.CrsWktVariant.PreferredSimplified
 QgsCoordinateReferenceSystem.WktVariant.WKT_PREFERRED_SIMPLIFIED = Qgis.CrsWktVariant.PreferredSimplified
-QgsCoordinateReferenceSystem.WKT_PREFERRED_SIMPLIFIED.is_monkey_patched = True
 QgsCoordinateReferenceSystem.WKT_PREFERRED_SIMPLIFIED.__doc__ = "Preferred simplified format, matching the most recent WKT ISO standard. Currently an alias to WKT2_2019_SIMPLIFIED, but may change in future versions."
-QgsCoordinateReferenceSystem.WKT_PREFERRED_GDAL = Qgis.CrsWktVariant.PreferredGdal
 QgsCoordinateReferenceSystem.WktVariant.WKT_PREFERRED_GDAL = Qgis.CrsWktVariant.PreferredGdal
-QgsCoordinateReferenceSystem.WKT_PREFERRED_GDAL.is_monkey_patched = True
 QgsCoordinateReferenceSystem.WKT_PREFERRED_GDAL.__doc__ = "Preferred format for conversion of CRS to WKT for use with the GDAL library."
 Qgis.CrsWktVariant.__doc__ = """Coordinate reference system WKT formatting variants.
 
@@ -4517,20 +3586,11 @@ Qgis.AnnotationItemEditOperationResult.__doc__ = """Results from an edit operati
 """
 # --
 Qgis.AnnotationItemEditOperationResult.baseClass = Qgis
-QgsTemporalNavigationObject.NavigationMode = Qgis.TemporalNavigationMode
 # monkey patching scoped based enum
-QgsTemporalNavigationObject.NavigationOff = Qgis.TemporalNavigationMode.Disabled
 QgsTemporalNavigationObject.NavigationMode.NavigationOff = Qgis.TemporalNavigationMode.Disabled
-QgsTemporalNavigationObject.NavigationOff.is_monkey_patched = True
 QgsTemporalNavigationObject.NavigationOff.__doc__ = "Temporal navigation is disabled"
-QgsTemporalNavigationObject.Animated = Qgis.TemporalNavigationMode.Animated
-QgsTemporalNavigationObject.Animated.is_monkey_patched = True
 QgsTemporalNavigationObject.Animated.__doc__ = "Temporal navigation relies on frames within a datetime range"
-QgsTemporalNavigationObject.FixedRange = Qgis.TemporalNavigationMode.FixedRange
-QgsTemporalNavigationObject.FixedRange.is_monkey_patched = True
 QgsTemporalNavigationObject.FixedRange.__doc__ = "Temporal navigation relies on a fixed datetime range"
-QgsTemporalNavigationObject.Movie = Qgis.TemporalNavigationMode.Movie
-QgsTemporalNavigationObject.Movie.is_monkey_patched = True
 QgsTemporalNavigationObject.Movie.__doc__ = "Movie mode -- behaves like a video player, with a fixed frame duration and no temporal range \n.. versionadded:: 3.36"
 Qgis.TemporalNavigationMode.__doc__ = """Temporal navigation modes.
 
@@ -4554,16 +3614,9 @@ Qgis.TemporalNavigationMode.__doc__ = """Temporal navigation modes.
 """
 # --
 Qgis.TemporalNavigationMode.baseClass = Qgis
-QgsTemporalNavigationObject.AnimationState = Qgis.AnimationState
 # monkey patching scoped based enum
-QgsTemporalNavigationObject.Forward = Qgis.AnimationState.Forward
-QgsTemporalNavigationObject.Forward.is_monkey_patched = True
 QgsTemporalNavigationObject.Forward.__doc__ = "Animation is playing forward."
-QgsTemporalNavigationObject.Reverse = Qgis.AnimationState.Reverse
-QgsTemporalNavigationObject.Reverse.is_monkey_patched = True
 QgsTemporalNavigationObject.Reverse.__doc__ = "Animation is playing in reverse."
-QgsTemporalNavigationObject.Idle = Qgis.AnimationState.Idle
-QgsTemporalNavigationObject.Idle.is_monkey_patched = True
 QgsTemporalNavigationObject.Idle.__doc__ = "Animation is paused."
 Qgis.AnimationState.__doc__ = """Animation states.
 
@@ -4603,31 +3656,18 @@ Qgis.PlaybackOperation.__doc__ = """Media playback operations.
 """
 # --
 Qgis.PlaybackOperation.baseClass = Qgis
-QgsVectorLayerTemporalProperties.TemporalMode = Qgis.VectorTemporalMode
 # monkey patching scoped based enum
-QgsVectorLayerTemporalProperties.ModeFixedTemporalRange = Qgis.VectorTemporalMode.FixedTemporalRange
 QgsVectorLayerTemporalProperties.TemporalMode.ModeFixedTemporalRange = Qgis.VectorTemporalMode.FixedTemporalRange
-QgsVectorLayerTemporalProperties.ModeFixedTemporalRange.is_monkey_patched = True
 QgsVectorLayerTemporalProperties.ModeFixedTemporalRange.__doc__ = "Mode when temporal properties have fixed start and end datetimes."
-QgsVectorLayerTemporalProperties.ModeFeatureDateTimeInstantFromField = Qgis.VectorTemporalMode.FeatureDateTimeInstantFromField
 QgsVectorLayerTemporalProperties.TemporalMode.ModeFeatureDateTimeInstantFromField = Qgis.VectorTemporalMode.FeatureDateTimeInstantFromField
-QgsVectorLayerTemporalProperties.ModeFeatureDateTimeInstantFromField.is_monkey_patched = True
 QgsVectorLayerTemporalProperties.ModeFeatureDateTimeInstantFromField.__doc__ = "Mode when features have a datetime instant taken from a single field"
-QgsVectorLayerTemporalProperties.ModeFeatureDateTimeStartAndEndFromFields = Qgis.VectorTemporalMode.FeatureDateTimeStartAndEndFromFields
 QgsVectorLayerTemporalProperties.TemporalMode.ModeFeatureDateTimeStartAndEndFromFields = Qgis.VectorTemporalMode.FeatureDateTimeStartAndEndFromFields
-QgsVectorLayerTemporalProperties.ModeFeatureDateTimeStartAndEndFromFields.is_monkey_patched = True
 QgsVectorLayerTemporalProperties.ModeFeatureDateTimeStartAndEndFromFields.__doc__ = "Mode when features have separate fields for start and end times"
-QgsVectorLayerTemporalProperties.ModeFeatureDateTimeStartAndDurationFromFields = Qgis.VectorTemporalMode.FeatureDateTimeStartAndDurationFromFields
 QgsVectorLayerTemporalProperties.TemporalMode.ModeFeatureDateTimeStartAndDurationFromFields = Qgis.VectorTemporalMode.FeatureDateTimeStartAndDurationFromFields
-QgsVectorLayerTemporalProperties.ModeFeatureDateTimeStartAndDurationFromFields.is_monkey_patched = True
 QgsVectorLayerTemporalProperties.ModeFeatureDateTimeStartAndDurationFromFields.__doc__ = "Mode when features have a field for start time and a field for event duration"
-QgsVectorLayerTemporalProperties.ModeFeatureDateTimeStartAndEndFromExpressions = Qgis.VectorTemporalMode.FeatureDateTimeStartAndEndFromExpressions
 QgsVectorLayerTemporalProperties.TemporalMode.ModeFeatureDateTimeStartAndEndFromExpressions = Qgis.VectorTemporalMode.FeatureDateTimeStartAndEndFromExpressions
-QgsVectorLayerTemporalProperties.ModeFeatureDateTimeStartAndEndFromExpressions.is_monkey_patched = True
 QgsVectorLayerTemporalProperties.ModeFeatureDateTimeStartAndEndFromExpressions.__doc__ = "Mode when features use expressions for start and end times"
-QgsVectorLayerTemporalProperties.ModeRedrawLayerOnly = Qgis.VectorTemporalMode.RedrawLayerOnly
 QgsVectorLayerTemporalProperties.TemporalMode.ModeRedrawLayerOnly = Qgis.VectorTemporalMode.RedrawLayerOnly
-QgsVectorLayerTemporalProperties.ModeRedrawLayerOnly.is_monkey_patched = True
 QgsVectorLayerTemporalProperties.ModeRedrawLayerOnly.__doc__ = "Redraw the layer when temporal range changes, but don't apply any filtering. Useful when symbology or rule based renderer expressions depend on the time range."
 Qgis.VectorTemporalMode.__doc__ = """Vector layer temporal feature modes
 
@@ -4674,19 +3714,12 @@ Qgis.VectorTemporalLimitMode.__doc__ = """Mode for the handling of the limits of
 """
 # --
 Qgis.VectorTemporalLimitMode.baseClass = Qgis
-QgsVectorDataProviderTemporalCapabilities.TemporalMode = Qgis.VectorDataProviderTemporalMode
 # monkey patching scoped based enum
-QgsVectorDataProviderTemporalCapabilities.ProviderHasFixedTemporalRange = Qgis.VectorDataProviderTemporalMode.HasFixedTemporalRange
 QgsVectorDataProviderTemporalCapabilities.TemporalMode.ProviderHasFixedTemporalRange = Qgis.VectorDataProviderTemporalMode.HasFixedTemporalRange
-QgsVectorDataProviderTemporalCapabilities.ProviderHasFixedTemporalRange.is_monkey_patched = True
 QgsVectorDataProviderTemporalCapabilities.ProviderHasFixedTemporalRange.__doc__ = "Entire dataset from provider has a fixed start and end datetime."
-QgsVectorDataProviderTemporalCapabilities.ProviderStoresFeatureDateTimeInstantInField = Qgis.VectorDataProviderTemporalMode.StoresFeatureDateTimeInstantInField
 QgsVectorDataProviderTemporalCapabilities.TemporalMode.ProviderStoresFeatureDateTimeInstantInField = Qgis.VectorDataProviderTemporalMode.StoresFeatureDateTimeInstantInField
-QgsVectorDataProviderTemporalCapabilities.ProviderStoresFeatureDateTimeInstantInField.is_monkey_patched = True
 QgsVectorDataProviderTemporalCapabilities.ProviderStoresFeatureDateTimeInstantInField.__doc__ = "Dataset has feature datetime instants stored in a single field"
-QgsVectorDataProviderTemporalCapabilities.ProviderStoresFeatureDateTimeStartAndEndInSeparateFields = Qgis.VectorDataProviderTemporalMode.StoresFeatureDateTimeStartAndEndInSeparateFields
 QgsVectorDataProviderTemporalCapabilities.TemporalMode.ProviderStoresFeatureDateTimeStartAndEndInSeparateFields = Qgis.VectorDataProviderTemporalMode.StoresFeatureDateTimeStartAndEndInSeparateFields
-QgsVectorDataProviderTemporalCapabilities.ProviderStoresFeatureDateTimeStartAndEndInSeparateFields.is_monkey_patched = True
 QgsVectorDataProviderTemporalCapabilities.ProviderStoresFeatureDateTimeStartAndEndInSeparateFields.__doc__ = "Dataset stores feature start and end datetimes in separate fields"
 Qgis.VectorDataProviderTemporalMode.__doc__ = """Vector data provider temporal handling modes.
 
@@ -4708,28 +3741,15 @@ Qgis.VectorDataProviderTemporalMode.__doc__ = """Vector data provider temporal h
 """
 # --
 Qgis.VectorDataProviderTemporalMode.baseClass = Qgis
-QgsRasterLayerTemporalProperties.TemporalMode = Qgis.RasterTemporalMode
 # monkey patching scoped based enum
-QgsRasterLayerTemporalProperties.ModeFixedTemporalRange = Qgis.RasterTemporalMode.FixedTemporalRange
 QgsRasterLayerTemporalProperties.TemporalMode.ModeFixedTemporalRange = Qgis.RasterTemporalMode.FixedTemporalRange
-QgsRasterLayerTemporalProperties.ModeFixedTemporalRange.is_monkey_patched = True
 QgsRasterLayerTemporalProperties.ModeFixedTemporalRange.__doc__ = "Mode when temporal properties have fixed start and end datetimes."
-QgsRasterLayerTemporalProperties.ModeTemporalRangeFromDataProvider = Qgis.RasterTemporalMode.TemporalRangeFromDataProvider
 QgsRasterLayerTemporalProperties.TemporalMode.ModeTemporalRangeFromDataProvider = Qgis.RasterTemporalMode.TemporalRangeFromDataProvider
-QgsRasterLayerTemporalProperties.ModeTemporalRangeFromDataProvider.is_monkey_patched = True
 QgsRasterLayerTemporalProperties.ModeTemporalRangeFromDataProvider.__doc__ = "Mode when raster layer delegates temporal range handling to the dataprovider."
-QgsRasterLayerTemporalProperties.ModeRedrawLayerOnly = Qgis.RasterTemporalMode.RedrawLayerOnly
 QgsRasterLayerTemporalProperties.TemporalMode.ModeRedrawLayerOnly = Qgis.RasterTemporalMode.RedrawLayerOnly
-QgsRasterLayerTemporalProperties.ModeRedrawLayerOnly.is_monkey_patched = True
 QgsRasterLayerTemporalProperties.ModeRedrawLayerOnly.__doc__ = "Redraw the layer when temporal range changes, but don't apply any filtering. Useful when raster symbology expressions depend on the time range. \n.. versionadded:: 3.22"
-QgsRasterLayerTemporalProperties.FixedRangePerBand = Qgis.RasterTemporalMode.FixedRangePerBand
-QgsRasterLayerTemporalProperties.FixedRangePerBand.is_monkey_patched = True
 QgsRasterLayerTemporalProperties.FixedRangePerBand.__doc__ = "Layer has a fixed temporal range per band \n.. versionadded:: 3.38"
-QgsRasterLayerTemporalProperties.RepresentsTemporalValues = Qgis.RasterTemporalMode.RepresentsTemporalValues
-QgsRasterLayerTemporalProperties.RepresentsTemporalValues.is_monkey_patched = True
 QgsRasterLayerTemporalProperties.RepresentsTemporalValues.__doc__ = "Pixel values represent an datetime"
-QgsRasterLayerTemporalProperties.FixedDateTime = Qgis.RasterTemporalMode.FixedDateTime
-QgsRasterLayerTemporalProperties.FixedDateTime.is_monkey_patched = True
 QgsRasterLayerTemporalProperties.FixedDateTime.__doc__ = "Layer has a fixed date time instant. \n.. versionadded:: 3.44"
 Qgis.RasterTemporalMode.__doc__ = """Raster layer temporal modes
 
@@ -4763,22 +3783,11 @@ Qgis.RasterTemporalMode.__doc__ = """Raster layer temporal modes
 """
 # --
 Qgis.RasterTemporalMode.baseClass = Qgis
-QgsRasterDataProviderTemporalCapabilities.IntervalHandlingMethod = Qgis.TemporalIntervalMatchMethod
 # monkey patching scoped based enum
-QgsRasterDataProviderTemporalCapabilities.MatchUsingWholeRange = Qgis.TemporalIntervalMatchMethod.MatchUsingWholeRange
-QgsRasterDataProviderTemporalCapabilities.MatchUsingWholeRange.is_monkey_patched = True
 QgsRasterDataProviderTemporalCapabilities.MatchUsingWholeRange.__doc__ = "Use an exact match to the whole temporal range"
-QgsRasterDataProviderTemporalCapabilities.MatchExactUsingStartOfRange = Qgis.TemporalIntervalMatchMethod.MatchExactUsingStartOfRange
-QgsRasterDataProviderTemporalCapabilities.MatchExactUsingStartOfRange.is_monkey_patched = True
 QgsRasterDataProviderTemporalCapabilities.MatchExactUsingStartOfRange.__doc__ = "Match the start of the temporal range to a corresponding layer or band, and only use exact matching results"
-QgsRasterDataProviderTemporalCapabilities.MatchExactUsingEndOfRange = Qgis.TemporalIntervalMatchMethod.MatchExactUsingEndOfRange
-QgsRasterDataProviderTemporalCapabilities.MatchExactUsingEndOfRange.is_monkey_patched = True
 QgsRasterDataProviderTemporalCapabilities.MatchExactUsingEndOfRange.__doc__ = "Match the end of the temporal range to a corresponding layer or band, and only use exact matching results"
-QgsRasterDataProviderTemporalCapabilities.FindClosestMatchToStartOfRange = Qgis.TemporalIntervalMatchMethod.FindClosestMatchToStartOfRange
-QgsRasterDataProviderTemporalCapabilities.FindClosestMatchToStartOfRange.is_monkey_patched = True
 QgsRasterDataProviderTemporalCapabilities.FindClosestMatchToStartOfRange.__doc__ = "Match the start of the temporal range to the least previous closest datetime."
-QgsRasterDataProviderTemporalCapabilities.FindClosestMatchToEndOfRange = Qgis.TemporalIntervalMatchMethod.FindClosestMatchToEndOfRange
-QgsRasterDataProviderTemporalCapabilities.FindClosestMatchToEndOfRange.is_monkey_patched = True
 QgsRasterDataProviderTemporalCapabilities.FindClosestMatchToEndOfRange.__doc__ = "Match the end of the temporal range to the least previous closest datetime."
 Qgis.TemporalIntervalMatchMethod.__doc__ = """Method to use when resolving a temporal range to a data provider layer or band.
 
@@ -4806,15 +3815,10 @@ Qgis.RasterTemporalCapabilityFlag.__doc__ = """Flags for raster layer temporal c
 Qgis.RasterTemporalCapabilityFlag.baseClass = Qgis
 Qgis.RasterTemporalCapabilityFlags.baseClass = Qgis
 RasterTemporalCapabilityFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsCoordinateTransform.TransformDirection = Qgis.TransformDirection
 # monkey patching scoped based enum
-QgsCoordinateTransform.ForwardTransform = Qgis.TransformDirection.Forward
 QgsCoordinateTransform.TransformDirection.ForwardTransform = Qgis.TransformDirection.Forward
-QgsCoordinateTransform.ForwardTransform.is_monkey_patched = True
 QgsCoordinateTransform.ForwardTransform.__doc__ = "Forward transform (from source to destination)"
-QgsCoordinateTransform.ReverseTransform = Qgis.TransformDirection.Reverse
 QgsCoordinateTransform.TransformDirection.ReverseTransform = Qgis.TransformDirection.Reverse
-QgsCoordinateTransform.ReverseTransform.is_monkey_patched = True
 QgsCoordinateTransform.ReverseTransform.__doc__ = "Reverse/inverse transform (from destination to source)"
 Qgis.TransformDirection.__doc__ = """Indicates the direction (forward or inverse) of a transform.
 
@@ -4862,64 +3866,25 @@ Qgis.RasterizedRenderingPolicy.__doc__ = """Policies controlling when rasterisat
 """
 # --
 Qgis.RasterizedRenderingPolicy.baseClass = Qgis
-QgsMapSettings.Flag = Qgis.MapSettingsFlag
 # monkey patching scoped based enum
-QgsMapSettings.Antialiasing = Qgis.MapSettingsFlag.Antialiasing
-QgsMapSettings.Antialiasing.is_monkey_patched = True
 QgsMapSettings.Antialiasing.__doc__ = "Enable anti-aliasing for map rendering"
-QgsMapSettings.DrawEditingInfo = Qgis.MapSettingsFlag.DrawEditingInfo
-QgsMapSettings.DrawEditingInfo.is_monkey_patched = True
 QgsMapSettings.DrawEditingInfo.__doc__ = "Enable drawing of vertex markers for layers in editing mode"
-QgsMapSettings.ForceVectorOutput = Qgis.MapSettingsFlag.ForceVectorOutput
-QgsMapSettings.ForceVectorOutput.is_monkey_patched = True
 QgsMapSettings.ForceVectorOutput.__doc__ = "Vector graphics should not be cached and drawn as raster images. \n.. deprecated:: 3.44. Use Qgis.RasterizedRenderingPolicy instead."
-QgsMapSettings.UseAdvancedEffects = Qgis.MapSettingsFlag.UseAdvancedEffects
-QgsMapSettings.UseAdvancedEffects.is_monkey_patched = True
 QgsMapSettings.UseAdvancedEffects.__doc__ = "Enable layer opacity and blending effects \n.. deprecated:: 3.44. Use Qgis.RasterizedRenderingPolicy instead."
-QgsMapSettings.DrawLabeling = Qgis.MapSettingsFlag.DrawLabeling
-QgsMapSettings.DrawLabeling.is_monkey_patched = True
 QgsMapSettings.DrawLabeling.__doc__ = "Enable drawing of labels on top of the map"
-QgsMapSettings.UseRenderingOptimization = Qgis.MapSettingsFlag.UseRenderingOptimization
-QgsMapSettings.UseRenderingOptimization.is_monkey_patched = True
 QgsMapSettings.UseRenderingOptimization.__doc__ = "Enable vector simplification and other rendering optimizations"
-QgsMapSettings.DrawSelection = Qgis.MapSettingsFlag.DrawSelection
-QgsMapSettings.DrawSelection.is_monkey_patched = True
 QgsMapSettings.DrawSelection.__doc__ = "Whether vector selections should be shown in the rendered map"
-QgsMapSettings.DrawSymbolBounds = Qgis.MapSettingsFlag.DrawSymbolBounds
-QgsMapSettings.DrawSymbolBounds.is_monkey_patched = True
 QgsMapSettings.DrawSymbolBounds.__doc__ = "Draw bounds of symbols (for debugging/testing)"
-QgsMapSettings.RenderMapTile = Qgis.MapSettingsFlag.RenderMapTile
-QgsMapSettings.RenderMapTile.is_monkey_patched = True
 QgsMapSettings.RenderMapTile.__doc__ = "Draw map such that there are no problems between adjacent tiles"
-QgsMapSettings.RenderPartialOutput = Qgis.MapSettingsFlag.RenderPartialOutput
-QgsMapSettings.RenderPartialOutput.is_monkey_patched = True
 QgsMapSettings.RenderPartialOutput.__doc__ = "Whether to make extra effort to update map image with partially rendered layers (better for interactive map canvas). Added in QGIS 3.0"
-QgsMapSettings.RenderPreviewJob = Qgis.MapSettingsFlag.RenderPreviewJob
-QgsMapSettings.RenderPreviewJob.is_monkey_patched = True
 QgsMapSettings.RenderPreviewJob.__doc__ = "Render is a 'canvas preview' render, and shortcuts should be taken to ensure fast rendering"
-QgsMapSettings.RenderBlocking = Qgis.MapSettingsFlag.RenderBlocking
-QgsMapSettings.RenderBlocking.is_monkey_patched = True
 QgsMapSettings.RenderBlocking.__doc__ = "Render and load remote sources in the same thread to ensure rendering remote sources (svg and images). WARNING: this flag must NEVER be used from GUI based applications (like the main QGIS application) or crashes will result. Only for use in external scripts or QGIS server."
-QgsMapSettings.LosslessImageRendering = Qgis.MapSettingsFlag.LosslessImageRendering
-QgsMapSettings.LosslessImageRendering.is_monkey_patched = True
 QgsMapSettings.LosslessImageRendering.__doc__ = "Render images losslessly whenever possible, instead of the default lossy jpeg rendering used for some destination devices (e.g. PDF). This flag only works with builds based on Qt 5.13 or later."
-QgsMapSettings.Render3DMap = Qgis.MapSettingsFlag.Render3DMap
-QgsMapSettings.Render3DMap.is_monkey_patched = True
 QgsMapSettings.Render3DMap.__doc__ = "Render is for a 3D map"
-QgsMapSettings.HighQualityImageTransforms = Qgis.MapSettingsFlag.HighQualityImageTransforms
-QgsMapSettings.HighQualityImageTransforms.is_monkey_patched = True
 QgsMapSettings.HighQualityImageTransforms.__doc__ = "Enable high quality image transformations, which results in better appearance of scaled or rotated raster components of a map \n.. versionadded:: 3.24"
-QgsMapSettings.SkipSymbolRendering = Qgis.MapSettingsFlag.SkipSymbolRendering
-QgsMapSettings.SkipSymbolRendering.is_monkey_patched = True
 QgsMapSettings.SkipSymbolRendering.__doc__ = "Disable symbol rendering while still drawing labels if enabled \n.. versionadded:: 3.24"
-QgsMapSettings.ForceRasterMasks = Qgis.MapSettingsFlag.ForceRasterMasks
-QgsMapSettings.ForceRasterMasks.is_monkey_patched = True
 QgsMapSettings.ForceRasterMasks.__doc__ = "Force symbol masking to be applied using a raster method. This is considerably faster when compared to the vector method, but results in a inferior quality output. \n.. versionadded:: 3.26.1"
-QgsMapSettings.RecordProfile = Qgis.MapSettingsFlag.RecordProfile
-QgsMapSettings.RecordProfile.is_monkey_patched = True
 QgsMapSettings.RecordProfile.__doc__ = "Enable run-time profiling while rendering \n.. versionadded:: 3.34"
-QgsMapSettings.AlwaysUseGlobalMasks = Qgis.MapSettingsFlag.AlwaysUseGlobalMasks
-QgsMapSettings.AlwaysUseGlobalMasks.is_monkey_patched = True
 QgsMapSettings.AlwaysUseGlobalMasks.__doc__ = "When applying clipping paths for selective masking, always use global (\"entire map\") paths, instead of calculating local clipping paths per rendered feature. This results in considerably more complex vector exports in all current Qt versions. This flag only applies to vector map exports. \n.. versionadded:: 3.38"
 Qgis.MapSettingsFlag.__doc__ = """Flags which adjust the way maps are rendered.
 
@@ -4968,80 +3933,32 @@ Qgis.MapSettingsFlag.__doc__ = """Flags which adjust the way maps are rendered.
 
 """
 # --
-QgsMapSettings.Flags = Qgis.MapSettingsFlags
 Qgis.MapSettingsFlag.baseClass = Qgis
 Qgis.MapSettingsFlags.baseClass = Qgis
 MapSettingsFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsRenderContext.Flag = Qgis.RenderContextFlag
 # monkey patching scoped based enum
-QgsRenderContext.DrawEditingInfo = Qgis.RenderContextFlag.DrawEditingInfo
-QgsRenderContext.DrawEditingInfo.is_monkey_patched = True
 QgsRenderContext.DrawEditingInfo.__doc__ = "Enable drawing of vertex markers for layers in editing mode"
-QgsRenderContext.ForceVectorOutput = Qgis.RenderContextFlag.ForceVectorOutput
-QgsRenderContext.ForceVectorOutput.is_monkey_patched = True
 QgsRenderContext.ForceVectorOutput.__doc__ = "Vector graphics should not be cached and drawn as raster images \n.. deprecated:: 3.44. Use Qgis.RasterizedRenderingPolicy instead."
-QgsRenderContext.UseAdvancedEffects = Qgis.RenderContextFlag.UseAdvancedEffects
-QgsRenderContext.UseAdvancedEffects.is_monkey_patched = True
 QgsRenderContext.UseAdvancedEffects.__doc__ = "Enable layer opacity and blending effects \n.. deprecated:: 3.44. Use Qgis.RasterizedRenderingPolicy instead."
-QgsRenderContext.UseRenderingOptimization = Qgis.RenderContextFlag.UseRenderingOptimization
-QgsRenderContext.UseRenderingOptimization.is_monkey_patched = True
 QgsRenderContext.UseRenderingOptimization.__doc__ = "Enable vector simplification and other rendering optimizations"
-QgsRenderContext.DrawSelection = Qgis.RenderContextFlag.DrawSelection
-QgsRenderContext.DrawSelection.is_monkey_patched = True
 QgsRenderContext.DrawSelection.__doc__ = "Whether vector selections should be shown in the rendered map"
-QgsRenderContext.DrawSymbolBounds = Qgis.RenderContextFlag.DrawSymbolBounds
-QgsRenderContext.DrawSymbolBounds.is_monkey_patched = True
 QgsRenderContext.DrawSymbolBounds.__doc__ = "Draw bounds of symbols (for debugging/testing)"
-QgsRenderContext.RenderMapTile = Qgis.RenderContextFlag.RenderMapTile
-QgsRenderContext.RenderMapTile.is_monkey_patched = True
 QgsRenderContext.RenderMapTile.__doc__ = "Draw map such that there are no problems between adjacent tiles"
-QgsRenderContext.Antialiasing = Qgis.RenderContextFlag.Antialiasing
-QgsRenderContext.Antialiasing.is_monkey_patched = True
 QgsRenderContext.Antialiasing.__doc__ = "Use antialiasing while drawing"
-QgsRenderContext.RenderPartialOutput = Qgis.RenderContextFlag.RenderPartialOutput
-QgsRenderContext.RenderPartialOutput.is_monkey_patched = True
 QgsRenderContext.RenderPartialOutput.__doc__ = "Whether to make extra effort to update map image with partially rendered layers (better for interactive map canvas). Added in QGIS 3.0"
-QgsRenderContext.RenderPreviewJob = Qgis.RenderContextFlag.RenderPreviewJob
-QgsRenderContext.RenderPreviewJob.is_monkey_patched = True
 QgsRenderContext.RenderPreviewJob.__doc__ = "Render is a 'canvas preview' render, and shortcuts should be taken to ensure fast rendering"
-QgsRenderContext.RenderBlocking = Qgis.RenderContextFlag.RenderBlocking
-QgsRenderContext.RenderBlocking.is_monkey_patched = True
 QgsRenderContext.RenderBlocking.__doc__ = "Render and load remote sources in the same thread to ensure rendering remote sources (svg and images). WARNING: this flag must NEVER be used from GUI based applications (like the main QGIS application) or crashes will result. Only for use in external scripts or QGIS server."
-QgsRenderContext.RenderSymbolPreview = Qgis.RenderContextFlag.RenderSymbolPreview
-QgsRenderContext.RenderSymbolPreview.is_monkey_patched = True
 QgsRenderContext.RenderSymbolPreview.__doc__ = "The render is for a symbol preview only and map based properties may not be available, so care should be taken to handle map unit based sizes in an appropriate way."
-QgsRenderContext.LosslessImageRendering = Qgis.RenderContextFlag.LosslessImageRendering
-QgsRenderContext.LosslessImageRendering.is_monkey_patched = True
 QgsRenderContext.LosslessImageRendering.__doc__ = "Render images losslessly whenever possible, instead of the default lossy jpeg rendering used for some destination devices (e.g. PDF). This flag only works with builds based on Qt 5.13 or later."
-QgsRenderContext.ApplyScalingWorkaroundForTextRendering = Qgis.RenderContextFlag.ApplyScalingWorkaroundForTextRendering
-QgsRenderContext.ApplyScalingWorkaroundForTextRendering.is_monkey_patched = True
 QgsRenderContext.ApplyScalingWorkaroundForTextRendering.__doc__ = "Whether a scaling workaround designed to stablise the rendering of small font sizes (or for painters scaled out by a large amount) when rendering text. Generally this is recommended, but it may incur some performance cost."
-QgsRenderContext.Render3DMap = Qgis.RenderContextFlag.Render3DMap
-QgsRenderContext.Render3DMap.is_monkey_patched = True
 QgsRenderContext.Render3DMap.__doc__ = "Render is for a 3D map"
-QgsRenderContext.ApplyClipAfterReprojection = Qgis.RenderContextFlag.ApplyClipAfterReprojection
-QgsRenderContext.ApplyClipAfterReprojection.is_monkey_patched = True
 QgsRenderContext.ApplyClipAfterReprojection.__doc__ = "Feature geometry clipping to mapExtent() must be performed after the geometries are transformed using coordinateTransform(). Usually feature geometry clipping occurs using the extent() in the layer's CRS prior to geometry transformation, but in some cases when extent() could not be accurately calculated it is necessary to clip geometries to mapExtent() AFTER transforming them using coordinateTransform()."
-QgsRenderContext.RenderingSubSymbol = Qgis.RenderContextFlag.RenderingSubSymbol
-QgsRenderContext.RenderingSubSymbol.is_monkey_patched = True
 QgsRenderContext.RenderingSubSymbol.__doc__ = "Set whenever a sub-symbol of a parent symbol is currently being rendered. Can be used during symbol and symbol layer rendering to determine whether the symbol being rendered is a subsymbol. \n.. versionadded:: 3.24"
-QgsRenderContext.HighQualityImageTransforms = Qgis.RenderContextFlag.HighQualityImageTransforms
-QgsRenderContext.HighQualityImageTransforms.is_monkey_patched = True
 QgsRenderContext.HighQualityImageTransforms.__doc__ = "Enable high quality image transformations, which results in better appearance of scaled or rotated raster components of a map \n.. versionadded:: 3.24"
-QgsRenderContext.SkipSymbolRendering = Qgis.RenderContextFlag.SkipSymbolRendering
-QgsRenderContext.SkipSymbolRendering.is_monkey_patched = True
 QgsRenderContext.SkipSymbolRendering.__doc__ = "Disable symbol rendering while still drawing labels if enabled \n.. versionadded:: 3.24"
-QgsRenderContext.RecordProfile = Qgis.RenderContextFlag.RecordProfile
-QgsRenderContext.RecordProfile.is_monkey_patched = True
 QgsRenderContext.RecordProfile.__doc__ = "Enable run-time profiling while rendering \n.. versionadded:: 3.34"
-QgsRenderContext.AlwaysUseGlobalMasks = Qgis.RenderContextFlag.AlwaysUseGlobalMasks
-QgsRenderContext.AlwaysUseGlobalMasks.is_monkey_patched = True
 QgsRenderContext.AlwaysUseGlobalMasks.__doc__ = "When applying clipping paths for selective masking, always use global (\"entire map\") paths, instead of calculating local clipping paths per rendered feature. This results in considerably more complex vector exports in all current Qt versions. This flag only applies to vector map exports. \n.. versionadded:: 3.38"
-QgsRenderContext.DisableSymbolClippingToExtent = Qgis.RenderContextFlag.DisableSymbolClippingToExtent
-QgsRenderContext.DisableSymbolClippingToExtent.is_monkey_patched = True
 QgsRenderContext.DisableSymbolClippingToExtent.__doc__ = "Force symbol clipping to map extent to be disabled in all situations. This will result in slower rendering, and should only be used in situations where the feature clipping is always undesirable. \n.. versionadded:: 3.40"
-QgsRenderContext.RenderLayerTree = Qgis.RenderContextFlag.RenderLayerTree
-QgsRenderContext.RenderLayerTree.is_monkey_patched = True
 QgsRenderContext.RenderLayerTree.__doc__ = "The render is for a layer tree display where map based properties are not available and where avoidance of long rendering freeze is crucial \n.. versionadded:: 3.44"
 Qgis.RenderContextFlag.__doc__ = """Flags which affect rendering operations.
 
@@ -5100,7 +4017,6 @@ Qgis.RenderContextFlag.__doc__ = """Flags which affect rendering operations.
 
 """
 # --
-QgsRenderContext.Flags = Qgis.RenderContextFlags
 Qgis.RenderContextFlag.baseClass = Qgis
 Qgis.RenderContextFlags.baseClass = Qgis
 RenderContextFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
@@ -5137,18 +4053,11 @@ Qgis.PaintEffectFlag.__doc__ = """Flags which control how paint effects behave.
 Qgis.PaintEffectFlag.baseClass = Qgis
 Qgis.PaintEffectFlags.baseClass = Qgis
 PaintEffectFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsRenderContext.TextRenderFormat = Qgis.TextRenderFormat
 # monkey patching scoped based enum
-QgsRenderContext.TextFormatAlwaysOutlines = Qgis.TextRenderFormat.AlwaysOutlines
 QgsRenderContext.TextRenderFormat.TextFormatAlwaysOutlines = Qgis.TextRenderFormat.AlwaysOutlines
-QgsRenderContext.TextFormatAlwaysOutlines.is_monkey_patched = True
 QgsRenderContext.TextFormatAlwaysOutlines.__doc__ = "Always render text using path objects (AKA outlines/curves). This setting guarantees the best quality rendering, even when using a raster paint surface (where sub-pixel path based text rendering is superior to sub-pixel text-based rendering). The downside is that text is converted to paths only, so users cannot open created vector outputs for post-processing in other applications and retain text editability.  This setting also guarantees complete compatibility with the full range of formatting options available through QgsTextRenderer and QgsTextFormat, some of which may not be possible to reproduce when using a vector-based paint surface and TextFormatAlwaysText mode. A final benefit to this setting is that vector exports created using text as outlines do not require all users to have the original fonts installed in order to display the text in its original style."
-QgsRenderContext.TextFormatAlwaysText = Qgis.TextRenderFormat.AlwaysText
 QgsRenderContext.TextRenderFormat.TextFormatAlwaysText = Qgis.TextRenderFormat.AlwaysText
-QgsRenderContext.TextFormatAlwaysText.is_monkey_patched = True
 QgsRenderContext.TextFormatAlwaysText.__doc__ = "Always render text as text objects. While this mode preserves text objects as text for post-processing in external vector editing applications, it can result in rendering artifacts or poor quality rendering, depending on the text format settings. Even with raster based paint devices, TextFormatAlwaysText can result in inferior rendering quality to TextFormatAlwaysOutlines. When rendering using TextFormatAlwaysText to a vector based device (e.g. PDF or SVG), care must be taken to ensure that the required fonts are available to users when opening the created files, or default fallback fonts will be used to display the output instead. (Although PDF exports MAY automatically embed some fonts when possible, depending on the user's platform)."
-QgsRenderContext.PreferText = Qgis.TextRenderFormat.PreferText
-QgsRenderContext.PreferText.is_monkey_patched = True
 QgsRenderContext.PreferText.__doc__ = "Render text as text objects, unless doing so results in rendering artifacts or poor quality rendering (depending on text format settings). When rendering using TextFormatAlwaysText to a vector based device (e.g. PDF or SVG), care must be taken to ensure that the required fonts are available to users when opening the created files, or default fallback fonts will be used to display the output instead. (Although PDF exports MAY automatically embed some fonts when possible, depending on the user's platform). \n.. versionadded:: 3.40"
 Qgis.TextRenderFormat.__doc__ = """Options for rendering text.
 
@@ -5170,31 +4079,14 @@ Qgis.TextRenderFormat.__doc__ = """Options for rendering text.
 """
 # --
 Qgis.TextRenderFormat.baseClass = Qgis
-QgsLabelingEngineSettings.Flag = Qgis.LabelingFlag
 # monkey patching scoped based enum
-QgsLabelingEngineSettings.UseAllLabels = Qgis.LabelingFlag.UseAllLabels
-QgsLabelingEngineSettings.UseAllLabels.is_monkey_patched = True
 QgsLabelingEngineSettings.UseAllLabels.__doc__ = "Whether to draw all labels even if there would be collisions"
-QgsLabelingEngineSettings.UsePartialCandidates = Qgis.LabelingFlag.UsePartialCandidates
-QgsLabelingEngineSettings.UsePartialCandidates.is_monkey_patched = True
 QgsLabelingEngineSettings.UsePartialCandidates.__doc__ = "Whether to use also label candidates that are partially outside of the map view"
-QgsLabelingEngineSettings.RenderOutlineLabels = Qgis.LabelingFlag.RenderOutlineLabels
-QgsLabelingEngineSettings.RenderOutlineLabels.is_monkey_patched = True
 QgsLabelingEngineSettings.RenderOutlineLabels.__doc__ = "Whether to render labels as text or outlines. Deprecated and of QGIS 3.4.3 - use defaultTextRenderFormat() instead."
-QgsLabelingEngineSettings.DrawLabelRectOnly = Qgis.LabelingFlag.DrawLabelRectOnly
-QgsLabelingEngineSettings.DrawLabelRectOnly.is_monkey_patched = True
 QgsLabelingEngineSettings.DrawLabelRectOnly.__doc__ = "Whether to only draw the label rect and not the actual label text (used for unit tests)"
-QgsLabelingEngineSettings.DrawCandidates = Qgis.LabelingFlag.DrawCandidates
-QgsLabelingEngineSettings.DrawCandidates.is_monkey_patched = True
 QgsLabelingEngineSettings.DrawCandidates.__doc__ = "Whether to draw rectangles of generated candidates (good for debugging)"
-QgsLabelingEngineSettings.DrawUnplacedLabels = Qgis.LabelingFlag.DrawUnplacedLabels
-QgsLabelingEngineSettings.DrawUnplacedLabels.is_monkey_patched = True
 QgsLabelingEngineSettings.DrawUnplacedLabels.__doc__ = "Whether to render unplaced labels as an indicator/warning for users"
-QgsLabelingEngineSettings.CollectUnplacedLabels = Qgis.LabelingFlag.CollectUnplacedLabels
-QgsLabelingEngineSettings.CollectUnplacedLabels.is_monkey_patched = True
 QgsLabelingEngineSettings.CollectUnplacedLabels.__doc__ = "Whether unplaced labels should be collected in the labeling results (regardless of whether they are being rendered) \n.. versionadded:: 3.20"
-QgsLabelingEngineSettings.DrawLabelMetrics = Qgis.LabelingFlag.DrawLabelMetrics
-QgsLabelingEngineSettings.DrawLabelMetrics.is_monkey_patched = True
 QgsLabelingEngineSettings.DrawLabelMetrics.__doc__ = "Whether to render label metric guides (for debugging) \n.. versionadded:: 3.30"
 Qgis.LabelingFlag.__doc__ = """Various flags that affect drawing and placement of labels.
 
@@ -5220,18 +4112,12 @@ Prior to QGIS 3.30 this was available as :py:class:`QgsLabelingEngineSettings`.F
 """
 # --
 Qgis.LabelingFlag.baseClass = Qgis
-QgsLabelingEngineSettings.Flags = Qgis.LabelingFlags
 Qgis.LabelingFlags.baseClass = Qgis
 LabelingFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsLabelingEngineSettings.PlacementEngineVersion = Qgis.LabelPlacementEngineVersion
 # monkey patching scoped based enum
-QgsLabelingEngineSettings.PlacementEngineVersion1 = Qgis.LabelPlacementEngineVersion.Version1
 QgsLabelingEngineSettings.PlacementEngineVersion.PlacementEngineVersion1 = Qgis.LabelPlacementEngineVersion.Version1
-QgsLabelingEngineSettings.PlacementEngineVersion1.is_monkey_patched = True
 QgsLabelingEngineSettings.PlacementEngineVersion1.__doc__ = "Version 1, matches placement from QGIS <= 3.10.1"
-QgsLabelingEngineSettings.PlacementEngineVersion2 = Qgis.LabelPlacementEngineVersion.Version2
 QgsLabelingEngineSettings.PlacementEngineVersion.PlacementEngineVersion2 = Qgis.LabelPlacementEngineVersion.Version2
-QgsLabelingEngineSettings.PlacementEngineVersion2.is_monkey_patched = True
 QgsLabelingEngineSettings.PlacementEngineVersion2.__doc__ = "Version 2 (default for new projects since QGIS 3.12)"
 Qgis.LabelPlacementEngineVersion.__doc__ = """Labeling placement engine version.
 
@@ -5251,19 +4137,12 @@ Prior to QGIS 3.30 this was available as :py:class:`QgsLabelingEngineSettings`.P
 """
 # --
 Qgis.LabelPlacementEngineVersion.baseClass = Qgis
-QgsTextFormat.TextOrientation = Qgis.TextOrientation
 # monkey patching scoped based enum
-QgsTextFormat.HorizontalOrientation = Qgis.TextOrientation.Horizontal
 QgsTextFormat.TextOrientation.HorizontalOrientation = Qgis.TextOrientation.Horizontal
-QgsTextFormat.HorizontalOrientation.is_monkey_patched = True
 QgsTextFormat.HorizontalOrientation.__doc__ = "Horizontally oriented text"
-QgsTextFormat.VerticalOrientation = Qgis.TextOrientation.Vertical
 QgsTextFormat.TextOrientation.VerticalOrientation = Qgis.TextOrientation.Vertical
-QgsTextFormat.VerticalOrientation.is_monkey_patched = True
 QgsTextFormat.VerticalOrientation.__doc__ = "Vertically oriented text"
-QgsTextFormat.RotationBasedOrientation = Qgis.TextOrientation.RotationBased
 QgsTextFormat.TextOrientation.RotationBasedOrientation = Qgis.TextOrientation.RotationBased
-QgsTextFormat.RotationBasedOrientation.is_monkey_patched = True
 QgsTextFormat.RotationBasedOrientation.__doc__ = "Horizontally or vertically oriented text based on rotation (only available for map labeling)"
 Qgis.TextOrientation.__doc__ = """Text orientations.
 
@@ -5289,24 +4168,13 @@ Qgis.TextOrientation.__doc__ = """Text orientations.
 """
 # --
 Qgis.TextOrientation.baseClass = Qgis
-QgsTextRenderer.DrawMode = Qgis.TextLayoutMode
 # monkey patching scoped based enum
-QgsTextRenderer.Rect = Qgis.TextLayoutMode.Rectangle
 QgsTextRenderer.DrawMode.Rect = Qgis.TextLayoutMode.Rectangle
-QgsTextRenderer.Rect.is_monkey_patched = True
 QgsTextRenderer.Rect.__doc__ = "Text within rectangle layout mode"
-QgsTextRenderer.Point = Qgis.TextLayoutMode.Point
-QgsTextRenderer.Point.is_monkey_patched = True
 QgsTextRenderer.Point.__doc__ = "Text at point of origin layout mode"
-QgsTextRenderer.Label = Qgis.TextLayoutMode.Labeling
 QgsTextRenderer.DrawMode.Label = Qgis.TextLayoutMode.Labeling
-QgsTextRenderer.Label.is_monkey_patched = True
 QgsTextRenderer.Label.__doc__ = "Labeling-specific layout mode"
-QgsTextRenderer.RectangleCapHeightBased = Qgis.TextLayoutMode.RectangleCapHeightBased
-QgsTextRenderer.RectangleCapHeightBased.is_monkey_patched = True
 QgsTextRenderer.RectangleCapHeightBased.__doc__ = "Similar to Rectangle mode, but uses cap height only when calculating font heights for the first line of text, and cap height + descent for subsequent lines of text \n.. versionadded:: 3.30"
-QgsTextRenderer.RectangleAscentBased = Qgis.TextLayoutMode.RectangleAscentBased
-QgsTextRenderer.RectangleAscentBased.is_monkey_patched = True
 QgsTextRenderer.RectangleAscentBased.__doc__ = "Similar to Rectangle mode, but uses ascents only when calculating font and line heights. \n.. versionadded:: 3.30"
 Qgis.TextLayoutMode.__doc__ = """Text layout modes.
 
@@ -5337,19 +4205,10 @@ Qgis.TextLayoutMode.__doc__ = """Text layout modes.
 """
 # --
 Qgis.TextLayoutMode.baseClass = Qgis
-QgsTextRenderer.TextPart = Qgis.TextComponent
 # monkey patching scoped based enum
-QgsTextRenderer.Text = Qgis.TextComponent.Text
-QgsTextRenderer.Text.is_monkey_patched = True
 QgsTextRenderer.Text.__doc__ = "Text component"
-QgsTextRenderer.Buffer = Qgis.TextComponent.Buffer
-QgsTextRenderer.Buffer.is_monkey_patched = True
 QgsTextRenderer.Buffer.__doc__ = "Buffer component"
-QgsTextRenderer.Background = Qgis.TextComponent.Background
-QgsTextRenderer.Background.is_monkey_patched = True
 QgsTextRenderer.Background.__doc__ = "Background shape"
-QgsTextRenderer.Shadow = Qgis.TextComponent.Shadow
-QgsTextRenderer.Shadow.is_monkey_patched = True
 QgsTextRenderer.Shadow.__doc__ = "Drop shadow"
 Qgis.TextComponent.__doc__ = """Text components.
 
@@ -5369,23 +4228,14 @@ Qgis.TextComponent.__doc__ = """Text components.
 Qgis.TextComponent.baseClass = Qgis
 Qgis.TextComponents.baseClass = Qgis
 TextComponents = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsTextRenderer.HAlignment = Qgis.TextHorizontalAlignment
 # monkey patching scoped based enum
-QgsTextRenderer.AlignLeft = Qgis.TextHorizontalAlignment.Left
 QgsTextRenderer.HAlignment.AlignLeft = Qgis.TextHorizontalAlignment.Left
-QgsTextRenderer.AlignLeft.is_monkey_patched = True
 QgsTextRenderer.AlignLeft.__doc__ = "Left align"
-QgsTextRenderer.AlignCenter = Qgis.TextHorizontalAlignment.Center
 QgsTextRenderer.HAlignment.AlignCenter = Qgis.TextHorizontalAlignment.Center
-QgsTextRenderer.AlignCenter.is_monkey_patched = True
 QgsTextRenderer.AlignCenter.__doc__ = "Center align"
-QgsTextRenderer.AlignRight = Qgis.TextHorizontalAlignment.Right
 QgsTextRenderer.HAlignment.AlignRight = Qgis.TextHorizontalAlignment.Right
-QgsTextRenderer.AlignRight.is_monkey_patched = True
 QgsTextRenderer.AlignRight.__doc__ = "Right align"
-QgsTextRenderer.AlignJustify = Qgis.TextHorizontalAlignment.Justify
 QgsTextRenderer.HAlignment.AlignJustify = Qgis.TextHorizontalAlignment.Justify
-QgsTextRenderer.AlignJustify.is_monkey_patched = True
 QgsTextRenderer.AlignJustify.__doc__ = "Justify align"
 Qgis.TextHorizontalAlignment.__doc__ = """Text horizontal alignment.
 
@@ -5415,19 +4265,12 @@ Qgis.TextHorizontalAlignment.__doc__ = """Text horizontal alignment.
 """
 # --
 Qgis.TextHorizontalAlignment.baseClass = Qgis
-QgsTextRenderer.VAlignment = Qgis.TextVerticalAlignment
 # monkey patching scoped based enum
-QgsTextRenderer.AlignTop = Qgis.TextVerticalAlignment.Top
 QgsTextRenderer.VAlignment.AlignTop = Qgis.TextVerticalAlignment.Top
-QgsTextRenderer.AlignTop.is_monkey_patched = True
 QgsTextRenderer.AlignTop.__doc__ = "Align to top"
-QgsTextRenderer.AlignVCenter = Qgis.TextVerticalAlignment.VerticalCenter
 QgsTextRenderer.VAlignment.AlignVCenter = Qgis.TextVerticalAlignment.VerticalCenter
-QgsTextRenderer.AlignVCenter.is_monkey_patched = True
 QgsTextRenderer.AlignVCenter.__doc__ = "Center align"
-QgsTextRenderer.AlignBottom = Qgis.TextVerticalAlignment.Bottom
 QgsTextRenderer.VAlignment.AlignBottom = Qgis.TextVerticalAlignment.Bottom
-QgsTextRenderer.AlignBottom.is_monkey_patched = True
 QgsTextRenderer.AlignBottom.__doc__ = "Align to bottom"
 Qgis.TextVerticalAlignment.__doc__ = """Text vertical alignment.
 
@@ -5474,19 +4317,10 @@ of text.
 """
 # --
 Qgis.TextCharacterVerticalAlignment.baseClass = Qgis
-QgsTextRendererUtils.CurvedTextFlag = Qgis.CurvedTextFlag
 # monkey patching scoped based enum
-QgsTextRendererUtils.TruncateStringWhenLineIsTooShort = Qgis.CurvedTextFlag.TruncateStringWhenLineIsTooShort
-QgsTextRendererUtils.TruncateStringWhenLineIsTooShort.is_monkey_patched = True
 QgsTextRendererUtils.TruncateStringWhenLineIsTooShort.__doc__ = "When a string is too long for the line, truncate characters instead of aborting the placement"
-QgsTextRendererUtils.UseBaselinePlacement = Qgis.CurvedTextFlag.UseBaselinePlacement
-QgsTextRendererUtils.UseBaselinePlacement.is_monkey_patched = True
 QgsTextRendererUtils.UseBaselinePlacement.__doc__ = "Generate placement based on the character baselines instead of centers"
-QgsTextRendererUtils.UprightCharactersOnly = Qgis.CurvedTextFlag.UprightCharactersOnly
-QgsTextRendererUtils.UprightCharactersOnly.is_monkey_patched = True
 QgsTextRendererUtils.UprightCharactersOnly.__doc__ = "Permit upright characters only. If not present then upside down text placement is permitted."
-QgsTextRendererUtils.ExtendLineToFitText = Qgis.CurvedTextFlag.ExtendLineToFitText
-QgsTextRendererUtils.ExtendLineToFitText.is_monkey_patched = True
 QgsTextRendererUtils.ExtendLineToFitText.__doc__ = "When a string is too long for the line, extend the line's final segment to fit the entire string. \n.. versionadded:: 4.0"
 Qgis.CurvedTextFlag.__doc__ = """Flags controlling behavior of curved text generation.
 
@@ -5503,20 +4337,10 @@ Qgis.CurvedTextFlag.__doc__ = """Flags controlling behavior of curved text gener
 """
 # --
 Qgis.CurvedTextFlag.baseClass = Qgis
-QgsTextRendererUtils.CurvedTextFlags = Qgis.CurvedTextFlags
-QgsVectorSimplifyMethod.SimplifyAlgorithm = Qgis.VectorSimplificationAlgorithm
 # monkey patching scoped based enum
-QgsVectorSimplifyMethod.Distance = Qgis.VectorSimplificationAlgorithm.Distance
-QgsVectorSimplifyMethod.Distance.is_monkey_patched = True
 QgsVectorSimplifyMethod.Distance.__doc__ = "The simplification uses the distance between points to remove duplicate points"
-QgsVectorSimplifyMethod.SnapToGrid = Qgis.VectorSimplificationAlgorithm.SnapToGrid
-QgsVectorSimplifyMethod.SnapToGrid.is_monkey_patched = True
 QgsVectorSimplifyMethod.SnapToGrid.__doc__ = "The simplification uses a grid (similar to ST_SnapToGrid) to remove duplicate points"
-QgsVectorSimplifyMethod.Visvalingam = Qgis.VectorSimplificationAlgorithm.Visvalingam
-QgsVectorSimplifyMethod.Visvalingam.is_monkey_patched = True
 QgsVectorSimplifyMethod.Visvalingam.__doc__ = "The simplification gives each point in a line an importance weighting, so that least important points are removed first"
-QgsVectorSimplifyMethod.SnappedToGridGlobal = Qgis.VectorSimplificationAlgorithm.SnappedToGridGlobal
-QgsVectorSimplifyMethod.SnappedToGridGlobal.is_monkey_patched = True
 QgsVectorSimplifyMethod.SnappedToGridGlobal.__doc__ = "Snap to a global grid based on the tolerance. Good for consistent results for incoming vertices, regardless of their feature"
 Qgis.VectorSimplificationAlgorithm.__doc__ = """Simplification algorithms for vector features.
 
@@ -5534,19 +4358,10 @@ Qgis.VectorSimplificationAlgorithm.__doc__ = """Simplification algorithms for ve
 """
 # --
 Qgis.VectorSimplificationAlgorithm.baseClass = Qgis
-QgsVectorSimplifyMethod.SimplifyHint = Qgis.VectorRenderingSimplificationFlag
 # monkey patching scoped based enum
-QgsVectorSimplifyMethod.NoSimplification = Qgis.VectorRenderingSimplificationFlag.NoSimplification
-QgsVectorSimplifyMethod.NoSimplification.is_monkey_patched = True
 QgsVectorSimplifyMethod.NoSimplification.__doc__ = "No simplification can be applied"
-QgsVectorSimplifyMethod.GeometrySimplification = Qgis.VectorRenderingSimplificationFlag.GeometrySimplification
-QgsVectorSimplifyMethod.GeometrySimplification.is_monkey_patched = True
 QgsVectorSimplifyMethod.GeometrySimplification.__doc__ = "The geometries can be simplified using the current map2pixel context state"
-QgsVectorSimplifyMethod.AntialiasingSimplification = Qgis.VectorRenderingSimplificationFlag.AntialiasingSimplification
-QgsVectorSimplifyMethod.AntialiasingSimplification.is_monkey_patched = True
 QgsVectorSimplifyMethod.AntialiasingSimplification.__doc__ = "The geometries can be rendered with 'AntiAliasing' disabled because of it is '1-pixel size'"
-QgsVectorSimplifyMethod.FullSimplification = Qgis.VectorRenderingSimplificationFlag.FullSimplification
-QgsVectorSimplifyMethod.FullSimplification.is_monkey_patched = True
 QgsVectorSimplifyMethod.FullSimplification.__doc__ = "All simplification hints can be applied ( Geometry + AA-disabling )"
 Qgis.VectorRenderingSimplificationFlag.__doc__ = """Simplification flags for vector feature rendering.
 
@@ -5564,7 +4379,6 @@ Qgis.VectorRenderingSimplificationFlag.__doc__ = """Simplification flags for vec
 """
 # --
 Qgis.VectorRenderingSimplificationFlag.baseClass = Qgis
-QgsVectorSimplifyMethod.SimplifyHints = Qgis.VectorRenderingSimplificationFlags
 Qgis.VectorRenderingSimplificationFlags.baseClass = Qgis
 VectorRenderingSimplificationFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -5584,15 +4398,10 @@ Qgis.RenderSubcomponentProperty.__doc__ = """Rendering subcomponent properties.
 """
 # --
 Qgis.RenderSubcomponentProperty.baseClass = Qgis
-QgsVertexId.VertexType = Qgis.VertexType
 # monkey patching scoped based enum
-QgsVertexId.SegmentVertex = Qgis.VertexType.Segment
 QgsVertexId.VertexType.SegmentVertex = Qgis.VertexType.Segment
-QgsVertexId.SegmentVertex.is_monkey_patched = True
 QgsVertexId.SegmentVertex.__doc__ = "The actual start or end point of a segment"
-QgsVertexId.CurveVertex = Qgis.VertexType.Curve
 QgsVertexId.VertexType.CurveVertex = Qgis.VertexType.Curve
-QgsVertexId.CurveVertex.is_monkey_patched = True
 QgsVertexId.CurveVertex.__doc__ = "An intermediate point on a segment defining the curvature of the segment"
 Qgis.VertexType.__doc__ = """Types of vertex.
 
@@ -5610,118 +4419,43 @@ Qgis.VertexType.__doc__ = """Types of vertex.
 """
 # --
 Qgis.VertexType.baseClass = Qgis
-QgsSimpleMarkerSymbolLayerBase.Shape = Qgis.MarkerShape
 # monkey patching scoped based enum
-QgsSimpleMarkerSymbolLayerBase.Square = Qgis.MarkerShape.Square
-QgsSimpleMarkerSymbolLayerBase.Square.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.Square.__doc__ = "Square"
-QgsSimpleMarkerSymbolLayerBase.Diamond = Qgis.MarkerShape.Diamond
-QgsSimpleMarkerSymbolLayerBase.Diamond.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.Diamond.__doc__ = "Diamond"
-QgsSimpleMarkerSymbolLayerBase.Pentagon = Qgis.MarkerShape.Pentagon
-QgsSimpleMarkerSymbolLayerBase.Pentagon.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.Pentagon.__doc__ = "Pentagon"
-QgsSimpleMarkerSymbolLayerBase.Hexagon = Qgis.MarkerShape.Hexagon
-QgsSimpleMarkerSymbolLayerBase.Hexagon.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.Hexagon.__doc__ = "Hexagon"
-QgsSimpleMarkerSymbolLayerBase.Triangle = Qgis.MarkerShape.Triangle
-QgsSimpleMarkerSymbolLayerBase.Triangle.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.Triangle.__doc__ = "Triangle"
-QgsSimpleMarkerSymbolLayerBase.EquilateralTriangle = Qgis.MarkerShape.EquilateralTriangle
-QgsSimpleMarkerSymbolLayerBase.EquilateralTriangle.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.EquilateralTriangle.__doc__ = "Equilateral triangle"
-QgsSimpleMarkerSymbolLayerBase.Star = Qgis.MarkerShape.Star
-QgsSimpleMarkerSymbolLayerBase.Star.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.Star.__doc__ = "Star"
-QgsSimpleMarkerSymbolLayerBase.Arrow = Qgis.MarkerShape.Arrow
-QgsSimpleMarkerSymbolLayerBase.Arrow.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.Arrow.__doc__ = "Arrow"
-QgsSimpleMarkerSymbolLayerBase.Circle = Qgis.MarkerShape.Circle
-QgsSimpleMarkerSymbolLayerBase.Circle.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.Circle.__doc__ = "Circle"
-QgsSimpleMarkerSymbolLayerBase.Cross = Qgis.MarkerShape.Cross
-QgsSimpleMarkerSymbolLayerBase.Cross.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.Cross.__doc__ = "Cross (lines only)"
-QgsSimpleMarkerSymbolLayerBase.CrossFill = Qgis.MarkerShape.CrossFill
-QgsSimpleMarkerSymbolLayerBase.CrossFill.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.CrossFill.__doc__ = "Solid filled cross"
-QgsSimpleMarkerSymbolLayerBase.Cross2 = Qgis.MarkerShape.Cross2
-QgsSimpleMarkerSymbolLayerBase.Cross2.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.Cross2.__doc__ = "Rotated cross (lines only), 'x' shape"
-QgsSimpleMarkerSymbolLayerBase.Line = Qgis.MarkerShape.Line
-QgsSimpleMarkerSymbolLayerBase.Line.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.Line.__doc__ = "Vertical line"
-QgsSimpleMarkerSymbolLayerBase.ArrowHead = Qgis.MarkerShape.ArrowHead
-QgsSimpleMarkerSymbolLayerBase.ArrowHead.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.ArrowHead.__doc__ = "Right facing arrow head (unfilled, lines only)"
-QgsSimpleMarkerSymbolLayerBase.ArrowHeadFilled = Qgis.MarkerShape.ArrowHeadFilled
-QgsSimpleMarkerSymbolLayerBase.ArrowHeadFilled.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.ArrowHeadFilled.__doc__ = "Right facing filled arrow head"
-QgsSimpleMarkerSymbolLayerBase.SemiCircle = Qgis.MarkerShape.SemiCircle
-QgsSimpleMarkerSymbolLayerBase.SemiCircle.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.SemiCircle.__doc__ = "Semi circle (top half)"
-QgsSimpleMarkerSymbolLayerBase.ThirdCircle = Qgis.MarkerShape.ThirdCircle
-QgsSimpleMarkerSymbolLayerBase.ThirdCircle.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.ThirdCircle.__doc__ = "One third circle (top left third)"
-QgsSimpleMarkerSymbolLayerBase.QuarterCircle = Qgis.MarkerShape.QuarterCircle
-QgsSimpleMarkerSymbolLayerBase.QuarterCircle.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.QuarterCircle.__doc__ = "Quarter circle (top left quarter)"
-QgsSimpleMarkerSymbolLayerBase.QuarterSquare = Qgis.MarkerShape.QuarterSquare
-QgsSimpleMarkerSymbolLayerBase.QuarterSquare.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.QuarterSquare.__doc__ = "Quarter square (top left quarter)"
-QgsSimpleMarkerSymbolLayerBase.HalfSquare = Qgis.MarkerShape.HalfSquare
-QgsSimpleMarkerSymbolLayerBase.HalfSquare.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.HalfSquare.__doc__ = "Half square (left half)"
-QgsSimpleMarkerSymbolLayerBase.DiagonalHalfSquare = Qgis.MarkerShape.DiagonalHalfSquare
-QgsSimpleMarkerSymbolLayerBase.DiagonalHalfSquare.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.DiagonalHalfSquare.__doc__ = "Diagonal half square (bottom left half)"
-QgsSimpleMarkerSymbolLayerBase.RightHalfTriangle = Qgis.MarkerShape.RightHalfTriangle
-QgsSimpleMarkerSymbolLayerBase.RightHalfTriangle.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.RightHalfTriangle.__doc__ = "Right half of triangle"
-QgsSimpleMarkerSymbolLayerBase.LeftHalfTriangle = Qgis.MarkerShape.LeftHalfTriangle
-QgsSimpleMarkerSymbolLayerBase.LeftHalfTriangle.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.LeftHalfTriangle.__doc__ = "Left half of triangle"
-QgsSimpleMarkerSymbolLayerBase.Octagon = Qgis.MarkerShape.Octagon
-QgsSimpleMarkerSymbolLayerBase.Octagon.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.Octagon.__doc__ = "Octagon \n.. versionadded:: 3.18"
-QgsSimpleMarkerSymbolLayerBase.SquareWithCorners = Qgis.MarkerShape.SquareWithCorners
-QgsSimpleMarkerSymbolLayerBase.SquareWithCorners.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.SquareWithCorners.__doc__ = "A square with diagonal corners \n.. versionadded:: 3.18"
-QgsSimpleMarkerSymbolLayerBase.AsteriskFill = Qgis.MarkerShape.AsteriskFill
-QgsSimpleMarkerSymbolLayerBase.AsteriskFill.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.AsteriskFill.__doc__ = "A filled asterisk shape \n.. versionadded:: 3.18"
-QgsSimpleMarkerSymbolLayerBase.HalfArc = Qgis.MarkerShape.HalfArc
-QgsSimpleMarkerSymbolLayerBase.HalfArc.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.HalfArc.__doc__ = "A line-only half arc \n.. versionadded:: 3.20"
-QgsSimpleMarkerSymbolLayerBase.ThirdArc = Qgis.MarkerShape.ThirdArc
-QgsSimpleMarkerSymbolLayerBase.ThirdArc.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.ThirdArc.__doc__ = "A line-only one third arc \n.. versionadded:: 3.20"
-QgsSimpleMarkerSymbolLayerBase.QuarterArc = Qgis.MarkerShape.QuarterArc
-QgsSimpleMarkerSymbolLayerBase.QuarterArc.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.QuarterArc.__doc__ = "A line-only one quarter arc \n.. versionadded:: 3.20"
-QgsSimpleMarkerSymbolLayerBase.ParallelogramRight = Qgis.MarkerShape.ParallelogramRight
-QgsSimpleMarkerSymbolLayerBase.ParallelogramRight.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.ParallelogramRight.__doc__ = "Parallelogram that slants right \n.. versionadded:: 3.28"
-QgsSimpleMarkerSymbolLayerBase.ParallelogramLeft = Qgis.MarkerShape.ParallelogramLeft
-QgsSimpleMarkerSymbolLayerBase.ParallelogramLeft.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.ParallelogramLeft.__doc__ = "Parallelogram that slants left \n.. versionadded:: 3.28"
-QgsSimpleMarkerSymbolLayerBase.Trapezoid = Qgis.MarkerShape.Trapezoid
-QgsSimpleMarkerSymbolLayerBase.Trapezoid.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.Trapezoid.__doc__ = "Trapezoid \n.. versionadded:: 3.28"
-QgsSimpleMarkerSymbolLayerBase.Shield = Qgis.MarkerShape.Shield
-QgsSimpleMarkerSymbolLayerBase.Shield.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.Shield.__doc__ = "A shape consisting of a triangle attached to a rectangle \n.. versionadded:: 3.28"
-QgsSimpleMarkerSymbolLayerBase.DiamondStar = Qgis.MarkerShape.DiamondStar
-QgsSimpleMarkerSymbolLayerBase.DiamondStar.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.DiamondStar.__doc__ = "A 4-sided star \n.. versionadded:: 3.28"
-QgsSimpleMarkerSymbolLayerBase.Heart = Qgis.MarkerShape.Heart
-QgsSimpleMarkerSymbolLayerBase.Heart.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.Heart.__doc__ = "Heart \n.. versionadded:: 3.28"
-QgsSimpleMarkerSymbolLayerBase.Decagon = Qgis.MarkerShape.Decagon
-QgsSimpleMarkerSymbolLayerBase.Decagon.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.Decagon.__doc__ = "Decagon \n.. versionadded:: 3.28"
-QgsSimpleMarkerSymbolLayerBase.RoundedSquare = Qgis.MarkerShape.RoundedSquare
-QgsSimpleMarkerSymbolLayerBase.RoundedSquare.is_monkey_patched = True
 QgsSimpleMarkerSymbolLayerBase.RoundedSquare.__doc__ = "A square with rounded corners \n.. versionadded:: 3.28"
 Qgis.MarkerShape.__doc__ = """Marker shapes.
 
@@ -5814,31 +4548,14 @@ Qgis.MarkerShape.__doc__ = """Marker shapes.
 """
 # --
 Qgis.MarkerShape.baseClass = Qgis
-QgsTemplatedLineSymbolLayerBase.Placement = Qgis.MarkerLinePlacement
 # monkey patching scoped based enum
-QgsTemplatedLineSymbolLayerBase.Interval = Qgis.MarkerLinePlacement.Interval
-QgsTemplatedLineSymbolLayerBase.Interval.is_monkey_patched = True
 QgsTemplatedLineSymbolLayerBase.Interval.__doc__ = "Place symbols at regular intervals"
-QgsTemplatedLineSymbolLayerBase.Vertex = Qgis.MarkerLinePlacement.Vertex
-QgsTemplatedLineSymbolLayerBase.Vertex.is_monkey_patched = True
 QgsTemplatedLineSymbolLayerBase.Vertex.__doc__ = "Place symbols on every vertex in the line"
-QgsTemplatedLineSymbolLayerBase.LastVertex = Qgis.MarkerLinePlacement.LastVertex
-QgsTemplatedLineSymbolLayerBase.LastVertex.is_monkey_patched = True
 QgsTemplatedLineSymbolLayerBase.LastVertex.__doc__ = "Place symbols on the last vertex in the line"
-QgsTemplatedLineSymbolLayerBase.FirstVertex = Qgis.MarkerLinePlacement.FirstVertex
-QgsTemplatedLineSymbolLayerBase.FirstVertex.is_monkey_patched = True
 QgsTemplatedLineSymbolLayerBase.FirstVertex.__doc__ = "Place symbols on the first vertex in the line"
-QgsTemplatedLineSymbolLayerBase.CentralPoint = Qgis.MarkerLinePlacement.CentralPoint
-QgsTemplatedLineSymbolLayerBase.CentralPoint.is_monkey_patched = True
 QgsTemplatedLineSymbolLayerBase.CentralPoint.__doc__ = "Place symbols at the mid point of the line"
-QgsTemplatedLineSymbolLayerBase.CurvePoint = Qgis.MarkerLinePlacement.CurvePoint
-QgsTemplatedLineSymbolLayerBase.CurvePoint.is_monkey_patched = True
 QgsTemplatedLineSymbolLayerBase.CurvePoint.__doc__ = "Place symbols at every virtual curve point in the line (used when rendering curved geometry types only)"
-QgsTemplatedLineSymbolLayerBase.SegmentCenter = Qgis.MarkerLinePlacement.SegmentCenter
-QgsTemplatedLineSymbolLayerBase.SegmentCenter.is_monkey_patched = True
 QgsTemplatedLineSymbolLayerBase.SegmentCenter.__doc__ = "Place symbols at the center of every line segment"
-QgsTemplatedLineSymbolLayerBase.InnerVertices = Qgis.MarkerLinePlacement.InnerVertices
-QgsTemplatedLineSymbolLayerBase.InnerVertices.is_monkey_patched = True
 QgsTemplatedLineSymbolLayerBase.InnerVertices.__doc__ = "Inner vertices (i.e. all vertices except the first and last vertex) \n.. versionadded:: 3.24"
 Qgis.MarkerLinePlacement.__doc__ = """Defines how/where the symbols should be placed on a line.
 
@@ -5897,13 +4614,8 @@ Qgis.LinearReferencingLabelSource.__doc__ = """Defines what quantity to use for 
 """
 # --
 Qgis.LinearReferencingLabelSource.baseClass = Qgis
-QgsGradientFillSymbolLayer.GradientColorType = Qgis.GradientColorSource
 # monkey patching scoped based enum
-QgsGradientFillSymbolLayer.SimpleTwoColor = Qgis.GradientColorSource.SimpleTwoColor
-QgsGradientFillSymbolLayer.SimpleTwoColor.is_monkey_patched = True
 QgsGradientFillSymbolLayer.SimpleTwoColor.__doc__ = "Simple two color gradient"
-QgsGradientFillSymbolLayer.ColorRamp = Qgis.GradientColorSource.ColorRamp
-QgsGradientFillSymbolLayer.ColorRamp.is_monkey_patched = True
 QgsGradientFillSymbolLayer.ColorRamp.__doc__ = "Gradient color ramp"
 Qgis.GradientColorSource.__doc__ = """Gradient color sources.
 
@@ -5919,16 +4631,9 @@ Qgis.GradientColorSource.__doc__ = """Gradient color sources.
 """
 # --
 Qgis.GradientColorSource.baseClass = Qgis
-QgsGradientFillSymbolLayer.GradientType = Qgis.GradientType
 # monkey patching scoped based enum
-QgsGradientFillSymbolLayer.Linear = Qgis.GradientType.Linear
-QgsGradientFillSymbolLayer.Linear.is_monkey_patched = True
 QgsGradientFillSymbolLayer.Linear.__doc__ = "Linear gradient"
-QgsGradientFillSymbolLayer.Radial = Qgis.GradientType.Radial
-QgsGradientFillSymbolLayer.Radial.is_monkey_patched = True
 QgsGradientFillSymbolLayer.Radial.__doc__ = "Radial (circular) gradient"
-QgsGradientFillSymbolLayer.Conical = Qgis.GradientType.Conical
-QgsGradientFillSymbolLayer.Conical.is_monkey_patched = True
 QgsGradientFillSymbolLayer.Conical.__doc__ = "Conical (polar) gradient"
 Qgis.GradientType.__doc__ = """Gradient types.
 
@@ -5945,13 +4650,8 @@ Qgis.GradientType.__doc__ = """Gradient types.
 """
 # --
 Qgis.GradientType.baseClass = Qgis
-QgsGradientFillSymbolLayer.GradientCoordinateMode = Qgis.SymbolCoordinateReference
 # monkey patching scoped based enum
-QgsGradientFillSymbolLayer.Feature = Qgis.SymbolCoordinateReference.Feature
-QgsGradientFillSymbolLayer.Feature.is_monkey_patched = True
 QgsGradientFillSymbolLayer.Feature.__doc__ = "Relative to feature/shape being rendered"
-QgsGradientFillSymbolLayer.Viewport = Qgis.SymbolCoordinateReference.Viewport
-QgsGradientFillSymbolLayer.Viewport.is_monkey_patched = True
 QgsGradientFillSymbolLayer.Viewport.__doc__ = "Relative to the whole viewport/output device"
 Qgis.SymbolCoordinateReference.__doc__ = """Symbol coordinate reference modes.
 
@@ -5967,16 +4667,9 @@ Qgis.SymbolCoordinateReference.__doc__ = """Symbol coordinate reference modes.
 """
 # --
 Qgis.SymbolCoordinateReference.baseClass = Qgis
-QgsGradientFillSymbolLayer.GradientSpread = Qgis.GradientSpread
 # monkey patching scoped based enum
-QgsGradientFillSymbolLayer.Pad = Qgis.GradientSpread.Pad
-QgsGradientFillSymbolLayer.Pad.is_monkey_patched = True
 QgsGradientFillSymbolLayer.Pad.__doc__ = "Pad out gradient using colors at endpoint of gradient"
-QgsGradientFillSymbolLayer.Reflect = Qgis.GradientSpread.Reflect
-QgsGradientFillSymbolLayer.Reflect.is_monkey_patched = True
 QgsGradientFillSymbolLayer.Reflect.__doc__ = "Reflect gradient"
-QgsGradientFillSymbolLayer.Repeat = Qgis.GradientSpread.Repeat
-QgsGradientFillSymbolLayer.Repeat.is_monkey_patched = True
 QgsGradientFillSymbolLayer.Repeat.__doc__ = "Repeat gradient"
 Qgis.GradientSpread.__doc__ = """Gradient spread options, which control how gradients are rendered outside of their
 start and end points.
@@ -5994,15 +4687,10 @@ start and end points.
 """
 # --
 Qgis.GradientSpread.baseClass = Qgis
-QgsRandomMarkerFillSymbolLayer.CountMethod = Qgis.PointCountMethod
 # monkey patching scoped based enum
-QgsRandomMarkerFillSymbolLayer.AbsoluteCount = Qgis.PointCountMethod.Absolute
 QgsRandomMarkerFillSymbolLayer.CountMethod.AbsoluteCount = Qgis.PointCountMethod.Absolute
-QgsRandomMarkerFillSymbolLayer.AbsoluteCount.is_monkey_patched = True
 QgsRandomMarkerFillSymbolLayer.AbsoluteCount.__doc__ = "The point count is used as an absolute count of markers"
-QgsRandomMarkerFillSymbolLayer.DensityBasedCount = Qgis.PointCountMethod.DensityBased
 QgsRandomMarkerFillSymbolLayer.CountMethod.DensityBasedCount = Qgis.PointCountMethod.DensityBased
-QgsRandomMarkerFillSymbolLayer.DensityBasedCount.is_monkey_patched = True
 QgsRandomMarkerFillSymbolLayer.DensityBasedCount.__doc__ = "The point count is part of a marker density count"
 Qgis.PointCountMethod.__doc__ = """Methods which define the number of points randomly filling a polygon.
 
@@ -6090,15 +4778,10 @@ Qgis.DashPatternSizeAdjustment.__doc__ = """Dash pattern size adjustment options
 """
 # --
 Qgis.DashPatternSizeAdjustment.baseClass = Qgis
-QgsGraduatedSymbolRenderer.GraduatedMethod = Qgis.GraduatedMethod
 # monkey patching scoped based enum
-QgsGraduatedSymbolRenderer.GraduatedColor = Qgis.GraduatedMethod.Color
 QgsGraduatedSymbolRenderer.GraduatedMethod.GraduatedColor = Qgis.GraduatedMethod.Color
-QgsGraduatedSymbolRenderer.GraduatedColor.is_monkey_patched = True
 QgsGraduatedSymbolRenderer.GraduatedColor.__doc__ = "Alter color of symbols"
-QgsGraduatedSymbolRenderer.GraduatedSize = Qgis.GraduatedMethod.Size
 QgsGraduatedSymbolRenderer.GraduatedMethod.GraduatedSize = Qgis.GraduatedMethod.Size
-QgsGraduatedSymbolRenderer.GraduatedSize.is_monkey_patched = True
 QgsGraduatedSymbolRenderer.GraduatedSize.__doc__ = "Alter size of symbols"
 Qgis.GraduatedMethod.__doc__ = """Methods for modifying symbols by range in a graduated symbol renderer.
 
@@ -6173,31 +4856,14 @@ Qgis.TilePixelRatio.__doc__ = """DpiMode enum
 """
 # --
 Qgis.TilePixelRatio.baseClass = Qgis
-QgsStringUtils.Capitalization = Qgis.Capitalization
 # monkey patching scoped based enum
-QgsStringUtils.MixedCase = Qgis.Capitalization.MixedCase
-QgsStringUtils.MixedCase.is_monkey_patched = True
 QgsStringUtils.MixedCase.__doc__ = "Mixed case, ie no change"
-QgsStringUtils.AllUppercase = Qgis.Capitalization.AllUppercase
-QgsStringUtils.AllUppercase.is_monkey_patched = True
 QgsStringUtils.AllUppercase.__doc__ = "Convert all characters to uppercase"
-QgsStringUtils.AllLowercase = Qgis.Capitalization.AllLowercase
-QgsStringUtils.AllLowercase.is_monkey_patched = True
 QgsStringUtils.AllLowercase.__doc__ = "Convert all characters to lowercase"
-QgsStringUtils.ForceFirstLetterToCapital = Qgis.Capitalization.ForceFirstLetterToCapital
-QgsStringUtils.ForceFirstLetterToCapital.is_monkey_patched = True
 QgsStringUtils.ForceFirstLetterToCapital.__doc__ = "Convert just the first letter of each word to uppercase, leave the rest untouched"
-QgsStringUtils.SmallCaps = Qgis.Capitalization.SmallCaps
-QgsStringUtils.SmallCaps.is_monkey_patched = True
 QgsStringUtils.SmallCaps.__doc__ = "Mixed case small caps \n.. versionadded:: 3.24"
-QgsStringUtils.TitleCase = Qgis.Capitalization.TitleCase
-QgsStringUtils.TitleCase.is_monkey_patched = True
 QgsStringUtils.TitleCase.__doc__ = "Simple title case conversion - does not fully grammatically parse the text and uses simple rules only. Note that this method does not convert any characters to lowercase, it only uppercases required letters. Callers must ensure that input strings are already lowercased."
-QgsStringUtils.UpperCamelCase = Qgis.Capitalization.UpperCamelCase
-QgsStringUtils.UpperCamelCase.is_monkey_patched = True
 QgsStringUtils.UpperCamelCase.__doc__ = "Convert the string to upper camel case. Note that this method does not unaccent characters."
-QgsStringUtils.AllSmallCaps = Qgis.Capitalization.AllSmallCaps
-QgsStringUtils.AllSmallCaps.is_monkey_patched = True
 QgsStringUtils.AllSmallCaps.__doc__ = "Force all characters to small caps \n.. versionadded:: 3.24"
 Qgis.Capitalization.__doc__ = """String capitalization options.
 
@@ -6251,16 +4917,9 @@ Qgis.ScaleToTileZoomLevelMethod.__doc__ = """Available methods for converting ma
 """
 # --
 Qgis.ScaleToTileZoomLevelMethod.baseClass = Qgis
-QgsCurve.Orientation = Qgis.AngularDirection
 # monkey patching scoped based enum
-QgsCurve.Clockwise = Qgis.AngularDirection.Clockwise
-QgsCurve.Clockwise.is_monkey_patched = True
 QgsCurve.Clockwise.__doc__ = "Clockwise direction"
-QgsCurve.CounterClockwise = Qgis.AngularDirection.CounterClockwise
-QgsCurve.CounterClockwise.is_monkey_patched = True
 QgsCurve.CounterClockwise.__doc__ = "Counter-clockwise direction"
-QgsCurve.NoOrientation = Qgis.AngularDirection.NoOrientation
-QgsCurve.NoOrientation.is_monkey_patched = True
 QgsCurve.NoOrientation.__doc__ = "Unknown orientation or sentinel value"
 Qgis.AngularDirection.__doc__ = """Angular directions.
 
@@ -6355,62 +5014,33 @@ Qgis.QueryStorageBackend.__doc__ = """Stored query storage backends.
 """
 # --
 Qgis.QueryStorageBackend.baseClass = Qgis
-QgsProcessing.SourceType = Qgis.ProcessingSourceType
 # monkey patching scoped based enum
-QgsProcessing.TypeMapLayer = Qgis.ProcessingSourceType.MapLayer
 QgsProcessing.SourceType.TypeMapLayer = Qgis.ProcessingSourceType.MapLayer
-QgsProcessing.TypeMapLayer.is_monkey_patched = True
 QgsProcessing.TypeMapLayer.__doc__ = "Any map layer type (raster, vector, mesh, point cloud, annotation or plugin layer)"
-QgsProcessing.TypeVectorAnyGeometry = Qgis.ProcessingSourceType.VectorAnyGeometry
 QgsProcessing.SourceType.TypeVectorAnyGeometry = Qgis.ProcessingSourceType.VectorAnyGeometry
-QgsProcessing.TypeVectorAnyGeometry.is_monkey_patched = True
 QgsProcessing.TypeVectorAnyGeometry.__doc__ = "Any vector layer with geometry"
-QgsProcessing.TypeVectorPoint = Qgis.ProcessingSourceType.VectorPoint
 QgsProcessing.SourceType.TypeVectorPoint = Qgis.ProcessingSourceType.VectorPoint
-QgsProcessing.TypeVectorPoint.is_monkey_patched = True
 QgsProcessing.TypeVectorPoint.__doc__ = "Vector point layers"
-QgsProcessing.TypeVectorLine = Qgis.ProcessingSourceType.VectorLine
 QgsProcessing.SourceType.TypeVectorLine = Qgis.ProcessingSourceType.VectorLine
-QgsProcessing.TypeVectorLine.is_monkey_patched = True
 QgsProcessing.TypeVectorLine.__doc__ = "Vector line layers"
-QgsProcessing.TypeVectorPolygon = Qgis.ProcessingSourceType.VectorPolygon
 QgsProcessing.SourceType.TypeVectorPolygon = Qgis.ProcessingSourceType.VectorPolygon
-QgsProcessing.TypeVectorPolygon.is_monkey_patched = True
 QgsProcessing.TypeVectorPolygon.__doc__ = "Vector polygon layers"
-QgsProcessing.TypeRaster = Qgis.ProcessingSourceType.Raster
 QgsProcessing.SourceType.TypeRaster = Qgis.ProcessingSourceType.Raster
-QgsProcessing.TypeRaster.is_monkey_patched = True
 QgsProcessing.TypeRaster.__doc__ = "Raster layers"
-QgsProcessing.TypeFile = Qgis.ProcessingSourceType.File
 QgsProcessing.SourceType.TypeFile = Qgis.ProcessingSourceType.File
-QgsProcessing.TypeFile.is_monkey_patched = True
 QgsProcessing.TypeFile.__doc__ = "Files (i.e. non map layer sources, such as text files)"
-QgsProcessing.TypeVector = Qgis.ProcessingSourceType.Vector
 QgsProcessing.SourceType.TypeVector = Qgis.ProcessingSourceType.Vector
-QgsProcessing.TypeVector.is_monkey_patched = True
 QgsProcessing.TypeVector.__doc__ = "Tables (i.e. vector layers with or without geometry). When used for a sink this indicates the sink has no geometry."
-QgsProcessing.TypeMesh = Qgis.ProcessingSourceType.Mesh
 QgsProcessing.SourceType.TypeMesh = Qgis.ProcessingSourceType.Mesh
-QgsProcessing.TypeMesh.is_monkey_patched = True
 QgsProcessing.TypeMesh.__doc__ = "Mesh layers \n.. versionadded:: 3.6"
-QgsProcessing.TypePlugin = Qgis.ProcessingSourceType.Plugin
 QgsProcessing.SourceType.TypePlugin = Qgis.ProcessingSourceType.Plugin
-QgsProcessing.TypePlugin.is_monkey_patched = True
 QgsProcessing.TypePlugin.__doc__ = "Plugin layers \n.. versionadded:: 3.22"
-QgsProcessing.TypePointCloud = Qgis.ProcessingSourceType.PointCloud
 QgsProcessing.SourceType.TypePointCloud = Qgis.ProcessingSourceType.PointCloud
-QgsProcessing.TypePointCloud.is_monkey_patched = True
 QgsProcessing.TypePointCloud.__doc__ = "Point cloud layers \n.. versionadded:: 3.22"
-QgsProcessing.TypeAnnotation = Qgis.ProcessingSourceType.Annotation
 QgsProcessing.SourceType.TypeAnnotation = Qgis.ProcessingSourceType.Annotation
-QgsProcessing.TypeAnnotation.is_monkey_patched = True
 QgsProcessing.TypeAnnotation.__doc__ = "Annotation layers \n.. versionadded:: 3.22"
-QgsProcessing.TypeVectorTile = Qgis.ProcessingSourceType.VectorTile
 QgsProcessing.SourceType.TypeVectorTile = Qgis.ProcessingSourceType.VectorTile
-QgsProcessing.TypeVectorTile.is_monkey_patched = True
 QgsProcessing.TypeVectorTile.__doc__ = "Vector tile layers \n.. versionadded:: 3.32"
-QgsProcessing.TiledScene = Qgis.ProcessingSourceType.TiledScene
-QgsProcessing.TiledScene.is_monkey_patched = True
 QgsProcessing.TiledScene.__doc__ = "Tiled scene layers \n.. versionadded:: 4.0"
 Qgis.ProcessingSourceType.__doc__ = """Processing data source types.
 
@@ -6495,15 +5125,10 @@ Qgis.ProcessingSourceType.__doc__ = """Processing data source types.
 """
 # --
 Qgis.ProcessingSourceType.baseClass = Qgis
-QgsProcessingProvider.Flag = Qgis.ProcessingProviderFlag
 # monkey patching scoped based enum
-QgsProcessingProvider.FlagDeemphasiseSearchResults = Qgis.ProcessingProviderFlag.DeemphasiseSearchResults
 QgsProcessingProvider.Flag.FlagDeemphasiseSearchResults = Qgis.ProcessingProviderFlag.DeemphasiseSearchResults
-QgsProcessingProvider.FlagDeemphasiseSearchResults.is_monkey_patched = True
 QgsProcessingProvider.FlagDeemphasiseSearchResults.__doc__ = "Algorithms should be de-emphasised in the search results when searching for algorithms. Use for low-priority providers or those with substantial known issues."
-QgsProcessingProvider.FlagCompatibleWithVirtualRaster = Qgis.ProcessingProviderFlag.CompatibleWithVirtualRaster
 QgsProcessingProvider.Flag.FlagCompatibleWithVirtualRaster = Qgis.ProcessingProviderFlag.CompatibleWithVirtualRaster
-QgsProcessingProvider.FlagCompatibleWithVirtualRaster.is_monkey_patched = True
 QgsProcessingProvider.FlagCompatibleWithVirtualRaster.__doc__ = "The processing provider's algorithms can work with QGIS virtualraster data provider \n.. versionadded:: 3.36"
 Qgis.ProcessingProviderFlag.__doc__ = """Flags indicating how and when an processing provider operates and should be exposed to users.
 
@@ -6528,73 +5153,39 @@ Qgis.ProcessingProviderFlag.__doc__ = """Flags indicating how and when an proces
 """
 # --
 Qgis.ProcessingProviderFlag.baseClass = Qgis
-QgsProcessingProvider.Flags = Qgis.ProcessingProviderFlags
 Qgis.ProcessingProviderFlags.baseClass = Qgis
 ProcessingProviderFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsProcessingAlgorithm.Flag = Qgis.ProcessingAlgorithmFlag
 # monkey patching scoped based enum
-QgsProcessingAlgorithm.FlagHideFromToolbox = Qgis.ProcessingAlgorithmFlag.HideFromToolbox
 QgsProcessingAlgorithm.Flag.FlagHideFromToolbox = Qgis.ProcessingAlgorithmFlag.HideFromToolbox
-QgsProcessingAlgorithm.FlagHideFromToolbox.is_monkey_patched = True
 QgsProcessingAlgorithm.FlagHideFromToolbox.__doc__ = "Algorithm should be hidden from the toolbox"
-QgsProcessingAlgorithm.FlagHideFromModeler = Qgis.ProcessingAlgorithmFlag.HideFromModeler
 QgsProcessingAlgorithm.Flag.FlagHideFromModeler = Qgis.ProcessingAlgorithmFlag.HideFromModeler
-QgsProcessingAlgorithm.FlagHideFromModeler.is_monkey_patched = True
 QgsProcessingAlgorithm.FlagHideFromModeler.__doc__ = "Algorithm should be hidden from the modeler"
-QgsProcessingAlgorithm.FlagSupportsBatch = Qgis.ProcessingAlgorithmFlag.SupportsBatch
 QgsProcessingAlgorithm.Flag.FlagSupportsBatch = Qgis.ProcessingAlgorithmFlag.SupportsBatch
-QgsProcessingAlgorithm.FlagSupportsBatch.is_monkey_patched = True
 QgsProcessingAlgorithm.FlagSupportsBatch.__doc__ = "Algorithm supports batch mode"
-QgsProcessingAlgorithm.FlagCanCancel = Qgis.ProcessingAlgorithmFlag.CanCancel
 QgsProcessingAlgorithm.Flag.FlagCanCancel = Qgis.ProcessingAlgorithmFlag.CanCancel
-QgsProcessingAlgorithm.FlagCanCancel.is_monkey_patched = True
 QgsProcessingAlgorithm.FlagCanCancel.__doc__ = "Algorithm can be canceled"
-QgsProcessingAlgorithm.FlagRequiresMatchingCrs = Qgis.ProcessingAlgorithmFlag.RequiresMatchingCrs
 QgsProcessingAlgorithm.Flag.FlagRequiresMatchingCrs = Qgis.ProcessingAlgorithmFlag.RequiresMatchingCrs
-QgsProcessingAlgorithm.FlagRequiresMatchingCrs.is_monkey_patched = True
 QgsProcessingAlgorithm.FlagRequiresMatchingCrs.__doc__ = "Algorithm requires that all input layers have matching coordinate reference systems"
-QgsProcessingAlgorithm.FlagNoThreading = Qgis.ProcessingAlgorithmFlag.NoThreading
 QgsProcessingAlgorithm.Flag.FlagNoThreading = Qgis.ProcessingAlgorithmFlag.NoThreading
-QgsProcessingAlgorithm.FlagNoThreading.is_monkey_patched = True
 QgsProcessingAlgorithm.FlagNoThreading.__doc__ = "Algorithm is not thread safe and cannot be run in a background thread, e.g. for algorithms which manipulate the current project, layer selections, or with external dependencies which are not thread-safe."
-QgsProcessingAlgorithm.FlagDisplayNameIsLiteral = Qgis.ProcessingAlgorithmFlag.DisplayNameIsLiteral
 QgsProcessingAlgorithm.Flag.FlagDisplayNameIsLiteral = Qgis.ProcessingAlgorithmFlag.DisplayNameIsLiteral
-QgsProcessingAlgorithm.FlagDisplayNameIsLiteral.is_monkey_patched = True
 QgsProcessingAlgorithm.FlagDisplayNameIsLiteral.__doc__ = "Algorithm's display name is a static literal string, and should not be translated or automatically formatted. For use with algorithms named after commands, e.g. GRASS 'v.in.ogr'."
-QgsProcessingAlgorithm.FlagSupportsInPlaceEdits = Qgis.ProcessingAlgorithmFlag.SupportsInPlaceEdits
 QgsProcessingAlgorithm.Flag.FlagSupportsInPlaceEdits = Qgis.ProcessingAlgorithmFlag.SupportsInPlaceEdits
-QgsProcessingAlgorithm.FlagSupportsInPlaceEdits.is_monkey_patched = True
 QgsProcessingAlgorithm.FlagSupportsInPlaceEdits.__doc__ = "Algorithm supports in-place editing"
-QgsProcessingAlgorithm.FlagKnownIssues = Qgis.ProcessingAlgorithmFlag.KnownIssues
 QgsProcessingAlgorithm.Flag.FlagKnownIssues = Qgis.ProcessingAlgorithmFlag.KnownIssues
-QgsProcessingAlgorithm.FlagKnownIssues.is_monkey_patched = True
 QgsProcessingAlgorithm.FlagKnownIssues.__doc__ = "Algorithm has known issues"
-QgsProcessingAlgorithm.FlagCustomException = Qgis.ProcessingAlgorithmFlag.CustomException
 QgsProcessingAlgorithm.Flag.FlagCustomException = Qgis.ProcessingAlgorithmFlag.CustomException
-QgsProcessingAlgorithm.FlagCustomException.is_monkey_patched = True
 QgsProcessingAlgorithm.FlagCustomException.__doc__ = "Algorithm raises custom exception notices, don't use the standard ones"
-QgsProcessingAlgorithm.FlagPruneModelBranchesBasedOnAlgorithmResults = Qgis.ProcessingAlgorithmFlag.PruneModelBranchesBasedOnAlgorithmResults
 QgsProcessingAlgorithm.Flag.FlagPruneModelBranchesBasedOnAlgorithmResults = Qgis.ProcessingAlgorithmFlag.PruneModelBranchesBasedOnAlgorithmResults
-QgsProcessingAlgorithm.FlagPruneModelBranchesBasedOnAlgorithmResults.is_monkey_patched = True
 QgsProcessingAlgorithm.FlagPruneModelBranchesBasedOnAlgorithmResults.__doc__ = "Algorithm results will cause remaining model branches to be pruned based on the results of running the algorithm"
-QgsProcessingAlgorithm.FlagSkipGenericModelLogging = Qgis.ProcessingAlgorithmFlag.SkipGenericModelLogging
 QgsProcessingAlgorithm.Flag.FlagSkipGenericModelLogging = Qgis.ProcessingAlgorithmFlag.SkipGenericModelLogging
-QgsProcessingAlgorithm.FlagSkipGenericModelLogging.is_monkey_patched = True
 QgsProcessingAlgorithm.FlagSkipGenericModelLogging.__doc__ = "When running as part of a model, the generic algorithm setup and results logging should be skipped"
-QgsProcessingAlgorithm.FlagNotAvailableInStandaloneTool = Qgis.ProcessingAlgorithmFlag.NotAvailableInStandaloneTool
 QgsProcessingAlgorithm.Flag.FlagNotAvailableInStandaloneTool = Qgis.ProcessingAlgorithmFlag.NotAvailableInStandaloneTool
-QgsProcessingAlgorithm.FlagNotAvailableInStandaloneTool.is_monkey_patched = True
 QgsProcessingAlgorithm.FlagNotAvailableInStandaloneTool.__doc__ = "Algorithm should not be available from the standalone \"qgis_process\" tool. Used to flag algorithms which make no sense outside of the QGIS application, such as \"select by...\" style algorithms."
-QgsProcessingAlgorithm.FlagRequiresProject = Qgis.ProcessingAlgorithmFlag.RequiresProject
 QgsProcessingAlgorithm.Flag.FlagRequiresProject = Qgis.ProcessingAlgorithmFlag.RequiresProject
-QgsProcessingAlgorithm.FlagRequiresProject.is_monkey_patched = True
 QgsProcessingAlgorithm.FlagRequiresProject.__doc__ = "The algorithm requires that a valid QgsProject is available from the processing context in order to execute"
-QgsProcessingAlgorithm.SecurityRisk = Qgis.ProcessingAlgorithmFlag.SecurityRisk
-QgsProcessingAlgorithm.SecurityRisk.is_monkey_patched = True
 QgsProcessingAlgorithm.SecurityRisk.__doc__ = "The algorithm represents a potential security risk if executed with untrusted inputs. \n.. versionadded:: 3.40"
-QgsProcessingAlgorithm.FlagDeprecated = Qgis.ProcessingAlgorithmFlag.Deprecated
 QgsProcessingAlgorithm.Flag.FlagDeprecated = Qgis.ProcessingAlgorithmFlag.Deprecated
-QgsProcessingAlgorithm.FlagDeprecated.is_monkey_patched = True
 QgsProcessingAlgorithm.FlagDeprecated.__doc__ = "Algorithm is deprecated"
 Qgis.ProcessingAlgorithmFlag.__doc__ = """Flags indicating how and when an algorithm operates and should be exposed to users.
 
@@ -6672,7 +5263,6 @@ Qgis.ProcessingAlgorithmFlag.__doc__ = """Flags indicating how and when an algor
 """
 # --
 Qgis.ProcessingAlgorithmFlag.baseClass = Qgis
-QgsProcessingAlgorithm.Flags = Qgis.ProcessingAlgorithmFlags
 Qgis.ProcessingAlgorithmFlags.baseClass = Qgis
 ProcessingAlgorithmFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -6690,13 +5280,8 @@ Qgis.ProcessingAlgorithmDocumentationFlag.__doc__ = """Flags describing algorith
 Qgis.ProcessingAlgorithmDocumentationFlag.baseClass = Qgis
 Qgis.ProcessingAlgorithmDocumentationFlags.baseClass = Qgis
 ProcessingAlgorithmDocumentationFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsProcessingAlgorithm.PropertyAvailability = Qgis.ProcessingPropertyAvailability
 # monkey patching scoped based enum
-QgsProcessingAlgorithm.NotAvailable = Qgis.ProcessingPropertyAvailability.NotAvailable
-QgsProcessingAlgorithm.NotAvailable.is_monkey_patched = True
 QgsProcessingAlgorithm.NotAvailable.__doc__ = "Properties are not available"
-QgsProcessingAlgorithm.Available = Qgis.ProcessingPropertyAvailability.Available
-QgsProcessingAlgorithm.Available.is_monkey_patched = True
 QgsProcessingAlgorithm.Available.__doc__ = "Properties are available"
 Qgis.ProcessingPropertyAvailability.__doc__ = """Property availability, used for :py:class:`QgsProcessingAlgorithm`.VectorProperties
 in order to determine if properties are available or not.
@@ -6713,16 +5298,9 @@ in order to determine if properties are available or not.
 """
 # --
 Qgis.ProcessingPropertyAvailability.baseClass = Qgis
-QgsProcessingContext.LogLevel = Qgis.ProcessingLogLevel
 # monkey patching scoped based enum
-QgsProcessingContext.DefaultLevel = Qgis.ProcessingLogLevel.DefaultLevel
-QgsProcessingContext.DefaultLevel.is_monkey_patched = True
 QgsProcessingContext.DefaultLevel.__doc__ = "Default logging level"
-QgsProcessingContext.Verbose = Qgis.ProcessingLogLevel.Verbose
-QgsProcessingContext.Verbose.is_monkey_patched = True
 QgsProcessingContext.Verbose.__doc__ = "Verbose logging"
-QgsProcessingContext.ModelDebug = Qgis.ProcessingLogLevel.ModelDebug
-QgsProcessingContext.ModelDebug.is_monkey_patched = True
 QgsProcessingContext.ModelDebug.__doc__ = "Model debug level logging. Includes verbose logging and other outputs useful for debugging models \n.. versionadded:: 3.34"
 Qgis.ProcessingLogLevel.__doc__ = """Logging level for algorithms to use when pushing feedback messages.
 
@@ -6761,15 +5339,10 @@ Qgis.ProcessingMode.__doc__ = """Types of modes which Processing widgets can be 
 """
 # --
 Qgis.ProcessingMode.baseClass = Qgis
-QgsProcessingFeatureSourceDefinition.Flag = Qgis.ProcessingFeatureSourceDefinitionFlag
 # monkey patching scoped based enum
-QgsProcessingFeatureSourceDefinition.FlagOverrideDefaultGeometryCheck = Qgis.ProcessingFeatureSourceDefinitionFlag.OverrideDefaultGeometryCheck
 QgsProcessingFeatureSourceDefinition.Flag.FlagOverrideDefaultGeometryCheck = Qgis.ProcessingFeatureSourceDefinitionFlag.OverrideDefaultGeometryCheck
-QgsProcessingFeatureSourceDefinition.FlagOverrideDefaultGeometryCheck.is_monkey_patched = True
 QgsProcessingFeatureSourceDefinition.FlagOverrideDefaultGeometryCheck.__doc__ = "If set, the default geometry check method (as dictated by QgsProcessingContext) will be overridden for this source"
-QgsProcessingFeatureSourceDefinition.FlagCreateIndividualOutputPerInputFeature = Qgis.ProcessingFeatureSourceDefinitionFlag.CreateIndividualOutputPerInputFeature
 QgsProcessingFeatureSourceDefinition.Flag.FlagCreateIndividualOutputPerInputFeature = Qgis.ProcessingFeatureSourceDefinitionFlag.CreateIndividualOutputPerInputFeature
-QgsProcessingFeatureSourceDefinition.FlagCreateIndividualOutputPerInputFeature.is_monkey_patched = True
 QgsProcessingFeatureSourceDefinition.FlagCreateIndividualOutputPerInputFeature.__doc__ = "If set, every feature processed from this source will be placed into its own individually created output destination. Support for this flag depends on how an algorithm is executed."
 Qgis.ProcessingFeatureSourceDefinitionFlag.__doc__ = """Flags which control behavior for a Processing feature source.
 
@@ -6791,14 +5364,10 @@ Qgis.ProcessingFeatureSourceDefinitionFlag.__doc__ = """Flags which control beha
 """
 # --
 Qgis.ProcessingFeatureSourceDefinitionFlag.baseClass = Qgis
-QgsProcessingFeatureSourceDefinition.Flags = Qgis.ProcessingFeatureSourceDefinitionFlags
 Qgis.ProcessingFeatureSourceDefinitionFlags.baseClass = Qgis
 ProcessingFeatureSourceDefinitionFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsProcessingFeatureSource.Flag = Qgis.ProcessingFeatureSourceFlag
 # monkey patching scoped based enum
-QgsProcessingFeatureSource.FlagSkipGeometryValidityChecks = Qgis.ProcessingFeatureSourceFlag.SkipGeometryValidityChecks
 QgsProcessingFeatureSource.Flag.FlagSkipGeometryValidityChecks = Qgis.ProcessingFeatureSourceFlag.SkipGeometryValidityChecks
-QgsProcessingFeatureSource.FlagSkipGeometryValidityChecks.is_monkey_patched = True
 QgsProcessingFeatureSource.FlagSkipGeometryValidityChecks.__doc__ = "Invalid geometry checks should always be skipped. This flag can be useful for algorithms which always require invalid geometries, regardless of any user settings (e.g. \"repair geometry\" type algorithms)."
 Qgis.ProcessingFeatureSourceFlag.__doc__ = """Flags which control how :py:class:`QgsProcessingFeatureSource` fetches features.
 
@@ -6816,13 +5385,9 @@ Qgis.ProcessingFeatureSourceFlag.__doc__ = """Flags which control how :py:class:
 """
 # --
 Qgis.ProcessingFeatureSourceFlag.baseClass = Qgis
-QgsProcessingFeatureSource.Flags = Qgis.ProcessingFeatureSourceFlags
 Qgis.ProcessingFeatureSourceFlags.baseClass = Qgis
 ProcessingFeatureSourceFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsProcessingParameterType.ParameterFlag = Qgis.ProcessingParameterTypeFlag
 # monkey patching scoped based enum
-QgsProcessingParameterType.ExposeToModeler = Qgis.ProcessingParameterTypeFlag.ExposeToModeler
-QgsProcessingParameterType.ExposeToModeler.is_monkey_patched = True
 QgsProcessingParameterType.ExposeToModeler.__doc__ = "Is this parameter available in the modeler. Is set to on by default."
 Qgis.ProcessingParameterTypeFlag.__doc__ = """Flags which dictate the behavior of Processing parameter types.
 
@@ -6840,26 +5405,16 @@ and capabilities.
 """
 # --
 Qgis.ProcessingParameterTypeFlag.baseClass = Qgis
-QgsProcessingParameterType.ParameterFlags = Qgis.ProcessingParameterTypeFlags
 Qgis.ProcessingParameterTypeFlags.baseClass = Qgis
 ProcessingParameterTypeFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsProcessingParameterDefinition.Flag = Qgis.ProcessingParameterFlag
 # monkey patching scoped based enum
-QgsProcessingParameterDefinition.FlagAdvanced = Qgis.ProcessingParameterFlag.Advanced
 QgsProcessingParameterDefinition.Flag.FlagAdvanced = Qgis.ProcessingParameterFlag.Advanced
-QgsProcessingParameterDefinition.FlagAdvanced.is_monkey_patched = True
 QgsProcessingParameterDefinition.FlagAdvanced.__doc__ = "Parameter is an advanced parameter which should be hidden from users by default"
-QgsProcessingParameterDefinition.FlagHidden = Qgis.ProcessingParameterFlag.Hidden
 QgsProcessingParameterDefinition.Flag.FlagHidden = Qgis.ProcessingParameterFlag.Hidden
-QgsProcessingParameterDefinition.FlagHidden.is_monkey_patched = True
 QgsProcessingParameterDefinition.FlagHidden.__doc__ = "Parameter is hidden and should not be shown to users"
-QgsProcessingParameterDefinition.FlagOptional = Qgis.ProcessingParameterFlag.Optional
 QgsProcessingParameterDefinition.Flag.FlagOptional = Qgis.ProcessingParameterFlag.Optional
-QgsProcessingParameterDefinition.FlagOptional.is_monkey_patched = True
 QgsProcessingParameterDefinition.FlagOptional.__doc__ = "Parameter is optional"
-QgsProcessingParameterDefinition.FlagIsModelOutput = Qgis.ProcessingParameterFlag.IsModelOutput
 QgsProcessingParameterDefinition.Flag.FlagIsModelOutput = Qgis.ProcessingParameterFlag.IsModelOutput
-QgsProcessingParameterDefinition.FlagIsModelOutput.is_monkey_patched = True
 QgsProcessingParameterDefinition.FlagIsModelOutput.__doc__ = "Destination parameter is final output. The parameter name will be used."
 Qgis.ProcessingParameterFlag.__doc__ = """Flags which dictate the behavior of Processing parameters.
 
@@ -6889,16 +5444,10 @@ Qgis.ProcessingParameterFlag.__doc__ = """Flags which dictate the behavior of Pr
 """
 # --
 Qgis.ProcessingParameterFlag.baseClass = Qgis
-QgsProcessingParameterDefinition.Flags = Qgis.ProcessingParameterFlags
 Qgis.ProcessingParameterFlags.baseClass = Qgis
 ProcessingParameterFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsProcessingParameterFile.Behavior = Qgis.ProcessingFileParameterBehavior
 # monkey patching scoped based enum
-QgsProcessingParameterFile.File = Qgis.ProcessingFileParameterBehavior.File
-QgsProcessingParameterFile.File.is_monkey_patched = True
 QgsProcessingParameterFile.File.__doc__ = "Parameter is a single file"
-QgsProcessingParameterFile.Folder = Qgis.ProcessingFileParameterBehavior.Folder
-QgsProcessingParameterFile.Folder.is_monkey_patched = True
 QgsProcessingParameterFile.Folder.__doc__ = "Parameter is a folder"
 Qgis.ProcessingFileParameterBehavior.__doc__ = """Flags which dictate the behavior of :py:class:`QgsProcessingParameterFile`.
 
@@ -6914,13 +5463,8 @@ Qgis.ProcessingFileParameterBehavior.__doc__ = """Flags which dictate the behavi
 """
 # --
 Qgis.ProcessingFileParameterBehavior.baseClass = Qgis
-QgsProcessingParameterNumber.Type = Qgis.ProcessingNumberParameterType
 # monkey patching scoped based enum
-QgsProcessingParameterNumber.Integer = Qgis.ProcessingNumberParameterType.Integer
-QgsProcessingParameterNumber.Integer.is_monkey_patched = True
 QgsProcessingParameterNumber.Integer.__doc__ = "Integer values"
-QgsProcessingParameterNumber.Double = Qgis.ProcessingNumberParameterType.Double
-QgsProcessingParameterNumber.Double.is_monkey_patched = True
 QgsProcessingParameterNumber.Double.__doc__ = "Double/float values"
 Qgis.ProcessingNumberParameterType.__doc__ = """Processing numeric parameter data types.
 
@@ -6936,25 +5480,12 @@ Qgis.ProcessingNumberParameterType.__doc__ = """Processing numeric parameter dat
 """
 # --
 Qgis.ProcessingNumberParameterType.baseClass = Qgis
-QgsProcessingParameterField.DataType = Qgis.ProcessingFieldParameterDataType
 # monkey patching scoped based enum
-QgsProcessingParameterField.Any = Qgis.ProcessingFieldParameterDataType.Any
-QgsProcessingParameterField.Any.is_monkey_patched = True
 QgsProcessingParameterField.Any.__doc__ = "Accepts any field"
-QgsProcessingParameterField.Numeric = Qgis.ProcessingFieldParameterDataType.Numeric
-QgsProcessingParameterField.Numeric.is_monkey_patched = True
 QgsProcessingParameterField.Numeric.__doc__ = "Accepts numeric fields"
-QgsProcessingParameterField.String = Qgis.ProcessingFieldParameterDataType.String
-QgsProcessingParameterField.String.is_monkey_patched = True
 QgsProcessingParameterField.String.__doc__ = "Accepts string fields"
-QgsProcessingParameterField.DateTime = Qgis.ProcessingFieldParameterDataType.DateTime
-QgsProcessingParameterField.DateTime.is_monkey_patched = True
 QgsProcessingParameterField.DateTime.__doc__ = "Accepts datetime fields"
-QgsProcessingParameterField.Binary = Qgis.ProcessingFieldParameterDataType.Binary
-QgsProcessingParameterField.Binary.is_monkey_patched = True
 QgsProcessingParameterField.Binary.__doc__ = "Accepts binary fields, since QGIS 3.34"
-QgsProcessingParameterField.Boolean = Qgis.ProcessingFieldParameterDataType.Boolean
-QgsProcessingParameterField.Boolean.is_monkey_patched = True
 QgsProcessingParameterField.Boolean.__doc__ = "Accepts boolean fields, since QGIS 3.34"
 Qgis.ProcessingFieldParameterDataType.__doc__ = """Processing field parameter data types.
 
@@ -6974,16 +5505,9 @@ Qgis.ProcessingFieldParameterDataType.__doc__ = """Processing field parameter da
 """
 # --
 Qgis.ProcessingFieldParameterDataType.baseClass = Qgis
-QgsProcessingParameterDateTime.Type = Qgis.ProcessingDateTimeParameterDataType
 # monkey patching scoped based enum
-QgsProcessingParameterDateTime.DateTime = Qgis.ProcessingDateTimeParameterDataType.DateTime
-QgsProcessingParameterDateTime.DateTime.is_monkey_patched = True
 QgsProcessingParameterDateTime.DateTime.__doc__ = "Datetime values"
-QgsProcessingParameterDateTime.Date = Qgis.ProcessingDateTimeParameterDataType.Date
-QgsProcessingParameterDateTime.Date.is_monkey_patched = True
 QgsProcessingParameterDateTime.Date.__doc__ = "Date values"
-QgsProcessingParameterDateTime.Time = Qgis.ProcessingDateTimeParameterDataType.Time
-QgsProcessingParameterDateTime.Time.is_monkey_patched = True
 QgsProcessingParameterDateTime.Time.__doc__ = "Time values"
 Qgis.ProcessingDateTimeParameterDataType.__doc__ = """Processing date time parameter data types.
 
@@ -7036,16 +5560,9 @@ Qgis.ProcessingModelChildAlgorithmExecutionStatus.__doc__ = """Reflects the stat
 """
 # --
 Qgis.ProcessingModelChildAlgorithmExecutionStatus.baseClass = Qgis
-QgsProcessingParameterTinInputLayers.Type = Qgis.ProcessingTinInputLayerType
 # monkey patching scoped based enum
-QgsProcessingParameterTinInputLayers.Vertices = Qgis.ProcessingTinInputLayerType.Vertices
-QgsProcessingParameterTinInputLayers.Vertices.is_monkey_patched = True
 QgsProcessingParameterTinInputLayers.Vertices.__doc__ = "Input that adds only vertices"
-QgsProcessingParameterTinInputLayers.StructureLines = Qgis.ProcessingTinInputLayerType.StructureLines
-QgsProcessingParameterTinInputLayers.StructureLines.is_monkey_patched = True
 QgsProcessingParameterTinInputLayers.StructureLines.__doc__ = "Input that adds add structure lines"
-QgsProcessingParameterTinInputLayers.BreakLines = Qgis.ProcessingTinInputLayerType.BreakLines
-QgsProcessingParameterTinInputLayers.BreakLines.is_monkey_patched = True
 QgsProcessingParameterTinInputLayers.BreakLines.__doc__ = "Input that adds vertices and break lines"
 Qgis.ProcessingTinInputLayerType.__doc__ = """Defines the type of input layer for a Processing TIN input.
 
@@ -7062,15 +5579,10 @@ Qgis.ProcessingTinInputLayerType.__doc__ = """Defines the type of input layer fo
 """
 # --
 Qgis.ProcessingTinInputLayerType.baseClass = Qgis
-QgsCoordinateReferenceSystem.Format = Qgis.CrsDefinitionFormat
 # monkey patching scoped based enum
-QgsCoordinateReferenceSystem.FormatWkt = Qgis.CrsDefinitionFormat.Wkt
 QgsCoordinateReferenceSystem.Format.FormatWkt = Qgis.CrsDefinitionFormat.Wkt
-QgsCoordinateReferenceSystem.FormatWkt.is_monkey_patched = True
 QgsCoordinateReferenceSystem.FormatWkt.__doc__ = "WKT format (always recommended over proj string format)"
-QgsCoordinateReferenceSystem.FormatProj = Qgis.CrsDefinitionFormat.Proj
 QgsCoordinateReferenceSystem.Format.FormatProj = Qgis.CrsDefinitionFormat.Proj
-QgsCoordinateReferenceSystem.FormatProj.is_monkey_patched = True
 QgsCoordinateReferenceSystem.FormatProj.__doc__ = "Proj string format"
 Qgis.CrsDefinitionFormat.__doc__ = """CRS definition formats.
 
@@ -7282,14 +5794,8 @@ Qgis.MeshElevationMode.__doc__ = """Mesh layer elevation modes.
 # --
 Qgis.MeshElevationMode.baseClass = Qgis
 # monkey patching scoped based enum
-Qgis.NoConstraint = Qgis.BetweenLineConstraint.NoConstraint
-Qgis.NoConstraint.is_monkey_patched = True
 Qgis.BetweenLineConstraint.NoConstraint.__doc__ = "No additional constraint"
-Qgis.Perpendicular = Qgis.BetweenLineConstraint.Perpendicular
-Qgis.Perpendicular.is_monkey_patched = True
 Qgis.BetweenLineConstraint.Perpendicular.__doc__ = "Perpendicular"
-Qgis.Parallel = Qgis.BetweenLineConstraint.Parallel
-Qgis.Parallel.is_monkey_patched = True
 Qgis.BetweenLineConstraint.Parallel.__doc__ = "Parallel"
 Qgis.BetweenLineConstraint.__doc__ = """Between line constraints which can be enabled
 
@@ -7526,13 +6032,8 @@ Qgis.ProfileExportType.__doc__ = """Types of export for elevation profiles.
 """
 # --
 Qgis.ProfileExportType.baseClass = Qgis
-QgsPointCloudRenderer.PointSymbol = Qgis.PointCloudSymbol
 # monkey patching scoped based enum
-QgsPointCloudRenderer.Square = Qgis.PointCloudSymbol.Square
-QgsPointCloudRenderer.Square.is_monkey_patched = True
 QgsPointCloudRenderer.Square.__doc__ = "Renders points as squares"
-QgsPointCloudRenderer.Circle = Qgis.PointCloudSymbol.Circle
-QgsPointCloudRenderer.Circle.is_monkey_patched = True
 QgsPointCloudRenderer.Circle.__doc__ = "Renders points as circles"
 Qgis.PointCloudSymbol.__doc__ = """Rendering symbols for point cloud points.
 
@@ -7544,16 +6045,9 @@ Qgis.PointCloudSymbol.__doc__ = """Rendering symbols for point cloud points.
 """
 # --
 Qgis.PointCloudSymbol.baseClass = Qgis
-QgsPointCloudRenderer.DrawOrder = Qgis.PointCloudDrawOrder
 # monkey patching scoped based enum
-QgsPointCloudRenderer.Default = Qgis.PointCloudDrawOrder.Default
-QgsPointCloudRenderer.Default.is_monkey_patched = True
 QgsPointCloudRenderer.Default.__doc__ = "Draw points in the order they are stored"
-QgsPointCloudRenderer.BottomToTop = Qgis.PointCloudDrawOrder.BottomToTop
-QgsPointCloudRenderer.BottomToTop.is_monkey_patched = True
 QgsPointCloudRenderer.BottomToTop.__doc__ = "Draw points with larger Z values last"
-QgsPointCloudRenderer.TopToBottom = Qgis.PointCloudDrawOrder.TopToBottom
-QgsPointCloudRenderer.TopToBottom.is_monkey_patched = True
 QgsPointCloudRenderer.TopToBottom.__doc__ = "Draw points with larger Z values first"
 Qgis.PointCloudDrawOrder.__doc__ = """Pointcloud rendering order for 2d views
 
@@ -7566,16 +6060,9 @@ Qgis.PointCloudDrawOrder.__doc__ = """Pointcloud rendering order for 2d views
 """
 # --
 Qgis.PointCloudDrawOrder.baseClass = Qgis
-QgsProject.AvoidIntersectionsMode = Qgis.AvoidIntersectionsMode
 # monkey patching scoped based enum
-QgsProject.AllowIntersections = Qgis.AvoidIntersectionsMode.AllowIntersections
-QgsProject.AllowIntersections.is_monkey_patched = True
 QgsProject.AllowIntersections.__doc__ = "Overlap with any feature allowed when digitizing new features"
-QgsProject.AvoidIntersectionsCurrentLayer = Qgis.AvoidIntersectionsMode.AvoidIntersectionsCurrentLayer
-QgsProject.AvoidIntersectionsCurrentLayer.is_monkey_patched = True
 QgsProject.AvoidIntersectionsCurrentLayer.__doc__ = "Overlap with features from the active layer when digitizing new features not allowed"
-QgsProject.AvoidIntersectionsLayers = Qgis.AvoidIntersectionsMode.AvoidIntersectionsLayers
-QgsProject.AvoidIntersectionsLayers.is_monkey_patched = True
 QgsProject.AvoidIntersectionsLayers.__doc__ = "Overlap with features from a specified list of layers when digitizing new features not allowed"
 Qgis.AvoidIntersectionsMode.__doc__ = """Flags which control how intersections of pre-existing feature are handled when digitizing new features.
 
@@ -7592,13 +6079,8 @@ Qgis.AvoidIntersectionsMode.__doc__ = """Flags which control how intersections o
 """
 # --
 Qgis.AvoidIntersectionsMode.baseClass = Qgis
-QgsProject.FileFormat = Qgis.ProjectFileFormat
 # monkey patching scoped based enum
-QgsProject.Qgz = Qgis.ProjectFileFormat.Qgz
-QgsProject.Qgz.is_monkey_patched = True
 QgsProject.Qgz.__doc__ = "Archive file format, supports auxiliary data"
-QgsProject.Qgs = Qgis.ProjectFileFormat.Qgs
-QgsProject.Qgs.is_monkey_patched = True
 QgsProject.Qgs.__doc__ = "Project saved in a clear text, does not support auxiliary data"
 Qgis.ProjectFileFormat.__doc__ = """Flags which control project read behavior.
 
@@ -7614,36 +6096,19 @@ Qgis.ProjectFileFormat.__doc__ = """Flags which control project read behavior.
 """
 # --
 Qgis.ProjectFileFormat.baseClass = Qgis
-QgsProject.ReadFlag = Qgis.ProjectReadFlag
 # monkey patching scoped based enum
-QgsProject.FlagDontResolveLayers = Qgis.ProjectReadFlag.DontResolveLayers
 QgsProject.ReadFlag.FlagDontResolveLayers = Qgis.ProjectReadFlag.DontResolveLayers
-QgsProject.FlagDontResolveLayers.is_monkey_patched = True
 QgsProject.FlagDontResolveLayers.__doc__ = "Don't resolve layer paths (i.e. don't load any layer content). Dramatically improves project read time if the actual data from the layers is not required."
-QgsProject.FlagDontLoadLayouts = Qgis.ProjectReadFlag.DontLoadLayouts
 QgsProject.ReadFlag.FlagDontLoadLayouts = Qgis.ProjectReadFlag.DontLoadLayouts
-QgsProject.FlagDontLoadLayouts.is_monkey_patched = True
 QgsProject.FlagDontLoadLayouts.__doc__ = "Don't load print layouts. Improves project read time if layouts are not required, and allows projects to be safely read in background threads (since print layouts are not thread safe)."
-QgsProject.FlagTrustLayerMetadata = Qgis.ProjectReadFlag.TrustLayerMetadata
 QgsProject.ReadFlag.FlagTrustLayerMetadata = Qgis.ProjectReadFlag.TrustLayerMetadata
-QgsProject.FlagTrustLayerMetadata.is_monkey_patched = True
 QgsProject.FlagTrustLayerMetadata.__doc__ = "Trust layer metadata. Improves project read time. Do not use it if layers' extent is not fixed during the project's use by QGIS and QGIS Server."
-QgsProject.FlagDontStoreOriginalStyles = Qgis.ProjectReadFlag.DontStoreOriginalStyles
 QgsProject.ReadFlag.FlagDontStoreOriginalStyles = Qgis.ProjectReadFlag.DontStoreOriginalStyles
-QgsProject.FlagDontStoreOriginalStyles.is_monkey_patched = True
 QgsProject.FlagDontStoreOriginalStyles.__doc__ = "Skip the initial XML style storage for layers. Useful for minimising project load times in non-interactive contexts."
-QgsProject.FlagDontLoad3DViews = Qgis.ProjectReadFlag.DontLoad3DViews
 QgsProject.ReadFlag.FlagDontLoad3DViews = Qgis.ProjectReadFlag.DontLoad3DViews
-QgsProject.FlagDontLoad3DViews.is_monkey_patched = True
 QgsProject.FlagDontLoad3DViews.__doc__ = "Skip loading 3D views \n.. versionadded:: 3.26"
-QgsProject.DontLoadProjectStyles = Qgis.ProjectReadFlag.DontLoadProjectStyles
-QgsProject.DontLoadProjectStyles.is_monkey_patched = True
 QgsProject.DontLoadProjectStyles.__doc__ = "Skip loading project style databases (deprecated -- use ProjectCapability.ProjectStyles flag instead)"
-QgsProject.ForceReadOnlyLayers = Qgis.ProjectReadFlag.ForceReadOnlyLayers
-QgsProject.ForceReadOnlyLayers.is_monkey_patched = True
 QgsProject.ForceReadOnlyLayers.__doc__ = "Open layers in a read-only mode. \n.. versionadded:: 3.28"
-QgsProject.DontUpgradeAnnotations = Qgis.ProjectReadFlag.DontUpgradeAnnotations
-QgsProject.DontUpgradeAnnotations.is_monkey_patched = True
 QgsProject.DontUpgradeAnnotations.__doc__ = "Don't upgrade old annotation items to QgsAnnotationItem \n.. versionadded:: 3.40"
 Qgis.ProjectReadFlag.__doc__ = """Flags which control project read behavior.
 
@@ -7689,7 +6154,6 @@ Qgis.ProjectReadFlag.__doc__ = """Flags which control project read behavior.
 """
 # --
 Qgis.ProjectReadFlag.baseClass = Qgis
-QgsProject.ReadFlags = Qgis.ProjectReadFlags
 Qgis.ProjectReadFlags.baseClass = Qgis
 ProjectReadFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -7731,31 +6195,16 @@ Qgis.MapBoxGlStyleSourceType.__doc__ = """Available MapBox GL style source types
 """
 # --
 Qgis.MapBoxGlStyleSourceType.baseClass = Qgis
-QgsArcGisPortalUtils.ItemType = Qgis.ArcGisRestServiceType
 # monkey patching scoped based enum
-QgsArcGisPortalUtils.FeatureService = Qgis.ArcGisRestServiceType.FeatureServer
 QgsArcGisPortalUtils.ItemType.FeatureService = Qgis.ArcGisRestServiceType.FeatureServer
-QgsArcGisPortalUtils.FeatureService.is_monkey_patched = True
 QgsArcGisPortalUtils.FeatureService.__doc__ = "FeatureServer"
-QgsArcGisPortalUtils.MapService = Qgis.ArcGisRestServiceType.MapServer
 QgsArcGisPortalUtils.ItemType.MapService = Qgis.ArcGisRestServiceType.MapServer
-QgsArcGisPortalUtils.MapService.is_monkey_patched = True
 QgsArcGisPortalUtils.MapService.__doc__ = "MapServer"
-QgsArcGisPortalUtils.ImageService = Qgis.ArcGisRestServiceType.ImageServer
 QgsArcGisPortalUtils.ItemType.ImageService = Qgis.ArcGisRestServiceType.ImageServer
-QgsArcGisPortalUtils.ImageService.is_monkey_patched = True
 QgsArcGisPortalUtils.ImageService.__doc__ = "ImageServer"
-QgsArcGisPortalUtils.GlobeServer = Qgis.ArcGisRestServiceType.GlobeServer
-QgsArcGisPortalUtils.GlobeServer.is_monkey_patched = True
 QgsArcGisPortalUtils.GlobeServer.__doc__ = "GlobeServer"
-QgsArcGisPortalUtils.GPServer = Qgis.ArcGisRestServiceType.GPServer
-QgsArcGisPortalUtils.GPServer.is_monkey_patched = True
 QgsArcGisPortalUtils.GPServer.__doc__ = "GPServer"
-QgsArcGisPortalUtils.GeocodeServer = Qgis.ArcGisRestServiceType.GeocodeServer
-QgsArcGisPortalUtils.GeocodeServer.is_monkey_patched = True
 QgsArcGisPortalUtils.GeocodeServer.__doc__ = "GeocodeServer"
-QgsArcGisPortalUtils.Unknown = Qgis.ArcGisRestServiceType.Unknown
-QgsArcGisPortalUtils.Unknown.is_monkey_patched = True
 QgsArcGisPortalUtils.Unknown.__doc__ = "Other unknown/unsupported type"
 Qgis.ArcGisRestServiceType.__doc__ = """Available ArcGIS REST service types.
 
@@ -7785,13 +6234,8 @@ Qgis.ArcGisRestServiceType.__doc__ = """Available ArcGIS REST service types.
 """
 # --
 Qgis.ArcGisRestServiceType.baseClass = Qgis
-QgsRelation.RelationType = Qgis.RelationshipType
 # monkey patching scoped based enum
-QgsRelation.Normal = Qgis.RelationshipType.Normal
-QgsRelation.Normal.is_monkey_patched = True
 QgsRelation.Normal.__doc__ = "A normal relation"
-QgsRelation.Generated = Qgis.RelationshipType.Generated
-QgsRelation.Generated.is_monkey_patched = True
 QgsRelation.Generated.__doc__ = "A generated relation is a child of a polymorphic relation"
 Qgis.RelationshipType.__doc__ = """Relationship types.
 
@@ -7807,13 +6251,8 @@ Qgis.RelationshipType.__doc__ = """Relationship types.
 """
 # --
 Qgis.RelationshipType.baseClass = Qgis
-QgsRelation.RelationStrength = Qgis.RelationshipStrength
 # monkey patching scoped based enum
-QgsRelation.Association = Qgis.RelationshipStrength.Association
-QgsRelation.Association.is_monkey_patched = True
 QgsRelation.Association.__doc__ = "Loose relation, related elements are not part of the parent and a parent copy will not copy any children."
-QgsRelation.Composition = Qgis.RelationshipStrength.Composition
-QgsRelation.Composition.is_monkey_patched = True
 QgsRelation.Composition.__doc__ = "Fix relation, related elements are part of the parent and a parent copy will copy any children or delete of parent will delete children"
 Qgis.RelationshipStrength.__doc__ = """Relationship strength.
 
@@ -7971,28 +6410,13 @@ Qgis.LayerTreeFilterFlag.__doc__ = """Layer tree filter flags.
 Qgis.LayerTreeFilterFlag.baseClass = Qgis
 Qgis.LayerTreeFilterFlags.baseClass = Qgis
 LayerTreeFilterFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsLegendStyle.Style = Qgis.LegendComponent
 # monkey patching scoped based enum
-QgsLegendStyle.Undefined = Qgis.LegendComponent.Undefined
-QgsLegendStyle.Undefined.is_monkey_patched = True
 QgsLegendStyle.Undefined.__doc__ = "Should not happen, only if corrupted project file"
-QgsLegendStyle.Hidden = Qgis.LegendComponent.Hidden
-QgsLegendStyle.Hidden.is_monkey_patched = True
 QgsLegendStyle.Hidden.__doc__ = "Special style, item is hidden including margins around"
-QgsLegendStyle.Title = Qgis.LegendComponent.Title
-QgsLegendStyle.Title.is_monkey_patched = True
 QgsLegendStyle.Title.__doc__ = "Legend title"
-QgsLegendStyle.Group = Qgis.LegendComponent.Group
-QgsLegendStyle.Group.is_monkey_patched = True
 QgsLegendStyle.Group.__doc__ = "Legend group title"
-QgsLegendStyle.Subgroup = Qgis.LegendComponent.Subgroup
-QgsLegendStyle.Subgroup.is_monkey_patched = True
 QgsLegendStyle.Subgroup.__doc__ = "Legend subgroup title"
-QgsLegendStyle.Symbol = Qgis.LegendComponent.Symbol
-QgsLegendStyle.Symbol.is_monkey_patched = True
 QgsLegendStyle.Symbol.__doc__ = "Symbol icon (excluding label)"
-QgsLegendStyle.SymbolLabel = Qgis.LegendComponent.SymbolLabel
-QgsLegendStyle.SymbolLabel.is_monkey_patched = True
 QgsLegendStyle.SymbolLabel.__doc__ = "Symbol label (excluding icon)"
 Qgis.LegendComponent.__doc__ = """Component of legends which can be styled.
 
@@ -8084,31 +6508,14 @@ Prior to QGIS 3.30 this was available as :py:class:`QgsMapLayerAction`.Flag
 Qgis.MapLayerActionFlag.baseClass = Qgis
 Qgis.MapLayerActionFlags.baseClass = Qgis
 MapLayerActionFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsAction.ActionType = Qgis.AttributeActionType
 # monkey patching scoped based enum
-QgsAction.Generic = Qgis.AttributeActionType.Generic
-QgsAction.Generic.is_monkey_patched = True
 QgsAction.Generic.__doc__ = "Generic"
-QgsAction.GenericPython = Qgis.AttributeActionType.GenericPython
-QgsAction.GenericPython.is_monkey_patched = True
 QgsAction.GenericPython.__doc__ = "Python"
-QgsAction.Mac = Qgis.AttributeActionType.Mac
-QgsAction.Mac.is_monkey_patched = True
 QgsAction.Mac.__doc__ = "MacOS specific"
-QgsAction.Windows = Qgis.AttributeActionType.Windows
-QgsAction.Windows.is_monkey_patched = True
 QgsAction.Windows.__doc__ = "Windows specific"
-QgsAction.Unix = Qgis.AttributeActionType.Unix
-QgsAction.Unix.is_monkey_patched = True
 QgsAction.Unix.__doc__ = "Unix specific"
-QgsAction.OpenUrl = Qgis.AttributeActionType.OpenUrl
-QgsAction.OpenUrl.is_monkey_patched = True
 QgsAction.OpenUrl.__doc__ = "Open URL action"
-QgsAction.SubmitUrlEncoded = Qgis.AttributeActionType.SubmitUrlEncoded
-QgsAction.SubmitUrlEncoded.is_monkey_patched = True
 QgsAction.SubmitUrlEncoded.__doc__ = "POST data to an URL, using \"application/x-www-form-urlencoded\" or \"application/json\" if the body is valid JSON \n.. versionadded:: 3.24"
-QgsAction.SubmitUrlMultipart = Qgis.AttributeActionType.SubmitUrlMultipart
-QgsAction.SubmitUrlMultipart.is_monkey_patched = True
 QgsAction.SubmitUrlMultipart.__doc__ = "POST data to an URL using \"multipart/form-data\"  \n.. versionadded:: 3.24"
 Qgis.AttributeActionType.__doc__ = """Attribute action types.
 
@@ -8151,113 +6558,42 @@ Qgis.MetadataDateType.__doc__ = """Date types for metadata.
 """
 # --
 Qgis.MetadataDateType.baseClass = Qgis
-QgsRaster.ColorInterpretation = Qgis.RasterColorInterpretation
 # monkey patching scoped based enum
-QgsRaster.UndefinedColorInterpretation = Qgis.RasterColorInterpretation.Undefined
 QgsRaster.ColorInterpretation.UndefinedColorInterpretation = Qgis.RasterColorInterpretation.Undefined
-QgsRaster.UndefinedColorInterpretation.is_monkey_patched = True
 QgsRaster.UndefinedColorInterpretation.__doc__ = "Undefined"
-QgsRaster.GrayIndex = Qgis.RasterColorInterpretation.GrayIndex
-QgsRaster.GrayIndex.is_monkey_patched = True
 QgsRaster.GrayIndex.__doc__ = "Grayscale"
-QgsRaster.PaletteIndex = Qgis.RasterColorInterpretation.PaletteIndex
-QgsRaster.PaletteIndex.is_monkey_patched = True
 QgsRaster.PaletteIndex.__doc__ = "Paletted (see associated color table)"
-QgsRaster.RedBand = Qgis.RasterColorInterpretation.RedBand
-QgsRaster.RedBand.is_monkey_patched = True
 QgsRaster.RedBand.__doc__ = "Red band of RGBA image, or red spectral band [0.62 - 0.69 um]"
-QgsRaster.GreenBand = Qgis.RasterColorInterpretation.GreenBand
-QgsRaster.GreenBand.is_monkey_patched = True
 QgsRaster.GreenBand.__doc__ = "Green band of RGBA image, or green spectral band [0.51 - 0.60 um]"
-QgsRaster.BlueBand = Qgis.RasterColorInterpretation.BlueBand
-QgsRaster.BlueBand.is_monkey_patched = True
 QgsRaster.BlueBand.__doc__ = "Blue band of RGBA image, or blue spectral band [0.45 - 0.53 um]"
-QgsRaster.AlphaBand = Qgis.RasterColorInterpretation.AlphaBand
-QgsRaster.AlphaBand.is_monkey_patched = True
 QgsRaster.AlphaBand.__doc__ = "Alpha (0=transparent, 255=opaque)"
-QgsRaster.HueBand = Qgis.RasterColorInterpretation.HueBand
-QgsRaster.HueBand.is_monkey_patched = True
 QgsRaster.HueBand.__doc__ = "Hue band of HLS image"
-QgsRaster.SaturationBand = Qgis.RasterColorInterpretation.SaturationBand
-QgsRaster.SaturationBand.is_monkey_patched = True
 QgsRaster.SaturationBand.__doc__ = "Saturation band of HLS image"
-QgsRaster.LightnessBand = Qgis.RasterColorInterpretation.LightnessBand
-QgsRaster.LightnessBand.is_monkey_patched = True
 QgsRaster.LightnessBand.__doc__ = "Lightness band of HLS image"
-QgsRaster.CyanBand = Qgis.RasterColorInterpretation.CyanBand
-QgsRaster.CyanBand.is_monkey_patched = True
 QgsRaster.CyanBand.__doc__ = "Cyan band of CMYK image"
-QgsRaster.MagentaBand = Qgis.RasterColorInterpretation.MagentaBand
-QgsRaster.MagentaBand.is_monkey_patched = True
 QgsRaster.MagentaBand.__doc__ = "Magenta band of CMYK image"
-QgsRaster.YellowBand = Qgis.RasterColorInterpretation.YellowBand
-QgsRaster.YellowBand.is_monkey_patched = True
 QgsRaster.YellowBand.__doc__ = "Yellow band of CMYK image, or yellow spectral band [0.58 - 0.62 um]"
-QgsRaster.BlackBand = Qgis.RasterColorInterpretation.BlackBand
-QgsRaster.BlackBand.is_monkey_patched = True
 QgsRaster.BlackBand.__doc__ = "Black band of CMLY image"
-QgsRaster.YCbCr_YBand = Qgis.RasterColorInterpretation.YCbCr_YBand
-QgsRaster.YCbCr_YBand.is_monkey_patched = True
 QgsRaster.YCbCr_YBand.__doc__ = "Y Luminance"
-QgsRaster.YCbCr_CbBand = Qgis.RasterColorInterpretation.YCbCr_CbBand
-QgsRaster.YCbCr_CbBand.is_monkey_patched = True
 QgsRaster.YCbCr_CbBand.__doc__ = "Cb Chroma"
-QgsRaster.YCbCr_CrBand = Qgis.RasterColorInterpretation.YCbCr_CrBand
-QgsRaster.YCbCr_CrBand.is_monkey_patched = True
 QgsRaster.YCbCr_CrBand.__doc__ = "Cr Chroma"
-QgsRaster.ContinuousPalette = Qgis.RasterColorInterpretation.ContinuousPalette
-QgsRaster.ContinuousPalette.is_monkey_patched = True
 QgsRaster.ContinuousPalette.__doc__ = "Continuous palette, QGIS addition, GRASS"
-QgsRaster.PanBand = Qgis.RasterColorInterpretation.PanBand
-QgsRaster.PanBand.is_monkey_patched = True
 QgsRaster.PanBand.__doc__ = "Panchromatic band [0.40 - 1.00 um] \n.. versionadded:: 3.40"
-QgsRaster.CoastalBand = Qgis.RasterColorInterpretation.CoastalBand
-QgsRaster.CoastalBand.is_monkey_patched = True
 QgsRaster.CoastalBand.__doc__ = "Coastal band [0.40 - 0.45 um] \n.. versionadded:: 3.40"
-QgsRaster.RedEdgeBand = Qgis.RasterColorInterpretation.RedEdgeBand
-QgsRaster.RedEdgeBand.is_monkey_patched = True
 QgsRaster.RedEdgeBand.__doc__ = "Red-edge band [0.69 - 0.79 um] \n.. versionadded:: 3.40"
-QgsRaster.NIRBand = Qgis.RasterColorInterpretation.NIRBand
-QgsRaster.NIRBand.is_monkey_patched = True
 QgsRaster.NIRBand.__doc__ = "Near-InfraRed (NIR) band [0.75 - 1.40 um] \n.. versionadded:: 3.40"
-QgsRaster.SWIRBand = Qgis.RasterColorInterpretation.SWIRBand
-QgsRaster.SWIRBand.is_monkey_patched = True
 QgsRaster.SWIRBand.__doc__ = "Short-Wavelength InfraRed (SWIR) band [1.40 - 3.00 um] \n.. versionadded:: 3.40"
-QgsRaster.MWIRBand = Qgis.RasterColorInterpretation.MWIRBand
-QgsRaster.MWIRBand.is_monkey_patched = True
 QgsRaster.MWIRBand.__doc__ = "Mid-Wavelength InfraRed (MWIR) band [3.00 - 8.00 um] \n.. versionadded:: 3.40"
-QgsRaster.LWIRBand = Qgis.RasterColorInterpretation.LWIRBand
-QgsRaster.LWIRBand.is_monkey_patched = True
 QgsRaster.LWIRBand.__doc__ = "Long-Wavelength InfraRed (LWIR) band [8.00 - 15 um] \n.. versionadded:: 3.40"
-QgsRaster.TIRBand = Qgis.RasterColorInterpretation.TIRBand
-QgsRaster.TIRBand.is_monkey_patched = True
 QgsRaster.TIRBand.__doc__ = "Thermal InfraRed (TIR) band (MWIR or LWIR) [3 - 15 um] \n.. versionadded:: 3.40"
-QgsRaster.OtherIRBand = Qgis.RasterColorInterpretation.OtherIRBand
-QgsRaster.OtherIRBand.is_monkey_patched = True
 QgsRaster.OtherIRBand.__doc__ = "Other infrared band [0.75 - 1000 um] \n.. versionadded:: 3.40"
-QgsRaster.SAR_Ka_Band = Qgis.RasterColorInterpretation.SAR_Ka_Band
-QgsRaster.SAR_Ka_Band.is_monkey_patched = True
 QgsRaster.SAR_Ka_Band.__doc__ = "Synthetic Aperture Radar (SAR) Ka band [0.8 - 1.1 cm / 27 - 40 GHz] \n.. versionadded:: 3.40"
-QgsRaster.SAR_K_Band = Qgis.RasterColorInterpretation.SAR_K_Band
-QgsRaster.SAR_K_Band.is_monkey_patched = True
 QgsRaster.SAR_K_Band.__doc__ = "Synthetic Aperture Radar (SAR) K band [1.1 - 1.7 cm / 18 - 27 GHz] \n.. versionadded:: 3.40"
-QgsRaster.SAR_Ku_Band = Qgis.RasterColorInterpretation.SAR_Ku_Band
-QgsRaster.SAR_Ku_Band.is_monkey_patched = True
 QgsRaster.SAR_Ku_Band.__doc__ = "Synthetic Aperture Radar (SAR) Ku band [1.7 - 2.4 cm / 12 - 18 GHz] \n.. versionadded:: 3.40"
-QgsRaster.SAR_X_Band = Qgis.RasterColorInterpretation.SAR_X_Band
-QgsRaster.SAR_X_Band.is_monkey_patched = True
 QgsRaster.SAR_X_Band.__doc__ = "Synthetic Aperture Radar (SAR) X band [2.4 - 3.8 cm / 8 - 12 GHz] \n.. versionadded:: 3.40"
-QgsRaster.SAR_C_Band = Qgis.RasterColorInterpretation.SAR_C_Band
-QgsRaster.SAR_C_Band.is_monkey_patched = True
 QgsRaster.SAR_C_Band.__doc__ = "Synthetic Aperture Radar (SAR) C band [3.8 - 7.5 cm / 4 - 8 GHz] \n.. versionadded:: 3.40"
-QgsRaster.SAR_S_Band = Qgis.RasterColorInterpretation.SAR_S_Band
-QgsRaster.SAR_S_Band.is_monkey_patched = True
 QgsRaster.SAR_S_Band.__doc__ = "Synthetic Aperture Radar (SAR) S band [7.5 - 15 cm / 2 - 4 GHz] \n.. versionadded:: 3.40"
-QgsRaster.SAR_L_Band = Qgis.RasterColorInterpretation.SAR_L_Band
-QgsRaster.SAR_L_Band.is_monkey_patched = True
 QgsRaster.SAR_L_Band.__doc__ = "Synthetic Aperture Radar (SAR) L band [15 - 30 cm / 1 - 2 GHz] \n.. versionadded:: 3.40"
-QgsRaster.SAR_P_Band = Qgis.RasterColorInterpretation.SAR_P_Band
-QgsRaster.SAR_P_Band.is_monkey_patched = True
 QgsRaster.SAR_P_Band.__doc__ = "Synthetic Aperture Radar (SAR) P band [30 - 100 cm / 0.3 - 1 GHz] \n.. versionadded:: 3.40"
 Qgis.RasterColorInterpretation.__doc__ = """Raster color interpretation.
 
@@ -8362,21 +6698,12 @@ This is a modified copy of the GDAL GDALColorInterp enum.
 """
 # --
 Qgis.RasterColorInterpretation.baseClass = Qgis
-QgsRasterLayer.LayerType = Qgis.RasterLayerType
 # monkey patching scoped based enum
-QgsRasterLayer.GrayOrUndefined = Qgis.RasterLayerType.GrayOrUndefined
-QgsRasterLayer.GrayOrUndefined.is_monkey_patched = True
 QgsRasterLayer.GrayOrUndefined.__doc__ = "Gray or undefined"
-QgsRasterLayer.Palette = Qgis.RasterLayerType.Palette
-QgsRasterLayer.Palette.is_monkey_patched = True
 QgsRasterLayer.Palette.__doc__ = "Palette"
-QgsRasterLayer.Multiband = Qgis.RasterLayerType.MultiBand
 QgsRasterLayer.LayerType.Multiband = Qgis.RasterLayerType.MultiBand
-QgsRasterLayer.Multiband.is_monkey_patched = True
 QgsRasterLayer.Multiband.__doc__ = "Multi band"
-QgsRasterLayer.ColorLayer = Qgis.RasterLayerType.SingleBandColorData
 QgsRasterLayer.LayerType.ColorLayer = Qgis.RasterLayerType.SingleBandColorData
-QgsRasterLayer.ColorLayer.is_monkey_patched = True
 QgsRasterLayer.ColorLayer.__doc__ = "Single band containing color data"
 Qgis.RasterLayerType.__doc__ = """Raster layer types.
 
@@ -8400,42 +6727,19 @@ Qgis.RasterLayerType.__doc__ = """Raster layer types.
 """
 # --
 Qgis.RasterLayerType.baseClass = Qgis
-QgsRaster.DrawingStyle = Qgis.RasterDrawingStyle
 # monkey patching scoped based enum
-QgsRaster.UndefinedDrawingStyle = Qgis.RasterDrawingStyle.Undefined
 QgsRaster.DrawingStyle.UndefinedDrawingStyle = Qgis.RasterDrawingStyle.Undefined
-QgsRaster.UndefinedDrawingStyle.is_monkey_patched = True
 QgsRaster.UndefinedDrawingStyle.__doc__ = "Undefined"
-QgsRaster.SingleBandGray = Qgis.RasterDrawingStyle.SingleBandGray
-QgsRaster.SingleBandGray.is_monkey_patched = True
 QgsRaster.SingleBandGray.__doc__ = "A single band image drawn as a range of gray colors"
-QgsRaster.SingleBandPseudoColor = Qgis.RasterDrawingStyle.SingleBandPseudoColor
-QgsRaster.SingleBandPseudoColor.is_monkey_patched = True
 QgsRaster.SingleBandPseudoColor.__doc__ = "A single band image drawn using a pseudocolor algorithm"
-QgsRaster.PalettedColor = Qgis.RasterDrawingStyle.PalettedColor
-QgsRaster.PalettedColor.is_monkey_patched = True
 QgsRaster.PalettedColor.__doc__ = "A \"Palette\" image drawn using color table"
-QgsRaster.PalettedSingleBandGray = Qgis.RasterDrawingStyle.PalettedSingleBandGray
-QgsRaster.PalettedSingleBandGray.is_monkey_patched = True
 QgsRaster.PalettedSingleBandGray.__doc__ = "A \"Palette\" layer drawn in gray scale"
-QgsRaster.PalettedSingleBandPseudoColor = Qgis.RasterDrawingStyle.PalettedSingleBandPseudoColor
-QgsRaster.PalettedSingleBandPseudoColor.is_monkey_patched = True
 QgsRaster.PalettedSingleBandPseudoColor.__doc__ = "A \"Palette\" layerdrawn using a pseudocolor algorithm"
-QgsRaster.PalettedMultiBandColor = Qgis.RasterDrawingStyle.PalettedMultiBandColor
-QgsRaster.PalettedMultiBandColor.is_monkey_patched = True
 QgsRaster.PalettedMultiBandColor.__doc__ = "Currently not supported"
-QgsRaster.MultiBandSingleBandGray = Qgis.RasterDrawingStyle.MultiBandSingleBandGray
-QgsRaster.MultiBandSingleBandGray.is_monkey_patched = True
 QgsRaster.MultiBandSingleBandGray.__doc__ = "A layer containing 2 or more bands, but a single band drawn as a range of gray colors"
-QgsRaster.MultiBandSingleBandPseudoColor = Qgis.RasterDrawingStyle.MultiBandSingleBandPseudoColor
-QgsRaster.MultiBandSingleBandPseudoColor.is_monkey_patched = True
 QgsRaster.MultiBandSingleBandPseudoColor.__doc__ = "A layer containing 2 or more bands, but a single band drawn using a pseudocolor algorithm"
-QgsRaster.MultiBandColor = Qgis.RasterDrawingStyle.MultiBandColor
-QgsRaster.MultiBandColor.is_monkey_patched = True
 QgsRaster.MultiBandColor.__doc__ = "A layer containing 2 or more bands, mapped to RGB color space. In the case of a multiband with only two bands, one band will be mapped to more than one color."
-QgsRaster.SingleBandColorDataStyle = Qgis.RasterDrawingStyle.SingleBandColorData
 QgsRaster.DrawingStyle.SingleBandColorDataStyle = Qgis.RasterDrawingStyle.SingleBandColorData
-QgsRaster.SingleBandColorDataStyle.is_monkey_patched = True
 QgsRaster.SingleBandColorDataStyle.__doc__ = "ARGB values rendered directly"
 Qgis.RasterDrawingStyle.__doc__ = """Raster drawing styles.
 
@@ -8466,19 +6770,12 @@ Qgis.RasterDrawingStyle.__doc__ = """Raster drawing styles.
 """
 # --
 Qgis.RasterDrawingStyle.baseClass = Qgis
-QgsRaster.RasterPyramidsFormat = Qgis.RasterPyramidFormat
 # monkey patching scoped based enum
-QgsRaster.PyramidsGTiff = Qgis.RasterPyramidFormat.GeoTiff
 QgsRaster.RasterPyramidsFormat.PyramidsGTiff = Qgis.RasterPyramidFormat.GeoTiff
-QgsRaster.PyramidsGTiff.is_monkey_patched = True
 QgsRaster.PyramidsGTiff.__doc__ = "Geotiff .ovr (external)"
-QgsRaster.PyramidsInternal = Qgis.RasterPyramidFormat.Internal
 QgsRaster.RasterPyramidsFormat.PyramidsInternal = Qgis.RasterPyramidFormat.Internal
-QgsRaster.PyramidsInternal.is_monkey_patched = True
 QgsRaster.PyramidsInternal.__doc__ = "Internal"
-QgsRaster.PyramidsErdas = Qgis.RasterPyramidFormat.Erdas
 QgsRaster.RasterPyramidsFormat.PyramidsErdas = Qgis.RasterPyramidFormat.Erdas
-QgsRaster.PyramidsErdas.is_monkey_patched = True
 QgsRaster.PyramidsErdas.__doc__ = "Erdas Image .aux (external)"
 Qgis.RasterPyramidFormat.__doc__ = """Raster pyramid formats.
 
@@ -8504,19 +6801,12 @@ Qgis.RasterPyramidFormat.__doc__ = """Raster pyramid formats.
 """
 # --
 Qgis.RasterPyramidFormat.baseClass = Qgis
-QgsRaster.RasterBuildPyramids = Qgis.RasterBuildPyramidOption
 # monkey patching scoped based enum
-QgsRaster.PyramidsFlagNo = Qgis.RasterBuildPyramidOption.No
 QgsRaster.RasterBuildPyramids.PyramidsFlagNo = Qgis.RasterBuildPyramidOption.No
-QgsRaster.PyramidsFlagNo.is_monkey_patched = True
 QgsRaster.PyramidsFlagNo.__doc__ = "Never"
-QgsRaster.PyramidsFlagYes = Qgis.RasterBuildPyramidOption.Yes
 QgsRaster.RasterBuildPyramids.PyramidsFlagYes = Qgis.RasterBuildPyramidOption.Yes
-QgsRaster.PyramidsFlagYes.is_monkey_patched = True
 QgsRaster.PyramidsFlagYes.__doc__ = "Yes"
-QgsRaster.PyramidsCopyExisting = Qgis.RasterBuildPyramidOption.CopyExisting
 QgsRaster.RasterBuildPyramids.PyramidsCopyExisting = Qgis.RasterBuildPyramidOption.CopyExisting
-QgsRaster.PyramidsCopyExisting.is_monkey_patched = True
 QgsRaster.PyramidsCopyExisting.__doc__ = "Copy existing"
 Qgis.RasterBuildPyramidOption.__doc__ = """Raster pyramid building options.
 
@@ -8542,27 +6832,16 @@ Qgis.RasterBuildPyramidOption.__doc__ = """Raster pyramid building options.
 """
 # --
 Qgis.RasterBuildPyramidOption.baseClass = Qgis
-QgsRaster.IdentifyFormat = Qgis.RasterIdentifyFormat
 # monkey patching scoped based enum
-QgsRaster.IdentifyFormatUndefined = Qgis.RasterIdentifyFormat.Undefined
 QgsRaster.IdentifyFormat.IdentifyFormatUndefined = Qgis.RasterIdentifyFormat.Undefined
-QgsRaster.IdentifyFormatUndefined.is_monkey_patched = True
 QgsRaster.IdentifyFormatUndefined.__doc__ = "Undefined"
-QgsRaster.IdentifyFormatValue = Qgis.RasterIdentifyFormat.Value
 QgsRaster.IdentifyFormat.IdentifyFormatValue = Qgis.RasterIdentifyFormat.Value
-QgsRaster.IdentifyFormatValue.is_monkey_patched = True
 QgsRaster.IdentifyFormatValue.__doc__ = "Numerical pixel value"
-QgsRaster.IdentifyFormatText = Qgis.RasterIdentifyFormat.Text
 QgsRaster.IdentifyFormat.IdentifyFormatText = Qgis.RasterIdentifyFormat.Text
-QgsRaster.IdentifyFormatText.is_monkey_patched = True
 QgsRaster.IdentifyFormatText.__doc__ = "WMS text"
-QgsRaster.IdentifyFormatHtml = Qgis.RasterIdentifyFormat.Html
 QgsRaster.IdentifyFormat.IdentifyFormatHtml = Qgis.RasterIdentifyFormat.Html
-QgsRaster.IdentifyFormatHtml.is_monkey_patched = True
 QgsRaster.IdentifyFormatHtml.__doc__ = "WMS HTML"
-QgsRaster.IdentifyFormatFeature = Qgis.RasterIdentifyFormat.Feature
 QgsRaster.IdentifyFormat.IdentifyFormatFeature = Qgis.RasterIdentifyFormat.Feature
-QgsRaster.IdentifyFormatFeature.is_monkey_patched = True
 QgsRaster.IdentifyFormatFeature.__doc__ = "WMS GML/JSON -> feature"
 Qgis.RasterIdentifyFormat.__doc__ = """Raster identify formats.
 
@@ -8596,40 +6875,17 @@ Qgis.RasterIdentifyFormat.__doc__ = """Raster identify formats.
 """
 # --
 Qgis.RasterIdentifyFormat.baseClass = Qgis
-QgsRasterInterface.Capability = Qgis.RasterInterfaceCapability
 # monkey patching scoped based enum
-QgsRasterInterface.NoCapabilities = Qgis.RasterInterfaceCapability.NoCapabilities
-QgsRasterInterface.NoCapabilities.is_monkey_patched = True
 QgsRasterInterface.NoCapabilities.__doc__ = "No capabilities"
-QgsRasterInterface.Size = Qgis.RasterInterfaceCapability.Size
-QgsRasterInterface.Size.is_monkey_patched = True
 QgsRasterInterface.Size.__doc__ = "Original data source size (and thus resolution) is known, it is not always available, for example for WMS"
-QgsRasterInterface.Create = Qgis.RasterInterfaceCapability.Create
-QgsRasterInterface.Create.is_monkey_patched = True
 QgsRasterInterface.Create.__doc__ = "Create new datasets (Unused and deprecated -- will be removed in QGIS 4)"
-QgsRasterInterface.Remove = Qgis.RasterInterfaceCapability.Remove
-QgsRasterInterface.Remove.is_monkey_patched = True
 QgsRasterInterface.Remove.__doc__ = "Delete datasets (Unused and deprecated -- will be removed in QGIS 4)"
-QgsRasterInterface.BuildPyramids = Qgis.RasterInterfaceCapability.BuildPyramids
-QgsRasterInterface.BuildPyramids.is_monkey_patched = True
 QgsRasterInterface.BuildPyramids.__doc__ = "Supports building of pyramids (overviews) (Deprecated since QGIS 3.38 -- use RasterProviderCapability.BuildPyramids instead)"
-QgsRasterInterface.Identify = Qgis.RasterInterfaceCapability.Identify
-QgsRasterInterface.Identify.is_monkey_patched = True
 QgsRasterInterface.Identify.__doc__ = "At least one identify format supported"
-QgsRasterInterface.IdentifyValue = Qgis.RasterInterfaceCapability.IdentifyValue
-QgsRasterInterface.IdentifyValue.is_monkey_patched = True
 QgsRasterInterface.IdentifyValue.__doc__ = "Numerical values"
-QgsRasterInterface.IdentifyText = Qgis.RasterInterfaceCapability.IdentifyText
-QgsRasterInterface.IdentifyText.is_monkey_patched = True
 QgsRasterInterface.IdentifyText.__doc__ = "WMS text"
-QgsRasterInterface.IdentifyHtml = Qgis.RasterInterfaceCapability.IdentifyHtml
-QgsRasterInterface.IdentifyHtml.is_monkey_patched = True
 QgsRasterInterface.IdentifyHtml.__doc__ = "WMS HTML"
-QgsRasterInterface.IdentifyFeature = Qgis.RasterInterfaceCapability.IdentifyFeature
-QgsRasterInterface.IdentifyFeature.is_monkey_patched = True
 QgsRasterInterface.IdentifyFeature.__doc__ = "WMS GML -> feature"
-QgsRasterInterface.Prefetch = Qgis.RasterInterfaceCapability.Prefetch
-QgsRasterInterface.Prefetch.is_monkey_patched = True
 QgsRasterInterface.Prefetch.__doc__ = "Allow prefetching of out-of-view images"
 Qgis.RasterInterfaceCapability.__doc__ = """Raster interface capabilities.
 
@@ -8656,34 +6912,15 @@ Qgis.RasterInterfaceCapability.__doc__ = """Raster interface capabilities.
 Qgis.RasterInterfaceCapability.baseClass = Qgis
 Qgis.RasterInterfaceCapabilities.baseClass = Qgis
 RasterInterfaceCapabilities = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsRasterDataProvider.ProviderCapability = Qgis.RasterProviderCapability
 # monkey patching scoped based enum
-QgsRasterDataProvider.NoProviderCapabilities = Qgis.RasterProviderCapability.NoProviderCapabilities
-QgsRasterDataProvider.NoProviderCapabilities.is_monkey_patched = True
 QgsRasterDataProvider.NoProviderCapabilities.__doc__ = "Provider has no capabilities"
-QgsRasterDataProvider.ReadLayerMetadata = Qgis.RasterProviderCapability.ReadLayerMetadata
-QgsRasterDataProvider.ReadLayerMetadata.is_monkey_patched = True
 QgsRasterDataProvider.ReadLayerMetadata.__doc__ = "Provider can read layer metadata from data store. Since QGIS 3.0. See QgsDataProvider.layerMetadata()"
-QgsRasterDataProvider.WriteLayerMetadata = Qgis.RasterProviderCapability.WriteLayerMetadata
-QgsRasterDataProvider.WriteLayerMetadata.is_monkey_patched = True
 QgsRasterDataProvider.WriteLayerMetadata.__doc__ = "Provider can write layer metadata to the data store. Since QGIS 3.0. See QgsDataProvider.writeLayerMetadata()"
-QgsRasterDataProvider.ProviderHintBenefitsFromResampling = Qgis.RasterProviderCapability.ProviderHintBenefitsFromResampling
-QgsRasterDataProvider.ProviderHintBenefitsFromResampling.is_monkey_patched = True
 QgsRasterDataProvider.ProviderHintBenefitsFromResampling.__doc__ = "Provider benefits from resampling and should apply user default resampling settings \n.. versionadded:: 3.10"
-QgsRasterDataProvider.ProviderHintCanPerformProviderResampling = Qgis.RasterProviderCapability.ProviderHintCanPerformProviderResampling
-QgsRasterDataProvider.ProviderHintCanPerformProviderResampling.is_monkey_patched = True
 QgsRasterDataProvider.ProviderHintCanPerformProviderResampling.__doc__ = "Provider can perform resampling (to be opposed to post rendering resampling) \n.. versionadded:: 3.16"
-QgsRasterDataProvider.ReloadData = Qgis.RasterProviderCapability.ReloadData
-QgsRasterDataProvider.ReloadData.is_monkey_patched = True
 QgsRasterDataProvider.ReloadData.__doc__ = "Is able to force reload data / clear local caches. Since QGIS 3.18, see QgsDataProvider.reloadProviderData()"
-QgsRasterDataProvider.DpiDependentData = Qgis.RasterProviderCapability.DpiDependentData
-QgsRasterDataProvider.DpiDependentData.is_monkey_patched = True
 QgsRasterDataProvider.DpiDependentData.__doc__ = "Provider's rendering is dependent on requested pixel size of the viewport \n.. versionadded:: 3.20"
-QgsRasterDataProvider.NativeRasterAttributeTable = Qgis.RasterProviderCapability.NativeRasterAttributeTable
-QgsRasterDataProvider.NativeRasterAttributeTable.is_monkey_patched = True
 QgsRasterDataProvider.NativeRasterAttributeTable.__doc__ = "Indicates that the provider supports native raster attribute table \n.. versionadded:: 3.30"
-QgsRasterDataProvider.BuildPyramids = Qgis.RasterProviderCapability.BuildPyramids
-QgsRasterDataProvider.BuildPyramids.is_monkey_patched = True
 QgsRasterDataProvider.BuildPyramids.__doc__ = "Supports building of pyramids (overviews) (since QGIS 3.38 -- this is a replacement for RasterInterfaceCapability.BuildPyramids)"
 Qgis.RasterProviderCapability.__doc__ = """Raster data provider capabilities.
 
@@ -8718,7 +6955,6 @@ Qgis.RasterProviderCapability.__doc__ = """Raster data provider capabilities.
 """
 # --
 Qgis.RasterProviderCapability.baseClass = Qgis
-QgsRasterDataProvider.ProviderCapabilities = Qgis.RasterProviderCapabilities
 Qgis.RasterProviderCapabilities.baseClass = Qgis
 RasterProviderCapabilities = Qgis  # dirty hack since SIP seems to introduce the flags in module
 # monkey patching scoped based enum
@@ -8734,103 +6970,54 @@ Qgis.ElevationMapCombineMethod.__doc__ = """Methods used to select the elevation
 """
 # --
 Qgis.ElevationMapCombineMethod.baseClass = Qgis
-QgsPainting.BlendMode = Qgis.BlendMode
 # monkey patching scoped based enum
-QgsPainting.BlendNormal = Qgis.BlendMode.Normal
 QgsPainting.BlendMode.BlendNormal = Qgis.BlendMode.Normal
-QgsPainting.BlendNormal.is_monkey_patched = True
 QgsPainting.BlendNormal.__doc__ = "Normal"
-QgsPainting.BlendLighten = Qgis.BlendMode.Lighten
 QgsPainting.BlendMode.BlendLighten = Qgis.BlendMode.Lighten
-QgsPainting.BlendLighten.is_monkey_patched = True
 QgsPainting.BlendLighten.__doc__ = "Lighten"
-QgsPainting.BlendScreen = Qgis.BlendMode.Screen
 QgsPainting.BlendMode.BlendScreen = Qgis.BlendMode.Screen
-QgsPainting.BlendScreen.is_monkey_patched = True
 QgsPainting.BlendScreen.__doc__ = "Screen"
-QgsPainting.BlendDodge = Qgis.BlendMode.Dodge
 QgsPainting.BlendMode.BlendDodge = Qgis.BlendMode.Dodge
-QgsPainting.BlendDodge.is_monkey_patched = True
 QgsPainting.BlendDodge.__doc__ = "Dodge"
-QgsPainting.BlendAddition = Qgis.BlendMode.Addition
 QgsPainting.BlendMode.BlendAddition = Qgis.BlendMode.Addition
-QgsPainting.BlendAddition.is_monkey_patched = True
 QgsPainting.BlendAddition.__doc__ = "Addition"
-QgsPainting.BlendDarken = Qgis.BlendMode.Darken
 QgsPainting.BlendMode.BlendDarken = Qgis.BlendMode.Darken
-QgsPainting.BlendDarken.is_monkey_patched = True
 QgsPainting.BlendDarken.__doc__ = "Darken"
-QgsPainting.BlendMultiply = Qgis.BlendMode.Multiply
 QgsPainting.BlendMode.BlendMultiply = Qgis.BlendMode.Multiply
-QgsPainting.BlendMultiply.is_monkey_patched = True
 QgsPainting.BlendMultiply.__doc__ = "Multiple"
-QgsPainting.BlendBurn = Qgis.BlendMode.Burn
 QgsPainting.BlendMode.BlendBurn = Qgis.BlendMode.Burn
-QgsPainting.BlendBurn.is_monkey_patched = True
 QgsPainting.BlendBurn.__doc__ = "Burn"
-QgsPainting.BlendOverlay = Qgis.BlendMode.Overlay
 QgsPainting.BlendMode.BlendOverlay = Qgis.BlendMode.Overlay
-QgsPainting.BlendOverlay.is_monkey_patched = True
 QgsPainting.BlendOverlay.__doc__ = "Overlay"
-QgsPainting.BlendSoftLight = Qgis.BlendMode.SoftLight
 QgsPainting.BlendMode.BlendSoftLight = Qgis.BlendMode.SoftLight
-QgsPainting.BlendSoftLight.is_monkey_patched = True
 QgsPainting.BlendSoftLight.__doc__ = "Soft light"
-QgsPainting.BlendHardLight = Qgis.BlendMode.HardLight
 QgsPainting.BlendMode.BlendHardLight = Qgis.BlendMode.HardLight
-QgsPainting.BlendHardLight.is_monkey_patched = True
 QgsPainting.BlendHardLight.__doc__ = "Hard light"
-QgsPainting.BlendDifference = Qgis.BlendMode.Difference
 QgsPainting.BlendMode.BlendDifference = Qgis.BlendMode.Difference
-QgsPainting.BlendDifference.is_monkey_patched = True
 QgsPainting.BlendDifference.__doc__ = "Difference"
-QgsPainting.BlendSubtract = Qgis.BlendMode.Subtract
 QgsPainting.BlendMode.BlendSubtract = Qgis.BlendMode.Subtract
-QgsPainting.BlendSubtract.is_monkey_patched = True
 QgsPainting.BlendSubtract.__doc__ = "Subtract"
-QgsPainting.BlendSource = Qgis.BlendMode.Source
 QgsPainting.BlendMode.BlendSource = Qgis.BlendMode.Source
-QgsPainting.BlendSource.is_monkey_patched = True
 QgsPainting.BlendSource.__doc__ = "Source"
-QgsPainting.BlendDestinationOver = Qgis.BlendMode.DestinationOver
 QgsPainting.BlendMode.BlendDestinationOver = Qgis.BlendMode.DestinationOver
-QgsPainting.BlendDestinationOver.is_monkey_patched = True
 QgsPainting.BlendDestinationOver.__doc__ = "Destination over"
-QgsPainting.BlendClear = Qgis.BlendMode.Clear
 QgsPainting.BlendMode.BlendClear = Qgis.BlendMode.Clear
-QgsPainting.BlendClear.is_monkey_patched = True
 QgsPainting.BlendClear.__doc__ = "Clear"
-QgsPainting.BlendDestination = Qgis.BlendMode.Destination
 QgsPainting.BlendMode.BlendDestination = Qgis.BlendMode.Destination
-QgsPainting.BlendDestination.is_monkey_patched = True
 QgsPainting.BlendDestination.__doc__ = "Destination"
-QgsPainting.BlendSourceIn = Qgis.BlendMode.SourceIn
 QgsPainting.BlendMode.BlendSourceIn = Qgis.BlendMode.SourceIn
-QgsPainting.BlendSourceIn.is_monkey_patched = True
 QgsPainting.BlendSourceIn.__doc__ = "Source in"
-QgsPainting.BlendDestinationIn = Qgis.BlendMode.DestinationIn
 QgsPainting.BlendMode.BlendDestinationIn = Qgis.BlendMode.DestinationIn
-QgsPainting.BlendDestinationIn.is_monkey_patched = True
 QgsPainting.BlendDestinationIn.__doc__ = "Destination in"
-QgsPainting.BlendSourceOut = Qgis.BlendMode.SourceOut
 QgsPainting.BlendMode.BlendSourceOut = Qgis.BlendMode.SourceOut
-QgsPainting.BlendSourceOut.is_monkey_patched = True
 QgsPainting.BlendSourceOut.__doc__ = "Source out"
-QgsPainting.BlendDestinationOut = Qgis.BlendMode.DestinationOut
 QgsPainting.BlendMode.BlendDestinationOut = Qgis.BlendMode.DestinationOut
-QgsPainting.BlendDestinationOut.is_monkey_patched = True
 QgsPainting.BlendDestinationOut.__doc__ = "Destination out"
-QgsPainting.BlendSourceAtop = Qgis.BlendMode.SourceAtop
 QgsPainting.BlendMode.BlendSourceAtop = Qgis.BlendMode.SourceAtop
-QgsPainting.BlendSourceAtop.is_monkey_patched = True
 QgsPainting.BlendSourceAtop.__doc__ = "Source atop"
-QgsPainting.BlendDestinationAtop = Qgis.BlendMode.DestinationAtop
 QgsPainting.BlendMode.BlendDestinationAtop = Qgis.BlendMode.DestinationAtop
-QgsPainting.BlendDestinationAtop.is_monkey_patched = True
 QgsPainting.BlendDestinationAtop.__doc__ = "Destination atop"
-QgsPainting.BlendXor = Qgis.BlendMode.Xor
 QgsPainting.BlendMode.BlendXor = Qgis.BlendMode.Xor
-QgsPainting.BlendXor.is_monkey_patched = True
 QgsPainting.BlendXor.__doc__ = "XOR"
 Qgis.BlendMode.__doc__ = """Blending modes defining the available composition modes that can
 be used when painting.
@@ -8941,23 +7128,14 @@ be used when painting.
 """
 # --
 Qgis.BlendMode.baseClass = Qgis
-QgsUnitTypes.SystemOfMeasurement = Qgis.SystemOfMeasurement
 # monkey patching scoped based enum
-QgsUnitTypes.UnknownSystem = Qgis.SystemOfMeasurement.Unknown
 QgsUnitTypes.SystemOfMeasurement.UnknownSystem = Qgis.SystemOfMeasurement.Unknown
-QgsUnitTypes.UnknownSystem.is_monkey_patched = True
 QgsUnitTypes.UnknownSystem.__doc__ = "Unknown system of measurement"
-QgsUnitTypes.MetricSystem = Qgis.SystemOfMeasurement.Metric
 QgsUnitTypes.SystemOfMeasurement.MetricSystem = Qgis.SystemOfMeasurement.Metric
-QgsUnitTypes.MetricSystem.is_monkey_patched = True
 QgsUnitTypes.MetricSystem.__doc__ = "International System of Units (SI)"
-QgsUnitTypes.ImperialSystem = Qgis.SystemOfMeasurement.Imperial
 QgsUnitTypes.SystemOfMeasurement.ImperialSystem = Qgis.SystemOfMeasurement.Imperial
-QgsUnitTypes.ImperialSystem.is_monkey_patched = True
 QgsUnitTypes.ImperialSystem.__doc__ = "British Imperial"
-QgsUnitTypes.USCSSystem = Qgis.SystemOfMeasurement.USCS
 QgsUnitTypes.SystemOfMeasurement.USCSSystem = Qgis.SystemOfMeasurement.USCS
-QgsUnitTypes.USCSSystem.is_monkey_patched = True
 QgsUnitTypes.USCSSystem.__doc__ = "United States customary system"
 Qgis.SystemOfMeasurement.__doc__ = """Systems of unit measurement.
 
@@ -8987,18 +7165,11 @@ Qgis.SystemOfMeasurement.__doc__ = """Systems of unit measurement.
 """
 # --
 Qgis.SystemOfMeasurement.baseClass = Qgis
-QgsTolerance.UnitType = Qgis.MapToolUnit
 # monkey patching scoped based enum
-QgsTolerance.LayerUnits = Qgis.MapToolUnit.Layer
 QgsTolerance.UnitType.LayerUnits = Qgis.MapToolUnit.Layer
-QgsTolerance.LayerUnits.is_monkey_patched = True
 QgsTolerance.LayerUnits.__doc__ = "Layer unit value"
-QgsTolerance.Pixels = Qgis.MapToolUnit.Pixels
-QgsTolerance.Pixels.is_monkey_patched = True
 QgsTolerance.Pixels.__doc__ = "Pixels unit of tolerance"
-QgsTolerance.ProjectUnits = Qgis.MapToolUnit.Project
 QgsTolerance.UnitType.ProjectUnits = Qgis.MapToolUnit.Project
-QgsTolerance.ProjectUnits.is_monkey_patched = True
 QgsTolerance.ProjectUnits.__doc__ = "Map (project) units"
 Qgis.MapToolUnit.__doc__ = """Type of unit of tolerance value from settings.
 For map (project) units, use MapToolUnit.Project.
@@ -9018,27 +7189,16 @@ For map (project) units, use MapToolUnit.Project.
 """
 # --
 Qgis.MapToolUnit.baseClass = Qgis
-QgsUnitTypes.UnitType = Qgis.UnitType
 # monkey patching scoped based enum
-QgsUnitTypes.TypeDistance = Qgis.UnitType.Distance
 QgsUnitTypes.UnitType.TypeDistance = Qgis.UnitType.Distance
-QgsUnitTypes.TypeDistance.is_monkey_patched = True
 QgsUnitTypes.TypeDistance.__doc__ = "Distance unit"
-QgsUnitTypes.TypeArea = Qgis.UnitType.Area
 QgsUnitTypes.UnitType.TypeArea = Qgis.UnitType.Area
-QgsUnitTypes.TypeArea.is_monkey_patched = True
 QgsUnitTypes.TypeArea.__doc__ = "Area unit"
-QgsUnitTypes.TypeVolume = Qgis.UnitType.Volume
 QgsUnitTypes.UnitType.TypeVolume = Qgis.UnitType.Volume
-QgsUnitTypes.TypeVolume.is_monkey_patched = True
 QgsUnitTypes.TypeVolume.__doc__ = "Volume unit"
-QgsUnitTypes.TypeUnknown = Qgis.UnitType.Unknown
 QgsUnitTypes.UnitType.TypeUnknown = Qgis.UnitType.Unknown
-QgsUnitTypes.TypeUnknown.is_monkey_patched = True
 QgsUnitTypes.TypeUnknown.__doc__ = "Unknown unit type"
-QgsUnitTypes.TypeTemporal = Qgis.UnitType.Temporal
 QgsUnitTypes.UnitType.TypeTemporal = Qgis.UnitType.Temporal
-QgsUnitTypes.TypeTemporal.is_monkey_patched = True
 QgsUnitTypes.TypeTemporal.__doc__ = "Temporal unit"
 Qgis.UnitType.__doc__ = """Unit types.
 
@@ -9072,167 +7232,66 @@ Qgis.UnitType.__doc__ = """Unit types.
 """
 # --
 Qgis.UnitType.baseClass = Qgis
-QgsUnitTypes.DistanceUnit = Qgis.DistanceUnit
 # monkey patching scoped based enum
-QgsUnitTypes.DistanceMeters = Qgis.DistanceUnit.Meters
 QgsUnitTypes.DistanceUnit.DistanceMeters = Qgis.DistanceUnit.Meters
-QgsUnitTypes.DistanceMeters.is_monkey_patched = True
 QgsUnitTypes.DistanceMeters.__doc__ = "Meters"
-QgsUnitTypes.DistanceKilometers = Qgis.DistanceUnit.Kilometers
 QgsUnitTypes.DistanceUnit.DistanceKilometers = Qgis.DistanceUnit.Kilometers
-QgsUnitTypes.DistanceKilometers.is_monkey_patched = True
 QgsUnitTypes.DistanceKilometers.__doc__ = "Kilometers"
-QgsUnitTypes.DistanceFeet = Qgis.DistanceUnit.Feet
 QgsUnitTypes.DistanceUnit.DistanceFeet = Qgis.DistanceUnit.Feet
-QgsUnitTypes.DistanceFeet.is_monkey_patched = True
 QgsUnitTypes.DistanceFeet.__doc__ = "Imperial feet"
-QgsUnitTypes.DistanceNauticalMiles = Qgis.DistanceUnit.NauticalMiles
 QgsUnitTypes.DistanceUnit.DistanceNauticalMiles = Qgis.DistanceUnit.NauticalMiles
-QgsUnitTypes.DistanceNauticalMiles.is_monkey_patched = True
 QgsUnitTypes.DistanceNauticalMiles.__doc__ = "Nautical miles"
-QgsUnitTypes.DistanceYards = Qgis.DistanceUnit.Yards
 QgsUnitTypes.DistanceUnit.DistanceYards = Qgis.DistanceUnit.Yards
-QgsUnitTypes.DistanceYards.is_monkey_patched = True
 QgsUnitTypes.DistanceYards.__doc__ = "Imperial yards"
-QgsUnitTypes.DistanceMiles = Qgis.DistanceUnit.Miles
 QgsUnitTypes.DistanceUnit.DistanceMiles = Qgis.DistanceUnit.Miles
-QgsUnitTypes.DistanceMiles.is_monkey_patched = True
 QgsUnitTypes.DistanceMiles.__doc__ = "Terrestrial miles"
-QgsUnitTypes.DistanceDegrees = Qgis.DistanceUnit.Degrees
 QgsUnitTypes.DistanceUnit.DistanceDegrees = Qgis.DistanceUnit.Degrees
-QgsUnitTypes.DistanceDegrees.is_monkey_patched = True
 QgsUnitTypes.DistanceDegrees.__doc__ = "Degrees, for planar geographic CRS distance measurements"
-QgsUnitTypes.DistanceCentimeters = Qgis.DistanceUnit.Centimeters
 QgsUnitTypes.DistanceUnit.DistanceCentimeters = Qgis.DistanceUnit.Centimeters
-QgsUnitTypes.DistanceCentimeters.is_monkey_patched = True
 QgsUnitTypes.DistanceCentimeters.__doc__ = "Centimeters"
-QgsUnitTypes.DistanceMillimeters = Qgis.DistanceUnit.Millimeters
 QgsUnitTypes.DistanceUnit.DistanceMillimeters = Qgis.DistanceUnit.Millimeters
-QgsUnitTypes.DistanceMillimeters.is_monkey_patched = True
 QgsUnitTypes.DistanceMillimeters.__doc__ = "Millimeters"
-QgsUnitTypes.Inches = Qgis.DistanceUnit.Inches
-QgsUnitTypes.Inches.is_monkey_patched = True
 QgsUnitTypes.Inches.__doc__ = "Inches \n.. versionadded:: 3.32"
-QgsUnitTypes.ChainsInternational = Qgis.DistanceUnit.ChainsInternational
-QgsUnitTypes.ChainsInternational.is_monkey_patched = True
 QgsUnitTypes.ChainsInternational.__doc__ = "International chains \n.. versionadded:: 3.40"
-QgsUnitTypes.ChainsBritishBenoit1895A = Qgis.DistanceUnit.ChainsBritishBenoit1895A
-QgsUnitTypes.ChainsBritishBenoit1895A.is_monkey_patched = True
 QgsUnitTypes.ChainsBritishBenoit1895A.__doc__ = "British chains (Benoit 1895 A) \n.. versionadded:: 3.40"
-QgsUnitTypes.ChainsBritishBenoit1895B = Qgis.DistanceUnit.ChainsBritishBenoit1895B
-QgsUnitTypes.ChainsBritishBenoit1895B.is_monkey_patched = True
 QgsUnitTypes.ChainsBritishBenoit1895B.__doc__ = "British chains (Benoit 1895 B) \n.. versionadded:: 3.40"
-QgsUnitTypes.ChainsBritishSears1922Truncated = Qgis.DistanceUnit.ChainsBritishSears1922Truncated
-QgsUnitTypes.ChainsBritishSears1922Truncated.is_monkey_patched = True
 QgsUnitTypes.ChainsBritishSears1922Truncated.__doc__ = "British chains (Sears 1922 truncated) \n.. versionadded:: 3.40"
-QgsUnitTypes.ChainsBritishSears1922 = Qgis.DistanceUnit.ChainsBritishSears1922
-QgsUnitTypes.ChainsBritishSears1922.is_monkey_patched = True
 QgsUnitTypes.ChainsBritishSears1922.__doc__ = "British chains (Sears 1922) \n.. versionadded:: 3.40"
-QgsUnitTypes.ChainsClarkes = Qgis.DistanceUnit.ChainsClarkes
-QgsUnitTypes.ChainsClarkes.is_monkey_patched = True
 QgsUnitTypes.ChainsClarkes.__doc__ = "Clarke's chains \n.. versionadded:: 3.40"
-QgsUnitTypes.ChainsUSSurvey = Qgis.DistanceUnit.ChainsUSSurvey
-QgsUnitTypes.ChainsUSSurvey.is_monkey_patched = True
 QgsUnitTypes.ChainsUSSurvey.__doc__ = "US Survey chains \n.. versionadded:: 3.40"
-QgsUnitTypes.FeetBritish1865 = Qgis.DistanceUnit.FeetBritish1865
-QgsUnitTypes.FeetBritish1865.is_monkey_patched = True
 QgsUnitTypes.FeetBritish1865.__doc__ = "British feet (1865) \n.. versionadded:: 3.40"
-QgsUnitTypes.FeetBritish1936 = Qgis.DistanceUnit.FeetBritish1936
-QgsUnitTypes.FeetBritish1936.is_monkey_patched = True
 QgsUnitTypes.FeetBritish1936.__doc__ = "British feet (1936) \n.. versionadded:: 3.40"
-QgsUnitTypes.FeetBritishBenoit1895A = Qgis.DistanceUnit.FeetBritishBenoit1895A
-QgsUnitTypes.FeetBritishBenoit1895A.is_monkey_patched = True
 QgsUnitTypes.FeetBritishBenoit1895A.__doc__ = "British feet (Benoit 1895 A) \n.. versionadded:: 3.40"
-QgsUnitTypes.FeetBritishBenoit1895B = Qgis.DistanceUnit.FeetBritishBenoit1895B
-QgsUnitTypes.FeetBritishBenoit1895B.is_monkey_patched = True
 QgsUnitTypes.FeetBritishBenoit1895B.__doc__ = "British feet (Benoit 1895 B) \n.. versionadded:: 3.40"
-QgsUnitTypes.FeetBritishSears1922Truncated = Qgis.DistanceUnit.FeetBritishSears1922Truncated
-QgsUnitTypes.FeetBritishSears1922Truncated.is_monkey_patched = True
 QgsUnitTypes.FeetBritishSears1922Truncated.__doc__ = "British feet (Sears 1922 truncated) \n.. versionadded:: 3.40"
-QgsUnitTypes.FeetBritishSears1922 = Qgis.DistanceUnit.FeetBritishSears1922
-QgsUnitTypes.FeetBritishSears1922.is_monkey_patched = True
 QgsUnitTypes.FeetBritishSears1922.__doc__ = "British feet (Sears 1922) \n.. versionadded:: 3.40"
-QgsUnitTypes.FeetClarkes = Qgis.DistanceUnit.FeetClarkes
-QgsUnitTypes.FeetClarkes.is_monkey_patched = True
 QgsUnitTypes.FeetClarkes.__doc__ = "Clarke's feet \n.. versionadded:: 3.40"
-QgsUnitTypes.FeetGoldCoast = Qgis.DistanceUnit.FeetGoldCoast
-QgsUnitTypes.FeetGoldCoast.is_monkey_patched = True
 QgsUnitTypes.FeetGoldCoast.__doc__ = "Gold Coast feet \n.. versionadded:: 3.40"
-QgsUnitTypes.FeetIndian = Qgis.DistanceUnit.FeetIndian
-QgsUnitTypes.FeetIndian.is_monkey_patched = True
 QgsUnitTypes.FeetIndian.__doc__ = "Indian (geodetic) feet \n.. versionadded:: 3.40"
-QgsUnitTypes.FeetIndian1937 = Qgis.DistanceUnit.FeetIndian1937
-QgsUnitTypes.FeetIndian1937.is_monkey_patched = True
 QgsUnitTypes.FeetIndian1937.__doc__ = "Indian feet (1937) \n.. versionadded:: 3.40"
-QgsUnitTypes.FeetIndian1962 = Qgis.DistanceUnit.FeetIndian1962
-QgsUnitTypes.FeetIndian1962.is_monkey_patched = True
 QgsUnitTypes.FeetIndian1962.__doc__ = "Indian feet (1962) \n.. versionadded:: 3.40"
-QgsUnitTypes.FeetIndian1975 = Qgis.DistanceUnit.FeetIndian1975
-QgsUnitTypes.FeetIndian1975.is_monkey_patched = True
 QgsUnitTypes.FeetIndian1975.__doc__ = "Indian feet (1975) \n.. versionadded:: 3.40"
-QgsUnitTypes.FeetUSSurvey = Qgis.DistanceUnit.FeetUSSurvey
-QgsUnitTypes.FeetUSSurvey.is_monkey_patched = True
 QgsUnitTypes.FeetUSSurvey.__doc__ = "US Survey feet \n.. versionadded:: 3.40"
-QgsUnitTypes.LinksInternational = Qgis.DistanceUnit.LinksInternational
-QgsUnitTypes.LinksInternational.is_monkey_patched = True
 QgsUnitTypes.LinksInternational.__doc__ = "International links \n.. versionadded:: 3.40"
-QgsUnitTypes.LinksBritishBenoit1895A = Qgis.DistanceUnit.LinksBritishBenoit1895A
-QgsUnitTypes.LinksBritishBenoit1895A.is_monkey_patched = True
 QgsUnitTypes.LinksBritishBenoit1895A.__doc__ = "British links (Benoit 1895 A) \n.. versionadded:: 3.40"
-QgsUnitTypes.LinksBritishBenoit1895B = Qgis.DistanceUnit.LinksBritishBenoit1895B
-QgsUnitTypes.LinksBritishBenoit1895B.is_monkey_patched = True
 QgsUnitTypes.LinksBritishBenoit1895B.__doc__ = "British links (Benoit 1895 B) \n.. versionadded:: 3.40"
-QgsUnitTypes.LinksBritishSears1922Truncated = Qgis.DistanceUnit.LinksBritishSears1922Truncated
-QgsUnitTypes.LinksBritishSears1922Truncated.is_monkey_patched = True
 QgsUnitTypes.LinksBritishSears1922Truncated.__doc__ = "British links (Sears 1922 truncated) \n.. versionadded:: 3.40"
-QgsUnitTypes.LinksBritishSears1922 = Qgis.DistanceUnit.LinksBritishSears1922
-QgsUnitTypes.LinksBritishSears1922.is_monkey_patched = True
 QgsUnitTypes.LinksBritishSears1922.__doc__ = "British links (Sears 1922) \n.. versionadded:: 3.40"
-QgsUnitTypes.LinksClarkes = Qgis.DistanceUnit.LinksClarkes
-QgsUnitTypes.LinksClarkes.is_monkey_patched = True
 QgsUnitTypes.LinksClarkes.__doc__ = "Clarke's links \n.. versionadded:: 3.40"
-QgsUnitTypes.LinksUSSurvey = Qgis.DistanceUnit.LinksUSSurvey
-QgsUnitTypes.LinksUSSurvey.is_monkey_patched = True
 QgsUnitTypes.LinksUSSurvey.__doc__ = "US Survey links \n.. versionadded:: 3.40"
-QgsUnitTypes.YardsBritishBenoit1895A = Qgis.DistanceUnit.YardsBritishBenoit1895A
-QgsUnitTypes.YardsBritishBenoit1895A.is_monkey_patched = True
 QgsUnitTypes.YardsBritishBenoit1895A.__doc__ = "British yards (Benoit 1895 A) \n.. versionadded:: 3.40"
-QgsUnitTypes.YardsBritishBenoit1895B = Qgis.DistanceUnit.YardsBritishBenoit1895B
-QgsUnitTypes.YardsBritishBenoit1895B.is_monkey_patched = True
 QgsUnitTypes.YardsBritishBenoit1895B.__doc__ = "British yards (Benoit 1895 B) \n.. versionadded:: 3.40"
-QgsUnitTypes.YardsBritishSears1922Truncated = Qgis.DistanceUnit.YardsBritishSears1922Truncated
-QgsUnitTypes.YardsBritishSears1922Truncated.is_monkey_patched = True
 QgsUnitTypes.YardsBritishSears1922Truncated.__doc__ = "British yards (Sears 1922 truncated) \n.. versionadded:: 3.40"
-QgsUnitTypes.YardsBritishSears1922 = Qgis.DistanceUnit.YardsBritishSears1922
-QgsUnitTypes.YardsBritishSears1922.is_monkey_patched = True
 QgsUnitTypes.YardsBritishSears1922.__doc__ = "British yards (Sears 1922) \n.. versionadded:: 3.40"
-QgsUnitTypes.YardsClarkes = Qgis.DistanceUnit.YardsClarkes
-QgsUnitTypes.YardsClarkes.is_monkey_patched = True
 QgsUnitTypes.YardsClarkes.__doc__ = "Clarke's yards \n.. versionadded:: 3.40"
-QgsUnitTypes.YardsIndian = Qgis.DistanceUnit.YardsIndian
-QgsUnitTypes.YardsIndian.is_monkey_patched = True
 QgsUnitTypes.YardsIndian.__doc__ = "Indian yards \n.. versionadded:: 3.40"
-QgsUnitTypes.YardsIndian1937 = Qgis.DistanceUnit.YardsIndian1937
-QgsUnitTypes.YardsIndian1937.is_monkey_patched = True
 QgsUnitTypes.YardsIndian1937.__doc__ = "Indian yards (1937) \n.. versionadded:: 3.40"
-QgsUnitTypes.YardsIndian1962 = Qgis.DistanceUnit.YardsIndian1962
-QgsUnitTypes.YardsIndian1962.is_monkey_patched = True
 QgsUnitTypes.YardsIndian1962.__doc__ = "Indian yards (1962) \n.. versionadded:: 3.40"
-QgsUnitTypes.YardsIndian1975 = Qgis.DistanceUnit.YardsIndian1975
-QgsUnitTypes.YardsIndian1975.is_monkey_patched = True
 QgsUnitTypes.YardsIndian1975.__doc__ = "Indian yards (1975) \n.. versionadded:: 3.40"
-QgsUnitTypes.MilesUSSurvey = Qgis.DistanceUnit.MilesUSSurvey
-QgsUnitTypes.MilesUSSurvey.is_monkey_patched = True
 QgsUnitTypes.MilesUSSurvey.__doc__ = "US Survey miles \n.. versionadded:: 3.40"
-QgsUnitTypes.Fathoms = Qgis.DistanceUnit.Fathoms
-QgsUnitTypes.Fathoms.is_monkey_patched = True
 QgsUnitTypes.Fathoms.__doc__ = "Fathoms \n.. versionadded:: 3.40"
-QgsUnitTypes.MetersGermanLegal = Qgis.DistanceUnit.MetersGermanLegal
-QgsUnitTypes.MetersGermanLegal.is_monkey_patched = True
 QgsUnitTypes.MetersGermanLegal.__doc__ = "German legal meter \n.. versionadded:: 3.40"
-QgsUnitTypes.DistanceUnknownUnit = Qgis.DistanceUnit.Unknown
 QgsUnitTypes.DistanceUnit.DistanceUnknownUnit = Qgis.DistanceUnit.Unknown
-QgsUnitTypes.DistanceUnknownUnit.is_monkey_patched = True
 QgsUnitTypes.DistanceUnknownUnit.__doc__ = "Unknown distance unit"
 Qgis.DistanceUnit.__doc__ = """Units of distance
 
@@ -9446,17 +7505,10 @@ Qgis.DistanceUnit.__doc__ = """Units of distance
 """
 # --
 Qgis.DistanceUnit.baseClass = Qgis
-QgsUnitTypes.DistanceUnitType = Qgis.DistanceUnitType
 # monkey patching scoped based enum
-QgsUnitTypes.Standard = Qgis.DistanceUnitType.Standard
-QgsUnitTypes.Standard.is_monkey_patched = True
 QgsUnitTypes.Standard.__doc__ = "Unit is a standard measurement unit"
-QgsUnitTypes.Geographic = Qgis.DistanceUnitType.Geographic
-QgsUnitTypes.Geographic.is_monkey_patched = True
 QgsUnitTypes.Geographic.__doc__ = "Unit is a geographic (e.g., degree based) unit"
-QgsUnitTypes.UnknownType = Qgis.DistanceUnitType.Unknown
 QgsUnitTypes.DistanceUnitType.UnknownType = Qgis.DistanceUnitType.Unknown
-QgsUnitTypes.UnknownType.is_monkey_patched = True
 QgsUnitTypes.UnknownType.__doc__ = "Unknown unit type"
 Qgis.DistanceUnitType.__doc__ = """Types of distance units
 
@@ -9476,58 +7528,31 @@ Qgis.DistanceUnitType.__doc__ = """Types of distance units
 """
 # --
 Qgis.DistanceUnitType.baseClass = Qgis
-QgsUnitTypes.AreaUnit = Qgis.AreaUnit
 # monkey patching scoped based enum
-QgsUnitTypes.AreaSquareMeters = Qgis.AreaUnit.SquareMeters
 QgsUnitTypes.AreaUnit.AreaSquareMeters = Qgis.AreaUnit.SquareMeters
-QgsUnitTypes.AreaSquareMeters.is_monkey_patched = True
 QgsUnitTypes.AreaSquareMeters.__doc__ = "Square meters"
-QgsUnitTypes.AreaSquareKilometers = Qgis.AreaUnit.SquareKilometers
 QgsUnitTypes.AreaUnit.AreaSquareKilometers = Qgis.AreaUnit.SquareKilometers
-QgsUnitTypes.AreaSquareKilometers.is_monkey_patched = True
 QgsUnitTypes.AreaSquareKilometers.__doc__ = "Square kilometers"
-QgsUnitTypes.AreaSquareFeet = Qgis.AreaUnit.SquareFeet
 QgsUnitTypes.AreaUnit.AreaSquareFeet = Qgis.AreaUnit.SquareFeet
-QgsUnitTypes.AreaSquareFeet.is_monkey_patched = True
 QgsUnitTypes.AreaSquareFeet.__doc__ = "Square feet"
-QgsUnitTypes.AreaSquareYards = Qgis.AreaUnit.SquareYards
 QgsUnitTypes.AreaUnit.AreaSquareYards = Qgis.AreaUnit.SquareYards
-QgsUnitTypes.AreaSquareYards.is_monkey_patched = True
 QgsUnitTypes.AreaSquareYards.__doc__ = "Square yards"
-QgsUnitTypes.AreaSquareMiles = Qgis.AreaUnit.SquareMiles
 QgsUnitTypes.AreaUnit.AreaSquareMiles = Qgis.AreaUnit.SquareMiles
-QgsUnitTypes.AreaSquareMiles.is_monkey_patched = True
 QgsUnitTypes.AreaSquareMiles.__doc__ = "Square miles"
-QgsUnitTypes.AreaHectares = Qgis.AreaUnit.Hectares
 QgsUnitTypes.AreaUnit.AreaHectares = Qgis.AreaUnit.Hectares
-QgsUnitTypes.AreaHectares.is_monkey_patched = True
 QgsUnitTypes.AreaHectares.__doc__ = "Hectares"
-QgsUnitTypes.AreaAcres = Qgis.AreaUnit.Acres
 QgsUnitTypes.AreaUnit.AreaAcres = Qgis.AreaUnit.Acres
-QgsUnitTypes.AreaAcres.is_monkey_patched = True
 QgsUnitTypes.AreaAcres.__doc__ = "Acres"
-QgsUnitTypes.AreaSquareNauticalMiles = Qgis.AreaUnit.SquareNauticalMiles
 QgsUnitTypes.AreaUnit.AreaSquareNauticalMiles = Qgis.AreaUnit.SquareNauticalMiles
-QgsUnitTypes.AreaSquareNauticalMiles.is_monkey_patched = True
 QgsUnitTypes.AreaSquareNauticalMiles.__doc__ = "Square nautical miles"
-QgsUnitTypes.AreaSquareDegrees = Qgis.AreaUnit.SquareDegrees
 QgsUnitTypes.AreaUnit.AreaSquareDegrees = Qgis.AreaUnit.SquareDegrees
-QgsUnitTypes.AreaSquareDegrees.is_monkey_patched = True
 QgsUnitTypes.AreaSquareDegrees.__doc__ = "Square degrees, for planar geographic CRS area measurements"
-QgsUnitTypes.AreaSquareCentimeters = Qgis.AreaUnit.SquareCentimeters
 QgsUnitTypes.AreaUnit.AreaSquareCentimeters = Qgis.AreaUnit.SquareCentimeters
-QgsUnitTypes.AreaSquareCentimeters.is_monkey_patched = True
 QgsUnitTypes.AreaSquareCentimeters.__doc__ = "Square centimeters"
-QgsUnitTypes.AreaSquareMillimeters = Qgis.AreaUnit.SquareMillimeters
 QgsUnitTypes.AreaUnit.AreaSquareMillimeters = Qgis.AreaUnit.SquareMillimeters
-QgsUnitTypes.AreaSquareMillimeters.is_monkey_patched = True
 QgsUnitTypes.AreaSquareMillimeters.__doc__ = "Square millimeters"
-QgsUnitTypes.SquareInches = Qgis.AreaUnit.SquareInches
-QgsUnitTypes.SquareInches.is_monkey_patched = True
 QgsUnitTypes.SquareInches.__doc__ = "Square inches \n.. versionadded:: 3.32"
-QgsUnitTypes.AreaUnknownUnit = Qgis.AreaUnit.Unknown
 QgsUnitTypes.AreaUnit.AreaUnknownUnit = Qgis.AreaUnit.Unknown
-QgsUnitTypes.AreaUnknownUnit.is_monkey_patched = True
 QgsUnitTypes.AreaUnknownUnit.__doc__ = "Unknown areal unit"
 Qgis.AreaUnit.__doc__ = """Units of area
 
@@ -9593,51 +7618,28 @@ Qgis.AreaUnit.__doc__ = """Units of area
 """
 # --
 Qgis.AreaUnit.baseClass = Qgis
-QgsUnitTypes.VolumeUnit = Qgis.VolumeUnit
 # monkey patching scoped based enum
-QgsUnitTypes.VolumeCubicMeters = Qgis.VolumeUnit.CubicMeters
 QgsUnitTypes.VolumeUnit.VolumeCubicMeters = Qgis.VolumeUnit.CubicMeters
-QgsUnitTypes.VolumeCubicMeters.is_monkey_patched = True
 QgsUnitTypes.VolumeCubicMeters.__doc__ = "Cubic meters"
-QgsUnitTypes.VolumeCubicFeet = Qgis.VolumeUnit.CubicFeet
 QgsUnitTypes.VolumeUnit.VolumeCubicFeet = Qgis.VolumeUnit.CubicFeet
-QgsUnitTypes.VolumeCubicFeet.is_monkey_patched = True
 QgsUnitTypes.VolumeCubicFeet.__doc__ = "Cubic feet"
-QgsUnitTypes.VolumeCubicYards = Qgis.VolumeUnit.CubicYards
 QgsUnitTypes.VolumeUnit.VolumeCubicYards = Qgis.VolumeUnit.CubicYards
-QgsUnitTypes.VolumeCubicYards.is_monkey_patched = True
 QgsUnitTypes.VolumeCubicYards.__doc__ = "Cubic yards"
-QgsUnitTypes.VolumeBarrel = Qgis.VolumeUnit.Barrel
 QgsUnitTypes.VolumeUnit.VolumeBarrel = Qgis.VolumeUnit.Barrel
-QgsUnitTypes.VolumeBarrel.is_monkey_patched = True
 QgsUnitTypes.VolumeBarrel.__doc__ = "Barrels"
-QgsUnitTypes.VolumeCubicDecimeter = Qgis.VolumeUnit.CubicDecimeter
 QgsUnitTypes.VolumeUnit.VolumeCubicDecimeter = Qgis.VolumeUnit.CubicDecimeter
-QgsUnitTypes.VolumeCubicDecimeter.is_monkey_patched = True
 QgsUnitTypes.VolumeCubicDecimeter.__doc__ = "Cubic decimeters"
-QgsUnitTypes.VolumeLiters = Qgis.VolumeUnit.Liters
 QgsUnitTypes.VolumeUnit.VolumeLiters = Qgis.VolumeUnit.Liters
-QgsUnitTypes.VolumeLiters.is_monkey_patched = True
 QgsUnitTypes.VolumeLiters.__doc__ = "Litres"
-QgsUnitTypes.VolumeGallonUS = Qgis.VolumeUnit.GallonUS
 QgsUnitTypes.VolumeUnit.VolumeGallonUS = Qgis.VolumeUnit.GallonUS
-QgsUnitTypes.VolumeGallonUS.is_monkey_patched = True
 QgsUnitTypes.VolumeGallonUS.__doc__ = "US Gallons"
-QgsUnitTypes.VolumeCubicInch = Qgis.VolumeUnit.CubicInch
 QgsUnitTypes.VolumeUnit.VolumeCubicInch = Qgis.VolumeUnit.CubicInch
-QgsUnitTypes.VolumeCubicInch.is_monkey_patched = True
 QgsUnitTypes.VolumeCubicInch.__doc__ = "Cubic inches"
-QgsUnitTypes.VolumeCubicCentimeter = Qgis.VolumeUnit.CubicCentimeter
 QgsUnitTypes.VolumeUnit.VolumeCubicCentimeter = Qgis.VolumeUnit.CubicCentimeter
-QgsUnitTypes.VolumeCubicCentimeter.is_monkey_patched = True
 QgsUnitTypes.VolumeCubicCentimeter.__doc__ = "Cubic Centimeters"
-QgsUnitTypes.VolumeCubicDegrees = Qgis.VolumeUnit.CubicDegrees
 QgsUnitTypes.VolumeUnit.VolumeCubicDegrees = Qgis.VolumeUnit.CubicDegrees
-QgsUnitTypes.VolumeCubicDegrees.is_monkey_patched = True
 QgsUnitTypes.VolumeCubicDegrees.__doc__ = "Cubic degrees, for planar geographic CRS volume measurements"
-QgsUnitTypes.VolumeUnknownUnit = Qgis.VolumeUnit.Unknown
 QgsUnitTypes.VolumeUnit.VolumeUnknownUnit = Qgis.VolumeUnit.Unknown
-QgsUnitTypes.VolumeUnknownUnit.is_monkey_patched = True
 QgsUnitTypes.VolumeUnknownUnit.__doc__ = "Unknown volume unit"
 Qgis.VolumeUnit.__doc__ = """Units of volume.
 
@@ -9695,43 +7697,24 @@ Qgis.VolumeUnit.__doc__ = """Units of volume.
 """
 # --
 Qgis.VolumeUnit.baseClass = Qgis
-QgsUnitTypes.AngleUnit = Qgis.AngleUnit
 # monkey patching scoped based enum
-QgsUnitTypes.AngleDegrees = Qgis.AngleUnit.Degrees
 QgsUnitTypes.AngleUnit.AngleDegrees = Qgis.AngleUnit.Degrees
-QgsUnitTypes.AngleDegrees.is_monkey_patched = True
 QgsUnitTypes.AngleDegrees.__doc__ = "Degrees"
-QgsUnitTypes.AngleRadians = Qgis.AngleUnit.Radians
 QgsUnitTypes.AngleUnit.AngleRadians = Qgis.AngleUnit.Radians
-QgsUnitTypes.AngleRadians.is_monkey_patched = True
 QgsUnitTypes.AngleRadians.__doc__ = "Square kilometers"
-QgsUnitTypes.AngleGon = Qgis.AngleUnit.Gon
 QgsUnitTypes.AngleUnit.AngleGon = Qgis.AngleUnit.Gon
-QgsUnitTypes.AngleGon.is_monkey_patched = True
 QgsUnitTypes.AngleGon.__doc__ = "Gon/gradian"
-QgsUnitTypes.AngleMinutesOfArc = Qgis.AngleUnit.MinutesOfArc
 QgsUnitTypes.AngleUnit.AngleMinutesOfArc = Qgis.AngleUnit.MinutesOfArc
-QgsUnitTypes.AngleMinutesOfArc.is_monkey_patched = True
 QgsUnitTypes.AngleMinutesOfArc.__doc__ = "Minutes of arc"
-QgsUnitTypes.AngleSecondsOfArc = Qgis.AngleUnit.SecondsOfArc
 QgsUnitTypes.AngleUnit.AngleSecondsOfArc = Qgis.AngleUnit.SecondsOfArc
-QgsUnitTypes.AngleSecondsOfArc.is_monkey_patched = True
 QgsUnitTypes.AngleSecondsOfArc.__doc__ = "Seconds of arc"
-QgsUnitTypes.AngleTurn = Qgis.AngleUnit.Turn
 QgsUnitTypes.AngleUnit.AngleTurn = Qgis.AngleUnit.Turn
-QgsUnitTypes.AngleTurn.is_monkey_patched = True
 QgsUnitTypes.AngleTurn.__doc__ = "Turn/revolutions"
-QgsUnitTypes.AngleMilliradiansSI = Qgis.AngleUnit.MilliradiansSI
 QgsUnitTypes.AngleUnit.AngleMilliradiansSI = Qgis.AngleUnit.MilliradiansSI
-QgsUnitTypes.AngleMilliradiansSI.is_monkey_patched = True
 QgsUnitTypes.AngleMilliradiansSI.__doc__ = "Angular milliradians (SI definition, 1/1000 of radian)"
-QgsUnitTypes.AngleMilNATO = Qgis.AngleUnit.MilNATO
 QgsUnitTypes.AngleUnit.AngleMilNATO = Qgis.AngleUnit.MilNATO
-QgsUnitTypes.AngleMilNATO.is_monkey_patched = True
 QgsUnitTypes.AngleMilNATO.__doc__ = "Angular mil (NATO definition, 6400 mil = 2PI radians)"
-QgsUnitTypes.AngleUnknownUnit = Qgis.AngleUnit.Unknown
 QgsUnitTypes.AngleUnit.AngleUnknownUnit = Qgis.AngleUnit.Unknown
-QgsUnitTypes.AngleUnknownUnit.is_monkey_patched = True
 QgsUnitTypes.AngleUnknownUnit.__doc__ = "Unknown angle unit"
 Qgis.AngleUnit.__doc__ = """Units of angles.
 
@@ -9781,55 +7764,30 @@ Qgis.AngleUnit.__doc__ = """Units of angles.
 """
 # --
 Qgis.AngleUnit.baseClass = Qgis
-QgsUnitTypes.TemporalUnit = Qgis.TemporalUnit
 # monkey patching scoped based enum
-QgsUnitTypes.TemporalMilliseconds = Qgis.TemporalUnit.Milliseconds
 QgsUnitTypes.TemporalUnit.TemporalMilliseconds = Qgis.TemporalUnit.Milliseconds
-QgsUnitTypes.TemporalMilliseconds.is_monkey_patched = True
 QgsUnitTypes.TemporalMilliseconds.__doc__ = "Milliseconds"
-QgsUnitTypes.TemporalSeconds = Qgis.TemporalUnit.Seconds
 QgsUnitTypes.TemporalUnit.TemporalSeconds = Qgis.TemporalUnit.Seconds
-QgsUnitTypes.TemporalSeconds.is_monkey_patched = True
 QgsUnitTypes.TemporalSeconds.__doc__ = "Seconds"
-QgsUnitTypes.TemporalMinutes = Qgis.TemporalUnit.Minutes
 QgsUnitTypes.TemporalUnit.TemporalMinutes = Qgis.TemporalUnit.Minutes
-QgsUnitTypes.TemporalMinutes.is_monkey_patched = True
 QgsUnitTypes.TemporalMinutes.__doc__ = "Minutes"
-QgsUnitTypes.TemporalHours = Qgis.TemporalUnit.Hours
 QgsUnitTypes.TemporalUnit.TemporalHours = Qgis.TemporalUnit.Hours
-QgsUnitTypes.TemporalHours.is_monkey_patched = True
 QgsUnitTypes.TemporalHours.__doc__ = "Hours"
-QgsUnitTypes.TemporalDays = Qgis.TemporalUnit.Days
 QgsUnitTypes.TemporalUnit.TemporalDays = Qgis.TemporalUnit.Days
-QgsUnitTypes.TemporalDays.is_monkey_patched = True
 QgsUnitTypes.TemporalDays.__doc__ = "Days"
-QgsUnitTypes.TemporalWeeks = Qgis.TemporalUnit.Weeks
 QgsUnitTypes.TemporalUnit.TemporalWeeks = Qgis.TemporalUnit.Weeks
-QgsUnitTypes.TemporalWeeks.is_monkey_patched = True
 QgsUnitTypes.TemporalWeeks.__doc__ = "Weeks"
-QgsUnitTypes.TemporalMonths = Qgis.TemporalUnit.Months
 QgsUnitTypes.TemporalUnit.TemporalMonths = Qgis.TemporalUnit.Months
-QgsUnitTypes.TemporalMonths.is_monkey_patched = True
 QgsUnitTypes.TemporalMonths.__doc__ = "Months"
-QgsUnitTypes.TemporalYears = Qgis.TemporalUnit.Years
 QgsUnitTypes.TemporalUnit.TemporalYears = Qgis.TemporalUnit.Years
-QgsUnitTypes.TemporalYears.is_monkey_patched = True
 QgsUnitTypes.TemporalYears.__doc__ = "Years"
-QgsUnitTypes.TemporalDecades = Qgis.TemporalUnit.Decades
 QgsUnitTypes.TemporalUnit.TemporalDecades = Qgis.TemporalUnit.Decades
-QgsUnitTypes.TemporalDecades.is_monkey_patched = True
 QgsUnitTypes.TemporalDecades.__doc__ = "Decades"
-QgsUnitTypes.TemporalCenturies = Qgis.TemporalUnit.Centuries
 QgsUnitTypes.TemporalUnit.TemporalCenturies = Qgis.TemporalUnit.Centuries
-QgsUnitTypes.TemporalCenturies.is_monkey_patched = True
 QgsUnitTypes.TemporalCenturies.__doc__ = "Centuries"
-QgsUnitTypes.TemporalIrregularStep = Qgis.TemporalUnit.IrregularStep
 QgsUnitTypes.TemporalUnit.TemporalIrregularStep = Qgis.TemporalUnit.IrregularStep
-QgsUnitTypes.TemporalIrregularStep.is_monkey_patched = True
 QgsUnitTypes.TemporalIrregularStep.__doc__ = "Special 'irregular step' time unit, used for temporal data which uses irregular, non-real-world unit steps \n.. versionadded:: 3.20"
-QgsUnitTypes.TemporalUnknownUnit = Qgis.TemporalUnit.Unknown
 QgsUnitTypes.TemporalUnit.TemporalUnknownUnit = Qgis.TemporalUnit.Unknown
-QgsUnitTypes.TemporalUnknownUnit.is_monkey_patched = True
 QgsUnitTypes.TemporalUnknownUnit.__doc__ = "Unknown time unit"
 Qgis.TemporalUnit.__doc__ = """Temporal units.
 
@@ -9894,39 +7852,22 @@ Qgis.TemporalUnit.__doc__ = """Temporal units.
 """
 # --
 Qgis.TemporalUnit.baseClass = Qgis
-QgsUnitTypes.RenderUnit = Qgis.RenderUnit
 # monkey patching scoped based enum
-QgsUnitTypes.RenderMillimeters = Qgis.RenderUnit.Millimeters
 QgsUnitTypes.RenderUnit.RenderMillimeters = Qgis.RenderUnit.Millimeters
-QgsUnitTypes.RenderMillimeters.is_monkey_patched = True
 QgsUnitTypes.RenderMillimeters.__doc__ = "Millimeters"
-QgsUnitTypes.RenderMapUnits = Qgis.RenderUnit.MapUnits
 QgsUnitTypes.RenderUnit.RenderMapUnits = Qgis.RenderUnit.MapUnits
-QgsUnitTypes.RenderMapUnits.is_monkey_patched = True
 QgsUnitTypes.RenderMapUnits.__doc__ = "Map units"
-QgsUnitTypes.RenderPixels = Qgis.RenderUnit.Pixels
 QgsUnitTypes.RenderUnit.RenderPixels = Qgis.RenderUnit.Pixels
-QgsUnitTypes.RenderPixels.is_monkey_patched = True
 QgsUnitTypes.RenderPixels.__doc__ = "Pixels"
-QgsUnitTypes.RenderPercentage = Qgis.RenderUnit.Percentage
 QgsUnitTypes.RenderUnit.RenderPercentage = Qgis.RenderUnit.Percentage
-QgsUnitTypes.RenderPercentage.is_monkey_patched = True
 QgsUnitTypes.RenderPercentage.__doc__ = "Percentage of another measurement (e.g., canvas size, feature size)"
-QgsUnitTypes.RenderPoints = Qgis.RenderUnit.Points
 QgsUnitTypes.RenderUnit.RenderPoints = Qgis.RenderUnit.Points
-QgsUnitTypes.RenderPoints.is_monkey_patched = True
 QgsUnitTypes.RenderPoints.__doc__ = "Points (e.g., for font sizes)"
-QgsUnitTypes.RenderInches = Qgis.RenderUnit.Inches
 QgsUnitTypes.RenderUnit.RenderInches = Qgis.RenderUnit.Inches
-QgsUnitTypes.RenderInches.is_monkey_patched = True
 QgsUnitTypes.RenderInches.__doc__ = "Inches"
-QgsUnitTypes.RenderUnknownUnit = Qgis.RenderUnit.Unknown
 QgsUnitTypes.RenderUnit.RenderUnknownUnit = Qgis.RenderUnit.Unknown
-QgsUnitTypes.RenderUnknownUnit.is_monkey_patched = True
 QgsUnitTypes.RenderUnknownUnit.__doc__ = "Mixed or unknown units"
-QgsUnitTypes.RenderMetersInMapUnits = Qgis.RenderUnit.MetersInMapUnits
 QgsUnitTypes.RenderUnit.RenderMetersInMapUnits = Qgis.RenderUnit.MetersInMapUnits
-QgsUnitTypes.RenderMetersInMapUnits.is_monkey_patched = True
 QgsUnitTypes.RenderMetersInMapUnits.__doc__ = "Meters value as Map units"
 Qgis.RenderUnit.__doc__ = """Rendering size units
 
@@ -9972,39 +7913,22 @@ Qgis.RenderUnit.__doc__ = """Rendering size units
 """
 # --
 Qgis.RenderUnit.baseClass = Qgis
-QgsUnitTypes.LayoutUnit = Qgis.LayoutUnit
 # monkey patching scoped based enum
-QgsUnitTypes.LayoutMillimeters = Qgis.LayoutUnit.Millimeters
 QgsUnitTypes.LayoutUnit.LayoutMillimeters = Qgis.LayoutUnit.Millimeters
-QgsUnitTypes.LayoutMillimeters.is_monkey_patched = True
 QgsUnitTypes.LayoutMillimeters.__doc__ = "Millimeters"
-QgsUnitTypes.LayoutCentimeters = Qgis.LayoutUnit.Centimeters
 QgsUnitTypes.LayoutUnit.LayoutCentimeters = Qgis.LayoutUnit.Centimeters
-QgsUnitTypes.LayoutCentimeters.is_monkey_patched = True
 QgsUnitTypes.LayoutCentimeters.__doc__ = "Centimeters"
-QgsUnitTypes.LayoutMeters = Qgis.LayoutUnit.Meters
 QgsUnitTypes.LayoutUnit.LayoutMeters = Qgis.LayoutUnit.Meters
-QgsUnitTypes.LayoutMeters.is_monkey_patched = True
 QgsUnitTypes.LayoutMeters.__doc__ = "Meters"
-QgsUnitTypes.LayoutInches = Qgis.LayoutUnit.Inches
 QgsUnitTypes.LayoutUnit.LayoutInches = Qgis.LayoutUnit.Inches
-QgsUnitTypes.LayoutInches.is_monkey_patched = True
 QgsUnitTypes.LayoutInches.__doc__ = "Inches"
-QgsUnitTypes.LayoutFeet = Qgis.LayoutUnit.Feet
 QgsUnitTypes.LayoutUnit.LayoutFeet = Qgis.LayoutUnit.Feet
-QgsUnitTypes.LayoutFeet.is_monkey_patched = True
 QgsUnitTypes.LayoutFeet.__doc__ = "Feet"
-QgsUnitTypes.LayoutPoints = Qgis.LayoutUnit.Points
 QgsUnitTypes.LayoutUnit.LayoutPoints = Qgis.LayoutUnit.Points
-QgsUnitTypes.LayoutPoints.is_monkey_patched = True
 QgsUnitTypes.LayoutPoints.__doc__ = "Typographic points"
-QgsUnitTypes.LayoutPicas = Qgis.LayoutUnit.Picas
 QgsUnitTypes.LayoutUnit.LayoutPicas = Qgis.LayoutUnit.Picas
-QgsUnitTypes.LayoutPicas.is_monkey_patched = True
 QgsUnitTypes.LayoutPicas.__doc__ = "Typographic picas"
-QgsUnitTypes.LayoutPixels = Qgis.LayoutUnit.Pixels
 QgsUnitTypes.LayoutUnit.LayoutPixels = Qgis.LayoutUnit.Pixels
-QgsUnitTypes.LayoutPixels.is_monkey_patched = True
 QgsUnitTypes.LayoutPixels.__doc__ = "Pixels"
 Qgis.LayoutUnit.__doc__ = """Layout measurement units
 
@@ -10050,15 +7974,10 @@ Qgis.LayoutUnit.__doc__ = """Layout measurement units
 """
 # --
 Qgis.LayoutUnit.baseClass = Qgis
-QgsUnitTypes.LayoutUnitType = Qgis.LayoutUnitType
 # monkey patching scoped based enum
-QgsUnitTypes.LayoutPaperUnits = Qgis.LayoutUnitType.PaperUnits
 QgsUnitTypes.LayoutUnitType.LayoutPaperUnits = Qgis.LayoutUnitType.PaperUnits
-QgsUnitTypes.LayoutPaperUnits.is_monkey_patched = True
 QgsUnitTypes.LayoutPaperUnits.__doc__ = "Unit is a paper based measurement unit"
-QgsUnitTypes.LayoutScreenUnits = Qgis.LayoutUnitType.ScreenUnits
 QgsUnitTypes.LayoutUnitType.LayoutScreenUnits = Qgis.LayoutUnitType.ScreenUnits
-QgsUnitTypes.LayoutScreenUnits.is_monkey_patched = True
 QgsUnitTypes.LayoutScreenUnits.__doc__ = "Unit is a screen based measurement unit"
 Qgis.LayoutUnitType.__doc__ = """Types of layout units
 
@@ -10080,55 +7999,30 @@ Qgis.LayoutUnitType.__doc__ = """Types of layout units
 """
 # --
 Qgis.LayoutUnitType.baseClass = Qgis
-QgsLayoutRenderContext.Flag = Qgis.LayoutRenderFlag
 # monkey patching scoped based enum
-QgsLayoutRenderContext.FlagDebug = Qgis.LayoutRenderFlag.Debug
 QgsLayoutRenderContext.Flag.FlagDebug = Qgis.LayoutRenderFlag.Debug
-QgsLayoutRenderContext.FlagDebug.is_monkey_patched = True
 QgsLayoutRenderContext.FlagDebug.__doc__ = "Debug/testing mode, items are drawn as solid rectangles."
-QgsLayoutRenderContext.FlagOutlineOnly = Qgis.LayoutRenderFlag.OutlineOnly
 QgsLayoutRenderContext.Flag.FlagOutlineOnly = Qgis.LayoutRenderFlag.OutlineOnly
-QgsLayoutRenderContext.FlagOutlineOnly.is_monkey_patched = True
 QgsLayoutRenderContext.FlagOutlineOnly.__doc__ = "Render items as outlines only."
-QgsLayoutRenderContext.FlagAntialiasing = Qgis.LayoutRenderFlag.Antialiasing
 QgsLayoutRenderContext.Flag.FlagAntialiasing = Qgis.LayoutRenderFlag.Antialiasing
-QgsLayoutRenderContext.FlagAntialiasing.is_monkey_patched = True
 QgsLayoutRenderContext.FlagAntialiasing.__doc__ = "Use antialiasing when drawing items."
-QgsLayoutRenderContext.FlagUseAdvancedEffects = Qgis.LayoutRenderFlag.UseAdvancedEffects
 QgsLayoutRenderContext.Flag.FlagUseAdvancedEffects = Qgis.LayoutRenderFlag.UseAdvancedEffects
-QgsLayoutRenderContext.FlagUseAdvancedEffects.is_monkey_patched = True
 QgsLayoutRenderContext.FlagUseAdvancedEffects.__doc__ = "Enable advanced effects such as blend modes. \n.. deprecated:: 3.44. Use rasterizedRenderingPolicy() instead."
-QgsLayoutRenderContext.FlagForceVectorOutput = Qgis.LayoutRenderFlag.ForceVectorOutput
 QgsLayoutRenderContext.Flag.FlagForceVectorOutput = Qgis.LayoutRenderFlag.ForceVectorOutput
-QgsLayoutRenderContext.FlagForceVectorOutput.is_monkey_patched = True
 QgsLayoutRenderContext.FlagForceVectorOutput.__doc__ = "Force output in vector format where possible, even if items require rasterization to keep their correct appearance. \n.. deprecated:: 3.44. Use rasterizedRenderingPolicy() instead."
-QgsLayoutRenderContext.FlagHideCoverageLayer = Qgis.LayoutRenderFlag.HideCoverageLayer
 QgsLayoutRenderContext.Flag.FlagHideCoverageLayer = Qgis.LayoutRenderFlag.HideCoverageLayer
-QgsLayoutRenderContext.FlagHideCoverageLayer.is_monkey_patched = True
 QgsLayoutRenderContext.FlagHideCoverageLayer.__doc__ = "Hide coverage layer in outputs"
-QgsLayoutRenderContext.FlagDrawSelection = Qgis.LayoutRenderFlag.DrawSelection
 QgsLayoutRenderContext.Flag.FlagDrawSelection = Qgis.LayoutRenderFlag.DrawSelection
-QgsLayoutRenderContext.FlagDrawSelection.is_monkey_patched = True
 QgsLayoutRenderContext.FlagDrawSelection.__doc__ = "Draw selection"
-QgsLayoutRenderContext.FlagDisableTiledRasterLayerRenders = Qgis.LayoutRenderFlag.DisableTiledRasterLayerRenders
 QgsLayoutRenderContext.Flag.FlagDisableTiledRasterLayerRenders = Qgis.LayoutRenderFlag.DisableTiledRasterLayerRenders
-QgsLayoutRenderContext.FlagDisableTiledRasterLayerRenders.is_monkey_patched = True
 QgsLayoutRenderContext.FlagDisableTiledRasterLayerRenders.__doc__ = "If set, then raster layers will not be drawn as separate tiles. This may improve the appearance in exported files, at the cost of much higher memory usage during exports."
-QgsLayoutRenderContext.FlagRenderLabelsByMapLayer = Qgis.LayoutRenderFlag.RenderLabelsByMapLayer
 QgsLayoutRenderContext.Flag.FlagRenderLabelsByMapLayer = Qgis.LayoutRenderFlag.RenderLabelsByMapLayer
-QgsLayoutRenderContext.FlagRenderLabelsByMapLayer.is_monkey_patched = True
 QgsLayoutRenderContext.FlagRenderLabelsByMapLayer.__doc__ = "When rendering map items to multi-layered exports, render labels belonging to different layers into separate export layers"
-QgsLayoutRenderContext.FlagLosslessImageRendering = Qgis.LayoutRenderFlag.LosslessImageRendering
 QgsLayoutRenderContext.Flag.FlagLosslessImageRendering = Qgis.LayoutRenderFlag.LosslessImageRendering
-QgsLayoutRenderContext.FlagLosslessImageRendering.is_monkey_patched = True
 QgsLayoutRenderContext.FlagLosslessImageRendering.__doc__ = "Render images losslessly whenever possible, instead of the default lossy jpeg rendering used for some destination devices (e.g. PDF)."
-QgsLayoutRenderContext.FlagSynchronousLegendGraphics = Qgis.LayoutRenderFlag.SynchronousLegendGraphics
 QgsLayoutRenderContext.Flag.FlagSynchronousLegendGraphics = Qgis.LayoutRenderFlag.SynchronousLegendGraphics
-QgsLayoutRenderContext.FlagSynchronousLegendGraphics.is_monkey_patched = True
 QgsLayoutRenderContext.FlagSynchronousLegendGraphics.__doc__ = "Query legend graphics synchronously."
-QgsLayoutRenderContext.FlagAlwaysUseGlobalMasks = Qgis.LayoutRenderFlag.AlwaysUseGlobalMasks
 QgsLayoutRenderContext.Flag.FlagAlwaysUseGlobalMasks = Qgis.LayoutRenderFlag.AlwaysUseGlobalMasks
-QgsLayoutRenderContext.FlagAlwaysUseGlobalMasks.is_monkey_patched = True
 QgsLayoutRenderContext.FlagAlwaysUseGlobalMasks.__doc__ = "When applying clipping paths for selective masking, always use global (\"entire map\") paths, instead of calculating local clipping paths per rendered feature. This results in considerably more complex layout exports in all current Qt versions. This flag only applies to vector layout exports. \n.. versionadded:: 3.38"
 Qgis.LayoutRenderFlag.__doc__ = """Flags for controlling how a layout is rendered.
 
@@ -10199,22 +8093,14 @@ Qgis.LayoutRenderFlag.__doc__ = """Flags for controlling how a layout is rendere
 """
 # --
 Qgis.LayoutRenderFlag.baseClass = Qgis
-QgsLayoutRenderContext.Flags = Qgis.LayoutRenderFlags
 Qgis.LayoutRenderFlags.baseClass = Qgis
 LayoutRenderFlags = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsLayoutItemPicture.Format = Qgis.PictureFormat
 # monkey patching scoped based enum
-QgsLayoutItemPicture.FormatSVG = Qgis.PictureFormat.SVG
 QgsLayoutItemPicture.Format.FormatSVG = Qgis.PictureFormat.SVG
-QgsLayoutItemPicture.FormatSVG.is_monkey_patched = True
 QgsLayoutItemPicture.FormatSVG.__doc__ = "SVG image"
-QgsLayoutItemPicture.FormatRaster = Qgis.PictureFormat.Raster
 QgsLayoutItemPicture.Format.FormatRaster = Qgis.PictureFormat.Raster
-QgsLayoutItemPicture.FormatRaster.is_monkey_patched = True
 QgsLayoutItemPicture.FormatRaster.__doc__ = "Raster image"
-QgsLayoutItemPicture.FormatUnknown = Qgis.PictureFormat.Unknown
 QgsLayoutItemPicture.Format.FormatUnknown = Qgis.PictureFormat.Unknown
-QgsLayoutItemPicture.FormatUnknown.is_monkey_patched = True
 QgsLayoutItemPicture.FormatUnknown.__doc__ = "Invalid or unknown image type"
 Qgis.PictureFormat.__doc__ = """Picture formats.
 
@@ -10262,19 +8148,12 @@ Qgis.ScaleCalculationMethod.__doc__ = """Scale calculation logic.
 """
 # --
 Qgis.ScaleCalculationMethod.baseClass = Qgis
-QgsScaleBarSettings.Alignment = Qgis.ScaleBarAlignment
 # monkey patching scoped based enum
-QgsScaleBarSettings.AlignLeft = Qgis.ScaleBarAlignment.Left
 QgsScaleBarSettings.Alignment.AlignLeft = Qgis.ScaleBarAlignment.Left
-QgsScaleBarSettings.AlignLeft.is_monkey_patched = True
 QgsScaleBarSettings.AlignLeft.__doc__ = "Left aligned"
-QgsScaleBarSettings.AlignMiddle = Qgis.ScaleBarAlignment.Middle
 QgsScaleBarSettings.Alignment.AlignMiddle = Qgis.ScaleBarAlignment.Middle
-QgsScaleBarSettings.AlignMiddle.is_monkey_patched = True
 QgsScaleBarSettings.AlignMiddle.__doc__ = "Center aligned"
-QgsScaleBarSettings.AlignRight = Qgis.ScaleBarAlignment.Right
 QgsScaleBarSettings.Alignment.AlignRight = Qgis.ScaleBarAlignment.Right
-QgsScaleBarSettings.AlignRight.is_monkey_patched = True
 QgsScaleBarSettings.AlignRight.__doc__ = "Right aligned"
 Qgis.ScaleBarAlignment.__doc__ = """Scalebar alignment.
 
@@ -10300,15 +8179,10 @@ Qgis.ScaleBarAlignment.__doc__ = """Scalebar alignment.
 """
 # --
 Qgis.ScaleBarAlignment.baseClass = Qgis
-QgsScaleBarSettings.SegmentSizeMode = Qgis.ScaleBarSegmentSizeMode
 # monkey patching scoped based enum
-QgsScaleBarSettings.SegmentSizeFixed = Qgis.ScaleBarSegmentSizeMode.Fixed
 QgsScaleBarSettings.SegmentSizeMode.SegmentSizeFixed = Qgis.ScaleBarSegmentSizeMode.Fixed
-QgsScaleBarSettings.SegmentSizeFixed.is_monkey_patched = True
 QgsScaleBarSettings.SegmentSizeFixed.__doc__ = "Scale bar segment size is fixed to a map unit"
-QgsScaleBarSettings.SegmentSizeFitWidth = Qgis.ScaleBarSegmentSizeMode.FitWidth
 QgsScaleBarSettings.SegmentSizeMode.SegmentSizeFitWidth = Qgis.ScaleBarSegmentSizeMode.FitWidth
-QgsScaleBarSettings.SegmentSizeFitWidth.is_monkey_patched = True
 QgsScaleBarSettings.SegmentSizeFitWidth.__doc__ = "Scale bar segment size is calculated to fit a size range"
 Qgis.ScaleBarSegmentSizeMode.__doc__ = """Modes for setting size for scale bar segments.
 
@@ -10330,15 +8204,10 @@ Qgis.ScaleBarSegmentSizeMode.__doc__ = """Modes for setting size for scale bar s
 """
 # --
 Qgis.ScaleBarSegmentSizeMode.baseClass = Qgis
-QgsScaleBarSettings.LabelVerticalPlacement = Qgis.ScaleBarDistanceLabelVerticalPlacement
 # monkey patching scoped based enum
-QgsScaleBarSettings.LabelAboveSegment = Qgis.ScaleBarDistanceLabelVerticalPlacement.AboveSegment
 QgsScaleBarSettings.LabelVerticalPlacement.LabelAboveSegment = Qgis.ScaleBarDistanceLabelVerticalPlacement.AboveSegment
-QgsScaleBarSettings.LabelAboveSegment.is_monkey_patched = True
 QgsScaleBarSettings.LabelAboveSegment.__doc__ = "Labels are drawn above the scalebar"
-QgsScaleBarSettings.LabelBelowSegment = Qgis.ScaleBarDistanceLabelVerticalPlacement.BelowSegment
 QgsScaleBarSettings.LabelVerticalPlacement.LabelBelowSegment = Qgis.ScaleBarDistanceLabelVerticalPlacement.BelowSegment
-QgsScaleBarSettings.LabelBelowSegment.is_monkey_patched = True
 QgsScaleBarSettings.LabelBelowSegment.__doc__ = "Labels are drawn below the scalebar"
 Qgis.ScaleBarDistanceLabelVerticalPlacement.__doc__ = """Scale bar distance label vertical placement.
 
@@ -10360,15 +8229,10 @@ Qgis.ScaleBarDistanceLabelVerticalPlacement.__doc__ = """Scale bar distance labe
 """
 # --
 Qgis.ScaleBarDistanceLabelVerticalPlacement.baseClass = Qgis
-QgsScaleBarSettings.LabelHorizontalPlacement = Qgis.ScaleBarDistanceLabelHorizontalPlacement
 # monkey patching scoped based enum
-QgsScaleBarSettings.LabelCenteredEdge = Qgis.ScaleBarDistanceLabelHorizontalPlacement.CenteredEdge
 QgsScaleBarSettings.LabelHorizontalPlacement.LabelCenteredEdge = Qgis.ScaleBarDistanceLabelHorizontalPlacement.CenteredEdge
-QgsScaleBarSettings.LabelCenteredEdge.is_monkey_patched = True
 QgsScaleBarSettings.LabelCenteredEdge.__doc__ = "Labels are drawn centered relative to segment's edge"
-QgsScaleBarSettings.LabelCenteredSegment = Qgis.ScaleBarDistanceLabelHorizontalPlacement.CenteredSegment
 QgsScaleBarSettings.LabelHorizontalPlacement.LabelCenteredSegment = Qgis.ScaleBarDistanceLabelHorizontalPlacement.CenteredSegment
-QgsScaleBarSettings.LabelCenteredSegment.is_monkey_patched = True
 QgsScaleBarSettings.LabelCenteredSegment.__doc__ = "Labels are drawn centered relative to segment"
 Qgis.ScaleBarDistanceLabelHorizontalPlacement.__doc__ = """Scale bar distance label horizontal placement.
 
@@ -10501,43 +8365,24 @@ Qgis.UserProfileSelectionPolicy.__doc__ = """User profile selection policy.
 """
 # --
 Qgis.UserProfileSelectionPolicy.baseClass = Qgis
-QgsAttributeEditorElement.AttributeEditorType = Qgis.AttributeEditorType
 # monkey patching scoped based enum
-QgsAttributeEditorElement.AeTypeContainer = Qgis.AttributeEditorType.Container
 QgsAttributeEditorElement.AttributeEditorType.AeTypeContainer = Qgis.AttributeEditorType.Container
-QgsAttributeEditorElement.AeTypeContainer.is_monkey_patched = True
 QgsAttributeEditorElement.AeTypeContainer.__doc__ = "A container"
-QgsAttributeEditorElement.AeTypeField = Qgis.AttributeEditorType.Field
 QgsAttributeEditorElement.AttributeEditorType.AeTypeField = Qgis.AttributeEditorType.Field
-QgsAttributeEditorElement.AeTypeField.is_monkey_patched = True
 QgsAttributeEditorElement.AeTypeField.__doc__ = "A field"
-QgsAttributeEditorElement.AeTypeRelation = Qgis.AttributeEditorType.Relation
 QgsAttributeEditorElement.AttributeEditorType.AeTypeRelation = Qgis.AttributeEditorType.Relation
-QgsAttributeEditorElement.AeTypeRelation.is_monkey_patched = True
 QgsAttributeEditorElement.AeTypeRelation.__doc__ = "A relation"
-QgsAttributeEditorElement.AeTypeQmlElement = Qgis.AttributeEditorType.QmlElement
 QgsAttributeEditorElement.AttributeEditorType.AeTypeQmlElement = Qgis.AttributeEditorType.QmlElement
-QgsAttributeEditorElement.AeTypeQmlElement.is_monkey_patched = True
 QgsAttributeEditorElement.AeTypeQmlElement.__doc__ = "A QML element"
-QgsAttributeEditorElement.AeTypeHtmlElement = Qgis.AttributeEditorType.HtmlElement
 QgsAttributeEditorElement.AttributeEditorType.AeTypeHtmlElement = Qgis.AttributeEditorType.HtmlElement
-QgsAttributeEditorElement.AeTypeHtmlElement.is_monkey_patched = True
 QgsAttributeEditorElement.AeTypeHtmlElement.__doc__ = "A HTML element"
-QgsAttributeEditorElement.AeTypeAction = Qgis.AttributeEditorType.Action
 QgsAttributeEditorElement.AttributeEditorType.AeTypeAction = Qgis.AttributeEditorType.Action
-QgsAttributeEditorElement.AeTypeAction.is_monkey_patched = True
 QgsAttributeEditorElement.AeTypeAction.__doc__ = "A layer action element \n.. versionadded:: 3.22"
-QgsAttributeEditorElement.AeTypeTextElement = Qgis.AttributeEditorType.TextElement
 QgsAttributeEditorElement.AttributeEditorType.AeTypeTextElement = Qgis.AttributeEditorType.TextElement
-QgsAttributeEditorElement.AeTypeTextElement.is_monkey_patched = True
 QgsAttributeEditorElement.AeTypeTextElement.__doc__ = "A text element \n.. versionadded:: 3.30"
-QgsAttributeEditorElement.AeTypeSpacerElement = Qgis.AttributeEditorType.SpacerElement
 QgsAttributeEditorElement.AttributeEditorType.AeTypeSpacerElement = Qgis.AttributeEditorType.SpacerElement
-QgsAttributeEditorElement.AeTypeSpacerElement.is_monkey_patched = True
 QgsAttributeEditorElement.AeTypeSpacerElement.__doc__ = "A spacer element \n.. versionadded:: 3.30"
-QgsAttributeEditorElement.AeTypeInvalid = Qgis.AttributeEditorType.Invalid
 QgsAttributeEditorElement.AttributeEditorType.AeTypeInvalid = Qgis.AttributeEditorType.Invalid
-QgsAttributeEditorElement.AeTypeInvalid.is_monkey_patched = True
 QgsAttributeEditorElement.AeTypeInvalid.__doc__ = "Invalid"
 Qgis.AttributeEditorType.__doc__ = """Attribute editor types.
 
@@ -10611,19 +8456,12 @@ Qgis.AttributeEditorContainerType.__doc__ = """Attribute editor container types.
 """
 # --
 Qgis.AttributeEditorContainerType.baseClass = Qgis
-QgsEditFormConfig.EditorLayout = Qgis.AttributeFormLayout
 # monkey patching scoped based enum
-QgsEditFormConfig.GeneratedLayout = Qgis.AttributeFormLayout.AutoGenerated
 QgsEditFormConfig.EditorLayout.GeneratedLayout = Qgis.AttributeFormLayout.AutoGenerated
-QgsEditFormConfig.GeneratedLayout.is_monkey_patched = True
 QgsEditFormConfig.GeneratedLayout.__doc__ = "Autogenerate a simple tabular layout for the form"
-QgsEditFormConfig.TabLayout = Qgis.AttributeFormLayout.DragAndDrop
 QgsEditFormConfig.EditorLayout.TabLayout = Qgis.AttributeFormLayout.DragAndDrop
-QgsEditFormConfig.TabLayout.is_monkey_patched = True
 QgsEditFormConfig.TabLayout.__doc__ = "\"Drag and drop\" layout. Needs to be configured."
-QgsEditFormConfig.UiFileLayout = Qgis.AttributeFormLayout.UiFile
 QgsEditFormConfig.EditorLayout.UiFileLayout = Qgis.AttributeFormLayout.UiFile
-QgsEditFormConfig.UiFileLayout.is_monkey_patched = True
 QgsEditFormConfig.UiFileLayout.__doc__ = "Load a .ui file for the layout. Needs to be configured."
 Qgis.AttributeFormLayout.__doc__ = """Available form types for layout of the attribute form editor.
 
@@ -10649,19 +8487,12 @@ Qgis.AttributeFormLayout.__doc__ = """Available form types for layout of the att
 """
 # --
 Qgis.AttributeFormLayout.baseClass = Qgis
-QgsEditFormConfig.FeatureFormSuppress = Qgis.AttributeFormSuppression
 # monkey patching scoped based enum
-QgsEditFormConfig.SuppressDefault = Qgis.AttributeFormSuppression.Default
 QgsEditFormConfig.FeatureFormSuppress.SuppressDefault = Qgis.AttributeFormSuppression.Default
-QgsEditFormConfig.SuppressDefault.is_monkey_patched = True
 QgsEditFormConfig.SuppressDefault.__doc__ = "Use the application-wide setting."
-QgsEditFormConfig.SuppressOn = Qgis.AttributeFormSuppression.On
 QgsEditFormConfig.FeatureFormSuppress.SuppressOn = Qgis.AttributeFormSuppression.On
-QgsEditFormConfig.SuppressOn.is_monkey_patched = True
 QgsEditFormConfig.SuppressOn.__doc__ = "Always suppress feature form."
-QgsEditFormConfig.SuppressOff = Qgis.AttributeFormSuppression.Off
 QgsEditFormConfig.FeatureFormSuppress.SuppressOff = Qgis.AttributeFormSuppression.Off
-QgsEditFormConfig.SuppressOff.is_monkey_patched = True
 QgsEditFormConfig.SuppressOff.__doc__ = "Never suppress feature form."
 Qgis.AttributeFormSuppression.__doc__ = """Available form types for layout of the attribute form editor.
 
@@ -10687,23 +8518,14 @@ Qgis.AttributeFormSuppression.__doc__ = """Available form types for layout of th
 """
 # --
 Qgis.AttributeFormSuppression.baseClass = Qgis
-QgsEditFormConfig.PythonInitCodeSource = Qgis.AttributeFormPythonInitCodeSource
 # monkey patching scoped based enum
-QgsEditFormConfig.CodeSourceNone = Qgis.AttributeFormPythonInitCodeSource.NoSource
 QgsEditFormConfig.PythonInitCodeSource.CodeSourceNone = Qgis.AttributeFormPythonInitCodeSource.NoSource
-QgsEditFormConfig.CodeSourceNone.is_monkey_patched = True
 QgsEditFormConfig.CodeSourceNone.__doc__ = "Do not use Python code at all"
-QgsEditFormConfig.CodeSourceFile = Qgis.AttributeFormPythonInitCodeSource.File
 QgsEditFormConfig.PythonInitCodeSource.CodeSourceFile = Qgis.AttributeFormPythonInitCodeSource.File
-QgsEditFormConfig.CodeSourceFile.is_monkey_patched = True
 QgsEditFormConfig.CodeSourceFile.__doc__ = "Load the Python code from an external file"
-QgsEditFormConfig.CodeSourceDialog = Qgis.AttributeFormPythonInitCodeSource.Dialog
 QgsEditFormConfig.PythonInitCodeSource.CodeSourceDialog = Qgis.AttributeFormPythonInitCodeSource.Dialog
-QgsEditFormConfig.CodeSourceDialog.is_monkey_patched = True
 QgsEditFormConfig.CodeSourceDialog.__doc__ = "Use the Python code provided in the dialog"
-QgsEditFormConfig.CodeSourceEnvironment = Qgis.AttributeFormPythonInitCodeSource.Environment
 QgsEditFormConfig.PythonInitCodeSource.CodeSourceEnvironment = Qgis.AttributeFormPythonInitCodeSource.Environment
-QgsEditFormConfig.CodeSourceEnvironment.is_monkey_patched = True
 QgsEditFormConfig.CodeSourceEnvironment.__doc__ = "Use the Python code available in the Python environment"
 Qgis.AttributeFormPythonInitCodeSource.__doc__ = """The Python init code source for attribute forms.
 
@@ -10751,18 +8573,11 @@ Qgis.ExpressionType.__doc__ = """Expression types
 """
 # --
 Qgis.ExpressionType.baseClass = Qgis
-QgsVectorFileWriter.SymbologyExport = Qgis.FeatureSymbologyExport
 # monkey patching scoped based enum
-QgsVectorFileWriter.NoSymbology = Qgis.FeatureSymbologyExport.NoSymbology
-QgsVectorFileWriter.NoSymbology.is_monkey_patched = True
 QgsVectorFileWriter.NoSymbology.__doc__ = "Export only data"
-QgsVectorFileWriter.FeatureSymbology = Qgis.FeatureSymbologyExport.PerFeature
 QgsVectorFileWriter.SymbologyExport.FeatureSymbology = Qgis.FeatureSymbologyExport.PerFeature
-QgsVectorFileWriter.FeatureSymbology.is_monkey_patched = True
 QgsVectorFileWriter.FeatureSymbology.__doc__ = "Keeps the number of features and export symbology per feature"
-QgsVectorFileWriter.SymbolLayerSymbology = Qgis.FeatureSymbologyExport.PerSymbolLayer
 QgsVectorFileWriter.SymbologyExport.SymbolLayerSymbology = Qgis.FeatureSymbologyExport.PerSymbolLayer
-QgsVectorFileWriter.SymbolLayerSymbology.is_monkey_patched = True
 QgsVectorFileWriter.SymbolLayerSymbology.__doc__ = "Exports one feature per symbol layer (considering symbol levels)"
 Qgis.FeatureSymbologyExport.__doc__ = """Options for exporting features considering their symbology.
 
@@ -11054,73 +8869,28 @@ Qgis.ZonalStatisticResult.__doc__ = """Zonal statistics result codes.
 """
 # --
 Qgis.ZonalStatisticResult.baseClass = Qgis
-QgsAggregateCalculator.Aggregate = Qgis.Aggregate
 # monkey patching scoped based enum
-QgsAggregateCalculator.Count = Qgis.Aggregate.Count
-QgsAggregateCalculator.Count.is_monkey_patched = True
 QgsAggregateCalculator.Count.__doc__ = "Count"
-QgsAggregateCalculator.CountDistinct = Qgis.Aggregate.CountDistinct
-QgsAggregateCalculator.CountDistinct.is_monkey_patched = True
 QgsAggregateCalculator.CountDistinct.__doc__ = "Number of distinct values"
-QgsAggregateCalculator.CountMissing = Qgis.Aggregate.CountMissing
-QgsAggregateCalculator.CountMissing.is_monkey_patched = True
 QgsAggregateCalculator.CountMissing.__doc__ = "Number of missing (null) values"
-QgsAggregateCalculator.Min = Qgis.Aggregate.Min
-QgsAggregateCalculator.Min.is_monkey_patched = True
 QgsAggregateCalculator.Min.__doc__ = "Min of values"
-QgsAggregateCalculator.Max = Qgis.Aggregate.Max
-QgsAggregateCalculator.Max.is_monkey_patched = True
 QgsAggregateCalculator.Max.__doc__ = "Max of values"
-QgsAggregateCalculator.Sum = Qgis.Aggregate.Sum
-QgsAggregateCalculator.Sum.is_monkey_patched = True
 QgsAggregateCalculator.Sum.__doc__ = "Sum of values"
-QgsAggregateCalculator.Mean = Qgis.Aggregate.Mean
-QgsAggregateCalculator.Mean.is_monkey_patched = True
 QgsAggregateCalculator.Mean.__doc__ = "Mean of values (numeric fields only)"
-QgsAggregateCalculator.Median = Qgis.Aggregate.Median
-QgsAggregateCalculator.Median.is_monkey_patched = True
 QgsAggregateCalculator.Median.__doc__ = "Median of values (numeric fields only)"
-QgsAggregateCalculator.StDev = Qgis.Aggregate.StDev
-QgsAggregateCalculator.StDev.is_monkey_patched = True
 QgsAggregateCalculator.StDev.__doc__ = "Standard deviation of values (numeric fields only)"
-QgsAggregateCalculator.StDevSample = Qgis.Aggregate.StDevSample
-QgsAggregateCalculator.StDevSample.is_monkey_patched = True
 QgsAggregateCalculator.StDevSample.__doc__ = "Sample standard deviation of values (numeric fields only)"
-QgsAggregateCalculator.Range = Qgis.Aggregate.Range
-QgsAggregateCalculator.Range.is_monkey_patched = True
 QgsAggregateCalculator.Range.__doc__ = "Range of values (max - min) (numeric and datetime fields only)"
-QgsAggregateCalculator.Minority = Qgis.Aggregate.Minority
-QgsAggregateCalculator.Minority.is_monkey_patched = True
 QgsAggregateCalculator.Minority.__doc__ = "Minority of values"
-QgsAggregateCalculator.Majority = Qgis.Aggregate.Majority
-QgsAggregateCalculator.Majority.is_monkey_patched = True
 QgsAggregateCalculator.Majority.__doc__ = "Majority of values"
-QgsAggregateCalculator.FirstQuartile = Qgis.Aggregate.FirstQuartile
-QgsAggregateCalculator.FirstQuartile.is_monkey_patched = True
 QgsAggregateCalculator.FirstQuartile.__doc__ = "First quartile (numeric fields only)"
-QgsAggregateCalculator.ThirdQuartile = Qgis.Aggregate.ThirdQuartile
-QgsAggregateCalculator.ThirdQuartile.is_monkey_patched = True
 QgsAggregateCalculator.ThirdQuartile.__doc__ = "Third quartile (numeric fields only)"
-QgsAggregateCalculator.InterQuartileRange = Qgis.Aggregate.InterQuartileRange
-QgsAggregateCalculator.InterQuartileRange.is_monkey_patched = True
 QgsAggregateCalculator.InterQuartileRange.__doc__ = "Inter quartile range (IQR) (numeric fields only)"
-QgsAggregateCalculator.StringMinimumLength = Qgis.Aggregate.StringMinimumLength
-QgsAggregateCalculator.StringMinimumLength.is_monkey_patched = True
 QgsAggregateCalculator.StringMinimumLength.__doc__ = "Minimum length of string (string fields only)"
-QgsAggregateCalculator.StringMaximumLength = Qgis.Aggregate.StringMaximumLength
-QgsAggregateCalculator.StringMaximumLength.is_monkey_patched = True
 QgsAggregateCalculator.StringMaximumLength.__doc__ = "Maximum length of string (string fields only)"
-QgsAggregateCalculator.StringConcatenate = Qgis.Aggregate.StringConcatenate
-QgsAggregateCalculator.StringConcatenate.is_monkey_patched = True
 QgsAggregateCalculator.StringConcatenate.__doc__ = "Concatenate values with a joining string (string fields only). Specify the delimiter using setDelimiter()."
-QgsAggregateCalculator.GeometryCollect = Qgis.Aggregate.GeometryCollect
-QgsAggregateCalculator.GeometryCollect.is_monkey_patched = True
 QgsAggregateCalculator.GeometryCollect.__doc__ = "Create a multipart geometry from aggregated geometries"
-QgsAggregateCalculator.ArrayAggregate = Qgis.Aggregate.ArrayAggregate
-QgsAggregateCalculator.ArrayAggregate.is_monkey_patched = True
 QgsAggregateCalculator.ArrayAggregate.__doc__ = "Create an array of values"
-QgsAggregateCalculator.StringConcatenateUnique = Qgis.Aggregate.StringConcatenateUnique
-QgsAggregateCalculator.StringConcatenateUnique.is_monkey_patched = True
 QgsAggregateCalculator.StringConcatenateUnique.__doc__ = "Concatenate unique values with a joining string (string fields only). Specify the delimiter using setDelimiter()."
 Qgis.Aggregate.__doc__ = """Available aggregates to calculate. Not all aggregates are available for all field
 types.
@@ -11153,64 +8923,25 @@ types.
 """
 # --
 Qgis.Aggregate.baseClass = Qgis
-QgsStatisticalSummary.Statistic = Qgis.Statistic
 # monkey patching scoped based enum
-QgsStatisticalSummary.Count = Qgis.Statistic.Count
-QgsStatisticalSummary.Count.is_monkey_patched = True
 QgsStatisticalSummary.Count.__doc__ = "Count"
-QgsStatisticalSummary.CountMissing = Qgis.Statistic.CountMissing
-QgsStatisticalSummary.CountMissing.is_monkey_patched = True
 QgsStatisticalSummary.CountMissing.__doc__ = "Number of missing (null) values"
-QgsStatisticalSummary.Sum = Qgis.Statistic.Sum
-QgsStatisticalSummary.Sum.is_monkey_patched = True
 QgsStatisticalSummary.Sum.__doc__ = "Sum of values"
-QgsStatisticalSummary.Mean = Qgis.Statistic.Mean
-QgsStatisticalSummary.Mean.is_monkey_patched = True
 QgsStatisticalSummary.Mean.__doc__ = "Mean of values"
-QgsStatisticalSummary.Median = Qgis.Statistic.Median
-QgsStatisticalSummary.Median.is_monkey_patched = True
 QgsStatisticalSummary.Median.__doc__ = "Median of values"
-QgsStatisticalSummary.StDev = Qgis.Statistic.StDev
-QgsStatisticalSummary.StDev.is_monkey_patched = True
 QgsStatisticalSummary.StDev.__doc__ = "Standard deviation of values"
-QgsStatisticalSummary.StDevSample = Qgis.Statistic.StDevSample
-QgsStatisticalSummary.StDevSample.is_monkey_patched = True
 QgsStatisticalSummary.StDevSample.__doc__ = "Sample standard deviation of values"
-QgsStatisticalSummary.Min = Qgis.Statistic.Min
-QgsStatisticalSummary.Min.is_monkey_patched = True
 QgsStatisticalSummary.Min.__doc__ = "Min of values"
-QgsStatisticalSummary.Max = Qgis.Statistic.Max
-QgsStatisticalSummary.Max.is_monkey_patched = True
 QgsStatisticalSummary.Max.__doc__ = "Max of values"
-QgsStatisticalSummary.Range = Qgis.Statistic.Range
-QgsStatisticalSummary.Range.is_monkey_patched = True
 QgsStatisticalSummary.Range.__doc__ = "Range of values (max - min)"
-QgsStatisticalSummary.Minority = Qgis.Statistic.Minority
-QgsStatisticalSummary.Minority.is_monkey_patched = True
 QgsStatisticalSummary.Minority.__doc__ = "Minority of values"
-QgsStatisticalSummary.Majority = Qgis.Statistic.Majority
-QgsStatisticalSummary.Majority.is_monkey_patched = True
 QgsStatisticalSummary.Majority.__doc__ = "Majority of values"
-QgsStatisticalSummary.Variety = Qgis.Statistic.Variety
-QgsStatisticalSummary.Variety.is_monkey_patched = True
 QgsStatisticalSummary.Variety.__doc__ = "Variety (count of distinct) values"
-QgsStatisticalSummary.FirstQuartile = Qgis.Statistic.FirstQuartile
-QgsStatisticalSummary.FirstQuartile.is_monkey_patched = True
 QgsStatisticalSummary.FirstQuartile.__doc__ = "First quartile"
-QgsStatisticalSummary.ThirdQuartile = Qgis.Statistic.ThirdQuartile
-QgsStatisticalSummary.ThirdQuartile.is_monkey_patched = True
 QgsStatisticalSummary.ThirdQuartile.__doc__ = "Third quartile"
-QgsStatisticalSummary.InterQuartileRange = Qgis.Statistic.InterQuartileRange
-QgsStatisticalSummary.InterQuartileRange.is_monkey_patched = True
 QgsStatisticalSummary.InterQuartileRange.__doc__ = "Inter quartile range (IQR)"
-QgsStatisticalSummary.First = Qgis.Statistic.First
-QgsStatisticalSummary.First.is_monkey_patched = True
 QgsStatisticalSummary.First.__doc__ = "First value \n.. versionadded:: 3.6"
-QgsStatisticalSummary.Last = Qgis.Statistic.Last
-QgsStatisticalSummary.Last.is_monkey_patched = True
 QgsStatisticalSummary.Last.__doc__ = "Last value \n.. versionadded:: 3.6"
-QgsStatisticalSummary.All = Qgis.Statistic.All
-QgsStatisticalSummary.All.is_monkey_patched = True
 QgsStatisticalSummary.All.__doc__ = "All statistics"
 Qgis.Statistic.__doc__ = """Available generic statistics.
 
@@ -11245,31 +8976,15 @@ Qgis.Statistic.__doc__ = """Available generic statistics.
 """
 # --
 Qgis.Statistic.baseClass = Qgis
-QgsStatisticalSummary.Statistics = Qgis.Statistics
 Qgis.Statistics.baseClass = Qgis
 Statistics = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsDateTimeStatisticalSummary.Statistic = Qgis.DateTimeStatistic
 # monkey patching scoped based enum
-QgsDateTimeStatisticalSummary.Count = Qgis.DateTimeStatistic.Count
-QgsDateTimeStatisticalSummary.Count.is_monkey_patched = True
 QgsDateTimeStatisticalSummary.Count.__doc__ = "Count"
-QgsDateTimeStatisticalSummary.CountDistinct = Qgis.DateTimeStatistic.CountDistinct
-QgsDateTimeStatisticalSummary.CountDistinct.is_monkey_patched = True
 QgsDateTimeStatisticalSummary.CountDistinct.__doc__ = "Number of distinct datetime values"
-QgsDateTimeStatisticalSummary.CountMissing = Qgis.DateTimeStatistic.CountMissing
-QgsDateTimeStatisticalSummary.CountMissing.is_monkey_patched = True
 QgsDateTimeStatisticalSummary.CountMissing.__doc__ = "Number of missing (null) values"
-QgsDateTimeStatisticalSummary.Min = Qgis.DateTimeStatistic.Min
-QgsDateTimeStatisticalSummary.Min.is_monkey_patched = True
 QgsDateTimeStatisticalSummary.Min.__doc__ = "Minimum (earliest) datetime value"
-QgsDateTimeStatisticalSummary.Max = Qgis.DateTimeStatistic.Max
-QgsDateTimeStatisticalSummary.Max.is_monkey_patched = True
 QgsDateTimeStatisticalSummary.Max.__doc__ = "Maximum (latest) datetime value"
-QgsDateTimeStatisticalSummary.Range = Qgis.DateTimeStatistic.Range
-QgsDateTimeStatisticalSummary.Range.is_monkey_patched = True
 QgsDateTimeStatisticalSummary.Range.__doc__ = "Interval between earliest and latest datetime value"
-QgsDateTimeStatisticalSummary.All = Qgis.DateTimeStatistic.All
-QgsDateTimeStatisticalSummary.All.is_monkey_patched = True
 QgsDateTimeStatisticalSummary.All.__doc__ = "All statistics"
 Qgis.DateTimeStatistic.__doc__ = """Available date/time statistics.
 
@@ -11286,43 +9001,19 @@ Qgis.DateTimeStatistic.__doc__ = """Available date/time statistics.
 """
 # --
 Qgis.DateTimeStatistic.baseClass = Qgis
-QgsDateTimeStatisticalSummary.Statistics = Qgis.DateTimeStatistics
 Qgis.DateTimeStatistics.baseClass = Qgis
 DateTimeStatistics = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsStringStatisticalSummary.Statistic = Qgis.StringStatistic
 # monkey patching scoped based enum
-QgsStringStatisticalSummary.Count = Qgis.StringStatistic.Count
-QgsStringStatisticalSummary.Count.is_monkey_patched = True
 QgsStringStatisticalSummary.Count.__doc__ = "Count"
-QgsStringStatisticalSummary.CountDistinct = Qgis.StringStatistic.CountDistinct
-QgsStringStatisticalSummary.CountDistinct.is_monkey_patched = True
 QgsStringStatisticalSummary.CountDistinct.__doc__ = "Number of distinct string values"
-QgsStringStatisticalSummary.CountMissing = Qgis.StringStatistic.CountMissing
-QgsStringStatisticalSummary.CountMissing.is_monkey_patched = True
 QgsStringStatisticalSummary.CountMissing.__doc__ = "Number of missing (null) values"
-QgsStringStatisticalSummary.Min = Qgis.StringStatistic.Min
-QgsStringStatisticalSummary.Min.is_monkey_patched = True
 QgsStringStatisticalSummary.Min.__doc__ = "Minimum string value"
-QgsStringStatisticalSummary.Max = Qgis.StringStatistic.Max
-QgsStringStatisticalSummary.Max.is_monkey_patched = True
 QgsStringStatisticalSummary.Max.__doc__ = "Maximum string value"
-QgsStringStatisticalSummary.MinimumLength = Qgis.StringStatistic.MinimumLength
-QgsStringStatisticalSummary.MinimumLength.is_monkey_patched = True
 QgsStringStatisticalSummary.MinimumLength.__doc__ = "Minimum length of string"
-QgsStringStatisticalSummary.MaximumLength = Qgis.StringStatistic.MaximumLength
-QgsStringStatisticalSummary.MaximumLength.is_monkey_patched = True
 QgsStringStatisticalSummary.MaximumLength.__doc__ = "Maximum length of string"
-QgsStringStatisticalSummary.MeanLength = Qgis.StringStatistic.MeanLength
-QgsStringStatisticalSummary.MeanLength.is_monkey_patched = True
 QgsStringStatisticalSummary.MeanLength.__doc__ = "Mean length of strings"
-QgsStringStatisticalSummary.Minority = Qgis.StringStatistic.Minority
-QgsStringStatisticalSummary.Minority.is_monkey_patched = True
 QgsStringStatisticalSummary.Minority.__doc__ = "Minority of strings"
-QgsStringStatisticalSummary.Majority = Qgis.StringStatistic.Majority
-QgsStringStatisticalSummary.Majority.is_monkey_patched = True
 QgsStringStatisticalSummary.Majority.__doc__ = "Majority of strings"
-QgsStringStatisticalSummary.All = Qgis.StringStatistic.All
-QgsStringStatisticalSummary.All.is_monkey_patched = True
 QgsStringStatisticalSummary.All.__doc__ = "All statistics"
 Qgis.StringStatistic.__doc__ = """Available string statistics.
 
@@ -11343,37 +9034,17 @@ Qgis.StringStatistic.__doc__ = """Available string statistics.
 """
 # --
 Qgis.StringStatistic.baseClass = Qgis
-QgsStringStatisticalSummary.Statistics = Qgis.StringStatistics
 Qgis.StringStatistics.baseClass = Qgis
 StringStatistics = Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsRasterBandStats.Stats = Qgis.RasterBandStatistic
 # monkey patching scoped based enum
-QgsRasterBandStats.NoStatistic = Qgis.RasterBandStatistic.NoStatistic
-QgsRasterBandStats.NoStatistic.is_monkey_patched = True
 QgsRasterBandStats.NoStatistic.__doc__ = "No statistic"
-QgsRasterBandStats.Min = Qgis.RasterBandStatistic.Min
-QgsRasterBandStats.Min.is_monkey_patched = True
 QgsRasterBandStats.Min.__doc__ = "Minimum"
-QgsRasterBandStats.Max = Qgis.RasterBandStatistic.Max
-QgsRasterBandStats.Max.is_monkey_patched = True
 QgsRasterBandStats.Max.__doc__ = "Maximum"
-QgsRasterBandStats.Range = Qgis.RasterBandStatistic.Range
-QgsRasterBandStats.Range.is_monkey_patched = True
 QgsRasterBandStats.Range.__doc__ = "Range"
-QgsRasterBandStats.Sum = Qgis.RasterBandStatistic.Sum
-QgsRasterBandStats.Sum.is_monkey_patched = True
 QgsRasterBandStats.Sum.__doc__ = "Sum"
-QgsRasterBandStats.Mean = Qgis.RasterBandStatistic.Mean
-QgsRasterBandStats.Mean.is_monkey_patched = True
 QgsRasterBandStats.Mean.__doc__ = "Mean"
-QgsRasterBandStats.StdDev = Qgis.RasterBandStatistic.StdDev
-QgsRasterBandStats.StdDev.is_monkey_patched = True
 QgsRasterBandStats.StdDev.__doc__ = "Standard deviation"
-QgsRasterBandStats.SumOfSquares = Qgis.RasterBandStatistic.SumOfSquares
-QgsRasterBandStats.SumOfSquares.is_monkey_patched = True
 QgsRasterBandStats.SumOfSquares.__doc__ = "Sum of squares"
-QgsRasterBandStats.All = Qgis.RasterBandStatistic.All
-QgsRasterBandStats.All.is_monkey_patched = True
 QgsRasterBandStats.All.__doc__ = "All available statistics"
 Qgis.RasterBandStatistic.__doc__ = """Available raster band statistics.
 
@@ -11683,13 +9354,9 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/./3d/qgsabstract3dsymbol.h
 # monkey patching scoped based enum
-QgsAbstract3DSymbol.PropertyHeight = QgsAbstract3DSymbol.Property.Height
 QgsAbstract3DSymbol.Property.PropertyHeight = QgsAbstract3DSymbol.Property.Height
-QgsAbstract3DSymbol.PropertyHeight.is_monkey_patched = True
 QgsAbstract3DSymbol.PropertyHeight.__doc__ = "Height (altitude)"
-QgsAbstract3DSymbol.PropertyExtrusionHeight = QgsAbstract3DSymbol.Property.ExtrusionHeight
 QgsAbstract3DSymbol.Property.PropertyExtrusionHeight = QgsAbstract3DSymbol.Property.ExtrusionHeight
-QgsAbstract3DSymbol.PropertyExtrusionHeight.is_monkey_patched = True
 QgsAbstract3DSymbol.PropertyExtrusionHeight.__doc__ = "Extrusion height (zero means no extrusion)"
 QgsAbstract3DSymbol.Property.__doc__ = """Data definable properties.
 
@@ -11728,26 +9395,12 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/providers/qgsabstractdatabaseproviderconnection.h
 # monkey patching scoped based enum
-QgsAbstractDatabaseProviderConnection.Aspatial = QgsAbstractDatabaseProviderConnection.TableFlag.Aspatial
-QgsAbstractDatabaseProviderConnection.Aspatial.is_monkey_patched = True
 QgsAbstractDatabaseProviderConnection.Aspatial.__doc__ = "Aspatial table (it does not contain any geometry column)"
-QgsAbstractDatabaseProviderConnection.Vector = QgsAbstractDatabaseProviderConnection.TableFlag.Vector
-QgsAbstractDatabaseProviderConnection.Vector.is_monkey_patched = True
 QgsAbstractDatabaseProviderConnection.Vector.__doc__ = "Vector table (it does contain one geometry column)"
-QgsAbstractDatabaseProviderConnection.Raster = QgsAbstractDatabaseProviderConnection.TableFlag.Raster
-QgsAbstractDatabaseProviderConnection.Raster.is_monkey_patched = True
 QgsAbstractDatabaseProviderConnection.Raster.__doc__ = "Raster table"
-QgsAbstractDatabaseProviderConnection.View = QgsAbstractDatabaseProviderConnection.TableFlag.View
-QgsAbstractDatabaseProviderConnection.View.is_monkey_patched = True
 QgsAbstractDatabaseProviderConnection.View.__doc__ = "View table"
-QgsAbstractDatabaseProviderConnection.MaterializedView = QgsAbstractDatabaseProviderConnection.TableFlag.MaterializedView
-QgsAbstractDatabaseProviderConnection.MaterializedView.is_monkey_patched = True
 QgsAbstractDatabaseProviderConnection.MaterializedView.__doc__ = "Materialized view table"
-QgsAbstractDatabaseProviderConnection.Foreign = QgsAbstractDatabaseProviderConnection.TableFlag.Foreign
-QgsAbstractDatabaseProviderConnection.Foreign.is_monkey_patched = True
 QgsAbstractDatabaseProviderConnection.Foreign.__doc__ = "Foreign data wrapper"
-QgsAbstractDatabaseProviderConnection.IncludeSystemTables = QgsAbstractDatabaseProviderConnection.TableFlag.IncludeSystemTables
-QgsAbstractDatabaseProviderConnection.IncludeSystemTables.is_monkey_patched = True
 QgsAbstractDatabaseProviderConnection.IncludeSystemTables.__doc__ = "Include system tables \n.. versionadded:: 3.30"
 QgsAbstractDatabaseProviderConnection.TableFlag.__doc__ = """Flags for table properties.
 
@@ -12032,13 +9685,9 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/validity/qgsabstractvaliditycheck.h
 # monkey patching scoped based enum
-QgsAbstractValidityCheck.TypeLayoutCheck = QgsAbstractValidityCheck.Type.LayoutCheck
 QgsAbstractValidityCheck.Type.TypeLayoutCheck = QgsAbstractValidityCheck.Type.LayoutCheck
-QgsAbstractValidityCheck.TypeLayoutCheck.is_monkey_patched = True
 QgsAbstractValidityCheck.TypeLayoutCheck.__doc__ = "Print layout validity check, triggered on exporting a print layout"
-QgsAbstractValidityCheck.TypeUserCheck = QgsAbstractValidityCheck.Type.UserCheck
 QgsAbstractValidityCheck.Type.TypeUserCheck = QgsAbstractValidityCheck.Type.UserCheck
-QgsAbstractValidityCheck.TypeUserCheck.is_monkey_patched = True
 QgsAbstractValidityCheck.TypeUserCheck.__doc__ = "Starting point for custom user types"
 QgsAbstractValidityCheck.Type.__doc__ = """Check types
 
@@ -12780,27 +10429,16 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgsbookmarkmodel.h
-QgsBookmarkManagerModel.CustomRoles = QgsBookmarkManagerModel.CustomRole
 # monkey patching scoped based enum
-QgsBookmarkManagerModel.RoleExtent = QgsBookmarkManagerModel.CustomRole.Extent
 QgsBookmarkManagerModel.CustomRoles.RoleExtent = QgsBookmarkManagerModel.CustomRole.Extent
-QgsBookmarkManagerModel.RoleExtent.is_monkey_patched = True
 QgsBookmarkManagerModel.RoleExtent.__doc__ = "Bookmark extent as a QgsReferencedRectangle"
-QgsBookmarkManagerModel.RoleName = QgsBookmarkManagerModel.CustomRole.Name
 QgsBookmarkManagerModel.CustomRoles.RoleName = QgsBookmarkManagerModel.CustomRole.Name
-QgsBookmarkManagerModel.RoleName.is_monkey_patched = True
 QgsBookmarkManagerModel.RoleName.__doc__ = "Bookmark name"
-QgsBookmarkManagerModel.RoleId = QgsBookmarkManagerModel.CustomRole.Id
 QgsBookmarkManagerModel.CustomRoles.RoleId = QgsBookmarkManagerModel.CustomRole.Id
-QgsBookmarkManagerModel.RoleId.is_monkey_patched = True
 QgsBookmarkManagerModel.RoleId.__doc__ = "Bookmark ID"
-QgsBookmarkManagerModel.RoleGroup = QgsBookmarkManagerModel.CustomRole.Group
 QgsBookmarkManagerModel.CustomRoles.RoleGroup = QgsBookmarkManagerModel.CustomRole.Group
-QgsBookmarkManagerModel.RoleGroup.is_monkey_patched = True
 QgsBookmarkManagerModel.RoleGroup.__doc__ = "Bookmark group"
-QgsBookmarkManagerModel.RoleRotation = QgsBookmarkManagerModel.CustomRole.Rotation
 QgsBookmarkManagerModel.CustomRoles.RoleRotation = QgsBookmarkManagerModel.CustomRole.Rotation
-QgsBookmarkManagerModel.RoleRotation.is_monkey_patched = True
 QgsBookmarkManagerModel.RoleRotation.__doc__ = "Bookmark map rotation"
 QgsBookmarkManagerModel.CustomRole.__doc__ = """Custom model roles.
 
@@ -12850,27 +10488,16 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/browser/qgsbrowsermodel.h
-QgsBrowserModel.ItemDataRole = QgsBrowserModel.CustomRole
 # monkey patching scoped based enum
-QgsBrowserModel.PathRole = QgsBrowserModel.CustomRole.Path
 QgsBrowserModel.ItemDataRole.PathRole = QgsBrowserModel.CustomRole.Path
-QgsBrowserModel.PathRole.is_monkey_patched = True
 QgsBrowserModel.PathRole.__doc__ = "Item path used to access path in the tree, see QgsDataItem.mPath"
-QgsBrowserModel.CommentRole = QgsBrowserModel.CustomRole.Comment
 QgsBrowserModel.ItemDataRole.CommentRole = QgsBrowserModel.CustomRole.Comment
-QgsBrowserModel.CommentRole.is_monkey_patched = True
 QgsBrowserModel.CommentRole.__doc__ = "Item comment"
-QgsBrowserModel.SortRole = QgsBrowserModel.CustomRole.Sort
 QgsBrowserModel.ItemDataRole.SortRole = QgsBrowserModel.CustomRole.Sort
-QgsBrowserModel.SortRole.is_monkey_patched = True
 QgsBrowserModel.SortRole.__doc__ = "Custom sort role, see QgsDataItem.sortKey()"
-QgsBrowserModel.ProviderKeyRole = QgsBrowserModel.CustomRole.ProviderKey
 QgsBrowserModel.ItemDataRole.ProviderKeyRole = QgsBrowserModel.CustomRole.ProviderKey
-QgsBrowserModel.ProviderKeyRole.is_monkey_patched = True
 QgsBrowserModel.ProviderKeyRole.__doc__ = "Data item provider key that created the item, see QgsDataItem.providerKey() \n.. versionadded:: 3.12"
-QgsBrowserModel.LayerMetadataRole = QgsBrowserModel.CustomRole.LayerMetadata
 QgsBrowserModel.ItemDataRole.LayerMetadataRole = QgsBrowserModel.CustomRole.LayerMetadata
-QgsBrowserModel.LayerMetadataRole.is_monkey_patched = True
 QgsBrowserModel.LayerMetadataRole.__doc__ = ""
 QgsBrowserModel.CustomRole.__doc__ = """Custom model roles.
 
@@ -12962,53 +10589,21 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/callouts/qgscallout.h
 # monkey patching scoped based enum
-QgsCallout.MinimumCalloutLength = QgsCallout.Property.MinimumCalloutLength
-QgsCallout.MinimumCalloutLength.is_monkey_patched = True
 QgsCallout.MinimumCalloutLength.__doc__ = "Minimum length of callouts"
-QgsCallout.OffsetFromAnchor = QgsCallout.Property.OffsetFromAnchor
-QgsCallout.OffsetFromAnchor.is_monkey_patched = True
 QgsCallout.OffsetFromAnchor.__doc__ = "Distance to offset lines from anchor points"
-QgsCallout.OffsetFromLabel = QgsCallout.Property.OffsetFromLabel
-QgsCallout.OffsetFromLabel.is_monkey_patched = True
 QgsCallout.OffsetFromLabel.__doc__ = "Distance to offset lines from label area"
-QgsCallout.DrawCalloutToAllParts = QgsCallout.Property.DrawCalloutToAllParts
-QgsCallout.DrawCalloutToAllParts.is_monkey_patched = True
 QgsCallout.DrawCalloutToAllParts.__doc__ = "Whether callout lines should be drawn to all feature parts"
-QgsCallout.AnchorPointPosition = QgsCallout.Property.AnchorPointPosition
-QgsCallout.AnchorPointPosition.is_monkey_patched = True
 QgsCallout.AnchorPointPosition.__doc__ = "Feature's anchor point position"
-QgsCallout.LabelAnchorPointPosition = QgsCallout.Property.LabelAnchorPointPosition
-QgsCallout.LabelAnchorPointPosition.is_monkey_patched = True
 QgsCallout.LabelAnchorPointPosition.__doc__ = "Label's anchor point position"
-QgsCallout.OriginX = QgsCallout.Property.OriginX
-QgsCallout.OriginX.is_monkey_patched = True
 QgsCallout.OriginX.__doc__ = "X-coordinate of callout origin (label anchor) \n.. versionadded:: 3.20"
-QgsCallout.OriginY = QgsCallout.Property.OriginY
-QgsCallout.OriginY.is_monkey_patched = True
 QgsCallout.OriginY.__doc__ = "Y-coordinate of callout origin (label anchor) \n.. versionadded:: 3.20"
-QgsCallout.DestinationX = QgsCallout.Property.DestinationX
-QgsCallout.DestinationX.is_monkey_patched = True
 QgsCallout.DestinationX.__doc__ = "X-coordinate of callout destination (feature anchor) \n.. versionadded:: 3.20"
-QgsCallout.DestinationY = QgsCallout.Property.DestinationY
-QgsCallout.DestinationY.is_monkey_patched = True
 QgsCallout.DestinationY.__doc__ = "Y-coordinate of callout destination (feature anchor) \n.. versionadded:: 3.20"
-QgsCallout.Curvature = QgsCallout.Property.Curvature
-QgsCallout.Curvature.is_monkey_patched = True
 QgsCallout.Curvature.__doc__ = "Curvature of curved line callouts \n.. versionadded:: 3.20"
-QgsCallout.Orientation = QgsCallout.Property.Orientation
-QgsCallout.Orientation.is_monkey_patched = True
 QgsCallout.Orientation.__doc__ = "Orientation of curved line callouts \n.. versionadded:: 3.20"
-QgsCallout.Margins = QgsCallout.Property.Margins
-QgsCallout.Margins.is_monkey_patched = True
 QgsCallout.Margins.__doc__ = "Margin from text \n.. versionadded:: 3.20"
-QgsCallout.WedgeWidth = QgsCallout.Property.WedgeWidth
-QgsCallout.WedgeWidth.is_monkey_patched = True
 QgsCallout.WedgeWidth.__doc__ = "Balloon callout wedge width \n.. versionadded:: 3.20"
-QgsCallout.CornerRadius = QgsCallout.Property.CornerRadius
-QgsCallout.CornerRadius.is_monkey_patched = True
 QgsCallout.CornerRadius.__doc__ = "Balloon callout corner radius \n.. versionadded:: 3.20"
-QgsCallout.BlendMode = QgsCallout.Property.BlendMode
-QgsCallout.BlendMode.is_monkey_patched = True
 QgsCallout.BlendMode.__doc__ = "Callout blend mode \n.. versionadded:: 3.20"
 QgsCallout.Property.__doc__ = """Data definable properties.
 
@@ -13653,11 +11248,8 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgsdatabaseschemamodel.h
-QgsDatabaseSchemaModel.Role = QgsDatabaseSchemaModel.CustomRole
 # monkey patching scoped based enum
-QgsDatabaseSchemaModel.RoleEmpty = QgsDatabaseSchemaModel.CustomRole.Empty
 QgsDatabaseSchemaModel.Role.RoleEmpty = QgsDatabaseSchemaModel.CustomRole.Empty
-QgsDatabaseSchemaModel.RoleEmpty.is_monkey_patched = True
 QgsDatabaseSchemaModel.RoleEmpty.__doc__ = "Entry is an empty entry"
 QgsDatabaseSchemaModel.CustomRole.__doc__ = """Custom model roles.
 
@@ -13680,39 +11272,22 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgsdatabasetablemodel.h
-QgsDatabaseTableModel.Role = QgsDatabaseTableModel.CustomRole
 # monkey patching scoped based enum
-QgsDatabaseTableModel.RoleTableName = QgsDatabaseTableModel.CustomRole.TableName
 QgsDatabaseTableModel.Role.RoleTableName = QgsDatabaseTableModel.CustomRole.TableName
-QgsDatabaseTableModel.RoleTableName.is_monkey_patched = True
 QgsDatabaseTableModel.RoleTableName.__doc__ = "Table name"
-QgsDatabaseTableModel.RoleSchema = QgsDatabaseTableModel.CustomRole.Schema
 QgsDatabaseTableModel.Role.RoleSchema = QgsDatabaseTableModel.CustomRole.Schema
-QgsDatabaseTableModel.RoleSchema.is_monkey_patched = True
 QgsDatabaseTableModel.RoleSchema.__doc__ = "Table schema"
-QgsDatabaseTableModel.RoleTableFlags = QgsDatabaseTableModel.CustomRole.TableFlags
 QgsDatabaseTableModel.Role.RoleTableFlags = QgsDatabaseTableModel.CustomRole.TableFlags
-QgsDatabaseTableModel.RoleTableFlags.is_monkey_patched = True
 QgsDatabaseTableModel.RoleTableFlags.__doc__ = "Table flags role"
-QgsDatabaseTableModel.RoleComment = QgsDatabaseTableModel.CustomRole.Comment
 QgsDatabaseTableModel.Role.RoleComment = QgsDatabaseTableModel.CustomRole.Comment
-QgsDatabaseTableModel.RoleComment.is_monkey_patched = True
 QgsDatabaseTableModel.RoleComment.__doc__ = "Comment role"
-QgsDatabaseTableModel.RoleCustomInfo = QgsDatabaseTableModel.CustomRole.CustomInfo
 QgsDatabaseTableModel.Role.RoleCustomInfo = QgsDatabaseTableModel.CustomRole.CustomInfo
-QgsDatabaseTableModel.RoleCustomInfo.is_monkey_patched = True
 QgsDatabaseTableModel.RoleCustomInfo.__doc__ = "Custom info variant map role"
-QgsDatabaseTableModel.RoleWkbType = QgsDatabaseTableModel.CustomRole.WkbType
 QgsDatabaseTableModel.Role.RoleWkbType = QgsDatabaseTableModel.CustomRole.WkbType
-QgsDatabaseTableModel.RoleWkbType.is_monkey_patched = True
 QgsDatabaseTableModel.RoleWkbType.__doc__ = "WKB type for primary (first) geometry column in table"
-QgsDatabaseTableModel.RoleCrs = QgsDatabaseTableModel.CustomRole.Crs
 QgsDatabaseTableModel.Role.RoleCrs = QgsDatabaseTableModel.CustomRole.Crs
-QgsDatabaseTableModel.RoleCrs.is_monkey_patched = True
 QgsDatabaseTableModel.RoleCrs.__doc__ = "CRS for primary (first) geometry column in table"
-QgsDatabaseTableModel.RoleEmpty = QgsDatabaseTableModel.CustomRole.Empty
 QgsDatabaseTableModel.Role.RoleEmpty = QgsDatabaseTableModel.CustomRole.Empty
-QgsDatabaseTableModel.RoleEmpty.is_monkey_patched = True
 QgsDatabaseTableModel.RoleEmpty.__doc__ = "Entry is an empty entry"
 QgsDatabaseTableModel.CustomRole.__doc__ = """Custom model roles.
 
@@ -13963,41 +11538,17 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgsdiagramrenderer.h
 # monkey patching scoped based enum
-QgsDiagramLayerSettings.BackgroundColor = QgsDiagramLayerSettings.Property.BackgroundColor
-QgsDiagramLayerSettings.BackgroundColor.is_monkey_patched = True
 QgsDiagramLayerSettings.BackgroundColor.__doc__ = "Diagram background color"
-QgsDiagramLayerSettings.StrokeColor = QgsDiagramLayerSettings.Property.StrokeColor
-QgsDiagramLayerSettings.StrokeColor.is_monkey_patched = True
 QgsDiagramLayerSettings.StrokeColor.__doc__ = "Stroke color"
-QgsDiagramLayerSettings.StrokeWidth = QgsDiagramLayerSettings.Property.StrokeWidth
-QgsDiagramLayerSettings.StrokeWidth.is_monkey_patched = True
 QgsDiagramLayerSettings.StrokeWidth.__doc__ = "Stroke width"
-QgsDiagramLayerSettings.PositionX = QgsDiagramLayerSettings.Property.PositionX
-QgsDiagramLayerSettings.PositionX.is_monkey_patched = True
 QgsDiagramLayerSettings.PositionX.__doc__ = "X-coordinate data defined diagram position"
-QgsDiagramLayerSettings.PositionY = QgsDiagramLayerSettings.Property.PositionY
-QgsDiagramLayerSettings.PositionY.is_monkey_patched = True
 QgsDiagramLayerSettings.PositionY.__doc__ = "Y-coordinate data defined diagram position"
-QgsDiagramLayerSettings.Distance = QgsDiagramLayerSettings.Property.Distance
-QgsDiagramLayerSettings.Distance.is_monkey_patched = True
 QgsDiagramLayerSettings.Distance.__doc__ = "Distance to diagram from feature"
-QgsDiagramLayerSettings.Priority = QgsDiagramLayerSettings.Property.Priority
-QgsDiagramLayerSettings.Priority.is_monkey_patched = True
 QgsDiagramLayerSettings.Priority.__doc__ = "Diagram priority (between 0 and 10)"
-QgsDiagramLayerSettings.ZIndex = QgsDiagramLayerSettings.Property.ZIndex
-QgsDiagramLayerSettings.ZIndex.is_monkey_patched = True
 QgsDiagramLayerSettings.ZIndex.__doc__ = "Z-index for diagram ordering"
-QgsDiagramLayerSettings.IsObstacle = QgsDiagramLayerSettings.Property.IsObstacle
-QgsDiagramLayerSettings.IsObstacle.is_monkey_patched = True
 QgsDiagramLayerSettings.IsObstacle.__doc__ = "Whether diagram features act as obstacles for other diagrams/labels"
-QgsDiagramLayerSettings.Show = QgsDiagramLayerSettings.Property.Show
-QgsDiagramLayerSettings.Show.is_monkey_patched = True
 QgsDiagramLayerSettings.Show.__doc__ = "Whether to show the diagram"
-QgsDiagramLayerSettings.AlwaysShow = QgsDiagramLayerSettings.Property.AlwaysShow
-QgsDiagramLayerSettings.AlwaysShow.is_monkey_patched = True
 QgsDiagramLayerSettings.AlwaysShow.__doc__ = "Whether the diagram should always be shown, even if it overlaps other diagrams/labels"
-QgsDiagramLayerSettings.StartAngle = QgsDiagramLayerSettings.Property.StartAngle
-QgsDiagramLayerSettings.StartAngle.is_monkey_patched = True
 QgsDiagramLayerSettings.StartAngle.__doc__ = "Angle offset for pie diagram"
 QgsDiagramLayerSettings.Property.__doc__ = """Data definable properties.
 
@@ -14141,17 +11692,9 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/editform/qgseditformconfig.h
 # monkey patching scoped based enum
-QgsEditFormConfig.NoProperty = QgsEditFormConfig.DataDefinedProperty.NoProperty
-QgsEditFormConfig.NoProperty.is_monkey_patched = True
 QgsEditFormConfig.NoProperty.__doc__ = "No property"
-QgsEditFormConfig.AllProperties = QgsEditFormConfig.DataDefinedProperty.AllProperties
-QgsEditFormConfig.AllProperties.is_monkey_patched = True
 QgsEditFormConfig.AllProperties.__doc__ = "All properties for item"
-QgsEditFormConfig.Alias = QgsEditFormConfig.DataDefinedProperty.Alias
-QgsEditFormConfig.Alias.is_monkey_patched = True
 QgsEditFormConfig.Alias.__doc__ = "Alias"
-QgsEditFormConfig.Editable = QgsEditFormConfig.DataDefinedProperty.Editable
-QgsEditFormConfig.Editable.is_monkey_patched = True
 QgsEditFormConfig.Editable.__doc__ = "Editable state \n.. versionadded:: 3.30"
 QgsEditFormConfig.DataDefinedProperty.__doc__ = """Data defined properties.
 Form data defined overrides are stored in a property collection
@@ -14551,27 +12094,16 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgsfeaturepickermodelbase.h
-QgsFeaturePickerModelBase.Role = QgsFeaturePickerModelBase.CustomRole
 # monkey patching scoped based enum
-QgsFeaturePickerModelBase.IdentifierValueRole = QgsFeaturePickerModelBase.CustomRole.IdentifierValue
 QgsFeaturePickerModelBase.Role.IdentifierValueRole = QgsFeaturePickerModelBase.CustomRole.IdentifierValue
-QgsFeaturePickerModelBase.IdentifierValueRole.is_monkey_patched = True
 QgsFeaturePickerModelBase.IdentifierValueRole.__doc__ = "Used to retrieve the identifier value (primary key) of a feature. \n.. deprecated:: 3.40. Use IdentifierValuesRole instead."
-QgsFeaturePickerModelBase.IdentifierValuesRole = QgsFeaturePickerModelBase.CustomRole.IdentifierValues
 QgsFeaturePickerModelBase.Role.IdentifierValuesRole = QgsFeaturePickerModelBase.CustomRole.IdentifierValues
-QgsFeaturePickerModelBase.IdentifierValuesRole.is_monkey_patched = True
 QgsFeaturePickerModelBase.IdentifierValuesRole.__doc__ = "Used to retrieve the identifierValues (primary keys) of a feature."
-QgsFeaturePickerModelBase.ValueRole = QgsFeaturePickerModelBase.CustomRole.Value
 QgsFeaturePickerModelBase.Role.ValueRole = QgsFeaturePickerModelBase.CustomRole.Value
-QgsFeaturePickerModelBase.ValueRole.is_monkey_patched = True
 QgsFeaturePickerModelBase.ValueRole.__doc__ = "Used to retrieve the displayExpression of a feature."
-QgsFeaturePickerModelBase.FeatureRole = QgsFeaturePickerModelBase.CustomRole.Feature
 QgsFeaturePickerModelBase.Role.FeatureRole = QgsFeaturePickerModelBase.CustomRole.Feature
-QgsFeaturePickerModelBase.FeatureRole.is_monkey_patched = True
 QgsFeaturePickerModelBase.FeatureRole.__doc__ = "Used to retrieve the feature, it might be incomplete if the request doesn't fetch all attributes or geometry."
-QgsFeaturePickerModelBase.FeatureIdRole = QgsFeaturePickerModelBase.CustomRole.FeatureId
 QgsFeaturePickerModelBase.Role.FeatureIdRole = QgsFeaturePickerModelBase.CustomRole.FeatureId
-QgsFeaturePickerModelBase.FeatureIdRole.is_monkey_patched = True
 QgsFeaturePickerModelBase.FeatureIdRole.__doc__ = "Used to retrieve the id of a feature."
 QgsFeaturePickerModelBase.CustomRole.__doc__ = """Extra roles that can be used to fetch data from this model.
 
@@ -14709,48 +12241,25 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgsfieldmodel.h
-QgsFieldModel.FieldRoles = QgsFieldModel.CustomRole
 # monkey patching scoped based enum
-QgsFieldModel.FieldNameRole = QgsFieldModel.CustomRole.FieldName
 QgsFieldModel.FieldRoles.FieldNameRole = QgsFieldModel.CustomRole.FieldName
-QgsFieldModel.FieldNameRole.is_monkey_patched = True
 QgsFieldModel.FieldNameRole.__doc__ = "Return field name if index corresponds to a field"
-QgsFieldModel.FieldIndexRole = QgsFieldModel.CustomRole.FieldIndex
 QgsFieldModel.FieldRoles.FieldIndexRole = QgsFieldModel.CustomRole.FieldIndex
-QgsFieldModel.FieldIndexRole.is_monkey_patched = True
 QgsFieldModel.FieldIndexRole.__doc__ = "Return field index if index corresponds to a field"
-QgsFieldModel.ExpressionRole = QgsFieldModel.CustomRole.Expression
 QgsFieldModel.FieldRoles.ExpressionRole = QgsFieldModel.CustomRole.Expression
-QgsFieldModel.ExpressionRole.is_monkey_patched = True
 QgsFieldModel.ExpressionRole.__doc__ = "Return field name or expression"
-QgsFieldModel.IsExpressionRole = QgsFieldModel.CustomRole.IsExpression
 QgsFieldModel.FieldRoles.IsExpressionRole = QgsFieldModel.CustomRole.IsExpression
-QgsFieldModel.IsExpressionRole.is_monkey_patched = True
 QgsFieldModel.IsExpressionRole.__doc__ = "Return if index corresponds to an expression"
-QgsFieldModel.ExpressionValidityRole = QgsFieldModel.CustomRole.ExpressionValidity
 QgsFieldModel.FieldRoles.ExpressionValidityRole = QgsFieldModel.CustomRole.ExpressionValidity
-QgsFieldModel.ExpressionValidityRole.is_monkey_patched = True
 QgsFieldModel.ExpressionValidityRole.__doc__ = "Return if expression is valid or not"
-QgsFieldModel.FieldTypeRole = QgsFieldModel.CustomRole.FieldType
 QgsFieldModel.FieldRoles.FieldTypeRole = QgsFieldModel.CustomRole.FieldType
-QgsFieldModel.FieldTypeRole.is_monkey_patched = True
 QgsFieldModel.FieldTypeRole.__doc__ = "Return the field type (if a field, return QVariant if expression)"
-QgsFieldModel.FieldOriginRole = QgsFieldModel.CustomRole.FieldOrigin
 QgsFieldModel.FieldRoles.FieldOriginRole = QgsFieldModel.CustomRole.FieldOrigin
-QgsFieldModel.FieldOriginRole.is_monkey_patched = True
 QgsFieldModel.FieldOriginRole.__doc__ = "Return the field origin (if a field, returns QVariant if expression)"
-QgsFieldModel.IsEmptyRole = QgsFieldModel.CustomRole.IsEmpty
 QgsFieldModel.FieldRoles.IsEmptyRole = QgsFieldModel.CustomRole.IsEmpty
-QgsFieldModel.IsEmptyRole.is_monkey_patched = True
 QgsFieldModel.IsEmptyRole.__doc__ = "Return if the index corresponds to the empty value"
-QgsFieldModel.EditorWidgetType = QgsFieldModel.CustomRole.EditorWidgetType
-QgsFieldModel.EditorWidgetType.is_monkey_patched = True
 QgsFieldModel.EditorWidgetType.__doc__ = "Editor widget type"
-QgsFieldModel.JoinedFieldIsEditable = QgsFieldModel.CustomRole.JoinedFieldIsEditable
-QgsFieldModel.JoinedFieldIsEditable.is_monkey_patched = True
 QgsFieldModel.JoinedFieldIsEditable.__doc__ = "``True`` if a joined field is editable (returns QVariant if not a joined field)"
-QgsFieldModel.FieldIsWidgetEditable = QgsFieldModel.CustomRole.FieldIsWidgetEditable
-QgsFieldModel.FieldIsWidgetEditable.is_monkey_patched = True
 QgsFieldModel.FieldIsWidgetEditable.__doc__ = "``True`` if a is editable from the widget"
 QgsFieldModel.CustomRole.__doc__ = """Custom model roles.
 
@@ -15615,14 +13124,8 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/labeling/qgslabelobstaclesettings.h
 # monkey patching scoped based enum
-QgsLabelObstacleSettings.PolygonInterior = QgsLabelObstacleSettings.ObstacleType.PolygonInterior
-QgsLabelObstacleSettings.PolygonInterior.is_monkey_patched = True
 QgsLabelObstacleSettings.PolygonInterior.__doc__ = "Avoid placing labels over interior of polygon (prefer placing labels totally outside or just slightly inside polygon)"
-QgsLabelObstacleSettings.PolygonBoundary = QgsLabelObstacleSettings.ObstacleType.PolygonBoundary
-QgsLabelObstacleSettings.PolygonBoundary.is_monkey_patched = True
 QgsLabelObstacleSettings.PolygonBoundary.__doc__ = "Avoid placing labels over boundary of polygon (prefer placing outside or completely inside polygon)"
-QgsLabelObstacleSettings.PolygonWhole = QgsLabelObstacleSettings.ObstacleType.PolygonWhole
-QgsLabelObstacleSettings.PolygonWhole.is_monkey_patched = True
 QgsLabelObstacleSettings.PolygonWhole.__doc__ = "Avoid placing labels over ANY part of polygon. Where PolygonInterior will prefer to place labels with the smallest area of intersection between the label and the polygon, PolygonWhole will penalise any label which intersects with the polygon by an equal amount, so that placing labels over any part of the polygon is avoided"
 QgsLabelObstacleSettings.ObstacleType.__doc__ = """Valid obstacle types, which affect how features within the layer will act as obstacles
 for labels.
@@ -15812,23 +13315,14 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/layertree/qgslayertreemodellegendnode.h
-QgsLayerTreeModelLegendNode.LegendNodeRoles = QgsLayerTreeModelLegendNode.CustomRole
 # monkey patching scoped based enum
-QgsLayerTreeModelLegendNode.RuleKeyRole = QgsLayerTreeModelLegendNode.CustomRole.RuleKey
 QgsLayerTreeModelLegendNode.LegendNodeRoles.RuleKeyRole = QgsLayerTreeModelLegendNode.CustomRole.RuleKey
-QgsLayerTreeModelLegendNode.RuleKeyRole.is_monkey_patched = True
 QgsLayerTreeModelLegendNode.RuleKeyRole.__doc__ = "Rule key of the node (QString)"
-QgsLayerTreeModelLegendNode.ParentRuleKeyRole = QgsLayerTreeModelLegendNode.CustomRole.ParentRuleKey
 QgsLayerTreeModelLegendNode.LegendNodeRoles.ParentRuleKeyRole = QgsLayerTreeModelLegendNode.CustomRole.ParentRuleKey
-QgsLayerTreeModelLegendNode.ParentRuleKeyRole.is_monkey_patched = True
 QgsLayerTreeModelLegendNode.ParentRuleKeyRole.__doc__ = "Rule key of the parent legend node - for legends with tree hierarchy (QString). Added in 2.8"
-QgsLayerTreeModelLegendNode.NodeTypeRole = QgsLayerTreeModelLegendNode.CustomRole.NodeType
 QgsLayerTreeModelLegendNode.LegendNodeRoles.NodeTypeRole = QgsLayerTreeModelLegendNode.CustomRole.NodeType
-QgsLayerTreeModelLegendNode.NodeTypeRole.is_monkey_patched = True
 QgsLayerTreeModelLegendNode.NodeTypeRole.__doc__ = "Type of node. Added in 3.16"
-QgsLayerTreeModelLegendNode.IsDataDefinedSizeRole = QgsLayerTreeModelLegendNode.CustomRole.IsDataDefinedSize
 QgsLayerTreeModelLegendNode.LegendNodeRoles.IsDataDefinedSizeRole = QgsLayerTreeModelLegendNode.CustomRole.IsDataDefinedSize
-QgsLayerTreeModelLegendNode.IsDataDefinedSizeRole.is_monkey_patched = True
 QgsLayerTreeModelLegendNode.IsDataDefinedSizeRole.__doc__ = "Set when a node is related to data defined size (title or separated legend items). Added in 3.38"
 QgsLayerTreeModelLegendNode.CustomRole.__doc__ = """Legend node data roles
 
@@ -16049,27 +13543,16 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/layout/qgslayoutguidecollection.h
-QgsLayoutGuideCollection.Roles = QgsLayoutGuideCollection.CustomRole
 # monkey patching scoped based enum
-QgsLayoutGuideCollection.OrientationRole = QgsLayoutGuideCollection.CustomRole.Orientation
 QgsLayoutGuideCollection.Roles.OrientationRole = QgsLayoutGuideCollection.CustomRole.Orientation
-QgsLayoutGuideCollection.OrientationRole.is_monkey_patched = True
 QgsLayoutGuideCollection.OrientationRole.__doc__ = "Guide orientation role"
-QgsLayoutGuideCollection.PositionRole = QgsLayoutGuideCollection.CustomRole.Position
 QgsLayoutGuideCollection.Roles.PositionRole = QgsLayoutGuideCollection.CustomRole.Position
-QgsLayoutGuideCollection.PositionRole.is_monkey_patched = True
 QgsLayoutGuideCollection.PositionRole.__doc__ = "Guide position role"
-QgsLayoutGuideCollection.UnitsRole = QgsLayoutGuideCollection.CustomRole.Units
 QgsLayoutGuideCollection.Roles.UnitsRole = QgsLayoutGuideCollection.CustomRole.Units
-QgsLayoutGuideCollection.UnitsRole.is_monkey_patched = True
 QgsLayoutGuideCollection.UnitsRole.__doc__ = "Guide position units role"
-QgsLayoutGuideCollection.PageRole = QgsLayoutGuideCollection.CustomRole.Page
 QgsLayoutGuideCollection.Roles.PageRole = QgsLayoutGuideCollection.CustomRole.Page
-QgsLayoutGuideCollection.PageRole.is_monkey_patched = True
 QgsLayoutGuideCollection.PageRole.__doc__ = "Guide page role"
-QgsLayoutGuideCollection.LayoutPositionRole = QgsLayoutGuideCollection.CustomRole.LayoutPosition
 QgsLayoutGuideCollection.Roles.LayoutPositionRole = QgsLayoutGuideCollection.CustomRole.LayoutPosition
-QgsLayoutGuideCollection.LayoutPositionRole.is_monkey_patched = True
 QgsLayoutGuideCollection.LayoutPositionRole.__doc__ = "Guide position in layout coordinates"
 QgsLayoutGuideCollection.CustomRole.__doc__ = """Custom model roles.
 
@@ -16341,11 +13824,8 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/layout/qgslayoutmanager.h
-QgsLayoutManagerModel.Role = QgsLayoutManagerModel.CustomRole
 # monkey patching scoped based enum
-QgsLayoutManagerModel.LayoutRole = QgsLayoutManagerModel.CustomRole.Layout
 QgsLayoutManagerModel.Role.LayoutRole = QgsLayoutManagerModel.CustomRole.Layout
-QgsLayoutManagerModel.LayoutRole.is_monkey_patched = True
 QgsLayoutManagerModel.LayoutRole.__doc__ = "Layout object"
 QgsLayoutManagerModel.CustomRole.__doc__ = """Custom model roles.
 
@@ -16421,272 +13901,94 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/layout/qgslayoutobject.h
 # monkey patching scoped based enum
-QgsLayoutObject.NoProperty = QgsLayoutObject.DataDefinedProperty.NoProperty
-QgsLayoutObject.NoProperty.is_monkey_patched = True
 QgsLayoutObject.NoProperty.__doc__ = "No property"
-QgsLayoutObject.AllProperties = QgsLayoutObject.DataDefinedProperty.AllProperties
-QgsLayoutObject.AllProperties.is_monkey_patched = True
 QgsLayoutObject.AllProperties.__doc__ = "All properties for item"
-QgsLayoutObject.TestProperty = QgsLayoutObject.DataDefinedProperty.TestProperty
-QgsLayoutObject.TestProperty.is_monkey_patched = True
 QgsLayoutObject.TestProperty.__doc__ = "Dummy property with no effect on item"
-QgsLayoutObject.PresetPaperSize = QgsLayoutObject.DataDefinedProperty.PresetPaperSize
-QgsLayoutObject.PresetPaperSize.is_monkey_patched = True
 QgsLayoutObject.PresetPaperSize.__doc__ = "Preset paper size for composition"
-QgsLayoutObject.PaperWidth = QgsLayoutObject.DataDefinedProperty.PaperWidth
-QgsLayoutObject.PaperWidth.is_monkey_patched = True
 QgsLayoutObject.PaperWidth.__doc__ = "Paper width (deprecated)"
-QgsLayoutObject.PaperHeight = QgsLayoutObject.DataDefinedProperty.PaperHeight
-QgsLayoutObject.PaperHeight.is_monkey_patched = True
 QgsLayoutObject.PaperHeight.__doc__ = "Paper height (deprecated)"
-QgsLayoutObject.NumPages = QgsLayoutObject.DataDefinedProperty.NumPages
-QgsLayoutObject.NumPages.is_monkey_patched = True
 QgsLayoutObject.NumPages.__doc__ = "Number of pages in composition (deprecated)"
-QgsLayoutObject.PaperOrientation = QgsLayoutObject.DataDefinedProperty.PaperOrientation
-QgsLayoutObject.PaperOrientation.is_monkey_patched = True
 QgsLayoutObject.PaperOrientation.__doc__ = "Paper orientation"
-QgsLayoutObject.PageNumber = QgsLayoutObject.DataDefinedProperty.PageNumber
-QgsLayoutObject.PageNumber.is_monkey_patched = True
 QgsLayoutObject.PageNumber.__doc__ = "Page number for item placement"
-QgsLayoutObject.PositionX = QgsLayoutObject.DataDefinedProperty.PositionX
-QgsLayoutObject.PositionX.is_monkey_patched = True
 QgsLayoutObject.PositionX.__doc__ = "X position on page"
-QgsLayoutObject.PositionY = QgsLayoutObject.DataDefinedProperty.PositionY
-QgsLayoutObject.PositionY.is_monkey_patched = True
 QgsLayoutObject.PositionY.__doc__ = "Y position on page"
-QgsLayoutObject.ItemWidth = QgsLayoutObject.DataDefinedProperty.ItemWidth
-QgsLayoutObject.ItemWidth.is_monkey_patched = True
 QgsLayoutObject.ItemWidth.__doc__ = "Width of item"
-QgsLayoutObject.ItemHeight = QgsLayoutObject.DataDefinedProperty.ItemHeight
-QgsLayoutObject.ItemHeight.is_monkey_patched = True
 QgsLayoutObject.ItemHeight.__doc__ = "Height of item"
-QgsLayoutObject.ItemRotation = QgsLayoutObject.DataDefinedProperty.ItemRotation
-QgsLayoutObject.ItemRotation.is_monkey_patched = True
 QgsLayoutObject.ItemRotation.__doc__ = "Rotation of item"
-QgsLayoutObject.Transparency = QgsLayoutObject.DataDefinedProperty.Transparency
-QgsLayoutObject.Transparency.is_monkey_patched = True
 QgsLayoutObject.Transparency.__doc__ = "Item transparency (deprecated)"
-QgsLayoutObject.Opacity = QgsLayoutObject.DataDefinedProperty.Opacity
-QgsLayoutObject.Opacity.is_monkey_patched = True
 QgsLayoutObject.Opacity.__doc__ = "Item opacity"
-QgsLayoutObject.BlendMode = QgsLayoutObject.DataDefinedProperty.BlendMode
-QgsLayoutObject.BlendMode.is_monkey_patched = True
 QgsLayoutObject.BlendMode.__doc__ = "Item blend mode"
-QgsLayoutObject.ExcludeFromExports = QgsLayoutObject.DataDefinedProperty.ExcludeFromExports
-QgsLayoutObject.ExcludeFromExports.is_monkey_patched = True
 QgsLayoutObject.ExcludeFromExports.__doc__ = "Exclude item from exports"
-QgsLayoutObject.FrameColor = QgsLayoutObject.DataDefinedProperty.FrameColor
-QgsLayoutObject.FrameColor.is_monkey_patched = True
 QgsLayoutObject.FrameColor.__doc__ = "Item frame color"
-QgsLayoutObject.BackgroundColor = QgsLayoutObject.DataDefinedProperty.BackgroundColor
-QgsLayoutObject.BackgroundColor.is_monkey_patched = True
 QgsLayoutObject.BackgroundColor.__doc__ = "Item background color"
-QgsLayoutObject.MarginLeft = QgsLayoutObject.DataDefinedProperty.MarginLeft
-QgsLayoutObject.MarginLeft.is_monkey_patched = True
 QgsLayoutObject.MarginLeft.__doc__ = "Left margin \n.. versionadded:: 3.30"
-QgsLayoutObject.MarginTop = QgsLayoutObject.DataDefinedProperty.MarginTop
-QgsLayoutObject.MarginTop.is_monkey_patched = True
 QgsLayoutObject.MarginTop.__doc__ = "Top margin \n.. versionadded:: 3.30"
-QgsLayoutObject.MarginRight = QgsLayoutObject.DataDefinedProperty.MarginRight
-QgsLayoutObject.MarginRight.is_monkey_patched = True
 QgsLayoutObject.MarginRight.__doc__ = "Right margin \n.. versionadded:: 3.30"
-QgsLayoutObject.MarginBottom = QgsLayoutObject.DataDefinedProperty.MarginBottom
-QgsLayoutObject.MarginBottom.is_monkey_patched = True
 QgsLayoutObject.MarginBottom.__doc__ = "Bottom margin \n.. versionadded:: 3.30"
-QgsLayoutObject.MapRotation = QgsLayoutObject.DataDefinedProperty.MapRotation
-QgsLayoutObject.MapRotation.is_monkey_patched = True
 QgsLayoutObject.MapRotation.__doc__ = "Map rotation"
-QgsLayoutObject.MapScale = QgsLayoutObject.DataDefinedProperty.MapScale
-QgsLayoutObject.MapScale.is_monkey_patched = True
 QgsLayoutObject.MapScale.__doc__ = "Map scale"
-QgsLayoutObject.MapXMin = QgsLayoutObject.DataDefinedProperty.MapXMin
-QgsLayoutObject.MapXMin.is_monkey_patched = True
 QgsLayoutObject.MapXMin.__doc__ = "Map extent x minimum"
-QgsLayoutObject.MapYMin = QgsLayoutObject.DataDefinedProperty.MapYMin
-QgsLayoutObject.MapYMin.is_monkey_patched = True
 QgsLayoutObject.MapYMin.__doc__ = "Map extent y minimum"
-QgsLayoutObject.MapXMax = QgsLayoutObject.DataDefinedProperty.MapXMax
-QgsLayoutObject.MapXMax.is_monkey_patched = True
 QgsLayoutObject.MapXMax.__doc__ = "Map extent x maximum"
-QgsLayoutObject.MapYMax = QgsLayoutObject.DataDefinedProperty.MapYMax
-QgsLayoutObject.MapYMax.is_monkey_patched = True
 QgsLayoutObject.MapYMax.__doc__ = "Map extent y maximum"
-QgsLayoutObject.MapAtlasMargin = QgsLayoutObject.DataDefinedProperty.MapAtlasMargin
-QgsLayoutObject.MapAtlasMargin.is_monkey_patched = True
 QgsLayoutObject.MapAtlasMargin.__doc__ = "Map atlas margin"
-QgsLayoutObject.MapLayers = QgsLayoutObject.DataDefinedProperty.MapLayers
-QgsLayoutObject.MapLayers.is_monkey_patched = True
 QgsLayoutObject.MapLayers.__doc__ = "Map layer set"
-QgsLayoutObject.MapStylePreset = QgsLayoutObject.DataDefinedProperty.MapStylePreset
-QgsLayoutObject.MapStylePreset.is_monkey_patched = True
 QgsLayoutObject.MapStylePreset.__doc__ = "Layer and style map theme"
-QgsLayoutObject.MapLabelMargin = QgsLayoutObject.DataDefinedProperty.MapLabelMargin
-QgsLayoutObject.MapLabelMargin.is_monkey_patched = True
 QgsLayoutObject.MapLabelMargin.__doc__ = "Map label margin"
-QgsLayoutObject.MapGridEnabled = QgsLayoutObject.DataDefinedProperty.MapGridEnabled
-QgsLayoutObject.MapGridEnabled.is_monkey_patched = True
 QgsLayoutObject.MapGridEnabled.__doc__ = "Map grid enabled"
-QgsLayoutObject.MapGridIntervalX = QgsLayoutObject.DataDefinedProperty.MapGridIntervalX
-QgsLayoutObject.MapGridIntervalX.is_monkey_patched = True
 QgsLayoutObject.MapGridIntervalX.__doc__ = "Map grid interval X"
-QgsLayoutObject.MapGridIntervalY = QgsLayoutObject.DataDefinedProperty.MapGridIntervalY
-QgsLayoutObject.MapGridIntervalY.is_monkey_patched = True
 QgsLayoutObject.MapGridIntervalY.__doc__ = "Map grid interval Y"
-QgsLayoutObject.MapGridOffsetX = QgsLayoutObject.DataDefinedProperty.MapGridOffsetX
-QgsLayoutObject.MapGridOffsetX.is_monkey_patched = True
 QgsLayoutObject.MapGridOffsetX.__doc__ = "Map grid offset X"
-QgsLayoutObject.MapGridOffsetY = QgsLayoutObject.DataDefinedProperty.MapGridOffsetY
-QgsLayoutObject.MapGridOffsetY.is_monkey_patched = True
 QgsLayoutObject.MapGridOffsetY.__doc__ = "Map grid offset Y"
-QgsLayoutObject.MapGridFrameSize = QgsLayoutObject.DataDefinedProperty.MapGridFrameSize
-QgsLayoutObject.MapGridFrameSize.is_monkey_patched = True
 QgsLayoutObject.MapGridFrameSize.__doc__ = "Map grid frame size"
-QgsLayoutObject.MapGridFrameMargin = QgsLayoutObject.DataDefinedProperty.MapGridFrameMargin
-QgsLayoutObject.MapGridFrameMargin.is_monkey_patched = True
 QgsLayoutObject.MapGridFrameMargin.__doc__ = "Map grid frame margin"
-QgsLayoutObject.MapGridLabelDistance = QgsLayoutObject.DataDefinedProperty.MapGridLabelDistance
-QgsLayoutObject.MapGridLabelDistance.is_monkey_patched = True
 QgsLayoutObject.MapGridLabelDistance.__doc__ = "Map grid label distance"
-QgsLayoutObject.MapGridCrossSize = QgsLayoutObject.DataDefinedProperty.MapGridCrossSize
-QgsLayoutObject.MapGridCrossSize.is_monkey_patched = True
 QgsLayoutObject.MapGridCrossSize.__doc__ = "Map grid cross size"
-QgsLayoutObject.MapGridFrameLineThickness = QgsLayoutObject.DataDefinedProperty.MapGridFrameLineThickness
-QgsLayoutObject.MapGridFrameLineThickness.is_monkey_patched = True
 QgsLayoutObject.MapGridFrameLineThickness.__doc__ = "Map grid frame line thickness"
-QgsLayoutObject.MapGridAnnotationDisplayLeft = QgsLayoutObject.DataDefinedProperty.MapGridAnnotationDisplayLeft
-QgsLayoutObject.MapGridAnnotationDisplayLeft.is_monkey_patched = True
 QgsLayoutObject.MapGridAnnotationDisplayLeft.__doc__ = "Map annotation display left"
-QgsLayoutObject.MapGridAnnotationDisplayRight = QgsLayoutObject.DataDefinedProperty.MapGridAnnotationDisplayRight
-QgsLayoutObject.MapGridAnnotationDisplayRight.is_monkey_patched = True
 QgsLayoutObject.MapGridAnnotationDisplayRight.__doc__ = "Map annotation display right"
-QgsLayoutObject.MapGridAnnotationDisplayTop = QgsLayoutObject.DataDefinedProperty.MapGridAnnotationDisplayTop
-QgsLayoutObject.MapGridAnnotationDisplayTop.is_monkey_patched = True
 QgsLayoutObject.MapGridAnnotationDisplayTop.__doc__ = "Map annotation display top"
-QgsLayoutObject.MapGridAnnotationDisplayBottom = QgsLayoutObject.DataDefinedProperty.MapGridAnnotationDisplayBottom
-QgsLayoutObject.MapGridAnnotationDisplayBottom.is_monkey_patched = True
 QgsLayoutObject.MapGridAnnotationDisplayBottom.__doc__ = "Map annotation display bottom"
-QgsLayoutObject.MapGridFrameDivisionsLeft = QgsLayoutObject.DataDefinedProperty.MapGridFrameDivisionsLeft
-QgsLayoutObject.MapGridFrameDivisionsLeft.is_monkey_patched = True
 QgsLayoutObject.MapGridFrameDivisionsLeft.__doc__ = "Map frame division display left"
-QgsLayoutObject.MapGridFrameDivisionsRight = QgsLayoutObject.DataDefinedProperty.MapGridFrameDivisionsRight
-QgsLayoutObject.MapGridFrameDivisionsRight.is_monkey_patched = True
 QgsLayoutObject.MapGridFrameDivisionsRight.__doc__ = "Map frame division display right"
-QgsLayoutObject.MapGridFrameDivisionsTop = QgsLayoutObject.DataDefinedProperty.MapGridFrameDivisionsTop
-QgsLayoutObject.MapGridFrameDivisionsTop.is_monkey_patched = True
 QgsLayoutObject.MapGridFrameDivisionsTop.__doc__ = "Map frame division display top"
-QgsLayoutObject.MapGridFrameDivisionsBottom = QgsLayoutObject.DataDefinedProperty.MapGridFrameDivisionsBottom
-QgsLayoutObject.MapGridFrameDivisionsBottom.is_monkey_patched = True
 QgsLayoutObject.MapGridFrameDivisionsBottom.__doc__ = "Map frame division display bottom"
-QgsLayoutObject.MapCrs = QgsLayoutObject.DataDefinedProperty.MapCrs
-QgsLayoutObject.MapCrs.is_monkey_patched = True
 QgsLayoutObject.MapCrs.__doc__ = "Map CRS"
-QgsLayoutObject.StartDateTime = QgsLayoutObject.DataDefinedProperty.StartDateTime
-QgsLayoutObject.StartDateTime.is_monkey_patched = True
 QgsLayoutObject.StartDateTime.__doc__ = "Temporal range's start DateTime"
-QgsLayoutObject.EndDateTime = QgsLayoutObject.DataDefinedProperty.EndDateTime
-QgsLayoutObject.EndDateTime.is_monkey_patched = True
 QgsLayoutObject.EndDateTime.__doc__ = "Temporal range's end DateTime"
-QgsLayoutObject.MapZRangeLower = QgsLayoutObject.DataDefinedProperty.MapZRangeLower
-QgsLayoutObject.MapZRangeLower.is_monkey_patched = True
 QgsLayoutObject.MapZRangeLower.__doc__ = "Map frame Z-range lower value \n.. versionadded:: 3.38"
-QgsLayoutObject.MapZRangeUpper = QgsLayoutObject.DataDefinedProperty.MapZRangeUpper
-QgsLayoutObject.MapZRangeUpper.is_monkey_patched = True
 QgsLayoutObject.MapZRangeUpper.__doc__ = "Map frame Z-range lower value \n.. versionadded:: 3.38"
-QgsLayoutObject.PictureSource = QgsLayoutObject.DataDefinedProperty.PictureSource
-QgsLayoutObject.PictureSource.is_monkey_patched = True
 QgsLayoutObject.PictureSource.__doc__ = "Picture source url"
-QgsLayoutObject.PictureSvgBackgroundColor = QgsLayoutObject.DataDefinedProperty.PictureSvgBackgroundColor
-QgsLayoutObject.PictureSvgBackgroundColor.is_monkey_patched = True
 QgsLayoutObject.PictureSvgBackgroundColor.__doc__ = "SVG background color"
-QgsLayoutObject.PictureSvgStrokeColor = QgsLayoutObject.DataDefinedProperty.PictureSvgStrokeColor
-QgsLayoutObject.PictureSvgStrokeColor.is_monkey_patched = True
 QgsLayoutObject.PictureSvgStrokeColor.__doc__ = "SVG stroke color"
-QgsLayoutObject.PictureSvgStrokeWidth = QgsLayoutObject.DataDefinedProperty.PictureSvgStrokeWidth
-QgsLayoutObject.PictureSvgStrokeWidth.is_monkey_patched = True
 QgsLayoutObject.PictureSvgStrokeWidth.__doc__ = "SVG stroke width"
-QgsLayoutObject.SourceUrl = QgsLayoutObject.DataDefinedProperty.SourceUrl
-QgsLayoutObject.SourceUrl.is_monkey_patched = True
 QgsLayoutObject.SourceUrl.__doc__ = "Html source url"
-QgsLayoutObject.LegendTitle = QgsLayoutObject.DataDefinedProperty.LegendTitle
-QgsLayoutObject.LegendTitle.is_monkey_patched = True
 QgsLayoutObject.LegendTitle.__doc__ = "Legend title"
-QgsLayoutObject.LegendColumnCount = QgsLayoutObject.DataDefinedProperty.LegendColumnCount
-QgsLayoutObject.LegendColumnCount.is_monkey_patched = True
 QgsLayoutObject.LegendColumnCount.__doc__ = "Legend column count"
-QgsLayoutObject.LegendAutoWrapWidth = QgsLayoutObject.DataDefinedProperty.LegendAutoWrapWidth
-QgsLayoutObject.LegendAutoWrapWidth.is_monkey_patched = True
 QgsLayoutObject.LegendAutoWrapWidth.__doc__ = "Legend text automatic wrapping width \n.. versionadded:: 3.44"
-QgsLayoutObject.ScalebarLeftSegments = QgsLayoutObject.DataDefinedProperty.ScalebarLeftSegments
-QgsLayoutObject.ScalebarLeftSegments.is_monkey_patched = True
 QgsLayoutObject.ScalebarLeftSegments.__doc__ = "Number of segments on the left of 0 \n.. versionadded:: 3.26"
-QgsLayoutObject.ScalebarRightSegments = QgsLayoutObject.DataDefinedProperty.ScalebarRightSegments
-QgsLayoutObject.ScalebarRightSegments.is_monkey_patched = True
 QgsLayoutObject.ScalebarRightSegments.__doc__ = "Number of segments on the right of 0 \n.. versionadded:: 3.26"
-QgsLayoutObject.ScalebarSegmentWidth = QgsLayoutObject.DataDefinedProperty.ScalebarSegmentWidth
-QgsLayoutObject.ScalebarSegmentWidth.is_monkey_patched = True
 QgsLayoutObject.ScalebarSegmentWidth.__doc__ = "Scalebar width in map units of a single segment \n.. versionadded:: 3.26"
-QgsLayoutObject.ScalebarMinimumWidth = QgsLayoutObject.DataDefinedProperty.ScalebarMinimumWidth
-QgsLayoutObject.ScalebarMinimumWidth.is_monkey_patched = True
 QgsLayoutObject.ScalebarMinimumWidth.__doc__ = "Scalebar segment minimum width \n.. versionadded:: 3.26"
-QgsLayoutObject.ScalebarMaximumWidth = QgsLayoutObject.DataDefinedProperty.ScalebarMaximumWidth
-QgsLayoutObject.ScalebarMaximumWidth.is_monkey_patched = True
 QgsLayoutObject.ScalebarMaximumWidth.__doc__ = "Scalebar segment maximum width \n.. versionadded:: 3.26"
-QgsLayoutObject.ScalebarHeight = QgsLayoutObject.DataDefinedProperty.ScalebarHeight
-QgsLayoutObject.ScalebarHeight.is_monkey_patched = True
 QgsLayoutObject.ScalebarHeight.__doc__ = "Scalebar height \n.. versionadded:: 3.26"
-QgsLayoutObject.ScalebarRightSegmentSubdivisions = QgsLayoutObject.DataDefinedProperty.ScalebarRightSegmentSubdivisions
-QgsLayoutObject.ScalebarRightSegmentSubdivisions.is_monkey_patched = True
 QgsLayoutObject.ScalebarRightSegmentSubdivisions.__doc__ = "Number of subdivisions per segment on right of 0 \n.. versionadded:: 3.26"
-QgsLayoutObject.ScalebarSubdivisionHeight = QgsLayoutObject.DataDefinedProperty.ScalebarSubdivisionHeight
-QgsLayoutObject.ScalebarSubdivisionHeight.is_monkey_patched = True
 QgsLayoutObject.ScalebarSubdivisionHeight.__doc__ = "Scalebar subdivision height \n.. versionadded:: 3.26"
-QgsLayoutObject.ScalebarFillColor = QgsLayoutObject.DataDefinedProperty.ScalebarFillColor
-QgsLayoutObject.ScalebarFillColor.is_monkey_patched = True
 QgsLayoutObject.ScalebarFillColor.__doc__ = "Scalebar fill color (deprecated, use data defined properties on scalebar fill symbol 1 instead)"
-QgsLayoutObject.ScalebarFillColor2 = QgsLayoutObject.DataDefinedProperty.ScalebarFillColor2
-QgsLayoutObject.ScalebarFillColor2.is_monkey_patched = True
 QgsLayoutObject.ScalebarFillColor2.__doc__ = "Scalebar secondary fill color (deprecated, use data defined properties on scalebar fill symbol 2 instead)"
-QgsLayoutObject.ScalebarLineColor = QgsLayoutObject.DataDefinedProperty.ScalebarLineColor
-QgsLayoutObject.ScalebarLineColor.is_monkey_patched = True
 QgsLayoutObject.ScalebarLineColor.__doc__ = "Scalebar line color (deprecated, use data defined properties on scalebar line symbol instead)"
-QgsLayoutObject.ScalebarLineWidth = QgsLayoutObject.DataDefinedProperty.ScalebarLineWidth
-QgsLayoutObject.ScalebarLineWidth.is_monkey_patched = True
 QgsLayoutObject.ScalebarLineWidth.__doc__ = "Scalebar line width (deprecated, use data defined properties on scalebar line symbol instead)"
-QgsLayoutObject.AttributeTableSourceLayer = QgsLayoutObject.DataDefinedProperty.AttributeTableSourceLayer
-QgsLayoutObject.AttributeTableSourceLayer.is_monkey_patched = True
 QgsLayoutObject.AttributeTableSourceLayer.__doc__ = "Attribute table source layer"
-QgsLayoutObject.ElevationProfileTolerance = QgsLayoutObject.DataDefinedProperty.ElevationProfileTolerance
-QgsLayoutObject.ElevationProfileTolerance.is_monkey_patched = True
 QgsLayoutObject.ElevationProfileTolerance.__doc__ = "Tolerance distance for elevation profiles \n.. versionadded:: 3.30"
-QgsLayoutObject.ElevationProfileDistanceMajorInterval = QgsLayoutObject.DataDefinedProperty.ElevationProfileDistanceMajorInterval
-QgsLayoutObject.ElevationProfileDistanceMajorInterval.is_monkey_patched = True
 QgsLayoutObject.ElevationProfileDistanceMajorInterval.__doc__ = "Major grid line interval for elevation profile distance axis \n.. versionadded:: 3.30"
-QgsLayoutObject.ElevationProfileDistanceMinorInterval = QgsLayoutObject.DataDefinedProperty.ElevationProfileDistanceMinorInterval
-QgsLayoutObject.ElevationProfileDistanceMinorInterval.is_monkey_patched = True
 QgsLayoutObject.ElevationProfileDistanceMinorInterval.__doc__ = "Minor grid line interval for elevation profile distance axis \n.. versionadded:: 3.30"
-QgsLayoutObject.ElevationProfileDistanceLabelInterval = QgsLayoutObject.DataDefinedProperty.ElevationProfileDistanceLabelInterval
-QgsLayoutObject.ElevationProfileDistanceLabelInterval.is_monkey_patched = True
 QgsLayoutObject.ElevationProfileDistanceLabelInterval.__doc__ = "Label interval for elevation profile distance axis \n.. versionadded:: 3.30"
-QgsLayoutObject.ElevationProfileElevationMajorInterval = QgsLayoutObject.DataDefinedProperty.ElevationProfileElevationMajorInterval
-QgsLayoutObject.ElevationProfileElevationMajorInterval.is_monkey_patched = True
 QgsLayoutObject.ElevationProfileElevationMajorInterval.__doc__ = "Major grid line interval for elevation profile elevation axis \n.. versionadded:: 3.30"
-QgsLayoutObject.ElevationProfileElevationMinorInterval = QgsLayoutObject.DataDefinedProperty.ElevationProfileElevationMinorInterval
-QgsLayoutObject.ElevationProfileElevationMinorInterval.is_monkey_patched = True
 QgsLayoutObject.ElevationProfileElevationMinorInterval.__doc__ = "Minor grid line interval for elevation profile elevation axis \n.. versionadded:: 3.30"
-QgsLayoutObject.ElevationProfileElevationLabelInterval = QgsLayoutObject.DataDefinedProperty.ElevationProfileElevationLabelInterval
-QgsLayoutObject.ElevationProfileElevationLabelInterval.is_monkey_patched = True
 QgsLayoutObject.ElevationProfileElevationLabelInterval.__doc__ = "Label interval for elevation profile elevation axis \n.. versionadded:: 3.30"
-QgsLayoutObject.ElevationProfileMinimumDistance = QgsLayoutObject.DataDefinedProperty.ElevationProfileMinimumDistance
-QgsLayoutObject.ElevationProfileMinimumDistance.is_monkey_patched = True
 QgsLayoutObject.ElevationProfileMinimumDistance.__doc__ = "Minimum distance value for elevation profile \n.. versionadded:: 3.30"
-QgsLayoutObject.ElevationProfileMaximumDistance = QgsLayoutObject.DataDefinedProperty.ElevationProfileMaximumDistance
-QgsLayoutObject.ElevationProfileMaximumDistance.is_monkey_patched = True
 QgsLayoutObject.ElevationProfileMaximumDistance.__doc__ = "Maximum distance value for elevation profile \n.. versionadded:: 3.30"
-QgsLayoutObject.ElevationProfileMinimumElevation = QgsLayoutObject.DataDefinedProperty.ElevationProfileMinimumElevation
-QgsLayoutObject.ElevationProfileMinimumElevation.is_monkey_patched = True
 QgsLayoutObject.ElevationProfileMinimumElevation.__doc__ = "Minimum elevation value for elevation profile \n.. versionadded:: 3.30"
-QgsLayoutObject.ElevationProfileMaximumElevation = QgsLayoutObject.DataDefinedProperty.ElevationProfileMaximumElevation
-QgsLayoutObject.ElevationProfileMaximumElevation.is_monkey_patched = True
 QgsLayoutObject.ElevationProfileMaximumElevation.__doc__ = "Maximum elevation value for elevation profile \n.. versionadded:: 3.30"
 QgsLayoutObject.DataDefinedProperty.__doc__ = """Data defined properties for different item types
 
@@ -17154,41 +14456,22 @@ They could be used in a context menu for instance.
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/locator/qgslocatormodel.h
-QgsLocatorModel.Role = QgsLocatorModel.CustomRole
 # monkey patching scoped based enum
-QgsLocatorModel.ResultDataRole = QgsLocatorModel.CustomRole.ResultData
 QgsLocatorModel.Role.ResultDataRole = QgsLocatorModel.CustomRole.ResultData
-QgsLocatorModel.ResultDataRole.is_monkey_patched = True
 QgsLocatorModel.ResultDataRole.__doc__ = "QgsLocatorResult data"
-QgsLocatorModel.ResultTypeRole = QgsLocatorModel.CustomRole.ResultType
 QgsLocatorModel.Role.ResultTypeRole = QgsLocatorModel.CustomRole.ResultType
-QgsLocatorModel.ResultTypeRole.is_monkey_patched = True
 QgsLocatorModel.ResultTypeRole.__doc__ = "Result type"
-QgsLocatorModel.ResultFilterPriorityRole = QgsLocatorModel.CustomRole.ResultFilterPriority
 QgsLocatorModel.Role.ResultFilterPriorityRole = QgsLocatorModel.CustomRole.ResultFilterPriority
-QgsLocatorModel.ResultFilterPriorityRole.is_monkey_patched = True
 QgsLocatorModel.ResultFilterPriorityRole.__doc__ = "Result priority, used by QgsLocatorProxyModel for sorting roles."
-QgsLocatorModel.ResultScoreRole = QgsLocatorModel.CustomRole.ResultScore
 QgsLocatorModel.Role.ResultScoreRole = QgsLocatorModel.CustomRole.ResultScore
-QgsLocatorModel.ResultScoreRole.is_monkey_patched = True
 QgsLocatorModel.ResultScoreRole.__doc__ = "Result match score, used by QgsLocatorProxyModel for sorting roles."
-QgsLocatorModel.ResultFilterNameRole = QgsLocatorModel.CustomRole.ResultFilterName
 QgsLocatorModel.Role.ResultFilterNameRole = QgsLocatorModel.CustomRole.ResultFilterName
-QgsLocatorModel.ResultFilterNameRole.is_monkey_patched = True
 QgsLocatorModel.ResultFilterNameRole.__doc__ = "Associated filter name which created the result"
-QgsLocatorModel.ResultFilterGroupSortingRole = QgsLocatorModel.CustomRole.ResultFilterGroupSorting
 QgsLocatorModel.Role.ResultFilterGroupSortingRole = QgsLocatorModel.CustomRole.ResultFilterGroupSorting
-QgsLocatorModel.ResultFilterGroupSortingRole.is_monkey_patched = True
 QgsLocatorModel.ResultFilterGroupSortingRole.__doc__ = "Custom value for sorting \n.. deprecated:: 3.40. No longer used."
-QgsLocatorModel.ResultFilterGroupTitle = QgsLocatorModel.CustomRole.ResultFilterGroupTitle
-QgsLocatorModel.ResultFilterGroupTitle.is_monkey_patched = True
 QgsLocatorModel.ResultFilterGroupTitle.__doc__ = "Group title"
-QgsLocatorModel.ResultFilterGroupScore = QgsLocatorModel.CustomRole.ResultFilterGroupScore
-QgsLocatorModel.ResultFilterGroupScore.is_monkey_patched = True
 QgsLocatorModel.ResultFilterGroupScore.__doc__ = "Group score"
-QgsLocatorModel.ResultActionsRole = QgsLocatorModel.CustomRole.ResultActions
 QgsLocatorModel.Role.ResultActionsRole = QgsLocatorModel.CustomRole.ResultActions
-QgsLocatorModel.ResultActionsRole.is_monkey_patched = True
 QgsLocatorModel.ResultActionsRole.__doc__ = "The actions to be shown for the given result in a context menu"
 QgsLocatorModel.CustomRole.__doc__ = """Custom model roles.
 
@@ -17430,17 +14713,9 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgsmaplayerelevationproperties.h
 # monkey patching scoped based enum
-QgsMapLayerElevationProperties.ZOffset = QgsMapLayerElevationProperties.Property.ZOffset
-QgsMapLayerElevationProperties.ZOffset.is_monkey_patched = True
 QgsMapLayerElevationProperties.ZOffset.__doc__ = "Z offset"
-QgsMapLayerElevationProperties.ExtrusionHeight = QgsMapLayerElevationProperties.Property.ExtrusionHeight
-QgsMapLayerElevationProperties.ExtrusionHeight.is_monkey_patched = True
 QgsMapLayerElevationProperties.ExtrusionHeight.__doc__ = "Extrusion height"
-QgsMapLayerElevationProperties.RasterPerBandLowerElevation = QgsMapLayerElevationProperties.Property.RasterPerBandLowerElevation
-QgsMapLayerElevationProperties.RasterPerBandLowerElevation.is_monkey_patched = True
 QgsMapLayerElevationProperties.RasterPerBandLowerElevation.__doc__ = "Lower elevation for each raster band \n.. versionadded:: 3.38"
-QgsMapLayerElevationProperties.RasterPerBandUpperElevation = QgsMapLayerElevationProperties.Property.RasterPerBandUpperElevation
-QgsMapLayerElevationProperties.RasterPerBandUpperElevation.is_monkey_patched = True
 QgsMapLayerElevationProperties.RasterPerBandUpperElevation.__doc__ = "Upper elevation for each raster band \n.. versionadded:: 3.38"
 QgsMapLayerElevationProperties.Property.__doc__ = """Data definable properties.
 
@@ -17529,23 +14804,14 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgsmaplayermodel.h
-QgsMapLayerModel.ItemDataRole = QgsMapLayerModel.CustomRole
 # monkey patching scoped based enum
-QgsMapLayerModel.LayerIdRole = QgsMapLayerModel.CustomRole.LayerId
 QgsMapLayerModel.ItemDataRole.LayerIdRole = QgsMapLayerModel.CustomRole.LayerId
-QgsMapLayerModel.LayerIdRole.is_monkey_patched = True
 QgsMapLayerModel.LayerIdRole.__doc__ = "Stores the map layer ID"
-QgsMapLayerModel.LayerRole = QgsMapLayerModel.CustomRole.Layer
 QgsMapLayerModel.ItemDataRole.LayerRole = QgsMapLayerModel.CustomRole.Layer
-QgsMapLayerModel.LayerRole.is_monkey_patched = True
 QgsMapLayerModel.LayerRole.__doc__ = "Stores pointer to the map layer itself"
-QgsMapLayerModel.EmptyRole = QgsMapLayerModel.CustomRole.Empty
 QgsMapLayerModel.ItemDataRole.EmptyRole = QgsMapLayerModel.CustomRole.Empty
-QgsMapLayerModel.EmptyRole.is_monkey_patched = True
 QgsMapLayerModel.EmptyRole.__doc__ = "True if index corresponds to the empty (not set) value"
-QgsMapLayerModel.AdditionalRole = QgsMapLayerModel.CustomRole.Additional
 QgsMapLayerModel.ItemDataRole.AdditionalRole = QgsMapLayerModel.CustomRole.Additional
-QgsMapLayerModel.AdditionalRole.is_monkey_patched = True
 QgsMapLayerModel.AdditionalRole.__doc__ = "True if index corresponds to an additional (non map layer) item"
 QgsMapLayerModel.CustomRole.__doc__ = """Custom model roles.
 
@@ -18269,28 +15535,13 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/network/qgsnewsfeedmodel.h
-QgsNewsFeedModel.Role = QgsNewsFeedModel.CustomRole
 # monkey patching scoped based enum
-QgsNewsFeedModel.Key = QgsNewsFeedModel.CustomRole.Key
-QgsNewsFeedModel.Key.is_monkey_patched = True
 QgsNewsFeedModel.Key.__doc__ = "Entry unique key"
-QgsNewsFeedModel.Title = QgsNewsFeedModel.CustomRole.Title
-QgsNewsFeedModel.Title.is_monkey_patched = True
 QgsNewsFeedModel.Title.__doc__ = "Entry title"
-QgsNewsFeedModel.Content = QgsNewsFeedModel.CustomRole.Content
-QgsNewsFeedModel.Content.is_monkey_patched = True
 QgsNewsFeedModel.Content.__doc__ = "Entry content"
-QgsNewsFeedModel.ImageUrl = QgsNewsFeedModel.CustomRole.ImageUrl
-QgsNewsFeedModel.ImageUrl.is_monkey_patched = True
 QgsNewsFeedModel.ImageUrl.__doc__ = "Optional entry image URL"
-QgsNewsFeedModel.Image = QgsNewsFeedModel.CustomRole.Image
-QgsNewsFeedModel.Image.is_monkey_patched = True
 QgsNewsFeedModel.Image.__doc__ = "Optional entry image"
-QgsNewsFeedModel.Link = QgsNewsFeedModel.CustomRole.Link
-QgsNewsFeedModel.Link.is_monkey_patched = True
 QgsNewsFeedModel.Link.__doc__ = "Optional entry URL link"
-QgsNewsFeedModel.Sticky = QgsNewsFeedModel.CustomRole.Sticky
-QgsNewsFeedModel.Sticky.is_monkey_patched = True
 QgsNewsFeedModel.Sticky.__doc__ = "Whether entry is sticky"
 QgsNewsFeedModel.CustomRole.__doc__ = """Custom model roles.
 
@@ -18529,374 +15780,128 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/labeling/qgspallabeling.h
 # monkey patching scoped based enum
-QgsPalLayerSettings.Size = QgsPalLayerSettings.Property.Size
-QgsPalLayerSettings.Size.is_monkey_patched = True
 QgsPalLayerSettings.Size.__doc__ = "Label size"
-QgsPalLayerSettings.Bold = QgsPalLayerSettings.Property.Bold
-QgsPalLayerSettings.Bold.is_monkey_patched = True
 QgsPalLayerSettings.Bold.__doc__ = "Use bold style"
-QgsPalLayerSettings.Italic = QgsPalLayerSettings.Property.Italic
-QgsPalLayerSettings.Italic.is_monkey_patched = True
 QgsPalLayerSettings.Italic.__doc__ = "Use italic style"
-QgsPalLayerSettings.Underline = QgsPalLayerSettings.Property.Underline
-QgsPalLayerSettings.Underline.is_monkey_patched = True
 QgsPalLayerSettings.Underline.__doc__ = "Use underline"
-QgsPalLayerSettings.Color = QgsPalLayerSettings.Property.Color
-QgsPalLayerSettings.Color.is_monkey_patched = True
 QgsPalLayerSettings.Color.__doc__ = "Text color"
-QgsPalLayerSettings.Strikeout = QgsPalLayerSettings.Property.Strikeout
-QgsPalLayerSettings.Strikeout.is_monkey_patched = True
 QgsPalLayerSettings.Strikeout.__doc__ = "Use strikeout"
-QgsPalLayerSettings.Family = QgsPalLayerSettings.Property.Family
-QgsPalLayerSettings.Family.is_monkey_patched = True
 QgsPalLayerSettings.Family.__doc__ = "Font family"
-QgsPalLayerSettings.FontStyle = QgsPalLayerSettings.Property.FontStyle
-QgsPalLayerSettings.FontStyle.is_monkey_patched = True
 QgsPalLayerSettings.FontStyle.__doc__ = "Font style name"
-QgsPalLayerSettings.FontSizeUnit = QgsPalLayerSettings.Property.FontSizeUnit
-QgsPalLayerSettings.FontSizeUnit.is_monkey_patched = True
 QgsPalLayerSettings.FontSizeUnit.__doc__ = "Font size units"
-QgsPalLayerSettings.FontTransp = QgsPalLayerSettings.Property.FontTransp
-QgsPalLayerSettings.FontTransp.is_monkey_patched = True
 QgsPalLayerSettings.FontTransp.__doc__ = "Text transparency (deprecated)"
-QgsPalLayerSettings.FontOpacity = QgsPalLayerSettings.Property.FontOpacity
-QgsPalLayerSettings.FontOpacity.is_monkey_patched = True
 QgsPalLayerSettings.FontOpacity.__doc__ = "Text opacity"
-QgsPalLayerSettings.FontCase = QgsPalLayerSettings.Property.FontCase
-QgsPalLayerSettings.FontCase.is_monkey_patched = True
 QgsPalLayerSettings.FontCase.__doc__ = "Label text case"
-QgsPalLayerSettings.FontLetterSpacing = QgsPalLayerSettings.Property.FontLetterSpacing
-QgsPalLayerSettings.FontLetterSpacing.is_monkey_patched = True
 QgsPalLayerSettings.FontLetterSpacing.__doc__ = "Letter spacing"
-QgsPalLayerSettings.FontWordSpacing = QgsPalLayerSettings.Property.FontWordSpacing
-QgsPalLayerSettings.FontWordSpacing.is_monkey_patched = True
 QgsPalLayerSettings.FontWordSpacing.__doc__ = "Word spacing"
-QgsPalLayerSettings.FontBlendMode = QgsPalLayerSettings.Property.FontBlendMode
-QgsPalLayerSettings.FontBlendMode.is_monkey_patched = True
 QgsPalLayerSettings.FontBlendMode.__doc__ = "Text blend mode"
-QgsPalLayerSettings.FontStretchFactor = QgsPalLayerSettings.Property.FontStretchFactor
-QgsPalLayerSettings.FontStretchFactor.is_monkey_patched = True
 QgsPalLayerSettings.FontStretchFactor.__doc__ = "Font stretch factor, since QGIS 3.24"
-QgsPalLayerSettings.MultiLineWrapChar = QgsPalLayerSettings.Property.MultiLineWrapChar
-QgsPalLayerSettings.MultiLineWrapChar.is_monkey_patched = True
 QgsPalLayerSettings.MultiLineWrapChar.__doc__ = ""
-QgsPalLayerSettings.AutoWrapLength = QgsPalLayerSettings.Property.AutoWrapLength
-QgsPalLayerSettings.AutoWrapLength.is_monkey_patched = True
 QgsPalLayerSettings.AutoWrapLength.__doc__ = ""
-QgsPalLayerSettings.MultiLineHeight = QgsPalLayerSettings.Property.MultiLineHeight
-QgsPalLayerSettings.MultiLineHeight.is_monkey_patched = True
 QgsPalLayerSettings.MultiLineHeight.__doc__ = ""
-QgsPalLayerSettings.MultiLineAlignment = QgsPalLayerSettings.Property.MultiLineAlignment
-QgsPalLayerSettings.MultiLineAlignment.is_monkey_patched = True
 QgsPalLayerSettings.MultiLineAlignment.__doc__ = ""
-QgsPalLayerSettings.TextOrientation = QgsPalLayerSettings.Property.TextOrientation
-QgsPalLayerSettings.TextOrientation.is_monkey_patched = True
 QgsPalLayerSettings.TextOrientation.__doc__ = ""
-QgsPalLayerSettings.TabStopDistance = QgsPalLayerSettings.Property.TabStopDistance
-QgsPalLayerSettings.TabStopDistance.is_monkey_patched = True
 QgsPalLayerSettings.TabStopDistance.__doc__ = "Tab stop distance, since QGIS 3.38"
-QgsPalLayerSettings.DirSymbDraw = QgsPalLayerSettings.Property.DirSymbDraw
-QgsPalLayerSettings.DirSymbDraw.is_monkey_patched = True
 QgsPalLayerSettings.DirSymbDraw.__doc__ = ""
-QgsPalLayerSettings.DirSymbLeft = QgsPalLayerSettings.Property.DirSymbLeft
-QgsPalLayerSettings.DirSymbLeft.is_monkey_patched = True
 QgsPalLayerSettings.DirSymbLeft.__doc__ = ""
-QgsPalLayerSettings.DirSymbRight = QgsPalLayerSettings.Property.DirSymbRight
-QgsPalLayerSettings.DirSymbRight.is_monkey_patched = True
 QgsPalLayerSettings.DirSymbRight.__doc__ = ""
-QgsPalLayerSettings.DirSymbPlacement = QgsPalLayerSettings.Property.DirSymbPlacement
-QgsPalLayerSettings.DirSymbPlacement.is_monkey_patched = True
 QgsPalLayerSettings.DirSymbPlacement.__doc__ = ""
-QgsPalLayerSettings.DirSymbReverse = QgsPalLayerSettings.Property.DirSymbReverse
-QgsPalLayerSettings.DirSymbReverse.is_monkey_patched = True
 QgsPalLayerSettings.DirSymbReverse.__doc__ = ""
-QgsPalLayerSettings.NumFormat = QgsPalLayerSettings.Property.NumFormat
-QgsPalLayerSettings.NumFormat.is_monkey_patched = True
 QgsPalLayerSettings.NumFormat.__doc__ = ""
-QgsPalLayerSettings.NumDecimals = QgsPalLayerSettings.Property.NumDecimals
-QgsPalLayerSettings.NumDecimals.is_monkey_patched = True
 QgsPalLayerSettings.NumDecimals.__doc__ = ""
-QgsPalLayerSettings.NumPlusSign = QgsPalLayerSettings.Property.NumPlusSign
-QgsPalLayerSettings.NumPlusSign.is_monkey_patched = True
 QgsPalLayerSettings.NumPlusSign.__doc__ = ""
-QgsPalLayerSettings.BufferDraw = QgsPalLayerSettings.Property.BufferDraw
-QgsPalLayerSettings.BufferDraw.is_monkey_patched = True
 QgsPalLayerSettings.BufferDraw.__doc__ = ""
-QgsPalLayerSettings.BufferSize = QgsPalLayerSettings.Property.BufferSize
-QgsPalLayerSettings.BufferSize.is_monkey_patched = True
 QgsPalLayerSettings.BufferSize.__doc__ = ""
-QgsPalLayerSettings.BufferUnit = QgsPalLayerSettings.Property.BufferUnit
-QgsPalLayerSettings.BufferUnit.is_monkey_patched = True
 QgsPalLayerSettings.BufferUnit.__doc__ = ""
-QgsPalLayerSettings.BufferColor = QgsPalLayerSettings.Property.BufferColor
-QgsPalLayerSettings.BufferColor.is_monkey_patched = True
 QgsPalLayerSettings.BufferColor.__doc__ = ""
-QgsPalLayerSettings.BufferTransp = QgsPalLayerSettings.Property.BufferTransp
-QgsPalLayerSettings.BufferTransp.is_monkey_patched = True
 QgsPalLayerSettings.BufferTransp.__doc__ = "Buffer transparency (deprecated)"
-QgsPalLayerSettings.BufferOpacity = QgsPalLayerSettings.Property.BufferOpacity
-QgsPalLayerSettings.BufferOpacity.is_monkey_patched = True
 QgsPalLayerSettings.BufferOpacity.__doc__ = "Buffer opacity"
-QgsPalLayerSettings.BufferJoinStyle = QgsPalLayerSettings.Property.BufferJoinStyle
-QgsPalLayerSettings.BufferJoinStyle.is_monkey_patched = True
 QgsPalLayerSettings.BufferJoinStyle.__doc__ = ""
-QgsPalLayerSettings.BufferBlendMode = QgsPalLayerSettings.Property.BufferBlendMode
-QgsPalLayerSettings.BufferBlendMode.is_monkey_patched = True
 QgsPalLayerSettings.BufferBlendMode.__doc__ = ""
-QgsPalLayerSettings.MaskEnabled = QgsPalLayerSettings.Property.MaskEnabled
-QgsPalLayerSettings.MaskEnabled.is_monkey_patched = True
 QgsPalLayerSettings.MaskEnabled.__doc__ = "Whether the mask is enabled"
-QgsPalLayerSettings.MaskBufferSize = QgsPalLayerSettings.Property.MaskBufferSize
-QgsPalLayerSettings.MaskBufferSize.is_monkey_patched = True
 QgsPalLayerSettings.MaskBufferSize.__doc__ = "Mask buffer size"
-QgsPalLayerSettings.MaskBufferUnit = QgsPalLayerSettings.Property.MaskBufferUnit
-QgsPalLayerSettings.MaskBufferUnit.is_monkey_patched = True
 QgsPalLayerSettings.MaskBufferUnit.__doc__ = "Mask buffer size unit"
-QgsPalLayerSettings.MaskOpacity = QgsPalLayerSettings.Property.MaskOpacity
-QgsPalLayerSettings.MaskOpacity.is_monkey_patched = True
 QgsPalLayerSettings.MaskOpacity.__doc__ = "Mask opacity"
-QgsPalLayerSettings.MaskJoinStyle = QgsPalLayerSettings.Property.MaskJoinStyle
-QgsPalLayerSettings.MaskJoinStyle.is_monkey_patched = True
 QgsPalLayerSettings.MaskJoinStyle.__doc__ = "Mask join style"
-QgsPalLayerSettings.ShapeDraw = QgsPalLayerSettings.Property.ShapeDraw
-QgsPalLayerSettings.ShapeDraw.is_monkey_patched = True
 QgsPalLayerSettings.ShapeDraw.__doc__ = ""
-QgsPalLayerSettings.ShapeKind = QgsPalLayerSettings.Property.ShapeKind
-QgsPalLayerSettings.ShapeKind.is_monkey_patched = True
 QgsPalLayerSettings.ShapeKind.__doc__ = ""
-QgsPalLayerSettings.ShapeSVGFile = QgsPalLayerSettings.Property.ShapeSVGFile
-QgsPalLayerSettings.ShapeSVGFile.is_monkey_patched = True
 QgsPalLayerSettings.ShapeSVGFile.__doc__ = ""
-QgsPalLayerSettings.ShapeSizeType = QgsPalLayerSettings.Property.ShapeSizeType
-QgsPalLayerSettings.ShapeSizeType.is_monkey_patched = True
 QgsPalLayerSettings.ShapeSizeType.__doc__ = ""
-QgsPalLayerSettings.ShapeSizeX = QgsPalLayerSettings.Property.ShapeSizeX
-QgsPalLayerSettings.ShapeSizeX.is_monkey_patched = True
 QgsPalLayerSettings.ShapeSizeX.__doc__ = ""
-QgsPalLayerSettings.ShapeSizeY = QgsPalLayerSettings.Property.ShapeSizeY
-QgsPalLayerSettings.ShapeSizeY.is_monkey_patched = True
 QgsPalLayerSettings.ShapeSizeY.__doc__ = ""
-QgsPalLayerSettings.ShapeSizeUnits = QgsPalLayerSettings.Property.ShapeSizeUnits
-QgsPalLayerSettings.ShapeSizeUnits.is_monkey_patched = True
 QgsPalLayerSettings.ShapeSizeUnits.__doc__ = ""
-QgsPalLayerSettings.ShapeRotationType = QgsPalLayerSettings.Property.ShapeRotationType
-QgsPalLayerSettings.ShapeRotationType.is_monkey_patched = True
 QgsPalLayerSettings.ShapeRotationType.__doc__ = ""
-QgsPalLayerSettings.ShapeRotation = QgsPalLayerSettings.Property.ShapeRotation
-QgsPalLayerSettings.ShapeRotation.is_monkey_patched = True
 QgsPalLayerSettings.ShapeRotation.__doc__ = ""
-QgsPalLayerSettings.ShapeOffset = QgsPalLayerSettings.Property.ShapeOffset
-QgsPalLayerSettings.ShapeOffset.is_monkey_patched = True
 QgsPalLayerSettings.ShapeOffset.__doc__ = ""
-QgsPalLayerSettings.ShapeOffsetUnits = QgsPalLayerSettings.Property.ShapeOffsetUnits
-QgsPalLayerSettings.ShapeOffsetUnits.is_monkey_patched = True
 QgsPalLayerSettings.ShapeOffsetUnits.__doc__ = ""
-QgsPalLayerSettings.ShapeRadii = QgsPalLayerSettings.Property.ShapeRadii
-QgsPalLayerSettings.ShapeRadii.is_monkey_patched = True
 QgsPalLayerSettings.ShapeRadii.__doc__ = ""
-QgsPalLayerSettings.ShapeRadiiUnits = QgsPalLayerSettings.Property.ShapeRadiiUnits
-QgsPalLayerSettings.ShapeRadiiUnits.is_monkey_patched = True
 QgsPalLayerSettings.ShapeRadiiUnits.__doc__ = ""
-QgsPalLayerSettings.ShapeTransparency = QgsPalLayerSettings.Property.ShapeTransparency
-QgsPalLayerSettings.ShapeTransparency.is_monkey_patched = True
 QgsPalLayerSettings.ShapeTransparency.__doc__ = "Shape transparency (deprecated)"
-QgsPalLayerSettings.ShapeOpacity = QgsPalLayerSettings.Property.ShapeOpacity
-QgsPalLayerSettings.ShapeOpacity.is_monkey_patched = True
 QgsPalLayerSettings.ShapeOpacity.__doc__ = "Shape opacity"
-QgsPalLayerSettings.ShapeBlendMode = QgsPalLayerSettings.Property.ShapeBlendMode
-QgsPalLayerSettings.ShapeBlendMode.is_monkey_patched = True
 QgsPalLayerSettings.ShapeBlendMode.__doc__ = ""
-QgsPalLayerSettings.ShapeFillColor = QgsPalLayerSettings.Property.ShapeFillColor
-QgsPalLayerSettings.ShapeFillColor.is_monkey_patched = True
 QgsPalLayerSettings.ShapeFillColor.__doc__ = ""
-QgsPalLayerSettings.ShapeStrokeColor = QgsPalLayerSettings.Property.ShapeStrokeColor
-QgsPalLayerSettings.ShapeStrokeColor.is_monkey_patched = True
 QgsPalLayerSettings.ShapeStrokeColor.__doc__ = ""
-QgsPalLayerSettings.ShapeStrokeWidth = QgsPalLayerSettings.Property.ShapeStrokeWidth
-QgsPalLayerSettings.ShapeStrokeWidth.is_monkey_patched = True
 QgsPalLayerSettings.ShapeStrokeWidth.__doc__ = ""
-QgsPalLayerSettings.ShapeStrokeWidthUnits = QgsPalLayerSettings.Property.ShapeStrokeWidthUnits
-QgsPalLayerSettings.ShapeStrokeWidthUnits.is_monkey_patched = True
 QgsPalLayerSettings.ShapeStrokeWidthUnits.__doc__ = ""
-QgsPalLayerSettings.ShapeJoinStyle = QgsPalLayerSettings.Property.ShapeJoinStyle
-QgsPalLayerSettings.ShapeJoinStyle.is_monkey_patched = True
 QgsPalLayerSettings.ShapeJoinStyle.__doc__ = ""
-QgsPalLayerSettings.ShadowDraw = QgsPalLayerSettings.Property.ShadowDraw
-QgsPalLayerSettings.ShadowDraw.is_monkey_patched = True
 QgsPalLayerSettings.ShadowDraw.__doc__ = ""
-QgsPalLayerSettings.ShadowUnder = QgsPalLayerSettings.Property.ShadowUnder
-QgsPalLayerSettings.ShadowUnder.is_monkey_patched = True
 QgsPalLayerSettings.ShadowUnder.__doc__ = ""
-QgsPalLayerSettings.ShadowOffsetAngle = QgsPalLayerSettings.Property.ShadowOffsetAngle
-QgsPalLayerSettings.ShadowOffsetAngle.is_monkey_patched = True
 QgsPalLayerSettings.ShadowOffsetAngle.__doc__ = ""
-QgsPalLayerSettings.ShadowOffsetDist = QgsPalLayerSettings.Property.ShadowOffsetDist
-QgsPalLayerSettings.ShadowOffsetDist.is_monkey_patched = True
 QgsPalLayerSettings.ShadowOffsetDist.__doc__ = ""
-QgsPalLayerSettings.ShadowOffsetUnits = QgsPalLayerSettings.Property.ShadowOffsetUnits
-QgsPalLayerSettings.ShadowOffsetUnits.is_monkey_patched = True
 QgsPalLayerSettings.ShadowOffsetUnits.__doc__ = ""
-QgsPalLayerSettings.ShadowRadius = QgsPalLayerSettings.Property.ShadowRadius
-QgsPalLayerSettings.ShadowRadius.is_monkey_patched = True
 QgsPalLayerSettings.ShadowRadius.__doc__ = ""
-QgsPalLayerSettings.ShadowRadiusUnits = QgsPalLayerSettings.Property.ShadowRadiusUnits
-QgsPalLayerSettings.ShadowRadiusUnits.is_monkey_patched = True
 QgsPalLayerSettings.ShadowRadiusUnits.__doc__ = ""
-QgsPalLayerSettings.ShadowTransparency = QgsPalLayerSettings.Property.ShadowTransparency
-QgsPalLayerSettings.ShadowTransparency.is_monkey_patched = True
 QgsPalLayerSettings.ShadowTransparency.__doc__ = "Shadow transparency (deprecated)"
-QgsPalLayerSettings.ShadowOpacity = QgsPalLayerSettings.Property.ShadowOpacity
-QgsPalLayerSettings.ShadowOpacity.is_monkey_patched = True
 QgsPalLayerSettings.ShadowOpacity.__doc__ = "Shadow opacity"
-QgsPalLayerSettings.ShadowScale = QgsPalLayerSettings.Property.ShadowScale
-QgsPalLayerSettings.ShadowScale.is_monkey_patched = True
 QgsPalLayerSettings.ShadowScale.__doc__ = ""
-QgsPalLayerSettings.ShadowColor = QgsPalLayerSettings.Property.ShadowColor
-QgsPalLayerSettings.ShadowColor.is_monkey_patched = True
 QgsPalLayerSettings.ShadowColor.__doc__ = ""
-QgsPalLayerSettings.ShadowBlendMode = QgsPalLayerSettings.Property.ShadowBlendMode
-QgsPalLayerSettings.ShadowBlendMode.is_monkey_patched = True
 QgsPalLayerSettings.ShadowBlendMode.__doc__ = ""
-QgsPalLayerSettings.CentroidWhole = QgsPalLayerSettings.Property.CentroidWhole
-QgsPalLayerSettings.CentroidWhole.is_monkey_patched = True
 QgsPalLayerSettings.CentroidWhole.__doc__ = ""
-QgsPalLayerSettings.OffsetQuad = QgsPalLayerSettings.Property.OffsetQuad
-QgsPalLayerSettings.OffsetQuad.is_monkey_patched = True
 QgsPalLayerSettings.OffsetQuad.__doc__ = ""
-QgsPalLayerSettings.OffsetXY = QgsPalLayerSettings.Property.OffsetXY
-QgsPalLayerSettings.OffsetXY.is_monkey_patched = True
 QgsPalLayerSettings.OffsetXY.__doc__ = ""
-QgsPalLayerSettings.OffsetUnits = QgsPalLayerSettings.Property.OffsetUnits
-QgsPalLayerSettings.OffsetUnits.is_monkey_patched = True
 QgsPalLayerSettings.OffsetUnits.__doc__ = ""
-QgsPalLayerSettings.LabelDistance = QgsPalLayerSettings.Property.LabelDistance
-QgsPalLayerSettings.LabelDistance.is_monkey_patched = True
 QgsPalLayerSettings.LabelDistance.__doc__ = ""
-QgsPalLayerSettings.MaximumDistance = QgsPalLayerSettings.Property.MaximumDistance
-QgsPalLayerSettings.MaximumDistance.is_monkey_patched = True
 QgsPalLayerSettings.MaximumDistance.__doc__ = "Maximum distance of label from feature"
-QgsPalLayerSettings.DistanceUnits = QgsPalLayerSettings.Property.DistanceUnits
-QgsPalLayerSettings.DistanceUnits.is_monkey_patched = True
 QgsPalLayerSettings.DistanceUnits.__doc__ = ""
-QgsPalLayerSettings.OffsetRotation = QgsPalLayerSettings.Property.OffsetRotation
-QgsPalLayerSettings.OffsetRotation.is_monkey_patched = True
 QgsPalLayerSettings.OffsetRotation.__doc__ = ""
-QgsPalLayerSettings.CurvedCharAngleInOut = QgsPalLayerSettings.Property.CurvedCharAngleInOut
-QgsPalLayerSettings.CurvedCharAngleInOut.is_monkey_patched = True
 QgsPalLayerSettings.CurvedCharAngleInOut.__doc__ = ""
-QgsPalLayerSettings.PositionX = QgsPalLayerSettings.Property.PositionX
-QgsPalLayerSettings.PositionX.is_monkey_patched = True
 QgsPalLayerSettings.PositionX.__doc__ = "X-coordinate data defined label position"
-QgsPalLayerSettings.PositionY = QgsPalLayerSettings.Property.PositionY
-QgsPalLayerSettings.PositionY.is_monkey_patched = True
 QgsPalLayerSettings.PositionY.__doc__ = "Y-coordinate data defined label position"
-QgsPalLayerSettings.PositionPoint = QgsPalLayerSettings.Property.PositionPoint
-QgsPalLayerSettings.PositionPoint.is_monkey_patched = True
 QgsPalLayerSettings.PositionPoint.__doc__ = "Point-coordinate data defined label position"
-QgsPalLayerSettings.Hali = QgsPalLayerSettings.Property.Hali
-QgsPalLayerSettings.Hali.is_monkey_patched = True
 QgsPalLayerSettings.Hali.__doc__ = "Horizontal alignment for data defined label position (Left, Center, Right)"
-QgsPalLayerSettings.Vali = QgsPalLayerSettings.Property.Vali
-QgsPalLayerSettings.Vali.is_monkey_patched = True
 QgsPalLayerSettings.Vali.__doc__ = "Vertical alignment for data defined label position (Bottom, Base, Half, Cap, Top)"
-QgsPalLayerSettings.Rotation = QgsPalLayerSettings.Property.Rotation
-QgsPalLayerSettings.Rotation.is_monkey_patched = True
 QgsPalLayerSettings.Rotation.__doc__ = "Label rotation (deprecated, for old project compatibility only)"
-QgsPalLayerSettings.LabelRotation = QgsPalLayerSettings.Property.LabelRotation
-QgsPalLayerSettings.LabelRotation.is_monkey_patched = True
 QgsPalLayerSettings.LabelRotation.__doc__ = "Label rotation"
-QgsPalLayerSettings.RepeatDistance = QgsPalLayerSettings.Property.RepeatDistance
-QgsPalLayerSettings.RepeatDistance.is_monkey_patched = True
 QgsPalLayerSettings.RepeatDistance.__doc__ = ""
-QgsPalLayerSettings.RepeatDistanceUnit = QgsPalLayerSettings.Property.RepeatDistanceUnit
-QgsPalLayerSettings.RepeatDistanceUnit.is_monkey_patched = True
 QgsPalLayerSettings.RepeatDistanceUnit.__doc__ = ""
-QgsPalLayerSettings.Priority = QgsPalLayerSettings.Property.Priority
-QgsPalLayerSettings.Priority.is_monkey_patched = True
 QgsPalLayerSettings.Priority.__doc__ = ""
-QgsPalLayerSettings.PredefinedPositionOrder = QgsPalLayerSettings.Property.PredefinedPositionOrder
-QgsPalLayerSettings.PredefinedPositionOrder.is_monkey_patched = True
 QgsPalLayerSettings.PredefinedPositionOrder.__doc__ = ""
-QgsPalLayerSettings.LinePlacementOptions = QgsPalLayerSettings.Property.LinePlacementOptions
-QgsPalLayerSettings.LinePlacementOptions.is_monkey_patched = True
 QgsPalLayerSettings.LinePlacementOptions.__doc__ = "Line placement flags"
-QgsPalLayerSettings.OverrunDistance = QgsPalLayerSettings.Property.OverrunDistance
-QgsPalLayerSettings.OverrunDistance.is_monkey_patched = True
 QgsPalLayerSettings.OverrunDistance.__doc__ = "Distance which labels can extend past either end of linear features"
-QgsPalLayerSettings.LabelAllParts = QgsPalLayerSettings.Property.LabelAllParts
-QgsPalLayerSettings.LabelAllParts.is_monkey_patched = True
 QgsPalLayerSettings.LabelAllParts.__doc__ = "Whether all parts of multi-part features should be labeled"
-QgsPalLayerSettings.PolygonLabelOutside = QgsPalLayerSettings.Property.PolygonLabelOutside
-QgsPalLayerSettings.PolygonLabelOutside.is_monkey_patched = True
 QgsPalLayerSettings.PolygonLabelOutside.__doc__ = "Whether labels outside a polygon feature are permitted, or should be forced \n.. versionadded:: 3.14"
-QgsPalLayerSettings.LineAnchorPercent = QgsPalLayerSettings.Property.LineAnchorPercent
-QgsPalLayerSettings.LineAnchorPercent.is_monkey_patched = True
 QgsPalLayerSettings.LineAnchorPercent.__doc__ = "Portion along line at which labels should be anchored \n.. versionadded:: 3.16"
-QgsPalLayerSettings.LineAnchorClipping = QgsPalLayerSettings.Property.LineAnchorClipping
-QgsPalLayerSettings.LineAnchorClipping.is_monkey_patched = True
 QgsPalLayerSettings.LineAnchorClipping.__doc__ = "Clipping mode for line anchor calculation \n.. versionadded:: 3.20"
-QgsPalLayerSettings.LineAnchorType = QgsPalLayerSettings.Property.LineAnchorType
-QgsPalLayerSettings.LineAnchorType.is_monkey_patched = True
 QgsPalLayerSettings.LineAnchorType.__doc__ = "Line anchor type \n.. versionadded:: 3.26"
-QgsPalLayerSettings.LineAnchorTextPoint = QgsPalLayerSettings.Property.LineAnchorTextPoint
-QgsPalLayerSettings.LineAnchorTextPoint.is_monkey_patched = True
 QgsPalLayerSettings.LineAnchorTextPoint.__doc__ = "Line anchor text point \n.. versionadded:: 3.26"
-QgsPalLayerSettings.ScaleVisibility = QgsPalLayerSettings.Property.ScaleVisibility
-QgsPalLayerSettings.ScaleVisibility.is_monkey_patched = True
 QgsPalLayerSettings.ScaleVisibility.__doc__ = ""
-QgsPalLayerSettings.MinScale = QgsPalLayerSettings.Property.MinScale
-QgsPalLayerSettings.MinScale.is_monkey_patched = True
 QgsPalLayerSettings.MinScale.__doc__ = "Min scale (deprecated, for old project compatibility only)"
-QgsPalLayerSettings.MinimumScale = QgsPalLayerSettings.Property.MinimumScale
-QgsPalLayerSettings.MinimumScale.is_monkey_patched = True
 QgsPalLayerSettings.MinimumScale.__doc__ = "Minimum map scale (ie most \"zoomed out\")"
-QgsPalLayerSettings.MaxScale = QgsPalLayerSettings.Property.MaxScale
-QgsPalLayerSettings.MaxScale.is_monkey_patched = True
 QgsPalLayerSettings.MaxScale.__doc__ = "Max scale (deprecated, for old project compatibility only)"
-QgsPalLayerSettings.MaximumScale = QgsPalLayerSettings.Property.MaximumScale
-QgsPalLayerSettings.MaximumScale.is_monkey_patched = True
 QgsPalLayerSettings.MaximumScale.__doc__ = "Maximum map scale (ie most \"zoomed in\")"
-QgsPalLayerSettings.FontLimitPixel = QgsPalLayerSettings.Property.FontLimitPixel
-QgsPalLayerSettings.FontLimitPixel.is_monkey_patched = True
 QgsPalLayerSettings.FontLimitPixel.__doc__ = ""
-QgsPalLayerSettings.FontMinPixel = QgsPalLayerSettings.Property.FontMinPixel
-QgsPalLayerSettings.FontMinPixel.is_monkey_patched = True
 QgsPalLayerSettings.FontMinPixel.__doc__ = ""
-QgsPalLayerSettings.FontMaxPixel = QgsPalLayerSettings.Property.FontMaxPixel
-QgsPalLayerSettings.FontMaxPixel.is_monkey_patched = True
 QgsPalLayerSettings.FontMaxPixel.__doc__ = ""
-QgsPalLayerSettings.IsObstacle = QgsPalLayerSettings.Property.IsObstacle
-QgsPalLayerSettings.IsObstacle.is_monkey_patched = True
 QgsPalLayerSettings.IsObstacle.__doc__ = ""
-QgsPalLayerSettings.ObstacleFactor = QgsPalLayerSettings.Property.ObstacleFactor
-QgsPalLayerSettings.ObstacleFactor.is_monkey_patched = True
 QgsPalLayerSettings.ObstacleFactor.__doc__ = ""
-QgsPalLayerSettings.ZIndex = QgsPalLayerSettings.Property.ZIndex
-QgsPalLayerSettings.ZIndex.is_monkey_patched = True
 QgsPalLayerSettings.ZIndex.__doc__ = ""
-QgsPalLayerSettings.CalloutDraw = QgsPalLayerSettings.Property.CalloutDraw
-QgsPalLayerSettings.CalloutDraw.is_monkey_patched = True
 QgsPalLayerSettings.CalloutDraw.__doc__ = "Show callout"
-QgsPalLayerSettings.AllowDegradedPlacement = QgsPalLayerSettings.Property.AllowDegradedPlacement
-QgsPalLayerSettings.AllowDegradedPlacement.is_monkey_patched = True
 QgsPalLayerSettings.AllowDegradedPlacement.__doc__ = "Allow degraded label placements \n.. versionadded:: 3.26"
-QgsPalLayerSettings.OverlapHandling = QgsPalLayerSettings.Property.OverlapHandling
-QgsPalLayerSettings.OverlapHandling.is_monkey_patched = True
 QgsPalLayerSettings.OverlapHandling.__doc__ = "Overlap handling technique \n.. versionadded:: 3.26"
-QgsPalLayerSettings.LabelMarginDistance = QgsPalLayerSettings.Property.LabelMarginDistance
-QgsPalLayerSettings.LabelMarginDistance.is_monkey_patched = True
 QgsPalLayerSettings.LabelMarginDistance.__doc__ = "Minimum distance from labels for this feature to other labels \n.. versionadded:: 3.44"
-QgsPalLayerSettings.RemoveDuplicateLabels = QgsPalLayerSettings.Property.RemoveDuplicateLabels
-QgsPalLayerSettings.RemoveDuplicateLabels.is_monkey_patched = True
 QgsPalLayerSettings.RemoveDuplicateLabels.__doc__ = "Whether this feature can cause removal of duplicate labels \n.. versionadded:: 3.44"
-QgsPalLayerSettings.RemoveDuplicateLabelDistance = QgsPalLayerSettings.Property.RemoveDuplicateLabelDistance
-QgsPalLayerSettings.RemoveDuplicateLabelDistance.is_monkey_patched = True
 QgsPalLayerSettings.RemoveDuplicateLabelDistance.__doc__ = "Minimum distance from labels for this feature to other labels with duplicate text \n.. versionadded:: 3.44"
-QgsPalLayerSettings.Show = QgsPalLayerSettings.Property.Show
-QgsPalLayerSettings.Show.is_monkey_patched = True
 QgsPalLayerSettings.Show.__doc__ = ""
-QgsPalLayerSettings.AlwaysShow = QgsPalLayerSettings.Property.AlwaysShow
-QgsPalLayerSettings.AlwaysShow.is_monkey_patched = True
 QgsPalLayerSettings.AlwaysShow.__doc__ = ""
 QgsPalLayerSettings.Property.__doc__ = """Data definable properties.
 
@@ -19159,31 +16164,18 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/pointcloud/qgspointcloudattributemodel.h
-QgsPointCloudAttributeModel.FieldRoles = QgsPointCloudAttributeModel.CustomRole
 # monkey patching scoped based enum
-QgsPointCloudAttributeModel.AttributeNameRole = QgsPointCloudAttributeModel.CustomRole.AttributeName
 QgsPointCloudAttributeModel.FieldRoles.AttributeNameRole = QgsPointCloudAttributeModel.CustomRole.AttributeName
-QgsPointCloudAttributeModel.AttributeNameRole.is_monkey_patched = True
 QgsPointCloudAttributeModel.AttributeNameRole.__doc__ = "Attribute name"
-QgsPointCloudAttributeModel.AttributeIndexRole = QgsPointCloudAttributeModel.CustomRole.AttributeIndex
 QgsPointCloudAttributeModel.FieldRoles.AttributeIndexRole = QgsPointCloudAttributeModel.CustomRole.AttributeIndex
-QgsPointCloudAttributeModel.AttributeIndexRole.is_monkey_patched = True
 QgsPointCloudAttributeModel.AttributeIndexRole.__doc__ = "Attribute index if index corresponds to an attribute"
-QgsPointCloudAttributeModel.AttributeSizeRole = QgsPointCloudAttributeModel.CustomRole.AttributeSize
 QgsPointCloudAttributeModel.FieldRoles.AttributeSizeRole = QgsPointCloudAttributeModel.CustomRole.AttributeSize
-QgsPointCloudAttributeModel.AttributeSizeRole.is_monkey_patched = True
 QgsPointCloudAttributeModel.AttributeSizeRole.__doc__ = "Attribute size"
-QgsPointCloudAttributeModel.AttributeTypeRole = QgsPointCloudAttributeModel.CustomRole.AttributeType
 QgsPointCloudAttributeModel.FieldRoles.AttributeTypeRole = QgsPointCloudAttributeModel.CustomRole.AttributeType
-QgsPointCloudAttributeModel.AttributeTypeRole.is_monkey_patched = True
 QgsPointCloudAttributeModel.AttributeTypeRole.__doc__ = "Attribute type, see QgsPointCloudAttribute.DataType"
-QgsPointCloudAttributeModel.IsEmptyRole = QgsPointCloudAttributeModel.CustomRole.IsEmpty
 QgsPointCloudAttributeModel.FieldRoles.IsEmptyRole = QgsPointCloudAttributeModel.CustomRole.IsEmpty
-QgsPointCloudAttributeModel.IsEmptyRole.is_monkey_patched = True
 QgsPointCloudAttributeModel.IsEmptyRole.__doc__ = "``True`` if the index corresponds to the empty value"
-QgsPointCloudAttributeModel.IsNumericRole = QgsPointCloudAttributeModel.CustomRole.IsNumeric
 QgsPointCloudAttributeModel.FieldRoles.IsNumericRole = QgsPointCloudAttributeModel.CustomRole.IsNumeric
-QgsPointCloudAttributeModel.IsNumericRole.is_monkey_patched = True
 QgsPointCloudAttributeModel.IsNumericRole.__doc__ = "``True`` if the index corresponds to a numeric attributre"
 QgsPointCloudAttributeModel.CustomRole.__doc__ = """Custom model roles.
 
@@ -19483,8 +16475,6 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/processing/qgsprocessing.h
 # monkey patching scoped based enum
-QgsProcessing.PythonQgsProcessingAlgorithmSubclass = QgsProcessing.PythonOutputType.PythonQgsProcessingAlgorithmSubclass
-QgsProcessing.PythonQgsProcessingAlgorithmSubclass.is_monkey_patched = True
 QgsProcessing.PythonOutputType.PythonQgsProcessingAlgorithmSubclass.__doc__ = "Full Python QgsProcessingAlgorithm subclass"
 QgsProcessing.PythonOutputType.__doc__ = """Available Python output types
 
@@ -20264,29 +17254,13 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/processing/qgsprocessingutils.h
 # monkey patching scoped based enum
-QgsProcessingUtils.UnknownType = QgsProcessingUtils.LayerHint.UnknownType
-QgsProcessingUtils.UnknownType.is_monkey_patched = True
 QgsProcessingUtils.LayerHint.UnknownType.__doc__ = "Unknown layer type"
-QgsProcessingUtils.Vector = QgsProcessingUtils.LayerHint.Vector
-QgsProcessingUtils.Vector.is_monkey_patched = True
 QgsProcessingUtils.LayerHint.Vector.__doc__ = "Vector layer type"
-QgsProcessingUtils.Raster = QgsProcessingUtils.LayerHint.Raster
-QgsProcessingUtils.Raster.is_monkey_patched = True
 QgsProcessingUtils.LayerHint.Raster.__doc__ = "Raster layer type"
-QgsProcessingUtils.Mesh = QgsProcessingUtils.LayerHint.Mesh
-QgsProcessingUtils.Mesh.is_monkey_patched = True
 QgsProcessingUtils.LayerHint.Mesh.__doc__ = "Mesh layer type, since QGIS 3.6"
-QgsProcessingUtils.PointCloud = QgsProcessingUtils.LayerHint.PointCloud
-QgsProcessingUtils.PointCloud.is_monkey_patched = True
 QgsProcessingUtils.LayerHint.PointCloud.__doc__ = "Point cloud layer type, since QGIS 3.22"
-QgsProcessingUtils.Annotation = QgsProcessingUtils.LayerHint.Annotation
-QgsProcessingUtils.Annotation.is_monkey_patched = True
 QgsProcessingUtils.LayerHint.Annotation.__doc__ = "Annotation layer type, since QGIS 3.22"
-QgsProcessingUtils.VectorTile = QgsProcessingUtils.LayerHint.VectorTile
-QgsProcessingUtils.VectorTile.is_monkey_patched = True
 QgsProcessingUtils.LayerHint.VectorTile.__doc__ = "Vector tile layer type, since QGIS 3.32"
-QgsProcessingUtils.TiledScene = QgsProcessingUtils.LayerHint.TiledScene
-QgsProcessingUtils.TiledScene.is_monkey_patched = True
 QgsProcessingUtils.LayerHint.TiledScene.__doc__ = "Tiled scene layer type, since QGIS 3.34"
 QgsProcessingUtils.LayerHint.__doc__ = """Layer type hints.
 
@@ -20418,14 +17392,8 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/project/qgsproject.h
 # monkey patching scoped based enum
-QgsProject.NoProperty = QgsProject.DataDefinedServerProperty.NoProperty
-QgsProject.NoProperty.is_monkey_patched = True
 QgsProject.NoProperty.__doc__ = "No property"
-QgsProject.AllProperties = QgsProject.DataDefinedServerProperty.AllProperties
-QgsProject.AllProperties.is_monkey_patched = True
 QgsProject.AllProperties.__doc__ = "All properties for item"
-QgsProject.WMSOnlineResource = QgsProject.DataDefinedServerProperty.WMSOnlineResource
-QgsProject.WMSOnlineResource.is_monkey_patched = True
 QgsProject.WMSOnlineResource.__doc__ = "Alias"
 QgsProject.DataDefinedServerProperty.__doc__ = """Data defined properties.
 Overrides of user defined server parameters are stored in a
@@ -20554,15 +17522,10 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/project/qgsprojectstylesettings.h
-QgsProjectStyleDatabaseModel.Role = QgsProjectStyleDatabaseModel.CustomRole
 # monkey patching scoped based enum
-QgsProjectStyleDatabaseModel.StyleRole = QgsProjectStyleDatabaseModel.CustomRole.Style
 QgsProjectStyleDatabaseModel.Role.StyleRole = QgsProjectStyleDatabaseModel.CustomRole.Style
-QgsProjectStyleDatabaseModel.StyleRole.is_monkey_patched = True
 QgsProjectStyleDatabaseModel.StyleRole.__doc__ = "Style object"
-QgsProjectStyleDatabaseModel.PathRole = QgsProjectStyleDatabaseModel.CustomRole.Path
 QgsProjectStyleDatabaseModel.Role.PathRole = QgsProjectStyleDatabaseModel.CustomRole.Path
-QgsProjectStyleDatabaseModel.PathRole.is_monkey_patched = True
 QgsProjectStyleDatabaseModel.PathRole.__doc__ = "Style path"
 QgsProjectStyleDatabaseModel.CustomRole.__doc__ = """Custom model roles.
 
@@ -20708,23 +17671,14 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/qgsproviderconnectionmodel.h
-QgsProviderConnectionModel.Role = QgsProviderConnectionModel.CustomRole
 # monkey patching scoped based enum
-QgsProviderConnectionModel.RoleConnectionName = QgsProviderConnectionModel.CustomRole.ConnectionName
 QgsProviderConnectionModel.Role.RoleConnectionName = QgsProviderConnectionModel.CustomRole.ConnectionName
-QgsProviderConnectionModel.RoleConnectionName.is_monkey_patched = True
 QgsProviderConnectionModel.RoleConnectionName.__doc__ = "Connection name"
-QgsProviderConnectionModel.RoleUri = QgsProviderConnectionModel.CustomRole.Uri
 QgsProviderConnectionModel.Role.RoleUri = QgsProviderConnectionModel.CustomRole.Uri
-QgsProviderConnectionModel.RoleUri.is_monkey_patched = True
 QgsProviderConnectionModel.RoleUri.__doc__ = "Connection URI string"
-QgsProviderConnectionModel.RoleConfiguration = QgsProviderConnectionModel.CustomRole.Configuration
 QgsProviderConnectionModel.Role.RoleConfiguration = QgsProviderConnectionModel.CustomRole.Configuration
-QgsProviderConnectionModel.RoleConfiguration.is_monkey_patched = True
 QgsProviderConnectionModel.RoleConfiguration.__doc__ = "Connection configuration variant map"
-QgsProviderConnectionModel.RoleEmpty = QgsProviderConnectionModel.CustomRole.Empty
 QgsProviderConnectionModel.Role.RoleEmpty = QgsProviderConnectionModel.CustomRole.Empty
-QgsProviderConnectionModel.RoleEmpty.is_monkey_patched = True
 QgsProviderConnectionModel.RoleEmpty.__doc__ = "Entry is an empty entry"
 QgsProviderConnectionModel.CustomRole.__doc__ = """Custom model roles.
 
@@ -21203,8 +18157,6 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/raster/qgsrasterpipe.h
 # monkey patching scoped based enum
-QgsRasterPipe.RendererOpacity = QgsRasterPipe.Property.RendererOpacity
-QgsRasterPipe.RendererOpacity.is_monkey_patched = True
 QgsRasterPipe.RendererOpacity.__doc__ = "Raster renderer global opacity"
 QgsRasterPipe.Property.__doc__ = """Data definable properties.
 
@@ -21692,28 +18644,13 @@ QgsSensorModel.Column.__doc__ = """Model columns
 
 """
 # --
-QgsSensorModel.Role = QgsSensorModel.CustomRole
 # monkey patching scoped based enum
-QgsSensorModel.SensorType = QgsSensorModel.CustomRole.SensorType
-QgsSensorModel.SensorType.is_monkey_patched = True
 QgsSensorModel.SensorType.__doc__ = "Sensor type"
-QgsSensorModel.SensorId = QgsSensorModel.CustomRole.SensorId
-QgsSensorModel.SensorId.is_monkey_patched = True
 QgsSensorModel.SensorId.__doc__ = "Sensor id"
-QgsSensorModel.SensorName = QgsSensorModel.CustomRole.SensorName
-QgsSensorModel.SensorName.is_monkey_patched = True
 QgsSensorModel.SensorName.__doc__ = "Sensor name"
-QgsSensorModel.SensorStatus = QgsSensorModel.CustomRole.SensorStatus
-QgsSensorModel.SensorStatus.is_monkey_patched = True
 QgsSensorModel.SensorStatus.__doc__ = "Sensor status (disconnected, connected, etc.)"
-QgsSensorModel.SensorLastValue = QgsSensorModel.CustomRole.SensorLastValue
-QgsSensorModel.SensorLastValue.is_monkey_patched = True
 QgsSensorModel.SensorLastValue.__doc__ = "Sensor last captured value"
-QgsSensorModel.SensorLastTimestamp = QgsSensorModel.CustomRole.SensorLastTimestamp
-QgsSensorModel.SensorLastTimestamp.is_monkey_patched = True
 QgsSensorModel.SensorLastTimestamp.__doc__ = "Sensor timestamp of last captured value"
-QgsSensorModel.Sensor = QgsSensorModel.CustomRole.Sensor
-QgsSensorModel.Sensor.is_monkey_patched = True
 QgsSensorModel.Sensor.__doc__ = "Sensor object pointer"
 QgsSensorModel.CustomRole.__doc__ = """Custom model roles.
 
@@ -22433,44 +19370,23 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/symbology/qgsstylemodel.h
-QgsStyleModel.Role = QgsStyleModel.CustomRole
 # monkey patching scoped based enum
-QgsStyleModel.TypeRole = QgsStyleModel.CustomRole.Type
 QgsStyleModel.Role.TypeRole = QgsStyleModel.CustomRole.Type
-QgsStyleModel.TypeRole.is_monkey_patched = True
 QgsStyleModel.TypeRole.__doc__ = "Style entity type, see QgsStyle.StyleEntity"
-QgsStyleModel.TagRole = QgsStyleModel.CustomRole.Tag
 QgsStyleModel.Role.TagRole = QgsStyleModel.CustomRole.Tag
-QgsStyleModel.TagRole.is_monkey_patched = True
 QgsStyleModel.TagRole.__doc__ = "String list of tags"
-QgsStyleModel.EntityName = QgsStyleModel.CustomRole.EntityName
-QgsStyleModel.EntityName.is_monkey_patched = True
 QgsStyleModel.EntityName.__doc__ = "Entity name \n.. versionadded:: 3.26"
-QgsStyleModel.SymbolTypeRole = QgsStyleModel.CustomRole.SymbolType
 QgsStyleModel.Role.SymbolTypeRole = QgsStyleModel.CustomRole.SymbolType
-QgsStyleModel.SymbolTypeRole.is_monkey_patched = True
 QgsStyleModel.SymbolTypeRole.__doc__ = "Symbol type (for symbol or legend patch shape entities)"
-QgsStyleModel.IsFavoriteRole = QgsStyleModel.CustomRole.IsFavorite
 QgsStyleModel.Role.IsFavoriteRole = QgsStyleModel.CustomRole.IsFavorite
-QgsStyleModel.IsFavoriteRole.is_monkey_patched = True
 QgsStyleModel.IsFavoriteRole.__doc__ = "Whether entity is flagged as a favorite"
-QgsStyleModel.LayerTypeRole = QgsStyleModel.CustomRole.LayerType
 QgsStyleModel.Role.LayerTypeRole = QgsStyleModel.CustomRole.LayerType
-QgsStyleModel.LayerTypeRole.is_monkey_patched = True
 QgsStyleModel.LayerTypeRole.__doc__ = "Layer type (for label settings entities)"
-QgsStyleModel.CompatibleGeometryTypesRole = QgsStyleModel.CustomRole.CompatibleGeometryTypes
 QgsStyleModel.Role.CompatibleGeometryTypesRole = QgsStyleModel.CustomRole.CompatibleGeometryTypes
-QgsStyleModel.CompatibleGeometryTypesRole.is_monkey_patched = True
 QgsStyleModel.CompatibleGeometryTypesRole.__doc__ = "Compatible layer geometry types (for 3D symbols)"
-QgsStyleModel.StyleName = QgsStyleModel.CustomRole.StyleName
-QgsStyleModel.StyleName.is_monkey_patched = True
 QgsStyleModel.StyleName.__doc__ = "Name of associated QgsStyle (QgsStyle.name()) \n.. versionadded:: 3.26"
-QgsStyleModel.StyleFileName = QgsStyleModel.CustomRole.StyleFileName
-QgsStyleModel.StyleFileName.is_monkey_patched = True
 QgsStyleModel.StyleFileName.__doc__ = "File name of associated QgsStyle (QgsStyle.fileName()) \n.. versionadded:: 3.26"
-QgsStyleModel.IsTitleRole = QgsStyleModel.CustomRole.IsTitle
 QgsStyleModel.Role.IsTitleRole = QgsStyleModel.CustomRole.IsTitle
-QgsStyleModel.IsTitleRole.is_monkey_patched = True
 QgsStyleModel.IsTitleRole.__doc__ = "True if the index corresponds to a title item \n.. versionadded:: 3.26"
 QgsStyleModel.CustomRole.__doc__ = """Custom model roles.
 
@@ -22560,12 +19476,8 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/symbology/qgssymbol.h
 # monkey patching scoped based enum
-QgsSymbol.PropertyOpacity = QgsSymbol.Property.Opacity
 QgsSymbol.Property.PropertyOpacity = QgsSymbol.Property.Opacity
-QgsSymbol.PropertyOpacity.is_monkey_patched = True
 QgsSymbol.PropertyOpacity.__doc__ = "Opacity"
-QgsSymbol.ExtentBuffer = QgsSymbol.Property.ExtentBuffer
-QgsSymbol.ExtentBuffer.is_monkey_patched = True
 QgsSymbol.ExtentBuffer.__doc__ = "Extent buffer \n.. versionadded:: 3.42"
 QgsSymbol.Property.__doc__ = """Data definable properties.
 
@@ -22604,291 +19516,147 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/core/symbology/qgssymbollayer.h
 # monkey patching scoped based enum
-QgsSymbolLayer.PropertySize = QgsSymbolLayer.Property.Size
 QgsSymbolLayer.Property.PropertySize = QgsSymbolLayer.Property.Size
-QgsSymbolLayer.PropertySize.is_monkey_patched = True
 QgsSymbolLayer.PropertySize.__doc__ = "Symbol size"
-QgsSymbolLayer.PropertyAngle = QgsSymbolLayer.Property.Angle
 QgsSymbolLayer.Property.PropertyAngle = QgsSymbolLayer.Property.Angle
-QgsSymbolLayer.PropertyAngle.is_monkey_patched = True
 QgsSymbolLayer.PropertyAngle.__doc__ = "Symbol angle"
-QgsSymbolLayer.PropertyName = QgsSymbolLayer.Property.Name
 QgsSymbolLayer.Property.PropertyName = QgsSymbolLayer.Property.Name
-QgsSymbolLayer.PropertyName.is_monkey_patched = True
 QgsSymbolLayer.PropertyName.__doc__ = "Name, eg shape name for simple markers"
-QgsSymbolLayer.PropertyFillColor = QgsSymbolLayer.Property.FillColor
 QgsSymbolLayer.Property.PropertyFillColor = QgsSymbolLayer.Property.FillColor
-QgsSymbolLayer.PropertyFillColor.is_monkey_patched = True
 QgsSymbolLayer.PropertyFillColor.__doc__ = "Fill color"
-QgsSymbolLayer.PropertyStrokeColor = QgsSymbolLayer.Property.StrokeColor
 QgsSymbolLayer.Property.PropertyStrokeColor = QgsSymbolLayer.Property.StrokeColor
-QgsSymbolLayer.PropertyStrokeColor.is_monkey_patched = True
 QgsSymbolLayer.PropertyStrokeColor.__doc__ = "Stroke color"
-QgsSymbolLayer.PropertyStrokeWidth = QgsSymbolLayer.Property.StrokeWidth
 QgsSymbolLayer.Property.PropertyStrokeWidth = QgsSymbolLayer.Property.StrokeWidth
-QgsSymbolLayer.PropertyStrokeWidth.is_monkey_patched = True
 QgsSymbolLayer.PropertyStrokeWidth.__doc__ = "Stroke width"
-QgsSymbolLayer.PropertyStrokeStyle = QgsSymbolLayer.Property.StrokeStyle
 QgsSymbolLayer.Property.PropertyStrokeStyle = QgsSymbolLayer.Property.StrokeStyle
-QgsSymbolLayer.PropertyStrokeStyle.is_monkey_patched = True
 QgsSymbolLayer.PropertyStrokeStyle.__doc__ = "Stroke style (eg solid, dashed)"
-QgsSymbolLayer.PropertyOffset = QgsSymbolLayer.Property.Offset
 QgsSymbolLayer.Property.PropertyOffset = QgsSymbolLayer.Property.Offset
-QgsSymbolLayer.PropertyOffset.is_monkey_patched = True
 QgsSymbolLayer.PropertyOffset.__doc__ = "Symbol offset"
-QgsSymbolLayer.PropertyCharacter = QgsSymbolLayer.Property.Character
 QgsSymbolLayer.Property.PropertyCharacter = QgsSymbolLayer.Property.Character
-QgsSymbolLayer.PropertyCharacter.is_monkey_patched = True
 QgsSymbolLayer.PropertyCharacter.__doc__ = "Character, eg for font marker symbol layers"
-QgsSymbolLayer.PropertyWidth = QgsSymbolLayer.Property.Width
 QgsSymbolLayer.Property.PropertyWidth = QgsSymbolLayer.Property.Width
-QgsSymbolLayer.PropertyWidth.is_monkey_patched = True
 QgsSymbolLayer.PropertyWidth.__doc__ = "Symbol width"
-QgsSymbolLayer.PropertyHeight = QgsSymbolLayer.Property.Height
 QgsSymbolLayer.Property.PropertyHeight = QgsSymbolLayer.Property.Height
-QgsSymbolLayer.PropertyHeight.is_monkey_patched = True
 QgsSymbolLayer.PropertyHeight.__doc__ = "Symbol height"
-QgsSymbolLayer.PropertyPreserveAspectRatio = QgsSymbolLayer.Property.PreserveAspectRatio
 QgsSymbolLayer.Property.PropertyPreserveAspectRatio = QgsSymbolLayer.Property.PreserveAspectRatio
-QgsSymbolLayer.PropertyPreserveAspectRatio.is_monkey_patched = True
 QgsSymbolLayer.PropertyPreserveAspectRatio.__doc__ = "Preserve aspect ratio between width and height"
-QgsSymbolLayer.PropertyFillStyle = QgsSymbolLayer.Property.FillStyle
 QgsSymbolLayer.Property.PropertyFillStyle = QgsSymbolLayer.Property.FillStyle
-QgsSymbolLayer.PropertyFillStyle.is_monkey_patched = True
 QgsSymbolLayer.PropertyFillStyle.__doc__ = "Fill style (eg solid, dots)"
-QgsSymbolLayer.PropertyJoinStyle = QgsSymbolLayer.Property.JoinStyle
 QgsSymbolLayer.Property.PropertyJoinStyle = QgsSymbolLayer.Property.JoinStyle
-QgsSymbolLayer.PropertyJoinStyle.is_monkey_patched = True
 QgsSymbolLayer.PropertyJoinStyle.__doc__ = "Line join style"
-QgsSymbolLayer.PropertySecondaryColor = QgsSymbolLayer.Property.SecondaryColor
 QgsSymbolLayer.Property.PropertySecondaryColor = QgsSymbolLayer.Property.SecondaryColor
-QgsSymbolLayer.PropertySecondaryColor.is_monkey_patched = True
 QgsSymbolLayer.PropertySecondaryColor.__doc__ = "Secondary color (eg for gradient fills)"
-QgsSymbolLayer.PropertyLineAngle = QgsSymbolLayer.Property.LineAngle
 QgsSymbolLayer.Property.PropertyLineAngle = QgsSymbolLayer.Property.LineAngle
-QgsSymbolLayer.PropertyLineAngle.is_monkey_patched = True
 QgsSymbolLayer.PropertyLineAngle.__doc__ = "Line angle, or angle of hash lines for hash line symbols"
-QgsSymbolLayer.PropertyLineDistance = QgsSymbolLayer.Property.LineDistance
 QgsSymbolLayer.Property.PropertyLineDistance = QgsSymbolLayer.Property.LineDistance
-QgsSymbolLayer.PropertyLineDistance.is_monkey_patched = True
 QgsSymbolLayer.PropertyLineDistance.__doc__ = "Distance between lines, or length of lines for hash line symbols"
-QgsSymbolLayer.PropertyGradientType = QgsSymbolLayer.Property.GradientType
 QgsSymbolLayer.Property.PropertyGradientType = QgsSymbolLayer.Property.GradientType
-QgsSymbolLayer.PropertyGradientType.is_monkey_patched = True
 QgsSymbolLayer.PropertyGradientType.__doc__ = "Gradient fill type"
-QgsSymbolLayer.PropertyCoordinateMode = QgsSymbolLayer.Property.CoordinateMode
 QgsSymbolLayer.Property.PropertyCoordinateMode = QgsSymbolLayer.Property.CoordinateMode
-QgsSymbolLayer.PropertyCoordinateMode.is_monkey_patched = True
 QgsSymbolLayer.PropertyCoordinateMode.__doc__ = "Gradient coordinate mode"
-QgsSymbolLayer.PropertyGradientSpread = QgsSymbolLayer.Property.GradientSpread
 QgsSymbolLayer.Property.PropertyGradientSpread = QgsSymbolLayer.Property.GradientSpread
-QgsSymbolLayer.PropertyGradientSpread.is_monkey_patched = True
 QgsSymbolLayer.PropertyGradientSpread.__doc__ = "Gradient spread mode"
-QgsSymbolLayer.PropertyGradientReference1X = QgsSymbolLayer.Property.GradientReference1X
 QgsSymbolLayer.Property.PropertyGradientReference1X = QgsSymbolLayer.Property.GradientReference1X
-QgsSymbolLayer.PropertyGradientReference1X.is_monkey_patched = True
 QgsSymbolLayer.PropertyGradientReference1X.__doc__ = "Gradient reference point 1 x"
-QgsSymbolLayer.PropertyGradientReference1Y = QgsSymbolLayer.Property.GradientReference1Y
 QgsSymbolLayer.Property.PropertyGradientReference1Y = QgsSymbolLayer.Property.GradientReference1Y
-QgsSymbolLayer.PropertyGradientReference1Y.is_monkey_patched = True
 QgsSymbolLayer.PropertyGradientReference1Y.__doc__ = "Gradient reference point 1 y"
-QgsSymbolLayer.PropertyGradientReference2X = QgsSymbolLayer.Property.GradientReference2X
 QgsSymbolLayer.Property.PropertyGradientReference2X = QgsSymbolLayer.Property.GradientReference2X
-QgsSymbolLayer.PropertyGradientReference2X.is_monkey_patched = True
 QgsSymbolLayer.PropertyGradientReference2X.__doc__ = "Gradient reference point 2 x"
-QgsSymbolLayer.PropertyGradientReference2Y = QgsSymbolLayer.Property.GradientReference2Y
 QgsSymbolLayer.Property.PropertyGradientReference2Y = QgsSymbolLayer.Property.GradientReference2Y
-QgsSymbolLayer.PropertyGradientReference2Y.is_monkey_patched = True
 QgsSymbolLayer.PropertyGradientReference2Y.__doc__ = "Gradient reference point 2 y"
-QgsSymbolLayer.PropertyGradientReference1IsCentroid = QgsSymbolLayer.Property.GradientReference1IsCentroid
 QgsSymbolLayer.Property.PropertyGradientReference1IsCentroid = QgsSymbolLayer.Property.GradientReference1IsCentroid
-QgsSymbolLayer.PropertyGradientReference1IsCentroid.is_monkey_patched = True
 QgsSymbolLayer.PropertyGradientReference1IsCentroid.__doc__ = "Gradient reference point 1 is centroid"
-QgsSymbolLayer.PropertyGradientReference2IsCentroid = QgsSymbolLayer.Property.GradientReference2IsCentroid
 QgsSymbolLayer.Property.PropertyGradientReference2IsCentroid = QgsSymbolLayer.Property.GradientReference2IsCentroid
-QgsSymbolLayer.PropertyGradientReference2IsCentroid.is_monkey_patched = True
 QgsSymbolLayer.PropertyGradientReference2IsCentroid.__doc__ = "Gradient reference point 2 is centroid"
-QgsSymbolLayer.PropertyBlurRadius = QgsSymbolLayer.Property.BlurRadius
 QgsSymbolLayer.Property.PropertyBlurRadius = QgsSymbolLayer.Property.BlurRadius
-QgsSymbolLayer.PropertyBlurRadius.is_monkey_patched = True
 QgsSymbolLayer.PropertyBlurRadius.__doc__ = "Shapeburst blur radius"
-QgsSymbolLayer.PropertyShapeburstUseWholeShape = QgsSymbolLayer.Property.ShapeburstUseWholeShape
 QgsSymbolLayer.Property.PropertyShapeburstUseWholeShape = QgsSymbolLayer.Property.ShapeburstUseWholeShape
-QgsSymbolLayer.PropertyShapeburstUseWholeShape.is_monkey_patched = True
 QgsSymbolLayer.PropertyShapeburstUseWholeShape.__doc__ = "Shapeburst use whole shape"
-QgsSymbolLayer.PropertyShapeburstMaxDistance = QgsSymbolLayer.Property.ShapeburstMaxDistance
 QgsSymbolLayer.Property.PropertyShapeburstMaxDistance = QgsSymbolLayer.Property.ShapeburstMaxDistance
-QgsSymbolLayer.PropertyShapeburstMaxDistance.is_monkey_patched = True
 QgsSymbolLayer.PropertyShapeburstMaxDistance.__doc__ = "Shapeburst fill from edge distance"
-QgsSymbolLayer.PropertyShapeburstIgnoreRings = QgsSymbolLayer.Property.ShapeburstIgnoreRings
 QgsSymbolLayer.Property.PropertyShapeburstIgnoreRings = QgsSymbolLayer.Property.ShapeburstIgnoreRings
-QgsSymbolLayer.PropertyShapeburstIgnoreRings.is_monkey_patched = True
 QgsSymbolLayer.PropertyShapeburstIgnoreRings.__doc__ = "Shapeburst ignore rings"
-QgsSymbolLayer.PropertyFile = QgsSymbolLayer.Property.File
 QgsSymbolLayer.Property.PropertyFile = QgsSymbolLayer.Property.File
-QgsSymbolLayer.PropertyFile.is_monkey_patched = True
 QgsSymbolLayer.PropertyFile.__doc__ = "Filename, eg for svg files"
-QgsSymbolLayer.PropertyDistanceX = QgsSymbolLayer.Property.DistanceX
 QgsSymbolLayer.Property.PropertyDistanceX = QgsSymbolLayer.Property.DistanceX
-QgsSymbolLayer.PropertyDistanceX.is_monkey_patched = True
 QgsSymbolLayer.PropertyDistanceX.__doc__ = "Horizontal distance between points"
-QgsSymbolLayer.PropertyDistanceY = QgsSymbolLayer.Property.DistanceY
 QgsSymbolLayer.Property.PropertyDistanceY = QgsSymbolLayer.Property.DistanceY
-QgsSymbolLayer.PropertyDistanceY.is_monkey_patched = True
 QgsSymbolLayer.PropertyDistanceY.__doc__ = "Vertical distance between points"
-QgsSymbolLayer.PropertyDisplacementX = QgsSymbolLayer.Property.DisplacementX
 QgsSymbolLayer.Property.PropertyDisplacementX = QgsSymbolLayer.Property.DisplacementX
-QgsSymbolLayer.PropertyDisplacementX.is_monkey_patched = True
 QgsSymbolLayer.PropertyDisplacementX.__doc__ = "Horizontal displacement"
-QgsSymbolLayer.PropertyDisplacementY = QgsSymbolLayer.Property.DisplacementY
 QgsSymbolLayer.Property.PropertyDisplacementY = QgsSymbolLayer.Property.DisplacementY
-QgsSymbolLayer.PropertyDisplacementY.is_monkey_patched = True
 QgsSymbolLayer.PropertyDisplacementY.__doc__ = "Vertical displacement"
-QgsSymbolLayer.PropertyOpacity = QgsSymbolLayer.Property.Opacity
 QgsSymbolLayer.Property.PropertyOpacity = QgsSymbolLayer.Property.Opacity
-QgsSymbolLayer.PropertyOpacity.is_monkey_patched = True
 QgsSymbolLayer.PropertyOpacity.__doc__ = "Opacity"
-QgsSymbolLayer.PropertyCustomDash = QgsSymbolLayer.Property.CustomDash
 QgsSymbolLayer.Property.PropertyCustomDash = QgsSymbolLayer.Property.CustomDash
-QgsSymbolLayer.PropertyCustomDash.is_monkey_patched = True
 QgsSymbolLayer.PropertyCustomDash.__doc__ = "Custom dash pattern"
-QgsSymbolLayer.PropertyCapStyle = QgsSymbolLayer.Property.CapStyle
 QgsSymbolLayer.Property.PropertyCapStyle = QgsSymbolLayer.Property.CapStyle
-QgsSymbolLayer.PropertyCapStyle.is_monkey_patched = True
 QgsSymbolLayer.PropertyCapStyle.__doc__ = "Line cap style"
-QgsSymbolLayer.PropertyPlacement = QgsSymbolLayer.Property.Placement
 QgsSymbolLayer.Property.PropertyPlacement = QgsSymbolLayer.Property.Placement
-QgsSymbolLayer.PropertyPlacement.is_monkey_patched = True
 QgsSymbolLayer.PropertyPlacement.__doc__ = "Line marker placement"
-QgsSymbolLayer.PropertyInterval = QgsSymbolLayer.Property.Interval
 QgsSymbolLayer.Property.PropertyInterval = QgsSymbolLayer.Property.Interval
-QgsSymbolLayer.PropertyInterval.is_monkey_patched = True
 QgsSymbolLayer.PropertyInterval.__doc__ = "Line marker interval"
-QgsSymbolLayer.PropertyOffsetAlongLine = QgsSymbolLayer.Property.OffsetAlongLine
 QgsSymbolLayer.Property.PropertyOffsetAlongLine = QgsSymbolLayer.Property.OffsetAlongLine
-QgsSymbolLayer.PropertyOffsetAlongLine.is_monkey_patched = True
 QgsSymbolLayer.PropertyOffsetAlongLine.__doc__ = "Offset along line"
-QgsSymbolLayer.PropertyAverageAngleLength = QgsSymbolLayer.Property.AverageAngleLength
 QgsSymbolLayer.Property.PropertyAverageAngleLength = QgsSymbolLayer.Property.AverageAngleLength
-QgsSymbolLayer.PropertyAverageAngleLength.is_monkey_patched = True
 QgsSymbolLayer.PropertyAverageAngleLength.__doc__ = "Length to average symbol angles over"
-QgsSymbolLayer.PropertyHorizontalAnchor = QgsSymbolLayer.Property.HorizontalAnchor
 QgsSymbolLayer.Property.PropertyHorizontalAnchor = QgsSymbolLayer.Property.HorizontalAnchor
-QgsSymbolLayer.PropertyHorizontalAnchor.is_monkey_patched = True
 QgsSymbolLayer.PropertyHorizontalAnchor.__doc__ = "Horizontal anchor point"
-QgsSymbolLayer.PropertyVerticalAnchor = QgsSymbolLayer.Property.VerticalAnchor
 QgsSymbolLayer.Property.PropertyVerticalAnchor = QgsSymbolLayer.Property.VerticalAnchor
-QgsSymbolLayer.PropertyVerticalAnchor.is_monkey_patched = True
 QgsSymbolLayer.PropertyVerticalAnchor.__doc__ = "Vertical anchor point"
-QgsSymbolLayer.PropertyLayerEnabled = QgsSymbolLayer.Property.LayerEnabled
 QgsSymbolLayer.Property.PropertyLayerEnabled = QgsSymbolLayer.Property.LayerEnabled
-QgsSymbolLayer.PropertyLayerEnabled.is_monkey_patched = True
 QgsSymbolLayer.PropertyLayerEnabled.__doc__ = "Whether symbol layer is enabled"
-QgsSymbolLayer.PropertyArrowWidth = QgsSymbolLayer.Property.ArrowWidth
 QgsSymbolLayer.Property.PropertyArrowWidth = QgsSymbolLayer.Property.ArrowWidth
-QgsSymbolLayer.PropertyArrowWidth.is_monkey_patched = True
 QgsSymbolLayer.PropertyArrowWidth.__doc__ = "Arrow tail width"
-QgsSymbolLayer.PropertyArrowStartWidth = QgsSymbolLayer.Property.ArrowStartWidth
 QgsSymbolLayer.Property.PropertyArrowStartWidth = QgsSymbolLayer.Property.ArrowStartWidth
-QgsSymbolLayer.PropertyArrowStartWidth.is_monkey_patched = True
 QgsSymbolLayer.PropertyArrowStartWidth.__doc__ = "Arrow tail start width"
-QgsSymbolLayer.PropertyArrowHeadLength = QgsSymbolLayer.Property.ArrowHeadLength
 QgsSymbolLayer.Property.PropertyArrowHeadLength = QgsSymbolLayer.Property.ArrowHeadLength
-QgsSymbolLayer.PropertyArrowHeadLength.is_monkey_patched = True
 QgsSymbolLayer.PropertyArrowHeadLength.__doc__ = "Arrow head length"
-QgsSymbolLayer.PropertyArrowHeadThickness = QgsSymbolLayer.Property.ArrowHeadThickness
 QgsSymbolLayer.Property.PropertyArrowHeadThickness = QgsSymbolLayer.Property.ArrowHeadThickness
-QgsSymbolLayer.PropertyArrowHeadThickness.is_monkey_patched = True
 QgsSymbolLayer.PropertyArrowHeadThickness.__doc__ = "Arrow head thickness"
-QgsSymbolLayer.PropertyArrowHeadType = QgsSymbolLayer.Property.ArrowHeadType
 QgsSymbolLayer.Property.PropertyArrowHeadType = QgsSymbolLayer.Property.ArrowHeadType
-QgsSymbolLayer.PropertyArrowHeadType.is_monkey_patched = True
 QgsSymbolLayer.PropertyArrowHeadType.__doc__ = "Arrow head type"
-QgsSymbolLayer.PropertyArrowType = QgsSymbolLayer.Property.ArrowType
 QgsSymbolLayer.Property.PropertyArrowType = QgsSymbolLayer.Property.ArrowType
-QgsSymbolLayer.PropertyArrowType.is_monkey_patched = True
 QgsSymbolLayer.PropertyArrowType.__doc__ = "Arrow type"
-QgsSymbolLayer.PropertyOffsetX = QgsSymbolLayer.Property.OffsetX
 QgsSymbolLayer.Property.PropertyOffsetX = QgsSymbolLayer.Property.OffsetX
-QgsSymbolLayer.PropertyOffsetX.is_monkey_patched = True
 QgsSymbolLayer.PropertyOffsetX.__doc__ = "Horizontal offset"
-QgsSymbolLayer.PropertyOffsetY = QgsSymbolLayer.Property.OffsetY
 QgsSymbolLayer.Property.PropertyOffsetY = QgsSymbolLayer.Property.OffsetY
-QgsSymbolLayer.PropertyOffsetY.is_monkey_patched = True
 QgsSymbolLayer.PropertyOffsetY.__doc__ = "Vertical offset"
-QgsSymbolLayer.PropertyPointCount = QgsSymbolLayer.Property.PointCount
 QgsSymbolLayer.Property.PropertyPointCount = QgsSymbolLayer.Property.PointCount
-QgsSymbolLayer.PropertyPointCount.is_monkey_patched = True
 QgsSymbolLayer.PropertyPointCount.__doc__ = "Point count"
-QgsSymbolLayer.PropertyRandomSeed = QgsSymbolLayer.Property.RandomSeed
 QgsSymbolLayer.Property.PropertyRandomSeed = QgsSymbolLayer.Property.RandomSeed
-QgsSymbolLayer.PropertyRandomSeed.is_monkey_patched = True
 QgsSymbolLayer.PropertyRandomSeed.__doc__ = "Random number seed"
-QgsSymbolLayer.PropertyClipPoints = QgsSymbolLayer.Property.ClipPoints
 QgsSymbolLayer.Property.PropertyClipPoints = QgsSymbolLayer.Property.ClipPoints
-QgsSymbolLayer.PropertyClipPoints.is_monkey_patched = True
 QgsSymbolLayer.PropertyClipPoints.__doc__ = "Whether markers should be clipped to polygon boundaries"
-QgsSymbolLayer.PropertyDensityArea = QgsSymbolLayer.Property.DensityArea
 QgsSymbolLayer.Property.PropertyDensityArea = QgsSymbolLayer.Property.DensityArea
-QgsSymbolLayer.PropertyDensityArea.is_monkey_patched = True
 QgsSymbolLayer.PropertyDensityArea.__doc__ = "Density area"
-QgsSymbolLayer.PropertyFontFamily = QgsSymbolLayer.Property.FontFamily
 QgsSymbolLayer.Property.PropertyFontFamily = QgsSymbolLayer.Property.FontFamily
-QgsSymbolLayer.PropertyFontFamily.is_monkey_patched = True
 QgsSymbolLayer.PropertyFontFamily.__doc__ = "Font family"
-QgsSymbolLayer.PropertyFontStyle = QgsSymbolLayer.Property.FontStyle
 QgsSymbolLayer.Property.PropertyFontStyle = QgsSymbolLayer.Property.FontStyle
-QgsSymbolLayer.PropertyFontStyle.is_monkey_patched = True
 QgsSymbolLayer.PropertyFontStyle.__doc__ = "Font style"
-QgsSymbolLayer.PropertyDashPatternOffset = QgsSymbolLayer.Property.DashPatternOffset
 QgsSymbolLayer.Property.PropertyDashPatternOffset = QgsSymbolLayer.Property.DashPatternOffset
-QgsSymbolLayer.PropertyDashPatternOffset.is_monkey_patched = True
 QgsSymbolLayer.PropertyDashPatternOffset.__doc__ = "Dash pattern offset,"
-QgsSymbolLayer.PropertyTrimStart = QgsSymbolLayer.Property.TrimStart
 QgsSymbolLayer.Property.PropertyTrimStart = QgsSymbolLayer.Property.TrimStart
-QgsSymbolLayer.PropertyTrimStart.is_monkey_patched = True
 QgsSymbolLayer.PropertyTrimStart.__doc__ = "Trim distance from start of line \n.. versionadded:: 3.20"
-QgsSymbolLayer.PropertyTrimEnd = QgsSymbolLayer.Property.TrimEnd
 QgsSymbolLayer.Property.PropertyTrimEnd = QgsSymbolLayer.Property.TrimEnd
-QgsSymbolLayer.PropertyTrimEnd.is_monkey_patched = True
 QgsSymbolLayer.PropertyTrimEnd.__doc__ = "Trim distance from end of line \n.. versionadded:: 3.20"
-QgsSymbolLayer.PropertyLineStartWidthValue = QgsSymbolLayer.Property.LineStartWidthValue
 QgsSymbolLayer.Property.PropertyLineStartWidthValue = QgsSymbolLayer.Property.LineStartWidthValue
-QgsSymbolLayer.PropertyLineStartWidthValue.is_monkey_patched = True
 QgsSymbolLayer.PropertyLineStartWidthValue.__doc__ = "Start line width for interpolated line renderer \n.. versionadded:: 3.22"
-QgsSymbolLayer.PropertyLineEndWidthValue = QgsSymbolLayer.Property.LineEndWidthValue
 QgsSymbolLayer.Property.PropertyLineEndWidthValue = QgsSymbolLayer.Property.LineEndWidthValue
-QgsSymbolLayer.PropertyLineEndWidthValue.is_monkey_patched = True
 QgsSymbolLayer.PropertyLineEndWidthValue.__doc__ = "End line width for interpolated line renderer \n.. versionadded:: 3.22"
-QgsSymbolLayer.PropertyLineStartColorValue = QgsSymbolLayer.Property.LineStartColorValue
 QgsSymbolLayer.Property.PropertyLineStartColorValue = QgsSymbolLayer.Property.LineStartColorValue
-QgsSymbolLayer.PropertyLineStartColorValue.is_monkey_patched = True
 QgsSymbolLayer.PropertyLineStartColorValue.__doc__ = "Start line color for interpolated line renderer \n.. versionadded:: 3.22"
-QgsSymbolLayer.PropertyLineEndColorValue = QgsSymbolLayer.Property.LineEndColorValue
 QgsSymbolLayer.Property.PropertyLineEndColorValue = QgsSymbolLayer.Property.LineEndColorValue
-QgsSymbolLayer.PropertyLineEndColorValue.is_monkey_patched = True
 QgsSymbolLayer.PropertyLineEndColorValue.__doc__ = "End line color for interpolated line renderer \n.. versionadded:: 3.22"
-QgsSymbolLayer.PropertyMarkerClipping = QgsSymbolLayer.Property.MarkerClipping
 QgsSymbolLayer.Property.PropertyMarkerClipping = QgsSymbolLayer.Property.MarkerClipping
-QgsSymbolLayer.PropertyMarkerClipping.is_monkey_patched = True
 QgsSymbolLayer.PropertyMarkerClipping.__doc__ = "Marker clipping mode \n.. versionadded:: 3.24"
-QgsSymbolLayer.PropertyRandomOffsetX = QgsSymbolLayer.Property.RandomOffsetX
 QgsSymbolLayer.Property.PropertyRandomOffsetX = QgsSymbolLayer.Property.RandomOffsetX
-QgsSymbolLayer.PropertyRandomOffsetX.is_monkey_patched = True
 QgsSymbolLayer.PropertyRandomOffsetX.__doc__ = "Random offset X \n.. versionadded:: 3.24"
-QgsSymbolLayer.PropertyRandomOffsetY = QgsSymbolLayer.Property.RandomOffsetY
 QgsSymbolLayer.Property.PropertyRandomOffsetY = QgsSymbolLayer.Property.RandomOffsetY
-QgsSymbolLayer.PropertyRandomOffsetY.is_monkey_patched = True
 QgsSymbolLayer.PropertyRandomOffsetY.__doc__ = "Random offset Y \n.. versionadded:: 3.24"
-QgsSymbolLayer.PropertyLineClipping = QgsSymbolLayer.Property.LineClipping
 QgsSymbolLayer.Property.PropertyLineClipping = QgsSymbolLayer.Property.LineClipping
-QgsSymbolLayer.PropertyLineClipping.is_monkey_patched = True
 QgsSymbolLayer.PropertyLineClipping.__doc__ = "Line clipping mode \n.. versionadded:: 3.24"
-QgsSymbolLayer.SkipMultiples = QgsSymbolLayer.Property.SkipMultiples
-QgsSymbolLayer.SkipMultiples.is_monkey_patched = True
 QgsSymbolLayer.SkipMultiples.__doc__ = "Skip multiples of \n.. versionadded:: 3.40"
-QgsSymbolLayer.ShowMarker = QgsSymbolLayer.Property.ShowMarker
-QgsSymbolLayer.ShowMarker.is_monkey_patched = True
 QgsSymbolLayer.ShowMarker.__doc__ = "Show markers \n.. versionadded:: 3.40"
 QgsSymbolLayer.Property.__doc__ = """Data definable properties.
 
@@ -24568,13 +21336,6 @@ QgsFeature.__geo_interface__ = property(_mapping_feature)
 QgsGeometry.__bool__ = _geometryNonZero
 QgsGeometry.__geo_interface__ = property(_mapping_geometry)
 QgsGeometry.__nonzero__ = _geometryNonZero
-QgsProject.blockDirtying = ProjectDirtyBlocker
-QgsReadWriteContext.enterCategory = ReadWriteContextEnterCategory
-QgsRuntimeProfiler.profile = ScopedRuntimeProfileContextManager
-QgsSettings.enumValue = _qgssettings_enum_value
-QgsSettings.setEnumValue = _qgssettings_set_enum_value
-QgsSettings.flagValue = _qgssettings_flag_value
-QgsTask.fromFunction = _fromFunction
 
 
 # add some __repr__ methods to QGIS range classes. We can't do this via sip because they are template based classes
@@ -24674,43 +21435,15 @@ QgsProviderMetadata = PyProviderMetadata
 
 # monkey patch deprecated enum values to maintain API
 # TODO - remove for QGIS 4.0
-Qgis.PythonMacroMode = Qgis.PythonEmbeddedMode
 
-QgsMarkerLineSymbolLayer.Interval = Qgis.MarkerLinePlacement.Interval
-QgsMarkerLineSymbolLayer.Vertex = Qgis.MarkerLinePlacement.Vertex
-QgsMarkerLineSymbolLayer.LastVertex = Qgis.MarkerLinePlacement.LastVertex
-QgsMarkerLineSymbolLayer.FirstVertex = Qgis.MarkerLinePlacement.FirstVertex
-QgsMarkerLineSymbolLayer.CentralPoint = Qgis.MarkerLinePlacement.CentralPoint
-QgsMarkerLineSymbolLayer.CurvePoint = Qgis.MarkerLinePlacement.CurvePoint
 
-QgsRasterFillSymbolLayer.FillCoordinateMode = Qgis.SymbolCoordinateReference
-QgsRasterFillSymbolLayer.Feature = Qgis.SymbolCoordinateReference.Feature
-QgsRasterFillSymbolLayer.Viewport = Qgis.SymbolCoordinateReference.Viewport
 
-QgsShapeburstFillSymbolLayer.ShapeburstColorType = Qgis.GradientColorSource
-QgsShapeburstFillSymbolLayer.SimpleTwoColor = Qgis.GradientColorSource.SimpleTwoColor
-QgsShapeburstFillSymbolLayer.ColorRamp = Qgis.GradientColorSource.ColorRamp
 
-QgsVectorLayer.VertexMarkerType = Qgis.VertexMarkerType
-QgsVectorLayer.SemiTransparentCircle = Qgis.VertexMarkerType.SemiTransparentCircle
-QgsVectorLayer.SemiTransparentCircle.is_monkey_patched = True
 QgsVectorLayer.SemiTransparentCircle.__doc__ = "Semi-transparent circle marker"
-QgsVectorLayer.Cross = Qgis.VertexMarkerType.Cross
-QgsVectorLayer.Cross.is_monkey_patched = True
 QgsVectorLayer.Cross.__doc__ = "Cross marker"
-QgsVectorLayer.NoMarker = Qgis.VertexMarkerType.NoMarker
-QgsVectorLayer.NoMarker.is_monkey_patched = True
 QgsVectorLayer.NoMarker.__doc__ = "No marker"
 
-QgsSymbol.RenderHints = Qgis.SymbolRenderHints
-QgsSymbol.PreviewFlags = Qgis.SymbolPreviewFlags
-QgsDataItem.Capabilities = Qgis.BrowserItemCapabilities
-QgsGeometry.ValidityFlags = Qgis.GeometryValidityFlags
 
-QgsMapToPixelSimplifier.Distance = Qgis.VectorSimplificationAlgorithm.Distance
-QgsMapToPixelSimplifier.SnapToGrid = Qgis.VectorSimplificationAlgorithm.SnapToGrid
-QgsMapToPixelSimplifier.Visvalingam = Qgis.VectorSimplificationAlgorithm.Visvalingam
-QgsMapToPixelSimplifier.SnappedToGridGlobal = Qgis.VectorSimplificationAlgorithm.SnappedToGridGlobal
 
 SymbolTable = QgsStyle.SymbolTableColumn
 SymbolTable.SymbolId = QgsStyle.SymbolTableColumn.Id.value
@@ -24784,49 +21517,25 @@ Qgis.QGIS_RELEASE_NAME = Qgis.releaseName()
 # Monkey patch QgsMapLayerType
 
 QgsMapLayerType = Qgis.LayerType
-QgsMapLayerType.VectorLayer = Qgis.LayerType.Vector
-QgsMapLayerType.VectorLayer.is_monkey_patched = True
 QgsMapLayerType.VectorLayer.__doc__ = "Vector layer"
-QgsMapLayerType.RasterLayer = Qgis.LayerType.Raster
-QgsMapLayerType.RasterLayer.is_monkey_patched = True
 QgsMapLayerType.RasterLayer.__doc__ = "Raster layer"
-QgsMapLayerType.PluginLayer = Qgis.LayerType.Plugin
-QgsMapLayerType.PluginLayer.is_monkey_patched = True
 QgsMapLayerType.PluginLayer.__doc__ = "Plugin based layer"
-QgsMapLayerType.MeshLayer = Qgis.LayerType.Mesh
-QgsMapLayerType.MeshLayer.is_monkey_patched = True
 QgsMapLayerType.MeshLayer.__doc__ = "Mesh layer. Added in QGIS 3.2"
-QgsMapLayerType.VectorTileLayer = Qgis.LayerType.VectorTile
-QgsMapLayerType.VectorTileLayer.is_monkey_patched = True
 QgsMapLayerType.VectorTileLayer.__doc__ = "Vector tile layer. Added in QGIS 3.14"
-QgsMapLayerType.AnnotationLayer = Qgis.LayerType.Annotation
-QgsMapLayerType.AnnotationLayer.is_monkey_patched = True
 QgsMapLayerType.AnnotationLayer.__doc__ = "Contains freeform, georeferenced annotations. Added in QGIS 3.16"
-QgsMapLayerType.PointCloudLayer = Qgis.LayerType.PointCloud
-QgsMapLayerType.PointCloudLayer.is_monkey_patched = True
 QgsMapLayerType.PointCloudLayer.__doc__ = "Point cloud layer. Added in QGIS 3.18"
-QgsMapLayerType.GroupLayer = Qgis.LayerType.Group
-QgsMapLayerType.GroupLayer.is_monkey_patched = True
 QgsMapLayerType.GroupLayer.__doc__ = "Composite group layer. Added in QGIS 3.24"
 QgsMapLayerType.baseClass = Qgis
 
 # Monkey patch unused CRS WKT aliases
-QgsCoordinateReferenceSystem.WKT2_2018 = Qgis.CrsWktVariant.Wkt2_2019
 Qgis.CrsWktVariant.WKT2_2018 = Qgis.CrsWktVariant.Wkt2_2019
-QgsCoordinateReferenceSystem.WKT2_2018.is_monkey_patched = True
 QgsCoordinateReferenceSystem.WKT2_2018.__doc__ = "Alias for WKT2_2019"
-QgsCoordinateReferenceSystem.WKT2_2018_SIMPLIFIED = Qgis.CrsWktVariant.Wkt2_2019Simplified
 Qgis.CrsWktVariant.WKT2_2018_SIMPLIFIED = Qgis.CrsWktVariant.Wkt2_2019Simplified
-QgsCoordinateReferenceSystem.WKT2_2018_SIMPLIFIED.is_monkey_patched = True
 QgsCoordinateReferenceSystem.WKT2_2018_SIMPLIFIED.__doc__ = "Alias for WKT2_2019_SIMPLIFIED"
 
 # Monkey patch QgsDxfExport
-QgsDxfExport.SymbologyExport = Qgis.FeatureSymbologyExport
 QgsDxfExport.SymbologyExport.FeatureSymbology = Qgis.FeatureSymbologyExport.PerFeature
 QgsDxfExport.SymbologyExport.SymbolLayerSymbology = Qgis.FeatureSymbologyExport.PerSymbolLayer
-QgsDxfExport.NoSymbology = Qgis.FeatureSymbologyExport.NoSymbology
-QgsDxfExport.FeatureSymbology = Qgis.FeatureSymbologyExport.PerFeature
-QgsDxfExport.SymbolLayerSymbology = Qgis.FeatureSymbologyExport.PerSymbolLayer
 
 # Maintain class name API
 QgsBox3d = QgsBox3D
@@ -24860,11 +21569,6 @@ class _LinePlacementFlags:
   BelowLine = 4
   MapOrientation = 8
 
-QgsPalLayerSettings.LinePlacementFlags = _LinePlacementFlags
-QgsPalLayerSettings.OnLine = QgsPalLayerSettings.LinePlacementFlags.OnLine
-QgsPalLayerSettings.AboveLine = QgsPalLayerSettings.LinePlacementFlags.AboveLine
-QgsPalLayerSettings.BelowLine = QgsPalLayerSettings.LinePlacementFlags.BelowLine
-QgsPalLayerSettings.MapOrientation = QgsPalLayerSettings.LinePlacementFlags.MapOrientation
 
 
 def _get_placement_flags(self):
@@ -24945,10 +21649,6 @@ class _DirectionSymbols:
   SymbolAbove = 1
   SymbolBelow = 2
 
-QgsPalLayerSettings.DirectionSymbols = _DirectionSymbols
-QgsPalLayerSettings.SymbolLeftRight = QgsPalLayerSettings.DirectionSymbols.SymbolLeftRight
-QgsPalLayerSettings.SymbolAbove = QgsPalLayerSettings.DirectionSymbols.SymbolAbove
-QgsPalLayerSettings.SymbolBelow = QgsPalLayerSettings.DirectionSymbols.SymbolBelow
 
 
 def _get_direction_symbol_placement(self):
@@ -25077,10 +21777,6 @@ QgsPalLayerSettings.obstacleFactor = QgsPalLayerSettings.obstacleFactor.setter(_
 
 # TODO QGIS 4.0 - remove, replaced by QgsLabelObstacleSettings.ObstacleType
 
-QgsPalLayerSettings.ObstacleType = QgsLabelObstacleSettings.ObstacleType
-QgsPalLayerSettings.PolygonInterior = QgsLabelObstacleSettings.ObstacleType.PolygonInterior
-QgsPalLayerSettings.PolygonBoundary = QgsLabelObstacleSettings.ObstacleType.PolygonBoundary
-QgsPalLayerSettings.PolygonWhole = QgsLabelObstacleSettings.ObstacleType.PolygonWhole
 
 
 def _get_obstacle_type(self):

@@ -6251,10 +6251,10 @@ class QgsActionMenu(QtWidgets.QMenu):
     def setMode(self, mode: QgsAttributeEditorContext.Mode) -> None: ...
     def setFeature(self, feature: _core.QgsFeature) -> None: ...
     def setActionContextGenerator(self, generator: typing.Optional[QgsMapLayerActionContextGenerator]) -> None: ...
-    ActionType: typing.Type[_Qgis.ActionType]
-    Invalid: _Qgis.ActionType
-    MapLayerAction: _Qgis.ActionType
-    AttributeAction: _Qgis.ActionType
+    ActionType: typing.Type[_core.Qgis.ActionType]
+    Invalid: _core.Qgis.ActionType
+    MapLayerAction: _core.Qgis.ActionType
+    AttributeAction: _core.Qgis.ActionType
 
 
 class QgsMapLayerAction(QtWidgets.QAction):
@@ -6296,15 +6296,15 @@ class QgsMapLayerAction(QtWidgets.QAction):
     @typing.overload
     def canRunUsingLayer(self, layer: typing.Optional[_core.QgsMapLayer], context: 'QgsMapLayerActionContext') -> bool: ...
     def flags(self) -> _core.Qgis.MapLayerActionFlags: ...
-    Target: typing.Type[_Qgis.MapLayerActionTarget]
-    Layer: _Qgis.MapLayerActionTarget
-    SingleFeature: _Qgis.MapLayerActionTarget
-    MultipleFeatures: _Qgis.MapLayerActionTarget
-    AllActions: _Qgis.MapLayerActionTarget
-    Targets: typing.Type[_Qgis.MapLayerActionTargets]
-    Flag: typing.Type[_Qgis.MapLayerActionFlag]
-    EnabledOnlyWhenEditable: _Qgis.MapLayerActionFlag
-    Flags: typing.Type[_Qgis.MapLayerActionFlags]
+    Target: typing.Type[_core.Qgis.MapLayerActionTarget]
+    Layer: _core.Qgis.MapLayerActionTarget
+    SingleFeature: _core.Qgis.MapLayerActionTarget
+    MultipleFeatures: _core.Qgis.MapLayerActionTarget
+    AllActions: _core.Qgis.MapLayerActionTarget
+    Targets: typing.Type[_core.Qgis.MapLayerActionTargets]
+    Flag: typing.Type[_core.Qgis.MapLayerActionFlag]
+    EnabledOnlyWhenEditable: _core.Qgis.MapLayerActionFlag
+    Flags: typing.Type[_core.Qgis.MapLayerActionFlags]
 
 
 class QgsMapLayerActionContext(PyQt5.sip.wrapper):
@@ -9689,11 +9689,11 @@ class QgsMapToolCapture(QgsMapToolAdvancedDigitizing):
     def setCurrentCaptureTechnique(self, technique: _core.Qgis.CaptureTechnique) -> None: ...
     def supportsTechnique(self, technique: _core.Qgis.CaptureTechnique) -> bool: ...
     def capabilities(self) -> 'QgsMapToolCapture.Capabilities': ...
-    CaptureTechnique: typing.Type[_Qgis.CaptureTechnique]
-    StraightSegments: _Qgis.CaptureTechnique
-    CircularString: _Qgis.CaptureTechnique
-    Streaming: _Qgis.CaptureTechnique
-    Shape: _Qgis.CaptureTechnique
+    CaptureTechnique: typing.Type[_core.Qgis.CaptureTechnique]
+    StraightSegments: _core.Qgis.CaptureTechnique
+    CircularString: _core.Qgis.CaptureTechnique
+    Streaming: _core.Qgis.CaptureTechnique
+    Shape: _core.Qgis.CaptureTechnique
 
 
 class QgsMapToolCaptureLayerGeometry(QgsMapToolCapture):
@@ -10499,10 +10499,10 @@ class QgsProcessingGui(PyQt5.sip.wrapper):
     def __init__(self) -> None: ...
     @typing.overload
     def __init__(self, a0: 'QgsProcessingGui') -> None: ...
-    WidgetType: typing.Type[_Qgis.ProcessingMode]
-    Standard: _Qgis.ProcessingMode
-    Batch: _Qgis.ProcessingMode
-    Modeler: _Qgis.ProcessingMode
+    WidgetType: typing.Type[_core.Qgis.ProcessingMode]
+    Standard: _core.Qgis.ProcessingMode
+    Batch: _core.Qgis.ProcessingMode
+    Modeler: _core.Qgis.ProcessingMode
 
 
 class QgsProcessingGuiRegistry(PyQt5.sip.wrapper):

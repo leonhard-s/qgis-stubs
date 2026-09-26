@@ -77,28 +77,13 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/3d/materials/qgsabstractmaterialsettings.h
-QgsAbstractMaterialSettings.RenderingTechnique = QgsMaterialSettingsRenderingTechnique
 # monkey patching scoped based enum
-QgsAbstractMaterialSettings.Triangles = QgsMaterialSettingsRenderingTechnique.Triangles
-QgsAbstractMaterialSettings.Triangles.is_monkey_patched = True
 QgsAbstractMaterialSettings.Triangles.__doc__ = "Triangle based rendering (default)"
-QgsAbstractMaterialSettings.Lines = QgsMaterialSettingsRenderingTechnique.Lines
-QgsAbstractMaterialSettings.Lines.is_monkey_patched = True
 QgsAbstractMaterialSettings.Lines.__doc__ = "Line based rendering, requires line data"
-QgsAbstractMaterialSettings.InstancedPoints = QgsMaterialSettingsRenderingTechnique.InstancedPoints
-QgsAbstractMaterialSettings.InstancedPoints.is_monkey_patched = True
 QgsAbstractMaterialSettings.InstancedPoints.__doc__ = "Instanced based rendering, requiring triangles and point data"
-QgsAbstractMaterialSettings.Points = QgsMaterialSettingsRenderingTechnique.Points
-QgsAbstractMaterialSettings.Points.is_monkey_patched = True
 QgsAbstractMaterialSettings.Points.__doc__ = "Point based rendering, requires point data"
-QgsAbstractMaterialSettings.TrianglesWithFixedTexture = QgsMaterialSettingsRenderingTechnique.TrianglesWithFixedTexture
-QgsAbstractMaterialSettings.TrianglesWithFixedTexture.is_monkey_patched = True
 QgsAbstractMaterialSettings.TrianglesWithFixedTexture.__doc__ = "Triangle based rendering, using a fixed, non-user-configurable texture (e.g. for terrain rendering)"
-QgsAbstractMaterialSettings.TrianglesFromModel = QgsMaterialSettingsRenderingTechnique.TrianglesFromModel
-QgsAbstractMaterialSettings.TrianglesFromModel.is_monkey_patched = True
 QgsAbstractMaterialSettings.TrianglesFromModel.__doc__ = "Triangle based rendering, using a model object source"
-QgsAbstractMaterialSettings.TrianglesDataDefined = QgsMaterialSettingsRenderingTechnique.TrianglesDataDefined
-QgsAbstractMaterialSettings.TrianglesDataDefined.is_monkey_patched = True
 QgsAbstractMaterialSettings.TrianglesDataDefined.__doc__ = "Triangle based rendering with possibility of datadefined color \n.. versionadded:: 3.18"
 QgsMaterialSettingsRenderingTechnique.__doc__ = """Material rendering techniques
 
@@ -387,36 +372,5 @@ except (NameError, AttributeError):
 from qgis.core import Qgis as _Qgis
 
 # manual monkey patching for old enum values
-Qgs3DTypes.AltitudeClamping = _Qgis.AltitudeClamping
-Qgs3DTypes.AltClampAbsolute = _Qgis.AltitudeClamping.Absolute
-Qgs3DTypes.AltClampAbsolute.is_monkey_patched = True
-Qgs3DTypes.AltClampRelative = _Qgis.AltitudeClamping.Relative
-Qgs3DTypes.AltClampRelative.is_monkey_patched = True
-Qgs3DTypes.AltClampTerrain = _Qgis.AltitudeClamping.Terrain
-Qgs3DTypes.AltClampTerrain.is_monkey_patched = True
 
-Qgs3DTypes.AltitudeBinding = _Qgis.AltitudeBinding
-Qgs3DTypes.AltBindVertex = _Qgis.AltitudeBinding.Vertex
-Qgs3DTypes.AltBindVertex.is_monkey_patched = True
-Qgs3DTypes.AltBindCentroid = _Qgis.AltitudeBinding.Centroid
-Qgs3DTypes.AltBindCentroid.is_monkey_patched = True
 
-QgsPoint3DSymbol.Shape = _Qgis.Point3DShape
-QgsPoint3DSymbol.Cylinder = _Qgis.Point3DShape.Cylinder
-QgsPoint3DSymbol.Cylinder.is_monkey_patched = True
-QgsPoint3DSymbol.Sphere = _Qgis.Point3DShape.Sphere
-QgsPoint3DSymbol.Sphere.is_monkey_patched = True
-QgsPoint3DSymbol.Cone = _Qgis.Point3DShape.Cone
-QgsPoint3DSymbol.Cone.is_monkey_patched = True
-QgsPoint3DSymbol.Cube = _Qgis.Point3DShape.Cube
-QgsPoint3DSymbol.Cube.is_monkey_patched = True
-QgsPoint3DSymbol.Torus = _Qgis.Point3DShape.Torus
-QgsPoint3DSymbol.Torus.is_monkey_patched = True
-QgsPoint3DSymbol.Plane = _Qgis.Point3DShape.Plane
-QgsPoint3DSymbol.Plane.is_monkey_patched = True
-QgsPoint3DSymbol.ExtrudedText = _Qgis.Point3DShape.ExtrudedText
-QgsPoint3DSymbol.ExtrudedText.is_monkey_patched = True
-QgsPoint3DSymbol.Model = _Qgis.Point3DShape.Model
-QgsPoint3DSymbol.Model.is_monkey_patched = True
-QgsPoint3DSymbol.Billboard = _Qgis.Point3DShape.Billboard
-QgsPoint3DSymbol.Billboard.is_monkey_patched = True

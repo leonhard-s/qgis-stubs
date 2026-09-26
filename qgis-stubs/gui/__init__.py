@@ -312,11 +312,8 @@ except (NameError, AttributeError):
 # The following has been generated automatically from src/gui/attributetable/qgsattributetablefiltermodel.h
 QgsAttributeTableFilterModel.FilterMode.baseClass = QgsAttributeTableFilterModel
 QgsAttributeTableFilterModel.ColumnType.baseClass = QgsAttributeTableFilterModel
-QgsAttributeTableFilterModel.Role = QgsAttributeTableFilterModel.CustomRole
 # monkey patching scoped based enum
-QgsAttributeTableFilterModel.TypeRole = QgsAttributeTableFilterModel.CustomRole.Type
 QgsAttributeTableFilterModel.Role.TypeRole = QgsAttributeTableFilterModel.CustomRole.Type
-QgsAttributeTableFilterModel.TypeRole.is_monkey_patched = True
 QgsAttributeTableFilterModel.TypeRole.__doc__ = ""
 QgsAttributeTableFilterModel.CustomRole.__doc__ = """The additional roles defined by this filter model.
 The values of these roles start just after the roles defined by
@@ -345,23 +342,14 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/attributetable/qgsattributetablemodel.h
-QgsAttributeTableModel.Role = QgsAttributeTableModel.CustomRole
 # monkey patching scoped based enum
-QgsAttributeTableModel.FeatureIdRole = QgsAttributeTableModel.CustomRole.FeatureId
 QgsAttributeTableModel.Role.FeatureIdRole = QgsAttributeTableModel.CustomRole.FeatureId
-QgsAttributeTableModel.FeatureIdRole.is_monkey_patched = True
 QgsAttributeTableModel.FeatureIdRole.__doc__ = "Get the feature id of the feature in this row"
-QgsAttributeTableModel.FieldIndexRole = QgsAttributeTableModel.CustomRole.FieldIndex
 QgsAttributeTableModel.Role.FieldIndexRole = QgsAttributeTableModel.CustomRole.FieldIndex
-QgsAttributeTableModel.FieldIndexRole.is_monkey_patched = True
 QgsAttributeTableModel.FieldIndexRole.__doc__ = "Get the field index of this column"
-QgsAttributeTableModel.UserRole = QgsAttributeTableModel.CustomRole.User
 QgsAttributeTableModel.Role.UserRole = QgsAttributeTableModel.CustomRole.User
-QgsAttributeTableModel.UserRole.is_monkey_patched = True
 QgsAttributeTableModel.UserRole.__doc__ = "Start further roles starting from this role"
-QgsAttributeTableModel.SortRole = QgsAttributeTableModel.CustomRole.Sort
 QgsAttributeTableModel.Role.SortRole = QgsAttributeTableModel.CustomRole.Sort
-QgsAttributeTableModel.SortRole.is_monkey_patched = True
 QgsAttributeTableModel.SortRole.__doc__ = "Role used for sorting start here"
 QgsAttributeTableModel.CustomRole.__doc__ = """Custom model roles.
 
@@ -576,11 +564,8 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/symbology/qgscategorizedsymbolrendererwidget.h
-QgsCategorizedSymbolRendererWidget.CustomRoles = QgsCategorizedSymbolRendererWidget.CustomRole
 # monkey patching scoped based enum
-QgsCategorizedSymbolRendererWidget.ValueRole = QgsCategorizedSymbolRendererWidget.CustomRole.Value
 QgsCategorizedSymbolRendererWidget.CustomRoles.ValueRole = QgsCategorizedSymbolRendererWidget.CustomRole.Value
-QgsCategorizedSymbolRendererWidget.ValueRole.is_monkey_patched = True
 QgsCategorizedSymbolRendererWidget.ValueRole.__doc__ = "Category value"
 QgsCategorizedSymbolRendererWidget.CustomRole.__doc__ = """Custom model roles.
 
@@ -634,14 +619,8 @@ QgsCodeEditor.Mode.__doc__ = """Code editor modes.
 # --
 QgsCodeEditor.Mode.baseClass = QgsCodeEditor
 # monkey patching scoped based enum
-QgsCodeEditor.LineNumbers = QgsCodeEditor.MarginRole.LineNumbers
-QgsCodeEditor.LineNumbers.is_monkey_patched = True
 QgsCodeEditor.LineNumbers.__doc__ = "Line numbers"
-QgsCodeEditor.ErrorIndicators = QgsCodeEditor.MarginRole.ErrorIndicators
-QgsCodeEditor.ErrorIndicators.is_monkey_patched = True
 QgsCodeEditor.ErrorIndicators.__doc__ = "Error indicators"
-QgsCodeEditor.FoldingControls = QgsCodeEditor.MarginRole.FoldingControls
-QgsCodeEditor.FoldingControls.is_monkey_patched = True
 QgsCodeEditor.FoldingControls.__doc__ = "Folding controls"
 QgsCodeEditor.MarginRole.__doc__ = """Margin roles.
 
@@ -1053,45 +1032,24 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/proj/qgscoordinatereferencesystemmodel.h
-QgsCoordinateReferenceSystemModel.Roles = QgsCoordinateReferenceSystemModel.CustomRole
 # monkey patching scoped based enum
-QgsCoordinateReferenceSystemModel.RoleNodeType = QgsCoordinateReferenceSystemModel.CustomRole.NodeType
 QgsCoordinateReferenceSystemModel.Roles.RoleNodeType = QgsCoordinateReferenceSystemModel.CustomRole.NodeType
-QgsCoordinateReferenceSystemModel.RoleNodeType.is_monkey_patched = True
 QgsCoordinateReferenceSystemModel.RoleNodeType.__doc__ = "Corresponds to the node's type"
-QgsCoordinateReferenceSystemModel.RoleName = QgsCoordinateReferenceSystemModel.CustomRole.Name
 QgsCoordinateReferenceSystemModel.Roles.RoleName = QgsCoordinateReferenceSystemModel.CustomRole.Name
-QgsCoordinateReferenceSystemModel.RoleName.is_monkey_patched = True
 QgsCoordinateReferenceSystemModel.RoleName.__doc__ = "The coordinate reference system name"
-QgsCoordinateReferenceSystemModel.RoleAuthId = QgsCoordinateReferenceSystemModel.CustomRole.AuthId
 QgsCoordinateReferenceSystemModel.Roles.RoleAuthId = QgsCoordinateReferenceSystemModel.CustomRole.AuthId
-QgsCoordinateReferenceSystemModel.RoleAuthId.is_monkey_patched = True
 QgsCoordinateReferenceSystemModel.RoleAuthId.__doc__ = "The coordinate reference system authority name and id"
-QgsCoordinateReferenceSystemModel.RoleDeprecated = QgsCoordinateReferenceSystemModel.CustomRole.Deprecated
 QgsCoordinateReferenceSystemModel.Roles.RoleDeprecated = QgsCoordinateReferenceSystemModel.CustomRole.Deprecated
-QgsCoordinateReferenceSystemModel.RoleDeprecated.is_monkey_patched = True
 QgsCoordinateReferenceSystemModel.RoleDeprecated.__doc__ = "``True`` if the CRS is deprecated"
-QgsCoordinateReferenceSystemModel.RoleType = QgsCoordinateReferenceSystemModel.CustomRole.Type
 QgsCoordinateReferenceSystemModel.Roles.RoleType = QgsCoordinateReferenceSystemModel.CustomRole.Type
-QgsCoordinateReferenceSystemModel.RoleType.is_monkey_patched = True
 QgsCoordinateReferenceSystemModel.RoleType.__doc__ = "The coordinate reference system type"
-QgsCoordinateReferenceSystemModel.RoleGroupId = QgsCoordinateReferenceSystemModel.CustomRole.GroupId
 QgsCoordinateReferenceSystemModel.Roles.RoleGroupId = QgsCoordinateReferenceSystemModel.CustomRole.GroupId
-QgsCoordinateReferenceSystemModel.RoleGroupId.is_monkey_patched = True
 QgsCoordinateReferenceSystemModel.RoleGroupId.__doc__ = "The node ID (for group nodes)"
-QgsCoordinateReferenceSystemModel.RoleWkt = QgsCoordinateReferenceSystemModel.CustomRole.Wkt
 QgsCoordinateReferenceSystemModel.Roles.RoleWkt = QgsCoordinateReferenceSystemModel.CustomRole.Wkt
-QgsCoordinateReferenceSystemModel.RoleWkt.is_monkey_patched = True
 QgsCoordinateReferenceSystemModel.RoleWkt.__doc__ = "The coordinate reference system's WKT representation. This is only used for non-standard CRS (i.e. those not present in the database)."
-QgsCoordinateReferenceSystemModel.RoleProj = QgsCoordinateReferenceSystemModel.CustomRole.Proj
 QgsCoordinateReferenceSystemModel.Roles.RoleProj = QgsCoordinateReferenceSystemModel.CustomRole.Proj
-QgsCoordinateReferenceSystemModel.RoleProj.is_monkey_patched = True
 QgsCoordinateReferenceSystemModel.RoleProj.__doc__ = "The coordinate reference system's PROJ representation. This is only used for non-standard CRS (i.e. those not present in the database)."
-QgsCoordinateReferenceSystemModel.Group = QgsCoordinateReferenceSystemModel.CustomRole.Group
-QgsCoordinateReferenceSystemModel.Group.is_monkey_patched = True
 QgsCoordinateReferenceSystemModel.Group.__doc__ = "Group name. \n.. versionadded:: 3.42"
-QgsCoordinateReferenceSystemModel.Projection = QgsCoordinateReferenceSystemModel.CustomRole.Projection
-QgsCoordinateReferenceSystemModel.Projection.is_monkey_patched = True
 QgsCoordinateReferenceSystemModel.Projection.__doc__ = "Projection name. \n.. versionadded:: 3.42"
 QgsCoordinateReferenceSystemModel.CustomRole.__doc__ = """Custom model roles.
 
@@ -2093,10 +2051,7 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgslayermetadataresultsmodel.h
-QgsLayerMetadataResultsModel.Roles = QgsLayerMetadataResultsModel.CustomRole
 # monkey patching scoped based enum
-QgsLayerMetadataResultsModel.Metadata = QgsLayerMetadataResultsModel.CustomRole.Metadata
-QgsLayerMetadataResultsModel.Metadata.is_monkey_patched = True
 QgsLayerMetadataResultsModel.Metadata.__doc__ = "Layer metadata role"
 QgsLayerMetadataResultsModel.CustomRole.__doc__ = """The Roles enum represents the user roles for the model.
 
@@ -3498,30 +3453,16 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/processing/qgsprocessingtoolboxmodel.h
 # monkey patching scoped based enum
-QgsProcessingToolboxModelNode.NodeProvider = QgsProcessingToolboxModelNode.NodeType.Provider
 QgsProcessingToolboxModelNode.NodeType.NodeProvider = QgsProcessingToolboxModelNode.NodeType.Provider
-QgsProcessingToolboxModelNode.NodeProvider.is_monkey_patched = True
 QgsProcessingToolboxModelNode.NodeProvider.__doc__ = "Provider node"
-QgsProcessingToolboxModelNode.NodeGroup = QgsProcessingToolboxModelNode.NodeType.Group
 QgsProcessingToolboxModelNode.NodeType.NodeGroup = QgsProcessingToolboxModelNode.NodeType.Group
-QgsProcessingToolboxModelNode.NodeGroup.is_monkey_patched = True
 QgsProcessingToolboxModelNode.NodeGroup.__doc__ = "Group node"
-QgsProcessingToolboxModelNode.NodeAlgorithm = QgsProcessingToolboxModelNode.NodeType.Algorithm
 QgsProcessingToolboxModelNode.NodeType.NodeAlgorithm = QgsProcessingToolboxModelNode.NodeType.Algorithm
-QgsProcessingToolboxModelNode.NodeAlgorithm.is_monkey_patched = True
 QgsProcessingToolboxModelNode.NodeAlgorithm.__doc__ = "Algorithm node"
-QgsProcessingToolboxModelNode.NodeRecent = QgsProcessingToolboxModelNode.NodeType.Recent
 QgsProcessingToolboxModelNode.NodeType.NodeRecent = QgsProcessingToolboxModelNode.NodeType.Recent
-QgsProcessingToolboxModelNode.NodeRecent.is_monkey_patched = True
 QgsProcessingToolboxModelNode.NodeRecent.__doc__ = "Recent algorithms node"
-QgsProcessingToolboxModelNode.Parameter = QgsProcessingToolboxModelNode.NodeType.Parameter
-QgsProcessingToolboxModelNode.Parameter.is_monkey_patched = True
 QgsProcessingToolboxModelNode.Parameter.__doc__ = "Parameter node, \n.. versionadded:: 3.44"
-QgsProcessingToolboxModelNode.ParameterGroup = QgsProcessingToolboxModelNode.NodeType.ParameterGroup
-QgsProcessingToolboxModelNode.ParameterGroup.is_monkey_patched = True
 QgsProcessingToolboxModelNode.ParameterGroup.__doc__ = "Parameter group node \n.. versionadded:: 3.44"
-QgsProcessingToolboxModelNode.Favorite = QgsProcessingToolboxModelNode.NodeType.Favorite
-QgsProcessingToolboxModelNode.Favorite.is_monkey_patched = True
 QgsProcessingToolboxModelNode.Favorite.__doc__ = "Favorites algorithms node, \n.. versionadded:: 3.40"
 QgsProcessingToolboxModelNode.NodeType.__doc__ = """Enumeration of possible model node types
 
@@ -3557,38 +3498,21 @@ QgsProcessingToolboxModelNode.NodeType.__doc__ = """Enumeration of possible mode
 """
 # --
 QgsProcessingToolboxModelNode.NodeType.baseClass = QgsProcessingToolboxModelNode
-QgsProcessingToolboxModel.Roles = QgsProcessingToolboxModel.CustomRole
 # monkey patching scoped based enum
-QgsProcessingToolboxModel.RoleNodeType = QgsProcessingToolboxModel.CustomRole.NodeType
 QgsProcessingToolboxModel.Roles.RoleNodeType = QgsProcessingToolboxModel.CustomRole.NodeType
-QgsProcessingToolboxModel.RoleNodeType.is_monkey_patched = True
 QgsProcessingToolboxModel.RoleNodeType.__doc__ = "Corresponds to the node's type"
-QgsProcessingToolboxModel.RoleAlgorithmFlags = QgsProcessingToolboxModel.CustomRole.AlgorithmFlags
 QgsProcessingToolboxModel.Roles.RoleAlgorithmFlags = QgsProcessingToolboxModel.CustomRole.AlgorithmFlags
-QgsProcessingToolboxModel.RoleAlgorithmFlags.is_monkey_patched = True
 QgsProcessingToolboxModel.RoleAlgorithmFlags.__doc__ = "Returns the node's algorithm flags, for algorithm nodes"
-QgsProcessingToolboxModel.RoleAlgorithmId = QgsProcessingToolboxModel.CustomRole.AlgorithmId
 QgsProcessingToolboxModel.Roles.RoleAlgorithmId = QgsProcessingToolboxModel.CustomRole.AlgorithmId
-QgsProcessingToolboxModel.RoleAlgorithmId.is_monkey_patched = True
 QgsProcessingToolboxModel.RoleAlgorithmId.__doc__ = "Algorithm ID, for algorithm nodes"
-QgsProcessingToolboxModel.RoleAlgorithmName = QgsProcessingToolboxModel.CustomRole.AlgorithmName
 QgsProcessingToolboxModel.Roles.RoleAlgorithmName = QgsProcessingToolboxModel.CustomRole.AlgorithmName
-QgsProcessingToolboxModel.RoleAlgorithmName.is_monkey_patched = True
 QgsProcessingToolboxModel.RoleAlgorithmName.__doc__ = "Untranslated algorithm name, for algorithm nodes"
-QgsProcessingToolboxModel.RoleAlgorithmShortDescription = QgsProcessingToolboxModel.CustomRole.AlgorithmShortDescription
 QgsProcessingToolboxModel.Roles.RoleAlgorithmShortDescription = QgsProcessingToolboxModel.CustomRole.AlgorithmShortDescription
-QgsProcessingToolboxModel.RoleAlgorithmShortDescription.is_monkey_patched = True
 QgsProcessingToolboxModel.RoleAlgorithmShortDescription.__doc__ = "Short algorithm description, for algorithm nodes"
-QgsProcessingToolboxModel.RoleAlgorithmTags = QgsProcessingToolboxModel.CustomRole.AlgorithmTags
 QgsProcessingToolboxModel.Roles.RoleAlgorithmTags = QgsProcessingToolboxModel.CustomRole.AlgorithmTags
-QgsProcessingToolboxModel.RoleAlgorithmTags.is_monkey_patched = True
 QgsProcessingToolboxModel.RoleAlgorithmTags.__doc__ = "List of algorithm tags, for algorithm nodes"
-QgsProcessingToolboxModel.RoleProviderFlags = QgsProcessingToolboxModel.CustomRole.ProviderFlags
 QgsProcessingToolboxModel.Roles.RoleProviderFlags = QgsProcessingToolboxModel.CustomRole.ProviderFlags
-QgsProcessingToolboxModel.RoleProviderFlags.is_monkey_patched = True
 QgsProcessingToolboxModel.RoleProviderFlags.__doc__ = "Returns the node's provider flags"
-QgsProcessingToolboxModel.ParameterTypeId = QgsProcessingToolboxModel.CustomRole.ParameterTypeId
-QgsProcessingToolboxModel.ParameterTypeId.is_monkey_patched = True
 QgsProcessingToolboxModel.ParameterTypeId.__doc__ = "Untranslated parameter type unique identifier for parameter nodes \n.. versionadded:: 3.44"
 QgsProcessingToolboxModel.CustomRole.__doc__ = """Custom model roles.
 
@@ -3635,21 +3559,13 @@ QgsProcessingToolboxModel.CustomRole.__doc__ = """Custom model roles.
 # --
 QgsProcessingToolboxModel.CustomRole.baseClass = QgsProcessingToolboxModel
 # monkey patching scoped based enum
-QgsProcessingToolboxProxyModel.FilterToolbox = QgsProcessingToolboxProxyModel.Filter.Toolbox
 QgsProcessingToolboxProxyModel.Filter.FilterToolbox = QgsProcessingToolboxProxyModel.Filter.Toolbox
-QgsProcessingToolboxProxyModel.FilterToolbox.is_monkey_patched = True
 QgsProcessingToolboxProxyModel.FilterToolbox.__doc__ = "Filters out any algorithms and content which should not be shown in the toolbox"
-QgsProcessingToolboxProxyModel.FilterModeler = QgsProcessingToolboxProxyModel.Filter.Modeler
 QgsProcessingToolboxProxyModel.Filter.FilterModeler = QgsProcessingToolboxProxyModel.Filter.Modeler
-QgsProcessingToolboxProxyModel.FilterModeler.is_monkey_patched = True
 QgsProcessingToolboxProxyModel.FilterModeler.__doc__ = "Filters out any algorithms and content which should not be shown in the modeler"
-QgsProcessingToolboxProxyModel.FilterInPlace = QgsProcessingToolboxProxyModel.Filter.InPlace
 QgsProcessingToolboxProxyModel.Filter.FilterInPlace = QgsProcessingToolboxProxyModel.Filter.InPlace
-QgsProcessingToolboxProxyModel.FilterInPlace.is_monkey_patched = True
 QgsProcessingToolboxProxyModel.FilterInPlace.__doc__ = "Only show algorithms which support in-place edits"
-QgsProcessingToolboxProxyModel.FilterShowKnownIssues = QgsProcessingToolboxProxyModel.Filter.ShowKnownIssues
 QgsProcessingToolboxProxyModel.Filter.FilterShowKnownIssues = QgsProcessingToolboxProxyModel.Filter.ShowKnownIssues
-QgsProcessingToolboxProxyModel.FilterShowKnownIssues.is_monkey_patched = True
 QgsProcessingToolboxProxyModel.FilterShowKnownIssues.__doc__ = "Show algorithms with known issues (hidden by default)"
 QgsProcessingToolboxProxyModel.Filter.__doc__ = """Available filter flags for filtering the model
 
@@ -4010,15 +3926,10 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/proj/qgsrecentcoordinatereferencesystemsmodel.h
-QgsRecentCoordinateReferenceSystemsModel.Roles = QgsRecentCoordinateReferenceSystemsModel.CustomRole
 # monkey patching scoped based enum
-QgsRecentCoordinateReferenceSystemsModel.RoleCrs = QgsRecentCoordinateReferenceSystemsModel.CustomRole.Crs
 QgsRecentCoordinateReferenceSystemsModel.Roles.RoleCrs = QgsRecentCoordinateReferenceSystemsModel.CustomRole.Crs
-QgsRecentCoordinateReferenceSystemsModel.RoleCrs.is_monkey_patched = True
 QgsRecentCoordinateReferenceSystemsModel.RoleCrs.__doc__ = "Coordinate reference system"
-QgsRecentCoordinateReferenceSystemsModel.RoleAuthId = QgsRecentCoordinateReferenceSystemsModel.CustomRole.AuthId
 QgsRecentCoordinateReferenceSystemsModel.Roles.RoleAuthId = QgsRecentCoordinateReferenceSystemsModel.CustomRole.AuthId
-QgsRecentCoordinateReferenceSystemsModel.RoleAuthId.is_monkey_patched = True
 QgsRecentCoordinateReferenceSystemsModel.RoleAuthId.__doc__ = "CRS authority ID"
 QgsRecentCoordinateReferenceSystemsModel.CustomRole.__doc__ = """Custom model roles.
 
@@ -4858,11 +4769,8 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsvaliditycheckresultswidget.h
-QgsValidityCheckResultsModel.Roles = QgsValidityCheckResultsModel.CustomRole
 # monkey patching scoped based enum
-QgsValidityCheckResultsModel.DescriptionRole = QgsValidityCheckResultsModel.CustomRole.Description
 QgsValidityCheckResultsModel.Roles.DescriptionRole = QgsValidityCheckResultsModel.CustomRole.Description
-QgsValidityCheckResultsModel.DescriptionRole.is_monkey_patched = True
 QgsValidityCheckResultsModel.DescriptionRole.__doc__ = "Result detailed description"
 QgsValidityCheckResultsModel.CustomRole.__doc__ = """Custom model roles.
 
@@ -4975,14 +4883,8 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/editorwidgets/core/qgswidgetwrapper.h
 # monkey patching scoped based enum
-QgsWidgetWrapper.RootPath = QgsWidgetWrapper.Property.RootPath
-QgsWidgetWrapper.RootPath.is_monkey_patched = True
 QgsWidgetWrapper.RootPath.__doc__ = "Root path for external resource"
-QgsWidgetWrapper.DocumentViewerContent = QgsWidgetWrapper.Property.DocumentViewerContent
-QgsWidgetWrapper.DocumentViewerContent.is_monkey_patched = True
 QgsWidgetWrapper.DocumentViewerContent.__doc__ = "Document type for external resource"
-QgsWidgetWrapper.StorageUrl = QgsWidgetWrapper.Property.StorageUrl
-QgsWidgetWrapper.StorageUrl.is_monkey_patched = True
 QgsWidgetWrapper.StorageUrl.__doc__ = "Storage URL for external resource"
 QgsWidgetWrapper.Property.__doc__ = """Data defined properties for different editor widgets.
 
@@ -5008,65 +4910,28 @@ except (NameError, AttributeError):
 
 
 # monkey patching scoped based enum
-QgsMapToolCapture.CaptureTechnique = _Qgis.CaptureTechnique
-QgsMapToolCapture.StraightSegments = _Qgis.CaptureTechnique.StraightSegments
-QgsMapToolCapture.StraightSegments.is_monkey_patched = True
 QgsMapToolCapture.StraightSegments.__doc__ = "Default capture mode - capture occurs with straight line segments"
-QgsMapToolCapture.CircularString = _Qgis.CaptureTechnique.CircularString
-QgsMapToolCapture.CircularString.is_monkey_patched = True
 QgsMapToolCapture.CircularString.__doc__ = "Capture in circular strings"
-QgsMapToolCapture.Streaming = _Qgis.CaptureTechnique.Streaming
-QgsMapToolCapture.Streaming.is_monkey_patched = True
 QgsMapToolCapture.Streaming.__doc__ = "Streaming points digitizing mode (points are automatically added as the mouse cursor moves)."
-QgsMapToolCapture.Shape = _Qgis.CaptureTechnique.Shape
-QgsMapToolCapture.Shape.is_monkey_patched = True
 QgsMapToolCapture.Shape.__doc__ = "Digitize shapes."
 
-QgsActionMenu.ActionType = _Qgis.ActionType
 # monkey patching scoped based enum
-QgsActionMenu.Invalid = _Qgis.ActionType.Invalid
-QgsActionMenu.Invalid.is_monkey_patched = True
 QgsActionMenu.Invalid.__doc__ = "Invalid"
-QgsActionMenu.MapLayerAction = _Qgis.ActionType.MapLayerAction
-QgsActionMenu.MapLayerAction.is_monkey_patched = True
 QgsActionMenu.MapLayerAction.__doc__ = "Standard actions (defined by core or plugins), corresponds to QgsMapLayerAction class."
-QgsActionMenu.AttributeAction = _Qgis.ActionType.AttributeAction
-QgsActionMenu.AttributeAction.is_monkey_patched = True
 QgsActionMenu.AttributeAction.__doc__ = "Custom actions (manually defined in layer properties), corresponds to QgsAction class."
 
-QgsMapLayerAction.Target = _Qgis.MapLayerActionTarget
 # monkey patching scoped based enum
-QgsMapLayerAction.Layer = _Qgis.MapLayerActionTarget.Layer
-QgsMapLayerAction.Layer.is_monkey_patched = True
 QgsMapLayerAction.Layer.__doc__ = "Action targets a complete layer"
-QgsMapLayerAction.SingleFeature = _Qgis.MapLayerActionTarget.SingleFeature
-QgsMapLayerAction.SingleFeature.is_monkey_patched = True
 QgsMapLayerAction.SingleFeature.__doc__ = "Action targets a single feature from a layer"
-QgsMapLayerAction.MultipleFeatures = _Qgis.MapLayerActionTarget.MultipleFeatures
-QgsMapLayerAction.MultipleFeatures.is_monkey_patched = True
 QgsMapLayerAction.MultipleFeatures.__doc__ = "Action targets multiple features from a layer"
-QgsMapLayerAction.AllActions = _Qgis.MapLayerActionTarget.AllActions
-QgsMapLayerAction.AllActions.is_monkey_patched = True
 QgsMapLayerAction.AllActions.__doc__ = ""
-QgsMapLayerAction.Targets = _Qgis.MapLayerActionTargets
 
-QgsMapLayerAction.Flag = _Qgis.MapLayerActionFlag
 # monkey patching scoped based enum
-QgsMapLayerAction.EnabledOnlyWhenEditable = _Qgis.MapLayerActionFlag.EnabledOnlyWhenEditable
-QgsMapLayerAction.EnabledOnlyWhenEditable.is_monkey_patched = True
 QgsMapLayerAction.EnabledOnlyWhenEditable.__doc__ = "Action should be shown only for editable layers"
-QgsMapLayerAction.Flags = _Qgis.MapLayerActionFlags
 
-QgsProcessingGui.WidgetType = _Qgis.ProcessingMode
 # monkey patching scoped based enum
-QgsProcessingGui.Standard = _Qgis.ProcessingMode.Standard
-QgsProcessingGui.Standard.is_monkey_patched = True
 QgsProcessingGui.Standard.__doc__ = "Standard (single-run) algorithm mode"
-QgsProcessingGui.Batch = _Qgis.ProcessingMode.Batch
-QgsProcessingGui.Batch.is_monkey_patched = True
 QgsProcessingGui.Batch.__doc__ = "Batch processing mode"
-QgsProcessingGui.Modeler = _Qgis.ProcessingMode.Modeler
-QgsProcessingGui.Modeler.is_monkey_patched = True
 QgsProcessingGui.Modeler.__doc__ = "Modeler mode"
 
 

@@ -1060,11 +1060,11 @@ def _import(name, globals={}, locals={}, fromlist=[], level=None):
         )
         raise ImportError(msg)
     qt_version = int(QT_VERSION_STR.split(".")[0])
-    if qt_version == 5 and "PyQt6" in name:
+    if qt_version == 5 and "PyQt5" in name:
         msg = (
-            "PyQt6 classes cannot be imported in a QGIS build based on Qt5.\n"
+            "PyQt5 classes cannot be imported in a QGIS build based on Qt5.\n"
             "Use {} or preferably the version independent {} import instead (where available).".format(
-                name.replace("PyQt6", "PyQt5"), name.replace("PyQt6", "qgis.PyQt")
+                name.replace("PyQt5", "PyQt5"), name.replace("PyQt5", "qgis.PyQt")
             )
         )
         raise ImportError(msg)
@@ -1072,7 +1072,7 @@ def _import(name, globals={}, locals={}, fromlist=[], level=None):
         msg = (
             "PyQt5 classes cannot be imported in a QGIS build based on Qt6.\n"
             "Use {} or preferably the version independent {} import instead (where available).".format(
-                name.replace("PyQt5", "PyQt6"), name.replace("PyQt5", "qgis.PyQt")
+                name.replace("PyQt5", "PyQt5"), name.replace("PyQt5", "qgis.PyQt")
             )
         )
         raise ImportError(msg)
