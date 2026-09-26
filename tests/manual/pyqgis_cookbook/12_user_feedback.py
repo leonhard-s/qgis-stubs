@@ -4,7 +4,7 @@
 import typing
 from qgis.core import Qgis
 from qgis.gui import QgsMessageBar
-from PyQt5.QtWidgets import QDialog, QGridLayout, QSizePolicy, QDialogButtonBox
+from PyQt6.QtWidgets import QDialog, QGridLayout, QSizePolicy, QDialogButtonBox
 
 
 class MyDialog(QDialog):

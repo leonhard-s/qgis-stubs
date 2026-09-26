@@ -5,7 +5,7 @@ import typing
 from qgis.core import (
     Qgis, QgsColorRampShader, QgsProject, QgsRasterLayer, QgsRasterShader,
     QgsSingleBandPseudoColorRenderer)
-from PyQt5.QtGui import QColor
+from PyQt6.QtGui import QColor
 
 
 def get_layer() -> None:

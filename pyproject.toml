@@ -20,7 +20,7 @@ classifiers = [
     "Topic :: Software Development",
 ]
 dependencies = [
-    "PyQt5-stubs>=5.14",
+    "PyQt6-stubs>=20250824",
 ]
 
 [project.urls]

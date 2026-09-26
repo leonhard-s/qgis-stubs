@@ -4,8 +4,8 @@
 import os
 from qgis.core import QgsProject, QgsMapRendererParallelJob, QgsMapSettings
 from qgis.gui import QgisInterface
-from PyQt5.QtCore import QEventLoop, QSize
-from PyQt5.QtGui import QColor
+from PyQt6.QtCore import QEventLoop, QSize
+from PyQt6.QtGui import QColor
 
 iface = QgisInterface()
 

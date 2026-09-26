@@ -5,7 +5,7 @@ import typing
 from qgis.core import (
     QgsExpression, QgsExpressionContext, QgsExpressionContextUtils, QgsFeature,
     QgsField, QgsGeometry, QgsPointXY, QgsProject, QgsVectorLayer, edit)
-from PyQt5.QtCore import QMetaType, QVariant
+from PyQt6.QtCore import QMetaType, QVariant
 
 
 def expressions_with_features() -> None:

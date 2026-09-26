@@ -7,7 +7,7 @@ from qgis.core import (
     QgsVectorDataProvider, QgsVectorFileWriter, QgsVectorLayer,
     QgsWkbTypes)
 from qgis.gui import QgisInterface
-from PyQt5.QtCore import QMetaType, QVariant
+from PyQt6.QtCore import QMetaType, QVariant
 
 
 def get_layer_info() -> None:

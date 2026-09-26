@@ -5,8 +5,8 @@
 
 from qgis.core import QgsMapLayer
 from qgis.gui import QgsMapCanvas, QgsMapToolPan, QgsMapToolZoom
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QAction, QMainWindow
+from PyQt6.QtCore import Qt
+from PyQt6.QtWidgets import QAction, QMainWindow
 
 
 class MyWnd(QMainWindow):
