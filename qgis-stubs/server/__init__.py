@@ -21,7 +21,7 @@ __author__ = 'Alessandro Pasotti'
 __date__ = 'October 2014'
 __copyright__ = '(C) 2014, Alessandro Pasotti'
 
-from PyQt5 import QtCore     # NOQA
+from qgis.PyQt import QtCore     # NOQA
 
 from qgis._server import *  # NOQA
 

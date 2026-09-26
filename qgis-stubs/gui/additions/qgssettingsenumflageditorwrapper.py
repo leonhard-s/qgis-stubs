@@ -15,7 +15,7 @@
 ***************************************************************************
 """
 
-from PyQt5.QtWidgets import QComboBox
+from qgis.PyQt.QtWidgets import QComboBox
 
 from qgis.core import QgsSettingsEntryBase
 from qgis.gui import QgsSettingsEditorWidgetWrapper

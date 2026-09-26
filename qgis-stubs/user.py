@@ -24,7 +24,7 @@ import sys
 import glob
 import traceback
 
-from PyQt5.QtCore import QCoreApplication, qDebug
+from qgis.PyQt.QtCore import QCoreApplication, qDebug
 from qgis.core import Qgis, QgsApplication, QgsMessageLog
 
 

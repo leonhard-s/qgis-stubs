@@ -1,0 +1,196 @@
+# -*- coding: utf-8 -*-
+
+"""
+***************************************************************************
+    QtCore.py
+    ---------------------
+    Date                 : November 2015
+    Copyright            : (C) 2015 by Matthias Kuhn
+    Email                : matthias at opengis dot ch
+***************************************************************************
+*                                                                         *
+*   This program is free software; you can redistribute it and/or modify  *
+*   it under the terms of the GNU General Public License as published by  *
+*   the Free Software Foundation; either version 2 of the License, or     *
+*   (at your option) any later version.                                   *
+*                                                                         *
+***************************************************************************
+"""
+
+__author__ = 'Matthias Kuhn'
+__date__ = 'November 2015'
+__copyright__ = '(C) 2015, Matthias Kuhn'
+
+from PyQt5.QtCore import *
+
+from types import MethodType
+
+
+_QVariant__repr__ = QVariant.__repr__
+_QVariant__eq__ = QVariant.__eq__
+_QVariant__ne__ = QVariant.__ne__
+_QVariant__hash__ = QVariant.__hash__
+
+
+def __bool__(self):
+    return not self.isNull()
+
+
+def __repr__(self):
+    if self.isNull():
+        return 'NULL'
+    else:
+        return _QVariant__repr__(self)
+
+
+def __eq__(self, other):
+    if self.isNull():
+        return (isinstance(other, QVariant) and other.isNull()) or other is None
+    else:
+        return _QVariant__eq__(self, other)
+
+
+def __ne__(self, other):
+    if self.isNull():
+        return not (isinstance(other, QVariant) and other.isNull()) and other is not None
+    else:
+        return _QVariant__ne__(self, other)
+
+
+def __hash__(self):
+    if self.isNull():
+        return 2178309
+    else:
+        return _QVariant__hash__(self)
+
+
+QVariant.__bool__ = __bool__
+QVariant.__repr__ = __repr__
+QVariant.__eq__ = __eq__
+QVariant.__ne__ = __ne__
+QVariant.__hash__ = __hash__
+
+if (QT_VERSION >= 0x060000):
+    NULL = None
+    # monkey patch in QVariant Types
+    QVariant.Invalid = QMetaType.Type.UnknownType
+    QVariant.Bool = QMetaType.Type.Bool
+    QVariant.Int = QMetaType.Type.Int
+    QVariant.UInt = QMetaType.Type.UInt
+    QVariant.LongLong = QMetaType.Type.LongLong
+    QVariant.ULongLong = QMetaType.Type.ULongLong
+    QVariant.Double = QMetaType.Type.Double
+    QVariant.Char = QMetaType.Type.QChar
+    QVariant.Map = QMetaType.Type.QVariantMap
+    QVariant.List = QMetaType.Type.QVariantList
+    QVariant.String = QMetaType.Type.QString
+    QVariant.StringList = QMetaType.Type.QStringList
+    QVariant.ByteArray = QMetaType.Type.QByteArray
+    QVariant.BitArray = QMetaType.Type.QBitArray
+    QVariant.Date = QMetaType.Type.QDate
+    QVariant.Time = QMetaType.Type.QTime
+    QVariant.DateTime = QMetaType.Type.QDateTime
+    QVariant.Url = QMetaType.Type.QUrl
+    QVariant.Locale = QMetaType.Type.QLocale
+    QVariant.Rect = QMetaType.Type.QRect
+    QVariant.RectF = QMetaType.Type.QRectF
+    QVariant.Size = QMetaType.Type.QSize
+    QVariant.SizeF = QMetaType.Type.QSizeF
+    QVariant.Line = QMetaType.Type.QLine
+    QVariant.LineF = QMetaType.Type.QLineF
+    QVariant.Point = QMetaType.Type.QPoint
+    QVariant.PointF = QMetaType.Type.QPointF
+    QVariant.RegularExpression = QMetaType.Type.QRegularExpression
+    QVariant.Hash = QMetaType.Type.QVariantHash
+    QVariant.EasingCurve = QMetaType.Type.QEasingCurve
+    QVariant.Uuid = QMetaType.Type.QUuid
+    QVariant.ModelIndex = QMetaType.Type.QModelIndex
+    QVariant.PersistentModelIndex = QMetaType.Type.QPersistentModelIndex
+    QVariant.LastCoreType = QMetaType.Type.LastCoreType
+    QVariant.Font = QMetaType.Type.QFont
+    QVariant.Pixmap = QMetaType.Type.QPixmap
+    QVariant.Brush = QMetaType.Type.QBrush
+    QVariant.Color = QMetaType.Type.QColor
+    QVariant.Palette = QMetaType.Type.QPalette
+    QVariant.Image = QMetaType.Type.QImage
+    QVariant.Polygon = QMetaType.Type.QPolygon
+    QVariant.Region = QMetaType.Type.QRegion
+    QVariant.Bitmap = QMetaType.Type.QBitmap
+    QVariant.Cursor = QMetaType.Type.QCursor
+    QVariant.KeySequence = QMetaType.Type.QKeySequence
+    QVariant.Pen = QMetaType.Type.QPen
+    QVariant.TextLength = QMetaType.Type.QTextLength
+    QVariant.TextFormat = QMetaType.Type.QTextFormat
+    QVariant.Transform = QMetaType.Type.QTransform
+    QVariant.Matrix4x4 = QMetaType.Type.QMatrix4x4
+    QVariant.Vector2D = QMetaType.Type.QVector2D
+    QVariant.Vector3D = QMetaType.Type.QVector3D
+    QVariant.Vector4D = QMetaType.Type.QVector4D
+    QVariant.Quaternion = QMetaType.Type.QQuaternion
+    QVariant.PolygonF = QMetaType.Type.QPolygonF
+    QVariant.Icon = QMetaType.Type.QIcon
+    QVariant.SizePolicy = QMetaType.Type.QSizePolicy
+    QVariant.UserType = QMetaType.Type.User
+
+    from enum import Enum
+
+
+    def _force_int(v): return int(v.value) if isinstance(v, Enum) else v
+
+    QMetaType.Type.__int__ = _force_int
+    QMetaType.Type.__eq__ = lambda t1, t2: _force_int(t1) == _force_int(t2)
+
+    # These types aren't IntEnums or IntFlags, so patch that back in
+    # See discussion at https://www.riverbankcomputing.com/pipermail/pyqt/2024-February/045715.html
+    Qt.CheckState.__int__ = _force_int
+    Qt.CheckState.__eq__ = lambda t1, t2: _force_int(t1) == _force_int(t2)
+
+    # patch back in Qt flags removed in PyQt
+
+    QAbstractItemModel.CheckIndexOptions = lambda flags=0: QAbstractItemModel.CheckIndexOption(flags)
+    QByteArray.Base64Options = lambda flags=0: QByteArray.Base64Option(flags)
+    QCommandLineOption.Flags = lambda flags=0: QCommandLineOption.Flag(flags)
+    QDir.Filters = lambda flags=0: QDir.Filter(flags)
+    QDir.SortFlags = lambda flags=0: QDir.SortFlag(flags)
+    QDirIterator.IteratorFlags = lambda flags=0: QDirIterator.IteratorFlag(flags)
+    QEventLoop.ProcessEventsFlags = lambda flags=0: QEventLoop.ProcessEventsFlag(flags)
+    QFileDevice.FileHandleFlags = lambda flags=0: QFileDevice.FileHandleFlag(flags)
+    QFileDevice.MemoryMapFlags = lambda flags=0: QFileDevice.MemoryMapFlag(flags)
+    QFileDevice.Permissions = lambda flags=0: QFileDevice.Permission(flags)
+    QItemSelectionModel.SelectionFlags = lambda flags=0: QItemSelectionModel.SelectionFlag(flags)
+    QLibrary.LoadHints = lambda flags=0: QLibrary.LoadHint(flags)
+    QLocale.DataSizeFormats = lambda flags=0: QLocale.DataSizeFormat(flags)
+    QLocale.NumberOptions = lambda flags=0: QLocale.NumberOption(flags)
+    QMetaType.TypeFlags = lambda flags=0: QMetaType.TypeFlag(flags)
+    QRegularExpression.MatchOptions = lambda flags=0: QRegularExpression.MatchOption(flags)
+    QRegularExpression.PatternOptions = lambda flags=0: QRegularExpression.PatternOption(flags)
+    QStandardPaths.LocateOptions = lambda flags=0: QStandardPaths.LocateOption(flags)
+    QTextBoundaryFinder.BoundaryReasons = lambda flags=0: QTextBoundaryFinder.BoundaryReason(flags)
+    QTextStream.NumberFlags = lambda flags=0: QTextStream.NumberFlag(flags)
+    QUrl.ComponentFormattingOptions = lambda flags=0: QUrl.ComponentFormattingOption(flags)
+    QUrl.FormattingOptions = lambda flags=0: QUrl.UrlFormattingOption(flags)
+    QUrl.UserInputResolutionOptions = lambda flags=0: QUrl.UserInputResolutionOption(flags)
+    Qt.Alignment = lambda flags=0: Qt.AlignmentFlag(flags)
+    Qt.ApplicationStates = lambda flags=0: Qt.ApplicationState(flags)
+    Qt.DockWidgetAreas = lambda flags=0: Qt.DockWidgetArea(flags)
+    Qt.DropActions = lambda flags=0: Qt.DropAction(flags)
+    Qt.Edges = lambda flags=0: Qt.Edge(flags)
+    Qt.FindChildOptions = lambda flags=0: Qt.FindChildOption(flags)
+    Qt.GestureFlags = lambda flags=0: Qt.GestureFlag(flags)
+    Qt.ImageConversionFlags = lambda flags=0: Qt.ImageConversionFlag(flags)
+    Qt.InputMethodHints = lambda flags=0: Qt.InputMethodHint(flags)
+    Qt.InputMethodQueries = lambda flags=0: Qt.InputMethodQuery(flags)
+    Qt.ItemFlags = lambda flags=0: Qt.ItemFlag(flags)
+    Qt.KeyboardModifiers = lambda flags=0: Qt.KeyboardModifier(flags)
+    Qt.MatchFlags = lambda flags=0: Qt.MatchFlag(flags)
+    Qt.MouseButtons = lambda flags=0: Qt.MouseButton(flags)
+    Qt.MouseEventFlags = lambda flags=0: Qt.MouseEventFlag(flags)
+    Qt.Orientations = lambda flags=0: Qt.Orientation(flags)
+    Qt.ScreenOrientations = lambda flags=0: Qt.ScreenOrientation(flags)
+    Qt.TextInteractionFlags = lambda flags=0: Qt.TextInteractionFlag(flags)
+    Qt.ToolBarAreas = lambda flags=0: Qt.ToolBarArea(flags)
+    Qt.TouchPointStates = lambda flags=0: Qt.TouchPointState(flags)
+    Qt.WindowStates = lambda flags=0: Qt.WindowState(flags)
+    Qt.WindowFlags = lambda flags=0: Qt.WindowType(flags)
+else:
+    NULL = QVariant(QVariant.Int)

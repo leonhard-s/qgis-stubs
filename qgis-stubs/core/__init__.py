@@ -23,8 +23,8 @@ __copyright__ = '(C) 2014, Nathan Woodrow'
 
 import typing as _typing
 
-from PyQt5.QtCore import NULL
-from PyQt5.QtCore import Qt as _Qt
+from qgis.PyQt.QtCore import NULL
+from qgis.PyQt.QtCore import Qt as _Qt
 from qgis._core import *
 
 """
@@ -20342,6 +20342,8 @@ try:
     QgsProcessingUtils.removePointerValuesFromMap = staticmethod(QgsProcessingUtils.removePointerValuesFromMap)
     QgsProcessingUtils.preprocessQgisProcessParameters = staticmethod(QgsProcessingUtils.preprocessQgisProcessParameters)
     QgsProcessingUtils.resolveDefaultEncoding = staticmethod(QgsProcessingUtils.resolveDefaultEncoding)
+    QgsProcessingUtils.supportedImageFormats = staticmethod(QgsProcessingUtils.supportedImageFormats)
+    QgsProcessingUtils.supportedImageFileFilters = staticmethod(QgsProcessingUtils.supportedImageFileFilters)
     QgsProcessingUtils.__group__ = ['processing']
 except (NameError, AttributeError):
     pass
@@ -24546,12 +24548,7 @@ except (NameError, AttributeError):
     pass
 
 
-# Typed wrapper over core.additions.edit
-from .additions.edit import edit as edit_
-def edit(layer: 'QgsVectorLayer') -> '_typing.ContextManager[QgsVectorLayer]':
-    return edit_(layer)  # type: ignore
-
-from .additions.edit import QgsEditError
+from .additions.edit import edit, QgsEditError
 from .additions.fromfunction import _fromFunction
 from .additions.metaenum import metaEnumFromType, metaEnumFromValue
 from .additions.projectdirtyblocker import ProjectDirtyBlocker
