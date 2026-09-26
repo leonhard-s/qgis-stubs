@@ -287,6 +287,13 @@ class Qgs3DTypes(PyQt5.sip.wrapper):
     def __init__(self) -> None: ...
     @typing.overload
     def __init__(self, a0: 'Qgs3DTypes') -> None: ...
+    AltitudeClamping: typing.Type[_Qgis.AltitudeClamping]
+    AltClampAbsolute: _Qgis.AltitudeClamping
+    AltClampRelative: _Qgis.AltitudeClamping
+    AltClampTerrain: _Qgis.AltitudeClamping
+    AltitudeBinding: typing.Type[_Qgis.AltitudeBinding]
+    AltBindVertex: _Qgis.AltitudeBinding
+    AltBindCentroid: _Qgis.AltitudeBinding
 
 
 class Qgs3DMapCanvas(QtGui.QWindow):
@@ -649,6 +656,14 @@ class QgsAbstractMaterialSettings(PyQt5.sip.wrapper):
     def readXml(self, element: QtXml.QDomElement, a1: _core.QgsReadWriteContext) -> None: ...
     def clone(self) -> typing.Optional['QgsAbstractMaterialSettings']: ...
     def type(self) -> str: ...
+    RenderingTechnique: typing.Type[QgsMaterialSettingsRenderingTechnique]
+    Triangles: typing.Type[QgsMaterialSettingsRenderingTechnique.Triangles]
+    Lines: typing.Type[QgsMaterialSettingsRenderingTechnique.Lines]
+    InstancedPoints: typing.Type[QgsMaterialSettingsRenderingTechnique.InstancedPoints]
+    Points: typing.Type[QgsMaterialSettingsRenderingTechnique.Points]
+    TrianglesWithFixedTexture: typing.Type[QgsMaterialSettingsRenderingTechnique.TrianglesWithFixedTexture]
+    TrianglesFromModel: typing.Type[QgsMaterialSettingsRenderingTechnique.TrianglesFromModel]
+    TrianglesDataDefined: typing.Type[QgsMaterialSettingsRenderingTechnique.TrianglesDataDefined]
 
 
 class QgsGoochMaterialSettings(QgsAbstractMaterialSettings):
@@ -978,6 +993,16 @@ class QgsPoint3DSymbol(_core.QgsAbstract3DSymbol):
     def type(self) -> str: ...
     @staticmethod
     def create() -> typing.Optional[_core.QgsAbstract3DSymbol]: ...
+    Shape: typing.Type[_Qgis.Point3DShape]
+    Cylinder: _Qgis.Point3DShape
+    Sphere: _Qgis.Point3DShape
+    Cone: _Qgis.Point3DShape
+    Cube: _Qgis.Point3DShape
+    Torus: _Qgis.Point3DShape
+    Plane: _Qgis.Point3DShape
+    ExtrudedText: _Qgis.Point3DShape
+    Model: _Qgis.Point3DShape
+    Billboard: _Qgis.Point3DShape
 
 
 class QgsPolygon3DSymbol(_core.QgsAbstract3DSymbol):

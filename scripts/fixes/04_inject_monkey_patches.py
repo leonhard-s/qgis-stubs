@@ -26,6 +26,10 @@ _ASSIGN_RE = re.compile(
 )
 _SKIP_ATTRS = frozenset({'is_monkey_patched', '__doc__', 'baseClass'})
 
+# Identifies the native extension module (and thus its .pyi stub) an
+# __init__.py wraps, e.g. "from qgis._core import *" -> "_core".
+_NATIVE_IMPORT_RE = re.compile(r'^from qgis\.(_\w+) import \*', re.MULTILINE)
+
 
 def parse_patches(
     init_path: pathlib.Path,
@@ -104,25 +108,40 @@ def inject_into_stub(
     return len(targets)
 
 
+def iter_init_stub_pairs(
+    root: pathlib.Path,
+) -> list[tuple[pathlib.Path, pathlib.Path]]:
+    """Find (__init__.py, .pyi) pairs by following the native module import."""
+    pairs = []
+    for init_path in sorted(root.rglob('__init__.py')):
+        match = _NATIVE_IMPORT_RE.search(init_path.read_text('utf-8'))
+        if match is None:
+            continue
+        stub_path = root / f'{match.group(1)}.pyi'
+        if stub_path.is_file():
+            pairs.append((init_path, stub_path))
+    return pairs
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
-        'init',
+        'path',
         type=pathlib.Path,
-        help='Runtime module with monkey-patch assignments (e.g. qgis/core/__init__.py)',
-    )
-    parser.add_argument(
-        'stub',
-        type=pathlib.Path,
-        help='.pyi stub file to inject annotations into (e.g. qgis/_core.pyi)',
+        nargs='?',
+        default=pathlib.Path('qgis-stubs'),
+        help='Package root to scan for __init__.py/.pyi pairs (default: qgis-stubs)',
     )
     args = parser.parse_args()
 
-    patches = parse_patches(args.init)
-    print(f'Parsed patches for {len(patches)} classes.')
-
-    count = inject_into_stub(args.stub, patches)
-    print(f'Injected annotations into {count} classes in {args.stub}.')
+    total = 0
+    for init_path, stub_path in iter_init_stub_pairs(args.path):
+        patches = parse_patches(init_path)
+        count = inject_into_stub(stub_path, patches)
+        if count:
+            print(f'Injected annotations into {count} classes in {stub_path}.')
+        total += count
+    print(f'Injected annotations into {total} classes total.')
 
 
 if __name__ == '__main__':
