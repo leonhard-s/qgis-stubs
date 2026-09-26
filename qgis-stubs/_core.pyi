@@ -26,6 +26,16 @@ from PyQt5 import QtSerialPort
 # Support for QDate, QDateTime and QTime.
 import datetime
 
+# Type aliases used for arguments and return types. Note that these names are
+# *NOT* available at runtime, they only exist for typing purposes.
+QgsMultiPointXY = typing.List['QgsPointXY']
+QgsPolylineXY = typing.List['QgsPointXY']
+QgsPolygonXY = typing.List[QgsPolylineXY]
+QgsMultiPolygonXY = typing.List[QgsPolygonXY]
+QgsMultiPolylineXY = typing.List[QgsPolylineXY]
+QgsPointSequence = typing.List['QgsPoint']
+QgsPolyline = QgsPointSequence
+
 # Convenient type aliases.
 PYQT_SIGNAL = typing.Union[QtCore.pyqtSignal, QtCore.pyqtBoundSignal]
 PYQT_SLOT = typing.Union[typing.Callable[..., Any], QtCore.pyqtBoundSignal]
