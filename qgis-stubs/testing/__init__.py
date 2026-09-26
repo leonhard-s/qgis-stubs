@@ -44,7 +44,7 @@ from qgis.core import (
     QgsRenderChecker,
     QgsVectorLayer,
 )
-from qgis.PyQt.QtCore import (
+from PyQt6.QtCore import (
     QCoreApplication,
     QDate,
     QDateTime,
@@ -54,7 +54,7 @@ from qgis.PyQt.QtCore import (
     QUrl,
     QVariant,
 )
-from qgis.PyQt.QtGui import QDesktopServices, QImage, QPainter
+from PyQt6.QtGui import QDesktopServices, QImage, QPainter
 
 unittest.util._MAX_LENGTH = 2000
 

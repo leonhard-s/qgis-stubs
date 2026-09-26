@@ -92,6 +92,8 @@ class Qgs3DMapScene(QtCore.QObject):
     def setViewFrom2DExtent(self, extent: _core.QgsRectangle) -> None: ...
     def viewZoomFull(self) -> None: ...
     def cameraController(self) -> typing.Optional['QgsCameraController']: ...
+    Ready: Qgs3DMapScene.SceneState
+    Updating: Qgs3DMapScene.SceneState
 
 
 class Qgs3DMapSettings(QtCore.QObject, _core.QgsTemporalRangeObject):
@@ -324,6 +326,19 @@ class Qgs3DTypes(PyQt6.sip.wrapper):
     def __init__(self) -> None: ...
     @typing.overload
     def __init__(self, a0: 'Qgs3DTypes') -> None: ...
+    NoCulling: Qgs3DTypes.CullingMode
+    Front: Qgs3DTypes.CullingMode
+    Back: Qgs3DTypes.CullingMode
+    FrontAndBack: Qgs3DTypes.CullingMode
+    Main3DRenderer: Qgs3DTypes.Flag3DRenderer
+    Selected3DRenderer: Qgs3DTypes.Flag3DRenderer
+    AltitudeClamping: typing.Type[_core.Qgis.AltitudeClamping]
+    AltClampAbsolute: _core.Qgis.AltitudeClamping
+    AltClampRelative: _core.Qgis.AltitudeClamping
+    AltClampTerrain: _core.Qgis.AltitudeClamping
+    AltitudeBinding: typing.Type[_core.Qgis.AltitudeBinding]
+    AltBindVertex: _core.Qgis.AltitudeBinding
+    AltBindCentroid: _core.Qgis.AltitudeBinding
 
 
 class Qgs3DMapCanvas(QtGui.QWindow):
@@ -1083,6 +1098,16 @@ class QgsPoint3DSymbol(_core.QgsAbstract3DSymbol):
     def type(self) -> str: ...
     @staticmethod
     def create() -> typing.Optional[_core.QgsAbstract3DSymbol]: ...
+    Shape: typing.Type[_core.Qgis.Point3DShape]
+    Cylinder: _core.Qgis.Point3DShape
+    Sphere: _core.Qgis.Point3DShape
+    Cone: _core.Qgis.Point3DShape
+    Cube: _core.Qgis.Point3DShape
+    Torus: _core.Qgis.Point3DShape
+    Plane: _core.Qgis.Point3DShape
+    ExtrudedText: _core.Qgis.Point3DShape
+    Model: _core.Qgis.Point3DShape
+    Billboard: _core.Qgis.Point3DShape
 
 
 class QgsPolygon3DSymbol(_core.QgsAbstract3DSymbol):
@@ -1164,6 +1189,11 @@ class QgsPointCloud3DSymbol(_core.QgsAbstract3DSymbol):
     def symbolType(self) -> str: ...
     def clone(self) -> typing.Optional['QgsPointCloud3DSymbol']: ...
     def type(self) -> str: ...
+    NoRendering: QgsPointCloud3DSymbol.RenderingStyle
+    SingleColor: QgsPointCloud3DSymbol.RenderingStyle
+    ColorRamp: QgsPointCloud3DSymbol.RenderingStyle
+    RgbRendering: QgsPointCloud3DSymbol.RenderingStyle
+    Classification: QgsPointCloud3DSymbol.RenderingStyle
 
 
 class QgsSingleColorPointCloud3DSymbol(QgsPointCloud3DSymbol):

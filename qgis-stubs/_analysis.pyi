@@ -184,6 +184,12 @@ class QgsInterpolator(PyQt6.sip.wrapper):
 
     def cacheBaseData(self, feedback: typing.Optional[_core.QgsFeedback] = ...) -> 'QgsInterpolator.Result': ...
     def interpolatePoint(self, x: float, y: float, feedback: typing.Optional[_core.QgsFeedback] = ...) -> typing.Tuple[int, float]: ...
+    SourcePoints: QgsInterpolator.SourceType
+    SourceStructureLines: QgsInterpolator.SourceType
+    SourceBreakLines: QgsInterpolator.SourceType
+    ValueAttribute: QgsInterpolator.ValueSource
+    ValueZ: QgsInterpolator.ValueSource
+    ValueM: QgsInterpolator.ValueSource
 
 
 class QgsIDWInterpolator(QgsInterpolator):
@@ -227,6 +233,8 @@ class QgsTinInterpolator(QgsInterpolator):
     @staticmethod
     def triangulationFields() -> _core.QgsFields: ...
     def interpolatePoint(self, x: float, y: float, feedback: typing.Optional[_core.QgsFeedback]) -> typing.Tuple[int, float]: ...
+    Linear: QgsTinInterpolator.TinInterpolation
+    CloughTocher: QgsTinInterpolator.TinInterpolation
 
 
 class QgsMeshContours(PyQt6.sip.wrapper):
@@ -411,6 +419,9 @@ class QgsVectorLayerDirector(QgsGraphDirector):
 
     def name(self) -> str: ...
     def makeGraph(self, builder: typing.Optional[QgsGraphBuilderInterface], additionalPoints: collections.abc.Iterable[_core.QgsPointXY], feedback: typing.Optional[_core.QgsFeedback] = ...) -> list[_core.QgsPointXY]: ...
+    DirectionForward: QgsVectorLayerDirector.Direction
+    DirectionBackward: QgsVectorLayerDirector.Direction
+    DirectionBoth: QgsVectorLayerDirector.Direction
 
 
 class QgsBatchGeocodeAlgorithm(_core.QgsProcessingFeatureBasedAlgorithm):
@@ -524,6 +535,20 @@ class QgsAlignRaster(PyQt6.sip.wrapper):
     def setRasters(self, list: collections.abc.Iterable[_core.QgsAlignRasterData.RasterItem]) -> None: ...
     def progressHandler(self) -> typing.Optional['QgsAlignRaster.ProgressHandler']: ...
     def setProgressHandler(self, progressHandler: typing.Optional['QgsAlignRaster.ProgressHandler']) -> None: ...
+    Item: typing.Type[QgsAlignRasterData.RasterItem]
+    ResampleAlg: typing.Type[_core.Qgis.GdalResampleAlgorithm]
+    RA_NearestNeighbour: _core.Qgis.GdalResampleAlgorithm
+    RA_Bilinear: _core.Qgis.GdalResampleAlgorithm
+    RA_Cubic: _core.Qgis.GdalResampleAlgorithm
+    RA_CubicSpline: _core.Qgis.GdalResampleAlgorithm
+    RA_Lanczos: _core.Qgis.GdalResampleAlgorithm
+    RA_Average: _core.Qgis.GdalResampleAlgorithm
+    RA_Mode: _core.Qgis.GdalResampleAlgorithm
+    RA_Max: _core.Qgis.GdalResampleAlgorithm
+    RA_Min: _core.Qgis.GdalResampleAlgorithm
+    RA_Median: _core.Qgis.GdalResampleAlgorithm
+    RA_Q1: _core.Qgis.GdalResampleAlgorithm
+    RA_Q3: _core.Qgis.GdalResampleAlgorithm
 
 
 class QgsNineCellFilter(PyQt6.sip.wrapper):
@@ -637,6 +662,18 @@ class QgsKernelDensityEstimation(PyQt6.sip.wrapper):
     def addFeature(self, feature: _core.QgsFeature) -> 'QgsKernelDensityEstimation.Result': ...
     def prepare(self) -> 'QgsKernelDensityEstimation.Result': ...
     def run(self) -> 'QgsKernelDensityEstimation.Result': ...
+    KernelQuartic: QgsKernelDensityEstimation.KernelShape
+    KernelTriangular: QgsKernelDensityEstimation.KernelShape
+    KernelUniform: QgsKernelDensityEstimation.KernelShape
+    KernelTriweight: QgsKernelDensityEstimation.KernelShape
+    KernelEpanechnikov: QgsKernelDensityEstimation.KernelShape
+    OutputRaw: QgsKernelDensityEstimation.OutputValues
+    OutputScaled: QgsKernelDensityEstimation.OutputValues
+    Success: QgsKernelDensityEstimation.Result
+    DriverError: QgsKernelDensityEstimation.Result
+    InvalidParameters: QgsKernelDensityEstimation.Result
+    FileCreationError: QgsKernelDensityEstimation.Result
+    RasterIoError: QgsKernelDensityEstimation.Result
 
 
 class QgsRasterCalcNode(PyQt6.sip.wrapper):
@@ -699,6 +736,38 @@ class QgsRasterCalcNode(PyQt6.sip.wrapper):
     def setRight(self, right: typing.Optional['QgsRasterCalcNode']) -> None: ...
     def setLeft(self, left: typing.Optional['QgsRasterCalcNode']) -> None: ...
     def type(self) -> 'QgsRasterCalcNode.Type': ...
+    tOperator: QgsRasterCalcNode.Type
+    tNumber: QgsRasterCalcNode.Type
+    tRasterRef: QgsRasterCalcNode.Type
+    tMatrix: QgsRasterCalcNode.Type
+    tFunction: QgsRasterCalcNode.Type
+    opPLUS: QgsRasterCalcNode.Operator
+    opMINUS: QgsRasterCalcNode.Operator
+    opMUL: QgsRasterCalcNode.Operator
+    opDIV: QgsRasterCalcNode.Operator
+    opPOW: QgsRasterCalcNode.Operator
+    opSQRT: QgsRasterCalcNode.Operator
+    opSIN: QgsRasterCalcNode.Operator
+    opCOS: QgsRasterCalcNode.Operator
+    opTAN: QgsRasterCalcNode.Operator
+    opASIN: QgsRasterCalcNode.Operator
+    opACOS: QgsRasterCalcNode.Operator
+    opATAN: QgsRasterCalcNode.Operator
+    opEQ: QgsRasterCalcNode.Operator
+    opNE: QgsRasterCalcNode.Operator
+    opGT: QgsRasterCalcNode.Operator
+    opLT: QgsRasterCalcNode.Operator
+    opGE: QgsRasterCalcNode.Operator
+    opLE: QgsRasterCalcNode.Operator
+    opAND: QgsRasterCalcNode.Operator
+    opOR: QgsRasterCalcNode.Operator
+    opSIGN: QgsRasterCalcNode.Operator
+    opLOG: QgsRasterCalcNode.Operator
+    opLOG10: QgsRasterCalcNode.Operator
+    opABS: QgsRasterCalcNode.Operator
+    opMAX: QgsRasterCalcNode.Operator
+    opMIN: QgsRasterCalcNode.Operator
+    opNONE: QgsRasterCalcNode.Operator
 
 
 class QgsRasterCalculatorEntry(PyQt6.sip.wrapper):
@@ -748,6 +817,15 @@ class QgsRasterCalculator(PyQt6.sip.wrapper):
     def setCreationOptions(self, options: collections.abc.Iterable[typing.Optional[str]]) -> None: ...
     def lastError(self) -> str: ...
     def processCalculation(self, feedback: typing.Optional[_core.QgsFeedback] = ...) -> 'QgsRasterCalculator.Result': ...
+    Success: QgsRasterCalculator.Result
+    CreateOutputError: QgsRasterCalculator.Result
+    InputLayerError: QgsRasterCalculator.Result
+    Canceled: QgsRasterCalculator.Result
+    ParserError: QgsRasterCalculator.Result
+    MemoryError: QgsRasterCalculator.Result
+    BandError: QgsRasterCalculator.Result
+    CalculationError: QgsRasterCalculator.Result
+    OpenCLKernelBuildError: QgsRasterCalculator.Result
 
 
 class QgsRasterMatrix(PyQt6.sip.wrapper):
@@ -820,6 +898,32 @@ class QgsRasterMatrix(PyQt6.sip.wrapper):
     def setData(self, cols: int, rows: int, nodataValue: float) -> typing.Optional[float]: ...
     def number(self) -> float: ...
     def isNumber(self) -> bool: ...
+    opPLUS: QgsRasterMatrix.TwoArgOperator
+    opMINUS: QgsRasterMatrix.TwoArgOperator
+    opMUL: QgsRasterMatrix.TwoArgOperator
+    opDIV: QgsRasterMatrix.TwoArgOperator
+    opPOW: QgsRasterMatrix.TwoArgOperator
+    opEQ: QgsRasterMatrix.TwoArgOperator
+    opNE: QgsRasterMatrix.TwoArgOperator
+    opGT: QgsRasterMatrix.TwoArgOperator
+    opLT: QgsRasterMatrix.TwoArgOperator
+    opGE: QgsRasterMatrix.TwoArgOperator
+    opLE: QgsRasterMatrix.TwoArgOperator
+    opAND: QgsRasterMatrix.TwoArgOperator
+    opOR: QgsRasterMatrix.TwoArgOperator
+    opMIN: QgsRasterMatrix.TwoArgOperator
+    opMAX: QgsRasterMatrix.TwoArgOperator
+    opSQRT: QgsRasterMatrix.OneArgOperator
+    opSIN: QgsRasterMatrix.OneArgOperator
+    opCOS: QgsRasterMatrix.OneArgOperator
+    opTAN: QgsRasterMatrix.OneArgOperator
+    opASIN: QgsRasterMatrix.OneArgOperator
+    opACOS: QgsRasterMatrix.OneArgOperator
+    opATAN: QgsRasterMatrix.OneArgOperator
+    opSIGN: QgsRasterMatrix.OneArgOperator
+    opLOG: QgsRasterMatrix.OneArgOperator
+    opLOG10: QgsRasterMatrix.OneArgOperator
+    opABS: QgsRasterMatrix.OneArgOperator
 
 
 class QgsRelief(PyQt6.sip.wrapper):
@@ -842,6 +946,7 @@ class QgsRelief(PyQt6.sip.wrapper):
     def setZFactor(self, factor: float) -> None: ...
     def zFactor(self) -> float: ...
     def processRaster(self, feedback: typing.Optional[_core.QgsFeedback] = ...) -> 'QgsRelief.Result': ...
+    ReliefColor: typing.Type[_core.QgsRasterReliefColor]
 
 
 class QgsRuggednessFilter(QgsNineCellFilter):
@@ -961,6 +1066,17 @@ class QgsGeometryCheck(PyQt6.sip.wrapper):
     def compatibleGeometryTypes(self) -> list[_core.Qgis.GeometryType]: ...
     def isCompatible(self, layer: typing.Optional[_core.QgsVectorLayer]) -> bool: ...
     def prepare(self, context: typing.Optional['QgsGeometryCheckContext'], configuration: dict[typing.Optional[str], typing.Any]) -> None: ...
+    ChangeFeature: QgsGeometryCheck.ChangeWhat
+    ChangePart: QgsGeometryCheck.ChangeWhat
+    ChangeRing: QgsGeometryCheck.ChangeWhat
+    ChangeNode: QgsGeometryCheck.ChangeWhat
+    ChangeAdded: QgsGeometryCheck.ChangeType
+    ChangeRemoved: QgsGeometryCheck.ChangeType
+    ChangeChanged: QgsGeometryCheck.ChangeType
+    FeatureNodeCheck: QgsGeometryCheck.CheckType
+    FeatureCheck: QgsGeometryCheck.CheckType
+    LayerCheck: QgsGeometryCheck.CheckType
+    AvailableInValidation: QgsGeometryCheck.Flag
 
 
 class QgsGeometryCheckResolutionMethod(PyQt6.sip.wrapper):
@@ -1029,6 +1145,13 @@ class QgsGeometryCheckError(PyQt6.sip.wrapper):
     def featureId(self) -> int: ...
     def layerId(self) -> str: ...
     def check(self) -> typing.Optional[QgsGeometryCheck]: ...
+    StatusPending: QgsGeometryCheckError.Status
+    StatusFixFailed: QgsGeometryCheckError.Status
+    StatusFixed: QgsGeometryCheckError.Status
+    StatusObsolete: QgsGeometryCheckError.Status
+    ValueLength: QgsGeometryCheckError.ValueType
+    ValueArea: QgsGeometryCheckError.ValueType
+    ValueOther: QgsGeometryCheckError.ValueType
 
 
 class QgsGeometryCheckerUtils(PyQt6.sip.wrapper):
@@ -1141,6 +1264,13 @@ class QgsGeometrySnapper(QtCore.QObject):
     @typing.overload
     @staticmethod
     def snapGeometry(geometry: _core.QgsGeometry, snapTolerance: float, referenceGeometries: collections.abc.Iterable[_core.QgsGeometry], mode: 'QgsGeometrySnapper.SnapMode' = ...) -> _core.QgsGeometry: ...
+    PreferNodes: QgsGeometrySnapper.SnapMode
+    PreferClosest: QgsGeometrySnapper.SnapMode
+    PreferNodesNoExtraVertices: QgsGeometrySnapper.SnapMode
+    PreferClosestNoExtraVertices: QgsGeometrySnapper.SnapMode
+    EndPointPreferNodes: QgsGeometrySnapper.SnapMode
+    EndPointPreferClosest: QgsGeometrySnapper.SnapMode
+    EndPointToEndPoint: QgsGeometrySnapper.SnapMode
 
 
 class QgsInternalGeometrySnapper(PyQt6.sip.wrapper):
@@ -1183,3 +1313,27 @@ class QgsZonalStatistics(PyQt6.sip.wrapper):
     @typing.overload
     @staticmethod
     def calculateStatistics(rasterInterface: typing.Optional[_core.QgsRasterInterface], geometry: _core.QgsGeometry, cellSizeX: float, cellSizeY: float, rasterBand: int, statistics: _core.Qgis.ZonalStatistic) -> dict[int, typing.Any]: ...
+    Statistic: typing.Type[_core.Qgis.ZonalStatistic]
+    Count: _core.Qgis.ZonalStatistic
+    Sum: _core.Qgis.ZonalStatistic
+    Mean: _core.Qgis.ZonalStatistic
+    Median: _core.Qgis.ZonalStatistic
+    StDev: _core.Qgis.ZonalStatistic
+    Min: _core.Qgis.ZonalStatistic
+    Max: _core.Qgis.ZonalStatistic
+    Range: _core.Qgis.ZonalStatistic
+    Minority: _core.Qgis.ZonalStatistic
+    Majority: _core.Qgis.ZonalStatistic
+    Variety: _core.Qgis.ZonalStatistic
+    Variance: _core.Qgis.ZonalStatistic
+    All: _core.Qgis.ZonalStatistic
+    Default: _core.Qgis.ZonalStatistic
+    Statistics: typing.Type[_core.Qgis.ZonalStatistics]
+    Result: typing.Type[_core.Qgis.ZonalStatisticResult]
+    Success: _core.Qgis.ZonalStatisticResult
+    LayerTypeWrong: _core.Qgis.ZonalStatisticResult
+    LayerInvalid: _core.Qgis.ZonalStatisticResult
+    RasterInvalid: _core.Qgis.ZonalStatisticResult
+    RasterBandInvalid: _core.Qgis.ZonalStatisticResult
+    FailedToCreateField: _core.Qgis.ZonalStatisticResult
+    Canceled: _core.Qgis.ZonalStatisticResult

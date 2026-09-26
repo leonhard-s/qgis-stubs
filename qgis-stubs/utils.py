@@ -43,7 +43,7 @@ from qgis.core import (
     qgsfunction,
 )
 from qgis.gui import QgsMessageBar
-from qgis.PyQt.QtCore import (
+from PyQt6.QtCore import (
     QT_VERSION_STR,
     QCoreApplication,
     QLocale,
@@ -51,8 +51,8 @@ from qgis.PyQt.QtCore import (
     QUrl,
     qDebug,
 )
-from qgis.PyQt.QtGui import QDesktopServices
-from qgis.PyQt.QtWidgets import QApplication, QPushButton
+from PyQt6.QtGui import QDesktopServices
+from PyQt6.QtWidgets import QApplication, QPushButton
 
 builtins.__dict__["unicode"] = str
 builtins.__dict__["basestring"] = str
@@ -248,7 +248,7 @@ iface = None
 
 def initInterface(pointer):
     from qgis.gui import QgisInterface
-    from qgis.PyQt.sip import wrapinstance
+    from PyQt6.sip import wrapinstance
 
     global iface
     iface = wrapinstance(pointer, QgisInterface)
@@ -922,7 +922,7 @@ serverIface = None
 
 
 def initServerInterface(pointer):
-    from qgis.PyQt.sip import wrapinstance
+    from PyQt6.sip import wrapinstance
     from qgis.server import QgsServerInterface
 
     sys.excepthook = sys.__excepthook__

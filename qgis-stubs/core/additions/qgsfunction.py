@@ -26,7 +26,7 @@ from qgis._core import (
     QgsFeatureRequest,
     QgsMessageLog,
 )
-from qgis.PyQt.QtCore import QCoreApplication
+from PyQt6.QtCore import QCoreApplication
 
 
 class QgsPyExpressionFunction(QgsExpressionFunction):

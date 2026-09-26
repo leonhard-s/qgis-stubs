@@ -81,8 +81,8 @@ from qgis.core import (
     QgsProcessingParameterVectorDestination,
     QgsProcessingParameterVectorLayer,
 )
-from qgis.PyQt.QtCore import QCoreApplication
-from qgis.PyQt.QtGui import QIcon
+from PyQt6.QtCore import QCoreApplication
+from PyQt6.QtGui import QIcon
 
 
 def _log(*args, **kw):

@@ -167,6 +167,25 @@ class QgsServerOgcApi(QgsServerApi):
     def version(self) -> str: ...
     def description(self) -> str: ...
     def name(self) -> str: ...
+    alternate: QgsServerOgcApi.Rel
+    describedBy: QgsServerOgcApi.Rel
+    collection: QgsServerOgcApi.Rel
+    item: QgsServerOgcApi.Rel
+    self: QgsServerOgcApi.Rel
+    service_desc: QgsServerOgcApi.Rel
+    service_doc: QgsServerOgcApi.Rel
+    prev: QgsServerOgcApi.Rel
+    next: QgsServerOgcApi.Rel
+    license: QgsServerOgcApi.Rel
+    items: QgsServerOgcApi.Rel
+    conformance: QgsServerOgcApi.Rel
+    data: QgsServerOgcApi.Rel
+    GEOJSON: QgsServerOgcApi.ContentType
+    OPENAPI3: QgsServerOgcApi.ContentType
+    JSON: QgsServerOgcApi.ContentType
+    HTML: QgsServerOgcApi.ContentType
+    XML: QgsServerOgcApi.ContentType
+    FLATGEOBUF: QgsServerOgcApi.ContentType
 
 
 class QgsServerOgcApiHandler(PyQt6.sip.wrapper):
@@ -280,6 +299,12 @@ class QgsServerParameter(QgsServerParameterDefinition):
     @staticmethod
     def name(name: typing.Optional[str]) -> 'QgsServerParameter.Name': ...
     def raiseError(self) -> None: ...
+    UNKNOWN: QgsServerParameter.Name
+    SERVICE: QgsServerParameter.Name
+    VERSION_SERVICE: QgsServerParameter.Name
+    REQUEST: QgsServerParameter.Name
+    MAP: QgsServerParameter.Name
+    FILE_NAME: QgsServerParameter.Name
 
 
 class QgsServerParameters(PyQt6.sip.wrapper):
@@ -401,6 +426,46 @@ class QgsServerSettingsEnv(QtCore.QObject):
         INI_FILE = ... # type: QgsServerSettingsEnv.Source
 
     def __init__(self) -> None: ...
+    DEFAULT_VALUE: QgsServerSettingsEnv.Source
+    ENVIRONMENT_VARIABLE: QgsServerSettingsEnv.Source
+    INI_FILE: QgsServerSettingsEnv.Source
+    QGIS_OPTIONS_PATH: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_PARALLEL_RENDERING: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_MAX_THREADS: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_LOG_LEVEL: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_LOG_FILE: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_LOG_STDERR: QgsServerSettingsEnv.EnvVar
+    QGIS_PROJECT_FILE: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_IGNORE_BAD_LAYERS: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_IGNORE_RENDERING_ERRORS: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_RETRY_BAD_LAYERS: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_CACHE_DIRECTORY: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_CACHE_SIZE: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_SHOW_GROUP_SEPARATOR: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_OVERRIDE_SYSTEM_LOCALE: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_WMS_MAX_HEIGHT: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_WMS_MAX_WIDTH: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_API_RESOURCES_DIRECTORY: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_API_WFS3_MAX_LIMIT: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_API_WFS3_ROOT_PATH: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_TRUST_LAYER_METADATA: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_FORCE_READONLY_LAYERS: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_DISABLE_GETPRINT: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_LANDING_PAGE_PROJECTS_DIRECTORIES: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_LANDING_PAGE_PROJECTS_PG_CONNECTIONS: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_LOG_PROFILE: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_SERVICE_URL: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_WMS_SERVICE_URL: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_WFS_SERVICE_URL: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_WCS_SERVICE_URL: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_WMTS_SERVICE_URL: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_LANDING_PAGE_PREFIX: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_PROJECT_CACHE_CHECK_INTERVAL: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_PROJECT_CACHE_STRATEGY: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_PROJECT_CACHE_SIZE: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_ALLOWED_EXTRA_SQL_TOKENS: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_APPLICATION_NAME: QgsServerSettingsEnv.EnvVar
+    QGIS_SERVER_CAPABILITIES_CACHE_SIZE: QgsServerSettingsEnv.EnvVar
 
 
 class QgsServerSettings(PyQt6.sip.wrapper):
@@ -523,6 +588,26 @@ class QgsServerRequest(PyQt6.sip.wrapper):
     def url(self) -> QtCore.QUrl: ...
     @staticmethod
     def methodToString(method: 'QgsServerRequest.Method') -> str: ...
+    HeadMethod: QgsServerRequest.Method
+    PutMethod: QgsServerRequest.Method
+    GetMethod: QgsServerRequest.Method
+    PostMethod: QgsServerRequest.Method
+    DeleteMethod: QgsServerRequest.Method
+    PatchMethod: QgsServerRequest.Method
+    OptionsMethod: QgsServerRequest.Method
+    HOST: QgsServerRequest.RequestHeader
+    FORWARDED: QgsServerRequest.RequestHeader
+    X_FORWARDED_FOR: QgsServerRequest.RequestHeader
+    X_FORWARDED_HOST: QgsServerRequest.RequestHeader
+    X_FORWARDED_PROTO: QgsServerRequest.RequestHeader
+    X_QGIS_SERVICE_URL: QgsServerRequest.RequestHeader
+    X_QGIS_WMS_SERVICE_URL: QgsServerRequest.RequestHeader
+    X_QGIS_WFS_SERVICE_URL: QgsServerRequest.RequestHeader
+    X_QGIS_WCS_SERVICE_URL: QgsServerRequest.RequestHeader
+    X_QGIS_WMTS_SERVICE_URL: QgsServerRequest.RequestHeader
+    ACCEPT: QgsServerRequest.RequestHeader
+    USER_AGENT: QgsServerRequest.RequestHeader
+    AUTHORIZATION: QgsServerRequest.RequestHeader
 
 
 class QgsBufferServerRequest(QgsServerRequest):

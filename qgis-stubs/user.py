@@ -25,7 +25,7 @@ import sys
 import traceback
 
 from qgis.core import Qgis, QgsApplication, QgsMessageLog
-from qgis.PyQt.QtCore import QCoreApplication, qDebug
+from PyQt6.QtCore import QCoreApplication, qDebug
 
 
 def load_user_expressions(path):

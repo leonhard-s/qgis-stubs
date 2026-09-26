@@ -21,7 +21,7 @@ __author__ = 'Nathan Woodrow'
 __date__ = 'May 2014'
 __copyright__ = '(C) 2014, Nathan Woodrow'
 
-from qgis.PyQt import QtCore
+from PyQt6 import QtCore
 from qgis._3d_p import *
 
 from qgis.core import Qgis as _Qgis
@@ -50,8 +50,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/3d/qgs3dmapscene.h
-Qgs3DMapScene.Ready = Qgs3DMapScene.SceneState.Ready
-Qgs3DMapScene.Updating = Qgs3DMapScene.SceneState.Updating
 try:
     Qgs3DMapScene.__attribute_docs__ = {'terrainEntityChanged': 'Emitted when the current terrain entity is replaced by a new one\n', 'totalPendingJobsCountChanged': 'Emitted when the total number of pending jobs changes\n\n.. versionadded:: 3.12\n', 'sceneStateChanged': "Emitted when the scene's state has changed\n", 'fpsCountChanged': 'Emitted when the FPS count changes\n', 'fpsCounterEnabledChanged': 'Emitted when the FPS counter is activated or deactivated\n', 'viewed2DExtentFrom3DChanged': 'Emitted when the viewed 2D extent seen by the 3D camera has changed\n\n.. versionadded:: 3.26\n', 'gpuMemoryLimitReached': "Emitted when one of the entities reaches its GPU memory limit and it is\nnot possible to lower the GPU memory use by unloading data that's not\ncurrently needed.\n"}
     Qgs3DMapScene.openScenes = staticmethod(Qgs3DMapScene.openScenes)
@@ -80,12 +78,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/3d/qgs3dtypes.h
-Qgs3DTypes.NoCulling = Qgs3DTypes.CullingMode.NoCulling
-Qgs3DTypes.Front = Qgs3DTypes.CullingMode.Front
-Qgs3DTypes.Back = Qgs3DTypes.CullingMode.Back
-Qgs3DTypes.FrontAndBack = Qgs3DTypes.CullingMode.FrontAndBack
-Qgs3DTypes.Main3DRenderer = Qgs3DTypes.Flag3DRenderer.Main3DRenderer
-Qgs3DTypes.Selected3DRenderer = Qgs3DTypes.Flag3DRenderer.Selected3DRenderer
 try:
     Qgs3DTypes.__attribute_docs__ = {'PROP_NAME_3D_RENDERER_FLAG': 'Qt property name to hold the 3D geometry renderer flag'}
     Qgs3DTypes.__annotations__ = {'PROP_NAME_3D_RENDERER_FLAG': str}
@@ -240,11 +232,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/3d/symbols/qgspointcloud3dsymbol.h
-QgsPointCloud3DSymbol.NoRendering = QgsPointCloud3DSymbol.RenderingStyle.NoRendering
-QgsPointCloud3DSymbol.SingleColor = QgsPointCloud3DSymbol.RenderingStyle.SingleColor
-QgsPointCloud3DSymbol.ColorRamp = QgsPointCloud3DSymbol.RenderingStyle.ColorRamp
-QgsPointCloud3DSymbol.RgbRendering = QgsPointCloud3DSymbol.RenderingStyle.RgbRendering
-QgsPointCloud3DSymbol.Classification = QgsPointCloud3DSymbol.RenderingStyle.Classification
 try:
     QgsPointCloud3DSymbol.__abstract_methods__ = ['clone', 'symbolType', 'byteStride']
     QgsPointCloud3DSymbol.__overridden_methods__ = ['type', 'clone', 'copyBaseSettings']
@@ -347,38 +334,7 @@ except (NameError, AttributeError):
 
 
 # manual monkey patching for old enum values
-Qgs3DTypes.AltitudeClamping = _Qgis.AltitudeClamping
-Qgs3DTypes.AltClampAbsolute = _Qgis.AltitudeClamping.Absolute
-Qgs3DTypes.AltClampAbsolute.is_monkey_patched = True
-Qgs3DTypes.AltClampRelative = _Qgis.AltitudeClamping.Relative
-Qgs3DTypes.AltClampRelative.is_monkey_patched = True
-Qgs3DTypes.AltClampTerrain = _Qgis.AltitudeClamping.Terrain
-Qgs3DTypes.AltClampTerrain.is_monkey_patched = True
 
-Qgs3DTypes.AltitudeBinding = _Qgis.AltitudeBinding
-Qgs3DTypes.AltBindVertex = _Qgis.AltitudeBinding.Vertex
-Qgs3DTypes.AltBindVertex.is_monkey_patched = True
-Qgs3DTypes.AltBindCentroid = _Qgis.AltitudeBinding.Centroid
-Qgs3DTypes.AltBindCentroid.is_monkey_patched = True
 
-QgsPoint3DSymbol.Shape = _Qgis.Point3DShape
-QgsPoint3DSymbol.Cylinder = _Qgis.Point3DShape.Cylinder
-QgsPoint3DSymbol.Cylinder.is_monkey_patched = True
-QgsPoint3DSymbol.Sphere = _Qgis.Point3DShape.Sphere
-QgsPoint3DSymbol.Sphere.is_monkey_patched = True
-QgsPoint3DSymbol.Cone = _Qgis.Point3DShape.Cone
-QgsPoint3DSymbol.Cone.is_monkey_patched = True
-QgsPoint3DSymbol.Cube = _Qgis.Point3DShape.Cube
-QgsPoint3DSymbol.Cube.is_monkey_patched = True
-QgsPoint3DSymbol.Torus = _Qgis.Point3DShape.Torus
-QgsPoint3DSymbol.Torus.is_monkey_patched = True
-QgsPoint3DSymbol.Plane = _Qgis.Point3DShape.Plane
-QgsPoint3DSymbol.Plane.is_monkey_patched = True
-QgsPoint3DSymbol.ExtrudedText = _Qgis.Point3DShape.ExtrudedText
-QgsPoint3DSymbol.ExtrudedText.is_monkey_patched = True
-QgsPoint3DSymbol.Model = _Qgis.Point3DShape.Model
-QgsPoint3DSymbol.Model.is_monkey_patched = True
-QgsPoint3DSymbol.Billboard = _Qgis.Point3DShape.Billboard
-QgsPoint3DSymbol.Billboard.is_monkey_patched = True
 
 from qgis.core import QgsAbstractMaterialSettings, QgsGoochMaterialSettings, QgsMaterialSettingsAbstractMetadata, QgsMaterialRegistry, QgsMetalRoughMaterialSettings, QgsNullMaterialSettings, QgsPhongMaterialSettings, QgsPhongTexturedMaterialSettings, QgsSimpleLineMaterialSettings

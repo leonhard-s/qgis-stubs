@@ -21,7 +21,7 @@ __author__ = 'Nathan Woodrow'
 __date__ = 'May 2014'
 __copyright__ = '(C) 2014, Nathan Woodrow'
 
-from qgis.PyQt import QtCore
+from PyQt6 import QtCore
 
 from qgis._analysis import *
 from qgis.core import Qgis as _Qgis
@@ -34,124 +34,52 @@ from qgis.core import QgsAlignRasterData
 
 # preserve API compatibility as QgsRelief.ReliefColor moved to core as QgsRasterReliefColor
 from qgis.core import QgsRasterReliefColor as _QgsRasterReliefColor
-QgsRelief.ReliefColor = _QgsRasterReliefColor
 
-QgsAlignRaster.Item = QgsAlignRasterData.RasterItem
 
-QgsAlignRaster.ResampleAlg = _Qgis.GdalResampleAlgorithm
 # monkey patching scoped based enum
-QgsAlignRaster.RA_NearestNeighbour = _Qgis.GdalResampleAlgorithm.RA_NearestNeighbour
-QgsAlignRaster.RA_NearestNeighbour.is_monkey_patched = True
 QgsAlignRaster.RA_NearestNeighbour.__doc__ = "Nearest neighbour (select on one input pixel)"
-QgsAlignRaster.RA_Bilinear = _Qgis.GdalResampleAlgorithm.RA_Bilinear
-QgsAlignRaster.RA_Bilinear.is_monkey_patched = True
 QgsAlignRaster.RA_Bilinear.__doc__ = "Bilinear (2x2 kernel)"
-QgsAlignRaster.RA_Cubic = _Qgis.GdalResampleAlgorithm.RA_Cubic
-QgsAlignRaster.RA_Cubic.is_monkey_patched = True
 QgsAlignRaster.RA_Cubic.__doc__ = "Cubic Convolution Approximation (4x4 kernel)"
-QgsAlignRaster.RA_CubicSpline = _Qgis.GdalResampleAlgorithm.RA_CubicSpline
-QgsAlignRaster.RA_CubicSpline.is_monkey_patched = True
 QgsAlignRaster.RA_CubicSpline.__doc__ = "Cubic B-Spline Approximation (4x4 kernel)"
-QgsAlignRaster.RA_Lanczos = _Qgis.GdalResampleAlgorithm.RA_Lanczos
-QgsAlignRaster.RA_Lanczos.is_monkey_patched = True
 QgsAlignRaster.RA_Lanczos.__doc__ = "Lanczos windowed sinc interpolation (6x6 kernel)"
-QgsAlignRaster.RA_Average = _Qgis.GdalResampleAlgorithm.RA_Average
-QgsAlignRaster.RA_Average.is_monkey_patched = True
 QgsAlignRaster.RA_Average.__doc__ = "Average (computes the average of all non-NODATA contributing pixels)"
-QgsAlignRaster.RA_Mode = _Qgis.GdalResampleAlgorithm.RA_Mode
-QgsAlignRaster.RA_Mode.is_monkey_patched = True
 QgsAlignRaster.RA_Mode.__doc__ = "Mode (selects the value which appears most often of all the sampled points)"
-QgsAlignRaster.RA_Max = _Qgis.GdalResampleAlgorithm.RA_Max
-QgsAlignRaster.RA_Max.is_monkey_patched = True
 QgsAlignRaster.RA_Max.__doc__ = "Maximum (selects the maximum of all non-NODATA contributing pixels)"
-QgsAlignRaster.RA_Min = _Qgis.GdalResampleAlgorithm.RA_Min
-QgsAlignRaster.RA_Min.is_monkey_patched = True
 QgsAlignRaster.RA_Min.__doc__ = "Minimum (selects the minimum of all non-NODATA contributing pixels)"
-QgsAlignRaster.RA_Median = _Qgis.GdalResampleAlgorithm.RA_Median
-QgsAlignRaster.RA_Median.is_monkey_patched = True
 QgsAlignRaster.RA_Median.__doc__ = "Median (selects the median of all non-NODATA contributing pixels)"
-QgsAlignRaster.RA_Q1 = _Qgis.GdalResampleAlgorithm.RA_Q1
-QgsAlignRaster.RA_Q1.is_monkey_patched = True
 QgsAlignRaster.RA_Q1.__doc__ = "First quartile (selects the first quartile of all non-NODATA contributing pixels)"
-QgsAlignRaster.RA_Q3 = _Qgis.GdalResampleAlgorithm.RA_Q3
-QgsAlignRaster.RA_Q3.is_monkey_patched = True
 QgsAlignRaster.RA_Q3.__doc__ = "Third quartile (selects the third quartile of all non-NODATA contributing pixels)"
 _Qgis.GdalResampleAlgorithm.__doc__ = "Resampling algorithm to be used (equivalent to GDAL's enum GDALResampleAlg)\n\n.. note::\n\n   RA_Max, RA_Min, RA_Median, RA_Q1 and RA_Q3 are available on GDAL >= 2.0 builds only\n\n.. versionadded:: 3.34\n\n" + '* ``RA_NearestNeighbour``: ' + _Qgis.GdalResampleAlgorithm.RA_NearestNeighbour.__doc__ + '\n' + '* ``RA_Bilinear``: ' + _Qgis.GdalResampleAlgorithm.RA_Bilinear.__doc__ + '\n' + '* ``RA_Cubic``: ' + _Qgis.GdalResampleAlgorithm.RA_Cubic.__doc__ + '\n' + '* ``RA_CubicSpline``: ' + _Qgis.GdalResampleAlgorithm.RA_CubicSpline.__doc__ + '\n' + '* ``RA_Lanczos``: ' + _Qgis.GdalResampleAlgorithm.RA_Lanczos.__doc__ + '\n' + '* ``RA_Average``: ' + _Qgis.GdalResampleAlgorithm.RA_Average.__doc__ + '\n' + '* ``RA_Mode``: ' + _Qgis.GdalResampleAlgorithm.RA_Mode.__doc__ + '\n' + '* ``RA_Max``: ' + _Qgis.GdalResampleAlgorithm.RA_Max.__doc__ + '\n' + '* ``RA_Min``: ' + _Qgis.GdalResampleAlgorithm.RA_Min.__doc__ + '\n' + '* ``RA_Median``: ' + _Qgis.GdalResampleAlgorithm.RA_Median.__doc__ + '\n' + '* ``RA_Q1``: ' + _Qgis.GdalResampleAlgorithm.RA_Q1.__doc__ + '\n' + '* ``RA_Q3``: ' + _Qgis.GdalResampleAlgorithm.RA_Q3.__doc__
 # --
 _Qgis.GdalResampleAlgorithm.baseClass = _Qgis
 
-QgsZonalStatistics.Statistic = _Qgis.ZonalStatistic
 # monkey patching scoped based enum
-QgsZonalStatistics.Count = _Qgis.ZonalStatistic.Count
-QgsZonalStatistics.Count.is_monkey_patched = True
 QgsZonalStatistics.Count.__doc__ = "Pixel count"
-QgsZonalStatistics.Sum = _Qgis.ZonalStatistic.Sum
-QgsZonalStatistics.Sum.is_monkey_patched = True
 QgsZonalStatistics.Sum.__doc__ = "Sum of pixel values"
-QgsZonalStatistics.Mean = _Qgis.ZonalStatistic.Mean
-QgsZonalStatistics.Mean.is_monkey_patched = True
 QgsZonalStatistics.Mean.__doc__ = "Mean of pixel values"
-QgsZonalStatistics.Median = _Qgis.ZonalStatistic.Median
-QgsZonalStatistics.Median.is_monkey_patched = True
 QgsZonalStatistics.Median.__doc__ = "Median of pixel values"
-QgsZonalStatistics.StDev = _Qgis.ZonalStatistic.StDev
-QgsZonalStatistics.StDev.is_monkey_patched = True
 QgsZonalStatistics.StDev.__doc__ = "Standard deviation of pixel values"
-QgsZonalStatistics.Min = _Qgis.ZonalStatistic.Min
-QgsZonalStatistics.Min.is_monkey_patched = True
 QgsZonalStatistics.Min.__doc__ = "Min of pixel values"
-QgsZonalStatistics.Max = _Qgis.ZonalStatistic.Max
-QgsZonalStatistics.Max.is_monkey_patched = True
 QgsZonalStatistics.Max.__doc__ = "Max of pixel values"
-QgsZonalStatistics.Range = _Qgis.ZonalStatistic.Range
-QgsZonalStatistics.Range.is_monkey_patched = True
 QgsZonalStatistics.Range.__doc__ = "Range of pixel values (max - min)"
-QgsZonalStatistics.Minority = _Qgis.ZonalStatistic.Minority
-QgsZonalStatistics.Minority.is_monkey_patched = True
 QgsZonalStatistics.Minority.__doc__ = "Minority of pixel values"
-QgsZonalStatistics.Majority = _Qgis.ZonalStatistic.Majority
-QgsZonalStatistics.Majority.is_monkey_patched = True
 QgsZonalStatistics.Majority.__doc__ = "Majority of pixel values"
-QgsZonalStatistics.Variety = _Qgis.ZonalStatistic.Variety
-QgsZonalStatistics.Variety.is_monkey_patched = True
 QgsZonalStatistics.Variety.__doc__ = "Variety (count of distinct) pixel values"
-QgsZonalStatistics.Variance = _Qgis.ZonalStatistic.Variance
-QgsZonalStatistics.Variance.is_monkey_patched = True
 QgsZonalStatistics.Variance.__doc__ = "Variance of pixel values"
-QgsZonalStatistics.All = _Qgis.ZonalStatistic.All
-QgsZonalStatistics.All.is_monkey_patched = True
 QgsZonalStatistics.All.__doc__ = "All statistics"
-QgsZonalStatistics.Default = _Qgis.ZonalStatistic.Default
-QgsZonalStatistics.Default.is_monkey_patched = True
 QgsZonalStatistics.Default.__doc__ = "Default statistics"
 _Qgis.ZonalStatistic.__doc__ = "Statistics to be calculated during a zonal statistics operation.\n\n.. versionadded:: 3.36.\n\n" + '* ``Count``: ' + _Qgis.ZonalStatistic.Count.__doc__ + '\n' + '* ``Sum``: ' + _Qgis.ZonalStatistic.Sum.__doc__ + '\n' + '* ``Mean``: ' + _Qgis.ZonalStatistic.Mean.__doc__ + '\n' + '* ``Median``: ' + _Qgis.ZonalStatistic.Median.__doc__ + '\n' + '* ``StDev``: ' + _Qgis.ZonalStatistic.StDev.__doc__ + '\n' + '* ``Min``: ' + _Qgis.ZonalStatistic.Min.__doc__ + '\n' + '* ``Max``: ' + _Qgis.ZonalStatistic.Max.__doc__ + '\n' + '* ``Range``: ' + _Qgis.ZonalStatistic.Range.__doc__ + '\n' + '* ``Minority``: ' + _Qgis.ZonalStatistic.Minority.__doc__ + '\n' + '* ``Majority``: ' + _Qgis.ZonalStatistic.Majority.__doc__ + '\n' + '* ``Variety``: ' + _Qgis.ZonalStatistic.Variety.__doc__ + '\n' + '* ``Variance``: ' + _Qgis.ZonalStatistic.Variance.__doc__ + '\n' + '* ``All``: ' + _Qgis.ZonalStatistic.All.__doc__ + '\n' + '* ``Default``: ' + _Qgis.ZonalStatistic.Default.__doc__
 # --
 _Qgis.ZonalStatistic.baseClass = _Qgis
-QgsZonalStatistics.Statistics = _Qgis.ZonalStatistics
 _Qgis.ZonalStatistics.baseClass = _Qgis
 ZonalStatistics = _Qgis  # dirty hack since SIP seems to introduce the flags in module
-QgsZonalStatistics.Result = _Qgis.ZonalStatisticResult
 # monkey patching scoped based enum
-QgsZonalStatistics.Success = _Qgis.ZonalStatisticResult.Success
-QgsZonalStatistics.Success.is_monkey_patched = True
 QgsZonalStatistics.Success.__doc__ = "Success"
-QgsZonalStatistics.LayerTypeWrong = _Qgis.ZonalStatisticResult.LayerTypeWrong
-QgsZonalStatistics.LayerTypeWrong.is_monkey_patched = True
 QgsZonalStatistics.LayerTypeWrong.__doc__ = "Layer is not a polygon layer"
-QgsZonalStatistics.LayerInvalid = _Qgis.ZonalStatisticResult.LayerInvalid
-QgsZonalStatistics.LayerInvalid.is_monkey_patched = True
 QgsZonalStatistics.LayerInvalid.__doc__ = "Layer is invalid"
-QgsZonalStatistics.RasterInvalid = _Qgis.ZonalStatisticResult.RasterInvalid
-QgsZonalStatistics.RasterInvalid.is_monkey_patched = True
 QgsZonalStatistics.RasterInvalid.__doc__ = "Raster layer is invalid"
-QgsZonalStatistics.RasterBandInvalid = _Qgis.ZonalStatisticResult.RasterBandInvalid
-QgsZonalStatistics.RasterBandInvalid.is_monkey_patched = True
 QgsZonalStatistics.RasterBandInvalid.__doc__ = "The raster band does not exist on the raster layer"
-QgsZonalStatistics.FailedToCreateField = _Qgis.ZonalStatisticResult.FailedToCreateField
-QgsZonalStatistics.FailedToCreateField.is_monkey_patched = True
 QgsZonalStatistics.FailedToCreateField.__doc__ = "Output fields could not be created"
-QgsZonalStatistics.Canceled = _Qgis.ZonalStatisticResult.Canceled
-QgsZonalStatistics.Canceled.is_monkey_patched = True
 QgsZonalStatistics.Canceled.__doc__ = "Algorithm was canceled"
 _Qgis.ZonalStatisticResult.__doc__ = "Zonal statistics result codes.\n\n.. versionadded:: 3.36.\n\n" + '* ``Success``: ' + _Qgis.ZonalStatisticResult.Success.__doc__ + '\n' + '* ``LayerTypeWrong``: ' + _Qgis.ZonalStatisticResult.LayerTypeWrong.__doc__ + '\n' + '* ``LayerInvalid``: ' + _Qgis.ZonalStatisticResult.LayerInvalid.__doc__ + '\n' + '* ``RasterInvalid``: ' + _Qgis.ZonalStatisticResult.RasterInvalid.__doc__ + '\n' + '* ``RasterBandInvalid``: ' + _Qgis.ZonalStatisticResult.RasterBandInvalid.__doc__ + '\n' + '* ``FailedToCreateField``: ' + _Qgis.ZonalStatisticResult.FailedToCreateField.__doc__ + '\n' + '* ``Canceled``: ' + _Qgis.ZonalStatisticResult.Canceled.__doc__
 # --
@@ -264,16 +192,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/analysis/vector/geometry_checker/qgsgeometrycheck.h
-QgsGeometryCheck.ChangeFeature = QgsGeometryCheck.ChangeWhat.ChangeFeature
-QgsGeometryCheck.ChangePart = QgsGeometryCheck.ChangeWhat.ChangePart
-QgsGeometryCheck.ChangeRing = QgsGeometryCheck.ChangeWhat.ChangeRing
-QgsGeometryCheck.ChangeNode = QgsGeometryCheck.ChangeWhat.ChangeNode
-QgsGeometryCheck.ChangeAdded = QgsGeometryCheck.ChangeType.ChangeAdded
-QgsGeometryCheck.ChangeRemoved = QgsGeometryCheck.ChangeType.ChangeRemoved
-QgsGeometryCheck.ChangeChanged = QgsGeometryCheck.ChangeType.ChangeChanged
-QgsGeometryCheck.FeatureNodeCheck = QgsGeometryCheck.CheckType.FeatureNodeCheck
-QgsGeometryCheck.FeatureCheck = QgsGeometryCheck.CheckType.FeatureCheck
-QgsGeometryCheck.LayerCheck = QgsGeometryCheck.CheckType.LayerCheck
 # monkey patching scoped based enum
 QgsGeometryCheck.Result.Success.__doc__ = "Operation completed successfully"
 QgsGeometryCheck.Result.Canceled.__doc__ = "User canceled calculation"
@@ -291,7 +209,6 @@ QgsGeometryCheck.Result.__doc__ = """
 
 """
 # --
-QgsGeometryCheck.AvailableInValidation = QgsGeometryCheck.Flag.AvailableInValidation
 QgsGeometryCheck.Flags = lambda flags=0: QgsGeometryCheck.Flag(flags)
 QgsGeometryCheck.Flags.baseClass = QgsGeometryCheck
 Flags = QgsGeometryCheck  # dirty hack since SIP seems to introduce the flags in module
@@ -325,13 +242,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/analysis/vector/geometry_checker/qgsgeometrycheckerror.h
-QgsGeometryCheckError.StatusPending = QgsGeometryCheckError.Status.StatusPending
-QgsGeometryCheckError.StatusFixFailed = QgsGeometryCheckError.Status.StatusFixFailed
-QgsGeometryCheckError.StatusFixed = QgsGeometryCheckError.Status.StatusFixed
-QgsGeometryCheckError.StatusObsolete = QgsGeometryCheckError.Status.StatusObsolete
-QgsGeometryCheckError.ValueLength = QgsGeometryCheckError.ValueType.ValueLength
-QgsGeometryCheckError.ValueArea = QgsGeometryCheckError.ValueType.ValueArea
-QgsGeometryCheckError.ValueOther = QgsGeometryCheckError.ValueType.ValueOther
 try:
     QgsGeometryCheckError.__virtual_methods__ = ['contextBoundingBox', 'affectedAreaBBox', 'description', 'isEqual', 'closeMatch', 'update', 'icon']
     QgsGeometryCheckError.__group__ = ['vector', 'geometry_checker']
@@ -372,13 +282,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/analysis/vector/qgsgeometrysnapper.h
-QgsGeometrySnapper.PreferNodes = QgsGeometrySnapper.SnapMode.PreferNodes
-QgsGeometrySnapper.PreferClosest = QgsGeometrySnapper.SnapMode.PreferClosest
-QgsGeometrySnapper.PreferNodesNoExtraVertices = QgsGeometrySnapper.SnapMode.PreferNodesNoExtraVertices
-QgsGeometrySnapper.PreferClosestNoExtraVertices = QgsGeometrySnapper.SnapMode.PreferClosestNoExtraVertices
-QgsGeometrySnapper.EndPointPreferNodes = QgsGeometrySnapper.SnapMode.EndPointPreferNodes
-QgsGeometrySnapper.EndPointPreferClosest = QgsGeometrySnapper.SnapMode.EndPointPreferClosest
-QgsGeometrySnapper.EndPointToEndPoint = QgsGeometrySnapper.SnapMode.EndPointToEndPoint
 try:
     QgsGeometrySnapper.__attribute_docs__ = {'featureSnapped': 'Emitted each time a feature has been processed when calling\n:py:func:`~QgsGeometrySnapper.snapFeatures`\n'}
     QgsGeometrySnapper.__group__ = ['vector']
@@ -452,17 +355,11 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/analysis/interpolation/qgsinterpolator.h
 # monkey patching scoped based enum
-QgsInterpolator.SourcePoints = QgsInterpolator.SourceType.Points
 QgsInterpolator.SourceType.SourcePoints = QgsInterpolator.SourceType.Points
-QgsInterpolator.SourcePoints.is_monkey_patched = True
 QgsInterpolator.SourcePoints.__doc__ = "Point source"
-QgsInterpolator.SourceStructureLines = QgsInterpolator.SourceType.StructureLines
 QgsInterpolator.SourceType.SourceStructureLines = QgsInterpolator.SourceType.StructureLines
-QgsInterpolator.SourceStructureLines.is_monkey_patched = True
 QgsInterpolator.SourceStructureLines.__doc__ = "Structure lines"
-QgsInterpolator.SourceBreakLines = QgsInterpolator.SourceType.BreakLines
 QgsInterpolator.SourceType.SourceBreakLines = QgsInterpolator.SourceType.BreakLines
-QgsInterpolator.SourceBreakLines.is_monkey_patched = True
 QgsInterpolator.SourceBreakLines.__doc__ = "Break lines"
 QgsInterpolator.SourceType.__doc__ = """Describes the type of input data
 
@@ -482,17 +379,11 @@ QgsInterpolator.SourceType.__doc__ = """Describes the type of input data
 """
 # --
 # monkey patching scoped based enum
-QgsInterpolator.ValueAttribute = QgsInterpolator.ValueSource.Attribute
 QgsInterpolator.ValueSource.ValueAttribute = QgsInterpolator.ValueSource.Attribute
-QgsInterpolator.ValueAttribute.is_monkey_patched = True
 QgsInterpolator.ValueAttribute.__doc__ = "Take value from feature's attribute"
-QgsInterpolator.ValueZ = QgsInterpolator.ValueSource.Z
 QgsInterpolator.ValueSource.ValueZ = QgsInterpolator.ValueSource.Z
-QgsInterpolator.ValueZ.is_monkey_patched = True
 QgsInterpolator.ValueZ.__doc__ = "Use feature's geometry Z values for interpolation"
-QgsInterpolator.ValueM = QgsInterpolator.ValueSource.M
 QgsInterpolator.ValueSource.ValueM = QgsInterpolator.ValueSource.M
-QgsInterpolator.ValueM.is_monkey_patched = True
 QgsInterpolator.ValueM.__doc__ = "Use feature's geometry M values for interpolation"
 QgsInterpolator.ValueSource.__doc__ = """Source for interpolated values from features
 
@@ -546,25 +437,15 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/analysis/raster/qgskde.h
 # monkey patching scoped based enum
-QgsKernelDensityEstimation.KernelQuartic = QgsKernelDensityEstimation.KernelShape.Quartic
 QgsKernelDensityEstimation.KernelShape.KernelQuartic = QgsKernelDensityEstimation.KernelShape.Quartic
-QgsKernelDensityEstimation.KernelQuartic.is_monkey_patched = True
 QgsKernelDensityEstimation.KernelQuartic.__doc__ = "Quartic kernel"
-QgsKernelDensityEstimation.KernelTriangular = QgsKernelDensityEstimation.KernelShape.Triangular
 QgsKernelDensityEstimation.KernelShape.KernelTriangular = QgsKernelDensityEstimation.KernelShape.Triangular
-QgsKernelDensityEstimation.KernelTriangular.is_monkey_patched = True
 QgsKernelDensityEstimation.KernelTriangular.__doc__ = "Triangular kernel"
-QgsKernelDensityEstimation.KernelUniform = QgsKernelDensityEstimation.KernelShape.Uniform
 QgsKernelDensityEstimation.KernelShape.KernelUniform = QgsKernelDensityEstimation.KernelShape.Uniform
-QgsKernelDensityEstimation.KernelUniform.is_monkey_patched = True
 QgsKernelDensityEstimation.KernelUniform.__doc__ = "Uniform (flat) kernel"
-QgsKernelDensityEstimation.KernelTriweight = QgsKernelDensityEstimation.KernelShape.Triweight
 QgsKernelDensityEstimation.KernelShape.KernelTriweight = QgsKernelDensityEstimation.KernelShape.Triweight
-QgsKernelDensityEstimation.KernelTriweight.is_monkey_patched = True
 QgsKernelDensityEstimation.KernelTriweight.__doc__ = "Triweight kernel"
-QgsKernelDensityEstimation.KernelEpanechnikov = QgsKernelDensityEstimation.KernelShape.Epanechnikov
 QgsKernelDensityEstimation.KernelShape.KernelEpanechnikov = QgsKernelDensityEstimation.KernelShape.Epanechnikov
-QgsKernelDensityEstimation.KernelEpanechnikov.is_monkey_patched = True
 QgsKernelDensityEstimation.KernelEpanechnikov.__doc__ = "Epanechnikov kernel"
 QgsKernelDensityEstimation.KernelShape.__doc__ = """Kernel shape type
 
@@ -592,13 +473,9 @@ QgsKernelDensityEstimation.KernelShape.__doc__ = """Kernel shape type
 """
 # --
 # monkey patching scoped based enum
-QgsKernelDensityEstimation.OutputRaw = QgsKernelDensityEstimation.OutputValues.Raw
 QgsKernelDensityEstimation.OutputValues.OutputRaw = QgsKernelDensityEstimation.OutputValues.Raw
-QgsKernelDensityEstimation.OutputRaw.is_monkey_patched = True
 QgsKernelDensityEstimation.OutputRaw.__doc__ = "Output the raw KDE values"
-QgsKernelDensityEstimation.OutputScaled = QgsKernelDensityEstimation.OutputValues.Scaled
 QgsKernelDensityEstimation.OutputValues.OutputScaled = QgsKernelDensityEstimation.OutputValues.Scaled
-QgsKernelDensityEstimation.OutputScaled.is_monkey_patched = True
 QgsKernelDensityEstimation.OutputScaled.__doc__ = "Output mathematically correct scaled values"
 QgsKernelDensityEstimation.OutputValues.__doc__ = """Output values type
 
@@ -614,20 +491,10 @@ QgsKernelDensityEstimation.OutputValues.__doc__ = """Output values type
 """
 # --
 # monkey patching scoped based enum
-QgsKernelDensityEstimation.Success = QgsKernelDensityEstimation.Result.Success
-QgsKernelDensityEstimation.Success.is_monkey_patched = True
 QgsKernelDensityEstimation.Success.__doc__ = "Operation completed successfully"
-QgsKernelDensityEstimation.DriverError = QgsKernelDensityEstimation.Result.DriverError
-QgsKernelDensityEstimation.DriverError.is_monkey_patched = True
 QgsKernelDensityEstimation.DriverError.__doc__ = "Could not open the driver for the specified format"
-QgsKernelDensityEstimation.InvalidParameters = QgsKernelDensityEstimation.Result.InvalidParameters
-QgsKernelDensityEstimation.InvalidParameters.is_monkey_patched = True
 QgsKernelDensityEstimation.InvalidParameters.__doc__ = "Input parameters were not valid"
-QgsKernelDensityEstimation.FileCreationError = QgsKernelDensityEstimation.Result.FileCreationError
-QgsKernelDensityEstimation.FileCreationError.is_monkey_patched = True
 QgsKernelDensityEstimation.FileCreationError.__doc__ = "Error creating output file"
-QgsKernelDensityEstimation.RasterIoError = QgsKernelDensityEstimation.Result.RasterIoError
-QgsKernelDensityEstimation.RasterIoError.is_monkey_patched = True
 QgsKernelDensityEstimation.RasterIoError.__doc__ = "Error writing to raster"
 QgsKernelDensityEstimation.Result.__doc__ = """Result of operation
 
@@ -731,38 +598,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/analysis/raster/qgsrastercalcnode.h
-QgsRasterCalcNode.tOperator = QgsRasterCalcNode.Type.tOperator
-QgsRasterCalcNode.tNumber = QgsRasterCalcNode.Type.tNumber
-QgsRasterCalcNode.tRasterRef = QgsRasterCalcNode.Type.tRasterRef
-QgsRasterCalcNode.tMatrix = QgsRasterCalcNode.Type.tMatrix
-QgsRasterCalcNode.tFunction = QgsRasterCalcNode.Type.tFunction
-QgsRasterCalcNode.opPLUS = QgsRasterCalcNode.Operator.opPLUS
-QgsRasterCalcNode.opMINUS = QgsRasterCalcNode.Operator.opMINUS
-QgsRasterCalcNode.opMUL = QgsRasterCalcNode.Operator.opMUL
-QgsRasterCalcNode.opDIV = QgsRasterCalcNode.Operator.opDIV
-QgsRasterCalcNode.opPOW = QgsRasterCalcNode.Operator.opPOW
-QgsRasterCalcNode.opSQRT = QgsRasterCalcNode.Operator.opSQRT
-QgsRasterCalcNode.opSIN = QgsRasterCalcNode.Operator.opSIN
-QgsRasterCalcNode.opCOS = QgsRasterCalcNode.Operator.opCOS
-QgsRasterCalcNode.opTAN = QgsRasterCalcNode.Operator.opTAN
-QgsRasterCalcNode.opASIN = QgsRasterCalcNode.Operator.opASIN
-QgsRasterCalcNode.opACOS = QgsRasterCalcNode.Operator.opACOS
-QgsRasterCalcNode.opATAN = QgsRasterCalcNode.Operator.opATAN
-QgsRasterCalcNode.opEQ = QgsRasterCalcNode.Operator.opEQ
-QgsRasterCalcNode.opNE = QgsRasterCalcNode.Operator.opNE
-QgsRasterCalcNode.opGT = QgsRasterCalcNode.Operator.opGT
-QgsRasterCalcNode.opLT = QgsRasterCalcNode.Operator.opLT
-QgsRasterCalcNode.opGE = QgsRasterCalcNode.Operator.opGE
-QgsRasterCalcNode.opLE = QgsRasterCalcNode.Operator.opLE
-QgsRasterCalcNode.opAND = QgsRasterCalcNode.Operator.opAND
-QgsRasterCalcNode.opOR = QgsRasterCalcNode.Operator.opOR
-QgsRasterCalcNode.opSIGN = QgsRasterCalcNode.Operator.opSIGN
-QgsRasterCalcNode.opLOG = QgsRasterCalcNode.Operator.opLOG
-QgsRasterCalcNode.opLOG10 = QgsRasterCalcNode.Operator.opLOG10
-QgsRasterCalcNode.opABS = QgsRasterCalcNode.Operator.opABS
-QgsRasterCalcNode.opMAX = QgsRasterCalcNode.Operator.opMAX
-QgsRasterCalcNode.opMIN = QgsRasterCalcNode.Operator.opMIN
-QgsRasterCalcNode.opNONE = QgsRasterCalcNode.Operator.opNONE
 try:
     QgsRasterCalcNode.parseRasterCalcString = staticmethod(QgsRasterCalcNode.parseRasterCalcString)
     QgsRasterCalcNode.__group__ = ['raster']
@@ -770,32 +605,14 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/analysis/raster/qgsrastercalculator.h
 # monkey patching scoped based enum
-QgsRasterCalculator.Success = QgsRasterCalculator.Result.Success
-QgsRasterCalculator.Success.is_monkey_patched = True
 QgsRasterCalculator.Success.__doc__ = "Calculation successful"
-QgsRasterCalculator.CreateOutputError = QgsRasterCalculator.Result.CreateOutputError
-QgsRasterCalculator.CreateOutputError.is_monkey_patched = True
 QgsRasterCalculator.CreateOutputError.__doc__ = "Error creating output data file"
-QgsRasterCalculator.InputLayerError = QgsRasterCalculator.Result.InputLayerError
-QgsRasterCalculator.InputLayerError.is_monkey_patched = True
 QgsRasterCalculator.InputLayerError.__doc__ = "Error reading input layer"
-QgsRasterCalculator.Canceled = QgsRasterCalculator.Result.Canceled
-QgsRasterCalculator.Canceled.is_monkey_patched = True
 QgsRasterCalculator.Canceled.__doc__ = "User canceled calculation"
-QgsRasterCalculator.ParserError = QgsRasterCalculator.Result.ParserError
-QgsRasterCalculator.ParserError.is_monkey_patched = True
 QgsRasterCalculator.ParserError.__doc__ = "Error parsing formula"
-QgsRasterCalculator.MemoryError = QgsRasterCalculator.Result.MemoryError
-QgsRasterCalculator.MemoryError.is_monkey_patched = True
 QgsRasterCalculator.MemoryError.__doc__ = "Error allocating memory for result"
-QgsRasterCalculator.BandError = QgsRasterCalculator.Result.BandError
-QgsRasterCalculator.BandError.is_monkey_patched = True
 QgsRasterCalculator.BandError.__doc__ = "Invalid band number for input"
-QgsRasterCalculator.CalculationError = QgsRasterCalculator.Result.CalculationError
-QgsRasterCalculator.CalculationError.is_monkey_patched = True
 QgsRasterCalculator.CalculationError.__doc__ = "Error occurred while performing calculation"
-QgsRasterCalculator.OpenCLKernelBuildError = QgsRasterCalculator.Result.OpenCLKernelBuildError
-QgsRasterCalculator.OpenCLKernelBuildError.is_monkey_patched = True
 QgsRasterCalculator.OpenCLKernelBuildError.__doc__ = "Error building OpenCL kernel. \n.. versionadded:: 4.0"
 QgsRasterCalculator.Result.__doc__ = """Result of the calculation
 
@@ -826,32 +643,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/analysis/raster/qgsrastermatrix.h
-QgsRasterMatrix.opPLUS = QgsRasterMatrix.TwoArgOperator.opPLUS
-QgsRasterMatrix.opMINUS = QgsRasterMatrix.TwoArgOperator.opMINUS
-QgsRasterMatrix.opMUL = QgsRasterMatrix.TwoArgOperator.opMUL
-QgsRasterMatrix.opDIV = QgsRasterMatrix.TwoArgOperator.opDIV
-QgsRasterMatrix.opPOW = QgsRasterMatrix.TwoArgOperator.opPOW
-QgsRasterMatrix.opEQ = QgsRasterMatrix.TwoArgOperator.opEQ
-QgsRasterMatrix.opNE = QgsRasterMatrix.TwoArgOperator.opNE
-QgsRasterMatrix.opGT = QgsRasterMatrix.TwoArgOperator.opGT
-QgsRasterMatrix.opLT = QgsRasterMatrix.TwoArgOperator.opLT
-QgsRasterMatrix.opGE = QgsRasterMatrix.TwoArgOperator.opGE
-QgsRasterMatrix.opLE = QgsRasterMatrix.TwoArgOperator.opLE
-QgsRasterMatrix.opAND = QgsRasterMatrix.TwoArgOperator.opAND
-QgsRasterMatrix.opOR = QgsRasterMatrix.TwoArgOperator.opOR
-QgsRasterMatrix.opMIN = QgsRasterMatrix.TwoArgOperator.opMIN
-QgsRasterMatrix.opMAX = QgsRasterMatrix.TwoArgOperator.opMAX
-QgsRasterMatrix.opSQRT = QgsRasterMatrix.OneArgOperator.opSQRT
-QgsRasterMatrix.opSIN = QgsRasterMatrix.OneArgOperator.opSIN
-QgsRasterMatrix.opCOS = QgsRasterMatrix.OneArgOperator.opCOS
-QgsRasterMatrix.opTAN = QgsRasterMatrix.OneArgOperator.opTAN
-QgsRasterMatrix.opASIN = QgsRasterMatrix.OneArgOperator.opASIN
-QgsRasterMatrix.opACOS = QgsRasterMatrix.OneArgOperator.opACOS
-QgsRasterMatrix.opATAN = QgsRasterMatrix.OneArgOperator.opATAN
-QgsRasterMatrix.opSIGN = QgsRasterMatrix.OneArgOperator.opSIGN
-QgsRasterMatrix.opLOG = QgsRasterMatrix.OneArgOperator.opLOG
-QgsRasterMatrix.opLOG10 = QgsRasterMatrix.OneArgOperator.opLOG10
-QgsRasterMatrix.opABS = QgsRasterMatrix.OneArgOperator.opABS
 try:
     QgsRasterMatrix.__group__ = ['raster']
 except (NameError, AttributeError):
@@ -909,11 +700,7 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/analysis/interpolation/qgstininterpolator.h
 # monkey patching scoped based enum
-QgsTinInterpolator.Linear = QgsTinInterpolator.TinInterpolation.Linear
-QgsTinInterpolator.Linear.is_monkey_patched = True
 QgsTinInterpolator.Linear.__doc__ = "Linear interpolation"
-QgsTinInterpolator.CloughTocher = QgsTinInterpolator.TinInterpolation.CloughTocher
-QgsTinInterpolator.CloughTocher.is_monkey_patched = True
 QgsTinInterpolator.CloughTocher.__doc__ = "Clough-Tocher interpolation"
 QgsTinInterpolator.TinInterpolation.__doc__ = """Indicates the type of interpolation to be performed
 
@@ -935,9 +722,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/analysis/network/qgsvectorlayerdirector.h
-QgsVectorLayerDirector.DirectionForward = QgsVectorLayerDirector.Direction.DirectionForward
-QgsVectorLayerDirector.DirectionBackward = QgsVectorLayerDirector.Direction.DirectionBackward
-QgsVectorLayerDirector.DirectionBoth = QgsVectorLayerDirector.Direction.DirectionBoth
 try:
     QgsVectorLayerDirector.__overridden_methods__ = ['makeGraph', 'name']
     QgsVectorLayerDirector.__group__ = ['network']

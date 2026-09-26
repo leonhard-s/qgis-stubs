@@ -25,8 +25,8 @@ from unittest import mock
 
 from qgis.core import QgsApplication, QgsLayerTreeModel, QgsProject
 from qgis.gui import QgisInterface, QgsLayerTreeView, QgsMapCanvas
-from qgis.PyQt.QtCore import QSize
-from qgis.PyQt.QtWidgets import QMainWindow
+from PyQt6.QtCore import QSize
+from PyQt6.QtWidgets import QMainWindow
 from qgis.testing import start_app
 
 

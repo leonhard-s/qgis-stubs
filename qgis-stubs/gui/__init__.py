@@ -21,7 +21,7 @@ __author__ = 'Nathan Woodrow'
 __date__ = 'May 2014'
 __copyright__ = '(C) 2014, Nathan Woodrow'
 
-from qgis.PyQt import QtCore
+from PyQt6 import QtCore
 from qgis._gui import *
 from qgis.core import Qgis as _Qgis
 from .additions.qgssettingsenumflageditorwrapper import PyQgsSettingsEnumEditorWidgetWrapper
@@ -161,16 +161,9 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsadvanceddigitizingdockwidget.h
-QgsAdvancedDigitizingDockWidget.AbsoluteAngle = QgsAdvancedDigitizingDockWidget.CadCapacity.AbsoluteAngle
-QgsAdvancedDigitizingDockWidget.RelativeAngle = QgsAdvancedDigitizingDockWidget.CadCapacity.RelativeAngle
-QgsAdvancedDigitizingDockWidget.RelativeCoordinates = QgsAdvancedDigitizingDockWidget.CadCapacity.RelativeCoordinates
-QgsAdvancedDigitizingDockWidget.Distance = QgsAdvancedDigitizingDockWidget.CadCapacity.Distance
 QgsAdvancedDigitizingDockWidget.CadCapacities = lambda flags=0: QgsAdvancedDigitizingDockWidget.CadCapacity(flags)
 QgsAdvancedDigitizingDockWidget.CadCapacities.baseClass = QgsAdvancedDigitizingDockWidget
 CadCapacities = QgsAdvancedDigitizingDockWidget  # dirty hack since SIP seems to introduce the flags in module
-QgsAdvancedDigitizingDockWidget.ReturnPressed = QgsAdvancedDigitizingDockWidget.WidgetSetMode.ReturnPressed
-QgsAdvancedDigitizingDockWidget.FocusOut = QgsAdvancedDigitizingDockWidget.WidgetSetMode.FocusOut
-QgsAdvancedDigitizingDockWidget.TextEdited = QgsAdvancedDigitizingDockWidget.WidgetSetMode.TextEdited
 QgsAdvancedDigitizingDockWidget.CadConstraint.NoLock = QgsAdvancedDigitizingDockWidget.CadConstraint.LockMode.NoLock
 QgsAdvancedDigitizingDockWidget.CadConstraint.SoftLock = QgsAdvancedDigitizingDockWidget.CadConstraint.LockMode.SoftLock
 QgsAdvancedDigitizingDockWidget.CadConstraint.HardLock = QgsAdvancedDigitizingDockWidget.CadConstraint.LockMode.HardLock
@@ -311,31 +304,8 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsattributeeditorcontext.h
-QgsAttributeEditorContext.SingleEditMode = QgsAttributeEditorContext.Mode.SingleEditMode
-QgsAttributeEditorContext.AddFeatureMode = QgsAttributeEditorContext.Mode.AddFeatureMode
-QgsAttributeEditorContext.FixAttributeMode = QgsAttributeEditorContext.Mode.FixAttributeMode
-QgsAttributeEditorContext.MultiEditMode = QgsAttributeEditorContext.Mode.MultiEditMode
-QgsAttributeEditorContext.SearchMode = QgsAttributeEditorContext.Mode.SearchMode
-QgsAttributeEditorContext.AggregateSearchMode = QgsAttributeEditorContext.Mode.AggregateSearchMode
-QgsAttributeEditorContext.IdentifyMode = QgsAttributeEditorContext.Mode.IdentifyMode
-QgsAttributeEditorContext.PreviewMode = QgsAttributeEditorContext.Mode.PreviewMode
 QgsAttributeEditorContext.Mode.baseClass = QgsAttributeEditorContext
-QgsAttributeEditorContext.Undefined = QgsAttributeEditorContext.RelationMode.Undefined
-QgsAttributeEditorContext.Multiple = QgsAttributeEditorContext.RelationMode.Multiple
-QgsAttributeEditorContext.Single = QgsAttributeEditorContext.RelationMode.Single
-QgsAttributeEditorContext.Embed = QgsAttributeEditorContext.FormMode.Embed
-QgsAttributeEditorContext.StandaloneDialog = QgsAttributeEditorContext.FormMode.StandaloneDialog
-QgsAttributeEditorContext.Popup = QgsAttributeEditorContext.FormMode.Popup
 # The following has been generated automatically from src/gui/qgsattributeform.h
-QgsAttributeForm.SingleEditMode = QgsAttributeForm.Mode.SingleEditMode
-QgsAttributeForm.AddFeatureMode = QgsAttributeForm.Mode.AddFeatureMode
-QgsAttributeForm.MultiEditMode = QgsAttributeForm.Mode.MultiEditMode
-QgsAttributeForm.SearchMode = QgsAttributeForm.Mode.SearchMode
-QgsAttributeForm.AggregateSearchMode = QgsAttributeForm.Mode.AggregateSearchMode
-QgsAttributeForm.IdentifyMode = QgsAttributeForm.Mode.IdentifyMode
-QgsAttributeForm.ReplaceFilter = QgsAttributeForm.FilterType.ReplaceFilter
-QgsAttributeForm.FilterAnd = QgsAttributeForm.FilterType.FilterAnd
-QgsAttributeForm.FilterOr = QgsAttributeForm.FilterType.FilterOr
 try:
     QgsAttributeForm.__attribute_docs__ = {'attributeChanged': 'Notifies about changes of attributes, this signal is not emitted when\nthe value is set back to the original one.\n\n:param attribute: The name of the attribute that changed.\n:param value: The new value of the attribute.\n\n.. deprecated:: 3.0\n', 'widgetValueChanged': 'Notifies about changes of attributes\n\n:param attribute: The name of the attribute that changed.\n:param value: The new value of the attribute.\n:param attributeChanged: If ``True``, it corresponds to an actual change\n                         of the feature attribute\n', 'rememberLastWidgetValueChanged': "Notifies about changes to remembrance of attributes' last value\n\n:param attribute: The name of the attribute.\n:param remember: Whether the last value should be remembered or not.\n\n.. versionadded:: 4.0\n", 'featureSaved': 'Emitted when a feature is changed or added\n', 'filterExpressionSet': 'Emitted when a filter expression is set using the form.\n\n:param expression: filter expression\n:param type: filter type\n', 'modeChanged': 'Emitted when the form changes mode.\n\n:param mode: new mode\n', 'closed': "Emitted when the user selects the close option from the form's button\nbar.\n", 'zoomToFeatures': 'Emitted when the user chooses to zoom to a filtered set of features.\n', 'flashFeatures': 'Emitted when the user chooses to flash a filtered set of features.\n', 'openFilteredFeaturesAttributeTable': 'Emitted when the user chooses to open the attribute table dialog with a\nfiltered set of features.\n\n.. versionadded:: 3.24\n'}
     QgsAttributeForm.createFeature = staticmethod(QgsAttributeForm.createFeature)
@@ -361,10 +331,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsattributeformwidget.h
-QgsAttributeFormWidget.DefaultMode = QgsAttributeFormWidget.Mode.DefaultMode
-QgsAttributeFormWidget.MultiEditMode = QgsAttributeFormWidget.Mode.MultiEditMode
-QgsAttributeFormWidget.SearchMode = QgsAttributeFormWidget.Mode.SearchMode
-QgsAttributeFormWidget.AggregateSearchMode = QgsAttributeFormWidget.Mode.AggregateSearchMode
 try:
     QgsAttributeFormWidget.__virtual_methods__ = ['currentFilterExpression']
     QgsAttributeFormWidget.__abstract_methods__ = ['createSearchWidgetWrappers']
@@ -378,21 +344,10 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/attributetable/qgsattributetablefiltermodel.h
-QgsAttributeTableFilterModel.ShowAll = QgsAttributeTableFilterModel.FilterMode.ShowAll
-QgsAttributeTableFilterModel.ShowSelected = QgsAttributeTableFilterModel.FilterMode.ShowSelected
-QgsAttributeTableFilterModel.ShowVisible = QgsAttributeTableFilterModel.FilterMode.ShowVisible
-QgsAttributeTableFilterModel.ShowFilteredList = QgsAttributeTableFilterModel.FilterMode.ShowFilteredList
-QgsAttributeTableFilterModel.ShowEdited = QgsAttributeTableFilterModel.FilterMode.ShowEdited
-QgsAttributeTableFilterModel.ShowInvalid = QgsAttributeTableFilterModel.FilterMode.ShowInvalid
 QgsAttributeTableFilterModel.FilterMode.baseClass = QgsAttributeTableFilterModel
-QgsAttributeTableFilterModel.ColumnTypeField = QgsAttributeTableFilterModel.ColumnType.ColumnTypeField
-QgsAttributeTableFilterModel.ColumnTypeActionButton = QgsAttributeTableFilterModel.ColumnType.ColumnTypeActionButton
 QgsAttributeTableFilterModel.ColumnType.baseClass = QgsAttributeTableFilterModel
-QgsAttributeTableFilterModel.Role = QgsAttributeTableFilterModel.CustomRole
 # monkey patching scoped based enum
-QgsAttributeTableFilterModel.TypeRole = QgsAttributeTableFilterModel.CustomRole.Type
 QgsAttributeTableFilterModel.Role.TypeRole = QgsAttributeTableFilterModel.CustomRole.Type
-QgsAttributeTableFilterModel.TypeRole.is_monkey_patched = True
 QgsAttributeTableFilterModel.TypeRole.__doc__ = ""
 QgsAttributeTableFilterModel.CustomRole.__doc__ = """The additional roles defined by this filter model.
 The values of these roles start just after the roles defined by
@@ -421,23 +376,14 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/attributetable/qgsattributetablemodel.h
-QgsAttributeTableModel.Role = QgsAttributeTableModel.CustomRole
 # monkey patching scoped based enum
-QgsAttributeTableModel.FeatureIdRole = QgsAttributeTableModel.CustomRole.FeatureId
 QgsAttributeTableModel.Role.FeatureIdRole = QgsAttributeTableModel.CustomRole.FeatureId
-QgsAttributeTableModel.FeatureIdRole.is_monkey_patched = True
 QgsAttributeTableModel.FeatureIdRole.__doc__ = "Get the feature id of the feature in this row"
-QgsAttributeTableModel.FieldIndexRole = QgsAttributeTableModel.CustomRole.FieldIndex
 QgsAttributeTableModel.Role.FieldIndexRole = QgsAttributeTableModel.CustomRole.FieldIndex
-QgsAttributeTableModel.FieldIndexRole.is_monkey_patched = True
 QgsAttributeTableModel.FieldIndexRole.__doc__ = "Get the field index of this column"
-QgsAttributeTableModel.UserRole = QgsAttributeTableModel.CustomRole.User
 QgsAttributeTableModel.Role.UserRole = QgsAttributeTableModel.CustomRole.User
-QgsAttributeTableModel.UserRole.is_monkey_patched = True
 QgsAttributeTableModel.UserRole.__doc__ = "Start further roles starting from this role"
-QgsAttributeTableModel.SortRole = QgsAttributeTableModel.CustomRole.Sort
 QgsAttributeTableModel.Role.SortRole = QgsAttributeTableModel.CustomRole.Sort
-QgsAttributeTableModel.SortRole.is_monkey_patched = True
 QgsAttributeTableModel.SortRole.__doc__ = "Role used for sorting start here"
 QgsAttributeTableModel.CustomRole.__doc__ = """Custom model roles.
 
@@ -550,22 +496,11 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/auth/qgsauthimportcertdialog.h
-QgsAuthImportCertDialog.NoFilter = QgsAuthImportCertDialog.CertFilter.NoFilter
-QgsAuthImportCertDialog.CaFilter = QgsAuthImportCertDialog.CertFilter.CaFilter
-QgsAuthImportCertDialog.AllInputs = QgsAuthImportCertDialog.CertInput.AllInputs
-QgsAuthImportCertDialog.FileInput = QgsAuthImportCertDialog.CertInput.FileInput
-QgsAuthImportCertDialog.TextInput = QgsAuthImportCertDialog.CertInput.TextInput
 try:
     QgsAuthImportCertDialog.__group__ = ['auth']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/auth/qgsauthimportidentitydialog.h
-QgsAuthImportIdentityDialog.CertIdentity = QgsAuthImportIdentityDialog.IdentityType.CertIdentity
-QgsAuthImportIdentityDialog.PkiPaths = QgsAuthImportIdentityDialog.BundleTypes.PkiPaths
-QgsAuthImportIdentityDialog.PkiPkcs12 = QgsAuthImportIdentityDialog.BundleTypes.PkiPkcs12
-QgsAuthImportIdentityDialog.Valid = QgsAuthImportIdentityDialog.Validity.Valid
-QgsAuthImportIdentityDialog.Invalid = QgsAuthImportIdentityDialog.Validity.Invalid
-QgsAuthImportIdentityDialog.Unknown = QgsAuthImportIdentityDialog.Validity.Unknown
 try:
     QgsAuthImportIdentityDialog.__group__ = ['auth']
 except (NameError, AttributeError):
@@ -585,8 +520,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/auth/qgsauthsettingswidget.h
-QgsAuthSettingsWidget.ProjectFile = QgsAuthSettingsWidget.WarningType.ProjectFile
-QgsAuthSettingsWidget.UserSettings = QgsAuthSettingsWidget.WarningType.UserSettings
 QgsAuthSettingsWidget.WarningType.baseClass = QgsAuthSettingsWidget
 try:
     QgsAuthSettingsWidget.__attribute_docs__ = {'usernameChanged': 'Emitted when the plain text username defined in the dialog is changed.\n\n.. versionadded:: 3.22\n', 'passwordChanged': 'Emitted when the plain text password defined in the dialog is changed.\n\n.. versionadded:: 3.22\n', 'configIdChanged': 'Emitted when the auth configuration ID selected in the dialog is\nchanged.\n\n.. versionadded:: 3.22\n'}
@@ -665,11 +598,8 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/symbology/qgscategorizedsymbolrendererwidget.h
-QgsCategorizedSymbolRendererWidget.CustomRoles = QgsCategorizedSymbolRendererWidget.CustomRole
 # monkey patching scoped based enum
-QgsCategorizedSymbolRendererWidget.ValueRole = QgsCategorizedSymbolRendererWidget.CustomRole.Value
 QgsCategorizedSymbolRendererWidget.CustomRoles.ValueRole = QgsCategorizedSymbolRendererWidget.CustomRole.Value
-QgsCategorizedSymbolRendererWidget.ValueRole.is_monkey_patched = True
 QgsCategorizedSymbolRendererWidget.ValueRole.__doc__ = "Category value"
 QgsCategorizedSymbolRendererWidget.CustomRole.__doc__ = """Custom model roles.
 
@@ -723,14 +653,8 @@ QgsCodeEditor.Mode.__doc__ = """Code editor modes.
 # --
 QgsCodeEditor.Mode.baseClass = QgsCodeEditor
 # monkey patching scoped based enum
-QgsCodeEditor.LineNumbers = QgsCodeEditor.MarginRole.LineNumbers
-QgsCodeEditor.LineNumbers.is_monkey_patched = True
 QgsCodeEditor.LineNumbers.__doc__ = "Line numbers"
-QgsCodeEditor.ErrorIndicators = QgsCodeEditor.MarginRole.ErrorIndicators
-QgsCodeEditor.ErrorIndicators.is_monkey_patched = True
 QgsCodeEditor.ErrorIndicators.__doc__ = "Error indicators"
-QgsCodeEditor.FoldingControls = QgsCodeEditor.MarginRole.FoldingControls
-QgsCodeEditor.FoldingControls.is_monkey_patched = True
 QgsCodeEditor.FoldingControls.__doc__ = "Folding controls"
 QgsCodeEditor.MarginRole.__doc__ = """Margin roles.
 
@@ -971,8 +895,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgscolorbutton.h
-QgsColorButton.ShowDialog = QgsColorButton.Behavior.ShowDialog
-QgsColorButton.SignalOnly = QgsColorButton.Behavior.SignalOnly
 QgsColorButton.Behavior.baseClass = QgsColorButton
 try:
     QgsColorButton.__attribute_docs__ = {'colorChanged': 'Emitted whenever a new color is set for the button. The color is always\nvalid. In case the new color is the same no signal is emitted, to avoid\ninfinite loops.\n\n:param color: New color\n', 'colorClicked': "Emitted when the button is clicked, if the button's behavior is set to\nSignalOnly\n\n:param color: button color\n\n.. seealso:: :py:func:`setBehavior`\n\n.. seealso:: :py:func:`behavior`\n", 'cleared': 'Emitted when the color is cleared (set to null).\n\n.. seealso:: :py:func:`setToNull`\n\n.. versionadded:: 3.12\n', 'unlinked': 'Emitted when the color is unlinked, e.g. when it was previously set to\nlink to a project color and is now no longer linked.\n\n.. seealso:: :py:func:`unlink`\n\n.. seealso:: :py:func:`linkToProjectColor`\n\n.. versionadded:: 3.6\n'}
@@ -1055,18 +977,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgscolorwidgets.h
-QgsColorWidget.Multiple = QgsColorWidget.ColorComponent.Multiple
-QgsColorWidget.Red = QgsColorWidget.ColorComponent.Red
-QgsColorWidget.Green = QgsColorWidget.ColorComponent.Green
-QgsColorWidget.Blue = QgsColorWidget.ColorComponent.Blue
-QgsColorWidget.Hue = QgsColorWidget.ColorComponent.Hue
-QgsColorWidget.Saturation = QgsColorWidget.ColorComponent.Saturation
-QgsColorWidget.Value = QgsColorWidget.ColorComponent.Value
-QgsColorWidget.Alpha = QgsColorWidget.ColorComponent.Alpha
-QgsColorWidget.Cyan = QgsColorWidget.ColorComponent.Cyan
-QgsColorWidget.Magenta = QgsColorWidget.ColorComponent.Magenta
-QgsColorWidget.Yellow = QgsColorWidget.ColorComponent.Yellow
-QgsColorWidget.Black = QgsColorWidget.ColorComponent.Black
 # monkey patching scoped based enum
 QgsColorWidget.ComponentUnit.Scaled0to255.__doc__ = "Values in the range 0-255"
 QgsColorWidget.ComponentUnit.Percent.__doc__ = "Percent values in the range 0-100"
@@ -1080,12 +990,6 @@ QgsColorWidget.ComponentUnit.__doc__ = """Specified the color component unit
 """
 # --
 QgsColorWidget.ComponentUnit.baseClass = QgsColorWidget
-QgsColorRampWidget.Horizontal = QgsColorRampWidget.Orientation.Horizontal
-QgsColorRampWidget.Vertical = QgsColorRampWidget.Orientation.Vertical
-QgsColorTextWidget.HexRgb = QgsColorTextWidget.ColorTextFormat.HexRgb
-QgsColorTextWidget.HexRgbA = QgsColorTextWidget.ColorTextFormat.HexRgbA
-QgsColorTextWidget.Rgb = QgsColorTextWidget.ColorTextFormat.Rgb
-QgsColorTextWidget.Rgba = QgsColorTextWidget.ColorTextFormat.Rgba
 QgsColorTextWidget.ColorTextFormat.baseClass = QgsColorTextWidget
 try:
     QgsColorWidget.__attribute_docs__ = {'colorChanged': "Emitted when the widget's color changes\n\n:param color: new widget color\n", 'hovered': 'Emitted when mouse hovers over widget.\n'}
@@ -1131,8 +1035,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgscompoundcolorwidget.h
-QgsCompoundColorWidget.LayoutDefault = QgsCompoundColorWidget.Layout.LayoutDefault
-QgsCompoundColorWidget.LayoutVertical = QgsCompoundColorWidget.Layout.LayoutVertical
 try:
     QgsCompoundColorWidget.__attribute_docs__ = {'currentColorChanged': "Emitted when the dialog's color changes\n\n:param color: current color\n"}
     QgsCompoundColorWidget.importUserPaletteFromFile = staticmethod(QgsCompoundColorWidget.importUserPaletteFromFile)
@@ -1166,45 +1068,24 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/proj/qgscoordinatereferencesystemmodel.h
-QgsCoordinateReferenceSystemModel.Roles = QgsCoordinateReferenceSystemModel.CustomRole
 # monkey patching scoped based enum
-QgsCoordinateReferenceSystemModel.RoleNodeType = QgsCoordinateReferenceSystemModel.CustomRole.NodeType
 QgsCoordinateReferenceSystemModel.Roles.RoleNodeType = QgsCoordinateReferenceSystemModel.CustomRole.NodeType
-QgsCoordinateReferenceSystemModel.RoleNodeType.is_monkey_patched = True
 QgsCoordinateReferenceSystemModel.RoleNodeType.__doc__ = "Corresponds to the node's type"
-QgsCoordinateReferenceSystemModel.RoleName = QgsCoordinateReferenceSystemModel.CustomRole.Name
 QgsCoordinateReferenceSystemModel.Roles.RoleName = QgsCoordinateReferenceSystemModel.CustomRole.Name
-QgsCoordinateReferenceSystemModel.RoleName.is_monkey_patched = True
 QgsCoordinateReferenceSystemModel.RoleName.__doc__ = "The coordinate reference system name"
-QgsCoordinateReferenceSystemModel.RoleAuthId = QgsCoordinateReferenceSystemModel.CustomRole.AuthId
 QgsCoordinateReferenceSystemModel.Roles.RoleAuthId = QgsCoordinateReferenceSystemModel.CustomRole.AuthId
-QgsCoordinateReferenceSystemModel.RoleAuthId.is_monkey_patched = True
 QgsCoordinateReferenceSystemModel.RoleAuthId.__doc__ = "The coordinate reference system authority name and id"
-QgsCoordinateReferenceSystemModel.RoleDeprecated = QgsCoordinateReferenceSystemModel.CustomRole.Deprecated
 QgsCoordinateReferenceSystemModel.Roles.RoleDeprecated = QgsCoordinateReferenceSystemModel.CustomRole.Deprecated
-QgsCoordinateReferenceSystemModel.RoleDeprecated.is_monkey_patched = True
 QgsCoordinateReferenceSystemModel.RoleDeprecated.__doc__ = "``True`` if the CRS is deprecated"
-QgsCoordinateReferenceSystemModel.RoleType = QgsCoordinateReferenceSystemModel.CustomRole.Type
 QgsCoordinateReferenceSystemModel.Roles.RoleType = QgsCoordinateReferenceSystemModel.CustomRole.Type
-QgsCoordinateReferenceSystemModel.RoleType.is_monkey_patched = True
 QgsCoordinateReferenceSystemModel.RoleType.__doc__ = "The coordinate reference system type"
-QgsCoordinateReferenceSystemModel.RoleGroupId = QgsCoordinateReferenceSystemModel.CustomRole.GroupId
 QgsCoordinateReferenceSystemModel.Roles.RoleGroupId = QgsCoordinateReferenceSystemModel.CustomRole.GroupId
-QgsCoordinateReferenceSystemModel.RoleGroupId.is_monkey_patched = True
 QgsCoordinateReferenceSystemModel.RoleGroupId.__doc__ = "The node ID (for group nodes)"
-QgsCoordinateReferenceSystemModel.RoleWkt = QgsCoordinateReferenceSystemModel.CustomRole.Wkt
 QgsCoordinateReferenceSystemModel.Roles.RoleWkt = QgsCoordinateReferenceSystemModel.CustomRole.Wkt
-QgsCoordinateReferenceSystemModel.RoleWkt.is_monkey_patched = True
 QgsCoordinateReferenceSystemModel.RoleWkt.__doc__ = "The coordinate reference system's WKT representation. This is only used for non-standard CRS (i.e. those not present in the database)."
-QgsCoordinateReferenceSystemModel.RoleProj = QgsCoordinateReferenceSystemModel.CustomRole.Proj
 QgsCoordinateReferenceSystemModel.Roles.RoleProj = QgsCoordinateReferenceSystemModel.CustomRole.Proj
-QgsCoordinateReferenceSystemModel.RoleProj.is_monkey_patched = True
 QgsCoordinateReferenceSystemModel.RoleProj.__doc__ = "The coordinate reference system's PROJ representation. This is only used for non-standard CRS (i.e. those not present in the database)."
-QgsCoordinateReferenceSystemModel.Group = QgsCoordinateReferenceSystemModel.CustomRole.Group
-QgsCoordinateReferenceSystemModel.Group.is_monkey_patched = True
 QgsCoordinateReferenceSystemModel.Group.__doc__ = "Group name. \n.. versionadded:: 3.42"
-QgsCoordinateReferenceSystemModel.Projection = QgsCoordinateReferenceSystemModel.CustomRole.Projection
-QgsCoordinateReferenceSystemModel.Projection.is_monkey_patched = True
 QgsCoordinateReferenceSystemModel.Projection.__doc__ = "Projection name. \n.. versionadded:: 3.42"
 QgsCoordinateReferenceSystemModel.CustomRole.__doc__ = """Custom model roles.
 
@@ -1258,10 +1139,6 @@ QgsCoordinateReferenceSystemModel.CustomRole.__doc__ = """Custom model roles.
 """
 # --
 QgsCoordinateReferenceSystemModel.CustomRole.baseClass = QgsCoordinateReferenceSystemModel
-QgsCoordinateReferenceSystemProxyModel.FilterHorizontal = QgsCoordinateReferenceSystemProxyModel.Filter.FilterHorizontal
-QgsCoordinateReferenceSystemProxyModel.FilterVertical = QgsCoordinateReferenceSystemProxyModel.Filter.FilterVertical
-QgsCoordinateReferenceSystemProxyModel.FilterCompound = QgsCoordinateReferenceSystemProxyModel.Filter.FilterCompound
-QgsCoordinateReferenceSystemProxyModel.FilterTopocentricCompatible = QgsCoordinateReferenceSystemProxyModel.Filter.FilterTopocentricCompatible
 QgsCoordinateReferenceSystemProxyModel.Filters = lambda flags=0: QgsCoordinateReferenceSystemProxyModel.Filter(flags)
 QgsCoordinateReferenceSystemProxyModel.Filters.baseClass = QgsCoordinateReferenceSystemProxyModel
 Filters = QgsCoordinateReferenceSystemProxyModel  # dirty hack since SIP seems to introduce the flags in module
@@ -1479,9 +1356,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/editorwidgets/qgsdoublespinbox.h
-QgsDoubleSpinBox.MinimumValue = QgsDoubleSpinBox.ClearValueMode.MinimumValue
-QgsDoubleSpinBox.MaximumValue = QgsDoubleSpinBox.ClearValueMode.MaximumValue
-QgsDoubleSpinBox.CustomValue = QgsDoubleSpinBox.ClearValueMode.CustomValue
 try:
     QgsDoubleSpinBox.__attribute_docs__ = {'returnPressed': 'Emitted when the Return or Enter key is used in the line edit.\n\n.. versionadded:: 3.40\n', 'textEdited': 'Emitted when the the value has been manually edited via line edit.\n\n.. versionadded:: 3.40\n', 'editingTimeout': 'Emitted when either:\n\n1. 1 second has elapsed since the last value change in the widget (eg last key press or scroll wheel event)\n2. or, immediately after the widget has lost focus after its value was changed.\n\nThis signal can be used to respond semi-instantly to changes in the spin\nbox, without responding too quickly while the user in the middle of\nsetting the value.\n\n.. seealso:: :py:func:`editingTimeoutInterval`\n\n.. versionadded:: 3.42\n'}
     QgsDoubleSpinBox.__overridden_methods__ = ['clear', 'valueFromText', 'validate', 'paintEvent', 'stepBy', 'changeEvent', 'wheelEvent', 'focusOutEvent', 'timerEvent']
@@ -1496,12 +1370,7 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/attributetable/qgsdualview.h
-QgsDualView.AttributeTable = QgsDualView.ViewMode.AttributeTable
-QgsDualView.AttributeEditor = QgsDualView.ViewMode.AttributeEditor
 QgsDualView.ViewMode.baseClass = QgsDualView
-QgsDualView.NoAction = QgsDualView.FeatureListBrowsingAction.NoAction
-QgsDualView.PanToFeature = QgsDualView.FeatureListBrowsingAction.PanToFeature
-QgsDualView.ZoomToFeature = QgsDualView.FeatureListBrowsingAction.ZoomToFeature
 QgsDualView.FeatureListBrowsingAction.baseClass = QgsDualView
 try:
     QgsDualView.__attribute_docs__ = {'displayExpressionChanged': 'Emitted whenever the display expression is successfully changed\n\n:param expression: The expression that was applied\n', 'filterChanged': 'Emitted whenever the filter changes\n', 'filterExpressionSet': 'Emitted when a filter expression is set using the view.\n\n:param expression: filter expression\n:param type: filter type\n', 'formModeChanged': 'Emitted when the form changes mode.\n\n:param mode: new mode\n', 'showContextMenuExternally': 'Emitted when selecting context menu on the feature list to create the\ncontext menu individually\n\n:param menu: context menu\n:param fid: feature id of the selected feature\n'}
@@ -1546,9 +1415,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/editorwidgets/core/qgseditorwidgetwrapper.h
-QgsEditorWidgetWrapper.ConstraintResultPass = QgsEditorWidgetWrapper.ConstraintResult.ConstraintResultPass
-QgsEditorWidgetWrapper.ConstraintResultFailHard = QgsEditorWidgetWrapper.ConstraintResult.ConstraintResultFailHard
-QgsEditorWidgetWrapper.ConstraintResultFailSoft = QgsEditorWidgetWrapper.ConstraintResult.ConstraintResultFailSoft
 try:
     QgsEditorWidgetWrapper.__attribute_docs__ = {'valueChanged': 'Emit this signal, whenever the value changed.\n\n:param value: The new value\n\n.. deprecated:: 3.10\n\n   Use valuesChanged signal instead.\n', 'valuesChanged': 'Emit this signal, whenever the value changed. It will also return the\nvalues for the additional fields handled by the widget\n\n:param value: The new value\n:param additionalFieldValues: A map of additional field names with their\n                              corresponding values\n\n.. versionadded:: 3.10\n', 'constraintStatusChanged': 'Emit this signal when the constraint status changed.\nconstraintStatusChanged\n\n:param constraint: represented as a string\n:param desc: is the constraint description\n:param err: the error represented as a string. Empty if none.\n:param status: \n', 'constraintResultVisibleChanged': 'Emit this signal when the constraint result visibility changed.\n'}
     QgsEditorWidgetWrapper.fromWidget = staticmethod(QgsEditorWidgetWrapper.fromWidget)
@@ -1625,10 +1491,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsexpressionbuilderwidget.h
-QgsExpressionBuilderWidget.LoadNothing = QgsExpressionBuilderWidget.Flag.LoadNothing
-QgsExpressionBuilderWidget.LoadRecent = QgsExpressionBuilderWidget.Flag.LoadRecent
-QgsExpressionBuilderWidget.LoadUserExpressions = QgsExpressionBuilderWidget.Flag.LoadUserExpressions
-QgsExpressionBuilderWidget.LoadAll = QgsExpressionBuilderWidget.Flag.LoadAll
 QgsExpressionBuilderWidget.Flags = lambda flags=0: QgsExpressionBuilderWidget.Flag(flags)
 QgsExpressionBuilderWidget.Flag.baseClass = QgsExpressionBuilderWidget
 Flag = QgsExpressionBuilderWidget  # dirty hack since SIP seems to introduce the flags in module
@@ -1661,9 +1523,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsexpressiontreeview.h
-QgsExpressionItem.Header = QgsExpressionItem.ItemType.Header
-QgsExpressionItem.Field = QgsExpressionItem.ItemType.Field
-QgsExpressionItem.ExpressionNode = QgsExpressionItem.ItemType.ExpressionNode
 try:
     QgsExpressionItem.__attribute_docs__ = {'CUSTOM_SORT_ROLE': 'Custom sort order role', 'ITEM_TYPE_ROLE': 'Item type role', 'SEARCH_TAGS_ROLE': 'Search tags role', 'ITEM_NAME_ROLE': 'Item name role', 'LAYER_ID_ROLE': '\n.. versionadded:: 3.24'}
     QgsExpressionItem.__annotations__ = {'CUSTOM_SORT_ROLE': int, 'ITEM_TYPE_ROLE': int, 'SEARCH_TAGS_ROLE': int, 'ITEM_NAME_ROLE': int, 'LAYER_ID_ROLE': int}
@@ -1683,24 +1542,12 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsextentgroupbox.h
-QgsExtentGroupBox.OriginalExtent = QgsExtentGroupBox.ExtentState.OriginalExtent
-QgsExtentGroupBox.CurrentExtent = QgsExtentGroupBox.ExtentState.CurrentExtent
-QgsExtentGroupBox.UserExtent = QgsExtentGroupBox.ExtentState.UserExtent
-QgsExtentGroupBox.ProjectLayerExtent = QgsExtentGroupBox.ExtentState.ProjectLayerExtent
-QgsExtentGroupBox.DrawOnCanvas = QgsExtentGroupBox.ExtentState.DrawOnCanvas
 try:
     QgsExtentGroupBox.__attribute_docs__ = {'extentChanged': "Emitted when the widget's extent is changed.\n", 'extentLayerChanged': 'Emitted when the extent layer is changed.\n\n.. versionadded:: 3.44\n'}
     QgsExtentGroupBox.__signal_arguments__ = {'extentChanged': ['r: QgsRectangle'], 'extentLayerChanged': ['layer: QgsMapLayer']}
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsextentwidget.h
-QgsExtentWidget.OriginalExtent = QgsExtentWidget.ExtentState.OriginalExtent
-QgsExtentWidget.CurrentExtent = QgsExtentWidget.ExtentState.CurrentExtent
-QgsExtentWidget.UserExtent = QgsExtentWidget.ExtentState.UserExtent
-QgsExtentWidget.ProjectLayerExtent = QgsExtentWidget.ExtentState.ProjectLayerExtent
-QgsExtentWidget.DrawOnCanvas = QgsExtentWidget.ExtentState.DrawOnCanvas
-QgsExtentWidget.CondensedStyle = QgsExtentWidget.WidgetStyle.CondensedStyle
-QgsExtentWidget.ExpandedStyle = QgsExtentWidget.WidgetStyle.ExpandedStyle
 try:
     QgsExtentWidget.__attribute_docs__ = {'extentChanged': "Emitted when the widget's extent is changed.\n", 'validationChanged': "Emitted when the widget's validation state changes.\n", 'toggleDialogVisibility': 'Emitted when the parent dialog visibility must be changed (e.g. to\npermit access to the map canvas)\n', 'extentLayerChanged': 'Emitted when the extent layer is changed.\n\n.. versionadded:: 3.44\n'}
     QgsExtentWidget.__overridden_methods__ = ['dragEnterEvent', 'dragLeaveEvent', 'dropEvent', 'showEvent']
@@ -1708,11 +1555,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsexternalresourcewidget.h
-QgsExternalResourceWidget.NoContent = QgsExternalResourceWidget.DocumentViewerContent.NoContent
-QgsExternalResourceWidget.Image = QgsExternalResourceWidget.DocumentViewerContent.Image
-QgsExternalResourceWidget.Web = QgsExternalResourceWidget.DocumentViewerContent.Web
-QgsExternalResourceWidget.Audio = QgsExternalResourceWidget.DocumentViewerContent.Audio
-QgsExternalResourceWidget.Video = QgsExternalResourceWidget.DocumentViewerContent.Video
 try:
     QgsExternalResourceWidget.__attribute_docs__ = {'valueChanged': 'Emitted as soon as the current document changes\n'}
     QgsExternalResourceWidget.__signal_arguments__ = {'valueChanged': ['value: str']}
@@ -1732,9 +1574,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/attributetable/qgsfeaturelistmodel.h
-QgsFeatureListModel.FeatureInfoRole = QgsFeatureListModel.Role.FeatureInfoRole
-QgsFeatureListModel.FeatureRole = QgsFeatureListModel.Role.FeatureRole
-QgsFeatureListModel.FeatureWithGeometryRole = QgsFeatureListModel.Role.FeatureWithGeometryRole
 try:
     QgsFeatureListModel.FeatureInfo.__attribute_docs__ = {'isNew': 'True if feature is a newly added feature.', 'isEdited': 'True if feature has been edited.'}
     QgsFeatureListModel.FeatureInfo.__annotations__ = {'isNew': bool, 'isEdited': bool}
@@ -1757,8 +1596,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/attributetable/qgsfeaturelistviewdelegate.h
-QgsFeatureListViewDelegate.EditElement = QgsFeatureListViewDelegate.Element.EditElement
-QgsFeatureListViewDelegate.SelectionElement = QgsFeatureListViewDelegate.Element.SelectionElement
 try:
     QgsFeatureListViewDelegate.__attribute_docs__ = {'editButtonClicked': 'Emitted when the edit button is clicked for the feature with matching\n``index``.\n'}
     QgsFeatureListViewDelegate.__overridden_methods__ = ['sizeHint', 'paint']
@@ -1885,9 +1722,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsfilecontentsourcelineedit.h
-QgsPictureSourceLineEditBase.Svg = QgsPictureSourceLineEditBase.Format.Svg
-QgsPictureSourceLineEditBase.Image = QgsPictureSourceLineEditBase.Format.Image
-QgsPictureSourceLineEditBase.AnimatedImage = QgsPictureSourceLineEditBase.Format.AnimatedImage
 try:
     QgsAbstractFileContentSourceLineEdit.__attribute_docs__ = {'sourceChanged': 'Emitted whenever the file source is changed in the widget.\n'}
     QgsAbstractFileContentSourceLineEdit.__signal_arguments__ = {'sourceChanged': ['source: str']}
@@ -1900,14 +1734,7 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsfilewidget.h
-QgsFileWidget.GetFile = QgsFileWidget.StorageMode.GetFile
-QgsFileWidget.GetDirectory = QgsFileWidget.StorageMode.GetDirectory
-QgsFileWidget.GetMultipleFiles = QgsFileWidget.StorageMode.GetMultipleFiles
-QgsFileWidget.SaveFile = QgsFileWidget.StorageMode.SaveFile
 QgsFileWidget.StorageMode.baseClass = QgsFileWidget
-QgsFileWidget.Absolute = QgsFileWidget.RelativeStorage.Absolute
-QgsFileWidget.RelativeProject = QgsFileWidget.RelativeStorage.RelativeProject
-QgsFileWidget.RelativeDefaultPath = QgsFileWidget.RelativeStorage.RelativeDefaultPath
 QgsFileWidget.RelativeStorage.baseClass = QgsFileWidget
 try:
     QgsFileWidget.__attribute_docs__ = {'fileChanged': 'Emitted whenever the current file or directory ``path`` is changed.\n'}
@@ -1919,8 +1746,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsfilterlineedit.h
-QgsFilterLineEdit.ClearToNull = QgsFilterLineEdit.ClearMode.ClearToNull
-QgsFilterLineEdit.ClearToDefault = QgsFilterLineEdit.ClearMode.ClearToDefault
 QgsFilterLineEdit.ClearMode.baseClass = QgsFilterLineEdit
 try:
     QgsFilterLineEdit.__attribute_docs__ = {'cleared': 'Emitted when the widget is cleared\n\n.. seealso:: :py:func:`clearValue`\n', 'valueChanged': 'Same as :py:func:`~QgsFilterLineEdit.textChanged` but with support for\nnull values.\n\n:param value: The current text or null string if it matches the\n              :py:func:`~QgsFilterLineEdit.nullValue` property.\n', 'showSpinnerChanged': 'Show a spinner icon. This can be used for search boxes to indicate that\nsomething is going on in the background.\n', 'selectOnFocusChanged': 'Will select all text when this widget receives the focus.\n'}
@@ -1936,15 +1761,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsfloatingwidget.h
-QgsFloatingWidget.TopLeft = QgsFloatingWidget.AnchorPoint.TopLeft
-QgsFloatingWidget.TopMiddle = QgsFloatingWidget.AnchorPoint.TopMiddle
-QgsFloatingWidget.TopRight = QgsFloatingWidget.AnchorPoint.TopRight
-QgsFloatingWidget.MiddleLeft = QgsFloatingWidget.AnchorPoint.MiddleLeft
-QgsFloatingWidget.Middle = QgsFloatingWidget.AnchorPoint.Middle
-QgsFloatingWidget.MiddleRight = QgsFloatingWidget.AnchorPoint.MiddleRight
-QgsFloatingWidget.BottomLeft = QgsFloatingWidget.AnchorPoint.BottomLeft
-QgsFloatingWidget.BottomMiddle = QgsFloatingWidget.AnchorPoint.BottomMiddle
-QgsFloatingWidget.BottomRight = QgsFloatingWidget.AnchorPoint.BottomRight
 QgsFloatingWidget.AnchorPoint.baseClass = QgsFloatingWidget
 try:
     QgsFloatingWidget.__attribute_docs__ = {'anchorWidgetChanged': 'Emitted when the anchor widget changes\n', 'anchorPointChanged': 'Emitted when the anchor point changes\n', 'anchorWidgetPointChanged': 'Emitted when the anchor widget point changes\n'}
@@ -1960,8 +1776,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsfontbutton.h
-QgsFontButton.ModeTextRenderer = QgsFontButton.Mode.ModeTextRenderer
-QgsFontButton.ModeQFont = QgsFontButton.Mode.ModeQFont
 QgsFontButton.Mode.baseClass = QgsFontButton
 try:
     QgsFontButton.__attribute_docs__ = {'changed': "Emitted when the widget's text format settings are changed.\n"}
@@ -1986,12 +1800,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsgeometryrubberband.h
-QgsGeometryRubberBand.ICON_NONE = QgsGeometryRubberBand.IconType.ICON_NONE
-QgsGeometryRubberBand.ICON_CROSS = QgsGeometryRubberBand.IconType.ICON_CROSS
-QgsGeometryRubberBand.ICON_X = QgsGeometryRubberBand.IconType.ICON_X
-QgsGeometryRubberBand.ICON_BOX = QgsGeometryRubberBand.IconType.ICON_BOX
-QgsGeometryRubberBand.ICON_CIRCLE = QgsGeometryRubberBand.IconType.ICON_CIRCLE
-QgsGeometryRubberBand.ICON_FULL_BOX = QgsGeometryRubberBand.IconType.ICON_FULL_BOX
 try:
     QgsGeometryRubberBand.__virtual_methods__ = ['setGeometry']
     QgsGeometryRubberBand.__overridden_methods__ = ['updatePosition', 'paint']
@@ -2041,11 +1849,7 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsgui.h
-QgsGui.UseCrsOfFirstLayerAdded = QgsGui.ProjectCrsBehavior.UseCrsOfFirstLayerAdded
-QgsGui.UsePresetCrs = QgsGui.ProjectCrsBehavior.UsePresetCrs
 QgsGui.ProjectCrsBehavior.baseClass = QgsGui
-QgsGui.HigMenuTextIsTitleCase = QgsGui.HigFlag.HigMenuTextIsTitleCase
-QgsGui.HigDialogTitleIsTitleCase = QgsGui.HigFlag.HigDialogTitleIsTitleCase
 QgsGui.HigFlags = lambda flags=0: QgsGui.HigFlag(flags)
 from enum import Enum
 
@@ -2192,8 +1996,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsidentifymenu.h
-QgsIdentifyMenu.LayerLevel = QgsIdentifyMenu.MenuLevel.LayerLevel
-QgsIdentifyMenu.FeatureLevel = QgsIdentifyMenu.MenuLevel.FeatureLevel
 try:
     QgsIdentifyMenu.__attribute_docs__ = {'messageEmitted': 'Emitted when a ``message`` should be shown to the user in the\napplication message bar.\n\n.. seealso:: :py:func:`messageDiscarded`\n\n.. versionadded:: 4.0\n', 'messageDiscarded': 'Emitted when the previous message from the tool should be cleared from\nthe application message bar.\n\n.. seealso:: :py:func:`messageEmitted`\n\n.. versionadded:: 4.0\n'}
     QgsIdentifyMenu.findFeaturesOnCanvas = staticmethod(QgsIdentifyMenu.findFeaturesOnCanvas)
@@ -2309,10 +2111,7 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgslayermetadataresultsmodel.h
-QgsLayerMetadataResultsModel.Roles = QgsLayerMetadataResultsModel.CustomRole
 # monkey patching scoped based enum
-QgsLayerMetadataResultsModel.Metadata = QgsLayerMetadataResultsModel.CustomRole.Metadata
-QgsLayerMetadataResultsModel.Metadata.is_monkey_patched = True
 QgsLayerMetadataResultsModel.Metadata.__doc__ = "Layer metadata role"
 QgsLayerMetadataResultsModel.CustomRole.__doc__ = """The Roles enum represents the user roles for the model.
 
@@ -2327,11 +2126,6 @@ QgsLayerMetadataResultsModel.CustomRole.__doc__ = """The Roles enum represents t
 """
 # --
 QgsLayerMetadataResultsModel.CustomRole.baseClass = QgsLayerMetadataResultsModel
-QgsLayerMetadataResultsModel.Identifier = QgsLayerMetadataResultsModel.Sections.Identifier
-QgsLayerMetadataResultsModel.Title = QgsLayerMetadataResultsModel.Sections.Title
-QgsLayerMetadataResultsModel.Abstract = QgsLayerMetadataResultsModel.Sections.Abstract
-QgsLayerMetadataResultsModel.DataProviderName = QgsLayerMetadataResultsModel.Sections.DataProviderName
-QgsLayerMetadataResultsModel.GeometryType = QgsLayerMetadataResultsModel.Sections.GeometryType
 try:
     QgsLayerMetadataResultsModel.__attribute_docs__ = {'progressChanged': 'Emitted when the progress changed to ``progress``.\n'}
     QgsLayerMetadataResultsModel.__overridden_methods__ = ['rowCount', 'columnCount', 'data', 'headerData']
@@ -2434,8 +2228,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/layout/qgslayoutdesignerinterface.h
-QgsLayoutDesignerInterface.ToolMoveItemContent = QgsLayoutDesignerInterface.StandardTool.ToolMoveItemContent
-QgsLayoutDesignerInterface.ToolMoveItemNodes = QgsLayoutDesignerInterface.StandardTool.ToolMoveItemNodes
 try:
     QgsLayoutDesignerInterface.ExportResults.__attribute_docs__ = {'result': 'Result/error code of export.', 'labelingResults': 'Returns the labeling results for all map items included in the export. Map keys are the item UUIDs (see :py:func:`QgsLayoutItem.uuid()`).\n\nOwnership of the results remains with the layout designer.'}
     QgsLayoutDesignerInterface.ExportResults.__annotations__ = {'result': 'QgsLayoutExporter.ExportResult', 'labelingResults': 'Dict[str, QgsLabelingResults]'}
@@ -2457,7 +2249,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/layout/qgslayoutitemguiregistry.h
-QgsLayoutItemAbstractGuiMetadata.FlagNoCreationTools = QgsLayoutItemAbstractGuiMetadata.Flag.FlagNoCreationTools
 QgsLayoutItemAbstractGuiMetadata.Flags = lambda flags=0: QgsLayoutItemAbstractGuiMetadata.Flag(flags)
 try:
     QgsLayoutItemGuiGroup.__attribute_docs__ = {'id': 'Unique (untranslated) group ID string.', 'name': 'Translated group name.', 'icon': 'Icon for group.'}
@@ -2511,11 +2302,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/layout/qgslayoutview.h
-QgsLayoutView.ClipboardCut = QgsLayoutView.ClipboardOperation.ClipboardCut
-QgsLayoutView.ClipboardCopy = QgsLayoutView.ClipboardOperation.ClipboardCopy
-QgsLayoutView.PasteModeCursor = QgsLayoutView.PasteMode.PasteModeCursor
-QgsLayoutView.PasteModeCenter = QgsLayoutView.PasteMode.PasteModeCenter
-QgsLayoutView.PasteModeInPlace = QgsLayoutView.PasteMode.PasteModeInPlace
 try:
     QgsLayoutView.__attribute_docs__ = {'layoutSet': 'Emitted when a ``layout`` is set for the view.\n\n.. seealso:: :py:func:`currentLayout`\n\n.. seealso:: :py:func:`setCurrentLayout`\n', 'toolSet': 'Emitted when the current ``tool`` is changed.\n\n.. seealso:: :py:func:`setTool`\n', 'zoomLevelChanged': 'Emitted whenever the zoom level of the view is changed.\n', 'cursorPosChanged': 'Emitted when the mouse cursor coordinates change within the view. The\n``layoutPoint`` argument indicates the cursor position within the layout\ncoordinate system.\n', 'pageChanged': 'Emitted when the page visible in the view is changed. This signal\nconsiders the page at the center of the view as the current visible\npage.\n\n.. seealso:: :py:func:`currentPage`\n', 'statusMessage': "Emitted when the view has a ``message`` for display in a parent window's\nstatus bar.\n\n.. seealso:: :py:func:`pushStatusMessage`\n", 'itemFocused': 'Emitted when an ``item`` is "focused" in the view, i.e. it becomes the\nactive item and should have its properties displayed in any designer\nwindows.\n', 'willBeDeleted': 'Emitted in the destructor when the view is about to be deleted, but is\nstill in a perfectly valid state.\n'}
     QgsLayoutView.__overridden_methods__ = ['mousePressEvent', 'mouseReleaseEvent', 'mouseMoveEvent', 'mouseDoubleClickEvent', 'wheelEvent', 'keyPressEvent', 'keyReleaseEvent', 'resizeEvent', 'scrollContentsBy', 'dragEnterEvent', 'paintEvent']
@@ -2557,7 +2343,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/layout/qgslayoutviewtool.h
-QgsLayoutViewTool.FlagSnaps = QgsLayoutViewTool.Flag.FlagSnaps
 QgsLayoutViewTool.Flags = lambda flags=0: QgsLayoutViewTool.Flag(flags)
 try:
     QgsLayoutViewTool.__attribute_docs__ = {'activated': 'Emitted when the tool is activated.\n', 'deactivated': 'Emitted when the tool is deactivated.\n', 'itemFocused': 'Emitted when an ``item`` is "focused" by the tool, i.e. it should become\nthe active item and should have its properties displayed in any designer\nwindows.\n'}
@@ -2672,23 +2457,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsmanageconnectionsdialog.h
-QgsManageConnectionsDialog.Export = QgsManageConnectionsDialog.Mode.Export
-QgsManageConnectionsDialog.Import = QgsManageConnectionsDialog.Mode.Import
-QgsManageConnectionsDialog.WMS = QgsManageConnectionsDialog.Type.WMS
-QgsManageConnectionsDialog.PostGIS = QgsManageConnectionsDialog.Type.PostGIS
-QgsManageConnectionsDialog.WFS = QgsManageConnectionsDialog.Type.WFS
-QgsManageConnectionsDialog.MSSQL = QgsManageConnectionsDialog.Type.MSSQL
-QgsManageConnectionsDialog.WCS = QgsManageConnectionsDialog.Type.WCS
-QgsManageConnectionsDialog.Oracle = QgsManageConnectionsDialog.Type.Oracle
-QgsManageConnectionsDialog.HANA = QgsManageConnectionsDialog.Type.HANA
-QgsManageConnectionsDialog.XyzTiles = QgsManageConnectionsDialog.Type.XyzTiles
-QgsManageConnectionsDialog.ArcgisMapServer = QgsManageConnectionsDialog.Type.ArcgisMapServer
-QgsManageConnectionsDialog.ArcgisFeatureServer = QgsManageConnectionsDialog.Type.ArcgisFeatureServer
-QgsManageConnectionsDialog.VectorTile = QgsManageConnectionsDialog.Type.VectorTile
-QgsManageConnectionsDialog.TiledScene = QgsManageConnectionsDialog.Type.TiledScene
-QgsManageConnectionsDialog.SensorThings = QgsManageConnectionsDialog.Type.SensorThings
-QgsManageConnectionsDialog.CloudStorage = QgsManageConnectionsDialog.Type.CloudStorage
-QgsManageConnectionsDialog.STAC = QgsManageConnectionsDialog.Type.STAC
 # The following has been generated automatically from src/gui/qgsmapcanvas.h
 try:
     QgsMapCanvas.__attribute_docs__ = {'xyCoordinates': 'Emits current mouse position\n\n.. note::\n\n   changed in 1.3\n', 'scaleChanged': 'Emitted when the scale of the map changes\n', 'scaleLockChanged': 'Emitted when the scale locked state of the map changes\n\n:param locked: true if the scale is locked\n\n.. seealso:: :py:func:`setScaleLocked`\n\n.. versionadded:: 3.18\n', 'extentsChanged': 'Emitted when the extents of the map change\n', 'rotationChanged': 'Emitted when the rotation of the map changes\n', 'magnificationChanged': 'Emitted when the scale of the map changes\n', 'canvasColorChanged': 'Emitted when canvas background color changes\n', 'renderComplete': 'Emitted when the canvas has rendered. Passes a pointer to the painter on\nwhich the map was drawn. This is useful for plugins that wish to draw on\nthe map after it has been rendered. Passing the painter allows plugins\nto work when the map is being rendered onto a pixmap other than the\nmapCanvas own pixmap member.\n\n- anything related to rendering progress is not visible outside of map canvas\n- additional drawing shall be done directly within the renderer job or independently as a map canvas item\n', 'mapCanvasRefreshed': 'Emitted when canvas finished a refresh request.\n', 'renderStarting': 'Emitted when the canvas is about to be rendered.\n', 'mapRefreshCanceled': 'Emitted when the pending map refresh has been canceled\n\n.. versionadded:: 3.18\n', 'layersChanged': 'Emitted when a new set of layers has been received\n', 'keyPressed': 'Emit key press event\n', 'keyReleased': 'Emit key release event\n', 'mapToolSet': 'Emit map tool changed with the old tool\n', 'selectionChanged': 'Emitted when selection in any ``layer`` gets changed.\n\n.. note::\n\n   Since QGIS 3.28 this signal is emitted for multiple layer types, including :py:class:`QgsVectorLayer` and :py:class:`QgsVectorTileLayer`\n', 'zoomLastStatusChanged': 'Emitted when zoom last status changed\n', 'zoomNextStatusChanged': 'Emitted when zoom next status changed\n', 'destinationCrsChanged': 'Emitted when map CRS has changed\n', 'transformContextChanged': 'Emitted when the canvas transform context is changed.\n', 'currentLayerChanged': 'Emitted when the current layer is changed\n', 'layerStyleOverridesChanged': 'Emitted when the configuration of overridden layer styles changes\n', 'themeChanged': 'Emitted when the canvas has been assigned a different map theme.\n\n.. seealso:: :py:func:`setTheme`\n', 'messageEmitted': 'emit a message (usually to be displayed in a message bar)\n', 'renderErrorOccurred': 'Emitted whenever an error is encountered during a map render operation.\n\nThe ``layer`` argument indicates the associated map layer, if available.\n\n.. versionadded:: 3.10.0\n', 'panDistanceBearingChanged': 'Emitted whenever the distance or bearing of an in-progress panning\noperation is changed.\n\nThis signal will be emitted during a pan operation as the user moves the\nmap, giving the total distance and bearing between the map position at\nthe start of the pan and the current pan position.\n\n.. versionadded:: 3.12\n', 'tapAndHoldGestureOccurred': 'Emitted whenever a tap and hold ``gesture`` occurs at the specified map\npoint.\n\n.. versionadded:: 3.12\n', 'temporalRangeChanged': 'Emitted when the map canvas temporal range changes.\n\n.. versionadded:: 3.14\n', 'zRangeChanged': 'Emitted when the map canvas z (elevation) range changes.\n\n.. seealso:: :py:func:`zRange`\n\n.. seealso:: :py:func:`setZRange`\n\n.. versionadded:: 3.18\n', 'contextMenuAboutToShow': 'Emitted before the map canvas context menu will be shown. Can be used to\nextend the context menu.\n\n.. versionadded:: 3.16\n'}
@@ -2697,17 +2465,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsmapcanvasannotationitem.h
-QgsMapCanvasAnnotationItem.NoAction = QgsMapCanvasAnnotationItem.MouseMoveAction.NoAction
-QgsMapCanvasAnnotationItem.MoveMapPosition = QgsMapCanvasAnnotationItem.MouseMoveAction.MoveMapPosition
-QgsMapCanvasAnnotationItem.MoveFramePosition = QgsMapCanvasAnnotationItem.MouseMoveAction.MoveFramePosition
-QgsMapCanvasAnnotationItem.ResizeFrameUp = QgsMapCanvasAnnotationItem.MouseMoveAction.ResizeFrameUp
-QgsMapCanvasAnnotationItem.ResizeFrameDown = QgsMapCanvasAnnotationItem.MouseMoveAction.ResizeFrameDown
-QgsMapCanvasAnnotationItem.ResizeFrameLeft = QgsMapCanvasAnnotationItem.MouseMoveAction.ResizeFrameLeft
-QgsMapCanvasAnnotationItem.ResizeFrameRight = QgsMapCanvasAnnotationItem.MouseMoveAction.ResizeFrameRight
-QgsMapCanvasAnnotationItem.ResizeFrameLeftUp = QgsMapCanvasAnnotationItem.MouseMoveAction.ResizeFrameLeftUp
-QgsMapCanvasAnnotationItem.ResizeFrameRightUp = QgsMapCanvasAnnotationItem.MouseMoveAction.ResizeFrameRightUp
-QgsMapCanvasAnnotationItem.ResizeFrameLeftDown = QgsMapCanvasAnnotationItem.MouseMoveAction.ResizeFrameLeftDown
-QgsMapCanvasAnnotationItem.ResizeFrameRightDown = QgsMapCanvasAnnotationItem.MouseMoveAction.ResizeFrameRightDown
 try:
     QgsMapCanvasAnnotationItem.__overridden_methods__ = ['updatePosition', 'boundingRect', 'paint']
 except (NameError, AttributeError):
@@ -2841,10 +2598,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/maptools/qgsmaptool.h
-QgsMapTool.Transient = QgsMapTool.Flag.Transient
-QgsMapTool.EditTool = QgsMapTool.Flag.EditTool
-QgsMapTool.AllowZoomRect = QgsMapTool.Flag.AllowZoomRect
-QgsMapTool.ShowContextMenu = QgsMapTool.Flag.ShowContextMenu
 QgsMapTool.Flags = lambda flags=0: QgsMapTool.Flag(flags)
 # monkey patching scoped based enum
 QgsMapTool.PropertyStatus.Valid.__doc__ = "Property is valid"
@@ -2887,13 +2640,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/maptools/qgsmaptoolcapture.h
-QgsMapToolCapture.CaptureNone = QgsMapToolCapture.CaptureMode.CaptureNone
-QgsMapToolCapture.CapturePoint = QgsMapToolCapture.CaptureMode.CapturePoint
-QgsMapToolCapture.CaptureLine = QgsMapToolCapture.CaptureMode.CaptureLine
-QgsMapToolCapture.CapturePolygon = QgsMapToolCapture.CaptureMode.CapturePolygon
-QgsMapToolCapture.NoCapabilities = QgsMapToolCapture.Capability.NoCapabilities
-QgsMapToolCapture.SupportsCurves = QgsMapToolCapture.Capability.SupportsCurves
-QgsMapToolCapture.ValidateGeometries = QgsMapToolCapture.Capability.ValidateGeometries
 QgsMapToolCapture.Capabilities = lambda flags=0: QgsMapToolCapture.Capability(flags)
 from enum import Enum
 
@@ -2928,9 +2674,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/maptools/qgsmaptooledit.h
-QgsMapToolEdit.Success = QgsMapToolEdit.TopologicalResult.Success
-QgsMapToolEdit.InvalidCanvas = QgsMapToolEdit.TopologicalResult.InvalidCanvas
-QgsMapToolEdit.InvalidLayer = QgsMapToolEdit.TopologicalResult.InvalidLayer
 try:
     QgsMapToolEdit.defaultZValue = staticmethod(QgsMapToolEdit.defaultZValue)
     QgsMapToolEdit.defaultMValue = staticmethod(QgsMapToolEdit.defaultMValue)
@@ -2958,18 +2701,7 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/maptools/qgsmaptoolidentify.h
-QgsMapToolIdentify.DefaultQgsSetting = QgsMapToolIdentify.IdentifyMode.DefaultQgsSetting
-QgsMapToolIdentify.ActiveLayer = QgsMapToolIdentify.IdentifyMode.ActiveLayer
-QgsMapToolIdentify.TopDownStopAtFirst = QgsMapToolIdentify.IdentifyMode.TopDownStopAtFirst
-QgsMapToolIdentify.TopDownAll = QgsMapToolIdentify.IdentifyMode.TopDownAll
-QgsMapToolIdentify.LayerSelection = QgsMapToolIdentify.IdentifyMode.LayerSelection
 QgsMapToolIdentify.IdentifyMode.baseClass = QgsMapToolIdentify
-QgsMapToolIdentify.VectorLayer = QgsMapToolIdentify.Type.VectorLayer
-QgsMapToolIdentify.RasterLayer = QgsMapToolIdentify.Type.RasterLayer
-QgsMapToolIdentify.MeshLayer = QgsMapToolIdentify.Type.MeshLayer
-QgsMapToolIdentify.VectorTileLayer = QgsMapToolIdentify.Type.VectorTileLayer
-QgsMapToolIdentify.PointCloudLayer = QgsMapToolIdentify.Type.PointCloudLayer
-QgsMapToolIdentify.AllLayers = QgsMapToolIdentify.Type.AllLayers
 QgsMapToolIdentify.LayerType = lambda flags=0: QgsMapToolIdentify.Type(flags)
 QgsMapToolIdentify.LayerType.baseClass = QgsMapToolIdentify
 LayerType = QgsMapToolIdentify  # dirty hack since SIP seems to introduce the flags in module
@@ -3030,8 +2762,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsmediawidget.h
-QgsMediaWidget.Audio = QgsMediaWidget.Mode.Audio
-QgsMediaWidget.Video = QgsMediaWidget.Mode.Video
 QgsMediaWidget.Mode.baseClass = QgsMediaWidget
 # The following has been generated automatically from src/gui/qgsmenuheader.h
 try:
@@ -3077,8 +2807,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsmetadatawidget.h
-QgsMetadataWidget.LayerMetadata = QgsMetadataWidget.Mode.LayerMetadata
-QgsMetadataWidget.ProjectMetadata = QgsMetadataWidget.Mode.ProjectMetadata
 try:
     QgsMetadataWidget.__attribute_docs__ = {'titleChanged': 'Emitted when the ``title`` field is changed.\n\n.. seealso:: :py:func:`title`\n\n.. seealso:: :py:func:`setTitle`\n\n.. versionadded:: 3.2\n'}
     QgsMetadataWidget.parseLanguages = staticmethod(QgsMetadataWidget.parseLanguages)
@@ -3090,19 +2818,12 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/processing/models/qgsmodelarrowitem.h
-QgsModelArrowItem.Circle = QgsModelArrowItem.Marker.Circle
-QgsModelArrowItem.ArrowHead = QgsModelArrowItem.Marker.ArrowHead
-QgsModelArrowItem.NoMarker = QgsModelArrowItem.Marker.NoMarker
 try:
     QgsModelArrowItem.__overridden_methods__ = ['paint']
     QgsModelArrowItem.__group__ = ['processing', 'models']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/processing/models/qgsmodelcomponentgraphicitem.h
-QgsModelComponentGraphicItem.Normal = QgsModelComponentGraphicItem.State.Normal
-QgsModelComponentGraphicItem.Selected = QgsModelComponentGraphicItem.State.Selected
-QgsModelComponentGraphicItem.Hover = QgsModelComponentGraphicItem.State.Hover
-QgsModelComponentGraphicItem.Unused = QgsModelComponentGraphicItem.Flag.Unused
 QgsModelComponentGraphicItem.Flags = lambda flags=0: QgsModelComponentGraphicItem.Flag(flags)
 from enum import Enum
 
@@ -3202,16 +2923,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/processing/models/qgsmodelgraphicsscene.h
-QgsModelGraphicsScene.GroupBox = QgsModelGraphicsScene.ZValues.GroupBox
-QgsModelGraphicsScene.ArrowLink = QgsModelGraphicsScene.ZValues.ArrowLink
-QgsModelGraphicsScene.ArrowDecoration = QgsModelGraphicsScene.ZValues.ArrowDecoration
-QgsModelGraphicsScene.ModelComponent = QgsModelGraphicsScene.ZValues.ModelComponent
-QgsModelGraphicsScene.MouseHandles = QgsModelGraphicsScene.ZValues.MouseHandles
-QgsModelGraphicsScene.RubberBand = QgsModelGraphicsScene.ZValues.RubberBand
-QgsModelGraphicsScene.ZSnapIndicator = QgsModelGraphicsScene.ZValues.ZSnapIndicator
-QgsModelGraphicsScene.FlagHideControls = QgsModelGraphicsScene.Flag.FlagHideControls
-QgsModelGraphicsScene.FlagHideComments = QgsModelGraphicsScene.Flag.FlagHideComments
-QgsModelGraphicsScene.FlagHideFeatureCount = QgsModelGraphicsScene.Flag.FlagHideFeatureCount
 QgsModelGraphicsScene.Flags = lambda flags=0: QgsModelGraphicsScene.Flag(flags)
 try:
     QgsModelGraphicsScene.__attribute_docs__ = {'rebuildRequired': 'Emitted when a change in the model requires a full rebuild of the scene.\n', 'componentAboutToChange': 'Emitted whenever a component of the model is about to be changed.\n\nThe ``text`` argument gives the translated text describing the change\nabout to occur, and the optional ``id`` can be used to group the\nassociated undo commands.\n', 'componentChanged': 'Emitted whenever a component of the model is changed.\n', 'selectedItemChanged': 'Emitted whenever the selected item changes. If ``None``, no item is\nselected.\n', 'runSelected': 'Emitted when the user opts to run selected steps from the model.\n\n.. versionadded:: 3.38\n', 'runFromChild': 'Emitted when the user opts to run the part of the model starting from\nthe specified child algorithm.\n\n.. versionadded:: 3.38\n', 'showChildAlgorithmOutputs': 'Emitted when the user opts to view previous results from the child\nalgorithm with matching ID.\n\n.. versionadded:: 3.38\n', 'showChildAlgorithmLog': 'Emitted when the user opts to view the previous log from the child\nalgorithm with matching ID.\n\n.. versionadded:: 3.38\n'}
@@ -3222,11 +2933,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/processing/models/qgsmodelgraphicsview.h
-QgsModelGraphicsView.ClipboardCut = QgsModelGraphicsView.ClipboardOperation.ClipboardCut
-QgsModelGraphicsView.ClipboardCopy = QgsModelGraphicsView.ClipboardOperation.ClipboardCopy
-QgsModelGraphicsView.PasteModeCursor = QgsModelGraphicsView.PasteMode.PasteModeCursor
-QgsModelGraphicsView.PasteModeCenter = QgsModelGraphicsView.PasteMode.PasteModeCenter
-QgsModelGraphicsView.PasteModeInPlace = QgsModelGraphicsView.PasteMode.PasteModeInPlace
 try:
     QgsModelGraphicsView.__attribute_docs__ = {'algorithmDropped': 'Emitted when an algorithm is dropped onto the view.\n', 'inputDropped': 'Emitted when an input parameter is dropped onto the view.\n', 'itemFocused': 'Emitted when an ``item`` is "focused" in the view, i.e. it becomes the\nactive item and should have its properties displayed in any designer\nwindows.\n', 'willBeDeleted': 'Emitted in the destructor when the view is about to be deleted, but is\nstill in a perfectly valid state.\n', 'macroCommandStarted': 'Emitted when a macro command containing a group of interactions is\nstarted in the view.\n', 'macroCommandEnded': 'Emitted when a macro command containing a group of interactions in the\nview has ended.\n', 'commandBegun': 'Emitted when an undo command is started in the view.\n', 'commandEnded': 'Emitted when an undo command in the view has ended.\n', 'commandAborted': 'Emitted when an undo command in the view was aborted.\n\n.. versionadded:: 4.0\n', 'deleteSelectedItems': 'Emitted when the selected items should be deleted;\n'}
     QgsModelGraphicsView.__overridden_methods__ = ['dragEnterEvent', 'dropEvent', 'dragMoveEvent', 'wheelEvent', 'mousePressEvent', 'mouseReleaseEvent', 'mouseMoveEvent', 'mouseDoubleClickEvent', 'keyPressEvent', 'keyReleaseEvent']
@@ -3247,9 +2953,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/editorwidgets/qgsmultiedittoolbutton.h
-QgsMultiEditToolButton.Default = QgsMultiEditToolButton.State.Default
-QgsMultiEditToolButton.MixedValues = QgsMultiEditToolButton.State.MixedValues
-QgsMultiEditToolButton.Changed = QgsMultiEditToolButton.State.Changed
 try:
     QgsMultiEditToolButton.__attribute_docs__ = {'setFieldValueTriggered': 'Emitted when the "set field value for all features" option is selected.\n', 'resetFieldValueTriggered': 'Emitted when the "reset to original values" option is selected.\n'}
     QgsMultiEditToolButton.__group__ = ['editorwidgets']
@@ -3273,24 +2976,9 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsnewgeopackagelayerdialog.h
-QgsNewGeoPackageLayerDialog.Prompt = QgsNewGeoPackageLayerDialog.OverwriteBehavior.Prompt
-QgsNewGeoPackageLayerDialog.Overwrite = QgsNewGeoPackageLayerDialog.OverwriteBehavior.Overwrite
-QgsNewGeoPackageLayerDialog.AddNewLayer = QgsNewGeoPackageLayerDialog.OverwriteBehavior.AddNewLayer
 # The following has been generated automatically from src/gui/qgsnewhttpconnection.h
-QgsNewHttpConnection.ConnectionWfs = QgsNewHttpConnection.ConnectionType.ConnectionWfs
-QgsNewHttpConnection.ConnectionWms = QgsNewHttpConnection.ConnectionType.ConnectionWms
-QgsNewHttpConnection.ConnectionWcs = QgsNewHttpConnection.ConnectionType.ConnectionWcs
-QgsNewHttpConnection.ConnectionOther = QgsNewHttpConnection.ConnectionType.ConnectionOther
 QgsNewHttpConnection.ConnectionTypes = lambda flags=0: QgsNewHttpConnection.ConnectionType(flags)
-QgsNewHttpConnection.FlagShowTestConnection = QgsNewHttpConnection.Flag.FlagShowTestConnection
-QgsNewHttpConnection.FlagHideAuthenticationGroup = QgsNewHttpConnection.Flag.FlagHideAuthenticationGroup
-QgsNewHttpConnection.FlagShowHttpSettings = QgsNewHttpConnection.Flag.FlagShowHttpSettings
 QgsNewHttpConnection.Flags = lambda flags=0: QgsNewHttpConnection.Flag(flags)
-QgsNewHttpConnection.WFS_VERSION_MAX = QgsNewHttpConnection.WfsVersionIndex.WFS_VERSION_MAX
-QgsNewHttpConnection.WFS_VERSION_1_0 = QgsNewHttpConnection.WfsVersionIndex.WFS_VERSION_1_0
-QgsNewHttpConnection.WFS_VERSION_1_1 = QgsNewHttpConnection.WfsVersionIndex.WFS_VERSION_1_1
-QgsNewHttpConnection.WFS_VERSION_2_0 = QgsNewHttpConnection.WfsVersionIndex.WFS_VERSION_2_0
-QgsNewHttpConnection.WFS_VERSION_API_FEATURES_1_0 = QgsNewHttpConnection.WfsVersionIndex.WFS_VERSION_API_FEATURES_1_0
 from enum import Enum
 
 
@@ -3746,11 +3434,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsprevieweffect.h
-QgsPreviewEffect.PreviewGrayscale = QgsPreviewEffect.PreviewMode.PreviewGrayscale
-QgsPreviewEffect.PreviewMono = QgsPreviewEffect.PreviewMode.PreviewMono
-QgsPreviewEffect.PreviewProtanope = QgsPreviewEffect.PreviewMode.PreviewProtanope
-QgsPreviewEffect.PreviewDeuteranope = QgsPreviewEffect.PreviewMode.PreviewDeuteranope
-QgsPreviewEffect.PreviewTritanope = QgsPreviewEffect.PreviewMode.PreviewTritanope
 try:
     QgsPreviewEffect.__overridden_methods__ = ['draw']
 except (NameError, AttributeError):
@@ -3994,30 +3677,16 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/processing/qgsprocessingtoolboxmodel.h
 # monkey patching scoped based enum
-QgsProcessingToolboxModelNode.NodeProvider = QgsProcessingToolboxModelNode.NodeType.Provider
 QgsProcessingToolboxModelNode.NodeType.NodeProvider = QgsProcessingToolboxModelNode.NodeType.Provider
-QgsProcessingToolboxModelNode.NodeProvider.is_monkey_patched = True
 QgsProcessingToolboxModelNode.NodeProvider.__doc__ = "Provider node"
-QgsProcessingToolboxModelNode.NodeGroup = QgsProcessingToolboxModelNode.NodeType.Group
 QgsProcessingToolboxModelNode.NodeType.NodeGroup = QgsProcessingToolboxModelNode.NodeType.Group
-QgsProcessingToolboxModelNode.NodeGroup.is_monkey_patched = True
 QgsProcessingToolboxModelNode.NodeGroup.__doc__ = "Group node"
-QgsProcessingToolboxModelNode.NodeAlgorithm = QgsProcessingToolboxModelNode.NodeType.Algorithm
 QgsProcessingToolboxModelNode.NodeType.NodeAlgorithm = QgsProcessingToolboxModelNode.NodeType.Algorithm
-QgsProcessingToolboxModelNode.NodeAlgorithm.is_monkey_patched = True
 QgsProcessingToolboxModelNode.NodeAlgorithm.__doc__ = "Algorithm node"
-QgsProcessingToolboxModelNode.NodeRecent = QgsProcessingToolboxModelNode.NodeType.Recent
 QgsProcessingToolboxModelNode.NodeType.NodeRecent = QgsProcessingToolboxModelNode.NodeType.Recent
-QgsProcessingToolboxModelNode.NodeRecent.is_monkey_patched = True
 QgsProcessingToolboxModelNode.NodeRecent.__doc__ = "Recent algorithms node"
-QgsProcessingToolboxModelNode.Parameter = QgsProcessingToolboxModelNode.NodeType.Parameter
-QgsProcessingToolboxModelNode.Parameter.is_monkey_patched = True
 QgsProcessingToolboxModelNode.Parameter.__doc__ = "Parameter node, \n.. versionadded:: 3.44"
-QgsProcessingToolboxModelNode.ParameterGroup = QgsProcessingToolboxModelNode.NodeType.ParameterGroup
-QgsProcessingToolboxModelNode.ParameterGroup.is_monkey_patched = True
 QgsProcessingToolboxModelNode.ParameterGroup.__doc__ = "Parameter group node \n.. versionadded:: 3.44"
-QgsProcessingToolboxModelNode.Favorite = QgsProcessingToolboxModelNode.NodeType.Favorite
-QgsProcessingToolboxModelNode.Favorite.is_monkey_patched = True
 QgsProcessingToolboxModelNode.Favorite.__doc__ = "Favorites algorithms node, \n.. versionadded:: 3.40"
 QgsProcessingToolboxModelNode.NodeType.__doc__ = """Enumeration of possible model node types
 
@@ -4053,38 +3722,21 @@ QgsProcessingToolboxModelNode.NodeType.__doc__ = """Enumeration of possible mode
 """
 # --
 QgsProcessingToolboxModelNode.NodeType.baseClass = QgsProcessingToolboxModelNode
-QgsProcessingToolboxModel.Roles = QgsProcessingToolboxModel.CustomRole
 # monkey patching scoped based enum
-QgsProcessingToolboxModel.RoleNodeType = QgsProcessingToolboxModel.CustomRole.NodeType
 QgsProcessingToolboxModel.Roles.RoleNodeType = QgsProcessingToolboxModel.CustomRole.NodeType
-QgsProcessingToolboxModel.RoleNodeType.is_monkey_patched = True
 QgsProcessingToolboxModel.RoleNodeType.__doc__ = "Corresponds to the node's type"
-QgsProcessingToolboxModel.RoleAlgorithmFlags = QgsProcessingToolboxModel.CustomRole.AlgorithmFlags
 QgsProcessingToolboxModel.Roles.RoleAlgorithmFlags = QgsProcessingToolboxModel.CustomRole.AlgorithmFlags
-QgsProcessingToolboxModel.RoleAlgorithmFlags.is_monkey_patched = True
 QgsProcessingToolboxModel.RoleAlgorithmFlags.__doc__ = "Returns the node's algorithm flags, for algorithm nodes"
-QgsProcessingToolboxModel.RoleAlgorithmId = QgsProcessingToolboxModel.CustomRole.AlgorithmId
 QgsProcessingToolboxModel.Roles.RoleAlgorithmId = QgsProcessingToolboxModel.CustomRole.AlgorithmId
-QgsProcessingToolboxModel.RoleAlgorithmId.is_monkey_patched = True
 QgsProcessingToolboxModel.RoleAlgorithmId.__doc__ = "Algorithm ID, for algorithm nodes"
-QgsProcessingToolboxModel.RoleAlgorithmName = QgsProcessingToolboxModel.CustomRole.AlgorithmName
 QgsProcessingToolboxModel.Roles.RoleAlgorithmName = QgsProcessingToolboxModel.CustomRole.AlgorithmName
-QgsProcessingToolboxModel.RoleAlgorithmName.is_monkey_patched = True
 QgsProcessingToolboxModel.RoleAlgorithmName.__doc__ = "Untranslated algorithm name, for algorithm nodes"
-QgsProcessingToolboxModel.RoleAlgorithmShortDescription = QgsProcessingToolboxModel.CustomRole.AlgorithmShortDescription
 QgsProcessingToolboxModel.Roles.RoleAlgorithmShortDescription = QgsProcessingToolboxModel.CustomRole.AlgorithmShortDescription
-QgsProcessingToolboxModel.RoleAlgorithmShortDescription.is_monkey_patched = True
 QgsProcessingToolboxModel.RoleAlgorithmShortDescription.__doc__ = "Short algorithm description, for algorithm nodes"
-QgsProcessingToolboxModel.RoleAlgorithmTags = QgsProcessingToolboxModel.CustomRole.AlgorithmTags
 QgsProcessingToolboxModel.Roles.RoleAlgorithmTags = QgsProcessingToolboxModel.CustomRole.AlgorithmTags
-QgsProcessingToolboxModel.RoleAlgorithmTags.is_monkey_patched = True
 QgsProcessingToolboxModel.RoleAlgorithmTags.__doc__ = "List of algorithm tags, for algorithm nodes"
-QgsProcessingToolboxModel.RoleProviderFlags = QgsProcessingToolboxModel.CustomRole.ProviderFlags
 QgsProcessingToolboxModel.Roles.RoleProviderFlags = QgsProcessingToolboxModel.CustomRole.ProviderFlags
-QgsProcessingToolboxModel.RoleProviderFlags.is_monkey_patched = True
 QgsProcessingToolboxModel.RoleProviderFlags.__doc__ = "Returns the node's provider flags"
-QgsProcessingToolboxModel.ParameterTypeId = QgsProcessingToolboxModel.CustomRole.ParameterTypeId
-QgsProcessingToolboxModel.ParameterTypeId.is_monkey_patched = True
 QgsProcessingToolboxModel.ParameterTypeId.__doc__ = "Untranslated parameter type unique identifier for parameter nodes \n.. versionadded:: 3.44"
 QgsProcessingToolboxModel.CustomRole.__doc__ = """Custom model roles.
 
@@ -4131,21 +3783,13 @@ QgsProcessingToolboxModel.CustomRole.__doc__ = """Custom model roles.
 # --
 QgsProcessingToolboxModel.CustomRole.baseClass = QgsProcessingToolboxModel
 # monkey patching scoped based enum
-QgsProcessingToolboxProxyModel.FilterToolbox = QgsProcessingToolboxProxyModel.Filter.Toolbox
 QgsProcessingToolboxProxyModel.Filter.FilterToolbox = QgsProcessingToolboxProxyModel.Filter.Toolbox
-QgsProcessingToolboxProxyModel.FilterToolbox.is_monkey_patched = True
 QgsProcessingToolboxProxyModel.FilterToolbox.__doc__ = "Filters out any algorithms and content which should not be shown in the toolbox"
-QgsProcessingToolboxProxyModel.FilterModeler = QgsProcessingToolboxProxyModel.Filter.Modeler
 QgsProcessingToolboxProxyModel.Filter.FilterModeler = QgsProcessingToolboxProxyModel.Filter.Modeler
-QgsProcessingToolboxProxyModel.FilterModeler.is_monkey_patched = True
 QgsProcessingToolboxProxyModel.FilterModeler.__doc__ = "Filters out any algorithms and content which should not be shown in the modeler"
-QgsProcessingToolboxProxyModel.FilterInPlace = QgsProcessingToolboxProxyModel.Filter.InPlace
 QgsProcessingToolboxProxyModel.Filter.FilterInPlace = QgsProcessingToolboxProxyModel.Filter.InPlace
-QgsProcessingToolboxProxyModel.FilterInPlace.is_monkey_patched = True
 QgsProcessingToolboxProxyModel.FilterInPlace.__doc__ = "Only show algorithms which support in-place edits"
-QgsProcessingToolboxProxyModel.FilterShowKnownIssues = QgsProcessingToolboxProxyModel.Filter.ShowKnownIssues
 QgsProcessingToolboxProxyModel.Filter.FilterShowKnownIssues = QgsProcessingToolboxProxyModel.Filter.ShowKnownIssues
-QgsProcessingToolboxProxyModel.FilterShowKnownIssues.is_monkey_patched = True
 QgsProcessingToolboxProxyModel.FilterShowKnownIssues.__doc__ = "Show algorithms with known issues (hidden by default)"
 QgsProcessingToolboxProxyModel.Filter.__doc__ = """Available filter flags for filtering the model
 
@@ -4300,13 +3944,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/proj/qgsprojectionselectionwidget.h
-QgsProjectionSelectionWidget.Invalid = QgsProjectionSelectionWidget.CrsOption.Invalid
-QgsProjectionSelectionWidget.LayerCrs = QgsProjectionSelectionWidget.CrsOption.LayerCrs
-QgsProjectionSelectionWidget.ProjectCrs = QgsProjectionSelectionWidget.CrsOption.ProjectCrs
-QgsProjectionSelectionWidget.CurrentCrs = QgsProjectionSelectionWidget.CrsOption.CurrentCrs
-QgsProjectionSelectionWidget.DefaultCrs = QgsProjectionSelectionWidget.CrsOption.DefaultCrs
-QgsProjectionSelectionWidget.RecentCrs = QgsProjectionSelectionWidget.CrsOption.RecentCrs
-QgsProjectionSelectionWidget.CrsNotSet = QgsProjectionSelectionWidget.CrsOption.CrsNotSet
 try:
     QgsProjectionSelectionWidget.__attribute_docs__ = {'crsChanged': 'Emitted when the selected CRS is changed\n', 'cleared': 'Emitted when the not set option is selected.\n'}
     QgsProjectionSelectionWidget.__overridden_methods__ = ['dragEnterEvent', 'dragLeaveEvent', 'dropEvent']
@@ -4453,11 +4090,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsrasterformatsaveoptionswidget.h
-QgsRasterFormatSaveOptionsWidget.Default = QgsRasterFormatSaveOptionsWidget.Type.Default
-QgsRasterFormatSaveOptionsWidget.Full = QgsRasterFormatSaveOptionsWidget.Type.Full
-QgsRasterFormatSaveOptionsWidget.Table = QgsRasterFormatSaveOptionsWidget.Type.Table
-QgsRasterFormatSaveOptionsWidget.LineEdit = QgsRasterFormatSaveOptionsWidget.Type.LineEdit
-QgsRasterFormatSaveOptionsWidget.ProfileLineEdit = QgsRasterFormatSaveOptionsWidget.Type.ProfileLineEdit
 try:
     QgsRasterFormatSaveOptionsWidget.__attribute_docs__ = {'optionsChanged': 'Emitted when the options configured in the widget are changed.\n'}
     QgsRasterFormatSaveOptionsWidget.__overridden_methods__ = ['showEvent', 'eventFilter']
@@ -4476,13 +4108,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsrasterlayersaveasdialog.h
-QgsRasterLayerSaveAsDialog.RawDataMode = QgsRasterLayerSaveAsDialog.Mode.RawDataMode
-QgsRasterLayerSaveAsDialog.RenderedImageMode = QgsRasterLayerSaveAsDialog.Mode.RenderedImageMode
-QgsRasterLayerSaveAsDialog.OriginalCrs = QgsRasterLayerSaveAsDialog.CrsState.OriginalCrs
-QgsRasterLayerSaveAsDialog.CurrentCrs = QgsRasterLayerSaveAsDialog.CrsState.CurrentCrs
-QgsRasterLayerSaveAsDialog.UserCrs = QgsRasterLayerSaveAsDialog.CrsState.UserCrs
-QgsRasterLayerSaveAsDialog.OriginalResolution = QgsRasterLayerSaveAsDialog.ResolutionState.OriginalResolution
-QgsRasterLayerSaveAsDialog.UserResolution = QgsRasterLayerSaveAsDialog.ResolutionState.UserResolution
 try:
     QgsRasterLayerSaveAsDialog.__overridden_methods__ = ['accept']
 except (NameError, AttributeError):
@@ -4526,15 +4151,10 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/proj/qgsrecentcoordinatereferencesystemsmodel.h
-QgsRecentCoordinateReferenceSystemsModel.Roles = QgsRecentCoordinateReferenceSystemsModel.CustomRole
 # monkey patching scoped based enum
-QgsRecentCoordinateReferenceSystemsModel.RoleCrs = QgsRecentCoordinateReferenceSystemsModel.CustomRole.Crs
 QgsRecentCoordinateReferenceSystemsModel.Roles.RoleCrs = QgsRecentCoordinateReferenceSystemsModel.CustomRole.Crs
-QgsRecentCoordinateReferenceSystemsModel.RoleCrs.is_monkey_patched = True
 QgsRecentCoordinateReferenceSystemsModel.RoleCrs.__doc__ = "Coordinate reference system"
-QgsRecentCoordinateReferenceSystemsModel.RoleAuthId = QgsRecentCoordinateReferenceSystemsModel.CustomRole.AuthId
 QgsRecentCoordinateReferenceSystemsModel.Roles.RoleAuthId = QgsRecentCoordinateReferenceSystemsModel.CustomRole.AuthId
-QgsRecentCoordinateReferenceSystemsModel.RoleAuthId.is_monkey_patched = True
 QgsRecentCoordinateReferenceSystemsModel.RoleAuthId.__doc__ = "CRS authority ID"
 QgsRecentCoordinateReferenceSystemsModel.CustomRole.__doc__ = """Custom model roles.
 
@@ -4567,15 +4187,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsrelationeditorwidget.h
-QgsRelationEditorWidget.NoButton = QgsRelationEditorWidget.Button.NoButton
-QgsRelationEditorWidget.Link = QgsRelationEditorWidget.Button.Link
-QgsRelationEditorWidget.Unlink = QgsRelationEditorWidget.Button.Unlink
-QgsRelationEditorWidget.SaveChildEdits = QgsRelationEditorWidget.Button.SaveChildEdits
-QgsRelationEditorWidget.AddChildFeature = QgsRelationEditorWidget.Button.AddChildFeature
-QgsRelationEditorWidget.DuplicateChildFeature = QgsRelationEditorWidget.Button.DuplicateChildFeature
-QgsRelationEditorWidget.DeleteChildFeature = QgsRelationEditorWidget.Button.DeleteChildFeature
-QgsRelationEditorWidget.ZoomToChildFeature = QgsRelationEditorWidget.Button.ZoomToChildFeature
-QgsRelationEditorWidget.AllButtons = QgsRelationEditorWidget.Button.AllButtons
 QgsRelationEditorWidget.Button.baseClass = QgsRelationEditorWidget
 QgsRelationEditorWidget.Buttons = lambda flags=0: QgsRelationEditorWidget.Button(flags)
 QgsRelationEditorWidget.Buttons.baseClass = QgsRelationEditorWidget
@@ -4595,9 +4206,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/editorwidgets/qgsrelationreferencewidget.h
-QgsRelationReferenceWidget.Fixed = QgsRelationReferenceWidget.CanvasExtent.Fixed
-QgsRelationReferenceWidget.Pan = QgsRelationReferenceWidget.CanvasExtent.Pan
-QgsRelationReferenceWidget.Scale = QgsRelationReferenceWidget.CanvasExtent.Scale
 try:
     QgsRelationReferenceWidget.__attribute_docs__ = {'foreignKeyChanged': 'Emitted when the foreign key changed\n\n.. deprecated:: 3.10\n', 'foreignKeysChanged': 'Emitted when the foreign keys changed\n\n.. versionadded:: 3.10\n'}
     QgsRelationReferenceWidget.__overridden_methods__ = ['showEvent']
@@ -4683,15 +4291,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsrubberband.h
-QgsRubberBand.ICON_NONE = QgsRubberBand.IconType.ICON_NONE
-QgsRubberBand.ICON_CROSS = QgsRubberBand.IconType.ICON_CROSS
-QgsRubberBand.ICON_X = QgsRubberBand.IconType.ICON_X
-QgsRubberBand.ICON_BOX = QgsRubberBand.IconType.ICON_BOX
-QgsRubberBand.ICON_CIRCLE = QgsRubberBand.IconType.ICON_CIRCLE
-QgsRubberBand.ICON_FULL_BOX = QgsRubberBand.IconType.ICON_FULL_BOX
-QgsRubberBand.ICON_DIAMOND = QgsRubberBand.IconType.ICON_DIAMOND
-QgsRubberBand.ICON_FULL_DIAMOND = QgsRubberBand.IconType.ICON_FULL_DIAMOND
-QgsRubberBand.ICON_SVG = QgsRubberBand.IconType.ICON_SVG
 try:
     QgsRubberBand.__overridden_methods__ = ['updatePosition', 'paint']
 except (NameError, AttributeError):
@@ -4779,21 +4378,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/editorwidgets/core/qgssearchwidgetwrapper.h
-QgsSearchWidgetWrapper.EqualTo = QgsSearchWidgetWrapper.FilterFlag.EqualTo
-QgsSearchWidgetWrapper.NotEqualTo = QgsSearchWidgetWrapper.FilterFlag.NotEqualTo
-QgsSearchWidgetWrapper.GreaterThan = QgsSearchWidgetWrapper.FilterFlag.GreaterThan
-QgsSearchWidgetWrapper.LessThan = QgsSearchWidgetWrapper.FilterFlag.LessThan
-QgsSearchWidgetWrapper.GreaterThanOrEqualTo = QgsSearchWidgetWrapper.FilterFlag.GreaterThanOrEqualTo
-QgsSearchWidgetWrapper.LessThanOrEqualTo = QgsSearchWidgetWrapper.FilterFlag.LessThanOrEqualTo
-QgsSearchWidgetWrapper.Between = QgsSearchWidgetWrapper.FilterFlag.Between
-QgsSearchWidgetWrapper.CaseInsensitive = QgsSearchWidgetWrapper.FilterFlag.CaseInsensitive
-QgsSearchWidgetWrapper.Contains = QgsSearchWidgetWrapper.FilterFlag.Contains
-QgsSearchWidgetWrapper.DoesNotContain = QgsSearchWidgetWrapper.FilterFlag.DoesNotContain
-QgsSearchWidgetWrapper.IsNull = QgsSearchWidgetWrapper.FilterFlag.IsNull
-QgsSearchWidgetWrapper.IsNotBetween = QgsSearchWidgetWrapper.FilterFlag.IsNotBetween
-QgsSearchWidgetWrapper.IsNotNull = QgsSearchWidgetWrapper.FilterFlag.IsNotNull
-QgsSearchWidgetWrapper.StartsWith = QgsSearchWidgetWrapper.FilterFlag.StartsWith
-QgsSearchWidgetWrapper.EndsWith = QgsSearchWidgetWrapper.FilterFlag.EndsWith
 QgsSearchWidgetWrapper.FilterFlags = lambda flags=0: QgsSearchWidgetWrapper.FilterFlag(flags)
 from enum import Enum
 
@@ -4997,11 +4581,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgssourceselectprovider.h
-QgsSourceSelectProvider.OrderLocalProvider = QgsSourceSelectProvider.Ordering.OrderLocalProvider
-QgsSourceSelectProvider.OrderDatabaseProvider = QgsSourceSelectProvider.Ordering.OrderDatabaseProvider
-QgsSourceSelectProvider.OrderRemoteProvider = QgsSourceSelectProvider.Ordering.OrderRemoteProvider
-QgsSourceSelectProvider.OrderSearchProvider = QgsSourceSelectProvider.Ordering.OrderSearchProvider
-QgsSourceSelectProvider.OrderOtherProvider = QgsSourceSelectProvider.Ordering.OrderOtherProvider
 # monkey patching scoped based enum
 QgsSourceSelectProvider.Capability.NoCapabilities.__doc__ = "No capabilities"
 QgsSourceSelectProvider.Capability.ConfigureFromUri.__doc__ = "The source select widget can be configured from a URI"
@@ -5036,9 +4615,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/editorwidgets/qgsspinbox.h
-QgsSpinBox.MinimumValue = QgsSpinBox.ClearValueMode.MinimumValue
-QgsSpinBox.MaximumValue = QgsSpinBox.ClearValueMode.MaximumValue
-QgsSpinBox.CustomValue = QgsSpinBox.ClearValueMode.CustomValue
 try:
     QgsSpinBox.__attribute_docs__ = {'returnPressed': 'Emitted when the Return or Enter key is used in the line edit\n\n.. versionadded:: 3.40\n', 'textEdited': 'Emitted when the the value has been manually edited via line edit.\n\n.. versionadded:: 3.40\n', 'editingTimeout': 'Emitted when either:\n\n1. 1 second has elapsed since the last value change in the widget (eg last key press or scroll wheel event)\n2. or, immediately after the widget has lost focus after its value was changed.\n\nThis signal can be used to respond semi-instantly to changes in the spin\nbox, without responding too quickly while the user in the middle of\nsetting the value.\n\n.. seealso:: :py:func:`editingTimeoutInterval`\n\n.. versionadded:: 3.42\n'}
     QgsSpinBox.__overridden_methods__ = ['clear', 'valueFromText', 'validate', 'stepBy', 'changeEvent', 'paintEvent', 'wheelEvent', 'timerEvent', 'focusOutEvent']
@@ -5047,8 +4623,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsstatusbar.h
-QgsStatusBar.AnchorLeft = QgsStatusBar.Anchor.AnchorLeft
-QgsStatusBar.AnchorRight = QgsStatusBar.Anchor.AnchorRight
 try:
     QgsStatusBar.__overridden_methods__ = ['changeEvent']
 except (NameError, AttributeError):
@@ -5065,8 +4639,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/symbology/qgsstyleexportimportdialog.h
-QgsStyleExportImportDialog.Export = QgsStyleExportImportDialog.Mode.Export
-QgsStyleExportImportDialog.Import = QgsStyleExportImportDialog.Mode.Import
 try:
     QgsStyleExportImportDialog.__group__ = ['symbology']
 except (NameError, AttributeError):
@@ -5097,15 +4669,7 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgssublayersdialog.h
-QgsSublayersDialog.PromptAlways = QgsSublayersDialog.PromptMode.PromptAlways
-QgsSublayersDialog.PromptIfNeeded = QgsSublayersDialog.PromptMode.PromptIfNeeded
-QgsSublayersDialog.PromptNever = QgsSublayersDialog.PromptMode.PromptNever
-QgsSublayersDialog.PromptLoadAll = QgsSublayersDialog.PromptMode.PromptLoadAll
 QgsSublayersDialog.PromptMode.baseClass = QgsSublayersDialog
-QgsSublayersDialog.Ogr = QgsSublayersDialog.ProviderType.Ogr
-QgsSublayersDialog.Gdal = QgsSublayersDialog.ProviderType.Gdal
-QgsSublayersDialog.Vsifile = QgsSublayersDialog.ProviderType.Vsifile
-QgsSublayersDialog.Mdal = QgsSublayersDialog.ProviderType.Mdal
 try:
     QgsSublayersDialog.LayerDefinition.__attribute_docs__ = {'layerId': 'Identifier of the layer (one unique layer id may have multiple types though)', 'layerName': 'Name of the layer (not necessarily unique)', 'count': 'Number of features (might be unused)', 'type': 'Extra type depending on the use (e.g. geometry type for vector sublayers)', 'description': 'Description.\n\n.. versionadded:: 3.10'}
     QgsSublayersDialog.LayerDefinition.__annotations__ = {'layerId': int, 'layerName': str, 'count': int, 'type': str, 'description': str}
@@ -5426,8 +4990,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgstextformatwidget.h
-QgsTextFormatWidget.Text = QgsTextFormatWidget.Mode.Text
-QgsTextFormatWidget.Labeling = QgsTextFormatWidget.Mode.Labeling
 try:
     QgsTextFormatWidget.__attribute_docs__ = {'widgetChanged': 'Emitted when the text format defined by the widget changes\n', 'auxiliaryFieldCreated': 'Emitted when an auxiliary field is created in the widget.\n\n.. versionadded:: 3.10\n'}
     QgsTextFormatWidget.__virtual_methods__ = ['setContext', 'setFormatFromStyle', 'saveFormat']
@@ -5494,11 +5056,8 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsvaliditycheckresultswidget.h
-QgsValidityCheckResultsModel.Roles = QgsValidityCheckResultsModel.CustomRole
 # monkey patching scoped based enum
-QgsValidityCheckResultsModel.DescriptionRole = QgsValidityCheckResultsModel.CustomRole.Description
 QgsValidityCheckResultsModel.Roles.DescriptionRole = QgsValidityCheckResultsModel.CustomRole.Description
-QgsValidityCheckResultsModel.DescriptionRole.is_monkey_patched = True
 QgsValidityCheckResultsModel.DescriptionRole.__doc__ = "Result detailed description"
 QgsValidityCheckResultsModel.CustomRole.__doc__ = """Custom model roles.
 
@@ -5600,15 +5159,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgsvertexmarker.h
-QgsVertexMarker.ICON_NONE = QgsVertexMarker.IconType.ICON_NONE
-QgsVertexMarker.ICON_CROSS = QgsVertexMarker.IconType.ICON_CROSS
-QgsVertexMarker.ICON_X = QgsVertexMarker.IconType.ICON_X
-QgsVertexMarker.ICON_BOX = QgsVertexMarker.IconType.ICON_BOX
-QgsVertexMarker.ICON_CIRCLE = QgsVertexMarker.IconType.ICON_CIRCLE
-QgsVertexMarker.ICON_DOUBLE_TRIANGLE = QgsVertexMarker.IconType.ICON_DOUBLE_TRIANGLE
-QgsVertexMarker.ICON_TRIANGLE = QgsVertexMarker.IconType.ICON_TRIANGLE
-QgsVertexMarker.ICON_RHOMBUS = QgsVertexMarker.IconType.ICON_RHOMBUS
-QgsVertexMarker.ICON_INVERTED_TRIANGLE = QgsVertexMarker.IconType.ICON_INVERTED_TRIANGLE
 try:
     QgsVertexMarker.__overridden_methods__ = ['paint', 'boundingRect', 'updatePosition']
 except (NameError, AttributeError):
@@ -5620,14 +5170,8 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/editorwidgets/core/qgswidgetwrapper.h
 # monkey patching scoped based enum
-QgsWidgetWrapper.RootPath = QgsWidgetWrapper.Property.RootPath
-QgsWidgetWrapper.RootPath.is_monkey_patched = True
 QgsWidgetWrapper.RootPath.__doc__ = "Root path for external resource"
-QgsWidgetWrapper.DocumentViewerContent = QgsWidgetWrapper.Property.DocumentViewerContent
-QgsWidgetWrapper.DocumentViewerContent.is_monkey_patched = True
 QgsWidgetWrapper.DocumentViewerContent.__doc__ = "Document type for external resource"
-QgsWidgetWrapper.StorageUrl = QgsWidgetWrapper.Property.StorageUrl
-QgsWidgetWrapper.StorageUrl.is_monkey_patched = True
 QgsWidgetWrapper.StorageUrl.__doc__ = "Storage URL for external resource"
 QgsWidgetWrapper.Property.__doc__ = """Data defined properties for different editor widgets.
 
@@ -5646,7 +5190,6 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/gui/qgswindowmanagerinterface.h
-QgsWindowManagerInterface.DialogStyleManager = QgsWindowManagerInterface.StandardDialog.DialogStyleManager
 try:
     QgsWindowManagerInterface.__abstract_methods__ = ['openStandardDialog']
 except (NameError, AttributeError):
@@ -5654,65 +5197,28 @@ except (NameError, AttributeError):
 
 
 # monkey patching scoped based enum
-QgsMapToolCapture.CaptureTechnique = _Qgis.CaptureTechnique
-QgsMapToolCapture.StraightSegments = _Qgis.CaptureTechnique.StraightSegments
-QgsMapToolCapture.StraightSegments.is_monkey_patched = True
 QgsMapToolCapture.StraightSegments.__doc__ = "Default capture mode - capture occurs with straight line segments"
-QgsMapToolCapture.CircularString = _Qgis.CaptureTechnique.CircularString
-QgsMapToolCapture.CircularString.is_monkey_patched = True
 QgsMapToolCapture.CircularString.__doc__ = "Capture in circular strings"
-QgsMapToolCapture.Streaming = _Qgis.CaptureTechnique.Streaming
-QgsMapToolCapture.Streaming.is_monkey_patched = True
 QgsMapToolCapture.Streaming.__doc__ = "Streaming points digitizing mode (points are automatically added as the mouse cursor moves)."
-QgsMapToolCapture.Shape = _Qgis.CaptureTechnique.Shape
-QgsMapToolCapture.Shape.is_monkey_patched = True
 QgsMapToolCapture.Shape.__doc__ = "Digitize shapes."
 
-QgsActionMenu.ActionType = _Qgis.ActionType
 # monkey patching scoped based enum
-QgsActionMenu.Invalid = _Qgis.ActionType.Invalid
-QgsActionMenu.Invalid.is_monkey_patched = True
 QgsActionMenu.Invalid.__doc__ = "Invalid"
-QgsActionMenu.MapLayerAction = _Qgis.ActionType.MapLayerAction
-QgsActionMenu.MapLayerAction.is_monkey_patched = True
 QgsActionMenu.MapLayerAction.__doc__ = "Standard actions (defined by core or plugins), corresponds to QgsMapLayerAction class."
-QgsActionMenu.AttributeAction = _Qgis.ActionType.AttributeAction
-QgsActionMenu.AttributeAction.is_monkey_patched = True
 QgsActionMenu.AttributeAction.__doc__ = "Custom actions (manually defined in layer properties), corresponds to QgsAction class."
 
-QgsMapLayerAction.Target = _Qgis.MapLayerActionTarget
 # monkey patching scoped based enum
-QgsMapLayerAction.Layer = _Qgis.MapLayerActionTarget.Layer
-QgsMapLayerAction.Layer.is_monkey_patched = True
 QgsMapLayerAction.Layer.__doc__ = "Action targets a complete layer"
-QgsMapLayerAction.SingleFeature = _Qgis.MapLayerActionTarget.SingleFeature
-QgsMapLayerAction.SingleFeature.is_monkey_patched = True
 QgsMapLayerAction.SingleFeature.__doc__ = "Action targets a single feature from a layer"
-QgsMapLayerAction.MultipleFeatures = _Qgis.MapLayerActionTarget.MultipleFeatures
-QgsMapLayerAction.MultipleFeatures.is_monkey_patched = True
 QgsMapLayerAction.MultipleFeatures.__doc__ = "Action targets multiple features from a layer"
-QgsMapLayerAction.AllActions = _Qgis.MapLayerActionTarget.AllActions
-QgsMapLayerAction.AllActions.is_monkey_patched = True
 QgsMapLayerAction.AllActions.__doc__ = ""
-QgsMapLayerAction.Targets = _Qgis.MapLayerActionTargets
 
-QgsMapLayerAction.Flag = _Qgis.MapLayerActionFlag
 # monkey patching scoped based enum
-QgsMapLayerAction.EnabledOnlyWhenEditable = _Qgis.MapLayerActionFlag.EnabledOnlyWhenEditable
-QgsMapLayerAction.EnabledOnlyWhenEditable.is_monkey_patched = True
 QgsMapLayerAction.EnabledOnlyWhenEditable.__doc__ = "Action should be shown only for editable layers"
-QgsMapLayerAction.Flags = _Qgis.MapLayerActionFlags
 
-QgsProcessingGui.WidgetType = _Qgis.ProcessingMode
 # monkey patching scoped based enum
-QgsProcessingGui.Standard = _Qgis.ProcessingMode.Standard
-QgsProcessingGui.Standard.is_monkey_patched = True
 QgsProcessingGui.Standard.__doc__ = "Standard (single-run) algorithm mode"
-QgsProcessingGui.Batch = _Qgis.ProcessingMode.Batch
-QgsProcessingGui.Batch.is_monkey_patched = True
 QgsProcessingGui.Batch.__doc__ = "Batch processing mode"
-QgsProcessingGui.Modeler = _Qgis.ProcessingMode.Modeler
-QgsProcessingGui.Modeler.is_monkey_patched = True
 QgsProcessingGui.Modeler.__doc__ = "Modeler mode"
 
 # Classes patched
