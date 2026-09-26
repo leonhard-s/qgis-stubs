@@ -287,13 +287,13 @@ class Qgs3DTypes(PyQt5.sip.wrapper):
     def __init__(self) -> None: ...
     @typing.overload
     def __init__(self, a0: 'Qgs3DTypes') -> None: ...
-    AltitudeClamping: typing.Type[_Qgis.AltitudeClamping]
-    AltClampAbsolute: _Qgis.AltitudeClamping
-    AltClampRelative: _Qgis.AltitudeClamping
-    AltClampTerrain: _Qgis.AltitudeClamping
-    AltitudeBinding: typing.Type[_Qgis.AltitudeBinding]
-    AltBindVertex: _Qgis.AltitudeBinding
-    AltBindCentroid: _Qgis.AltitudeBinding
+    AltitudeClamping: typing.Type[_core.Qgis.AltitudeClamping]
+    AltClampAbsolute: _core.Qgis.AltitudeClamping
+    AltClampRelative: _core.Qgis.AltitudeClamping
+    AltClampTerrain: _core.Qgis.AltitudeClamping
+    AltitudeBinding: typing.Type[_core.Qgis.AltitudeBinding]
+    AltBindVertex: _core.Qgis.AltitudeBinding
+    AltBindCentroid: _core.Qgis.AltitudeBinding
 
 
 class Qgs3DMapCanvas(QtGui.QWindow):
@@ -657,13 +657,13 @@ class QgsAbstractMaterialSettings(PyQt5.sip.wrapper):
     def clone(self) -> typing.Optional['QgsAbstractMaterialSettings']: ...
     def type(self) -> str: ...
     RenderingTechnique: typing.Type[QgsMaterialSettingsRenderingTechnique]
-    Triangles: typing.Type[QgsMaterialSettingsRenderingTechnique.Triangles]
-    Lines: typing.Type[QgsMaterialSettingsRenderingTechnique.Lines]
-    InstancedPoints: typing.Type[QgsMaterialSettingsRenderingTechnique.InstancedPoints]
-    Points: typing.Type[QgsMaterialSettingsRenderingTechnique.Points]
-    TrianglesWithFixedTexture: typing.Type[QgsMaterialSettingsRenderingTechnique.TrianglesWithFixedTexture]
-    TrianglesFromModel: typing.Type[QgsMaterialSettingsRenderingTechnique.TrianglesFromModel]
-    TrianglesDataDefined: typing.Type[QgsMaterialSettingsRenderingTechnique.TrianglesDataDefined]
+    Triangles: QgsMaterialSettingsRenderingTechnique
+    Lines: QgsMaterialSettingsRenderingTechnique
+    InstancedPoints: QgsMaterialSettingsRenderingTechnique
+    Points: QgsMaterialSettingsRenderingTechnique
+    TrianglesWithFixedTexture: QgsMaterialSettingsRenderingTechnique
+    TrianglesFromModel: QgsMaterialSettingsRenderingTechnique
+    TrianglesDataDefined: QgsMaterialSettingsRenderingTechnique
 
 
 class QgsGoochMaterialSettings(QgsAbstractMaterialSettings):
@@ -993,16 +993,16 @@ class QgsPoint3DSymbol(_core.QgsAbstract3DSymbol):
     def type(self) -> str: ...
     @staticmethod
     def create() -> typing.Optional[_core.QgsAbstract3DSymbol]: ...
-    Shape: typing.Type[_Qgis.Point3DShape]
-    Cylinder: _Qgis.Point3DShape
-    Sphere: _Qgis.Point3DShape
-    Cone: _Qgis.Point3DShape
-    Cube: _Qgis.Point3DShape
-    Torus: _Qgis.Point3DShape
-    Plane: _Qgis.Point3DShape
-    ExtrudedText: _Qgis.Point3DShape
-    Model: _Qgis.Point3DShape
-    Billboard: _Qgis.Point3DShape
+    Shape: typing.Type[_core.Qgis.Point3DShape]
+    Cylinder: _core.Qgis.Point3DShape
+    Sphere: _core.Qgis.Point3DShape
+    Cone: _core.Qgis.Point3DShape
+    Cube: _core.Qgis.Point3DShape
+    Torus: _core.Qgis.Point3DShape
+    Plane: _core.Qgis.Point3DShape
+    ExtrudedText: _core.Qgis.Point3DShape
+    Model: _core.Qgis.Point3DShape
+    Billboard: _core.Qgis.Point3DShape
 
 
 class QgsPolygon3DSymbol(_core.QgsAbstract3DSymbol):

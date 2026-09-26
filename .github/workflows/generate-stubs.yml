@@ -31,11 +31,11 @@ jobs:
         run: |
           docker run --rm ${{ inputs.qgis_image }} tar -C /usr/lib/python3/dist-packages -czf - qgis | tar -xzf -
 
-      - name: Delete .so files
-        run: find qgis -name "*.so" -delete
-
-      - name: Delete .yaml files
-        run: find qgis -name "*.yaml" -delete
+      - name: Delete non-stub files
+        run: |
+          find qgis -name "*.so" -delete
+          find qgis -name "*.yaml" -delete
+          find qgis -name "poetry.lock" -delete
 
       - name: Delete __pycache__ directories
         run: find qgis -type d -name "__pycache__" -exec rm -rf {} +

@@ -523,19 +523,19 @@ class QgsAlignRaster(PyQt5.sip.wrapper):
     def progressHandler(self) -> typing.Optional['QgsAlignRaster.ProgressHandler']: ...
     def setProgressHandler(self, progressHandler: typing.Optional['QgsAlignRaster.ProgressHandler']) -> None: ...
     Item: typing.Type[QgsAlignRasterData.RasterItem]
-    ResampleAlg: typing.Type[_Qgis.GdalResampleAlgorithm]
-    RA_NearestNeighbour: _Qgis.GdalResampleAlgorithm
-    RA_Bilinear: _Qgis.GdalResampleAlgorithm
-    RA_Cubic: _Qgis.GdalResampleAlgorithm
-    RA_CubicSpline: _Qgis.GdalResampleAlgorithm
-    RA_Lanczos: _Qgis.GdalResampleAlgorithm
-    RA_Average: _Qgis.GdalResampleAlgorithm
-    RA_Mode: _Qgis.GdalResampleAlgorithm
-    RA_Max: _Qgis.GdalResampleAlgorithm
-    RA_Min: _Qgis.GdalResampleAlgorithm
-    RA_Median: _Qgis.GdalResampleAlgorithm
-    RA_Q1: _Qgis.GdalResampleAlgorithm
-    RA_Q3: _Qgis.GdalResampleAlgorithm
+    ResampleAlg: typing.Type[_core.Qgis.GdalResampleAlgorithm]
+    RA_NearestNeighbour: _core.Qgis.GdalResampleAlgorithm
+    RA_Bilinear: _core.Qgis.GdalResampleAlgorithm
+    RA_Cubic: _core.Qgis.GdalResampleAlgorithm
+    RA_CubicSpline: _core.Qgis.GdalResampleAlgorithm
+    RA_Lanczos: _core.Qgis.GdalResampleAlgorithm
+    RA_Average: _core.Qgis.GdalResampleAlgorithm
+    RA_Mode: _core.Qgis.GdalResampleAlgorithm
+    RA_Max: _core.Qgis.GdalResampleAlgorithm
+    RA_Min: _core.Qgis.GdalResampleAlgorithm
+    RA_Median: _core.Qgis.GdalResampleAlgorithm
+    RA_Q1: _core.Qgis.GdalResampleAlgorithm
+    RA_Q3: _core.Qgis.GdalResampleAlgorithm
 
 
 class QgsNineCellFilter(PyQt5.sip.wrapper):
@@ -1241,27 +1241,27 @@ class QgsZonalStatistics(PyQt5.sip.wrapper):
     @typing.overload
     @staticmethod
     def calculateStatistics(rasterInterface: typing.Optional[_core.QgsRasterInterface], geometry: _core.QgsGeometry, cellSizeX: float, cellSizeY: float, rasterBand: int, statistics: typing.Union[_core.Qgis.ZonalStatistics, _core.Qgis.ZonalStatistic]) -> dict[int, typing.Any]: ...
-    Statistic: typing.Type[_Qgis.ZonalStatistic]
-    Count: _Qgis.ZonalStatistic
-    Sum: _Qgis.ZonalStatistic
-    Mean: _Qgis.ZonalStatistic
-    Median: _Qgis.ZonalStatistic
-    StDev: _Qgis.ZonalStatistic
-    Min: _Qgis.ZonalStatistic
-    Max: _Qgis.ZonalStatistic
-    Range: _Qgis.ZonalStatistic
-    Minority: _Qgis.ZonalStatistic
-    Majority: _Qgis.ZonalStatistic
-    Variety: _Qgis.ZonalStatistic
-    Variance: _Qgis.ZonalStatistic
-    All: _Qgis.ZonalStatistic
-    Default: _Qgis.ZonalStatistic
-    Statistics: typing.Type[_Qgis.ZonalStatistics]
-    Result: typing.Type[_Qgis.ZonalStatisticResult]
-    Success: _Qgis.ZonalStatisticResult
-    LayerTypeWrong: _Qgis.ZonalStatisticResult
-    LayerInvalid: _Qgis.ZonalStatisticResult
-    RasterInvalid: _Qgis.ZonalStatisticResult
-    RasterBandInvalid: _Qgis.ZonalStatisticResult
-    FailedToCreateField: _Qgis.ZonalStatisticResult
-    Canceled: _Qgis.ZonalStatisticResult
+    Statistic: typing.Type[_core.Qgis.ZonalStatistic]
+    Count: _core.Qgis.ZonalStatistic
+    Sum: _core.Qgis.ZonalStatistic
+    Mean: _core.Qgis.ZonalStatistic
+    Median: _core.Qgis.ZonalStatistic
+    StDev: _core.Qgis.ZonalStatistic
+    Min: _core.Qgis.ZonalStatistic
+    Max: _core.Qgis.ZonalStatistic
+    Range: _core.Qgis.ZonalStatistic
+    Minority: _core.Qgis.ZonalStatistic
+    Majority: _core.Qgis.ZonalStatistic
+    Variety: _core.Qgis.ZonalStatistic
+    Variance: _core.Qgis.ZonalStatistic
+    All: _core.Qgis.ZonalStatistic
+    Default: _core.Qgis.ZonalStatistic
+    Statistics: typing.Type[_core.Qgis.ZonalStatistics]
+    Result: typing.Type[_core.Qgis.ZonalStatisticResult]
+    Success: _core.Qgis.ZonalStatisticResult
+    LayerTypeWrong: _core.Qgis.ZonalStatisticResult
+    LayerInvalid: _core.Qgis.ZonalStatisticResult
+    RasterInvalid: _core.Qgis.ZonalStatisticResult
+    RasterBandInvalid: _core.Qgis.ZonalStatisticResult
+    FailedToCreateField: _core.Qgis.ZonalStatisticResult
+    Canceled: _core.Qgis.ZonalStatisticResult
