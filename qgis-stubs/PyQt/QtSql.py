@@ -1,10 +1,12 @@
+# -*- coding: utf-8 -*-
+
 """
 ***************************************************************************
-    qgsfeature.py
+    QtSql.py
     ---------------------
-    Date                 : May 2018
-    Copyright            : (C) 2018 by Denis Rouzaud
-    Email                : denis@opengis.ch
+    Date                 : March 2016
+    Copyright            : (C) 2016 by Juergen E. Fischer
+    Email                : jef at norbit dot de
 ***************************************************************************
 *                                                                         *
 *   This program is free software; you can redistribute it and/or modify  *
@@ -15,12 +17,14 @@
 ***************************************************************************
 """
 
+__author__ = 'Juergen E. Fischer'
+__date__ = 'March 2016'
+__copyright__ = '(C) 2016, Juergen E. Fischer'
 
-def _mapping_feature(feature):
-    geom = feature.geometry()
-    properties = feature.attributeMap()
-    return {
-        "type": "Feature",
-        "properties": properties,
-        "geometry": geom.__geo_interface__,
-    }
+from PyQt6.QtSql import *
+
+
+if 6 == 6:
+  # patch back in Qt flags removed in PyQt
+  QSql.ParamType = lambda flags=0: QSql.ParamTypeFlag(flags)
+

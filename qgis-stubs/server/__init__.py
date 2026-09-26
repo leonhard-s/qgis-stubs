@@ -21,7 +21,7 @@ __author__ = 'Alessandro Pasotti'
 __date__ = 'October 2014'
 __copyright__ = '(C) 2014, Alessandro Pasotti'
 
-from PyQt5 import QtCore     # NOQA
+from qgis.PyQt import QtCore     # NOQA
 
 from qgis._server import *  # NOQA
 
@@ -31,7 +31,7 @@ It is not aimed to be manually edited
 """
 # The following has been generated automatically from src/server/qgsaccesscontrol.h
 try:
-    QgsAccessControl.__overridden_methods__ = ['filterFeatures', 'clone', 'layerAttributes']
+    QgsAccessControl.__overridden_methods__ = ['isFilterThreadSafe', 'filterFeatures', 'layerAttributes', 'clone']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/server/qgsaccesscontrolfilter.h
@@ -50,7 +50,7 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/server/qgsbufferserverresponse.h
 try:
-    QgsBufferServerResponse.__overridden_methods__ = ['setHeader', 'removeHeader', 'header', 'headers', 'headersSent', 'setStatusCode', 'statusCode', 'sendError', 'io', 'finish', 'flush', 'clear', 'data', 'truncate']
+    QgsBufferServerResponse.__overridden_methods__ = ['setHeader', 'addHeader', 'removeHeader', 'header', 'fullHeaders', 'fullHeader', 'headers', 'headersSent', 'setStatusCode', 'statusCode', 'sendError', 'io', 'finish', 'flush', 'clear', 'data', 'truncate']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/server/qgsconfigcache.h
@@ -68,12 +68,12 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/server/qgsfeaturefilter.h
 try:
-    QgsFeatureFilter.__overridden_methods__ = ['filterFeatures', 'layerAttributes', 'clone']
+    QgsFeatureFilter.__overridden_methods__ = ['isFilterThreadSafe', 'filterFeatures', 'layerAttributes', 'clone']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/server/qgsfeaturefilterprovidergroup.h
 try:
-    QgsFeatureFilterProviderGroup.__overridden_methods__ = ['filterFeatures', 'layerAttributes', 'clone']
+    QgsFeatureFilterProviderGroup.__overridden_methods__ = ['isFilterThreadSafe', 'filterFeatures', 'layerAttributes', 'clone']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/server/qgsserverapi.h
@@ -137,8 +137,38 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/server/qgsserverogcapi.h
+QgsServerOgcApi.alternate = QgsServerOgcApi.Rel.alternate
+QgsServerOgcApi.describedBy = QgsServerOgcApi.Rel.describedBy
+QgsServerOgcApi.collection = QgsServerOgcApi.Rel.collection
+QgsServerOgcApi.item = QgsServerOgcApi.Rel.item
+QgsServerOgcApi.self = QgsServerOgcApi.Rel.self
+QgsServerOgcApi.service_desc = QgsServerOgcApi.Rel.service_desc
+QgsServerOgcApi.service_doc = QgsServerOgcApi.Rel.service_doc
+QgsServerOgcApi.prev = QgsServerOgcApi.Rel.prev
+QgsServerOgcApi.next = QgsServerOgcApi.Rel.next
+QgsServerOgcApi.license = QgsServerOgcApi.Rel.license
+QgsServerOgcApi.items = QgsServerOgcApi.Rel.items
+QgsServerOgcApi.conformance = QgsServerOgcApi.Rel.conformance
+QgsServerOgcApi.data = QgsServerOgcApi.Rel.data
 QgsServerOgcApi.Rel.baseClass = QgsServerOgcApi
+QgsServerOgcApi.GEOJSON = QgsServerOgcApi.ContentType.GEOJSON
+QgsServerOgcApi.OPENAPI3 = QgsServerOgcApi.ContentType.OPENAPI3
+QgsServerOgcApi.JSON = QgsServerOgcApi.ContentType.JSON
+QgsServerOgcApi.HTML = QgsServerOgcApi.ContentType.HTML
+QgsServerOgcApi.XML = QgsServerOgcApi.ContentType.XML
+QgsServerOgcApi.FLATGEOBUF = QgsServerOgcApi.ContentType.FLATGEOBUF
 QgsServerOgcApi.ContentType.baseClass = QgsServerOgcApi
+# monkey patching scoped based enum
+QgsServerOgcApi.Profile.NONE.__doc__ = "No profile"
+QgsServerOgcApi.Profile.RFC7946.__doc__ = "GeoJSON profile according to RFC7946"
+QgsServerOgcApi.Profile.__doc__ = """JSON profile
+
+* ``NONE``: No profile
+* ``RFC7946``: GeoJSON profile according to RFC7946
+
+"""
+# --
+QgsServerOgcApi.Profile.baseClass = QgsServerOgcApi
 try:
     QgsServerOgcApi.sanitizeUrl = staticmethod(QgsServerOgcApi.sanitizeUrl)
     QgsServerOgcApi.relToString = staticmethod(QgsServerOgcApi.relToString)
@@ -160,6 +190,12 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/server/qgsserverparameters.h
+QgsServerParameter.UNKNOWN = QgsServerParameter.Name.UNKNOWN
+QgsServerParameter.SERVICE = QgsServerParameter.Name.SERVICE
+QgsServerParameter.VERSION_SERVICE = QgsServerParameter.Name.VERSION_SERVICE
+QgsServerParameter.REQUEST = QgsServerParameter.Name.REQUEST
+QgsServerParameter.MAP = QgsServerParameter.Name.MAP
+QgsServerParameter.FILE_NAME = QgsServerParameter.Name.FILE_NAME
 QgsServerParameter.Name.baseClass = QgsServerParameter
 try:
     QgsServerParameterDefinition.raiseError = staticmethod(QgsServerParameterDefinition.raiseError)
@@ -199,6 +235,7 @@ try:
     QgsServerProjectUtils.wmsInfoFormatSia2045 = staticmethod(QgsServerProjectUtils.wmsInfoFormatSia2045)
     QgsServerProjectUtils.wmsFeatureInfoAddWktGeometry = staticmethod(QgsServerProjectUtils.wmsFeatureInfoAddWktGeometry)
     QgsServerProjectUtils.wmsFeatureInfoUseAttributeFormSettings = staticmethod(QgsServerProjectUtils.wmsFeatureInfoUseAttributeFormSettings)
+    QgsServerProjectUtils.wmsHTMLFeatureInfoUseOnlyMaptip = staticmethod(QgsServerProjectUtils.wmsHTMLFeatureInfoUseOnlyMaptip)
     QgsServerProjectUtils.wmsFeatureInfoSegmentizeWktGeometry = staticmethod(QgsServerProjectUtils.wmsFeatureInfoSegmentizeWktGeometry)
     QgsServerProjectUtils.wmsAddLegendGroupsLegendGraphic = staticmethod(QgsServerProjectUtils.wmsAddLegendGroupsLegendGraphic)
     QgsServerProjectUtils.wmsSkipNameForGroup = staticmethod(QgsServerProjectUtils.wmsSkipNameForGroup)
@@ -218,6 +255,7 @@ try:
     QgsServerProjectUtils.wmsRootName = staticmethod(QgsServerProjectUtils.wmsRootName)
     QgsServerProjectUtils.wmsRestrictedLayers = staticmethod(QgsServerProjectUtils.wmsRestrictedLayers)
     QgsServerProjectUtils.wmsOutputCrsList = staticmethod(QgsServerProjectUtils.wmsOutputCrsList)
+    QgsServerProjectUtils.wmsOutputCrsListAsOgcUrn = staticmethod(QgsServerProjectUtils.wmsOutputCrsListAsOgcUrn)
     QgsServerProjectUtils.wmsExtent = staticmethod(QgsServerProjectUtils.wmsExtent)
     QgsServerProjectUtils.wfsServiceUrl = staticmethod(QgsServerProjectUtils.wfsServiceUrl)
     QgsServerProjectUtils.wfsLayerIds = staticmethod(QgsServerProjectUtils.wfsLayerIds)
@@ -255,7 +293,27 @@ try:
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/server/qgsserverrequest.h
+QgsServerRequest.HeadMethod = QgsServerRequest.Method.HeadMethod
+QgsServerRequest.PutMethod = QgsServerRequest.Method.PutMethod
+QgsServerRequest.GetMethod = QgsServerRequest.Method.GetMethod
+QgsServerRequest.PostMethod = QgsServerRequest.Method.PostMethod
+QgsServerRequest.DeleteMethod = QgsServerRequest.Method.DeleteMethod
+QgsServerRequest.PatchMethod = QgsServerRequest.Method.PatchMethod
+QgsServerRequest.OptionsMethod = QgsServerRequest.Method.OptionsMethod
 QgsServerRequest.Method.baseClass = QgsServerRequest
+QgsServerRequest.HOST = QgsServerRequest.RequestHeader.HOST
+QgsServerRequest.FORWARDED = QgsServerRequest.RequestHeader.FORWARDED
+QgsServerRequest.X_FORWARDED_FOR = QgsServerRequest.RequestHeader.X_FORWARDED_FOR
+QgsServerRequest.X_FORWARDED_HOST = QgsServerRequest.RequestHeader.X_FORWARDED_HOST
+QgsServerRequest.X_FORWARDED_PROTO = QgsServerRequest.RequestHeader.X_FORWARDED_PROTO
+QgsServerRequest.X_QGIS_SERVICE_URL = QgsServerRequest.RequestHeader.X_QGIS_SERVICE_URL
+QgsServerRequest.X_QGIS_WMS_SERVICE_URL = QgsServerRequest.RequestHeader.X_QGIS_WMS_SERVICE_URL
+QgsServerRequest.X_QGIS_WFS_SERVICE_URL = QgsServerRequest.RequestHeader.X_QGIS_WFS_SERVICE_URL
+QgsServerRequest.X_QGIS_WCS_SERVICE_URL = QgsServerRequest.RequestHeader.X_QGIS_WCS_SERVICE_URL
+QgsServerRequest.X_QGIS_WMTS_SERVICE_URL = QgsServerRequest.RequestHeader.X_QGIS_WMTS_SERVICE_URL
+QgsServerRequest.ACCEPT = QgsServerRequest.RequestHeader.ACCEPT
+QgsServerRequest.USER_AGENT = QgsServerRequest.RequestHeader.USER_AGENT
+QgsServerRequest.AUTHORIZATION = QgsServerRequest.RequestHeader.AUTHORIZATION
 QgsServerRequest.RequestHeader.baseClass = QgsServerRequest
 try:
     QgsServerRequest.methodToString = staticmethod(QgsServerRequest.methodToString)
@@ -264,12 +322,52 @@ except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/server/qgsserverresponse.h
 try:
-    QgsServerResponse.__virtual_methods__ = ['write', 'SIP_VIRTUALERRORHANDLER', 'feedback']
-    QgsServerResponse.__abstract_methods__ = ['setHeader', 'removeHeader', 'header', 'headers', 'headersSent', 'setStatusCode', 'statusCode', 'sendError', 'io', 'clear', 'data', 'truncate']
+    QgsServerResponse.__virtual_methods__ = ['write', 'finish', 'flush', 'feedback']
+    QgsServerResponse.__abstract_methods__ = ['setHeader', 'addHeader', 'removeHeader', 'header', 'fullHeader', 'headers', 'fullHeaders', 'headersSent', 'setStatusCode', 'statusCode', 'sendError', 'io', 'clear', 'data', 'truncate']
 except (NameError, AttributeError):
     pass
 # The following has been generated automatically from src/server/qgsserversettings.h
+QgsServerSettingsEnv.DEFAULT_VALUE = QgsServerSettingsEnv.Source.DEFAULT_VALUE
+QgsServerSettingsEnv.ENVIRONMENT_VARIABLE = QgsServerSettingsEnv.Source.ENVIRONMENT_VARIABLE
+QgsServerSettingsEnv.INI_FILE = QgsServerSettingsEnv.Source.INI_FILE
 QgsServerSettingsEnv.Source.baseClass = QgsServerSettingsEnv
+QgsServerSettingsEnv.QGIS_OPTIONS_PATH = QgsServerSettingsEnv.EnvVar.QGIS_OPTIONS_PATH
+QgsServerSettingsEnv.QGIS_SERVER_PARALLEL_RENDERING = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_PARALLEL_RENDERING
+QgsServerSettingsEnv.QGIS_SERVER_MAX_THREADS = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_MAX_THREADS
+QgsServerSettingsEnv.QGIS_SERVER_LOG_LEVEL = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_LOG_LEVEL
+QgsServerSettingsEnv.QGIS_SERVER_LOG_FILE = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_LOG_FILE
+QgsServerSettingsEnv.QGIS_SERVER_LOG_STDERR = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_LOG_STDERR
+QgsServerSettingsEnv.QGIS_PROJECT_FILE = QgsServerSettingsEnv.EnvVar.QGIS_PROJECT_FILE
+QgsServerSettingsEnv.QGIS_SERVER_IGNORE_BAD_LAYERS = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_IGNORE_BAD_LAYERS
+QgsServerSettingsEnv.QGIS_SERVER_IGNORE_RENDERING_ERRORS = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_IGNORE_RENDERING_ERRORS
+QgsServerSettingsEnv.QGIS_SERVER_RETRY_BAD_LAYERS = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_RETRY_BAD_LAYERS
+QgsServerSettingsEnv.QGIS_SERVER_CACHE_DIRECTORY = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_CACHE_DIRECTORY
+QgsServerSettingsEnv.QGIS_SERVER_CACHE_SIZE = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_CACHE_SIZE
+QgsServerSettingsEnv.QGIS_SERVER_SHOW_GROUP_SEPARATOR = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_SHOW_GROUP_SEPARATOR
+QgsServerSettingsEnv.QGIS_SERVER_OVERRIDE_SYSTEM_LOCALE = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_OVERRIDE_SYSTEM_LOCALE
+QgsServerSettingsEnv.QGIS_SERVER_WMS_MAX_HEIGHT = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_WMS_MAX_HEIGHT
+QgsServerSettingsEnv.QGIS_SERVER_WMS_MAX_WIDTH = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_WMS_MAX_WIDTH
+QgsServerSettingsEnv.QGIS_SERVER_API_RESOURCES_DIRECTORY = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_API_RESOURCES_DIRECTORY
+QgsServerSettingsEnv.QGIS_SERVER_API_WFS3_MAX_LIMIT = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_API_WFS3_MAX_LIMIT
+QgsServerSettingsEnv.QGIS_SERVER_API_WFS3_ROOT_PATH = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_API_WFS3_ROOT_PATH
+QgsServerSettingsEnv.QGIS_SERVER_TRUST_LAYER_METADATA = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_TRUST_LAYER_METADATA
+QgsServerSettingsEnv.QGIS_SERVER_FORCE_READONLY_LAYERS = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_FORCE_READONLY_LAYERS
+QgsServerSettingsEnv.QGIS_SERVER_DISABLE_GETPRINT = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_DISABLE_GETPRINT
+QgsServerSettingsEnv.QGIS_SERVER_LANDING_PAGE_PROJECTS_DIRECTORIES = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_LANDING_PAGE_PROJECTS_DIRECTORIES
+QgsServerSettingsEnv.QGIS_SERVER_LANDING_PAGE_PROJECTS_PG_CONNECTIONS = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_LANDING_PAGE_PROJECTS_PG_CONNECTIONS
+QgsServerSettingsEnv.QGIS_SERVER_LOG_PROFILE = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_LOG_PROFILE
+QgsServerSettingsEnv.QGIS_SERVER_SERVICE_URL = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_SERVICE_URL
+QgsServerSettingsEnv.QGIS_SERVER_WMS_SERVICE_URL = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_WMS_SERVICE_URL
+QgsServerSettingsEnv.QGIS_SERVER_WFS_SERVICE_URL = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_WFS_SERVICE_URL
+QgsServerSettingsEnv.QGIS_SERVER_WCS_SERVICE_URL = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_WCS_SERVICE_URL
+QgsServerSettingsEnv.QGIS_SERVER_WMTS_SERVICE_URL = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_WMTS_SERVICE_URL
+QgsServerSettingsEnv.QGIS_SERVER_LANDING_PAGE_PREFIX = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_LANDING_PAGE_PREFIX
+QgsServerSettingsEnv.QGIS_SERVER_PROJECT_CACHE_CHECK_INTERVAL = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_PROJECT_CACHE_CHECK_INTERVAL
+QgsServerSettingsEnv.QGIS_SERVER_PROJECT_CACHE_STRATEGY = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_PROJECT_CACHE_STRATEGY
+QgsServerSettingsEnv.QGIS_SERVER_PROJECT_CACHE_SIZE = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_PROJECT_CACHE_SIZE
+QgsServerSettingsEnv.QGIS_SERVER_ALLOWED_EXTRA_SQL_TOKENS = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_ALLOWED_EXTRA_SQL_TOKENS
+QgsServerSettingsEnv.QGIS_SERVER_APPLICATION_NAME = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_APPLICATION_NAME
+QgsServerSettingsEnv.QGIS_SERVER_CAPABILITIES_CACHE_SIZE = QgsServerSettingsEnv.EnvVar.QGIS_SERVER_CAPABILITIES_CACHE_SIZE
 QgsServerSettingsEnv.EnvVar.baseClass = QgsServerSettingsEnv
 try:
     QgsServerSettings.name = staticmethod(QgsServerSettings.name)
@@ -288,6 +386,11 @@ except (NameError, AttributeError):
 # The following has been generated automatically from src/server/qgsservicemodule.h
 try:
     QgsServiceModule.__abstract_methods__ = ['registerSelf']
+except (NameError, AttributeError):
+    pass
+# The following has been generated automatically from src/server/qgsstorebadlayerinfo.h
+try:
+    QgsStoreBadLayerInfo.__overridden_methods__ = ['handleBadLayers']
 except (NameError, AttributeError):
     pass
 

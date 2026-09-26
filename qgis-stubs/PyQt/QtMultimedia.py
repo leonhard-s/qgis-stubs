@@ -1,10 +1,12 @@
+# -*- coding: utf-8 -*-
+
 """
 ***************************************************************************
-    qgsfeature.py
+    QtMultimedia.py
     ---------------------
-    Date                 : May 2018
-    Copyright            : (C) 2018 by Denis Rouzaud
-    Email                : denis@opengis.ch
+    Date                 : January 2025
+    Copyright            : (C) 2025 by Julien Cabieces
+    Email                : julien dot cabieces at oslandia dot com
 ***************************************************************************
 *                                                                         *
 *   This program is free software; you can redistribute it and/or modify  *
@@ -15,12 +17,8 @@
 ***************************************************************************
 """
 
+__author__ = 'Julien Cabieces'
+__date__ = 'January 2025'
+__copyright__ = '(C) 2025, Julien Cabieces'
 
-def _mapping_feature(feature):
-    geom = feature.geometry()
-    properties = feature.attributeMap()
-    return {
-        "type": "Feature",
-        "properties": properties,
-        "geometry": geom.__geo_interface__,
-    }
+from PyQt6.QtMultimedia import *

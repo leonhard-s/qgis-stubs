@@ -1,10 +1,10 @@
 """
 ***************************************************************************
-    qgsfeature.py
+    QtSvgWidgets.py
     ---------------------
-    Date                 : May 2018
-    Copyright            : (C) 2018 by Denis Rouzaud
-    Email                : denis@opengis.ch
+    Date                 : June 2026
+    Copyright            : (C) 2026 Jean Felder
+    Email                : jean dot felder at oslandia dot com
 ***************************************************************************
 *                                                                         *
 *   This program is free software; you can redistribute it and/or modify  *
@@ -15,12 +15,8 @@
 ***************************************************************************
 """
 
+__author__ = 'Jean Felder'
+__date__ = 'June 2026'
+__copyright__ = '(C) 2026, Jean Felder'
 
-def _mapping_feature(feature):
-    geom = feature.geometry()
-    properties = feature.attributeMap()
-    return {
-        "type": "Feature",
-        "properties": properties,
-        "geometry": geom.__geo_interface__,
-    }
+from PyQt6.QtSvgWidgets import *

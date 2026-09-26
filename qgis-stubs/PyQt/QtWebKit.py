@@ -1,10 +1,12 @@
+# -*- coding: utf-8 -*-
+
 """
 ***************************************************************************
-    qgsfeature.py
+    QtWebKit.py
     ---------------------
-    Date                 : May 2018
-    Copyright            : (C) 2018 by Denis Rouzaud
-    Email                : denis@opengis.ch
+    Date                 : November 2015
+    Copyright            : (C) 2015 by Matthias Kuhn
+    Email                : matthias at opengis dot ch
 ***************************************************************************
 *                                                                         *
 *   This program is free software; you can redistribute it and/or modify  *
@@ -15,12 +17,8 @@
 ***************************************************************************
 """
 
+__author__ = 'Matthias Kuhn'
+__date__ = 'November 2015'
+__copyright__ = '(C) 2015, Matthias Kuhn'
 
-def _mapping_feature(feature):
-    geom = feature.geometry()
-    properties = feature.attributeMap()
-    return {
-        "type": "Feature",
-        "properties": properties,
-        "geometry": geom.__geo_interface__,
-    }
+from PyQt6.QtWebKit import *

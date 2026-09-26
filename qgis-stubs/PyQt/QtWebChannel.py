@@ -1,9 +1,9 @@
 """
 ***************************************************************************
-    edit.py
+    QtWebChannel.py
     ---------------------
-    Date                 : May 2018
-    Copyright            : (C) 2018 by Denis Rouzaud
+    Date                 : April 2026
+    Copyright            : (C) 2026 Denis Rouzaud
     Email                : denis@opengis.ch
 ***************************************************************************
 *                                                                         *
@@ -15,28 +15,4 @@
 ***************************************************************************
 """
 
-
-class QgsEditError(Exception):
-    def __init__(self, value):
-        self.value = value
-
-    def __str__(self):
-        return repr(self.value)
-
-
-class edit:
-    def __init__(self, layer):
-        self.layer = layer
-
-    def __enter__(self):
-        assert self.layer.startEditing()
-        return self.layer
-
-    def __exit__(self, ex_type, ex_value, traceback):
-        if ex_type is None:
-            if not self.layer.commitChanges():
-                raise QgsEditError(self.layer.commitErrors())
-            return True
-        else:
-            self.layer.rollBack()
-            return False
+from PyQt6.QtWebChannel import *

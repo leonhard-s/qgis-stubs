@@ -1,10 +1,12 @@
+# -*- coding: utf-8 -*-
+
 """
 ***************************************************************************
-    qgsfeature.py
+    sip.py
     ---------------------
-    Date                 : May 2018
-    Copyright            : (C) 2018 by Denis Rouzaud
-    Email                : denis@opengis.ch
+    Date                 : October 2018
+    Copyright            : (C) 2018 by Nyall Dawson
+    Email                : nyall dot dawson at gmail dot com
 ***************************************************************************
 *                                                                         *
 *   This program is free software; you can redistribute it and/or modify  *
@@ -15,12 +17,11 @@
 ***************************************************************************
 """
 
+__author__ = 'Nyall Dawson'
+__date__ = 'October 2017'
+__copyright__ = '(C) 2018, Nyall Dawson'
 
-def _mapping_feature(feature):
-    geom = feature.geometry()
-    properties = feature.attributeMap()
-    return {
-        "type": "Feature",
-        "properties": properties,
-        "geometry": geom.__geo_interface__,
-    }
+try:
+    from PyQt6.sip import *
+except ImportError:
+    from sip import *
