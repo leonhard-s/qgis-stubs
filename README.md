@@ -22,6 +22,11 @@ Alternatively, you may clone and install the latest version using the repository
 python -m pip install git+https://github.com/leonhard-s/qgis-stubs.git
 ```
 
+> [!IMPORTANT]
+> While QGIS plugins can support both QGIS 3 and 4, these type stubs do not.
+>
+> Releases before `1.0` target QGIS 3/Qt5; `1.0` and later target QGIS 4/Qt6. If your plugin supports both, it is recommended to stick to the QGIS 4 variant.
+
 ## Caveats & Limitations
 
 The Python modules used by QGIS are not without issues. Most of these are shared by the runtime implementation but are explicitly listed here to avoid confusion.
@@ -38,12 +43,8 @@ The Python modules used by QGIS are not without issues. Most of these are shared
   None_: DataResamplingMethod = getattr(DataResamplingMethod, 'None')
   ```
 
-- Compatibility fallback names for unscoped enumerators are not available as they are "monkey-patched" at runtime.
-
-  It was decided not to include these patches in the stubs as they lead to naming collisions and are almost all flagged as deprecated for QGIS 4.
-
 ## Contributing
 
-This repository contains an automated type stub generator, but new releases still require some manual edits depending on the version of QGIS targeted. Support for new QGIS versions is therefore not automatic.
+This repository contains an automated type stub extraction workflow and fixup scripts, but new releases still require some manual edits depending on the version of QGIS targeted. Support for new QGIS versions is therefore not automatic.
 
 If you encounter any issues such as missing or incorrect type hints or wish for this utility to be updated for a new version of QGIS, please do [create an issue](https://github.com/leonhard-s/qgis-stubs/issues).
