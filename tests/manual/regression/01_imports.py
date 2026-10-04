@@ -4,7 +4,8 @@ import typing
 from qgis.core import NULL
 from qgis.gui import QgisInterface
 from qgis.utils import iface
-typing.assert_type(NULL, None)
+assert NULL is not None
+assert NULL == None
 typing.assert_type(iface, QgisInterface)
 
 # https://github.com/leonhard-s/qgis-stubs/issues/10#issuecomment-5887795387
