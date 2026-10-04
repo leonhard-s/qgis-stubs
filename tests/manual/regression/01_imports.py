@@ -9,6 +9,7 @@ assert NULL == None
 typing.assert_type(iface, QgisInterface | None)
 
 # https://github.com/leonhard-s/qgis-stubs/issues/10#issuecomment-5887795387
+from qgis.PyQt.QtCore import QtMsgType
 from PyQt6.QtCore import QtMsgType as _PyQt6MsgType
-from qgis.PyQt.QtCore import QtMsgType as _QgisPyQtMsgType
-typing.assert_type(_PyQt6MsgType, _QgisPyQtMsgType)
+_msg_type = typing.cast(QtMsgType, QtMsgType.QtDebugMsg)
+typing.assert_type(_msg_type, _PyQt6MsgType)
