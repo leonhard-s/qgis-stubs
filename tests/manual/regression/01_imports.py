@@ -6,7 +6,7 @@ from qgis.gui import QgisInterface
 from qgis.utils import iface
 assert NULL is not None
 assert NULL == None
-typing.assert_type(iface, QgisInterface)
+typing.assert_type(iface, QgisInterface | None)
 
 # https://github.com/leonhard-s/qgis-stubs/issues/10#issuecomment-5887795387
 from PyQt6.QtCore import QtMsgType as _PyQt6MsgType
