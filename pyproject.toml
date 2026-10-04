@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "qgis-stubs"
-version = "1.0.0.dev0"
+version = "1.0.0.dev1"
 authors = [
     {name = "Leonhard S.", email="leonhard-sei@outlook.com"},
 ]
@@ -44,6 +44,7 @@ packages = [
     "qgis-stubs.gui",
     "qgis-stubs.gui.additions",
     "qgis-stubs.processing",
+    "qgis-stubs.PyQt",
     "qgis-stubs.server",
     "qgis-stubs.testing",
 ]
